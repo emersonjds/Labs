@@ -1,0 +1,11 @@
+{
+	"require" : {
+		"goaop/framework" : "^1.0",
+		"respect/rest" : "^0.6.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Aspect\\" : "src/"
+		}
+	}
+}
