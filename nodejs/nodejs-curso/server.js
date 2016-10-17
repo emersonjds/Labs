@@ -1,50 +1,84 @@
-//use strict serve para limitar os
-// desenvolvedores a nao criar variaveis perdidas
-
+//use strict serve para 
+//limitar os desenvolvedores
+//a nao criarem variaveis perdidas
 'use strict';
 
-// importação do Hapi.js para o projeto, responsavel pelo gerenciamento de rotas
+//importamos o HapiJS para nosso projeto
 const Hapi = require('hapi');
-const server = new Hapi.Server();
-//importando biblioteca para validar as requisições
+
+//importamos a biblioteca para validar as requisicoes
 const Joi = require('joi');
 
-server.connection({port: 3000});
+const server = new Hapi.Server();
+server.connection({ port: 3000 });
 
+let products = [];
 //metodo para criar as rotas
 server.route([{
-	//caminho a ser chamado
-	path: '/products',
-	//tipo de requisição
-	method: 'GET',
-	//metodo controlador da requisição
-	handler: (req, reply) => {
-		return reply('Hello Word');
-	}
-},
-{
-	path: '/products',
-	method: 'POST',
-	handler: (req, reply) => {
-		//objeto da requisição
-		const produto = reply.payload;
-		console.log('produto', produto);
-		return reply('Hello World');
-	},
-	//Cricação de objeto de validação
-	validate: {
-		payload: {
-			name: Joi.string().min(3).max(20).required(),
-			price: Joi.number().required()
-		}
-	}
-}
-])
+    //o caminho a ser chamado
+    path: '/products',
+    //o tipo requisicao
+    method: 'GET',
+
+    //o metodo que controla a requiçao'
+    handler: (req, reply) => {
+        return reply(products);
+    }
+}, {
+        path: '/products',
+        method: 'POST',
+        config: {
+            handler: (req, reply) => {
+                //recebemos o objeto da requisicao
+                const produto = req.payload;
+                produto.id = 1;
+                products.push(produto);
+                return reply(true);
+            },
+            //criamos o obj de validacao
+            validate: {
+                //fizemos as validacoes
+                payload: {
+                    name: Joi.string().min(3).max(20).required(),
+                    price: Joi.number().required()
+                }
+            }
+        }
+    },
+    {
+        path: '/products/{id}',
+        method: 'DELETE',
+        config: {
+            handler: (req, reply) => {
+                try {
+                    var id = req.params.id;
+                    var product = products.filter(item => {
+                        return item.id == id
+                    });
+
+                    if (product.length === 0) throw new Error('Produto inexistente');
+                    products.pop(product[0]);
+
+                    return reply(true);
+                }
+                catch (e) { 
+                    console.log('e', e);
+                    return reply(false);
+                }
+            },
+            //criamos o obj de validacao
+            validate: {
+                //fizemos as validacoes
+                params: {
+                    id: Joi.number().required()
+                }
+            }
+        }
+    }])
 
 server.start(() => {
-	console.log('servidor rodando !!!');
+    console.log('servidor rodando!!');
 });
 
-//deixa o servidor em modo publico para testes
+//deixa nosso servidor publico
 module.exports = server;
-
