@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Special Operators</title>
+</head>
+<body>
+	<p>x = 12, y = 15 =>
+		<script>
+			var x = 12;
+			var y = 15;
+			// Ternary condition
+			var out = (x == y) ? "110,00" : "100,00"; 
+			document.write("Price " + out);
+		</script>
+	</p>
+
+	<p>
+		<script>
+			var i = 0;
+			var k = 0;
+			var j = 15;
+
+			// O operador virgula permite dois incrementos em variaveis distintas
+			for(i = 0; i <= 10; i++, j++) {
+				k = i + j;
+			}
+			document.write("k = " + k);
+		</script>
+	</p>
+</body>
+</html>
