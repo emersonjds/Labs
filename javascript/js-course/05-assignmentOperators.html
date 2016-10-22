@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Assignment Operators</title>
+</head>
+<body>
+
+	<p>Soma</p>
+	<p>x = 10 , y = 7 => x += y, x =  
+		<script>
+			var x = 10;
+			var y = 7;
+			x += y;
+			document.write(x);
+		</script>
+	</p>
+	<p>Subtração</p>
+	<p>x = 10 , y = 7 => x -= y, x = 
+		<script>
+			var x = 10;
+			var y = 7;
+			x -= y;
+			document.write(x);
+		</script>
+	</p>
+	<p>Divisão</p>
+	<p>x = 10 , y = 7 => x /= y, x = 
+		<script>
+			var x = 10;
+			var y = 7;
+			x /= y;
+			document.write(x);
+		</script>
+	</p>
+	<p>Multiplicação</p>
+	<p>x = 10 , y = 7 => x *= y , x = 
+		<script>
+			var x = 10;
+			var y = 7;
+			x *= y;
+			document.write(x);
+		</script>
+	</p>
+	<p>Módulo</p>
+	<p>x = 10 , y = 7 => x %= y, x = 
+		<script>
+			var x = 10;
+			var y = 7;
+			x %= y;
+			document.write(x);
+		</script>
+	</p>
+</body>
+
+<script>
+	
+//OUTROS PONTOS ABORDADOS SEGUNDO O SITE DA MDN
+// Dadas as seguintes variáveis
+//SOMA
+
+foo = "foo"
+bar = 5
+baz = true
+
+// Numero + Numero -> adição (soma os valores)
+bar += 2 // O mesmo que: 7 = 5 + 2
+
+// Boolean + Numero -> adição
+baz += 1 // 2 (true = 1, false = 0)
+
+// Boolean + Boolean -> adição
+baz += false // 1
+
+// Numero + String -> concatenação
+bar += "foo" // "5foo"
+
+// String + Boolean -> concatenation
+foo += false // "foofalse"
+
+// String + String -> concatenação
+foo += "bar" // "foobar"
+
+// --------------------------------------------------------------------- // 
+//SUBTRAÇÃO
+// Dadas as variáveis
+
+bar = 5
+
+bar -= 2     // 3
+bar -= "foo" // NaN (Não numérico)
+// --------------------------------------------------------------------- // 
+
+//MULTIPLICAÇÃO
+// Assuming the following variable
+bar = 5
+
+bar *= 2     // 10
+bar *= "foo" // NaN
+
+// --------------------------------------------------------------------- // 
+//DIVISÃO
+// Assuming the following variable
+bar = 5
+
+bar /= 2     // 2.5
+bar /= "foo" // NaN
+bar /= 0     // Infinity
+
+// --------------------------------------------------------------------- // 
+//MODULO OU RESTO
+
+// Assuming the following variable
+bar = 5
+
+bar %= 2     // 1
+bar %= "foo" // NaN
+bar %= 0     // NaN
+
+// ---------------------------------------------------------------------// 
+
+// Operador de Exponenciação // 
+// Este operador foi implementado seguindo as normas da ECMAScript2016
+//Sintax
+Operator: x **= y 
+Meaning:  x  = x ** y
+
+// Assuming the following variable
+//  bar = 5
+
+bar **= 2     // 25
+bar **= "foo" // NaN
+
+</script>
+</html>

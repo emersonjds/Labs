@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Logical Operators</title>
+</head>
+<body>
+	<p>
+		<h3>MDN</h3>
+		Operadores lógicos são utilizados tipicamente com valores booleanos (lógicos); neste caso, retornam um valor booleano. Entretanto, os operadores && e || na verdade retornam o valor de um dos operandos especificados, de forma que se esses operadores forem utilizados com valores não-booleanos, eles possam retornar um valor não-booleano.
+	</p>
+
+	<p> x = 5 , y = 7 AND z = 3 , w = 1 => x < y <strong>AND</strong> z > w : 
+		<strong>
+			<script>
+				var x = 5;
+				var y = 7;
+				var z = 3;
+				var w = 1;
+
+				document.write( (x < y) && (z > w) );
+			</script> 
+		</strong>
+	</p>
+
+	<p> x = 9 , y = 6 OR z = 4 , w = 4 => x < y <strong>OR</strong> z > w : 
+		<strong>
+			<script>
+				var x = 9;
+				var y = 6;
+				var z = 4;
+				var w = 4;
+
+				document.write( (x == y) || (z == w) );
+			</script> 
+		</strong>
+	</p>
+
+	<p> x = 8 , y = 8 <strong> ! </strong> (x == y) : 
+		<strong>
+			<script>
+				var x = 8;
+				var y = 8;
+
+				document.write(! (x == y ) );
+			</script> 
+		</strong>
+	</p>
+</body>
+</html>
