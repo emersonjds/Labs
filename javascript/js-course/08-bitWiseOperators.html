@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BitWise Operators</title>
+</head>
+<body>
+	<h3>MDN Definition</h3>
+	<a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#Operadores_lógicos">Operadores</a>
+	<p>
+		Operadores bit a bit lógicos <br><br>
+
+		Conceitualmente, os operadores bit a bit lógicos funcionam da seguinte maneira:
+
+		<ol>
+			<li>
+				<p>
+					Os operandos são convertidos em inteiros de 32 bits e expressos como uma série de bits (zeros e uns).
+				</p>
+			</li>
+			<li>
+				<p>
+					Cada bit do primeiro operando é pareado com o bit correspondente do segundo operando: primeiro bit com primeiro bit, segundo bit com segundo bit e assim por diante.
+				</p>
+			</li>
+			<li>
+				<p>
+					O operador é aplicado a cada par de bits e o resultado é construído bit a bit.
+				</p>
+			</li>
+		</ol>
+	</p>
+
+	<p>(a & b) => 
+		<script>
+			var a = 2; //10 
+			
+			var b = 3; //11
+			result = ( a & b );
+
+			document.write(result);
+		</script>
+	</p>
+
+	<p>(a | b ) => 
+		<script>
+			var a = 2; // 10
+			var b = 3; // 11
+			result = (a | b );
+			document.write(result); 
+		</script>
+	</p>
+
+	<p> (a ^ b ) =>
+		<script>
+			var a = 2; //10
+			var b = 3; //11
+			result = (a ^ b );
+			document.write(result);
+		</script>
+	</p>
+
+
+
+</body>
+</html>
