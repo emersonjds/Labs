@@ -1,0 +1,56 @@
+  <div class="row">
+  	<form class="col s12">
+
+  		<div class="row">
+  			<div class="input-field col s6">
+  				<input placeholder="ID" name="produto" id="produto" ng-model="produto.id" type="text" class="validate">
+  				<label for="produto"></label>
+  			</div>
+
+  			<div class="input-field col s6">
+  				<input placeholder="Nome do Produto" name="produto" id="produto" ng-model="produto.nome" type="text" class="validate">
+  				<label for="produto"></label>
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div class="input-field col s6">
+  				<input placeholder="Categoria" id="categoria" name="categoria" type="text" ng-model="produto.categoria" class="validate">
+  				<label for="categoria"></label>
+  			</div>
+  			<div class="input-field col s6">
+  				<input placeholder="Preço" id="preco" name="preco" type="text" ng-model="produto.preco" class="validate">
+  				<label for="preco"></label>
+  			</div>
+  		</div>
+  		<div class="row">
+  			<button class="btn waves-effect waves-light" type="button" ng-click="adicionaProduto(produto)" name="action">Cadastrar
+  				<i class="material-icons"></i>
+  			</button>
+  		</div>
+  	</form>
+  </div>
+
+
+
+  <table>
+  	<thead>
+  		<h2>Tabela de Produtos</h2>
+  		<tr>
+  			<th data-field="id">#ID</th>
+  			<th data-field="id">Nome</th>
+  			<th data-field="name">Categoria</th>
+  			<th data-field="price"> Preço</th>
+  		</tr>
+  	</thead>
+
+  	<tbody>
+  		<tr ng-repeat="produto in produtos">
+  			<td>{{produto.id}}</td>
+  			<td>{{produto.nome}}</td>
+  			<td>{{produto.categoria}}</td>
+  			<td>{{produto.preco}}</td>
+  		</tr>
+  	</tbody>
+  </table>
+
+  <a ng-href="#/produto/adicionar" class="waves-effect waves-light btn">Adicionar Produto</a>
