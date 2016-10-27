@@ -24,8 +24,34 @@
 		default :
 			console.log("Não é sigla de um estado da região");
 	}
+
+	function testSwitch () {
+		var x = 2;
+		var result;
+
+		switch (x) {
+			case 0 :
+				result = 0;
+			break;
+
+			case 1 :
+				result = 1;
+			break;
+
+			case 2 :
+				result = 2;
+			break;
+
+			default :
+				result = "Nothing";
+				break;
+		}
+		document.getElementById("demo").innerHTML = result;
+	}
 </script>
 <body>
-	
+	<p><button onclick="testSwitch();">Click here for test Switch</button></p>
+	<p id="demo" name="demo">Resultado do Switch</p>
+
 </body>
 </html>
