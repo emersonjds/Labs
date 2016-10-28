@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For</title>
+</head>
+
+<script type="text/javascript">
+	var msg = "";
+
+	for (var i = 0 ; i < 10; i++) {
+		if (i == 9 ) {
+			msg += i;
+			break;
+		}
+		msg += i + ", ";
+
+	}
+	console.log(msg);
+
+	var mensagem = "";
+	for (var i = 0; i <= 20; i++) {
+		if (i % 2 == 0) {
+			if (i == 20) {
+				mensagem += i;
+				break;
+			}
+			mensagem += i + ", ";
+		};
+	};
+	console.log(mensagem);
+
+	//With other operator
+	var msg1 = "";
+	for (var i = 0; i <= 20 ; i++) {
+		if (i == 20) {
+			msg1 += i;
+			break;
+		} else if (i % 2 != 0) {
+			msg1 += "";
+			continue;
+		}
+		msg1 += i + ", ";
+	}
+
+	console.log(msg1)
+
+	function testFor() {
+		var varout = "";
+		
+		for (var i = 0; i < 5; i++) {
+			varout += "The number is " + i + "<br>";
+		}
+		document.getElementById("out").innerHTML = varout;
+	}
+
+	function testFor2 (){
+		var result = 0;
+
+		for (var i = 0; i <= 10; i++) {
+			result += i * 2;
+			if (i == 6) {
+				document.getElementById("cinquenta").innerHTML = "Hora de rever o relogio";
+			}
+		}
+		document.getElementById("out2").innerHTML = result;
+	}
+
+</script>
+<body>
+	<p><button onclick="testFor()">Click here for test For</button></p>
+	<p id="out">Result</p>
+
+	<p><button onclick="testFor2()">Click here to test 2 of loop for</button></p>
+	<p>Aviso importante <span id="cinquenta">XABLAU</span></p>
+	<p id="out2">Result</p>
+
+</body>
+</html>
