@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Learn Exceptions</title>
+</head>
+
+<script>
+	// try {
+	// 	. . . script com possivel excessao
+	// }catch(e) {
+	// 	. . . tratamento do erro
+	// }finally {
+	// 	. . . script a executar caso ocorra ou nao excessao	
+	// }
+
+	try {
+		var x = u;
+		var y = x + 2;
+		console.log(y);
+	} catch (e) {
+		alert((e.message) + "\n" + e.name + "\n" + e.toString());
+	};
+
+	var x = prompt("Entre com um numero entre 0 e 10");
+
+	try {
+		if (x <= 0) {
+			throw("er1");
+		}
+		if (x >= 11) {
+			throw("er2");
+		}
+		if (isNaN(parseInt(x))) {
+			throw("er3");
+		}
+	} catch (e) {
+		if (e == "er1") 
+			alert("O numero deve ser maior que 0");
+		else if(e == "er2")
+			alert("O numero deve ser menor que 11");
+		else
+			alert("Entre somente com os valores propostos");
+	}
+
+	
+</script>
+<body>
+	
+</body>
+</html>

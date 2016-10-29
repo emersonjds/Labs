@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>For in</title>
+</head>
+
+<script>
+
+//Na declaração for um loop é criado para percorrer as variaveis ou indices de um objeto
+
+var carro = {
+	marca  : "Volkswagen", 
+	modelo : "Gol",
+	comprimento : "1.80",
+	largura : "2.10", 
+	altura : "1.70"
+}
+
+//For-in
+
+var msg = " ", k;
+
+for(k in carro) {
+	msg += k + " :" + carro[k] + "<br>";
+} 
+
+console.log(msg);
+</script>
+<body>
+	
+</body>
+</html>
