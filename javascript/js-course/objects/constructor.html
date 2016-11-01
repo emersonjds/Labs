@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Constructor</title>
+</head>
+<script>
+	var PI = Math.PI; //retorna a constante PI
+	var pot = Math.pow(x,y); //retorna xy em que x é elevado a potencia y;
+
+	function Cilindro(r, h) {
+		this.raioBase = r;
+		this.altura = h;
+		this.areaBase = calculaAreaBase;
+	};
+
+	function calculaAreaBase () {
+		aBase = Math.PI * Math.pow(this.raioBase, 2); //retorna a area de Base
+	}
+
+	function cilindoBase (r,h) {
+		this.altura = h;
+		this.raioBase = r;
+		this.areaBase = function calculaAreaBase () {
+			return Math.PI * Math.pow(this.raioBase);
+		}
+	}
+
+	cilindroUm = new Cilindro(10, 5);
+	alert("Raio de base " + cilindroUm.raioBase + " altura " + cilindroUm.altura);
+
+	cilindroDois = new Cilindro(2,2);
+	alert("Raio da base " + cilindroUm.raioBase + "\nAltura" + cilindroUm.altura + "\nArea da Base" + cilindroUm.area Base;)</script>
+<body>
+	
+</body>
+</html>
