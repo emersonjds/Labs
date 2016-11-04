@@ -1,0 +1,99 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/carrinho.css">
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+	<div class="carrinho">
+		<h2>Carrinho entrega em Sao Paulo</h2>
+		<table>
+			<thead>
+				<tr>
+					<td></td>
+					<td>Nome</td>
+					<td>Quantidade</td>
+					<td>Valor</td>
+					<td>Total</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><img src="imagens/tablet.jpg"></td>
+					<td>Tablet miPad 18</td>
+					<td>1</td>
+					<td>499.99</td>
+					<td class="preco">499.99</td>
+				</tr>
+				<tr>
+					<td><img src="imagens/telefone.png"></td>
+					<td>Telefone miPhone 18</td>
+					<td>2</td>
+					<td>199.99</td>
+					<td class="preco">399.98</td>
+				</tr>
+				<tr>
+					<td><img src="imagens/sapato.jpg"></td>
+					<td>Sapato</td>
+					<td>1</td>
+					<td>99.99</td>
+					<td class="preco">99.99</td>
+				</tr>
+				<tr>
+					<td><img src="imagens/monitor.jpg"></td>
+					<td>Monitor Sam 21</td>
+					<td>1</td>
+					<td>299.00</td>
+					<td class="preco">299.00</td>
+				</tr>
+				<tr>
+					<td><img src="imagens/teclado.jpg"></td>
+					<td>Teclado com fio preto </td>
+					<td>1</td>
+					<td>100.00</td>
+					<td class="preco">100.00</td>
+				</tr>
+				<tr>
+					<td><img src="imagens/mouse.jpg"></td>
+					<td>Mouse wireless</td>
+					<td>1</td>
+					<td>199.00</td>
+					<td class="preco">199.00</td>
+				</tr>
+				<tr>
+					<td><img src="imagens/camiseta.jpg"></td>
+					<td>Camiseta G</td>
+					<td>1</td>
+					<td>25.00</td>
+					<td class="preco">25.00</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="total">
+		<p>O valor total é <span id="valor-total"></span></p>
+		<p>E a quantidade de itens é <span id="quantidade-de-itens"></span></p>
+	</div>
+</body>
+
+<script>
+	
+	var aposInicializado = function () {
+		var totalItens = $('.preco');
+		var valorTotal = 0;
+		console.log(totalItens);
+
+		for(var i = 0; i < totalItens.length; i++ ) {
+			var conteudo = $(totalItens[i]).text();
+			var preco = parseFloat(conteudo);
+			valorTotal += preco;
+		}
+
+		$('#valor-total').text(valorTotal);
+		$('#quantidade-de-itens').text(totalItens.length);
+	}
+
+	$(aposInicializado);
+
+</script>
+</html>
