@@ -76,53 +76,15 @@
 				</tr>
 			</tbody>
 		</table>
+
+		<button id="undo">UNDO</button>
 	</div>
 
 	<div class="total">
 		<p>O valor total é <span id="valor-total"></span></p>
 		<p>E a quantidade de itens é <span id="quantidade-de-itens"></span></p>
 	</div>
+	<script src="assets/js/script.js"></script>
 </body>
 
-<script>
-	
-	var aposInicializado = function () {
-		var totalItens = $('.preco');
-		var valorTotal = 0;
-		console.log(totalItens);
-
-		for(var i = 0; i < totalItens.length; i++ ) {
-			var conteudo = $(totalItens[i]).text();
-			var preco = parseFloat(conteudo);
-			valorTotal += preco;
-		}
-
-		$('#valor-total').text(valorTotal);
-		$('#quantidade-de-itens').text(totalItens.length);
-	}
-
-	var removeItem = function(event) {
-
-		event.preventDefault(); //setando valor padrao de comportamento
-
-		var quantidadeComoString = $("#quantidade-de-itens").text();
-		var atual = parseInt(quantidadeComoString);
-		var novaQuantidade = atual - 1; 
-		
-		$("#quantidade-de-itens").text(novaQuantidade); 
-
-		var self = $(this);
-		self.closest('tr').remove(); //sobe a hirarquia na arvore de DOM até o elemento especificado
-
-		var valorTotal = parseFloat($('#valor-total').text());
-		var preco = parseFloat(self.closest('tr').find('.preco').text());
-		var precoFinal = valorTotal - preco;
-		$('#valor-total').text(precoFinal);
-	}
-
-	$(aposInicializado);
-	$('.remover').click(removeItem);
-
-
-</script>
 </html>
