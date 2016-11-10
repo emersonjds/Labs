@@ -104,14 +104,21 @@
 	var removeItem = function(event) {
 
 		event.preventDefault(); //setando valor padrao de comportamento
-	
+
 		var quantidadeComoString = $("#quantidade-de-itens").text();
 		var atual = parseInt(quantidadeComoString);
 		var novaQuantidade = atual - 1; 
+		
 		$("#quantidade-de-itens").text(novaQuantidade); 
 
 		var self = $(this);
 		self.closest('tr').remove(); //sobe a hirarquia na arvore de DOM até o elemento especificado
+
+		var valorTotal = parseFloat($('#valor-total').text());
+		var preco = parseFloat(self.closest('tr').find('.preco').text());
+		var precoFinal = valorTotal - preco;
+		$('#valor-total').text(precoFinal);
+	}
 
 	$(aposInicializado);
 	$('.remover').click(removeItem);
