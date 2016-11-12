@@ -37,6 +37,15 @@ td {
 	border-bottom: 1px solid #ddd;
 }
 
+.hovering {
+	background-color: #ccc;
+}
+
+
+#mostraPropaganda {
+	display: none;
+}
+
 
 .propaganda td {
 	background: #9F0;
@@ -55,7 +64,7 @@ td {
 	text-decoration: none;
 	text-transform: uppercase;
 	
-	display: inline-block;
+	display: none;
 	padding: 0.5em;
 }
 
@@ -81,6 +90,7 @@ input[type=button] {
 	line-height: 2;
 	margin: 2em 0;
 }
+
 .recuperado {
 	background-color: #FE0;
 }

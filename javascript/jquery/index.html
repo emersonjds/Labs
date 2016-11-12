@@ -4,6 +4,10 @@
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
+	<h2>Geral</h2>
+	<a href="" class="alternaPropaganda">Esconder propagandas</a>
+	<a href="" id="mostraPropaganda" class="alternaPropaganda">Mostra propagandas</a>
+
 	<div class="carrinho">
 		<h2>Carrinho entrega em Sao Paulo</h2>
 		<table>
@@ -24,15 +28,7 @@
 					<td>1</td>
 					<td>499.99</td>
 					<td class="preco">499.99</td>
-					<td><a class="remover" href="">REMOVER</a></td>
-				</tr>
-				<tr>
-					<td><img src="imagens/telefone.png"></td>
-					<td>Telefone miPhone 18</td>
-					<td>2</td>
-					<td>199.99</td>
-					<td class="preco">399.98</td>
-					<td><a class="remover" href="">REMOVER</a></td>
+					<td><a class="remove-item" href="">REMOVER</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/sapato.jpg"></td>
@@ -40,7 +36,7 @@
 					<td>1</td>
 					<td>99.99</td>
 					<td class="preco">99.99</td>
-					<td><a class="remover" href="">REMOVER</a></td>
+					<td><a class="remove-item" href="">REMOVER</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/monitor.jpg"></td>
@@ -48,7 +44,7 @@
 					<td>1</td>
 					<td>299.00</td>
 					<td class="preco">299.00</td>
-					<td><a class="remover" href="">REMOVER</a></td>
+					<td><a class="remove-item" href="">REMOVER</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/teclado.jpg"></td>
@@ -56,7 +52,7 @@
 					<td>1</td>
 					<td>100.00</td>
 					<td class="preco">100.00</td>
-					<td><a class="remover" href="">REMOVER</a></td>
+					<td><a class="remove-item" href="">REMOVER</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/mouse.jpg"></td>
@@ -64,7 +60,7 @@
 					<td>1</td>
 					<td>199.00</td>
 					<td class="preco">199.00</td>
-					<td><a class="remover" href="">REMOVER</a></td>
+					<td><a class="remove-item" href="">REMOVER</a></td>
 				</tr>
 				<tr>
 					<td><img src="imagens/camiseta.jpg"></td>
@@ -72,17 +68,49 @@
 					<td>1</td>
 					<td>25.00</td>
 					<td class="preco">25.00</td>
-					<td><a class="remover" href="">REMOVER</a></td>
+					<td><a class="remove-item" href="">REMOVER</a></td>
 				</tr>
 			</tbody>
 		</table>
 
-		<button id="undo">UNDO</button>
+		<button class="undo">UNDO</button>
+		<div class="total resumo">
+			<p>O valor total é <span class="valor-total"></span></p>
+			<p>E a quantidade de itens é <span class="quantidade-de-itens"></span></p>
+		</div>
 	</div>
 
-	<div class="total">
-		<p>O valor total é <span id="valor-total"></span></p>
-		<p>E a quantidade de itens é <span id="quantidade-de-itens"></span></p>
+	<div class="carrinho">
+		<h2>Carrinho entrega em Vitoria</h2>
+		<table>
+			<thead>
+				<tr>
+					<td></td>
+					<td>Nome</td>
+					<td>Quantidade</td>
+					<td>Valor</td>
+					<td>Total</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><img src="imagens/telefone.png"></td>
+					<td>Telefone miPhone 18</td>
+					<td>2</td>
+					<td>199.99</td>
+					<td class="preco">399.98</td>
+					<td><a class="remove-item" href="">REMOVER</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+		<button class="undo">UNDO</button>
+		<div class="total resumo">
+			<p>O valor total é <span class="valor-total"></span></p>
+			<p>E a quantidade de itens é <span class="quantidade-de-itens"></span></p>
+		</div>
 	</div>
 	<script src="assets/js/script.js"></script>
 </body>
