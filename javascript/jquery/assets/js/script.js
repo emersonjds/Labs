@@ -78,6 +78,8 @@ var alternaPropaganda = function (event) {
 $(aposInicializado);
 $('.undo').click(undo);
 $('.remove-item').click(removeItem);
+$('#escondePropaganda').click(escondePropaganda);
+
 $('.alternaPropaganda').click(alternaPropaganda);
 $('tr').hover(daDestaque, tiraDestaque);
 
