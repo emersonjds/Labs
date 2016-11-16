@@ -9,3 +9,13 @@
 	padding-top: 25px;
 	padding-bottom: 25px;
 }
+
+.grupo-radio, .contato-select {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.grupo-radio > .radio {
+	margin-top: 0;
+}

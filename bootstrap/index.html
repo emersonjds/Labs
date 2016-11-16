@@ -156,6 +156,47 @@
 			</div>
 		</div>
 	</section>
-	
+
+	<section class="form-contato">
+		<div class="container">
+			<h2>Contato</h2>
+			<p>Entre em contato conosco</p>
+			<form action="">
+				<div class="form-group">
+					<label for="nome"> Nome: </label>
+					<input type="text" class="form-control" placeholder="Informe seu nome">
+				</div>
+				<div class="form-group">
+					<label for="email"> Email: </label>
+					<div class="input-group">
+						<div class="input-group-addon">@</div>
+						<input type="email" class="form-control" placeholder="Informe seu email">
+					</div>
+				</div>
+
+				<div class="grupo-radio">
+					<div class="radio">
+						<label>
+							<input type="radio" name="tipo-pessoa" checked> 
+							Pessoa Física
+						</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="tipo-pessoa"> 
+								Pessoa Jurídica
+							</div>
+						</div>
+					</div><!-- 
+				--><select class="contato-select form-control">
+				<option disabled selected>Situação</option>
+				<option>Casa</option>
+				<option>Apartamento</option>
+				<option>Mansão</option>
+			</select>
+			<button class="btn btn-primary" type="submit">Enviar</button>
+		</div>
+	</form>
+</section>
+
 </body>
 </html>
