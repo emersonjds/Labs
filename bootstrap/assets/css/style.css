@@ -19,3 +19,14 @@
 .grupo-radio > .radio {
 	margin-top: 0;
 }
+
+footer {
+	background-color: #333;
+	color:#FFF;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+footer address:last-child {
+	margin-bottom: 0;
+}
