@@ -12,6 +12,7 @@
 
 		function mostra(text) {
 			document.write(text);
+			pulaLinha();
 		}
 
 		var vitorias = parseInt(prompt("Informe o numero de vitorias do seu time"));
@@ -23,6 +24,16 @@
 
 		mostra("O numero de pontos do seu time é " + calculaPontos(vitorias, empates));
 
+		if (calculaPontos(vitorias, empates) > 28 )
+			mostra("Seu time esta melhor do que no ano passado");
+
+		if (calculaPontos(vitorias, empates) < 28 )
+			mostra("Seu time esta pior do que no ano passado");
+
+		if (calculaPontos(vitorias, empates) == 28 )
+			mostra("Seu time esta com a mesma pontuação do ano passado");
+
+		mostra ("Fim das operações")
 	</script>
 </body>
 </html>
