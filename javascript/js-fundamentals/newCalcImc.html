@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function pulaLinha() {
+			document.write("<br>");
+		}
+
+		function mostra(text) {
+			document.write(text);
+		}
+
+		function calculaNewImc(peso, altura) {
+			return peso / (altura * altura);
+		}
+
+		var imcCalculado = Math.round(calculaNewImc(72, 1.66));
+
+		mostra("O meu imc é " + imcCalculado);
+
+	</script>
+</body>
+</html>

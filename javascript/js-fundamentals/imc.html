@@ -17,11 +17,13 @@
 
 		function calculaIMC(peso, altura) {
 			var imc = Math.round(peso / (altura * altura));
-			mostra("O valor do imc é " + imc);
+			
+			return imc;
 		}
 
-		calculaIMC(72, 1.66);
+		var imcEmerson = calculaIMC(72, 1.66);
 		
+		mostra("O imc calculado é " + imcEmerson);
 	</script>
 </body>
 </html>
