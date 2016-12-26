@@ -12,15 +12,33 @@
 
 		function mostra(text) {
 			document.write(text);
+			pulaLinha();
 		}
 
 		function calculaNewImc(peso, altura) {
 			return peso / (altura * altura);
 		}
 
-		var imcCalculado = Math.round(calculaNewImc(72, 1.66));
 
-		mostra("O meu imc é " + imcCalculado);
+		var nome = prompt("Informe seu nome");
+		var peso = parseInt(prompt(nome + ",  Informe seu peso"));
+		var altura = prompt(nome + ",Informe sua altura");
+
+		var imcCalculado = Math.round(calculaNewImc(peso, altura));
+
+		mostra(nome + ", o seu IMC esta em " + imcCalculado);
+
+		if(imcCalculado < 18.5) {
+			mostra("Voce esta abaixo do esperado pela OMS");
+		}
+
+		if (imcCalculado > 35) {
+			mostra("Voce esta acima do esperado pela OMS");	
+		}
+
+		if(imcCalculado >= 18.5 && imcCalculado <= 35) {
+			mostra("Voce esta na média global segundo a OMS");		
+		}
 
 	</script>
 </body>
