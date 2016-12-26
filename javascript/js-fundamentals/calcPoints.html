@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function pulaLinha() {
+			document.write("<br>");
+		}
+
+		function mostra(text) {
+			document.write(text);
+		}
+
+		var vitorias = parseInt(prompt("Informe o numero de vitorias do seu time"));
+		var empates = parseInt(prompt("Informe o numero de empates do seu time"));
+
+		function calculaPontos(vitorias, empates) {
+			return vitorias * 3 + empates;
+		}
+
+		mostra("O numero de pontos do seu time é " + calculaPontos(vitorias, empates));
+
+	</script>
+</body>
+</html>
