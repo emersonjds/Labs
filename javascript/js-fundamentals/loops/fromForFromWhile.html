@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>to For from While</title>
+</head>
+<body>
+	<!-- 
+		Converter a instrução for para while
+
+		for( var i = 0; i < 10; i++ ) {
+	    alert( "O resultado é " + (2 * i) );
+		}
+	-->
+
+	<script>
+		function pulaLinha() {
+			document.write("<br>");
+		}
+
+		function mostra(text) {
+			document.write(text);	
+			pulaLinha();
+		}
+
+		var cont = 0;
+
+		while(cont <= 10) {
+			var calculo = 2 * cont;
+			mostra(" O resultado é " + calculo);
+				cont++;
+			}
+		</script>
+	</body>
+	</html>
