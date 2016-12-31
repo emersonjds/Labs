@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New Game</title>
+</head>
+<body>
+
+	<input type="text">
+	<button> Descobrir Segredo</button>
+
+	<script>
+		var segredo = Math.round(Math.random() * 10);
+
+		var dados = document.querySelector("input");
+		var botao = document.querySelector("button");
+
+		dados.focus();
+
+		function exibeInformacoes() {
+
+			if(dados.value == segredo) {
+				alert("Parabens voce acertou com o valor de " + dados.value);
+			} else {
+				alert("ERROUUUUUUUUUUUUUU");
+			}
+			
+			dados.value = ""; 
+			dados.focus();
+		}
+
+		botao.onclick = exibeInformacoes; // aqui a funçào é chamada internamente
+
+	</script>
+</body>
+</html>
