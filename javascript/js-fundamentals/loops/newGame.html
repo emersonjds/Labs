@@ -10,7 +10,9 @@
 	<button> Descobrir Segredo</button>
 
 	<script>
-		var segredo = Math.round(Math.random() * 10);
+		// var segredo = Math.round(Math.random() * 10);
+
+		var segredos = [1, 3, 4, 8];
 
 		var dados = document.querySelector("input");
 		var botao = document.querySelector("button");
@@ -19,15 +21,15 @@
 
 		function exibeInformacoes() {
 
-			if(dados.value == segredo) {
-				alert("Parabens voce acertou com o valor de " + dados.value);
-			} else {
-				alert("ERROUUUUUUUUUUUUUU");
+			for (var i = 0; i < segredos.length; i++) {
+				if(dados.value == segredos[i]) {
+					console.log('teste');
+					break;
+				}
 			}
-			
 			dados.value = ""; 
 			dados.focus();
-		}
+		}	
 
 		botao.onclick = exibeInformacoes; // aqui a funçào é chamada internamente
 
