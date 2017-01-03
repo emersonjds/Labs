@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>While Exercice 1</title>
+</head>
+<body>
+	
+	<script>
+		function pulaLinha() {
+			document.write();
+		}
+
+		function mostra(text) {
+			document.write(text);
+			pulaLinha();
+		}
+
+		var contador = 20;
+
+		while (contador >= 0) {
+			mostra(contador);
+			
+			contador--;
+		}
+
+		mostra("Fim");
+	</script>
+</body>
+</html>

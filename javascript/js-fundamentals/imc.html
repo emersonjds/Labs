@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IMC Calc</title>
+</head>
+<body>
+	
+	<script>
+		function pulaLinha() {
+			document.write("<br>");
+		}
+		function mostra(texto) {
+			document.write(texto);
+			pulaLinha();
+		}
+
+		function calculaIMC(peso, altura) {
+			var imc = Math.round(peso / (altura * altura));
+			
+			return imc;
+		}
+
+		var imcEmerson = calculaIMC(72, 1.66);
+		
+		mostra("O imc calculado é " + imcEmerson);
+	</script>
+</body>
+</html>

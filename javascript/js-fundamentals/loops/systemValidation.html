@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Validation</title>
+</head>
+<body>
+	<script>
+		
+		var loginCadastrado = "emerson";
+		var senhaCadastrada = "alura321";
+
+		var maximoTentativas = 3;
+		var tentativaAtual = 1;
+
+		while(tentativaAtual <= maximoTentativas) {
+
+			var loginInformado = prompt("Informe seu login");
+			var senhaInformada = prompt("Informe sua senha");
+
+			if( loginCadastrado == loginInformado && senhaCadastrada == senhaInformada ) {
+
+				alert("Bem-vindo ao sistema, " + loginInformado);
+
+            break; // acertou, sai do loop while porque não faz sentido continuar perguntando
+
+        } else {
+
+        	alert("Login inválido. Tente novamente");
+        }
+
+        tentativaAtual++; // vai para a próxima tentativa
+
+    }
+
+
+</script>
+</body>
+</html>

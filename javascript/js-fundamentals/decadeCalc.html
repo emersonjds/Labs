@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function pulaLinha() {
+			document.write("<br>");
+		}
+
+		function mostraTexto(texto) {
+			document.write(texto);
+			pulaLinha()
+		}
+
+		function calculaGeracoes(primeiroAno, anoAtual) {
+			var geracoes = Math.round((anoAtual - primeiroAno) / 28);
+			document.write(geracoes);
+		}
+
+		var anosPassados = 2016 - 1500;
+		mostraTexto("Em media um casal tem um filho quando tem 28 anos");
+		mostraTexto("Desta forma de 1500 até hoje ja se passaram " + anosPassados +  "anos, o que nos da " ), Math.round(calculaGeracoes(1500, 2016), mostraTexto(" de gerações"));
+	</script>
+</body>
+</html>
