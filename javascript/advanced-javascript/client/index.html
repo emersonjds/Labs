@@ -8,11 +8,11 @@
     
 </head>
 <body class="container">
-    
+
     <h1 class="text-center">Negociações</h1>
     
     <form class="form">
-        
+
         <div class="form-group">
             <label for="data">Data</label>
             <input type="date" id="data" class="form-control" required autofocus/>        
@@ -59,6 +59,19 @@
         </tfoot>
     </table>
     
-    <script src="js/index.js"></script>
+    <!-- <script src="js/index.js"></script> -->
+    <script src="js/app/models/Negociacao.js"></script>
+
+    <script>
+        var n1 = new Negociacao();
+        n1._quantidade = 10;
+        n1._valor = 100;
+
+        console.log(n1.getData());
+        console.log(n1.getQuantidade());
+        console.log(n1.getValor());
+        console.log(n1.getVolume());
+
+    </script>
 </body>
 </html>
