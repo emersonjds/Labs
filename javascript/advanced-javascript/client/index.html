@@ -63,8 +63,8 @@
     <script>
     	var n1 = new Negociacao(new Date(), 5, 300);
     	n1._data = new Date();
-    	n1.valor = 10;
-    	n1.quantidade = 30;
+    	
+    	Object.freeze(n1); //congelamento de objeto
 
     	console.log(n1.data);
     	console.log(n1.valor);

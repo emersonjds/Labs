@@ -4,6 +4,7 @@ class Negociacao {
 		this._data = new Date();
 		this._quantidade = 1;
 		this._valor = 0.0;
+		Object.freeze(this); //a estancia ja é criada sem sofrer mais modificação
 	}
 
 	//._ esta propriedade permite permutar o atributo para o modo privado sendo acessdo apenas por metodos
