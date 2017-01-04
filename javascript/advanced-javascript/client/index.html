@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="css/bootstrap-theme.css">
 </head>
 <body class="container">
-    
+
     <h1 class="text-center">Negociações</h1>
     
     <form class="form">
-        
+
         <div class="form-group">
             <label for="data">Data</label>
             <input type="date" id="data" class="form-control" required autofocus/>        
@@ -61,6 +61,7 @@
     <script src="js/app/models/Negociacao.js"></script>
     <script src="js/Teste.js"></script>
     <script src="js/Pessoa.js"></script>
+    <script src="js/Conta.js"></script>
 
     <script>
     	var n1 = new Negociacao(new Date(), 5, 300);
@@ -79,6 +80,28 @@
         var pessoa = new Pessoa('Emerson', 'Junior');
 
         console.log(pessoa.obtemNomeCompleto());
-    </script>
+
+        var conta = new Conta('Emerson', 16332);    
+        conta.deposita(500);
+
+        console.log(conta.titular);
+        console.log(conta.conta);
+        console.log(conta.saldo);
+
+        let idade = 18; 
+        var temCarteira = true;
+
+        (function() {
+            if(idade >= 18 && temCarteira) {
+                var msg = 'Pode dirigir';
+                console.log(msg);
+            }
+        })(); //imprime undefined devido a chamada da função em si 
+
+let nome = "Emerson";
+let nome = "Maria";
+
+console.log(nome);
+</script>
 </body>
 </html>
