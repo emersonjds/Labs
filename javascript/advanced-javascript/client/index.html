@@ -59,6 +59,8 @@
     </table>
     
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/Teste.js"></script>
+    <script src="js/Pessoa.js"></script>
 
     <script>
     	var n1 = new Negociacao(new Date(), 5, 300);
@@ -70,6 +72,13 @@
     	console.log(n1.valor);
     	console.log(n1.quantidade);
     	console.log(n1.volume);
+
+    	var teste = new Teste('Emerson', 'Cadelo');
+    	console.log(teste);
+
+        var pessoa = new Pessoa('Emerson', 'Junior');
+
+        console.log(pessoa.obtemNomeCompleto());
     </script>
 </body>
 </html>
