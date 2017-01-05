@@ -10,7 +10,7 @@
 
     <h1 class="text-center">Negociações</h1>
     
-    <form class="form">
+    <form class="form" onsubmit="negociacao.adiciona(event)">
 
         <div class="form-group">
             <label for="data">Data</label>
@@ -59,6 +59,7 @@
     </table>
     
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
     <script src="js/Teste.js"></script>
     <script src="js/Pessoa.js"></script>
     <script src="js/Conta.js"></script>
@@ -98,10 +99,12 @@
             }
         })(); //imprime undefined devido a chamada da função em si 
 
-let nome = "Emerson";
-let nome = "Maria";
+        let nome = "Emerson";
 
-console.log(nome);
-</script>
+        console.log(nome);
+
+        let negociacao = new NegociacaoController();
+
+    </script>
 </body>
 </html>
