@@ -10,7 +10,7 @@
 
     <h1 class="text-center">Negociações</h1>
     
-    <form class="form" onsubmit="negociacao.adiciona(event)">
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
 
         <div class="form-group">
             <label for="data">Data</label>
@@ -69,42 +69,53 @@
     	n1._data = new Date();
     	
     	Object.freeze(n1); //congelamento de objeto
-
-    	console.log(n1.data);
-    	console.log(n1.valor);
-    	console.log(n1.quantidade);
-    	console.log(n1.volume);
-
-    	var teste = new Teste('Emerson', 'Cadelo');
-    	console.log(teste);
-
-        var pessoa = new Pessoa('Emerson', 'Junior');
-
-        console.log(pessoa.obtemNomeCompleto());
-
-        var conta = new Conta('Emerson', 16332);    
-        conta.deposita(500);
-
-        console.log(conta.titular);
-        console.log(conta.conta);
-        console.log(conta.saldo);
-
-        let idade = 18; 
-        var temCarteira = true;
-
-        (function() {
-            if(idade >= 18 && temCarteira) {
-                var msg = 'Pode dirigir';
-                console.log(msg);
-            }
-        })(); //imprime undefined devido a chamada da função em si 
-
-        let nome = "Emerson";
-
-        console.log(nome);
-
         let negociacao = new NegociacaoController();
+    	
+        // console.log(n1.data);
+    	// console.log(n1.valor);
+    	// console.log(n1.quantidade);
+    	// console.log(n1.volume);
 
-    </script>
+    	// var teste = new Teste('Emerson', 'Cadelo');
+    	// console.log(teste);
+
+     //    var pessoa = new Pessoa('Emerson', 'Junior');
+
+     //    console.log(pessoa.obtemNomeCompleto());
+
+     //    var conta = new Conta('Emerson', 16332);    
+     //    conta.deposita(500);
+
+     //    console.log(conta.titular);
+     //    console.log(conta.conta);
+     //    console.log(conta.saldo);
+
+     //    let idade = 18; 
+     //    var temCarteira = true;
+
+     //    (function() {
+     //        if(idade >= 18 && temCarteira) {
+     //            var msg = 'Pode dirigir';
+     //            console.log(msg);
+     //        }
+     //    })(); //imprime undefined devido a chamada da função em si 
+
+     //    let nome = "Emerson";
+
+     //    console.log(nome);
+
+     let numeros = [3, 2, 11, 20, 8, 7];
+
+     let novaLista = [...numeros
+        .map(function(item) {
+            if(item % 2 == 1 ) {
+               return item * 2;
+            }
+            return item;
+        })
+     ];
+
+     console.log(novaLista);
+ </script>
 </body>
 </html>

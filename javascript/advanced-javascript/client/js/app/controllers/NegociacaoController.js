@@ -11,8 +11,21 @@ class NegociacaoController {
     adiciona(event) {
         event.preventDefault();
         
-        let data = new Date(this._data.value.split('-'));
-        console.log(data);
+        let data = new Date(
+        	...this._data.value
+        	//instrução de spread operator da ES6, que passa cada item do array como parametro na ordem informada
+        		.split('-')
+        		.map((item, indice) => item - indice % 2));//varre o array criando uma copia e validando os dados na posicao 1
+ 									//instruçao de arrow Function
+
+        let negociacao = new Negociacao(
+        	data,
+        	this._valor.value,
+        	this._quantidade.value
+        );
+
+        console.log(negociacao);
     }
 
 }
+
