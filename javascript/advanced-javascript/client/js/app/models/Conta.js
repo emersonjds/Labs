@@ -8,8 +8,7 @@ class Conta {
 
 	deposita(valor) {
 		this._valor += valor;
-		return console.log('O valor depositado foi ' + valor);
-		
+		return console.log('O valor depositado foi ' + valor);	
 	}
 
 	get conta() {
