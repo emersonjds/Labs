@@ -10,18 +10,11 @@ class NegociacaoController {
 	}
 
     adiciona(event) {
+
         event.preventDefault();
-
-		console.log(negociacao);
-
-		let diaMesAno = DateHelper.dateToText(negociacao.data);
-
-		console.log(diaMesAno);
-
 		this._listaNegociacoes.adiciona(this._criaNegociacao());
 		this._limpaFormulario();
 		
-		console.log(this._listaNegociacoes.negociacoes);
     }
 
 	_criaNegociacao() {
@@ -33,9 +26,9 @@ class NegociacaoController {
 
 	_limpaFormulario() { //o underline informa ao metodo que ele so pode ser utilizado na mesma classe
 		this._data.value = '';
-		this._quantidade.value = 1;
-		this._valor = 0.0;
-		this._data.focus();
+        this._data.focus();
+        this._quantidade.value = 1;
+        this._valor.value = 0.0
 	}
 
 }
