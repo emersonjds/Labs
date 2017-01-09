@@ -1,6 +1,6 @@
 class Conta {
 
-	constructor (titular, conta){
+	constructor (titular, conta, saldo){
 		this._titular = titular;
 		this._conta = conta;
 		this._saldo = 0.0;
@@ -9,6 +9,10 @@ class Conta {
 	deposita(valor) {
 		this._valor += valor;
 		return console.log('O valor depositado foi ' + valor);	
+	}
+
+	atualiza(taxa) {
+		throw new Error('é necessario informar a taxa para atualização');
 	}
 
 	get conta() {
