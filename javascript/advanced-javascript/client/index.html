@@ -5,13 +5,12 @@
     <title>Negociações</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
-    
 </head>
 <body class="container">
 
     <h1 class="text-center">Negociações</h1>
     
-    <form class="form">
+    <form class="form" onsubmit="negociacaoController.adiciona(event)"> 
 
         <div class="form-group">
             <label for="data">Data</label>
@@ -42,35 +41,16 @@
     <br>
     <br>
     
-    <table class="table table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>DATA</th>
-                <th>QUANTIDADE</th>
-                <th>VALOR</th>
-                <th>VOLUME</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-        </tbody>
-        
-        <tfoot>
-        </tfoot>
-    </table>
-    
-    <!-- <script src="js/index.js"></script> -->
+   <div id="negociacoesView"></div>
+
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
+    <script src="js/app/helpers/DateHelper.js"></script>
+    <script src="js/app/models/ListaNegociacoes.js"></script>
+    <script src="js/app/view/NegociacoesView.js"></script>
 
     <script>
-        var n1 = new Negociacao();
-        n1._quantidade = 10;
-        n1._valor = 100;
-
-        console.log(n1.getData());
-        console.log(n1.getQuantidade());
-        console.log(n1.getValor());
-        console.log(n1.getVolume());
+        let negociacaoController = new NegociacaoController();
 
     </script>
 </body>
