@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Upload de arquivo</title>
+</head>
+<body>
+    <label>Informações do arquivo</label>
+    <input class="dados-arquivo" placeholder="formato: nome/tamanho/tipo">
+
+    <button onclick="arquivoController.envia()"  >Enviar</button>
+
+    <script src="js/app/models/Arquivo.js"></script>
+    <script src="js/app/controllers/ArquivoController.js"></script>
+    <script src="js/app/models/ConversorXML.js"></script>
+    <script>
+        let arquivoController = new ArquivoController();
+        
+        ConversorXML.converte({nome: 'Guaraci', idade: 40});        
+    </script>
+</body>
+</html>

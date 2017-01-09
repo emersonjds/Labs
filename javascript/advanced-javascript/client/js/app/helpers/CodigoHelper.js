@@ -13,4 +13,8 @@ class CodigoHelper {
 		return this._texto;
 	}
 
-}
+	_juntalista(lista1, lista2) {
+		return lista1.concat(lista2);
+	}
+
+}	

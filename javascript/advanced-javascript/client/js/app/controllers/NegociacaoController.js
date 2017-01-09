@@ -18,6 +18,7 @@ class NegociacaoController {
     }
 
 	_criaNegociacao() {
+		
 		return new Negociacao(
         	DateHelper.textToDate(this._data.value),
         	this._quantidade.value,
