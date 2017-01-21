@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="primeiroController">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<body>
+<body ng-controller="Principal as ctl">
 
 	<input type="text" ng-model="curso" placeholder="Informe o curso">
 	<h2>O valor do curso digitado é <span ng-bind="curso"></span></h2>
 	<!-- A diferença entre chave dupla e ng-bind é que com o uso do CDN é possivel que o usuario veja o codigo na tela
 	ja com ng-bind, enquanto a api nao for totalmente carregada, o espaço fica invisivel
-	-->
-	
+-->
+
+Varivavel Mensagem : {{ctl.mensagem}}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>s
+<script type="text/javascript">
+	angular.module('primeiroController',[])
+	.controller('Principal', [function() {
+		this.mensagem = 'Veio do Controller';
+	}]);
+</script>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
 </html>
