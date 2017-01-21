@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="primeiroController">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller="Principal as ctl">
+
+
+Varivavel Mensagem : {{ctl.mensagem}}
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+<script type="text/javascript">
+	angular.module('primeiroController',[])
+	.controller('Principal', [function() {
+		this.mensagem = 'Veio do Controller';
+	}]);
+</script>
+
+</body>
+
+
+</html>
