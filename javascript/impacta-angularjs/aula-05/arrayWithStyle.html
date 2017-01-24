@@ -3,15 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="Principal as ctl"> <!-- Informado um alias para o Controller-->
 
 	<!--Conteudo da View-->
 	<h3>Lista de Alunos matriculados</h3>
 
-	<div ng-repeat="aluno in ctl.alunos"> <!-- nome representa cada linha do array que esta acessando -->
+	<!--Chamada a função de verificação de status sendo informado como parametro o aluno-->
+	<div ng-repeat="aluno in ctl.alunos" ng-class="ctl.verificarStatus(aluno.status)"> <!-- nome representa cada linha do array que esta acessando -->
+	
 		Nome : {{aluno.nome}} <br>
 		Curso : {{aluno.curso}} <br>
+		Curso : {{aluno.status}}<br>
 		<span>----------------------------------------</span>
 	</div>
 
@@ -23,14 +27,6 @@
 		.controller('Principal', [function(){
 			var self = this;
 
-			self.nomes = [
-			'Ademar Batista',
-			'Mariana Barbosa',
-			'José Ricardo',
-			'Rodrigo Caetano',
-			'Claudia Comporte'
-			];
-
 			self.alunos = [
 				{nome: 'Emerson Junior', curso: 'Analise e Desenvolvimento de Sistemas', status: 'Aprovado'},
 				{nome: 'Nathalia Lopes', curso: 'Gestão Financeira', status: 'Aprovado'},
@@ -38,6 +34,13 @@
 				{nome: 'Mariana Perillini', curso: 'Logistica', status: 'Aprovado'}
 			];
 
+			//função que recebe a informação do status, podendo ou nao ter conteúdo
+			self.verificarStatus = function(status) {
+				return {
+					finalizado: status != null,
+					pendente: status == null 
+				}
+			};
 		}]);
 	</script>
 
