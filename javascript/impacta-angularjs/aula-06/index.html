@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appAngular">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller="Principal as ctl">
+	
+	<!--Dados exibidos vindos da Controller-->
+
+	<div ng-repeat="(atrib, dados) in ctl.empresa">
+		<strong><span ng-bind="atrib"></span></strong>
+		<br>
+		CNPJ : {{dados.CNPJ}} <br>
+		Descricao : {{dados.Descricao}}<br>
+		Lograudouro: {{dados.Endereco.Logradouro}}<br>
+		Numero: {{dados.Endereco.Numero}}<br>
+		Cidade: {{dados.Endereco.Cidade}} <br>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+	<script>
+		angular.module('appAngular',[])
+			.controller('Principal', [function(){
+				var self = this;
+
+				self.empresa = {
+					Atributos : {
+						CNPJ : '00.965.778/00001-00',
+						Descricao : 'eXm Software de Alta Performance',
+						Endereco : {
+							Logradouro : 'Avenida Paulista',
+							Numero : '1009',
+							Cidade : 'Sao Paulo'
+						}
+					}
+				};
+			}]);
+	</script>
+</body>
+</html>
