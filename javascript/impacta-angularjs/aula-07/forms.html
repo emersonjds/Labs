@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appAngular">
+<head>
+	<meta charset="UTF-8">
+	<title>Formularios</title>
+</head>
+<body ng-controller="Principal as ctl">
+	
+	<h2>Primeiro Formulario</h2>
+	<form ng-submit="ctl.submit1()">
+		<input type="text" ng-model="ctl.nome" placeholder="Informe o nome"><br>
+		<input type="text" ng-model="ctl.curso" placeholder="Informe o curso"><br>
+		
+		<input type="submit" value="submit 1" />
+	</form>
+
+	<h2>Segundo Formulario</h2>
+	<form action="" ng-submit="ctl.submit2()">
+		<input type="text" ng-model="ctl.aluno.nome" placeholder="Informe o nome"><br>
+		<input type="text" ng-model="ctl.aluno.curso" placeholder="Informe o nome do curso"><br>
+
+		<input type="submit" value="submit 2" />
+	</form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script>
+		angular.module('appAngular', [])
+		.controller('Principal', [function(){
+
+			var self = this;
+
+			self.submit1 = function() {
+				//aluno é criado explicitamente
+				var aluno = {
+					nome : self.nome,
+					curso: self.curso, 
+				};
+
+				alert('Dados do primeiro Formulario\n' + aluno.nome + " " + aluno.curso);
+			}
+
+			self.submit2 = function() {
+				//o objeto aluno é criado implicitamente no form 
+				alert('Dados do segundo formulario : \n' + self.aluno.nome + '\n' + self.aluno.curso);
+			}
+
+		}]);
+	</script>
+</body>
+</html>
