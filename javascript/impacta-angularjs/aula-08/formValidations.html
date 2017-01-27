@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="appAngular">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<body>
+<body ng-controller="Principal as ctl">
 	
+	<h2>Validação de Formulario</h2>
+	<form action="" ng-submit="ctl.submit()" name="alunos-form">
+		<!--Aqui o objeto esta sendo instanciado implicitamente-->
+		<input type="text" class="nome" ng-model="ctl.aluno.nome" ng-minlenght="4" required>
+
+		<span ng-show="alunosForm.anome.$error.required">
+			Campo Obrigatório
+		</span>
+		<br>
+
+		<h3>Curso</h3>
+		<input type="text" ng-model="ctl.aluno.curso"><br>
+		<input type="submit" value="Enviar">
+	</form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script>
+		angular.module('appAngular', [])
+			.controller('Principal', [function(){
+
+				var self = this;
+				self.submit = function() {
+
+				}
+			}]);
+	</script>
 </body>
 </html>
