@@ -9,7 +9,7 @@
 	<h2>Validação de Formulario</h2>
 	<form action="" ng-submit="ctl.submit()" name="alunos-form">
 		<!--Aqui o objeto esta sendo instanciado implicitamente-->
-		<input type="text" class="nome" ng-model="ctl.aluno.nome" ng-minlenght="4" required>
+		<input type="text" class="anome" ng-model="ctl.aluno.nome" ng-minlenght="4" required>
 
 		<span ng-show="alunosForm.anome.$error.required">
 			Campo Obrigatório
@@ -30,7 +30,10 @@
 				self.submit = function() {
 
 				}
+
+				console.log('formValidations.html');
 			}]);
+
 	</script>
 </body>
 </html>
