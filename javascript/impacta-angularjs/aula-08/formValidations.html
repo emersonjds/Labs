@@ -3,13 +3,35 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+
+	<style>
+		/*se a caixa de texto for valida, a cor sera verde */
+		.nome.ng-valid {
+			color: green;
+		}
+
+		/*associado ao estado do form*/
+		.nome.ng-dirty.ng-invalid-required {
+			background-color: red;
+		}
+
+		.nome.ng-dirty.ng-invalid-minlength {
+			color: orange;
+		}
+	</style>
 </head>
 <body ng-controller="Principal as ctl">
 	
 	<h2>Validação de Formulario</h2>
-	<form action="" ng-submit="ctl.submit()" name="alunos-form">
+	<form ng-submit="ctl.submit()" name="alunosForm">
+		Nome:
 		<!--Aqui o objeto esta sendo instanciado implicitamente-->
-		<input type="text" class="anome" ng-model="ctl.aluno.nome" ng-minlenght="4" required>
+		<input type="text" 
+			   class="nome" 
+			   name="anome" 
+			   ng-model="ctl.aluno.nome" 
+			   required 
+			   ng-minlenght="4"/>
 
 		<span ng-show="alunosForm.anome.$error.required">
 			Campo Obrigatório
@@ -24,15 +46,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 	<script>
 		angular.module('appAngular', [])
-			.controller('Principal', [function(){
+		.controller('Principal', [function(){
 
-				var self = this;
-				self.submit = function() {
-
-				}
-
-				console.log('formValidations.html');
-			}]);
+			var self = this;
+			self.submit = function() {
+				//code //
+			}
+		}]);
 
 	</script>
 </body>
