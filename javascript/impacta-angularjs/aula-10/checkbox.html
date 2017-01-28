@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appAngular">
+<head>
+	<meta charset="UTF-8">
+	<title>CheckBoxes with Angularjs</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+</head>
+<body ng-controller="Principal as ctl">
+
+	<h3>Trabalhando com Checkbox</h3>
+	
+	<form name="formCursos">
+		<div ng-repeat="curso in ctl.cursos">
+			<label>{{curso.descricao}} 
+				<input type="checkbox" ng-model="curso.selecionado">
+			</label>{{curso.selecionado}}<br>
+		</div>	
+	</form>
+
+	<script>
+		angular.module('appAngular', [])
+			.controller('Principal', [function(){
+			
+			var self = this;
+
+			//Coleção
+			self.cursos = [
+				{descricao : 'Java', selecionado : true},
+				{descricao : 'Javascript', selecionado : false},
+				{descricao : 'NodeJS', selecionado : false}
+			]; 
+
+			self.submit = function() {
+				alert('Nome do curso' + self.curso);
+			}
+		}]);
+	</script>
+</body>
+</html>
