@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Criando Serviços com Angular</title>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script>
+		angular.module('appAngular', [])
+		.controller('Principal', [function(){
+			var self = this;
+
+			self.tab = 'primeiro';
+			self.open(function(tab) {
+				self.open = function(tab) {
+					self.tab = tab;
+				};
+			})
+		}])
+		.controller('subController', [function() {
+			function(itemService) 
+		}])
+		
+	</script>
+</body>
+</html>
