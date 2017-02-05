@@ -57,40 +57,39 @@
 				};
 			})
 		}])
-		.controller('SubController', ['ItemService', function() {
-			function(itemService) {	
-				var self = this;
+		.controller('SubController', ['ItemService', function(ItemService) {
 
-				self.lista = function() {
-					return itemService.lista();
-				};
+			var self = this;
 
-				self.adicionar = function () {
-					ItemService.adicionar({
-						id: self.lista().length + 1, 
-						descricao: 'Item' + self.lista().length
-					});
-				};
-			}
+			self.lista = function() {
+				return itemService.lista();
+			};
+
+			self.adicionar = function () {
+				ItemService.adicionar({
+					id: self.lista().length + 1, 
+					descricao: 'Item' + self.lista().length
+				});
+			};
 		}])
+
 		.factory('ItemService', [ function(){
 			var items = [
-			{id: 1, descricao: 'Item 0'},
-			{id: 2, descricao: 'Item 1'}
+				{id: 1, descricao: 'Item 0'},
+				{id: 2, descricao: 'Item 1'}
 			];
 
 			return {
-				lista : function() {
+				lista: function() {
 					return items;
-				}
+				},
 
-				adicionar : function(item) {
+				adicionar: function(item) {
 					items.push(item);
 				}
 				
 			};
-		}
-	}]);
+		}]);
 
 </script>
 </body>
