@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="appAngular">
 <head>
 	<meta charset="UTF-8">
 	<title>Criando Serviços com Angular</title>
 </head>
-<body>
+<body ng-controller="Principal as ctl">
+	<h1>Controllers compartilhando Serviços</h1>
+
+	<button ng-click="ctl.open('primeiro')"></button>
+	Abrir primeira Lista
+
+	<button ng-click="ctl.open('segundo')"></button>
+	Abrir segunda lista
+
+
+	<div ng-switch on="ctl.tab">
+		<div ng-switch-when="primeiro">
+			<div ng-controller="SubController as sub">
+				<h3>Primeira aba</h3>
+				<ul>
+					<li ng-repeat="item in sub.lista()">
+						<span ng-bind="item.descricao"></span>
+					</li>
+				</ul>
+				<button ng-click="sub.adicionar">
+					Adicionar Item
+				</button>
+			</div>
+		</div>
+
+		<div ng-switch-when="segundo">
+			<div ng-controller="SubController as sub">
+				<ul>
+					<li ng-repeat="item in sub.lista()">
+						<span ng-bind="item.descricao"></span>
+					</li>
+				</ul>
+				<button ng-click="sub.adicionar()">
+					Adicionar Item
+				</button>
+			</div>
+		</div>
+	</div>
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script>
 		angular.module('appAngular', [])
@@ -18,10 +57,41 @@
 				};
 			})
 		}])
-		.controller('subController', [function() {
-			function(itemService) 
+		.controller('SubController', ['ItemService', function() {
+			function(itemService) {	
+				var self = this;
+
+				self.lista = function() {
+					return itemService.lista();
+				};
+
+				self.adicionar = function () {
+					ItemService.adicionar({
+						id: self.lista().length + 1, 
+						descricao: 'Item' + self.lista().length
+					});
+				};
+			}
 		}])
-		
-	</script>
+		.factory('ItemService', [ function(){
+			var items = [
+			{id: 1, descricao: 'Item 0'},
+			{id: 2, descricao: 'Item 1'}
+			];
+
+			return {
+				lista : function() {
+					return items;
+				}
+
+				adicionar : function(item) {
+					items.push(item);
+				}
+				
+			};
+		}
+	}]);
+
+</script>
 </body>
 </html>
