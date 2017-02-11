@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tax</title>
+</head>
+<body>
+	<script>
+
+		var taxaBancaria = 2;
+
+		var impostoProduto = 0.05;
+
+		var valorDinheiroBanco = 500;
+
+		var saldo = Math.round(comprarProduto(400));
+
+
+
+		function comprarProduto(valorProduto) {
+			if(valorDinheiroBanco > valorProduto) {
+				valorProduto = (valorProduto + imposto_produto);
+
+				return valorDinheiroBanco - valorProduto;
+			}
+		}
+		
+
+		console.log('O saldo apos a compra do produto é R$' + saldo);
+
+	</script>
+</body>
+</html>

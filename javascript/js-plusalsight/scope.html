@@ -11,12 +11,13 @@
 		function foo (b) {
 			a += 2;
 			a *= 10;
+			var c = 42; 
 		}
 
 		var a = 2;
 
-		console.log(b);
-		
+		console.log(c); //este escopo nao pode ser acessado por que nao esta disponivel globalmente mesmo a variavel estando disponivel
+
 	</script>
 </body>
 </html>
