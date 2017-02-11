@@ -15,6 +15,29 @@
 		var a = 10,
 		foo(),
 		console.log{'Teste'};
+
+
+		function withParams(b) {
+			a = a + 2;
+			a = a * b;
+		}
+
+		var a = 5;
+		var c = 10;
+
+		withParams(c);
+		console.log(a);
+
+		function withReturn(x) {
+			a = a + 10;
+			a = a * x;
+
+			return a / 2;
+		}
+
+		var b = withReturn(10);
+		console.log(b);
+
 	</script>
 </body>
 </html>
