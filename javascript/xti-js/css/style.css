@@ -13,3 +13,9 @@ main {
 	align-items: center;
 	justify-content: center;
 }
+
+.operacoes {
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+}
