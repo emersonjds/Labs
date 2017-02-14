@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Logical Operators</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	
+</head>
+<body>
+	
+	<main>
+		<h4>Calculo de IMC</h4>
+
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<form rule="form" id="formulario">
+
+					
+					<label for="peso">Peso</label>
+					<input type="number" id="peso" name="peso">
+
+					
+					<label for="peso">Altura</label>
+					<input type="number" id="altura" name="altura">
+					<br>	
+
+					<button class="btn btn-info" onclick="calcularIMC();">Calcular</button>
+
+					<input type="text" id="imc" name="imc">
+
+					<hr>
+
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>IMC</th>
+								<th>Classificação</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td> <p> < 20 </p></td>
+								<td> <p> Abaixo do peso</p></td>
+							</tr>
+
+
+							<tr>
+								<td> <p> 20 a 25 </p></td>
+								<td> <p> Peso ideal</p></td>
+							</tr>
+
+							<tr>
+								<td> <p> > 30 </p></td>
+								<td> <p> Sobrepeso </p></td>
+							</tr>
+
+
+						</tbody>
+
+
+					</table>
+				</form>
+			</div>
+		</div>
+		
+	</main>
+	<script src="js/imc.js"></script>
+</body>
+</html>
