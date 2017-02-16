@@ -34,5 +34,6 @@ switch (tecnologia) {
 
 	default :
 	console.log("Tecnologia nao encontrada");
-
 }
+
+
