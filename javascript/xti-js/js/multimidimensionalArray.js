@@ -1,8 +1,9 @@
 /*
 Multimensional Arrays
- */
+*/
 
 var pessoas = ["Emerson", "Maria", "Jose"];
+
 var membros = new Array();
 
 membros[0] = new Array("Maria Clara", "mulher");
@@ -20,14 +21,12 @@ for (var i = 0; i <membros.lenght; i++) {
 	}
 }
 
-
 var arr3 = [ 
 	["Sandra", "F"] , 
 	[ ["Curso JS", "Array Multidimensional"] ] 
 ];
 
 console.log(arr3[1][0][0]); //array de 3 dimensoes
-
 
 //Array Associativo
 var pessoa = {  //criado com chaves da mesma forma que um objeto e acessado por pontou ou []
@@ -66,7 +65,6 @@ function busca(elemento, indice, objeto) {
 }
 
 console.log(carros.filter(busca));
-
 
 // MAP -> utilizando para alterar os elementos do array
 
