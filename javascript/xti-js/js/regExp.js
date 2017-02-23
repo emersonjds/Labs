@@ -76,6 +76,40 @@ document.write(/\w+@\w+\.\w{2,3}/.test("emerson_jdss@hotmail.com") + "</br>");
 /*
 CARACTERES OPCIONAIS
  */
+//cau e ceu
+
+document.write(/c[ae]u/.test("ceu") + "</br>");
+
+//com o agrupador a expressao consegue identificar outros operadores que 
+// passados no test
+
+document.write(/\d[\d\,]*/.test("23,25") + "</br>");
+//esta expressao consegue encontrar ocorrencia de digitos ou virgulas
+
+/*
+BUSCAS E SUBSTITUIÇOES
+ */
+
+var frase = "Qual é o doce mais doce que o doce";
+
+document.writeln(frase + "</br>");
+
+document.writeln("Utilizando expressao regular " + frase.match(/doce/ig) + "</br>");
+
+document.writeln("Utilizando expressao replace " + frase.replace(/doce/ig, "docinho") + "</br>");
+// a funçao replace recebe uma regExp e o segundo parametro da função troca a palavra que
+// foi trazida com Match
+
+var uri = "www.loja.com.br/clientes-2011.html";
+
+var reg = /(www.loja.com.br)\/(\w{2,})-(\d{4})\.html/; 
+//o caracter parenteses, delimita o escopo como um index num array
+//facilitando a utilização de um replace
+
+document.writeln(uri.replace(reg, "http://$1/$3/$2.jsp"));
+//QUE BAGULHO MONSTRO 
+
+
 
 
 
