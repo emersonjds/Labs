@@ -5,9 +5,32 @@ Array Exercise
 //true = disponivel;
 //false = indisponivel;
 
+
 window.onload = function() {
 	carregarPoltronas();
+
+	var imagens = document.getElementsByTagName("img");
+
+	for( var i = 0; i < imagens.length; i++) {
+		imagens[i].onclick = verificarStatus(i);
+	}
 }
+
+
+function verificarStatus(poltrona) {
+	return function() {
+		var src = document.getElementsByTagName("img")[poltrona].src;
+		var msg = " ";
+
+		if (src.indexOf("poltrona.png") > 0) {
+			msg = "Poltrona disponivel";
+		} else if (src.indexOf("poltrona_ocupada.jpeg") > 0) {
+			msg = "Poltrona ocupada";
+		}
+		return alert(msg);
+	}
+}
+
 
 var poltronas = [false, true, false, true, true, true, false, true, false];
 
@@ -61,3 +84,4 @@ function selecionarPoltronaCasal () {
 		}
 	}
 }
+
