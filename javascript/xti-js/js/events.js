@@ -1,0 +1,4 @@
+
+function funcao() {
+	alert("Ola");
+}
