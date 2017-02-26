@@ -21,21 +21,26 @@ zonaSulVendas = new apartamentoVenda("Zona Sul", 12, 7);
 // 	zonaSulVendas.local + " " + zonaSulVendas.quantidade + " " + zonaSulVendas.vendidos);
 
 
-function montadora(fabricacao, marca, ano, cor) {
-	this.fabricacao = fabricacao;
-	this.marca = marca;
-	this.ano = ano;
-	this.cor = cor;
-}
-
-function Carro(marca, ano, modelo) {
+function Montadora(marca, ano, modelo) {
 	this.marca = marca;
 	this.ano = ano;
 	this.modelo = modelo;
-	montadora.call(this, fabricacao, marca, ano, cor);
 }
 
-carroZero = new Carro('Nissan', '1989', 'Tiida', 'Bahia', 'vermelho');
+function Carro(marca, ano, modelo, cor, vendido) {
+	this.marca = marca;
+	this.ano = ano;
+	this.modelo = modelo;
+	this.cor = cor;
+	this.vendido = vendido;
+	Montadora.call(this, marca, ano, modelo);
+}
+
+//os parametros sao passados na mesma sequencia, 
+//parametros que nao estejam condidos em montadora sao anexados ao de carro 
+//assim com uma chamada unica é possivel manipualr as 2 informações
+
+carroZero = new Carro('Nissan', '2017', 'Tiida', 'vermelho', 'sim');
 
 console.log(carroZero);
 
