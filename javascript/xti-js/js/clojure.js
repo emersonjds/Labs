@@ -1,26 +1,42 @@
 /*
 	O conceito de clojure diz que a ideia que se passa é de ter uma função dentro de outra
- */ 
+	*/ 
 
+	window.onload = function() {
+		var botao = document.getElementsByTagName("button");
 
+		function funcaoAuxiliar(j) {
+			return function() {
+				console.log("Voce clicou no botao " + j)
+			}
+		}
 
-function funcaoExterna () {
-	alert("funcao externa");
-	function funcaoInterna() {
-		alert("funcao interna");
+		for(var i = 0; i < botao.length; i++){
+			botao[i].onclick = funcaoAuxiliar(i);
+			console.log("Voce clicou no botao" + i);			
+		}
 	}
-	funcaoInterna();
-}
 
-function refClojure() {
-	alert("referencia externa");
-	function refInternClojure() {
-		alert("referencia interna");
+
+	function funcaoExterna () {
+		console.log("funcao externa");
+		function funcaoInterna() {
+			console.log("funcao interna");
+		}
+		funcaoInterna();
 	}
 
-	return refInternClojure;
-}
+	function refClojure() {
+		console.log("referencia externa");
+		function refInternClojure() {
+			console.log("referencia interna");
+		}
 
-var referenciaFuncao = refClojure();
+		return refInternClojure;
+	}
+
+	var referenciaFuncao = refClojure();
+
+
 
 
