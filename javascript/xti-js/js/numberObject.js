@@ -21,4 +21,8 @@ console.log(Number.NaN);
 console.log(Number.arguments);
 console.log(Number.null);
 
+var numero = new Number(23e+37);
+
+console.log(numero.constructor);
+
 

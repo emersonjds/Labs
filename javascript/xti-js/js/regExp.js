@@ -52,8 +52,6 @@ document.write(/21$/.test("Pier21") + "</br>");
 
 document.write(/ˆ\d\d\d\d\d-\d\d\d$/.test("09540-110") + "</br>"); //Padrao para cep
 
-
-
 // ------------------------------------------- // 
 // QUANTIFICADORES
 // 
@@ -67,7 +65,7 @@ document.write(/\d*/.test("PIER21") + "</br>");
 //procura a ocorrencia de 0 ou 1 vez
 document.write(/\d?/.test("PIER21") + "</br>"); 
 
-//Verifica se a quantidade de digitos digitador condiz com o valor passado como parametro
+//Verifica se a quantidade de digitos digitados condiz com o valor passado como parametro
 document.write(/\d{2}/.test("PIER21") + "</br>"); 
 
 //validação de e-mail
