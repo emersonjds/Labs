@@ -21,18 +21,17 @@ window.onload = function () {
 		console.log(this.value);
 	}
 
+	var divi = document.getElementById("primeira");
 
-	// var divi = document.getElementById("primeira");
+	divi.onclick = function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		console.log('primeira');
+	}
 
-	// divi.onclick = function(e) {
-	// 	e.stopPropagation();
-	// 	e.preventDefault();
-	// 	console.log('primeira');
-	// }
-
-	// document.onclick = function() {
-	// 	console.log("document");
-	// }
+	document.onclick = function() {
+		console.log("document");
+	}
 }
 
 //com a utilização do addEventListener é possivel adicionar 2 eventos a uma mesma ação
