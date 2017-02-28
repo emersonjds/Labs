@@ -11,3 +11,4 @@ function timer() {
 	var horas = agora.getHours() + " : " + agora.getMinutes() + " : " + agora.getSeconds();
 	document.getElementById("horas").innerHTML = horas;
 }
+
