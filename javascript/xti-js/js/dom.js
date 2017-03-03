@@ -56,3 +56,4 @@ function adicionaLinha(texto1, texto2) {
 	cell2.appendChild(document.createTextNode(texto2));
 }
 
+// working with collections
