@@ -6,6 +6,22 @@ Document Object Model
 
 window.onload = function() {
 	adicionaLinha("Bonifácio", "Jose");
+
+	var btn = document.getElementById("btn");
+	var btnDelete = document.getElementById("delete");
+
+	btn.onclick = function() {
+		var link = document.links; // retorna uma colection de links
+		for(var i = 0; i < link.length; i++) {
+			adicionaLinha(link[i].alt, link[i].href);
+		}
+	}
+
+	btnDelete.onclick = function() {
+		var tb = document.getElementsByTagName("table").item(0);
+		tb.deleteRow(1);	
+	}
+
 }
 
 var tit = document.getElementById("tit");
