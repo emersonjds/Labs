@@ -12,6 +12,10 @@ PAI = parent, FILHO = Child, Irmao = Sibling
 */
 
 window.onload = function() {
+
+	var div = document.getElementsByTagName("div").item(0);
+
+
 	var hr = document.createElement("hr"); 
 	div.appendChild(hr);
 
@@ -32,19 +36,32 @@ window.onload = function() {
 
 	select.appendChild(option);
 	div.appendChild(select);
+
+	var del = div.firstChild;
+
+	div.removeChild(del);
+
+	var select2 = select.cloneNode(true);
+
+	div.appendChild(select2);
+
+	var option3 = option.cloneNode(true);
+
+	select.appendChild(option3);
 }
 
 
 
-var div = document.getElementsByTagName("div").item(0);
+
+
 // alert(div);
 // alert(div.parentNode);
-// pai do elemtento criado
+// pai do elemento criado
 
 // alert(div.childNodes);
 
 
-var ul = div.childNodes.item(0);
+// var ul = div.childNodes.item(0);
 // alert(ul.nodeName);
 // alert(ul.nodeType); // tipo de nodo, texto, document, element
 
