@@ -17,7 +17,7 @@ window.onload = function() {
 
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode("Teste de Lista"));
-	div.firstChild.appendChild(li);
+	div.appendChild(li);
 
 	var atributo = document.createAttribute("style");
 	atributo.value = "color : blue";
@@ -27,8 +27,11 @@ window.onload = function() {
 	select.setAttribute("id", "estados");
 
 	var option = document.createElement("option");
-	options.setAttribute("value", "DF");
-	option.appendChild(document);
+	option.setAttribute("value", "DF");
+	option.appendChild(document.createTextNode("Distrito Federal"));
+
+	select.appendChild(option);
+	div.appendChild(select);
 }
 
 
