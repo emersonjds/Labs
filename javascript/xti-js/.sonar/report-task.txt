@@ -1,0 +1,5 @@
+projectKey=xti-js
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/xti-js
+ceTaskId=AVqvBMILD-Xlf1CWaQNt
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVqvBMILD-Xlf1CWaQNt
