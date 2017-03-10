@@ -28,7 +28,6 @@ window.onload = function() {
 			resposta.removeChild(c.lastChild);
 		}
 		
-
 		var xml = new XML(ajax.responseText);
 		resposta.appendChild(document.createTextNode(xml.url));
 	}
