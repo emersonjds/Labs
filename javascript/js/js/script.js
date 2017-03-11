@@ -1,3 +1,4 @@
+
 var paciente = document.querySelector("#primeiro-paciente");
 
 var peso = paciente.querySelector(".info-peso").textContent;
@@ -17,11 +18,12 @@ if (altura <= 0 || altura >= 3.00) {
     paciente.querySelector(".info-altura").textContent = "Altura Invalida";
 }
 
-if (pespesoValidoo && alturaValida) {
+if (pesoValido && alturaValida) {
     var imc = peso / (altura * altura);
     document.querySelector(".info-imc").innerHTML = imc;
 } else {
     document.querySelector(".info-imc").innerHTML = "ERROR";
 }
+
 
 
