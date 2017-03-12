@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Aparecida Nutrição</title>
@@ -37,7 +38,7 @@
 						<td class="info-imc">0</td>
 					</tr>
 
-					<tr class="paciente" >
+					<tr class="paciente">
 						<td class="info-nome">João</td>
 						<td class="info-peso">80</td>
 						<td class="info-altura">1.72</td>
@@ -45,7 +46,7 @@
 						<td class="info-imc">0</td>
 					</tr>
 
-					<tr class="paciente" >
+					<tr class="paciente">
 						<td class="info-nome">Erica</td>
 						<td class="info-peso">54</td>
 						<td class="info-altura">1.64</td>
@@ -60,7 +61,7 @@
 						<td class="info-gordura">24</td>
 						<td class="info-imc">0</td>
 					</tr>
-					<tr class="paciente" >
+					<tr class="paciente">
 						<td class="info-nome">Tatiana</td>
 						<td class="info-peso">46</td>
 						<td class="info-altura">1.55</td>
@@ -74,8 +75,13 @@
 
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+			<h2>Dados de Usuarios</h2>
+
+			<ul id="mensagens-erros">
+			</ul>
+
 			<form id="form-adiciona">
-				<h2>Dados de Usuarios</h2>	
+
 				<form id="dados-de-pacientes">
 					<div class="col-sm-12">
 						<div class="form-group">
@@ -90,7 +96,7 @@
 							<input type="text" name="peso" class="peso form-control" placeholder="Informe seu peso">
 						</div>
 					</div>
-					
+
 					<div class="col-sm-4">
 						<div class="form-group">
 							<label for="altura">Altura</label>
@@ -105,14 +111,14 @@
 					</div>
 
 					<button id="adicionar-paciente" class="btn btn-success">Adicionar Paciente</button>
-				</form>	
-			</div>
+				</form>
 		</div>
+	</div>
 
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="js/calcula-imc.js"></script>
-		<script src="js/form.js"></script>
-	</body>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/calcula-imc.js"></script>
+	<script src="js/form.js"></script>
+</body>
 
-	</html>
+</html>
