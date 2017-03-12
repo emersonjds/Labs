@@ -25,7 +25,7 @@ adicionarPaciente.addEventListener("click", function (e) {
     form.reset();
 
     var ul = document.querySelector("mensagens-erro");
-    ul.innerHTML = "";
+    ul.innerHTML = " ";
 
 });
 
@@ -79,7 +79,7 @@ function montaTd(dado, classe) {
 }
 
 function validaPaciente(paciente) {
-    
+
     var erros = [];
 
     if(paciente.nome.length == 0 )
