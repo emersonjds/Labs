@@ -74,26 +74,33 @@
 
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-			<form>
+			<form id="form-adiciona">
 				<h2>Dados de Usuarios</h2>	
-				<form>
-					<div class="col-sm-4">
+				<form id="dados-de-pacientes">
+					<div class="col-sm-12">
 						<div class="form-group">
 							<label for="nome">Nome</label>
-							<input type="text" class="nome form-control" placeholder="Informe seu nome">
+							<input type="text" name="nome" class="nome form-control" placeholder="Informe seu nome">
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="form-group">
+							<label for="peso">Peso</label>
+							<input type="text" name="peso" class="peso form-control" placeholder="Informe seu peso">
 						</div>
 					</div>
 					
 					<div class="col-sm-4">
 						<div class="form-group">
 							<label for="altura">Altura</label>
-							<input type="text" class="altura form-control" id="altura" placeholder="Informe sua altura">
+							<input type="text" name="altura" class="altura form-control" placeholder="Informe sua altura">
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="form-group">
-							<label for="gordura">Nome</label>
-							<input type="text" class="gordura form-control" placeholder=" Taxa de gordura">
+							<label for="gordura">% de Gordura</label>
+							<input type="text" name="gordura" class="gordura form-control" placeholder=" Taxa de gordura">
 						</div>
 					</div>
 
