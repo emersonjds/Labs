@@ -8,6 +8,5 @@ tabela.addEventListener("dblclick", function (event) {
     setTimeout(function () {
         event.target.parentNode.remove(); //remover o pai do alvo clicado
     }, 500);
-
 });
 
