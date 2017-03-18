@@ -143,3 +143,7 @@ button[disabled=disabled], button:disabled {
 	transition: 0.5s;
 
 }
+
+.invisivel {
+	display: none;
+}
