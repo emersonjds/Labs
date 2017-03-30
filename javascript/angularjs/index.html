@@ -17,6 +17,39 @@
         angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope) {
             $scope.app = "Lista Telefonica";
 
+            $scope.operadoras = [
+                {
+                    nome: 'Oi',
+                    codigo: 14,
+                    categoria: 'Celular'
+                },
+                {
+                    nome: 'Vivo',
+                    codigo: 15,
+                    categoria: 'Celular'
+                },
+                {
+                    nome: 'Claro',
+                    codigo: 17,
+                    categoria: 'Celular'
+                },
+                {
+                    nome: 'Tim',
+                    codigo: 11,
+                    categoria: 'Celular'
+                },
+                {
+                    nome: 'GVT',
+                    codigo: 25,
+                    categoria: 'Fixo'
+                },
+                {
+                    nome: 'Embratel',
+                    codigo: 21,
+                    categoria: 'Fixo'
+                }
+            ];
+
             $scope.contatos = [
                 {
                     nome: 'Pedro',
@@ -32,48 +65,79 @@
                 }
             ];
 
-            $scope.adicionar = function(contato) {
+            $scope.adicionar = function (contato) {
                 $scope.contatos.push(contato);
-
                 delete $scope.contato;
             };
+
+            $scope.selecionado = "selecionado";
+            $scope.negrito = "negrito";
+
+            $scope.deletarContatos = function (contatos) {
+               $scope.contatos = contatos.filter(function(contato) {
+                     if (!contato.selecionado)
+                        return contato;
+                });
+            }
         });
     </script>
 
+    <style>
+        .selecionado {
+            background-color: lightcoral;
+        }
+        
+        .negrito {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-10 col-sm-offset-1">
                 <div class="jumbotron" ng-controller="listaTelefonicaCtrl">
                     <h2 class="text-center">{{app}}</h12>
-
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td class="text-center">Nome</td>
-                                    <td class="text-center">Telefone</td>
+                                    <th class="text-center">Selecione</th>
+                                    <th class="text-center">Nome</th>
+                                    <th class="text-center">Telefone</th>
+                                    <th class="text-center">Operadora</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="contato in contatos">
+                                <!--Selecionado gera um if do escope aonde esta inserido-->
+                                <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos">
+                                    <td><input type="checkbox" ng-model="contato.selecionado"></td>
                                     <td class="text-center">{{contato.nome}}</td>
                                     <td class="text-center">{{contato.telefone}}</td>
+                                    <td class="text-center">{{contato.operadora.nome}}</td>
                                 </tr>
                             </tbody>
                         </table>
 
                         <hr>
 
-                        
-                            <label for="nome">Nome</label>
-                            <input class="form-control" type="text" name="nome" id="nome" ng-model="contato.nome" placeholder="Informe o nome">
+                        <label for="nome">Nome</label>
+                        <input class="form-control" type="text" name="nome" id="nome" ng-model="contato.nome" placeholder="Informe o nome">
 
-                            <label for="telefone">Telefone</label>
-                            <input class="form-control" type="text"name="telefone" id="telefone"  ng-model="contato.telefone" placeholder="Informe o telefone">
-                            <br>
-                            <button class="btn btn-success btn-block" ng-click="adicionar(contato)">Adicionar Contato</button>
+                        <label for="telefone">Telefone</label>
+                        <input class="form-control" type="text" name="telefone" id="telefone" ng-model="contato.telefone" placeholder="Informe o telefone">
+
+                        <br>
+                        <label for="operadoras"></label>
+                        <select class="form-control" name="operadora" ng-model="contato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras"
+                            aria-placeholder="Escolha a operadora">
+                            <option value="">Selecione a operadora</option>
+                        </select>
+                        <br>
+
+                        <button class="btn btn-success btn-block" ng-click="adicionar(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
+
+                        <button class="btn btn-danger btn-block" ng-click="deletarContatos(contatos)">Apagar Contato</button>
                 </div>
             </div>
         </div>
