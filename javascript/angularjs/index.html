@@ -1,25 +1,84 @@
-<html lang="en" ng-app="helloWorld">
+<html lang="en" ng-app="listaTelefonica">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello World</title>
+    <title>Lista Telefonica</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+
     <script src="node_modules/angular/angular.min.js"></script>
 
     <script>
-        angular.module("helloWorld", []);
+        angular.module("listaTelefonica", []);
 
-        angular.module("helloWorld").controller("helloWorldCtrl", function ($scope) {
-            $scope.message = "Hello World";
+        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope) {
+            $scope.app = "Lista Telefonica";
+
+            $scope.contatos = [
+                {
+                    nome: 'Pedro',
+                    telefone: '99998888'
+                },
+                {
+                    nome: 'Ana',
+                    telefone: '987657865'
+                },
+                {
+                    nome: 'Emerson',
+                    telefone: '971801555'
+                }
+            ];
+
+            $scope.adicionar = function(contato) {
+                $scope.contatos.push(contato);
+
+                delete $scope.contato;
+            };
         });
     </script>
 
 </head>
 
-<div ng-controller="helloWorldCtrl">
-    <h1>{{message}}</h1>
-</div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="jumbotron" ng-controller="listaTelefonicaCtrl">
+                    <h2 class="text-center">{{app}}</h12>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td class="text-center">Nome</td>
+                                    <td class="text-center">Telefone</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="contato in contatos">
+                                    <td class="text-center">{{contato.nome}}</td>
+                                    <td class="text-center">{{contato.telefone}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <hr>
+
+                        
+                            <label for="nome">Nome</label>
+                            <input class="form-control" type="text" name="nome" id="nome" ng-model="contato.nome" placeholder="Informe o nome">
+
+                            <label for="telefone">Telefone</label>
+                            <input class="form-control" type="text"name="telefone" id="telefone"  ng-model="contato.telefone" placeholder="Informe o telefone">
+                            <br>
+                            <button class="btn btn-success btn-block" ng-click="adicionar(contato)">Adicionar Contato</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 
