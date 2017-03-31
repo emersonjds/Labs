@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.6.3",
+    "angular-messages": "^1.6.3",
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {},

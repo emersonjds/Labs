@@ -7,10 +7,13 @@
     <title>Lista Telefonica</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
+    
     <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+
 
     <script>
-        angular.module("listaTelefonica", []);
+        angular.module("listaTelefonica", ["ngMessages"]);
 
         angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope) {
             $scope.app = "Lista Telefonica";
@@ -68,8 +71,9 @@
 
             $scope.adicionar = function (contato) {
                 $scope.contatos.push(contato);
-
                 delete $scope.contato;
+                $scope.contatoForm.$setPristine(); //isso permite que o campo volta a ficar em branco comos e nunca 
+                //tivesse sido utilizado
             };
 
             $scope.class1 = "selecionado";
@@ -135,25 +139,52 @@
 
                         <hr>
 
-                        <label for="nome">Nome</label>
-                        <input class="form-control" type="text" name="nome" id="nome" ng-model="contato.nome" placeholder="Informe o nome">
+                        <!--A utilização do form cria um novo objeto em $scope-->
+                        <form name="contatoForm">
+                            <label for="nome">Nome</label>
+                            <input class="form-control" type="text" name="nome" id="nome" ng-model="contato.nome" placeholder="Informe o nome" ng-required="true"
+                                ng-minlength="10">
 
-                        <label for="telefone">Telefone</label>
-                        <input class="form-control" type="text" name="telefone" id="telefone" ng-model="contato.telefone" placeholder="Informe o telefone">
-                        <br>
+                            <label for="telefone">Telefone</label>
+                            <input class="form-control" type="text" name="telefone" id="telefone" ng-model="contato.telefone" placeholder="Informe o telefone"
+                                ng-required="true" ng-pattern="/ˆ\d{4,5}-\d{4}$/">
+                            <br>
 
-                        <select ng-model="contato.operadoras" class="form-control" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
+                            <select ng-model="contato.operadoras" class="form-control" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
                             <option value="">Selecione uma operadora</option>
                           </select>
+                        </form>
 
-                        <button class="btn btn-success btn-block" ng-disable="!contato.nome || !contato.telefone" ng-click="adicionar(contato)">Adicionar Contato</button>
+                        <!--Funciona como um array, as message sao os valores contidos nas respectivias chaves-->
+                        <div ng-messages="contatoForm.nome.$error">
+                            <!--$dirty verifica se o campo ja foi preenchico pelo menos 1 vez-->
+                            <div ng-message="required" class="alert alert-danger">
+                                <p>Por favor preencha o nome </p>
+                            </div>
+
+                            <div ng-message="minlength" class="alert alert-danger">
+                                <p>O campo nome deve ter no minimo 10 caracteres </p>
+                            </div>
+                        </div>
+
+
+
+                        <div ng-show="contatoForm.telefone.$invalid && contatoForm.nome.$dirty" class="alert alert-danger">
+                            <p>Por favor preencha o telefone </p>
+                        </div>
+
+                        <div ng-show="contatoForm.telefone.$error.pattern" class="alert alert-danger">
+                            <p>Preencha o telefone com o padrao de ex: xxxx-xxxx ou xxxxx-xxxx </p>
+                        </div>
+
+                        <button class="btn btn-success btn-block" ng-disable="contatoForm.$invalid" ng-click="adicionar(contato)">Adicionar Contato</button>
                         <button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)">Deletar Contatos</button>
                 </div>
             </div>
-       
+
         </div>
 
-             <div ng-include="'footer.html'"></div>
+        <div ng-include="'footer.html'"></div>
     </div>
 
 
