@@ -1,17 +1,30 @@
 {
-  "name": "angularjs",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Implementação de uma lista Telefonica utilizando AngularJS",
+  "description": "No sexto episódio da série AngularJS, nós vamos falar sobre como integrar com o back-end por AJAX, utilizando o serviço $http.",
   "main": "index.js",
-  "dependencies": {
-    "angular": "^1.3.0",
-    "angular-messages": "^1.6.3",
-    "bootstrap": "^3.3.7"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Emerson Jr",
-  "license": "GPL-3.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigobranas/youtube"
+  },
+  "keywords": [
+    "Angularjs",
+    "youtube",
+    "learningcode",
+    "javascript",
+    "express",
+    "node"
+  ],
+  "dependencies": {
+    "express": "^3.x"
+  },
+  "author": "Rodrigo Branas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rodrigobranas/youtube/issues"
+  },
+  "homepage": "https://github.com/rodrigobranas/youtube"
 }

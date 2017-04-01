@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Ajax -Experience</title>
+	<title>AJAX - Experience!</title>
 </head>
 <body>
-    <h1>Ajax - Experience</h1>
-
-    <div id="data"></div>
-
-    <script>
-
-        var get = function(url, callback) {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if(xhr.readyState === 4)
-                    callback(xhr.responseText, xhr.status);
-            };
-            xhr.open('GET', url);
-            xhr.send(null);
-        }
-
-
-        //disparando acesso a api
-        get("http://localhost:3412/contatos", function(data) {
-            document.getElementById("data").innerHTML = data;
-        });
-
-    </script>
+	<h3>AJAX - Experience!</h3>
+	<div id="ajax"></div>
 </body>
 </html>
