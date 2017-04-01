@@ -2,18 +2,19 @@ var http = require('http');
 
 var createRouter = function(port) {
 
-    var routes = {
-        GET: {},
-        POST: {}
-    };
+    var api = {};
 
-    var get = function(path, fn) {
-        routes['GET'][path] = fn;
-    }
+    var routes = {};
 
-    var post = function(path, fn) {
-        routes['POST'][path] = fn;
-    }
+    var methods = ['GET', 'POST'];
+
+    methods.forEach(function(method) {
+        routes[method] = {};
+
+        api[method.toLowerCase()] = function (path, fn) {
+            routes[method][path] = fn;
+        };
+    });
 
     http.createServer(function(req, res) {
         res.setHeader('Access-Control-Allow-Origin', '*'); 
@@ -23,10 +24,7 @@ var createRouter = function(port) {
         routes[req.method][req.url](req, res);
     }).listen(port);
 
-    return {
-        get: get,
-        post: post
-    }
+    return api;
 }
 
 module.exports = createRouter;
