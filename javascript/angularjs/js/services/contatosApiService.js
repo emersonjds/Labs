@@ -11,5 +11,4 @@ angular.module("listaTelefonica").factory("contatosAPI", function($http, config)
         _getContatos : _getContatos,
         _saveContato : _saveContato
     };
-
 });
