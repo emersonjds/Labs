@@ -1,4 +1,5 @@
 <html ng-app="listaTelefonica">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Lista Telefonica</title>
@@ -15,15 +16,11 @@
 	<script src="js/value/configValue.js"></script>
 </head>
 
-
-
-
-
 <body ng-controller="listaTelefonicaCtrl">
 	<div class="jumbotron">
 		<h3>{{app}}</h3>
 		{{message}}
-		<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
+		<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?" />
 		<table ng-show="contatos.length > 0" class="table table-striped">
 			<tr>
 				<th></th>
@@ -33,8 +30,14 @@
 				<th>Operadora</th>
 				<th>Data</th>
 			</tr>
+
+
+
+
+
+			
 			<tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
-				<td><input type="checkbox" ng-model="contato.selecionado"/></td>
+				<td><input type="checkbox" ng-model="contato.selecionado" /></td>
 				<td>{{contato.serial}}</td>
 				<td>{{contato.nome}}</td>
 				<td>{{contato.telefone}}</td>
@@ -44,8 +47,10 @@
 		</table>
 		<hr/>
 		<form name="contatoForm">
-			<input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10"/>
-			<input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
+			<input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10"
+			/>
+			<input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true"
+			 ng-pattern="/^\d{4,5}-\d{4}$/" />
 			<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome + ' ( ' + (operadora.preco | currency) + ' )' for operadora in operadoras | orderBy:'nome'">
 				<option value="">Selecione uma operadora</option>
 			</select>
@@ -71,5 +76,5 @@
 	</div>
 	<div ng-include="'view/footer.html'"></div>
 </body>
-</html>
 
+</html>
