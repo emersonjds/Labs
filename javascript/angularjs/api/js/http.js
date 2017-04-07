@@ -9,9 +9,9 @@ var operadoras = [
 ];
 
 var contatos = [
-    {id: 1, nome: "Emerson", telefone: "97180-1555", data: new Date(), operadora: 'Vivo'},
-    {id: 2, nome: "Pedro", telefone: "97546-1775", data: new Date(), operadora: 'Claro'},
-    {id: 3, nome: "Maria", telefone: "92112-3215", data: new Date(), operadora: 'Oi'},
+    {id: 1, nome: "Emerson Junior Daniel", telefone: "97180-1555", data: new Date(), operadora: 'Vivo'},
+    {id: 2, nome: "Pedro Henrique dos Santos", telefone: "97546-1775", data: new Date(), operadora: 'Claro'},
+    {id: 3, nome: "Maria Oliveira Barbosa", telefone: "92112-3215", data: new Date(), operadora: 'Oi'},
 ];
 
 app.get('/operadoras', function(req, res) {
