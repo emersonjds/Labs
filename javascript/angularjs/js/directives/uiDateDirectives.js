@@ -1,7 +1,10 @@
-angular.module("listaTelefonica").directive("uiDate", function() {
+angular.module("listaTelefonica").directive("uiData", function() {
     return {
-        link : function() {
-            console.log("uiDate");
+        require : "ngModel",
+        link : function(scope, element, attrs, ctrl) {
+            element.bind("keyUp", function() {
+                console.log(ctrl.$viewValue);
+            });
         }
     };
 });

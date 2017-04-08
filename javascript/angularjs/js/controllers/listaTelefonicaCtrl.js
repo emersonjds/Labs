@@ -1,7 +1,6 @@
 angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI, operadorasAPI, serialGenerator) {
-
-
-	console.log(serialGenerator.generate());
+	
+	console.log($id);
 
 	$scope.app = "Lista Telefonica";
 	$scope.contatos = [];

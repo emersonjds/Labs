@@ -18,7 +18,7 @@
 	<script src="js/filters/nameFilter.js"></script>
 	<script src="js/filters/ellipsesFilter.js"></script>
 	<script src="js/directives/uiAlertDirective.js"></script>
-	<script src="js/directives/uiDateDirective.js"></script>
+	<script src="js/directives/uiDateDirectives.js"></script>
 </head>
 
 <body ng-controller="listaTelefonicaCtrl">
@@ -55,7 +55,7 @@
 			<input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true"
 			 ng-pattern="/^\d{4,5}-\d{4}$/" />
 
-			<input type="date" class="form-control" ng-model="contato.data" name="data" placeholder="Data" ui-date /> 
+			<input type="text" class="form-control" ng-model="contato.data" name="data" placeholder="Data" ui-date /> 
 			
 			<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome + ' ( ' + (operadora.preco | currency) + ' )' for operadora in operadoras | orderBy:'nome'">
 				<option value="">Selecione uma operadora</option>
