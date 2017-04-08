@@ -1,0 +1,17 @@
+.ui-alert {
+    background-color: #f2dede;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.ui-alert-title {
+    color: #af4341;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.ui-alert-message {
+    color: #af4341;
+    font-size: 18px;
+}

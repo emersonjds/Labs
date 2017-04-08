@@ -5,6 +5,7 @@
 	<title>Lista Telefonica</title>
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" href="css/ui.css">
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular/angular-messages.js"></script>
 	<script src="js/app.js"></script>
@@ -16,12 +17,17 @@
 	<script src="js/value/configValue.js"></script>
 	<script src="js/filters/nameFilter.js"></script>
 	<script src="js/filters/ellipsesFilter.js"></script>
+	<script src="js/directives/uiAlertDirective.js"></script>
 </head>
 
 <body ng-controller="listaTelefonicaCtrl">
 	<div class="jumbotron">
 		<h3>{{app}}</h3>
-		{{message}}
+
+		<ui-alert title="Ops, aconteceu um problema">
+			Nao foi possivel carregar os dados
+		</ui-alert>
+		
 		<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?" />
 		<table ng-show="contatos.length > 0" class="table table-striped">
 			<tr>
