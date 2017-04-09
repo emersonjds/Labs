@@ -19,10 +19,37 @@
 	<script src="js/filters/ellipsisFilter.js"></script>
 	<script src="js/directives/uiAlertDirective.js"></script>
 	<script src="js/directives/uiDateDirective.js"></script>
+	<script src="js/directives/uiAccordionDirective.js"></script>
 </head>
 
 <body ng-controller="listaTelefonicaCtrl">
 	<div class="jumbotron">
+
+		<ui-accordions>
+			<ui-accordion title="Accordion 1">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad cupiditate natus molestias perferendis expedita similique impedit
+				explicabo earum accusamus quibusdam, doloribus consequuntur id, rerum omnis tempora nostrum, quae numquam. Velit?
+			</ui-accordion>
+
+			<ui-accordion title="Accordion 2">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ab error obcaecati, veniam dignissimos, corporis praesentium
+				tenetur ipsum minus illum totam placeat harum illo maxime autem, animi doloremque neque sunt?
+			</ui-accordion>
+
+			<ui-accordion title="Accordion 3">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ab error obcaecati, veniam dignissimos, corporis praesentium
+				tenetur ipsum minus illum totam placeat harum illo maxime autem, animi doloremque neque sunt?
+			</ui-accordion>
+
+			<ui-accordion title="Accordion 4">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ab error obcaecati, veniam dignissimos, corporis praesentium
+				tenetur ipsum minus illum totam placeat harum illo maxime autem, animi doloremque neque sunt?
+			</ui-accordion>
+		</ui-accordions>
+
+
+
+
 		<h3>{{app}}</h3>
 		<!--		
 		<ui-alert title="Ops, aconteceu um problema!">
@@ -57,8 +84,7 @@
 			<input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10"
 			/>
 			<input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true"
-			 ng-pattern="/^\d{4,5}-\d{4}$/" /> 
-			 {{contato.data}}
+			 ng-pattern="/^\d{4,5}-\d{4}$/" /> {{contato.data}}
 			<input type="text" class="form-control" ng-model="contato.data" name="data" placeholder="Data" ui-date />
 
 			<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome + ' ( ' + (operadora.preco | currency) + ' )' for operadora in operadoras | orderBy:'nome'">
