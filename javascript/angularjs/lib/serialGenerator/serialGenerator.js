@@ -1,4 +1,7 @@
-angular.module("listaTelefonica").provider("serialGenerator", function () {
+angular.module("serialGenerator", []); //criadno novo modulo
+
+
+angular.module("serialGenerator").provider("serialGenerator", function () {
 	var _length = 10;
 	
 	this.getLength = function () {
