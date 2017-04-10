@@ -1,6 +1,4 @@
-angular.module("serialGenerator", []); //criadno novo modulo
-
-
+angular.module("serialGenerator", []);
 angular.module("serialGenerator").provider("serialGenerator", function () {
 	var _length = 10;
 	
