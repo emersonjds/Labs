@@ -20,7 +20,7 @@ angular.module("listaTelefonica").config(function ($routeProvider) {
 			}
 		}
 	});
-	$routeProvider.when("/detalhesContato/:id", {
+	$routeProvider.when("/detalhesContato/:id + 1", {
 		templateUrl: "view/detalhesContato.html",
 		controller: "detalhesContatoCtrl",
 		resolve: {
@@ -28,6 +28,9 @@ angular.module("listaTelefonica").config(function ($routeProvider) {
 				return contatosAPI.getContato($route.current.params.id);
 			}
 		}
+	});
+	$routeProvider.when("/error", {
+		templateUrl: "view/error.html",
 	});
 	$routeProvider.otherwise({redirectTo: "/contatos"});
 });
