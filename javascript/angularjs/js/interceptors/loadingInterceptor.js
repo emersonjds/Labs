@@ -1,6 +1,6 @@
 angular.module("listaTelefonica").factory("loadingInterceptor", function($q, $rootScope, $timeout) { 
 	return {
-		request : function(config){
+		request: function(config){
 			$rootScope.loading = true;
 			return config;
 		},
@@ -14,10 +14,9 @@ angular.module("listaTelefonica").factory("loadingInterceptor", function($q, $ro
 			}, 2000);
 			return response;
 		},
-		responseError : function(rejection) {
+		responseError: function(rejection) {
 			$rootScope.loading = false;
 			return $q.reject(rejection);
 		}
-
 	}
 });
