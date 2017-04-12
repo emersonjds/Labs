@@ -1,5 +1,5 @@
-angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, operadoras, serialGenerator) {
-	$scope.app = "Lista Telefonica";
+angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, operadoras, serialGenerator, $filter) {
+	$scope.app = $filter('upper')("Lista Telefonica");
 	$scope.contatos = contatos.data;
 	$scope.operadoras = operadoras.data;
 
@@ -12,7 +12,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
 		contatos.forEach(function (contato) {
 			contato.operadora.precoComImposto = calcularImposto(contato.operadora.preco);
 		});
-	}
+	};
 
 	var generateSerial = function (contatos) {
 		contatos.forEach(function (item) {
@@ -47,6 +47,10 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
 	var calcularImposto = function (preco) {
 		var imposto = 1.2;
 		return preco * imposto;
+	};
+
+	$scope.reset = function () {
+		$scope.contatos = angular.copy($scope.contatos);
 	};
 	
 	init();

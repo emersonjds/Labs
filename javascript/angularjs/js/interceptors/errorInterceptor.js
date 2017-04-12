@@ -1,7 +1,7 @@
-angular.module("listaTelefonica").factory("errorInterceptor", function($q, $location) {
+angular.module("listaTelefonica").factory("errorInterceptor", function ($q, $location) {
 	return {
-		responseError : function(rejection) {
-			if (rejection === 404) {
+		responseError: function (rejection) {
+			if (rejection.status === 404) {
 				$location.path("/error");
 			}
 			return $q.reject(rejection);
