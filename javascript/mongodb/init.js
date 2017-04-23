@@ -3,5 +3,3 @@
 
 //mongoimport -> Permite importação de arquivos JSON e CSV
 //mongoimport --db name_database --collection name_collection --drop --file data.json
-
-//configurar script para azure no getOkr
