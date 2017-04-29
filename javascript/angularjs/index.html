@@ -1,4 +1,5 @@
 <html ng-app="listaTelefonica">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Lista Telefonica</title>
@@ -30,8 +31,9 @@
 	<script src="js/interceptors/loadingInterceptor.js"></script>
 	<script src="js/config/interceptorsConfig.js"></script>
 </head>
+
 <body>
-														<div class="jumbotron" ng-show="loading">
+	<div class="jumbotron" ng-show="loading">
 		<h5>Carregando, por favor aguarde...</h5>
 	</div>
 	<div ng-hide="loading">
@@ -39,4 +41,5 @@
 		<div ng-include="'view/footer.html'"></div>
 	</div>
 </body>
+
 </html>
