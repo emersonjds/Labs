@@ -14,6 +14,9 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
 		});
 	};
 
+
+
+
 	var generateSerial = function (contatos) {
 		contatos.forEach(function (item) {
 			item.serial = serialGenerator.generate();
