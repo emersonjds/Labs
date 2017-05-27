@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core'
 
 //Decorator
 @Component({
+	moduleId: module.id, //busca o caminho referente a este modulo como raiz
 	selector: 'app',
-	templateUrl : './app/app.component.html'
+	templateUrl: './app.component.html'
 })
 export class AppComponent {
 

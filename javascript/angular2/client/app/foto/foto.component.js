@@ -7,20 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var foto_module_1 = require("./foto/foto.module");
-var AppModule = (function () {
-    function AppModule() {
+var FotoComponent = (function () {
+    function FotoComponent() {
     }
-    return AppModule;
+    return FotoComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, foto_module_1.FotoModule],
-        declarations: [app_component_1.AppComponent],
-        bootstrap: [app_component_1.AppComponent] //chamada inicial da aplicação
+FotoComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'foto',
+        templateUrl: './foto.component.html'
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], FotoComponent);
+exports.FotoComponent = FotoComponent;
+//# sourceMappingURL=foto.component.js.map
