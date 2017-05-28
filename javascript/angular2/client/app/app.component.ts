@@ -9,7 +9,7 @@ import { Http } from '@angular/http'
 })
 export class AppComponent {
 
-	constructor(http: Http) {
+	constructor(http: Http) { //injecao de dependencia por tipagem
 
 	}
 
