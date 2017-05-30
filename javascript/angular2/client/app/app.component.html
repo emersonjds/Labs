@@ -1,11 +1,15 @@
 <div class="jumbotron">
-	<div class="text-center"><h1>Alurapic</h1></div>
+	<div class="text-center">
+		<h1>Alurapic</h1>
+	</div>
 </div>
 
 <div class="container">
-	<painel *ngFor="let foto of fotos" titulo="{{foto.titulo}}">
-		<foto url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
-	</painel>
-	
-</div>
+	<div class="row">
+		<painel *ngFor="let foto of fotos" titulo="{{foto.titulo}}" class="col-md-2">
+			<foto url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
+		</painel>
+	</div>
 
+
+</div>
