@@ -3,7 +3,6 @@
 </div>
 
 <div class="container">
-	<foto url="../img/leao.jpg" titulo="Leao"></foto>
-	<foto url="../img/leao-branco.jpg" titulo="Leao Branco"></foto>
+	<foto *ngFor="let foto of fotos" url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
 </div>
 
