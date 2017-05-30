@@ -17,11 +17,10 @@ var AppComponent = (function () {
         var _this = this;
         this.fotos = [];
         //chamada com rxjs semelhante a Promise
-        var stream = http.get('v1/fotos')
-            .subscribe(function (res) {
-            _this.fotos = res.json();
-            console.log(_this.fotos);
-        });
+        http.get('v1/fotos')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (fotos) { return _this.fotos = fotos; }, function (erro) { return console.log(erro); } // retorno do erro caso subscrible nao traga os dados
+        );
     }
     return AppComponent;
 }());
