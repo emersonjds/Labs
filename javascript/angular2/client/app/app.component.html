@@ -3,6 +3,9 @@
 </div>
 
 <div class="container">
-	<foto *ngFor="let foto of fotos" url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
+	<painel *ngFor="let foto of fotos" titulo="{{foto.titulo}}">
+		<foto url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
+	</painel>
+	
 </div>
 
