@@ -15,10 +15,10 @@ export class AppComponent {
 
 		//chamada com rxjs semelhante a Promise
 		let stream = http.get('v1/fotos')
-		stream.subscribe(res => {
-			this.fotos = res.json();
-			console.log(this.fotos)
-		})
+			.subscribe(res => {
+				this.fotos = res.json()
+				console.log(this.fotos)
+			})
 
 	}
 

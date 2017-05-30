@@ -17,8 +17,8 @@ var AppComponent = (function () {
         var _this = this;
         this.fotos = [];
         //chamada com rxjs semelhante a Promise
-        var stream = http.get('v1/fotos');
-        stream.subscribe(function (res) {
+        var stream = http.get('v1/fotos')
+            .subscribe(function (res) {
             _this.fotos = res.json();
             console.log(_this.fotos);
         });
