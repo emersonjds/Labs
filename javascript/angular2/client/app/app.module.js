@@ -9,10 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/map"); //import extensao map
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http"); //provider Http
 var app_component_1 = require("./app.component");
 var foto_module_1 = require("./foto/foto.module");
 var painel_module_1 = require("./painel/painel.module");
-var http_1 = require("@angular/http"); //provider Http
+var cadastro_component_1 = require("./cadastro/cadastro.component");
+var listagem_component_1 = require("./listagem/listagem.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,7 +23,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, foto_module_1.FotoModule, painel_module_1.PainelModule, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent],
+        declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, listagem_component_1.ListagemComponent],
         bootstrap: [app_component_1.AppComponent] //chamada inicial da aplicação
     })
 ], AppModule);
