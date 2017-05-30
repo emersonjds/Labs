@@ -8,10 +8,16 @@ import { FotoModule } from './foto/foto.module'
 import { PainelModule } from './painel/painel.module'
 import { CadastroComponent } from './cadastro/cadastro.component'
 import { ListagemComponent } from './listagem/listagem.component'
+import { routing } from './app.routes'
 
 
 @NgModule({
-  imports: [BrowserModule, FotoModule, PainelModule, HttpModule], // modulos que podem ser exportados
+  imports: [
+    BrowserModule,
+    FotoModule,
+    PainelModule,
+    HttpModule,
+    routing], // modulos importados para uso
   declarations: [AppComponent, CadastroComponent, ListagemComponent], // modulos que podem ser usados neste novo modulo
   bootstrap: [AppComponent] //chamada inicial da aplicação
 })

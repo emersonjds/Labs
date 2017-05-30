@@ -4,7 +4,24 @@
 	</div>
 </div>
 
+
+
 <div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<form action="">
+				<div class="input-group"></div>
+				<span class="input-group-btn">
+				<a href="/cadastro" class="btn btn-primary">
+					Nova Foto
+				</a>
+			</span>
+			</form>
+		</div>
+	</div>
+
+	<br/>
+
 	<div class="row">
 		<painel *ngFor="let foto of fotos" titulo="{{foto.titulo}}" class="col-md-2">
 			<foto url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
