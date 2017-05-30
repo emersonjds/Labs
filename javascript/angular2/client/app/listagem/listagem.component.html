@@ -4,18 +4,19 @@
 	</div>
 </div>
 
-
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<form action="">
-				<div class="input-group"></div>
-				<span class="input-group-btn">
-				<a [routerLink]="['/cadastro']" class="btn btn-primary">
-					Nova Foto
-				</a>
-			</span>
+			<form>
+				<div class="input-group">
+					<span class="input-group-btn">
+						<a [routerLink]="['/cadastro']" class="btn btn-primary">
+							Nova Foto
+						</a>
+					</span>
+					<input #textoProcurado type="text" class="form-control" placeholder="Filtrar pelo titulo da foto">
+					<!--# define a criação de uma variavel local que pode ser utilizada no template como um todo-->
+				</div>
 			</form>
 		</div>
 	</div>
@@ -23,7 +24,7 @@
 	<br/>
 
 	<div class="row">
-		<painel *ngFor="let foto of fotos" titulo="{{foto.titulo}}" class="col-md-2">
+		<painel *ngFor="let foto of fotos | filtroPorTitulo: textProcurado.value" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
 			<foto url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
 		</painel>
 	</div>

@@ -5,7 +5,7 @@ import { ListagemComponent } from './listagem/listagem.component'
 const appRoutes: Routes = [
   { path: '', component: ListagemComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'listagem', component: ListagemComponent }
+  { path: '**', component: ListagemComponent }//caso nao seja nenhuma rota validade direciona para padrao
 ]
 
 //modulo que compila as rotas para que o angular entenda 
