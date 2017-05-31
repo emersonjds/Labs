@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core'
 })
 
 export class FotoComponent {
-  @Input() url: string//[] associação unidirecional na templateUrl
-  @Input() titulo: string
-  descricao: string
+  @Input() url: string = ''//[] associação unidirecional na templateUrl
+  @Input() titulo: string = ''
+  descricao: string = ''
 }

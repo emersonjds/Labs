@@ -1,1 +1,27 @@
-<h1 class="text-center">Cadastro de Fotos</h1>
+<div class="container">
+  <h1 class="text-center">Cadastro de Foto</h1>
+  <br>
+  <form class="row" (submit)="cadastrar($event)">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="form-group">
+        <label for="titulo">Titulo</label>                <!--Dados trazidos pela model com one way data binding model/view-->
+        <input (input)="foto.titulo = $event.target.value" [value]="foto.titulo" type="text" class="form-control" autocomplete="off">
+        <!--Associação do evento input para passar dados da view para model-->
+      </div>
+
+      <div class="form-group">
+        <label for="url">URL</label>
+        <input (input)="foto.url = $event.target.value" [value]="foto.url" type="text" class="form-control" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descricao</label>
+        <textarea (input)="foto.descricao = $event.target.value" [value]="foto.descricao" name="" id="" cols="30" rows="10" class="form-control" autocomplete="off"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
+      <hr>
+    </div>
+  </form>
+</div>

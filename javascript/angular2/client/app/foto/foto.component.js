@@ -12,6 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var FotoComponent = (function () {
     function FotoComponent() {
+        this.url = ''; //[] associação unidirecional na templateUrl
+        this.titulo = '';
+        this.descricao = '';
     }
     return FotoComponent;
 }());

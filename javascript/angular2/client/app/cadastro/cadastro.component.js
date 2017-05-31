@@ -10,25 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var foto_component_1 = require("../foto/foto.component");
 var CadastroComponent = (function () {
     function CadastroComponent() {
+        this.foto = new foto_component_1.FotoComponent();
+        this.foto.titulo = 'A';
+        this.foto.url = 'B';
+        this.foto.descricao = 'C';
     }
+    CadastroComponent.prototype.cadastrar = function (event) {
+        event.preventDefault();
+        console.log(this.foto);
+    };
     return CadastroComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], CadastroComponent.prototype, "nome", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], CadastroComponent.prototype, "titulo", void 0);
 CadastroComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'cadastro',
         templateUrl: './cadastro.component.html'
-    })
+    }),
+    __metadata("design:paramtypes", [])
 ], CadastroComponent);
 exports.CadastroComponent = CadastroComponent;
 //# sourceMappingURL=cadastro.component.js.map
