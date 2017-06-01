@@ -22,4 +22,4 @@ export class CadastroComponent {
     console.log(this.foto)
   }
 
-}
+} 

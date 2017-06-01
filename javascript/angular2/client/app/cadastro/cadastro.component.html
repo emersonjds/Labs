@@ -5,8 +5,10 @@
     <div class="col-md-6 col-md-offset-3">
       <div class="form-group">
         <label for="titulo">Titulo</label>                <!--Dados trazidos pela model com one way data binding model/view-->
-        <input (input)="foto.titulo = $event.target.value" [value]="foto.titulo" type="text" class="form-control" autocomplete="off">
+        <!--<input (input)="foto.titulo = $event.target.value" [value]="foto.titulo" type="text" class="form-control" autocomplete="off">-->
         <!--Associação do evento input para passar dados da view para model-->
+
+        <input type="text" name="titulo" [(ngModel)]="foto.titulo" class="form-control" autocomplete="off">
       </div>
 
       <div class="form-group">

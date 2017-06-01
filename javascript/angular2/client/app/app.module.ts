@@ -9,6 +9,7 @@ import { PainelModule } from './painel/painel.module'
 import { CadastroComponent } from './cadastro/cadastro.component'
 import { ListagemComponent } from './listagem/listagem.component'
 import { routing } from './app.routes'
+import { FormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { routing } from './app.routes'
     FotoModule,
     PainelModule,
     HttpModule,
-    routing], // modulos importados para uso
+    routing, FormsModule], // modulos importados para uso
   declarations: [AppComponent, CadastroComponent, ListagemComponent], // modulos que podem ser usados neste novo modulo
   bootstrap: [AppComponent] //chamada inicial da aplicação
 })
