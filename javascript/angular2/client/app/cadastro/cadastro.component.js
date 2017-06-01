@@ -18,12 +18,14 @@ var CadastroComponent = (function () {
         this.http = http;
     }
     CadastroComponent.prototype.cadastrar = function (event) {
+        var _this = this;
         event.preventDefault();
         console.log(this.foto);
         var headers = new http_1.Headers();
         headers.append('Content-type', 'application/json');
-        this.http.post('v1/fotos', this.foto, { headers: headers })
+        this.http.post('v1/fotos', JSON.stringify(this.foto), { headers: headers })
             .subscribe(function () {
+            _this.foto = new foto_component_1.FotoComponent(); // nova instancia apos salvar os dados
             console.log('Dados salvos com sucesso');
         }, function (erro) { return console.log(erro); });
     };

@@ -24,8 +24,11 @@ export class CadastroComponent {
     let headers = new Headers()
     headers.append('Content-type', 'application/json')
 
-    this.http.post('v1/fotos', this.foto, { headers: headers })
+    this.http.post('v1/fotos', JSON.stringify(this.foto), { headers: headers })
       .subscribe(() => { //se os dados forem enviados com sucesso
+
+        this.foto = new FotoComponent() // nova instancia apos salvar os dados
+
         console.log('Dados salvos com sucesso')
       }, erro => console.log(erro))
 
