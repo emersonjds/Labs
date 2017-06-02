@@ -6,8 +6,8 @@ import { FotoService } from '../foto/foto.service';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [FotoComponent, FiltroPorTitulo, FotoService],
-  exports: [FotoComponent, FiltroPorTitulo, FotoService],
-  providers: [FotoService]
+  declarations: [FotoComponent, FiltroPorTitulo],
+  exports: [FotoComponent, FiltroPorTitulo],
+  providers: [FotoService] //como nao existe o decorator component nem pipa o Injectable é chamado em providers
 })
 export class FotoModule { }

@@ -26,6 +26,7 @@
 	<div class="row">
 		<painel *ngFor="let foto of fotos | filtroPorTitulo: textoProcurado.value" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
 			<foto url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
+			<button class="btn btn-danger btn-block" (click)="remove(foto)">Apagar</button>
 		</painel>
 	</div>
 

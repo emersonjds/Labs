@@ -11,22 +11,23 @@ import { FotoService } from '../foto/foto.service'
 
 export class ListagemComponent {
   fotos: FotoComponent[] = []
+  service: FotoService
 
   constructor(service: FotoService) {
-    service.lista()
+    this.service = service
+    this.service.lista()
       .subscribe(
-        fotos => this.fotos = fotos,
-        erro => console.log(erro)
+      fotos => this.fotos = fotos,
+      erro => console.log(erro)
       )
   }
 
-  // constructor(http: Http) { //injecao de dependencia por tipagem
-
-  //   //chamada com rxjs semelhante a Promise
-  //   http.get('v1/fotos')
-  //     .map(res => res.json())
-  //     .subscribe(fotos => this.fotos = fotos,
-  //     erro => console.log(erro) // retorno do erro caso subscrible nao traga os dados
-  //     )
-  // }
+  remove(foto: FotoComponent): void {
+    this.service.remove(foto)
+      .subscribe(() => {
+        let indiceFoto = this.fotos.indexOf(foto)
+        this.fotos.slice(indiceFoto, 1)
+        console.log('Foto deletada com sucesso')
+      }, erro => console.log('Houve um erro inesperado'))
+  }
 }

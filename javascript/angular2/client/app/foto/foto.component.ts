@@ -11,4 +11,5 @@ export class FotoComponent {
   @Input() url: string = ''//[] associação unidirecional na templateUrl
   @Input() titulo: string = ''
   descricao: string = ''
+  _id: string
 }

@@ -25,6 +25,9 @@ var FotoService = (function () {
         return this.http.get(this.url)
             .map(function (res) { return res.json(); });
     };
+    FotoService.prototype.remove = function (foto) {
+        return this.http.delete(this.url + '/' + foto._id);
+    };
     return FotoService;
 }());
 FotoService = __decorate([

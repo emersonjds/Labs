@@ -15,9 +15,19 @@ var ListagemComponent = (function () {
     function ListagemComponent(service) {
         var _this = this;
         this.fotos = [];
-        service.lista()
+        this.service = service;
+        this.service.lista()
             .subscribe(function (fotos) { return _this.fotos = fotos; }, function (erro) { return console.log(erro); });
     }
+    ListagemComponent.prototype.remove = function (foto) {
+        var _this = this;
+        this.service.remove(foto)
+            .subscribe(function () {
+            var indiceFoto = _this.fotos.indexOf(foto);
+            _this.fotos.slice(indiceFoto, 1);
+            console.log('Foto deletada com sucesso');
+        }, function (erro) { return console.log('Houve um erro inesperado'); });
+    };
     return ListagemComponent;
 }());
 ListagemComponent = __decorate([
