@@ -17,7 +17,8 @@ export class CadastroComponent {
   constructor(http: Http, fb: FormBuilder) {
     this.http = http
     this.meuForm = fb.group({
-      titulo: ['', Validators.required], //setando a opção para se tornar obrigatória
+      //compor as validaçòes
+      titulo: ['', Validators.compose([Validators.required, Validators.minLength(4)])], //setando a opção para se tornar obrigatória
       url: ['', Validators.required],
       descricao: ['']
     })

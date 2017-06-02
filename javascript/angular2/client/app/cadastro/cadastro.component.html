@@ -1,8 +1,9 @@
 <div class="container">
-  <h1 class="text-center">Cadastro de Foto</h1>
+  <h1 class="text-center">{{foto.titulo}}</h1>
   <br>
-  <form [formGroup]="meuForm" (submit)="cadastrar($event)" class="row">
-    <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6">
+    <form [formGroup]="meuForm" (submit)="cadastrar($event)" class="row">
+
       <div class="form-group">
         <label for="titulo">Titulo</label>
         <!--Dados trazidos pela model com one way data binding model/view-->
@@ -10,19 +11,30 @@
         <!--Associação do evento input para passar dados da view para model-->
 
         <input name="titulo" formControlName="titulo" type="text" [(ngModel)]="foto.titulo" class="form-control" autocomplete="off">
-        <span *ngIf="meuForm.controls.titulo.invalid" class="form-control alert-danger">
-          Titulo invalido
-        </span>
+
+        <div *ngIf="meuForm.controls.titulo.invalid">
+          <span *ngIf="meuForm.controls.titulo.errors.required" class="form-control alert-danger">
+              Titulo invalido
+            </span>
+          <span *ngIf="meuForm.controls.titulo.errors.minlength" class="form-control alert-danger">
+              Titulo deve ter mais de 4 caractereees 
+            </span>
+        </div>
+
       </div>
 
       <div class="form-group">
-        <label for="url">URL</label>
+        <label>URL</label>
         <!--Associacao dos valores com o objeto construtor formBuilder-->
-        <input name="url" formControlName="url" type="text" class="form-control" autocomplete="off">
-        <span *ngIf="meuForm.controls.url.invalid" class="form-control alert-danger">
-          Url obrigatória
-        </span>
+        <input name="url" formControlName="url" [(ngModel)]="foto.url" class="form-control" autocomplete="off">
+        <span *ngIf="!meuForm.controls.url.valid" class="form-control alert-danger">
+                    URL obrigatória
+                </span>
       </div>
+
+
+
+
 
       <div class="form-group">
         <label>Descrição</label>
@@ -33,6 +45,10 @@
       <button type="submit" class="btn btn-primary" [disabled]="meuForm.invalid">Salvar</button>
       <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
       <hr>
-    </div>
-  </form>
+    </form>
+  </div>
+
+  <div class="col-md-6">
+    <foto url="{{foto.url}}" titulo="foto.titulo"></foto>
+  </div>
 </div>
