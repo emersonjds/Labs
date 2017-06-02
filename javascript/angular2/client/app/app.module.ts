@@ -11,17 +11,16 @@ import { ListagemComponent } from './listagem/listagem.component'
 import { routing } from './app.routes'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
-
 @NgModule({
   imports: [
     BrowserModule,
     FotoModule,
     PainelModule,
     HttpModule,
-    routing, 
+    routing,
     FormsModule,
     ReactiveFormsModule
-    ], // modulos importados para uso
+  ], // modulos importados para uso
   declarations: [AppComponent, CadastroComponent, ListagemComponent], // modulos que podem ser usados neste novo modulo
   bootstrap: [AppComponent] //chamada inicial da aplicação
 })
