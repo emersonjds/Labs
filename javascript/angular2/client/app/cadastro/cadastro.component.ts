@@ -24,7 +24,6 @@ export class CadastroComponent {
     })
   }
 
-
   cadastrar(event) {
     event.preventDefault()
     console.log(this.foto)
