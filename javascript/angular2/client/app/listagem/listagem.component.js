@@ -15,6 +15,7 @@ var ListagemComponent = (function () {
     function ListagemComponent(service) {
         var _this = this;
         this.fotos = [];
+        this.mensagem = '';
         this.service = service;
         this.service.lista()
             .subscribe(function (fotos) { return _this.fotos = fotos; }, function (erro) { return console.log(erro); });
@@ -23,10 +24,15 @@ var ListagemComponent = (function () {
         var _this = this;
         this.service.remove(foto)
             .subscribe(function () {
-            var indiceFoto = _this.fotos.indexOf(foto);
-            _this.fotos.slice(indiceFoto, 1);
-            console.log('Foto deletada com sucesso');
-        }, function (erro) { return console.log('Houve um erro inesperado'); });
+            var novasFotos = _this.fotos.slice(0);
+            var indiceFoto = novasFotos.indexOf(foto);
+            novasFotos.splice(indiceFoto, 1);
+            _this.fotos = novasFotos;
+            _this.mensagem = 'Foto removida com sucesso';
+        }, function (erro) {
+            console.log('Houve um erro inesperado');
+            _this.mensagem = 'Falha ao excluir a foto ';
+        });
     };
     return ListagemComponent;
 }());

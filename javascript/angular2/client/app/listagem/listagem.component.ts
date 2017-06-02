@@ -12,6 +12,7 @@ import { FotoService } from '../foto/foto.service'
 export class ListagemComponent {
   fotos: FotoComponent[] = []
   service: FotoService
+  mensagem: string = ''
 
   constructor(service: FotoService) {
     this.service = service
@@ -25,9 +26,14 @@ export class ListagemComponent {
   remove(foto: FotoComponent): void {
     this.service.remove(foto)
       .subscribe(() => {
-        let indiceFoto = this.fotos.indexOf(foto)
-        this.fotos.slice(indiceFoto, 1)
-        console.log('Foto deletada com sucesso')
-      }, erro => console.log('Houve um erro inesperado'))
+        let novasFotos = this.fotos.slice(0)
+        let indiceFoto = novasFotos.indexOf(foto)
+        novasFotos.splice(indiceFoto, 1)
+        this.fotos = novasFotos
+        this.mensagem = 'Foto removida com sucesso'
+      }, erro => {
+        console.log('Houve um erro inesperado')
+        this.mensagem = 'Falha ao excluir a foto '
+      })
   }
 }
