@@ -11,14 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var foto_component_1 = require("../foto/foto.component");
-var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
 var foto_service_1 = require("../foto/foto.service");
 var CadastroComponent = (function () {
-    function CadastroComponent(service, http, fb) {
+    function CadastroComponent(service, fb) {
         this.foto = new foto_component_1.FotoComponent();
         this.service = service;
-        this.http = http;
         this.meuForm = fb.group({
             //compor as validaçòes
             titulo: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(4)])],
@@ -46,7 +44,7 @@ CadastroComponent = __decorate([
         selector: 'cadastro',
         templateUrl: './cadastro.component.html'
     }),
-    __metadata("design:paramtypes", [foto_service_1.FotoService, http_1.Http, forms_1.FormBuilder])
+    __metadata("design:paramtypes", [foto_service_1.FotoService, forms_1.FormBuilder])
 ], CadastroComponent);
 exports.CadastroComponent = CadastroComponent;
 //# sourceMappingURL=cadastro.component.js.map

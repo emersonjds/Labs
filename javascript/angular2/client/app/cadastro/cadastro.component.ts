@@ -12,13 +12,11 @@ import { FotoService } from '../foto/foto.service'
 export class CadastroComponent {
 
   foto: FotoComponent = new FotoComponent()
-  http: Http
   meuForm: FormGroup
   service: FotoService
 
-  constructor(service: FotoService, http: Http, fb: FormBuilder) {
+  constructor(service: FotoService, fb: FormBuilder) {
     this.service = service
-    this.http = http
     this.meuForm = fb.group({
       //compor as validaçòes
       titulo: ['', Validators.compose([Validators.required, Validators.minLength(4)])], //setando a opção para se tornar obrigatória
