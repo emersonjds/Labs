@@ -13,9 +13,11 @@ var core_1 = require("@angular/core");
 var foto_component_1 = require("../foto/foto.component");
 var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
+var foto_service_1 = require("../foto/foto.service");
 var CadastroComponent = (function () {
-    function CadastroComponent(http, fb) {
+    function CadastroComponent(service, http, fb) {
         this.foto = new foto_component_1.FotoComponent();
+        this.service = service;
         this.http = http;
         this.meuForm = fb.group({
             //compor as validaçòes
@@ -28,13 +30,13 @@ var CadastroComponent = (function () {
         var _this = this;
         event.preventDefault();
         console.log(this.foto);
-        var headers = new http_1.Headers();
-        headers.append('Content-type', 'application/json');
-        this.http.post('v1/fotos', JSON.stringify(this.foto), { headers: headers })
+        this.service.cadastra(this.foto)
             .subscribe(function () {
-            _this.foto = new foto_component_1.FotoComponent(); // nova instancia apos salvar os dados
-            console.log('Dados salvos com sucesso');
-        }, function (erro) { return console.log(erro); });
+            _this.foto = new foto_component_1.FotoComponent(); // chamada de uma nova instancia
+            console.log('Foto Cadastrada com sucesso');
+        }, function (erro) {
+            console.log(erro);
+        });
     };
     return CadastroComponent;
 }());
@@ -44,7 +46,7 @@ CadastroComponent = __decorate([
         selector: 'cadastro',
         templateUrl: './cadastro.component.html'
     }),
-    __metadata("design:paramtypes", [http_1.Http, forms_1.FormBuilder])
+    __metadata("design:paramtypes", [foto_service_1.FotoService, http_1.Http, forms_1.FormBuilder])
 ], CadastroComponent);
 exports.CadastroComponent = CadastroComponent;
 //# sourceMappingURL=cadastro.component.js.map

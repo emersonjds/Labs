@@ -6,8 +6,8 @@ import { FotoService } from '../foto/foto.service';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [FotoComponent, FiltroPorTitulo],
-  exports: [FotoComponent, FiltroPorTitulo],
+  declarations: [FotoComponent, FiltroPorTitulo, FotoService],
+  exports: [FotoComponent, FiltroPorTitulo, FotoService],
   providers: [FotoService]
 })
 export class FotoModule { }
