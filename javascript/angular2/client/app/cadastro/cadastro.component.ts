@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core'
 import { FotoComponent } from '../foto/foto.component'
 import { Http, Headers } from '@angular/http'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 
 @Component({
   moduleId: module.id,
@@ -11,9 +12,15 @@ export class CadastroComponent {
 
   foto: FotoComponent = new FotoComponent()
   http: Http
+  meuForm: FormGroup
 
-  constructor(http: Http) {
+  constructor(http: Http, fb: FormBuilder) {
     this.http = http
+    this.meuForm = fb.group({
+      titulo: ['', Validators.required], //setando a opção para se tornar obrigatória
+      url: ['', Validators.required],
+      descricao: ['']
+    })
   }
 
 
