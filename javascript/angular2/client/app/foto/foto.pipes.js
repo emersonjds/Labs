@@ -18,7 +18,7 @@ var FiltroPorTitulo = (function () {
 }());
 FiltroPorTitulo = __decorate([
     core_1.Pipe({
-        name: 'filtroPorTitulo',
+        name: 'filtroPorTitulo'
     })
 ], FiltroPorTitulo);
 exports.FiltroPorTitulo = FiltroPorTitulo;

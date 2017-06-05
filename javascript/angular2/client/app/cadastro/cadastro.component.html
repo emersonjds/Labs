@@ -1,50 +1,56 @@
 <div class="container">
-  <h1 class="text-center">{{foto.titulo}}</h1>
-  <br>
-  <div class="col-md-6">
-    <form [formGroup]="meuForm" (submit)="cadastrar($event)" class="row">
-
-      <div class="form-group">
-        <label for="titulo">Titulo</label>
-        <!--Dados trazidos pela model com one way data binding model/view-->
-        <!--<input (input)="foto.titulo = $event.target.value" [value]="foto.titulo" type="text" class="form-control" autocomplete="off">-->
-        <!--Associação do evento input para passar dados da view para model-->
-
-        <input name="titulo" formControlName="titulo" type="text" [(ngModel)]="foto.titulo" class="form-control" autocomplete="off">
-
-        <div *ngIf="meuForm.controls.titulo.invalid">
-          <span *ngIf="meuForm.controls.titulo.errors.required" class="form-control alert-danger">
-              Titulo invalido
-            </span>
-          <span *ngIf="meuForm.controls.titulo.errors.minlength" class="form-control alert-danger">
-              Titulo deve ter mais de 4 caractereees 
-            </span>
-        </div>
-
-      </div>
-
-      <div class="form-group">
-        <label>URL</label>
-        <!--Associacao dos valores com o objeto construtor formBuilder-->
-        <input name="url" formControlName="url" [(ngModel)]="foto.url" class="form-control" autocomplete="off">
-        <span *ngIf="!meuForm.controls.url.valid" class="form-control alert-danger">
+    <h1 class="text-center">{{foto.titulo}}</h1>
+    <form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)" >
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Título</label>
+                <input 
+                    formControlName="titulo" 
+                    name="titulo" 
+                    [(ngModel)]="foto.titulo" 
+                    class="form-control"  
+                    autocomplete="off">
+                <div *ngIf="meuForm.controls.titulo.invalid">
+                    <span *ngIf="meuForm.controls.titulo.errors.required" class="form-control alert-danger">
+                        Título obrigatório
+                    </span>
+                    <span *ngIf="meuForm.controls.titulo.errors.minlength" class="form-control alert-danger">
+                        Título deve ter no mínimo 4 caracteres
+                    </span>                    
+                </div>                        
+            </div>
+            <div class="form-group">
+                <label>URL</label>
+                <input
+                    formControlName="url"  
+                    name="url" 
+                    [(ngModel)]="foto.url" 
+                    class="form-control"  
+                    autocomplete="off">
+                <span *ngIf="meuForm.controls.url.invalid" class="form-control alert-danger">
                     URL obrigatória
-                </span>
-      </div>
+                </span>                       
+            </div>
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea 
+                    formControlName="descricao" 
+                    name="descricao" 
+                    [(ngModel)]="foto.descricao"  
+                    class="form-control" 
+                    autocomplete="off">
+                </textarea>
+            </div>
 
-      <div class="form-group">
-        <label>Descrição</label>
-        <textarea name="descricao" [(ngModel)]="foto.descricao" formControlName="descricao" class="form-control">
-    </textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary" [disabled]="meuForm.invalid">Salvar</button>
-      <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
-      <hr>
+            <button type="submit" class="btn btn-primary" [disabled]="meuForm.invalid">
+                Salvar
+            </button>
+             <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
+            <hr>
+        </div>
+        <div class="col-md-6">
+            <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+        </div>
     </form>
-  </div>
-
-  <div class="col-md-6">
-    <foto url="{{foto.url}}" titulo="foto.titulo"></foto>
-  </div>
 </div>
+

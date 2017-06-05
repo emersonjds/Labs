@@ -1,37 +1,34 @@
 <div class="jumbotron">
-	<div class="text-center">
-		<h1>Alurapic</h1>
-	</div>
+    <h1 class="text-center">Alurapic</h1>
 </div>
 
 <div class="container">
 
-	<p *ngIf="mensagem.length" class="alert alert-success">{{mensagem}}</p>
+    <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <a [routerLink]="['/cadastro']" class="btn btn-primary">
+                            Nova foto
+                        </a>
+                    </span>
+                    <input #textoProcurado (keyup)="0" class="form-control" placeholder="filtrar pelo título da foto">
+                </div>
+            </form>
+        </div> <!-- fim col-md-12 -->
+    </div> <!-- fim row -->
+    <br>
 
-	<div class="row">
-		<div class="col-md-12">
-			<form>
-				<div class="input-group">
-					<span class="input-group-btn">
-						<a [routerLink]="['/cadastro']" class="btn btn-primary">
-							Nova Foto
-						</a>
-					</span>
-					<input #textoProcurado (keyup)="0" type="text" class="form-control" placeholder="Filtrar pelo titulo da foto">
-					<!--# define a criação de uma variavel local que pode ser utilizada no template como um todo-->
-				</div>
-			</form>
-		</div>
-	</div>
-
-	<br/>
-
-	<div class="row">
-		<painel *ngFor="let foto of fotos | filtroPorTitulo: textoProcurado.value" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
-			<foto url="{{foto.url}}" titulo={{foto.titulo}} class="responsive-img"></foto>
-			<button class="btn btn-danger btn-block" (click)="remove(foto)">Apagar</button>
-		</painel>
-	</div>
-
-
+    <div class="row">
+        <painel *ngFor="let foto of fotos | filtroPorTitulo: textoProcurado.value" titulo="{{foto.titulo | uppercase }}" class="col-md-2">
+            <a [routerLink]="['/cadastro', foto._id]">
+                <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+            </a>
+            
+            <button class="btn btn-danger btn-block" (click)="remove(foto)" >Remover</button>
+        </painel>
+    </div>
 </div>

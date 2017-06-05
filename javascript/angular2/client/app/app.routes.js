@@ -6,8 +6,8 @@ var listagem_component_1 = require("./listagem/listagem.component");
 var appRoutes = [
     { path: '', component: listagem_component_1.ListagemComponent },
     { path: 'cadastro', component: cadastro_component_1.CadastroComponent },
-    { path: '**', component: listagem_component_1.ListagemComponent } //caso nao seja nenhuma rota validade direciona para padrao
+    { path: 'cadastro/:id', component: cadastro_component_1.CadastroComponent },
+    { path: '**', component: listagem_component_1.ListagemComponent }
 ];
-//modulo que compila as rotas para que o angular entenda 
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
 //# sourceMappingURL=app.routes.js.map

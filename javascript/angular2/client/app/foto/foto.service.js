@@ -16,23 +16,35 @@ var FotoService = (function () {
         this.url = 'v1/fotos';
         this.http = http;
         this.headers = new http_1.Headers();
-        this.headers.append('Content-type', 'application.json');
+        this.headers.append('Content-Type', 'application/json');
     }
     FotoService.prototype.cadastra = function (foto) {
-        return this.http.post(this.url, JSON.stringify(foto), { headers: this.headers }); //return Observable
+        if (foto._id) {
+            return this.http
+                .put(this.url + '/' + foto._id, JSON.stringify(foto), { headers: this.headers });
+        }
+        else {
+            return this.http
+                .post(this.url, JSON.stringify(foto), { headers: this.headers });
+        }
     };
     FotoService.prototype.lista = function () {
-        return this.http.get(this.url)
+        return this.http
+            .get(this.url)
             .map(function (res) { return res.json(); });
     };
     FotoService.prototype.remove = function (foto) {
         return this.http.delete(this.url + '/' + foto._id);
     };
+    FotoService.prototype.buscaPorId = function (id) {
+        return this.http
+            .get(this.url + '/' + id)
+            .map(function (res) { return res.json(); });
+    };
     return FotoService;
 }());
 FotoService = __decorate([
-    core_1.Injectable() //com esta marcação o angular entende que pode buscar as dependencias da classe
-    ,
+    core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
 ], FotoService);
 exports.FotoService = FotoService;

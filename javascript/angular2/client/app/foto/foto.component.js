@@ -12,20 +12,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var FotoComponent = (function () {
     function FotoComponent() {
-        this.url = ''; //[] associação unidirecional na templateUrl
-        this.titulo = '';
-        this.descricao = '';
     }
     return FotoComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], FotoComponent.prototype, "url", void 0);
+], FotoComponent.prototype, "titulo", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], FotoComponent.prototype, "titulo", void 0);
+], FotoComponent.prototype, "url", void 0);
 FotoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
