@@ -8,6 +8,6 @@ import { FotoService } from '../foto/foto.service';
   imports: [CommonModule],
   declarations: [FotoComponent, FiltroPorTitulo],
   exports: [FotoComponent, FiltroPorTitulo],
-  providers: [FotoService] //como nao existe o decorator component nem pipa o Injectable é chamado em providers
+  providers: [FotoService] // a classe nao recebe um decorator dessa forma ela é injetada como um provider e recebe um @injectable para que o angular reconhecar e trate as dependencias
 })
 export class FotoModule { }

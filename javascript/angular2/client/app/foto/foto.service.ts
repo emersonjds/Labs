@@ -3,7 +3,7 @@ import { FotoComponent } from './foto.component'
 import { Observable } from 'rxjs'
 import { Injectable } from '@angular/core'
 
-@Injectable() //com esta marcação o angular entende que pode buscar as dependencias da classe
+@Injectable() //com a marcação FotoService pode ser injetado e o angular consegue buscar as dependencias que foram importadas
 export class FotoService {
 
   http: Http
