@@ -8,8 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var PainelComponent = (function () {
     function PainelComponent(elemento) {
         this.elemento = elemento;
@@ -21,22 +20,22 @@ var PainelComponent = (function () {
                 : this.titulo;
     };
     PainelComponent.prototype.fadeOut = function (cb) {
-        $(this.elemento).fadeOut(cb);
+        $(this.elemento.nativeElement).fadeOut(cb);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], PainelComponent.prototype, "titulo", void 0);
+    PainelComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'painel',
+            templateUrl: './painel.component.html',
+            styleUrls: ['./painel.component.css']
+        }), 
+        __metadata('design:paramtypes', [core_1.ElementRef])
+    ], PainelComponent);
     return PainelComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], PainelComponent.prototype, "titulo", void 0);
-PainelComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'painel',
-        templateUrl: './painel.component.html',
-        styleUrls: ['./painel.component.css']
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], PainelComponent);
 exports.PainelComponent = PainelComponent;
 //# sourceMappingURL=painel.component.js.map

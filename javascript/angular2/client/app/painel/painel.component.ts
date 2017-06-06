@@ -8,11 +8,13 @@ import { Component, Input, OnInit, ElementRef } from '@angular/core';
 })
 export class PainelComponent implements OnInit { 
 
-    @Input() titulo: string
-    elemento : ElementRef
+    @Input() titulo: string;
+    elemento: ElementRef;
 
-    constructor(elemento : ElementRef) {
-        this.elemento = elemento
+    constructor(elemento: ElementRef) {
+
+        this.elemento = elemento;
+
     }
 
     ngOnInit() {
@@ -24,7 +26,8 @@ export class PainelComponent implements OnInit {
     }
 
     fadeOut(cb) {
-        $(this.elemento).fadeOut(cb)
+
+        $(this.elemento.nativeElement).fadeOut(cb);
     }
 }
 

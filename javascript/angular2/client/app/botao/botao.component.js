@@ -8,8 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var BotaoComponent = (function () {
     function BotaoComponent() {
         this.nome = 'Ok';
@@ -17,48 +16,49 @@ var BotaoComponent = (function () {
         this.tipo = 'button';
         this.desabilitado = false;
         this.acao = new core_1.EventEmitter();
-        this.confirmacao = false;
     }
     BotaoComponent.prototype.executaAcao = function () {
         if (this.confirmacao) {
-            if (confirm('Tem certeza')) {
+            if (confirm('Deseja excluir?')) {
                 this.acao.emit(null);
             }
             return;
         }
         this.acao.emit(null);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], BotaoComponent.prototype, "nome", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], BotaoComponent.prototype, "estilo", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], BotaoComponent.prototype, "tipo", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], BotaoComponent.prototype, "desabilitado", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], BotaoComponent.prototype, "acao", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], BotaoComponent.prototype, "confirmacao", void 0);
+    BotaoComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'botao',
+            templateUrl: './botao.component.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], BotaoComponent);
     return BotaoComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], BotaoComponent.prototype, "nome", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], BotaoComponent.prototype, "estilo", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], BotaoComponent.prototype, "tipo", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], BotaoComponent.prototype, "desabilitado", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], BotaoComponent.prototype, "acao", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], BotaoComponent.prototype, "confirmacao", void 0);
-BotaoComponent = __decorate([
-    core_1.Component({
-        selector: 'botao',
-        templateUrl: './botao.component.html'
-    })
-], BotaoComponent);
 exports.BotaoComponent = BotaoComponent;
 //# sourceMappingURL=botao.component.js.map

@@ -11,5 +11,4 @@ export class FiltroPorTitulo implements PipeTransform {
         digitado = digitado.toLowerCase();
         return fotos.filter( foto => foto.titulo.toLowerCase().includes(digitado));
     }
-
 }

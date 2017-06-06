@@ -3,7 +3,6 @@ import { FotoComponent } from '../foto/foto.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FotoService } from '../foto/foto.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import {resolveReflectiveProviders} from "@angular/core/src/di/reflective_provider";
 
 @Component({
     moduleId: module.id,
@@ -52,8 +51,9 @@ export class CadastroComponent {
 
     cadastrar(event) {
 
-        event.preventDefault()
-        console.log(this.foto)
+        event.preventDefault();
+
+        console.log(this.foto);
 
         this.service
             .cadastra(this.foto)
@@ -61,9 +61,7 @@ export class CadastroComponent {
                 this.mensagem = res.mensagem;
                 this.foto = new FotoComponent();
                 if(!res.inclusao) this.router.navigate(['']);
-            }, erro => {
-                console.log(erro);
-            });
+            }, erro => console.log(erro));
     }
 
 }

@@ -8,9 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var http_1 = require("@angular/http");
-var core_1 = require("@angular/core");
+var http_1 = require('@angular/http');
+var core_1 = require('@angular/core');
 var FotoService = (function () {
     function FotoService(http) {
         this.url = 'v1/fotos';
@@ -27,7 +26,7 @@ var FotoService = (function () {
         else {
             return this.http
                 .post(this.url, JSON.stringify(foto), { headers: this.headers })
-                .map(function () { return new MensagemCadastro('Foto cadastrada com sucesso', true); });
+                .map(function () { return new MensagemCadastro('Foto incluída com sucesso', true); });
         }
     };
     FotoService.prototype.lista = function () {
@@ -43,12 +42,12 @@ var FotoService = (function () {
             .get(this.url + '/' + id)
             .map(function (res) { return res.json(); });
     };
+    FotoService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], FotoService);
     return FotoService;
 }());
-FotoService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], FotoService);
 exports.FotoService = FotoService;
 var MensagemCadastro = (function () {
     function MensagemCadastro(_mensagem, _inclusao) {
