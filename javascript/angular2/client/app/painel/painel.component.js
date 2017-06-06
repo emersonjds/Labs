@@ -11,13 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var PainelComponent = (function () {
-    function PainelComponent() {
+    function PainelComponent(elemento) {
+        this.elemento = elemento;
     }
     PainelComponent.prototype.ngOnInit = function () {
         this.titulo =
             this.titulo.length > 7
                 ? this.titulo.substr(0, 7) + '...'
                 : this.titulo;
+    };
+    PainelComponent.prototype.fadeOut = function (cb) {
+        $(this.elemento).fadeOut(cb);
     };
     return PainelComponent;
 }());
@@ -31,7 +35,8 @@ PainelComponent = __decorate([
         selector: 'painel',
         templateUrl: './painel.component.html',
         styleUrls: ['./painel.component.css']
-    })
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
 ], PainelComponent);
 exports.PainelComponent = PainelComponent;
 //# sourceMappingURL=painel.component.js.map

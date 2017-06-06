@@ -20,8 +20,7 @@ import { BotaoModule } from './botao/botao.module'
         routing,
         FormsModule,
         ReactiveFormsModule,
-        BotaoModule,
-        AppComponent
+        BotaoModule
     ],
     declarations: [AppComponent, CadastroComponent, ListagemComponent],
     bootstrap: [AppComponent]

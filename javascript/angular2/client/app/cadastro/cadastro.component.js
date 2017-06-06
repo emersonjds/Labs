@@ -49,7 +49,6 @@ var CadastroComponent = (function () {
                 _this.router.navigate(['']);
         }, function (erro) {
             console.log(erro);
-            _this.mensagem = res.mensagem;
         });
     };
     return CadastroComponent;

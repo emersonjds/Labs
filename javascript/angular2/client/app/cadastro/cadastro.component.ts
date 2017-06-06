@@ -63,7 +63,6 @@ export class CadastroComponent {
                 if(!res.inclusao) this.router.navigate(['']);
             }, erro => {
                 console.log(erro);
-                this.mensagem = res.mensagem;
             });
     }
 

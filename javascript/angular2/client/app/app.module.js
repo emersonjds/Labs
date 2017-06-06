@@ -33,8 +33,7 @@ AppModule = __decorate([
             app_routes_1.routing,
             forms_1.FormsModule,
             forms_1.ReactiveFormsModule,
-            botao_module_1.BotaoModule,
-            app_component_1.AppComponent
+            botao_module_1.BotaoModule
         ],
         declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, listagem_component_1.ListagemComponent],
         bootstrap: [app_component_1.AppComponent]
