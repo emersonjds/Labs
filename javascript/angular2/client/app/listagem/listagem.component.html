@@ -5,7 +5,7 @@
 <div class="container">
 
     <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
-    
+
     <div class="row">
         <div class="col-md-12">
             <form>
@@ -18,19 +18,19 @@
                     <input #textoProcurado (keyup)="0" class="form-control" placeholder="filtrar pelo título da foto">
                 </div>
             </form>
-        </div> <!-- fim col-md-12 -->
-    </div> <!-- fim row -->
+        </div>
+        <!-- fim col-md-12 -->
+    </div>
+    <!-- fim row -->
     <br>
 
     <div class="row">
-        <painel *ngFor="let foto of fotos | filtroPorTitulo: textoProcurado.value" titulo="{{foto.titulo | uppercase }}" class="col-md-2">
+        <painel *ngFor="let foto of fotos | filtroPorTitulo:textoProcurado.value" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
             <a [routerLink]="['/cadastro', foto._id]">
-                <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+                <foto titulo="{{foto.titulo}}" url="{{foto.url}}"></foto>
             </a>
-
-            <botao nome="Remover" estilo="btn-danger btn-block" (acao)="remove(foto)" confirmacao="true"></botao>
-
-            <!--<button class="btn btn-danger btn-block" (click)="remove(foto)" >Remover</button>-->
+            <br>
+            <botao nome="Remover" estilo="btn-danger btn-block" (acao)="remove(foto)"></botao>
         </painel>
     </div>
 </div>
