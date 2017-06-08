@@ -1,16 +1,14 @@
 import { PrimeiroProjetoPage } from './app.po';
 
-describe('primeiro-projeto App', () => {
+describe('primeiro-projeto App', function() {
   let page: PrimeiroProjetoPage;
 
   beforeEach(() => {
     page = new PrimeiroProjetoPage();
   });
 
-  it('should display welcome message', done => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to app!!'))
-      .then(done, done.fail);
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

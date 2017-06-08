@@ -2,8 +2,10 @@ import { Component } from '@angular/core'
 
 @Component({
   moduleId: module.id,
-  selector: 'primeiro',
-  templateUrl: './meu-primeiro.html'
+  selector : 'primeiro',
+  template: ` 
+    <h1>Test</h1> 
+  `
 })
 export class MeuPrimeiroComponent {
 
