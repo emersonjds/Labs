@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { FirstComponent } from './first-component/first-component';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+
+import { AppComponent } from './app.component'
+import { FirstComponent } from './first-component/first-component'
 import { SecondComponentComponent } from './second-component/second-component.component'
+import { CursosModule } from './cursos/cursos.module'
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { SecondComponentComponent } from './second-component/second-component.co
     SecondComponentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CursosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
