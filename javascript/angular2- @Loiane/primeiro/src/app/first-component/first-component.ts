@@ -6,6 +6,6 @@ import { Component } from '@angular/core'
   templateUrl: 'first-component.html'
 })
 
-class FirstComponent {
-
+export class FirstComponent {
+  titulo: string = 'dado da model pra view'
 }
