@@ -1,23 +1,26 @@
+import { CursosModule } from './cursos/cursos.module';
 
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component'
 import { FirstComponent } from './first-component/first-component'
-import { SecondComponentComponent } from './second-component/second-component.component'
-import { CursosModule } from './cursos/cursos.module'
+import { SecondComponentComponent } from './second-component/second-component.component';
+import { CursoDetalheComponent } from './curso/curso-detalhe/curso-detalhe.component'
+
 
 @NgModule({
-  declarations: [
+  declarations: [ //listar todos os componentes, diretivas e pipes
     AppComponent,
     FirstComponent,
-    SecondComponentComponent
+    SecondComponentComponent,
+    CursoDetalheComponent
   ],
-  imports: [
+  imports: [ // Outros modulos que podem ser utilizados nesse ou em outro componente pertencente a este modulo
     BrowserModule,
     CursosModule
   ],
-  providers: [],
+  providers: [], //serviços que ficam disponiveis pra todos os components
   bootstrap: [AppComponent]
 })
 export class AppModule { }
