@@ -5,16 +5,14 @@ import { NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component'
 import { FirstComponent } from './first-component/first-component'
-import { SecondComponentComponent } from './second-component/second-component.component';
-import { CursoDetalheComponent } from './curso/curso-detalhe/curso-detalhe.component'
+import { SecondComponentComponent } from './second-component/second-component.component'
 
 
 @NgModule({
   declarations: [ //listar todos os componentes, diretivas e pipes
     AppComponent,
     FirstComponent,
-    SecondComponentComponent,
-    CursoDetalheComponent
+    SecondComponentComponent
   ],
   imports: [ // Outros modulos que podem ser utilizados nesse ou em outro componente pertencente a este modulo
     BrowserModule,

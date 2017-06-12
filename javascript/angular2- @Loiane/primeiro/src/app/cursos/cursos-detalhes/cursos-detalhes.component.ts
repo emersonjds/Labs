@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosDetalhesComponent implements OnInit {
 
-  cursos: string[] = ['Java', 'NodeJS', 'Javascript']
+  cursos: string[]
   constructor() { }
 
   ngOnInit() {

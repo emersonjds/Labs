@@ -2,5 +2,8 @@
   Lista de cursos do portal : {{urlPortal}}
 </p>
 
-<app-cursos-detalhes></app-cursos-detalhes>
+<h4>Detalhes do Curso</h4>
 
+<ul>
+  <li *ngFor="let curso of cursos"><a href="">Promoção no curso de {{curso}}</a></li>
+</ul>
