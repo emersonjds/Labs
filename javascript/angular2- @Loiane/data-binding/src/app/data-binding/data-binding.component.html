@@ -63,25 +63,54 @@
       <br>
       <br>
 
-      <input type="text" 
-        (keyup)="escreveNaTela($event)" 
-        (keyup.enter)="salvarValor(campoInput.value)" 
-        (blur)="salvarValor(campoInput.value)" #campoInput /> <!--Variavel sobrescreve o $event.target-->
+      <input type="text" (keyup)="escreveNaTela($event)" (keyup.enter)="salvarValor(campoInput.value)" (blur)="salvarValor(campoInput.value)"
+        #campoInput />
+      <!--Variavel sobrescreve o $event.target-->
 
       <p>Valor atual : {{ valorAtual }}</p>
       <p>Valor salvo : {{ valorSalvo }}</p>
 
 
       <br>
-      <p 
-        (mouseover)="onMouseOverOut()"
-        (mouseout)="onMouseOverOut()"
-        [class.highlight]="isMouseOver" 
-        >
-          Passe o mouse sobre mim
+      <p (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">
+        Passe o mouse sobre mim
       </p>
     </article>
 
+  </section>
+
+  <section class="two-way-databinding">
+    <article>
+
+      <h3>
+        Two Way Databinding
+      </h3>
+      <br><br>
+
+      <div>
+
+        <input type="text" 
+          [value]="nome" 
+          (input)="nome = $event.target.value" 
+        />
+
+        <p>Valor digitado : {{ nome }}</p>       
+
+      </div>
+      <br><br>
+      <div>
+        <h4>  Dados de Perssoa</h4>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+
+        Nome: {{ pessoa.nome }} 
+        <br><br>
+        Nome: {{ pessoa.idade }}
+        <br><br>
+        
+      </div>
+
+    </article>
   </section>
 
 </div>

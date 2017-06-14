@@ -7,17 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  valorAtual: string = ''
-  valorSalvo = ''
-  isMouseOver: boolean = false
-
   url: string = 'http://impacta.com.br'
   img: string = 'http://lorempixel.com/400/200/business/'
 
+  valorAtual: string = ''
+  valorSalvo = ''
+  isMouseOver: boolean = false
+  nome: string = 'abc'
+
+  pessoa: any = {
+    nome: 'def',
+    idade: 15
+  }
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   botaoClicado() {
     alert("Clicou")
