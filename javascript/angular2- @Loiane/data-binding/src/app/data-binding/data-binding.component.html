@@ -65,11 +65,21 @@
 
       <input type="text" 
         (keyup)="escreveNaTela($event)" 
-        (keyup.enter)="salvarValor($event.target.value)">
+        (keyup.enter)="salvarValor(campoInput.value)" 
+        (blur)="salvarValor(campoInput.value)" #campoInput />
 
       <p>Valor atual : {{ valorAtual }}</p>
       <p>Valor salvo : {{ valorSalvo }}</p>
 
+
+      <br>
+      <p 
+        (mouseover)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        [class.highlight]="isMouseOver" 
+        >
+          Passe o mouse sobre mim
+      </p>
     </article>
 
   </section>

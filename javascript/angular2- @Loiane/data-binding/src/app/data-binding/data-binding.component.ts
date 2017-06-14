@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
+  valorAtual: string = ''
+  valorSalvo = ''
+  isMouseOver: boolean = false
+
   url: string = 'http://impacta.com.br'
   img: string = 'http://lorempixel.com/400/200/business/'
 
@@ -15,22 +19,20 @@ export class DataBindingComponent implements OnInit {
   ngOnInit() {
   }
 
-  valorAtual = ''
-  valorSalvo = ''
-
   botaoClicado() {
     alert("Clicou")
   }
-
 
   escreveNaTela(event: KeyboardEvent) {
     this.valorAtual = (<HTMLInputElement>event.target).value
   }
 
-  salvaValor(valor) {
-   this.valorSalvo = valor;
-   console.log(this.valorSalvo)
+  salvarValor(valor) {
+    this.valorSalvo = valor
   }
 
+  onMouseOverOut() {
+    this.isMouseOver = !this.isMouseOver
+  }
 
 }
