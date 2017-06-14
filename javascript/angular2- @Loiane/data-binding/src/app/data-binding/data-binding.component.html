@@ -42,7 +42,7 @@
         <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
       </div>
 
-       <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+      <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
         <strong>Texto só aparece em caso de erro</strong>
       </div>
 
@@ -50,5 +50,23 @@
 
   </section>
 
+  <section class="event-binding">
+
+    <article>
+      <h3>Event Binding</h3>
+
+      <div>
+        <button class="btn btn-primary" (click)="botaoClicado()">
+          Me clique
+        </button>
+      </div>
+      <br>
+      <br>
+
+      <input type="text" (keyup)="escreveNaTela($event)">
+      <p>Valor atual : {{ valorAtual }}</p>
+    </article>
+
+  </section>
 
 </div>

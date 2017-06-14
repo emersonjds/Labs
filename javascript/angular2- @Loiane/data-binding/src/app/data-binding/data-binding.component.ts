@@ -15,4 +15,16 @@ export class DataBindingComponent implements OnInit {
   ngOnInit() {
   }
 
+  valorAtual = ''
+
+  botaoClicado() {
+    alert("Clicou")
+  }
+
+
+  escreveNaTela(event: KeyboardEvent) {
+    this.valorAtual = (<HTMLInputElement>event.target).value
+  }
+
+
 }
