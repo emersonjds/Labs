@@ -16,6 +16,7 @@ export class DataBindingComponent implements OnInit {
   }
 
   valorAtual = ''
+  valorSalvo = ''
 
   botaoClicado() {
     alert("Clicou")
@@ -24,6 +25,11 @@ export class DataBindingComponent implements OnInit {
 
   escreveNaTela(event: KeyboardEvent) {
     this.valorAtual = (<HTMLInputElement>event.target).value
+  }
+
+  salvaValor(valor) {
+   this.valorSalvo = valor;
+   console.log(this.valorSalvo)
   }
 
 

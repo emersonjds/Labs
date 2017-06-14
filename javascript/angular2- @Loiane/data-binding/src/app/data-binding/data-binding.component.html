@@ -63,8 +63,13 @@
       <br>
       <br>
 
-      <input type="text" (keyup)="escreveNaTela($event)">
+      <input type="text" 
+        (keyup)="escreveNaTela($event)" 
+        (keyup.enter)="salvarValor($event.target.value)">
+
       <p>Valor atual : {{ valorAtual }}</p>
+      <p>Valor salvo : {{ valorSalvo }}</p>
+
     </article>
 
   </section>
