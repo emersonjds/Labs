@@ -1,6 +1,6 @@
 <div class="container">
 
-  <!--<section class="property-binding">
+  <section class="property-binding">
 
     <article>
       <h3> Interpolação</h3>
@@ -21,8 +21,7 @@
       </div>
     </article>
 
-  </section>-->
-
+  </section>
 
   <section class="class-and-styles-binding">
     <article>
@@ -68,4 +67,32 @@
     </article>
   </section>
 
+  <section class="event-binding">
+
+    <article>
+      <h3>Event Binding</h3>
+      <button class="btn btn-primary" (click)="botaoClicado()">Clique aqui</button>
+
+      <br><br>
+
+      <input type="text" 
+        (keyup)="onKeyUp($event)" 
+        (keyup.enter)="salvarValor(campoInput.value)"
+        (blur)="salvarValor(campoInput.value)"
+        #campoInput
+      />
+      <p>Valor digitado : {{ valorAtual }}</p>
+      <p>Valor Salvo : {{ valorSalvo }}</p>
+
+      <br>
+      <span
+      (mouseover)="onMouseOverOut()"
+      (mouseout)="onMouseOverOut()"
+      [class.highlight]="isMouseOver">
+        Evento com mouse
+      </span>
+
+    </article>
+
+  </section>
 </div>
