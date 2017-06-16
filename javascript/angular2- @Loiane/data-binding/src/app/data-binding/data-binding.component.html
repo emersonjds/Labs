@@ -1,7 +1,7 @@
 <div class="container">
 
-  <section class="property-binding">
-    
+  <!--<section class="property-binding">
+
     <article>
       <h3> Interpolação</h3>
       <p>String renderizada com Interpolação <a href="">{{ url }}</a></p>
@@ -21,7 +21,51 @@
       </div>
     </article>
 
-  </section>
+  </section>-->
 
+
+  <section class="class-and-styles-binding">
+    <article>
+      <h3>Class e Style Binding</h3>
+      <div>
+        Selecione uma classe :
+        <select #classe (change)="0"> <!--0 para que o template nao escute nenhum metodo vindo do component-->
+          <option value="alert-success">Sucesso</option>
+          <option value="alert-info">Info</option>
+          <option value="alert-warning">Alerta</option>
+          <option value="alert-danger">Erro</option>
+        </select>
+        <br><br>
+
+        <!--O bing é chamado a partie do value da combobox, como a classe ja esta declarada em value ela é omitida na chamada-->
+        <div class="alert {{classe.value}} " role="alert">
+          Teste colorido de acordo com o combobox
+        </div>
+
+        <!--Aplique a classe se o valor vindo do combobox for igual a classe selecionada-->
+        <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+          chamada para sucesso
+        </div>
+
+        <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+          chamada para informação
+        </div>
+
+        <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+          chamada para alerta
+        </div>
+
+        <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+          chamada para erro
+        </div>
+
+        <!--Property bind de estilo chamado implicitamente com o combobox validando a chamada lógica-->
+        <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' ">
+          So aparece com caso alert-danger selecionado
+        </div>
+
+      </div>
+    </article>
+  </section>
 
 </div>
