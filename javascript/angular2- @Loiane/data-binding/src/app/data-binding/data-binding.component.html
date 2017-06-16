@@ -1,0 +1,27 @@
+<div class="container">
+
+  <section class="property-binding">
+    
+    <article>
+      <h3> Interpolação</h3>
+      <p>String renderizada com Interpolação <a href="">{{ url }}</a></p>
+      <p>Resolução de expressoes com Interpolação como por exeplo 1 + 1 = {{ 1 + 1 }} </p>
+      <p>Chamada de metodo com Interpolação {{ 1 + 1 + getValor() }}</p>
+      <p> Curso de angular e gosto do curso : {{ cursoAngular && getCurtirCurso() }}</p>
+    </article>
+
+    <article>
+      <div class="card" style="width: 20rem; padding: 1em; border: 1px solid black; border-radius: 15px;">
+        <img class="card-img-top img-responsive" [src]="urlImagem" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+
+</div>
