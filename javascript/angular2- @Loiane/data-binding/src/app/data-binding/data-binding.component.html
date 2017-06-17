@@ -75,31 +75,25 @@
 
       <br><br>
 
-      <input type="text" 
-        (keyup)="onKeyUp($event)" 
-        (keyup.enter)="salvarValor(campoInput.value)"
-        (blur)="salvarValor(campoInput.value)"
-        #campoInput
-      />
+      <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)" (blur)="salvarValor(campoInput.value)"
+        #campoInput />
       <p>Valor digitado : {{ valorAtual }}</p>
       <p>Valor Salvo : {{ valorSalvo }}</p>
 
       <br>
-      <span
-      (mouseover)="onMouseOverOut()"
-      (mouseout)="onMouseOverOut()"
-      [class.highlight]="isMouseOver">
+      <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">
         Evento com mouse
       </span>
-
-
-      
-
     </article>
-
   </section>
 
+  <app-meu-form> </app-meu-form>
 
-<app-meu-form> </app-meu-form>
+  <section class="input-output-properties">
+    <article>
+      <h3> Input/Output Properties</h3>
+      <app-curso [nome]="nomeDoCurso"></app-curso>
+    </article>
+  </section>
 
 </div>
