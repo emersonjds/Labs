@@ -1,14 +1,14 @@
-import { DirectivesPage } from './app.po';
+import { DiretivasPage } from './app.po';
 
-describe('directives App', () => {
-  let page: DirectivesPage;
+describe('diretivas App', function() {
+  let page: DiretivasPage;
 
   beforeEach(() => {
-    page = new DirectivesPage();
+    page = new DiretivasPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
