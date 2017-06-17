@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'contador',
@@ -7,16 +7,19 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class OutputPropertyComponent implements OnInit {
 
+  @ViewChild('campoInput') valorCampoInput: ElementRef
+  //apos a chamada do ViewChild é necessario passar o nome da variavel para associação com o componente
+
   @Input() valor: number = 0
   @Output() mudouValor = new EventEmitter() //o Output possibilita que esse evento seja propagado
 
   incrementa() {
-    this.valor++
+    this.valorCampoInput.nativeElement.value++
     this.mudouValor.emit({ novoValor: this.valor })
   }
 
   decrementa() {
-    this.valor--
+    this.valorCampoInput.nativeElement.value--
     this.mudouValor.emit({ novoValor: this.valor })
     //na passagem do evento a chamada de emit pode passar uma string ou um objeto complexo
   }
