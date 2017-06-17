@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  valor: number = 15
+  deletarCiclo: boolean = false
+
+  mudarValor() {
+    this.valor++
+  }
+
+  destruirCiclo() {
+    this.deletarCiclo = true
+  }
+
 }
