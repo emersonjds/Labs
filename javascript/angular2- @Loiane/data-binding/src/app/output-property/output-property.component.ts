@@ -29,6 +29,4 @@ export class OutputPropertyComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
 }
