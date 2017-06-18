@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NgifDirectiveComponent } from './ngif-directive/ngif-directive.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgifDirectiveComponent
+    NgifDirectiveComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
