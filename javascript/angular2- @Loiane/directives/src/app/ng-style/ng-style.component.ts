@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgStyleComponent implements OnInit {
 
+  ativo: boolean = false
+  tamanhoDaFante: number = 10
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  mudarAtivo() {
+    this.ativo = !this.ativo
   }
 
 }
