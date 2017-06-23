@@ -9,6 +9,7 @@ import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component
 import { NgForDirectiveComponent } from './ng-for-directive/ng-for-directive.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
+import { ElvisOperatorComponent } from './elvis-operator/elvis-operator.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgStyleComponent } from './ng-style/ng-style.component';
     NgSwitchCaseComponent,
     NgForDirectiveComponent,
     NgClassComponent,
-    NgStyleComponent
+    NgStyleComponent,
+    ElvisOperatorComponent
   ],
   imports: [
     BrowserModule,
