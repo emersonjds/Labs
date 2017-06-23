@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NgifDirectiveComponent } from './ngif-directive/ngif-directive.component';
 import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component';
+import { NgForDirectiveComponent } from './ng-for-directive/ng-for-directive.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component
     AppComponent,
     NgifDirectiveComponent,
     NgifDirectiveComponent,
-    NgSwitchCaseComponent
+    NgSwitchCaseComponent,
+    NgForDirectiveComponent
   ],
   imports: [
     BrowserModule,
