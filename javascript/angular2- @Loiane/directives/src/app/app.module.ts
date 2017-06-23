@@ -5,13 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NgifDirectiveComponent } from './ngif-directive/ngif-directive.component';
+import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NgifDirectiveComponent,
-    NgifDirectiveComponent
+    NgifDirectiveComponent,
+    NgSwitchCaseComponent
   ],
   imports: [
     BrowserModule,
