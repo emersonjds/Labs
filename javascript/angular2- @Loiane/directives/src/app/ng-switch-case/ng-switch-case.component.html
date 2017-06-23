@@ -1,3 +1,28 @@
-<p>
-  ng-switch-case works!
-</p>
+<div class="container">
+  <nav class="navbar navbar-toggleable-md  bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [class.active]="'home'" (click)="aba = 'home' ">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="'mapa'" (click)="aba = 'mapa' ">Mapa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="'lista'" (click)="aba = 'lista' ">Lista</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'">Modo Mapa Ativado</p>
+  <p *ngSwitchCase="'lista'">Modo Lista Ativado</p>
+</div>
+
