@@ -8,6 +8,7 @@ import { NgifDirectiveComponent } from './ngif-directive/ngif-directive.componen
 import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component';
 import { NgForDirectiveComponent } from './ng-for-directive/ng-for-directive.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgStyleComponent } from './ng-style/ng-style.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NgClassComponent } from './ng-class/ng-class.component';
     NgifDirectiveComponent,
     NgSwitchCaseComponent,
     NgForDirectiveComponent,
-    NgClassComponent
+    NgClassComponent,
+    NgStyleComponent
   ],
   imports: [
     BrowserModule,
