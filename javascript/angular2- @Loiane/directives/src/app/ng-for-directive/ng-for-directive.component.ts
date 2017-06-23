@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgForDirectiveComponent implements OnInit {
 
+  cursos : string [] = ['Angular 2', 'Java', 'Phonegap']
+
   constructor() { }
 
   ngOnInit() {
+
+    this.cursos.forEach(element => {
+      console.log(element)
+    });
   }
 
 }
