@@ -11,6 +11,8 @@ import { NgClassComponent } from './ng-class/ng-class.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { ElvisOperatorComponent } from './elvis-operator/elvis-operator.component';
 import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-content.component';
+import { YellowBgDirective } from './shared/yellow-bg.directive';
+import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-conte
     NgClassComponent,
     NgStyleComponent,
     ElvisOperatorComponent,
-    ExemploNgContentComponent
+    ExemploNgContentComponent,
+    YellowBgDirective,
+    CustomDirectivesComponent
   ],
   imports: [
     BrowserModule,
