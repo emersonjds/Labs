@@ -1,24 +1,11 @@
 <div class="panel panel-default">
 
   <div class="panel-heading">
-    <ng-content></ng-content>
+    <ng-content select=".titulo"></ng-content>
   </div>
 
   <div class="panel-body">
-    <ng-content></ng-content>
-    <!--Chamada para que o conteudo venha da view -->
-  </div>
-</div>
-
-
-<div class="panel panel-default">
-
-  <div class="panel-heading">
-    <ng-content selector=".titulo"></ng-content>
-  </div>
-
-  <div class="panel-body">
-    <ng-content selector=".area-de-texto"></ng-content>
+    <ng-content select=".area-de-texto"></ng-content>
     <!--Chamada para que o conteudo venha da view -->
   </div>
 </div>
