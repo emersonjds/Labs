@@ -18,13 +18,9 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "styles.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/tether/dist/js.tether.js",
-        "../node_modules/bootstrap/dist/js/bootrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
