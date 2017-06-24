@@ -6,6 +6,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NgifDirectiveComponent } from './ngif-directive/ngif-directive.component';
 import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component';
+import { NgForDirectiveComponent } from './ng-for-directive/ng-for-directive.component';
+import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgStyleComponent } from './ng-style/ng-style.component';
+import { ElvisOperatorComponent } from './elvis-operator/elvis-operator.component';
+import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-content.component';
 
 
 @NgModule({
@@ -13,7 +18,12 @@ import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component
     AppComponent,
     NgifDirectiveComponent,
     NgifDirectiveComponent,
-    NgSwitchCaseComponent
+    NgSwitchCaseComponent,
+    NgForDirectiveComponent,
+    NgClassComponent,
+    NgStyleComponent,
+    ElvisOperatorComponent,
+    ExemploNgContentComponent
   ],
   imports: [
     BrowserModule,
