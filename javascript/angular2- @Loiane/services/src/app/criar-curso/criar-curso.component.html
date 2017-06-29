@@ -1,5 +1,10 @@
 <h5>Lista de Cursos </h5>
 
+<h6>Adicionar Curso</h6>
+
+<input type="" #valueInput>
+<button (click)="onAddCurso(valueInput.value)">Adicionar Curso</button>
+
 <ul>
   <li *ngFor="let curso of cursos">
     {{ curso }}
