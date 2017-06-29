@@ -1,0 +1,6 @@
+<p> Titulo : {{ livro.titulo | uppercase}} </p>
+<p> Avaliação : {{ livro.avaliacao | number : '1.1-2' }} </p>
+<p> Numero de paginas : {{ livro.numeroPaginas }} </p>
+<p> Preco : {{ livro.preco | currency:'BRL':true }} </p>
+<p> Lançamento : {{ livro.dataLancamento | date}} </p>
+<p> {{ livro | json}}</p>
