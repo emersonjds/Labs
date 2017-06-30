@@ -1,7 +1,21 @@
-
 <p> Titulo : {{ livro.titulo | uppercase | lowercase | camelCase }} </p>
 <p> Avaliação : {{ livro.avaliacao | number : '1.1-2' }} </p>
 <p> Numero de paginas : {{ livro.numeroPaginas }} </p>
 <p> Preco : {{ livro.preco | currency:'BRL':true }} </p>
 <p> Lançamento : {{ livro.dataLancamento | date}} </p>
 <p> {{ livro | json}}</p>
+<br>
+
+<input type="text" [(ngModel)]="filtro">
+
+<br>
+<input type="text" #novoValor>
+<button (click)="addCurso(novoValor.value)">Add Curso</button>
+
+<h5>Pipe Puro</h5>
+
+<ul>
+  <li *ngFor="let liv of livros | filtroArray:filtro">
+    {{ liv }}
+  </li>
+</ul>
