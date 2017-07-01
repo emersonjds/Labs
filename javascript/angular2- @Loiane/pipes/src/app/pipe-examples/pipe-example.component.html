@@ -18,3 +18,25 @@
     {{ liv }}
   </li>
 </ul>
+
+<br>
+
+<h5>Pipe Impuro</h5>
+
+<ul>
+  <li *ngFor="let livr of livros | filtroArrayImpuro:filtro">
+    {{ livr }}
+  </li>
+</ul>
+
+<br>
+
+<h5>Aplicações em Tempo Real</h5>
+
+<ul>
+  <li *ngFor="let livr of obterCursos()">
+    {{ livr }}
+  </li>
+</ul>
+
+
