@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { SettingsService } from './settings.service';
 
 import { PipeExamplesComponent } from './pipe-examples/pipe-example.component';
@@ -17,7 +18,8 @@ import { FiltroArrayPipe } from './filtro-array.pipe';
     FiltroArrayPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     // {

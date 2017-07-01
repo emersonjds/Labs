@@ -5,7 +5,7 @@
 <p> Lançamento : {{ livro.dataLancamento | date}} </p>
 <p> {{ livro | json}}</p>
 
-<input type="text" ng-model="filtro">
+<input type="text" [(ngModel)]="filtro">
 <br>
 
 <input type="text" #novoValor>
