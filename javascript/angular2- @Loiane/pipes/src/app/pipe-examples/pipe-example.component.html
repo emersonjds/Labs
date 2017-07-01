@@ -4,11 +4,10 @@
 <p> Preco : {{ livro.preco | currency:'BRL':true }} </p>
 <p> Lançamento : {{ livro.dataLancamento | date}} </p>
 <p> {{ livro | json}}</p>
+
+<input type="text" ng-model="filtro">
 <br>
 
-<input type="text" [(ngModel)]="filtro">
-
-<br>
 <input type="text" #novoValor>
 <button (click)="addCurso(novoValor.value)">Add Curso</button>
 

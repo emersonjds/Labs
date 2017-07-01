@@ -20,18 +20,16 @@ import { FiltroArrayPipe } from './filtro-array.pipe';
     BrowserModule
   ],
   providers: [
-    SettingsService,
-    {
-      provide: LOCALE_ID,
-      deps: [SettingsService],
-      useFactory: (settingsService) => {
-        settingsService.getLocale()
-      }
-    }
     // {
     //   provide: LOCALE_ID,
     //   useValue: 'pt-BR'
     // }
+    SettingsService,
+    {
+      provide: LOCALE_ID,
+      deps: [SettingsService],
+      useFactory: settingsService => settingsService.getLocale()
+    }
   ],
   bootstrap: [AppComponent]
 })
