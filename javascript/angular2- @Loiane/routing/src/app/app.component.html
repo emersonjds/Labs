@@ -1,2 +1,14 @@
-<router-outlet></router-outlet> <!--Isso permite que o angular 2 tenha acesso a rotas-->
+<nav>
+  <div class="nav-wrapper">
+    <a routerLink="" href="#" class="brand-logo right">NG2 Routes</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/cursos">Cursos</a></li>
+    </ul>
+  </div>
+</nav>
 
+<div class="container">
+  <router-outlet></router-outlet>
+  <!--Isso permite que o angular 2 tenha acesso a rotas-->
+</div>
