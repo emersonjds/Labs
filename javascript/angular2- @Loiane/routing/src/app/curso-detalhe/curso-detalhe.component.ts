@@ -8,13 +8,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CursoDetalheComponent implements OnInit {
 
-  id: string = '';
+  id: string;
 
   constructor(private route: ActivatedRoute) {
     this.id = this.route.snapshot.params['id'];
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

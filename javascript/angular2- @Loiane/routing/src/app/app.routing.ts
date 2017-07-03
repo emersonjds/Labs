@@ -11,7 +11,7 @@ const APP_ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cursos', component: CursosComponent },
-  { path: 'cursos/:id', component: CursoDetalheComponent } // : siginifica o nome do parametro passado na rota
+  { path: 'curso/:id', component: CursoDetalheComponent } // : siginifica o nome do parametro passado na rota
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES); // rota para raiz da aplicação
