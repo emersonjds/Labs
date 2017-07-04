@@ -1,9 +1,7 @@
-
-
-import { routing } from './app.routing';
+//import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 
 import { MaterializeModule } from 'angular2-materialize';
@@ -25,7 +23,8 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
   ],
   imports: [
     BrowserModule,
-    routing //importando as rotas configuradas
+    //routing -> importando as rotas configuradas,
+    AppRoutingModule
   ],
   providers: [CursosService],
   bootstrap: [AppComponent]
