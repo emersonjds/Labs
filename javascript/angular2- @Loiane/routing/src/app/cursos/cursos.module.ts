@@ -1,5 +1,4 @@
-import { RouterModule } from '@angular/router';
-
+import { CursosRoutingModule } from './cursos.routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CursosService } from './cursos.service';
@@ -11,7 +10,7 @@ import { CursosComponent } from '../cursos/cursos.component';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    CursosRoutingModule
   ],
   exports: [],
   declarations: [
