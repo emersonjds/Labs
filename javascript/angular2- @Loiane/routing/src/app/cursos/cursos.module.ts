@@ -10,7 +10,7 @@ import { CursosComponent } from '../cursos/cursos.component';
 @NgModule({
   imports: [
     CommonModule,
-    CursosRoutingModule
+    CursosRoutingModule //importação das rotas dos cursos
   ],
   exports: [],
   declarations: [
