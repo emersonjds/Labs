@@ -10,7 +10,7 @@ export class ElvisOperatorComponent implements OnInit {
 	tarefa: any = {
 		desc: 'Descricao Tarefa',
 		responsavel: {
-			usuario : null 
+			usuario : null
 		}
 	}
 
