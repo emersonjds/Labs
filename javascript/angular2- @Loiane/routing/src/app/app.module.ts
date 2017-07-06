@@ -1,14 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app.routing.module';
-import { AppComponent } from './app.component';
-
+import { AlunosModule } from './alunos/alunos.modute';
+import { CursosModule } from './cursos/cursos.module';
 import { MaterializeModule } from 'angular2-materialize';
+
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 import { CursosService } from './cursos/cursos.service';
-import { CursosModule } from './cursos/cursos.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CursosModule } from './cursos/cursos.module';
     BrowserModule,
     //routing -> importando as rotas configuradas,
     AppRoutingModule,
-    CursosModule
+    CursosModule,
+    AlunosModule
   ],
   providers: [CursosService],
   bootstrap: [AppComponent]
