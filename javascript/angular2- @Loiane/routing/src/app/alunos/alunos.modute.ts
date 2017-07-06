@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlunoRoutingModule } from './alunos.routing.module';
@@ -8,7 +7,10 @@ import { AlunoFormularioComponent } from './aluno-formulario/aluno-formulario.co
 import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 
 @NgModule({
-  imports: [CommonModule, AlunoRoutingModule],
+  imports: [
+    CommonModule,
+    AlunoRoutingModule
+  ],
   exports: [],
   declarations: [
     AlunosComponent,
