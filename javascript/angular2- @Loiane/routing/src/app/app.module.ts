@@ -20,7 +20,6 @@ import { CursosService } from './cursos/cursos.service';
   ],
   imports: [
     BrowserModule,
-    //routing -> importando as rotas configuradas,
     AppRoutingModule,
     CursosModule,
     AlunosModule

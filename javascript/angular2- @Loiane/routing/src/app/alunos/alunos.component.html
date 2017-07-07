@@ -1,4 +1,11 @@
-<p>
-  alunos works!
-</p>
+<h3>Lista de Alunos</h3>
+
+<ul class="colection">
+  <li class="colection-item" *ngFor="let aluno of alunos">
+  #ID : {{ aluno.id }} <br>
+  #NOME: {{ aluno.nome }} <br>
+  #EMAIL: {{ aluno.email }} <br>
+  <hr>
+  </li>
+</ul>
 <router-outlet></router-outlet>
