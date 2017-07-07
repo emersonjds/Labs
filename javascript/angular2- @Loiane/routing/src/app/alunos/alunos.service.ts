@@ -9,12 +9,22 @@ export class AlunosService {
     { id: 3, nome: 'alunoo3', email: 'aluno03@email.com' },
     { id: 4, nome: 'alunoo4', email: 'aluno04@email.com' },
     { id: 5, nome: 'alunoo5', email: 'aluno05@email.com' },
-    { id: 6, nome: 'alunoo6', email: 'aluno06@email.com' },
+    { id: 6, nome: 'alunoo6', email: 'aluno06@email.com' }
   ]
 
   constructor() { }
 
   getAlunos() {
     return this.alunos;
+  }
+
+  getAluno(id: number) {
+    for (let i = 0; i < this.alunos.length; i++) {
+      let aluno = this.alunos[i];
+      if (aluno.id == id) {
+        return aluno;
+      }
+    }
+    return null;
   }
 }
