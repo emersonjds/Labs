@@ -3,9 +3,7 @@
     <h3>Lista de Alunos</h3>
 
     <div class="collection">
-      <a class="collection-item"
-        *ngFor="let aluno of alunos"
-        [routerLink]="[aluno.id]">
+      <a class="collection-item" *ngFor="let aluno of alunos" [routerLink]="[aluno.id]">
         {{ aluno.nome }}
       </a>
     </div>

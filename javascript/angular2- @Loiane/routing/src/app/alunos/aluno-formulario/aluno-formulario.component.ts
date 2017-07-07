@@ -1,3 +1,6 @@
+import { AlunosService } from './../alunos.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs/RX';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunoFormularioComponent implements OnInit {
 
-  constructor() { }
+  aluno: any;
+  inscricao: Subscription;
+
+  constructor(
+    private _route: ActivatedRoute,
+    private _alunosService: AlunosService
+  ) { }
 
   ngOnInit() {
+    this.inscricao = this._route.params.subscribe(
+      (params: any) => {
+        let id = params['id']
+        this.aluno = this._alunosService.getAluno(id);
+
+        if (this.aluno === null)
+          this.aluno = {}
+      }
+    )
+  }
+
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
   }
 
 }

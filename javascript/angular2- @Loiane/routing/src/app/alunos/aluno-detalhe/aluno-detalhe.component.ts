@@ -1,7 +1,7 @@
-import { AlunosService } from './../alunos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/RX';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { AlunosService } from './../alunos.service';
 
 @Component({
   selector: 'app-aluno-detalhe',
@@ -32,4 +32,8 @@ export class AlunoDetalheComponent implements OnInit, OnDestroy {
     this.inscricao.unsubscribe();
   }
 
+  editarContato() {
+    this._router.navigate(['/alunos', this.aluno.id, 'editar']);
+    //Chamada utilizando rotas imperativas
+  }
 }

@@ -1,3 +1,26 @@
-<p>
-  aluno-formulario works!
-</p>
+<h3>Editar Aluno</h3>
+
+<div class="col s12">
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" disabled [(ngModel)]="aluno.id" id="disable">
+      <label for="disabled" class="active">#</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" disabled [(ngModel)]="aluno.nome" id="nome" validate="">
+      <label for="nome" class="active">Nome</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" disabled [(ngModel)]="aluno.email" id="disable">
+      <label for="nome" class="active">e-mail</label>
+    </div>
+  </div>
+
+</div>
