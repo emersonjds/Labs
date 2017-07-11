@@ -22,19 +22,14 @@ export class CursoDetalheComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         this.id = params['id'];
-
         this.curso = this._cursosService.getCurso(this.id);
-
         if (this.curso == null) {
           this._router.navigate(['/curso-nao-encontrado'])
         }
-
-      }
-    );
+      });
   }
 
   ngOnDestroy() {

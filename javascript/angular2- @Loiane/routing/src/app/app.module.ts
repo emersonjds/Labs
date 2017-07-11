@@ -20,9 +20,9 @@ import { CursosService } from './cursos/cursos.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CursosModule,
-    AlunosModule
+    AlunosModule,
+    AppRoutingModule
   ],
   providers: [CursosService],
   bootstrap: [AppComponent]
