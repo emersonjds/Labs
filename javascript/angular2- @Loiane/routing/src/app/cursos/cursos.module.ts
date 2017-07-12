@@ -1,4 +1,3 @@
-import { RouterModule } from '@angular/router';
 import { CursosRoutingModule } from './cursos.routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,7 +9,6 @@ import { CursosComponent } from '../cursos/cursos.component';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
     CursosRoutingModule //importação das rotas dos cursos
   ],
   exports: [],
@@ -23,6 +21,4 @@ import { CursosComponent } from '../cursos/cursos.component';
     CursosService
   ]
 })
-export class CursosModule {
-
-}
+export class CursosModule {}
