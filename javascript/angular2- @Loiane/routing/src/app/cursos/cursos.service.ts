@@ -31,10 +31,4 @@ export class CursosService {
     }
     return null;
   }
-
-  recuperarCursos() {
-    return this.http.get('http://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados?formato=json')
-      .map(dados => this.dados = dados.json())
-  }
-
 }

@@ -41,14 +41,7 @@ export class CursosComponent implements OnInit {
     this.inscricao = this._route.queryParams.subscribe(
       (queryParams: any) => {
         this.pagina = queryParams['pagina']
-      }
-    )
-
-    this._cursosService.recuperarCursos()
-      .subscribe(dados => {
-        this.dadosDeCurso = dados;
-        console.log(dados)
-      })
+      });
   }
 
 
