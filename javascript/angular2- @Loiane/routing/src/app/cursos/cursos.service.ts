@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Http, HttpModule } from '@angular/http';
 
 @Injectable()
 export class CursosService {
+
+  http: Http
+  dados: any[] = []
+
+  constructor() { }
 
   getCursos() {
     return [
@@ -26,6 +32,9 @@ export class CursosService {
     return null;
   }
 
-  constructor() { }
+  recuperarCursos() {
+    return this.http.get('http://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados?formato=json')
+      .map(dados => this.dados = dados.json())
+  }
 
 }

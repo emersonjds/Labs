@@ -1,3 +1,4 @@
+import { Http } from '@angular/http';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -16,11 +17,13 @@ export class CursosComponent implements OnInit {
   cursos: any[];
   pagina: number;
   inscricao: Subscription;
+  dadosDeCurso: any[] = [];
 
   constructor(
     private _cursosService: CursosService,
     private _route: ActivatedRoute,
     private _router: Router
+
   ) { }
 
   proximaPagina() {
@@ -40,7 +43,15 @@ export class CursosComponent implements OnInit {
         this.pagina = queryParams['pagina']
       }
     )
+
+    this._cursosService.recuperarCursos()
+      .subscribe(dados => {
+        this.dadosDeCurso = dados;
+        console.log(dados)
+      })
   }
+
+
 
   ngOnDestroy() {
     this.inscricao.unsubscribe();
