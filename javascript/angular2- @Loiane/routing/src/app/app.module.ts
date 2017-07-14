@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app.routing.module';
@@ -8,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 import { CursosService } from './cursos/cursos.service';
-
+import { AuthService } from './login/auth.service';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,11 @@ import { CursosService } from './cursos/cursos.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AlunosModule,
     AppRoutingModule
   ],
-  providers: [CursosService],
+  providers: [CursosService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
