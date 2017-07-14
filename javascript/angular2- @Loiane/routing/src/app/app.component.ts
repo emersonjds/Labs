@@ -9,13 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  mostraMenu: boolean = false;
+  mostrarMenu: boolean = false;
 
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
     this.auth.mostrarMenuEmmiter.subscribe(
-      mostrar => this.mostraMenu = mostrar
+      mostrar => this.mostrarMenu = mostrar
     )
   }
 }
