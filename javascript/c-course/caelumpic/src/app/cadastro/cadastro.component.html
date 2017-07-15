@@ -1,3 +1,30 @@
-<p>
-  cadastro works!
-</p>
+<div class="container">
+  <h3 class="text-center">Cadastro de Nova foto</h3>
+  <form class="row" (submit)="cadastrar($event)">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="form-group">
+        <label for="">Titulo</label>
+        <input [value]="foto.titulo" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="">Url</label>
+        <input [value]="foto.url" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="">Descricao</label>
+        <textarea [value]="foto.descricao" class="form-control"></textarea>
+      </div>
+
+      <div class="col-xs-12">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
+      </div>
+    </div>
+
+
+
+  </form>
+
+</div>
