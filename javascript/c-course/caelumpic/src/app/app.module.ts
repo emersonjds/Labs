@@ -1,4 +1,5 @@
 import { routing } from './app.routes';
+import { FormsModule } from '@angular/forms';
 import { PanelModule } from './panel/panel.module';
 import { PanelComponent } from './panel/panel.component';
 import { FotoModule } from './foto/foto.module';
@@ -17,6 +18,7 @@ import { ListaComponent } from './lista/lista.component';
     FotoModule,
     HttpModule,
     PanelModule,
+    FormsModule,
     routing
   ],
   declarations: [

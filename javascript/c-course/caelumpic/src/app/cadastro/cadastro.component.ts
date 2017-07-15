@@ -1,3 +1,4 @@
+import { Http, HttpModule, Headers } from '@angular/http';
 import { FotoComponent } from './../foto/foto.component';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,14 +10,26 @@ import { Component, OnInit } from '@angular/core';
 export class CadastroComponent implements OnInit {
 
   foto = new FotoComponent()
+  http: Http;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private _http: Http) { 
+    this.http = _http;
   }
 
-  cadastrar(event: Event) {
-    event.preventDefault();
+  ngOnInit() {}
+
+  cadastrar($event: Event) {
+    var cabecalho: Headers = new Headers();
+    $event.preventDefault();
+
+    cabecalho.append('Content-type', 'application/json');
+  
+    this.http.post('http://localhost:3000/v1/fotos', JSON.stringify(this.foto),
+      { headers: cabecalho }
+    ).subscribe(
+      response => console.log('Salvou'),
+      error => console.log(error)
+      )
 
     console.log(this.foto)
   }
