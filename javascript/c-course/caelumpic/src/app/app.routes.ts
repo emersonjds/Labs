@@ -5,7 +5,8 @@ import { ListaComponent } from './lista/lista.component';
 
 const appRoutes: Routes = [
     { path: '', component: ListaComponent },
-    { path: 'cadastro', component: CadastroComponent }
+    { path: 'cadastro', component: CadastroComponent },
+    { path: '**', redirectTo: '' } //caso a rota nao seja a utilizada
 ]
 
 export const routing = RouterModule.forRoot(appRoutes);
