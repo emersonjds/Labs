@@ -7,15 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'app works!';
 
   mostrarMenu: boolean = false;
 
-  constructor(private auth: AuthService) { }
+  constructor(private authService: AuthService) {
 
-  ngOnInit() {
-    this.auth.mostrarMenuEmmiter.subscribe(
+  }
+
+  ngOnInit(){
+    this.authService.mostrarMenuEmitter.subscribe(
       mostrar => this.mostrarMenu = mostrar
-    )
+    );
   }
 }

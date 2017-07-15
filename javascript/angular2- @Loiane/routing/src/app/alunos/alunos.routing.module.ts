@@ -1,26 +1,28 @@
-import { RouterModule, Router, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
-
-import { AlunosComponent } from './alunos.component';
+import { AlunosDeactivateGuard } from './../guards/alunos-deactivate.guard';
+import { AlunosGuard } from './../guards/alunos.guard';
+import { AlunoFormComponent } from './aluno-form/aluno-form.component';
 import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
-import { AlunoFormularioComponent } from './aluno-formulario/aluno-formulario.component';
+import { AlunosComponent } from './alunos.component';
+import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { AlunoDetalheResolver } from './guards/aluno-detalhe.resolver';
 
 const alunosRoutes = [
-  {
-    path: 'alunos', component: AlunosComponent, children: [ //quando utilizo o children especifico que sao rotas filhaa a este root
-      { path: 'novo', component: AlunoFormularioComponent },
-      { path: ':id', component: AlunoDetalheComponent },
-      { path: ':id/editar', component: AlunoFormularioComponent }
-    ]
-  },
+    {path: '', component: AlunosComponent, 
+     canActivateChild: [AlunosGuard],
+     children : [
+        {path: 'novo', component: AlunoFormComponent},
+        {path: ':id', component: AlunoDetalheComponent,
+            resolve: { aluno : AlunoDetalheResolver }
+        },
+        {path: ':id/editar', component: AlunoFormComponent,
+            canDeactivate: [AlunosDeactivateGuard]
+        }
+    ]}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(alunosRoutes)],
-  exports: [RouterModule],
-  declarations: [],
-  providers: []
+    imports: [RouterModule.forChild(alunosRoutes)],
+    exports: [RouterModule]
 })
-export class AlunoRoutingModule {
-
-}
+export class AlunosRoutingModule {}

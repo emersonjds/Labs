@@ -12,12 +12,15 @@ export class LoginComponent implements OnInit {
 
   private usuario: Usuario = new Usuario();
 
-  constructor(private _auth: AuthService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    
   }
 
-  fazerLogin() {
-    this._auth.fazerLogin(this.usuario)
+  fazerLogin(){
+    //console.log(this.usuario);
+    this.authService.fazerLogin(this.usuario);
   }
+
 }

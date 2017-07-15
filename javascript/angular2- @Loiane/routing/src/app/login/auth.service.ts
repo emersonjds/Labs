@@ -1,33 +1,38 @@
 import { Router } from '@angular/router';
-
 import { Injectable, EventEmitter } from '@angular/core';
+
 import { Usuario } from './usuario';
+
 
 @Injectable()
 export class AuthService {
 
   private usuarioAutenticado: boolean = false;
 
-  mostrarMenuEmmiter = new EventEmitter<boolean>();
+  mostrarMenuEmitter = new EventEmitter<boolean>();
 
   constructor(private router: Router) { }
 
-  fazerLogin(usuario: Usuario) {
-    if (usuario.nome == 'usuario@email.com' && usuario.senha == '1234') {
-      this.usuarioAutenticado = true
+  fazerLogin(usuario: Usuario){
 
-      this.mostrarMenuEmmiter.emit(true)
+    if (usuario.nome === 'usuario@email.com' && 
+      usuario.senha === '123456') {
 
-      this.router.navigate(['/'])
+      this.usuarioAutenticado = true;
+
+      this.mostrarMenuEmitter.emit(true);
+
+      this.router.navigate(['/']);
 
     } else {
       this.usuarioAutenticado = false;
-      this.mostrarMenuEmmiter.emit(false)
+
+      this.mostrarMenuEmitter.emit(false);
     }
   }
 
-  usuarioEstaAutenticado() {
-    this.usuarioAutenticado;
+  usuarioEstaAutenticado(){
+    return this.usuarioAutenticado;
   }
 
 }

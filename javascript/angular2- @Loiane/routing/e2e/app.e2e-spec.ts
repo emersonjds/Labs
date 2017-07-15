@@ -1,14 +1,14 @@
-import { RoutingPage } from './app.po';
+import { RotasPage } from './app.po';
 
-describe('routing App', () => {
-  let page: RoutingPage;
+describe('rotas App', () => {
+  let page: RotasPage;
 
   beforeEach(() => {
-    page = new RoutingPage();
+    page = new RotasPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
