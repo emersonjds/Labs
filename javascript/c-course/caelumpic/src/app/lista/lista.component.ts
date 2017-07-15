@@ -1,5 +1,5 @@
 import { Http } from '@angular/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lista',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
+  @Input() titulo;
+  @Input() url; 
   fotos: Object[] = []
 
   constructor(http: Http) {

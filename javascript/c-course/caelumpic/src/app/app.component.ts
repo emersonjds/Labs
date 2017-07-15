@@ -6,8 +6,4 @@ import { Http } from '@angular/http';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = "Caelumpic";
-  fotos: Object[] = []
-
-}
+export class AppComponent {}

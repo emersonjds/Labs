@@ -5,5 +5,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: './panel.component.html'
 })
 export class PanelComponent {
-  @Input() titulo: string
+  @Input() titulo: string;
 }

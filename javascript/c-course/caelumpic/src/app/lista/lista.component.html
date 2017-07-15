@@ -10,15 +10,15 @@
         <span class="input-group-btn">
           <a [routerLink]="['/cadastro']" class="btn btn-primary"> Nova Foto</a>
         </span>
-        <input type="search" class="form-control" placeholder="Digite algo para busca">
+        <input #inputBusca (keyup)="0" type="search" class="form-control" placeholder="Digite algo para busca">
       </div>
     </div>
   </div>
 
   <br>
   <div class="row">
-    <panel *ngFor="let foto of fotos" titulo="foto.titulo" class="col-xs-2 text-center">
-      <foto [url]="foto.url" [titulo]="foto.titulo"> </foto>
+    <panel *ngFor="let foto of fotos | filtroPorTitulo:inputBusca.value" [titulo]="foto.titulo" class="col-xs-2 text-center">
+      <foto titulo="{{foto.titulo}}" url="{{foto.url}}"> </foto>
     </panel>
   </div>
 

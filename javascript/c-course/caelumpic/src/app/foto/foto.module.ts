@@ -1,8 +1,12 @@
-import { NgModule } from '@angular/core';
+import { FiltroPorTitulo } from './foto.pipe';
+import { NgModule, Input } from '@angular/core';
 import { FotoComponent } from './foto.component';
 
 @NgModule({
-  declarations: [FotoComponent],
-  exports: [FotoComponent]
+  declarations: [FotoComponent, FiltroPorTitulo],
+  exports: [FotoComponent, FiltroPorTitulo]
 })
-export class FotoModule {}
+export class FotoModule {
+  @Input() url;
+  @Input() titulo;
+}
