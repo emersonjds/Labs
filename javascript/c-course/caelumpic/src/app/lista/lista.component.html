@@ -1,3 +1,26 @@
-<p>
-  lista works!
-</p>
+<div class="jumbotron">
+  <h1 class="text-center"> {{ title }}</h1>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <a [routerLink]="['/cadastro']" class="btn btn-primary"> Nova Foto</a>
+        </span>
+        <input type="search" class="form-control" placeholder="Digite algo para busca">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <panel *ngFor="let foto of fotos" titulo="foto.titulo" class="col-xs-2 text-center">
+      <foto [url]="foto.url" [titulo]="foto.titulo"> </foto>
+    </panel>
+  </div>
+
+
+</div>
