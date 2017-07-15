@@ -2,30 +2,42 @@
 
   <h3 class="text-center">Cadastro de Nova foto</h3>
 
-
-  <form class="row" (submit)="cadastrar($event)">
+  <form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)">
     <div class="col-xs-6">
       <div class="form-group">
         <label for="">Titulo</label>
-        <input #titulo="ngModel" [(ngModel)]="foto.titulo" name="titulo" class="form-control" required>
-        <span *ngIf="titulo.invalid" class="form-control alert-danger">Titulo Obrigatório</span>
-
+        <input 
+        name="titulo" 
+        [(ngModel)]="foto.titulo" 
+        formControlName="titulo"
+        class="form-control" 
+        required>
+        <span *ngIf="meuForm.controls.titulo.invalid" class="form-control alert-danger">Titulo Obrigatório</span>
       </div>
 
       <div class="form-group">
         <label for="">Url</label>
-        <input #url="ngModel" [(ngModel)]="foto.url" name="url" class="form-control" required>
-        <span *ngIf="url.invalid" class="form-control alert-danger"> Digite uma url valida</span>
+        <input 
+        name="url"
+        [(ngModel)]="foto.url"  
+        formControlName="url"
+        class="form-control" required>
+        <span *ngIf="meuForm.controls.url.invalid" class="form-control alert-danger"> Digite uma url valida</span>
       </div>
 
       <div class="form-group">
         <label for="">Descricao</label>
-        <textarea #textInvalid="ngModel" [(ngModel)]="foto.descricao" name="descricao" class="form-control" required></textarea>
-        <span *ngIf="textInvalid.invalid" class="form-control alert-danger">É necessário incluir uma descricao</span>
+        <textarea 
+          name="descricao"
+          [(ngModel)]="foto.descricao"
+          formControlName="descricao"
+          class="form-control">
+      </textarea>
+
       </div>
 
       <div class="col-xs-12">
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="meuForm.invalid">Salvar</button>
         <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
       </div>
     </div>

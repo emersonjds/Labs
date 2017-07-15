@@ -1,5 +1,5 @@
 import { routing } from './app.routes';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PanelModule } from './panel/panel.module';
 import { PanelComponent } from './panel/panel.component';
 import { FotoModule } from './foto/foto.module';
@@ -19,6 +19,7 @@ import { ListaComponent } from './lista/lista.component';
     HttpModule,
     PanelModule,
     FormsModule,
+    ReactiveFormsModule,
     routing
   ],
   declarations: [
