@@ -1,3 +1,5 @@
+import { routing } from './app.routes';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PanelModule } from './panel/panel.module';
 import { PanelComponent } from './panel/panel.component';
 import { FotoModule } from './foto/foto.module';
@@ -11,16 +13,19 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ListaComponent } from './lista/lista.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CadastroComponent,
-    ListaComponent
-  ],
   imports: [
     BrowserModule,
     FotoModule,
     HttpModule,
-    PanelModule
+    PanelModule,
+    FormsModule,
+    ReactiveFormsModule,
+    routing
+  ],
+  declarations: [
+    AppComponent,
+    CadastroComponent,
+    ListaComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

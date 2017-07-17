@@ -1,3 +1,60 @@
-<p>
-  cadastro works!
-</p>
+<div class="container">
+
+  <h3 class="text-center">Cadastro de Nova foto</h3>
+
+  <form [formGroup]="meuForm" class="row" (submit)="cadastrar($event)">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <label for="">Titulo</label>
+        <input 
+        name="titulo" 
+        [(ngModel)]="foto.titulo" 
+        formControlName="titulo"
+        class="form-control" 
+        required>
+        <span *ngIf="meuForm.controls.titulo.invalid" class="form-control alert-danger">Titulo Obrigatório</span>
+      </div>
+
+      <div class="form-group">
+        <label for="">Url</label>
+        <input 
+        name="url"
+        [(ngModel)]="foto.url"  
+        formControlName="url"
+        class="form-control" required>
+        <span *ngIf="meuForm.controls.url.invalid" class="form-control alert-danger"> Digite uma url valida</span>
+      </div>
+
+      <div class="form-group">
+        <label for="">Descricao</label>
+        <textarea 
+          name="descricao"
+          [(ngModel)]="foto.descricao"
+          formControlName="descricao"
+          class="form-control">
+      </textarea>
+
+      </div>
+
+      <div class="col-xs-12">
+        <button type="submit" class="btn btn-primary" [disabled]="meuForm.invalid">Salvar</button>
+        <a [routerLink]="['']" class="btn btn-primary">Voltar</a>
+      </div>
+    </div>
+
+    <div class="col-xs-6">
+      <h4>Preview</h4>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>{{foto.titulo}}</h3>
+        </div>
+        <div class="panel-body">
+          <img [src]="foto.url" alt="">
+        </div>
+        <div class="panel-footer">
+          {{foto.descricao}}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

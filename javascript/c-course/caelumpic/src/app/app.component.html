@@ -1,11 +1,1 @@
-<div class="jumbotron">
-  <h1 class="text-center"> {{ title }}</h1>
-</div>
-
-<div class="container">
-
-  <panel *ngFor="let foto of fotos" titulo="foto.titulo" class="col-xs-2 text-center">
-    <foto [url]="foto.url" [titulo]="foto.titulo"> </foto>
-  </panel>
-
-</div>
+<router-outlet></router-outlet>
