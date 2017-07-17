@@ -5,3 +5,9 @@ console.log(data)
 
 var string = JSON.stringify(data) //Convert to string
 console.log(string)
+
+data = '{ "name": "Emerson", "age": "27", "city": "Sao Paulo"} ';
+
+var personalInformation = JSON.parse(data)
+console.log(personalInformation)
+
