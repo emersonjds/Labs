@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { AlunoDetalheResolver } from './guards/aluno-detalhe.resolver';
 
 const alunosRoutes = [
-    {path: '', component: AlunosComponent, 
+    {path: '', component: AlunosComponent,
      canActivateChild: [AlunosGuard],
      children : [
         {path: 'novo', component: AlunoFormComponent},
@@ -16,7 +16,7 @@ const alunosRoutes = [
             resolve: { aluno : AlunoDetalheResolver }
         },
         {path: ':id/editar', component: AlunoFormComponent,
-            canDeactivate: [AlunosDeactivateGuard]
+            canDeactivate: [AlunosDeactivateGuard] //possibilita a desativação da rota
         }
     ]}
 ];

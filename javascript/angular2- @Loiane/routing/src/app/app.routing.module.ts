@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
-    { path: 'cursos', 
+    { path: 'cursos',
         loadChildren: 'app/cursos/cursos.module#CursosModule',
         canActivate: [AuthGuard],
         canActivateChild: [CursosGuard],
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     { path: 'alunos',
         loadChildren: 'app/alunos/alunos.module#AlunosModule',
         canActivate: [AuthGuard],
-        //canActivateChild: [AlunosGuard]
+        // canActivateChild: [AlunosGuard],
         canLoad: [AuthGuard]
     },
     //{ path: 'cursos', component: CursosComponent },
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     //{ path: 'naoEncontrado', component: CursoNaoEncontradoComponent },
     { path: 'home', component: HomeComponent,
-        canActivate: [AuthGuard] 
+        canActivate: [AuthGuard]
     },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', component: PaginaNaoEncontradaComponent } //, canActivate: [AuthGuard]}

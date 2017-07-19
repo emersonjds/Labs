@@ -3,7 +3,6 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 import { Usuario } from './usuario';
 
-
 @Injectable()
 export class AuthService {
 
@@ -15,7 +14,7 @@ export class AuthService {
 
   fazerLogin(usuario: Usuario){
 
-    if (usuario.nome === 'usuario@email.com' && 
+    if (usuario.nome === 'usuario@email.com' &&
       usuario.senha === '123456') {
 
       this.usuarioAutenticado = true;

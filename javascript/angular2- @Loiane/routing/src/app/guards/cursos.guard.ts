@@ -5,14 +5,14 @@ import { CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot } from '@
 @Injectable()
 export class CursosGuard implements CanActivateChild {
 
-    	canActivateChild(
-            route: ActivatedRouteSnapshot,
-            state: RouterStateSnapshot
-        ): Observable<boolean>|boolean {
+  canActivateChild(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean> | boolean {
 
-            console.log('guarda de rota filha');
+    console.log('guarda de rota filha');
 
-            return true;
-        }
+    return true;
+  }
 
 }
