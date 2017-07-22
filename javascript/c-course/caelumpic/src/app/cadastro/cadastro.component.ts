@@ -1,3 +1,4 @@
+import { FotoService } from './../foto/foto.service';
 import { Http, HttpModule, Headers } from '@angular/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { FotoComponent } from './../foto/foto.component';
@@ -12,9 +13,9 @@ export class CadastroComponent implements OnInit {
 
   foto = new FotoComponent()
   http: Http;
-  meuForm : FormGroup
+  meuForm: FormGroup
 
-  constructor(private _http: Http, formBuilder: FormBuilder) {
+  constructor(private _http: Http, formBuilder: FormBuilder, private _fotoService: FotoService) {
     this.http = _http;
     this.meuForm = formBuilder.group({
       titulo: [''],
@@ -25,7 +26,7 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit() { }
 
-  cadastrar($event: Event) {
+  /*cadastrar($event: Event) {
     var cabecalho: Headers = new Headers();
     $event.preventDefault();
 
@@ -39,6 +40,19 @@ export class CadastroComponent implements OnInit {
       )
 
     console.log(this.foto)
+  }*/
+
+  cadastrar(event) {
+    event.preventDefault()
+    console.log(this.foto)
+
+    this._fotoService.cadastrar(this.foto)
+      .subscribe(() => {
+        this.foto = new FotoComponent()
+        console.log('Foto Salva com sucesso')
+      }, error => {
+        console.log(error)
+      })
   }
 
 }
