@@ -3,6 +3,7 @@ import { Http, HttpModule, Headers } from '@angular/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { FotoComponent } from './../foto/foto.component';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-cadastro',
@@ -12,35 +13,34 @@ import { Component, OnInit } from '@angular/core';
 export class CadastroComponent implements OnInit {
 
   foto = new FotoComponent()
-  http: Http;
-  meuForm: FormGroup
+  service: FotoService
+  meuForm: FormGroup;
+  route: ActivatedRoute;	//	nova	propriedade
+  mensagem: string = '';	//	nova	propriedade
 
-  constructor(private _http: Http, formBuilder: FormBuilder, private _fotoService: FotoService) {
-    this.http = _http;
+  constructor(private formBuilder: FormBuilder, private _fotoService: FotoService, private _route: ActivatedRoute) {
+
+    this.route = _route;
+    this.service = _fotoService;
+
     this.meuForm = formBuilder.group({
       titulo: [''],
       url: [''],
       descricao: ['']
     })
+
+    this.route.params.subscribe(params => {
+      let id = params['id'];
+      if (id) {
+        this.service.obterFoto(id)
+          .subscribe(
+          foto => this.foto = foto,
+          erro => console.log(erro));
+      }
+    });
   }
 
   ngOnInit() { }
-
-  /*cadastrar($event: Event) {
-    var cabecalho: Headers = new Headers();
-    $event.preventDefault();
-
-    cabecalho.append('Content-type', 'application/json');
-
-    this.http.post('http://localhost:3000/v1/fotos', JSON.stringify(this.foto),
-      { headers: cabecalho }
-    ).subscribe(
-      response => console.log('Salvou'),
-      error => console.log(error)
-      )
-
-    console.log(this.foto)
-  }*/
 
   cadastrar(event) {
     event.preventDefault()

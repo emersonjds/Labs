@@ -24,7 +24,10 @@
   <br>
   <div class="row">
     <panel *ngFor="let foto of fotos | filtroPorTitulo:inputBusca.value" [titulo]="foto.titulo" class="col-xs-2 text-center">
-      <foto titulo="{{foto.titulo}}" url="{{foto.url}}"> </foto>
+      <a [routerLink]="['/cadastro', foto._id]">
+        <foto titulo="{{foto.titulo}}" url="{{foto.url}}"> </foto>
+      </a>
+      
       <button class="btn btn-danger btn-block" (onclick)="remover(foto)">Remover</button>
     </panel>
   </div>
