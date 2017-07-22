@@ -25,8 +25,8 @@ export class FotoService {
         return this.http.post(this.url, JSON.stringify(foto), { headers: this.headers })
     }
 
-    remover() {
-
+    remover(foto: FotoComponent ): Observable<Response> {
+        return this.http.delete(`${this.url}/${foto._id}`)
     }
 
     obterFoto() {
