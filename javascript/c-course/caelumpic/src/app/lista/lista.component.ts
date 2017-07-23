@@ -24,8 +24,7 @@ export class ListaComponent implements OnInit {
       )
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   remover(foto: FotoComponent): void {
     this.fotoService.remover(foto)
@@ -40,6 +39,7 @@ export class ListaComponent implements OnInit {
         setTimeout(() => {
           this.mensagem = '';
         }, 2000)
+
       },
       erro => {
         console.log(erro)
@@ -47,22 +47,5 @@ export class ListaComponent implements OnInit {
       });
   }
 
-  remove(foto: FotoComponent): void {
-    this.fotoService.remover(foto)
-      .subscribe(
-      fotos => {
-        let novasFotos = this.fotos.slice(0)
-        let indice = novasFotos.indexOf(foto)
-        novasFotos.splice(indice, 1)
-        this.fotos = novasFotos
-        console.log('Foto removida com sucesso')
-      },
-      error => console.log(error)
-      )
-  }
-
-  teste(foto) {
-    console.log(foto)
-  }
 
 }
