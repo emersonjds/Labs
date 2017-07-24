@@ -21,11 +21,15 @@ export class FotoService {
       .map(res => res.json())
   }
 
-  cadastrar(foto: FotoComponent): Observable<Response> {
+  cadastrar(foto: FotoComponent): Observable<any> {
     if (foto._id) {
       return this.http.put(this.url + '/' + foto._id, JSON.stringify(foto), { headers: this.headers })
+        .map(() => ({ mensagem: "Foto alterada com sucesso", inclusao: false }) //envolto num parenteses por ser um retorno unico de objeto
+        )
     } else {
       return this.http.post(this.url, JSON.stringify(foto), { headers: this.headers })
+        .map(() => ({ mensagem: 'Foto incluida com sucesso', inclusao: true })
+        )
     }
 
   }

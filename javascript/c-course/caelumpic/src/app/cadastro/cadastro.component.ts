@@ -63,4 +63,15 @@ export class CadastroComponent implements OnInit {
       })
   }
 
+  cadastra() {
+    this._fotoService.cadastrar(this.foto)
+    .subscribe(res => {
+      this.mensagem = res.mensagem;
+      this.foto = new FotoComponent()
+    }, erro => {
+      console.log(erro)
+      this.mensagem = 'Nao foi possivel salvar a foto'
+    })
+  }
+
 }
