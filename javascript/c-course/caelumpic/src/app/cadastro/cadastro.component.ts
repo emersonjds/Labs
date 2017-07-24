@@ -24,7 +24,7 @@ export class CadastroComponent implements OnInit {
     private _fotoService: FotoService,
     private _route: ActivatedRoute,
     private _router: Router
-    ) {
+  ) {
 
     this.route = _route;
     this.service = _fotoService;
@@ -49,29 +49,30 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit() { }
 
-  cadastrar(event) {
-    event.preventDefault()
-    console.log(this.foto)
+  // cadastrar(event) {
+  //   event.preventDefault()
+  //   console.log(this.foto)
 
+  //   this._fotoService.cadastrar(this.foto)
+  //     .subscribe(() => {
+  //       this.foto = new FotoComponent()
+  //       this._router.navigate(['']) //roteamento para home apos inclusao da foto
+  //       console.log('Foto Salva com sucesso')
+  //     }, error => {
+  //       console.log(error)
+  //     })
+  // }
+
+  cadastrar() {
     this._fotoService.cadastrar(this.foto)
-      .subscribe(() => {
+      .subscribe(res => {
+        this.mensagem = res.mensagem;
         this.foto = new FotoComponent()
-        this._router.navigate(['']) //roteamento para home apos inclusao da foto
-        console.log('Foto Salva com sucesso')
-      }, error => {
-        console.log(error)
+        if (!res.inclusao) this._router.navigate(['']) //acesso como se fosse atributo de class
+      }, erro => {
+        console.log(erro)
+        this.mensagem = 'Nao foi possivel salvar a foto'
       })
-  }
-
-  cadastra() {
-    this._fotoService.cadastrar(this.foto)
-    .subscribe(res => {
-      this.mensagem = res.mensagem;
-      this.foto = new FotoComponent()
-    }, erro => {
-      console.log(erro)
-      this.mensagem = 'Nao foi possivel salvar a foto'
-    })
   }
 
 }
