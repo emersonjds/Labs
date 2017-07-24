@@ -49,20 +49,6 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit() { }
 
-  // cadastrar(event) {
-  //   event.preventDefault()
-  //   console.log(this.foto)
-
-  //   this._fotoService.cadastrar(this.foto)
-  //     .subscribe(() => {
-  //       this.foto = new FotoComponent()
-  //       this._router.navigate(['']) //roteamento para home apos inclusao da foto
-  //       console.log('Foto Salva com sucesso')
-  //     }, error => {
-  //       console.log(error)
-  //     })
-  // }
-
   cadastrar() {
     this._fotoService.cadastrar(this.foto)
       .subscribe(res => {

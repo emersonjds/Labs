@@ -44,12 +44,10 @@ export class FotoService {
 }
 
 export class MensagemCadastro {
-  private _mensagem: string;
-  private _inclusao: boolean;
 
-  constructor(mensagem: string, inclusao: boolean) {
-    this._mensagem = mensagem;
-    this._inclusao = inclusao;
+  constructor(private _mensagem: string, private _inclusao: boolean) {
+    this._mensagem = _mensagem; //chamando propriedades direto no construtor
+    this._inclusao = _inclusao;
   }
 
   public get mensagem(): string {
