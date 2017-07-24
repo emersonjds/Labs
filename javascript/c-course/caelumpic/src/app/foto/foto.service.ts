@@ -34,7 +34,7 @@ export class FotoService {
     return this.http.delete(this.url + '/' + foto._id)
   }
 
-  obterFoto(id: string) {
+  obterFoto(id: string): Observable<FotoComponent> {
     return this.http.get(this.url + '/' + id)
       .map(res => res.json())
   }
