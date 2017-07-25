@@ -1,13 +1,13 @@
-<h1>Lista </h1>
+<% include ../includes/header.ejs %>
 
-<table>
+    <div>
+        <div class ="container min-container">
+           
+           <!-- INSIRA O CÓDIGO AQUI -->
+           
+           <a href="/produtos/form" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Novo livro</a>
+        </div>
+    </div>
 
-<% for(var i = 0; i <= lista.length; i++) { %>
-    <tr>
-        <% lista[i].nome %> 
+<% include ../includes/footer.ejs %>
 
-        <% lista[i].preco %> 
-    </tr>
-<% } %>
-
-</table>

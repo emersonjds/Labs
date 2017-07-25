@@ -9,15 +9,14 @@ server.get("/", (req, res) => {
 })
 
 server.get("/produtos/lista", (req, res) => {
-    // fs.read("lista.html", (data) => {
-    //     res.send(data)
-    // })
-    res.render("produtos/lista")
+
+    var livros = []
+    res.render("produtos/lista", { livros: [
+        {titulo: 'Javascript', preco: 50, descricao: 'Javascript'}
+    ] })
 })
 
-server.get("/produtos/cadastro", (req, res) => {
-    res.send('Lista de alunos')
-})
+server.use(express.static("/public")) // faz a chamada para trazer os arquivos estaticos
 
 
 server.listen(3000, 'localhost', () => {
