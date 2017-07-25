@@ -1,5 +1,7 @@
 var express = require('express')
 var server = express()
+server.set("view engine", "ejs");
+
 var fs = require('fs')
 
 server.get("/", (req, res) => {
@@ -7,9 +9,10 @@ server.get("/", (req, res) => {
 })
 
 server.get("/produtos/lista", (req, res) => {
-    fs.read("lista.html", (data) => {
-        res.send('Lista de alunos')
-    })
+    // fs.read("lista.html", (data) => {
+    //     res.send(data)
+    // })
+    res.render("produtos/lista")
 })
 
 server.get("/produtos/cadastro", (req, res) => {
