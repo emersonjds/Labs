@@ -8,7 +8,7 @@ server.get("/", (req, res) => {
 server.get("/produtos/lista", (req, res) => {
     var mysql = require("mysql") //driver mySql
     var conexao = mysql.createConnection({
-        hostname: "192.168.57.183",
+        hostname: "http://192.168.57.183",
         user: "root",
         password: "",
         database: "casadocodigo",
@@ -23,7 +23,5 @@ server.get("/produtos/lista", (req, res) => {
             })
         }
     })
-
-
 })
 
