@@ -6,12 +6,24 @@ server.get("/", (req, res) => {
 
 //assyncronous call
 server.get("/produtos/lista", (req, res) => {
-    var livros = []
-   
-    res.render("produtos/lista", {
-        livros: [
-            { titulo: "Livro 1", preco: 5, descricao: 'Livro 1'}
-        ]
+    var mysql = require("mysql") //driver mySql
+    var conexao = mysql.createConnection({
+        hostname: "192.168.57.183",
+        user: "root",
+        password: "",
+        database: "casadocodigo",
+        port: 32774
     })
+
+    //assyncronous function
+    conexao.query("SELECT * FROM livros", (error, data) => {
+        if (!error) {
+            res.render("produtos/lista", {
+                livros: data
+            })
+        }
+    })
+
+
 })
 
