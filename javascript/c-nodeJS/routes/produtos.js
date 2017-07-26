@@ -21,6 +21,8 @@ server.get("/produtos/lista", (req, res) => {
             res.render("produtos/lista", {
                 livros: data
             })
+        } else {
+            resp.send("Deu ruim")
         }
     })
 })
