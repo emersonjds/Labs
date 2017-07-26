@@ -19,10 +19,15 @@ server.get("/produtos/lista", (req, res) => {
     conexao.query("SELECT * FROM livros", (error, data) => {
         if (!error) {
             res.render("produtos/lista", {
-                livros: data
+                livros: data,
+                msgErro: ""
             })
         } else {
-            resp.send("Deu ruim")
+            res.render('produtos/lista', {
+                livros: [],
+                msgErro: 'Deu ruim'
+            })
+
         }
     })
 })

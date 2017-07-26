@@ -3,6 +3,9 @@
     <!-- FINAL NAV -->
     <div>
         <div class ="container min-container">
+            <% if(msgErro) { %>
+                <p class="alert alert-danger"> <%= msgErro %></p>
+            <%  } %>
             <h2 class="basic-title">Listagem de livros</h2>
             <div class="well">
                 <table class="table table-condensed table-bordered table-striped table-hover">
