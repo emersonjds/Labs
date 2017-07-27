@@ -1,5 +1,6 @@
 var server = require("../config-server") // mesmo chamando o arquivo de conf novamente ele so gera uma instancia da chamada
-var getConnection = require("../model/bd/connectionFactory"); 
+var getConnection = require("../model/bd/connectionFactory");
+var pegaLivros = require("../model/bd/pegaLivros")
 
 server.get("/", (req, res) => {
     res.send('Testando server')
@@ -10,11 +11,10 @@ server.get("/produtos/lista", (req, res) => {
 
     var conexao = getConnection()
 
-    //assyncronous function
-    conexao.query("SELECT * FROM livros", (error, data) => {
+    var lista = pegaLivros(conexao, (error, lista) => {
         if (!error) {
             res.render("produtos/lista", {
-                livros: data,
+                livros: lista,
                 msgErro: ""
             })
         } else {
@@ -23,6 +23,6 @@ server.get("/produtos/lista", (req, res) => {
                 msgErro: 'Deu ruim'
             })
         }
-    })
-})
+    })  
 
+})
