@@ -1,6 +1,6 @@
 var server = require("../config-server") // mesmo chamando o arquivo de conf novamente ele so gera uma instancia da chamada
 var getConnection = require("../model/bd/connectionFactory");
-var ProdutoDAO = require("../model/bd/produtoDAO");
+var criaProdutoDAO = require("../model/bd/produtoDAO");
 
 
 server.get("/", (req, res) => {
@@ -11,7 +11,7 @@ server.get("/", (req, res) => {
 server.get("/produtos/lista", (req, res) => {
 
     var conexao = getConnection()
-    var produtoDAO = ProdutoDAO(conexao)
+    var produtoDAO = new criaProdutoDAO(conexao)
 
 
     produtoDAO.pegaLivros((error, lista) => {

@@ -5,9 +5,24 @@ module.exports = function ProdutoDao(conexao) {
             conexao.query("SELECT * FROM livros", callback)
         },
 
-        salvaLivro: function() {
+        salvaLivro: function () {
 
         }
     }
 }
+
+function criaProdutoDAO(conexao) {
+    this.conexao = conexao;
+}
+
+criaProdutoDAO.prototype.pegaLivros = function pegaLivros(callback) {
+    this.conexao.query("SELECT * FROM livros", callback)
+}
+
+criaProdutoDAO.prototype.salvaLivro = function salvaLivro(livro, callback) {
+    //TODO : IMPLEMENTAR
+}
+
+
+module.exports = criaProdutoDAO
 
