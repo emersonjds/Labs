@@ -27,12 +27,6 @@ server.get("/produtos/lista", (req, res) => {
             })
         }
     })
-
-    // salvaLivro(conexao, livro, (err , result) => {
-    //     if(!erro) {
-    //         res.send("Deu bom")
-    //     }
-    // })
 })
 
 server.get("/produtos/form", (req, res) => {

@@ -20,9 +20,8 @@ criaProdutoDAO.prototype.pegaLivros = function pegaLivros(callback) {
 }
 
 criaProdutoDAO.prototype.salvaLivro = function salvaLivro(livro, callback) {
-    callback()
+    this.conexao.query("INSERT INTO livros SET ?", livro, callback)
 }
-
 
 module.exports = criaProdutoDAO
 
