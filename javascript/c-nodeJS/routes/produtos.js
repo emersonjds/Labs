@@ -48,12 +48,14 @@ server.post("/produtos", (req, res) => {
 
     var conexao = getConnection()
     var produtoDAO = new criaProdutoDao(conexao)
-    console.log(req.body)
 
     var livro = req.body //dados enviados da requisicao
 
     produtoDAO.salvaLivro(livro, (err, result) => {
-        if (!err)
-            res.send("Foi")
+        if (err) {
+            res.redirect("/produtos/lista")
+        } else {
+            res.send(err)
+        }
     })
 })
