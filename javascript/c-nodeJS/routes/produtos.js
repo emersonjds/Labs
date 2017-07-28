@@ -16,10 +16,18 @@ server.get("/produtos/lista", (req, res) => {
 
     produtoDAO.pegaLivros((error, lista) => {
         if (!error) {
-            res.render("produtos/lista", {
-                livros: lista,
-                msgErro: ""
+            res.format({
+                html: () => {
+                    res.render("produtos/lista", {
+                        livros: lista,
+                        msgErro: ""
+                    })
+                },
+                json: () => {
+                    res.send(lista)
+                }
             })
+
         } else {
             res.render('produtos/lista', {
                 livros: [],
@@ -48,5 +56,4 @@ server.post("/produtos", (req, res) => {
         if (!err)
             res.send("Foi")
     })
-
 })
