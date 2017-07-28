@@ -6,6 +6,7 @@ import { ListaComponent } from './lista/lista.component';
 const appRoutes: Routes = [
     { path: '', component: ListaComponent },
     { path: 'cadastro', component: CadastroComponent },
+    { path: 'cadastro/:id', component: CadastroComponent },
     { path: '**', redirectTo: '' } //caso a rota nao seja a utilizada
 ]
 

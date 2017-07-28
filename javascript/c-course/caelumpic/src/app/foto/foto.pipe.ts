@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FiltroPorTitulo implements PipeTransform {
 
     transform(fotos: FotoComponent[], digitado: string) {
-        digitado = digitado.toLocaleLowerCase()
+        digitado = digitado.toLowerCase()
         return fotos.filter(foto => foto.titulo.toLowerCase().includes(digitado))
     }
 }

@@ -1,0 +1,35 @@
+<% include ../includes/header.ejs %>
+
+<div>
+    <div class ="container min-container">
+        <h2 class="basic-title">Add</h2>
+
+        <% validationErrors.map((err) => { %>
+          <%= err.msg %>
+        <% }) %>
+
+        <form action="/produtos" method="post" class="well" role="form">
+            <div class="form-group">
+                <label for="titulo">Titulo</label>
+                <div class="input-group">
+                    <input type="text" name="titulo" placeholder="titulo do livro"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço</label>
+                <div class="input-group">
+                    <input type="text" name="preco" placeholder="valor do livro"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descricao</label>
+                <div class="input-group">
+                    <textarea name="descricao"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Gravar</button>
+        </form>
+    </div>
+</div>
+
+<% include ../includes/footer.ejs %>

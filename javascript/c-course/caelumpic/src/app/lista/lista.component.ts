@@ -1,5 +1,7 @@
-import { Http } from '@angular/http';
 import { Component, OnInit, Input } from '@angular/core';
+import { Http } from '@angular/http';
+import { FotoService } from './../foto/foto.service';
+import { FotoComponent } from './../foto/foto.component';
 
 @Component({
   selector: 'app-lista',
@@ -8,21 +10,42 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  @Input() titulo;
-  @Input() url; 
-  fotos: Object[] = []
+  fotos: FotoComponent[] = []
+  fotoService: FotoService
+  mensagem: string = ''
 
-  constructor(http: Http) {
-    var that = this;
-    http.get('http://localhost:3000/v1/fotos')
-      .map(res => res.json())
+  constructor(private _service: FotoService) {
+    this.fotoService = _service
+
+    this.fotoService.listar()
       .subscribe(
-      fotos => this.fotos = fotos, //se ok
-      erro => console.log(erro) // se nao ok
+      fotos => this.fotos = fotos,
+      error => console.log = error
       )
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  remover(foto: FotoComponent): void {
+    this.fotoService.remover(foto)
+      .subscribe(
+      fotos => {
+        let novasFotos = this.fotos.slice(0);
+        let indice = novasFotos.indexOf(foto);
+        novasFotos.splice(indice, 1);
+        this.fotos = novasFotos;
+        this.mensagem = 'Foto	removida	com	sucesso';
+
+        setTimeout(() => {
+          this.mensagem = '';
+        }, 2000)
+
+      },
+      erro => {
+        console.log(erro)
+        this.mensagem = 'Não	foi	possível	remover	a	foto';
+      });
   }
+
 
 }

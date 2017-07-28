@@ -1,7 +1,9 @@
+import { FotoService } from './../foto/foto.service';
 import { Http, HttpModule, Headers } from '@angular/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { FotoComponent } from './../foto/foto.component';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";  //chamada para acesso a açoes de rota
 
 @Component({
   selector: 'app-cadastro',
@@ -10,35 +12,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroComponent implements OnInit {
 
-  foto = new FotoComponent()
-  http: Http;
-  meuForm : FormGroup
+  foto: FotoComponent = new FotoComponent();
+  service: FotoService;
+  meuForm: FormGroup;
+  route: ActivatedRoute;	//	nova	propriedade
+  mensagem: string = '';	//	nova	propriedade
+  router: Router
 
-  constructor(private _http: Http, formBuilder: FormBuilder) {
-    this.http = _http;
+  constructor(
+    private formBuilder: FormBuilder,
+    private _fotoService: FotoService,
+    private _route: ActivatedRoute,
+    private _router: Router
+  ) {
+
+    this.route = _route;
+    this.service = _fotoService;
+    this.router = _router;
+
     this.meuForm = formBuilder.group({
       titulo: [''],
       url: [''],
       descricao: ['']
     })
+    //chamada para verificar parametros vindos na rota
+    this.route.params.subscribe(params => {
+      let id = params['id'];
+      if (id) {
+        this.service.obterFoto(id)
+          .subscribe(
+          foto => this.foto = foto,
+          erro => console.log(erro));
+      }
+    });
   }
 
   ngOnInit() { }
 
-  cadastrar($event: Event) {
-    var cabecalho: Headers = new Headers();
-    $event.preventDefault();
-
-    cabecalho.append('Content-type', 'application/json');
-
-    this.http.post('http://localhost:3000/v1/fotos', JSON.stringify(this.foto),
-      { headers: cabecalho }
-    ).subscribe(
-      response => console.log('Salvou'),
-      error => console.log(error)
-      )
-
-    console.log(this.foto)
+  cadastrar() {
+    this._fotoService.cadastrar(this.foto)
+      .subscribe(res => {
+        this.mensagem = res.mensagem;
+        this.foto = new FotoComponent()
+        if (!res.inclusao) this._router.navigate(['']) //acesso como se fosse atributo de class
+      }, erro => {
+        console.log(erro)
+        this.mensagem = 'Nao foi possivel salvar a foto'
+      })
   }
 
 }
