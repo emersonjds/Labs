@@ -1,6 +1,6 @@
 var server = require("../config-server") // mesmo chamando o arquivo de conf novamente ele so gera uma instancia da chamada
 var getConnection = require("../model/bd/connectionFactory");
-var criaProdutoDaoComClasse = require("../model/bd/produtoDAO");
+var criaProdutoDao = require("../model/bd/produtoDAO");
 
 
 server.get("/", (req, res) => {
@@ -11,7 +11,7 @@ server.get("/", (req, res) => {
 server.get("/produtos/lista", (req, res) => {
 
     var conexao = getConnection()
-    var produtoDAO =  new criaProdutoDaoComClasse(conexao)
+    var produtoDAO = new criaProdutoDao(conexao)
 
 
     produtoDAO.pegaLivros((error, lista) => {
@@ -33,7 +33,26 @@ server.get("/produtos/lista", (req, res) => {
     //         res.send("Deu bom")
     //     }
     // })
+})
+
+server.get("/produtos/form", (req, res) => {
+    res.render("produtos/form", {
+        validationErrors: []
+    })
+})
 
 
+server.post("/produtos", (req, res) => {
+
+    var conexao = getConnection()
+    var produtoDAO = new criaProdutoDao(conexao)
+    console.log(req.body)
+
+    var livro = req.body //dados enviados da requisicao
+
+    produtoDAO.salvaLivro(livro, (err, result) => {
+        if (!err)
+            res.send("Foi")
+    })
 
 })
