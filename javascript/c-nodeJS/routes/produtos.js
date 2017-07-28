@@ -29,9 +29,14 @@ server.get("/produtos/lista", (req, res) => {
             })
 
         } else {
-            res.render('produtos/lista', {
-                livros: [],
-                msgErro: 'Deu ruim'
+            res.format({
+                html: () => {
+                    res
+                        .status(500)
+                        .render("erros/500", {
+                            erro: error
+                        })
+                }
             })
         }
     })
@@ -55,7 +60,18 @@ server.post("/produtos", (req, res) => {
         if (err) {
             res.redirect("/produtos/lista")
         } else {
-            res.send(err)
+            res.format({
+                html: () => {
+                    res
+                        .status(500)
+                        .render("erros/500", {
+                            erro: erro
+                        })
+                },
+                json: () => {
+                    res.status(500).send(error)
+                }
+            })
         }
     })
 })
