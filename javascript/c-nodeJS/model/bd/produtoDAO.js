@@ -1,15 +1,15 @@
 
-// module.exports = function ProdutoDao(conexao) {
-//     return {
-//         pegaLivros: function pegaLivros(callback) {
-//             conexao.query("SELECT * FROM livros", callback)
-//         },
+module.exports = function ProdutoDao(conexao) {
+    return {
+        pegaLivros: function pegaLivros(callback) {
+            conexao.query("SELECT * FROM livros", callback)
+        },
 
-//         salvaLivro: function () {
+        salvaLivro: function () {
 
-//         }
-//     }
-// }
+        }
+    }
+}
 
 function criaProdutoDAO(conexao) {
     this.conexao = conexao;
@@ -20,26 +20,25 @@ criaProdutoDAO.prototype.pegaLivros = function pegaLivros(callback) {
 }
 
 criaProdutoDAO.prototype.salvaLivro = function salvaLivro(livro, callback) {
-    //TODO : IMPLEMENTAR
+    this.conexao.query("INSERT INTO livros SET ?", livro, callback)
 }
-
 
 module.exports = criaProdutoDAO
 
 
 //com ES2015
-class criaProdutoDaoComClasse {
-    constructor(conexao) {
-        this.conexao = conexao
-    }
+// class criaProdutoDaoComClasse {
+//     constructor(conexao) {
+//         this.conexao = conexao
+//     }
 
-    pegaLivros(callback) {
-        this.conexao.query("SELECT * FROM livros", callback)
-    }
+//     pegaLivros(callback) {
+//         this.conexao.query("SELECT * FROM livros", callback)
+//     }
 
-    salvaLivro(livro, callback) {
+//     salvaLivro(livro, callback) {
 
-    }
-}
+//     }
+// }
 
-module.exports = criaProdutoDaoComClasse
+// module.exports = criaProdutoDaoComClasse
