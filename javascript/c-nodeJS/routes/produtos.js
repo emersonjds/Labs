@@ -47,16 +47,25 @@ module.exports = (server) => {
 
         var conexao = getConnection()
         var produtoDAO = new criaProdutoDao(conexao)
-
         var livro = req.body //dados enviados da requisicao
 
-        produtoDAO.salvaLivro(livro, (err, result) => {
-            if (err) {
-                res.redirect("/produtos/lista")
-            } else {
-                next(err)
-            }
-        })
+        req.assert("preco", "Numero invalido").isFloat()
+        var listaDeErros = req.validationErrors()
+
+        if (listaDeErros == 0) {
+            produtoDAO.salvaLivro(livro, (err, result) => {
+                if (err) {
+                    res.redirect("/produtos/lista")
+                } else {
+                    next(err)
+                }
+            })
+        } else {
+            res.render("produtos/form", {
+                validationErrors: msg
+            })
+        }
+
     })
 
 }

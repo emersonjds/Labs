@@ -2,12 +2,15 @@ var express = require('express')
 var server = express()
 var querystring = require("querystring")
 var bodyParser = require("body-parser")
+var expressValidator = require("express-validator")
 
 server.set("view engine", "ejs");
 server.use(express.static("./public")) // faz a chamada para trazer os arquivos estaticos
 
 server.use(bodyParser.urlencoded())
 server.use(bodyParser.json())
+
+server.use(expressValidator())
 
 require("./routes/produtos")(server)
 
