@@ -8,13 +8,14 @@ server.get("/", (req, res) => {
 })
 
 //assyncronous call
-server.get("/produtos/lista", (req, res) => {
+server.get("/produtos/lista", (req, res, next) => {
 
     var conexao = getConnection()
     var produtoDAO = new criaProdutoDao(conexao)
 
 
     produtoDAO.pegaLivros((error, lista) => {
+        console.log(error)
         if (!error) {
             res.format({
                 html: () => {
@@ -27,17 +28,8 @@ server.get("/produtos/lista", (req, res) => {
                     res.send(lista)
                 }
             })
-
         } else {
-            res.format({
-                html: () => {
-                    res
-                        .status(500)
-                        .render("erros/500", {
-                            erro: error
-                        })
-                }
-            })
+            next(error)
         }
     })
 })
@@ -49,7 +41,7 @@ server.get("/produtos/form", (req, res) => {
 })
 
 
-server.post("/produtos", (req, res) => {
+server.post("/produtos", (req, res, next) => {
 
     var conexao = getConnection()
     var produtoDAO = new criaProdutoDao(conexao)
@@ -60,18 +52,23 @@ server.post("/produtos", (req, res) => {
         if (err) {
             res.redirect("/produtos/lista")
         } else {
-            res.format({
-                html: () => {
-                    res
-                        .status(500)
-                        .render("erros/500", {
-                            erro: erro
-                        })
-                },
-                json: () => {
-                    res.status(500).send(error)
-                }
-            })
+            next(err)
+        }
+    })
+})
+
+server.use((erro, req, res, next) => {
+
+    res.format({
+        html: () => {
+            res
+                .status(500)
+                .render("erros/500", {
+                    erro: erro
+                })
+        },
+        json: () => {
+            res.status(500).send(erro)
         }
     })
 })
