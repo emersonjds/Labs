@@ -9,6 +9,28 @@ server.use(express.static("./public")) // faz a chamada para trazer os arquivos 
 server.use(bodyParser.urlencoded())
 server.use(bodyParser.json())
 
+require("./routes/produtos")(server)
+
+server.use((req, res) => {
+  res.send("Nao existe")
+})
+
+server.use((erro, req, res, next) => {
+
+  res.format({
+    html: () => {
+      res
+        .status(500)
+        .render("erros/500", {
+          erro: erro
+        })
+    },
+    json: () => {
+      res.status(500).send(erro)
+    }
+  })
+})
+
 
 //RETORNO DO BODY PARSER//
 
