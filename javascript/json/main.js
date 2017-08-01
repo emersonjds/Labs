@@ -29,12 +29,13 @@ window.onload = function () {
   }
   xhr.send()
 
-
-  xhr.onreadystatechange = () => {
-    console.log(xhr.readyState)
-    console.log(xhr.status)
-    console.log(xhr.statusText)
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      var obj = JSON.parse(xhr.responseText) // parse in return of the ajax request
+      console.log(obj)
+    }
   }
+  xhr.send()
 }
 
 
