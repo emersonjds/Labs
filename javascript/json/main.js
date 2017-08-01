@@ -1,13 +1,6 @@
-var start = '{ "favColor": "Orange", "favSeason": "Fall" }';
+var dados = '{"Jane": {"age":"29", "degree":"MFA"}, "Jim": {"age":"29", "degree":"MFA"}}';
 
-var data = JSON.parse(start) //convert to Object
-console.log(data)
+var objeto = JSON.parse(dados);
 
-var string = JSON.stringify(data) //Convert to string
-console.log(string)
-
-data = '{ "name": "Emerson", "age": "27", "city": "Sao Paulo"} ';
-
-var personalInformation = JSON.parse(data)
-console.log(personalInformation)
+console.log(objeto.Jane.age)
 
