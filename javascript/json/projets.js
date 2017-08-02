@@ -13,7 +13,7 @@ window.onload = () => {
       for (var i = 0; i < data.length; i++) {
         var x = i + 1;
 
-        document.getElementById("livro").innerHTML = data[x].livro + "<br>"
+        document.getElementById("livro").innerHTML = data[i].livro + "<br>"
         console.log(data[i])
         
       }
