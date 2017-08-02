@@ -1,20 +1,23 @@
 window.onload = () => {
-  var xhr = new XMLHttpRequest()
+  var ajax = new XMLHttpRequest()
 
-  xhr.open('GET', './hospitality-json/names.json', true);
-  xhr.responseType = 'text'
+  ajax.open('GET', "./hospitality-json/json4a/data.json", true);
+  ajax.responseType = 'text';
 
-  xhr.onload = () => {
-    if (xhr.status === 200) {
-      var dados = JSON.parse(xhr.responseText)
-      dados.map(data => {
-        console.log(data.firstName)
-      })
+  ajax.send();
+
+  ajax.onload = () => {
+    if (ajax.status === 200) {
+      var data = JSON.parse(ajax.responseText);
+
+      for (var i = 0; i < data.length; i++) {
+        var x = i + 1;
+
+        document.getElementById("livro").innerHTML = data[x].livro + "<br>"
+        console.log(data[i])
+        
+      }
+
     }
   }
-
-  xhr.send()
-
-  
 }
-

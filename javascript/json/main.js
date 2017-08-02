@@ -35,7 +35,6 @@ window.onload = function () {
       console.log(obj)
     }
   }
-  xhr.send()
 }
 
 
