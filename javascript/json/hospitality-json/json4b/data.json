@@ -1,27 +1,17 @@
-[
-  {
-    "modelos": [
-      {
-        "Apple": "Iphone 6"
-      },
-      {
-        "Samsung": "Galaxy s7"
-      },
-      {
-        "Xiami": "Mi 6S"
-      },
-      {
-        "Meizu": "Elephone 9"
-      },
-    ],
-    "lojas": [
-      {
-        "São Paulo": "Centro",
-        "Rio de Janeiro": "Barra da Tijuca",
-        "Santa Catarina": "Nova Foz",
-        "Curitiba": "Centro de Curitiba",
-        "Belo Horizonte": "Noroeste da cidade"
-      }
-    ]
-  }
-]
+{
+  "modelos": [
+    {"Apple": "Iphone 6", "ano": 2014},
+    {"Samsung": "Galaxy s7", "ano": 2016},
+    {"Xiami": "Mi 6S", "ano": 2016},
+    {"Meizu": "Elephone 9", "ano": 2017}
+  ],
+  "lojas": [
+    {
+      "São Paulo": "Centro",
+      "Rio de Janeiro": "Barra da Tijuca",
+      "Santa Catarina": "Nova Foz",
+      "Curitiba": "Centro de Curitiba",
+      "Belo Horizonte": "Noroeste da cidade"
+    }
+  ]
+}
