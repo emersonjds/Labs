@@ -1,9 +1,9 @@
 {
   "modelos": [
-    {"Apple": "Iphone 6", "ano": 2014},
-    {"Samsung": "Galaxy s7", "ano": 2016},
-    {"Xiami": "Mi 6S", "ano": 2016},
-    {"Meizu": "Elephone 9", "ano": 2017}
+    {"nome": "Iphone 6", "ano": 2014},
+    {"nome": "Galaxy s7", "ano": 2016},
+    {"nome": "Mi 6S", "ano": 2016},
+    {"nome": "Elephone 9", "ano": 2017}
   ],
   "lojas": [
     {
