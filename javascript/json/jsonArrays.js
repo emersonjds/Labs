@@ -23,6 +23,8 @@ req.onload = () => {
       novosDados += dados.modelos[i].ano + "<br>"
 
       console.log(novosDados)
+
+      
     }
     document.getElementById("modelos").innerHTML = novosDados
   }
