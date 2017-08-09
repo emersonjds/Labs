@@ -18,4 +18,7 @@
   background-color: red;
   height: 80px;
   width: 80px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
