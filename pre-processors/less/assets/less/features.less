@@ -1,0 +1,20 @@
+//namespacing for organizational grouping 
+
+#my-forms { //this format the scope dont break anothers class with same name
+  .set-button {
+    font-size:14px;
+    text-align:center;
+  }
+}
+//example call #my-form > .set-button  
+#submit-button {
+  #my-forms > .set-button;
+}
+
+//String Interpolation
+
+@root: "/images"; //call of interpolation string
+
+#form {
+  background: url("@{root}background.jpg");
+}
