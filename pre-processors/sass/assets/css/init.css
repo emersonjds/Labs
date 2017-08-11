@@ -1,11 +1,30 @@
 html, body {
-  background-color: #000;
+  height: 100%;
+  width: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  background-color: lightgray;
   font-size: 24px;
   font-family: "Open Sans, verdana, helvetica, sans-serif"; }
+
+nav {
+  height: 100%;
+  width: 100%;
+  display: flex; }
+  nav ul {
+    background-color: orange; }
+    nav ul li {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      background-color: yellow; }
+      nav ul li a {
+        text-decoration: none; }
+        nav ul li a:hover {
+          background-color: red;
+          text-decoration: underline; }
 
 /*# sourceMappingURL=init.css.map */

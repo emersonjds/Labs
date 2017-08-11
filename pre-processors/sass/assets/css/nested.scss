@@ -1,0 +1,20 @@
+nav {
+  @include full-prop;
+  @include flex;
+  ul {
+    background-color: $laranja;
+    li {
+      @include full-prop;
+      @include flex;
+      @include flex-center;
+      background-color: $amarelo;
+      a {
+        text-decoration: none;
+        &:hover {
+          background-color: $vermelho;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

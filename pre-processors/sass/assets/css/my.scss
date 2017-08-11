@@ -1,10 +1,11 @@
 $mainColor : #000;
 
 html, body {
-  background-color: $mainColor;
+  @include full-prop;
   @include flex;
   @include flex-center;
-  @include full-prop;
+
+  background-color: lightgray;
   font-size: $size-font + 10px;
   font-family: $font;
 }
