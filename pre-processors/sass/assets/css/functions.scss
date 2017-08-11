@@ -8,3 +8,6 @@ $app-size: 1024px;
   @return $app-size - ($gutter * 2);
 }
 
+//call
+.container: center-width(100); 
+//container with 824px 
