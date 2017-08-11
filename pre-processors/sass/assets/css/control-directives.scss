@@ -1,0 +1,26 @@
+h1 {
+  @if $size > 14px {
+    color: $azul;
+  } @else if $size < 14px {
+    color: $vermelho
+  } @else {
+    color: $verde;
+  }
+}
+
+$page-width:1000px; 
+@for $col from 1 through 4 {
+  .col#{$col} {
+    width: $page-width / col;
+  }
+}
+@each $item in first, second, third, fourth {
+  .#{$item} {
+    background-url: url("images/#{$item}.jpg");
+  }
+}
+
+$i : 1;
+@while $i < 5 {
+  
+}
