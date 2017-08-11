@@ -1,22 +1,10 @@
 $mainColor : #000;
 
-@mixin flex {
-  display: flex;
-  
-}
-
-@mixin flex-center {
-  align-content: center;
-  justify-content: center;
-}
-
-@mixin full {
-  height: 100%;
-  width: 100%;
-}
-
 html, body {
   background-color: $mainColor;
   @include flex;
   @include flex-center;
+  @include full-prop;
+  font-size: $size-font + 10px;
+  font-family: $font;
 }

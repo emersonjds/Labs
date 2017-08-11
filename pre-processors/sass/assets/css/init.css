@@ -1,0 +1,11 @@
+html, body {
+  background-color: #000;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  font-family: "Open Sans, verdana, helvetica, sans-serif"; }
+
+/*# sourceMappingURL=init.css.map */
