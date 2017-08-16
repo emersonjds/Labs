@@ -6,6 +6,7 @@ req.responseType = 'text';
 req.send()
 
 req.onload = () => {
+  
   if (req.status === 200) {
     var dados = JSON.parse(req.responseText)
     
