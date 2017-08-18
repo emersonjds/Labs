@@ -3,3 +3,5 @@ function log(msg: string) {
 }
 
 log('Hello World')
+
+let nomes : Array<string> = ['Emerson', 'Junior'] 
