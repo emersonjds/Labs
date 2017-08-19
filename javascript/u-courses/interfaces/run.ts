@@ -4,7 +4,7 @@ import { DaoInterface } from './dao.interface';
 
 let dao : DaoInterface = new AnimalDao();
 
-let animal: Animal = new Animal('Rex')
+let animal: Animal = new Animal('Rex');
 
 
 dao.insert(animal);
