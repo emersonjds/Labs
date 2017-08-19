@@ -6,3 +6,7 @@ const animal = [
 animal.filter((item) => {
   return animal.type === 'cat'
 })
+
+animal.map((item) => {
+  return item.type
+})
