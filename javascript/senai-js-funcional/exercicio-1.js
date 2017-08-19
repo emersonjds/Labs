@@ -15,5 +15,15 @@ products.data.products.filter((item) => {
   return itemFinal.sku
 })
 
+//Forma mais performatica
+pr.map(function(p) {
+  if(p.quantity < 100) {
+    return p.sku;
+  }
+  return false;
+}).filter(function(y) {
+  return y !== false
+})
+
 
 
