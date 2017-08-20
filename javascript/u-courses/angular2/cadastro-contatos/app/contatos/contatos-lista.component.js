@@ -6,8 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var contatos_mock_1 = require("./contatos-mock");
 var ContatoListaComponent = (function () {
     function ContatoListaComponent() {
+        this.contatos = contatos_mock_1.CONTATOS;
     }
     return ContatoListaComponent;
 }());

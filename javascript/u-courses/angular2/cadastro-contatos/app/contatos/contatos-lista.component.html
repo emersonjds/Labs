@@ -14,33 +14,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>mark@gmail.com</td>
-                        <td>11 4222-2222</td>
-                        <td>
-                            <button class="btn btn-danger">
-                                Deletar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Mark</td>
-                        <td>mark@gmail.com</td>
-                        <td>11 4222-2222</td>
-                        <td>
-                            <button class="btn btn-danger">
-                                Deletar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Mark</td>
-                        <td>mark@gmail.com</td>
-                        <td>11 4222-2222</td>
+                    <tr *ngFor="let c of contatos">
+                        <th scope="row">{{ c.id }}</th>
+                        <td>{{ c.nome }}</td>
+                        <td>{{ c.email }}</td>
+                        <td>{{ c.telefone }}</td>
                         <td>
                             <button class="btn btn-danger">
                                 Deletar
