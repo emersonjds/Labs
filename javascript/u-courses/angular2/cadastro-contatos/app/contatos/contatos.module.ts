@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 
+import { ContatoListaComponent } from './contatos-lista.component';
+
 @NgModule({
-    imports: [],
-    declarations: [],
-    exports: []
+    declarations: [ContatoListaComponent],
+    exports: [ContatoListaComponent]
 })
 export class ContatosModule {
 

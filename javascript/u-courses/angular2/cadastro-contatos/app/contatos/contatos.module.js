@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var contatos_lista_component_1 = require("./contatos-lista.component");
 var ContatosModule = (function () {
     function ContatosModule() {
     }
@@ -13,9 +14,8 @@ var ContatosModule = (function () {
 }());
 ContatosModule = __decorate([
     core_1.NgModule({
-        imports: [],
-        declarations: [],
-        exports: []
+        declarations: [contatos_lista_component_1.ContatoListaComponent],
+        exports: [contatos_lista_component_1.ContatoListaComponent]
     })
 ], ContatosModule);
 exports.ContatosModule = ContatosModule;

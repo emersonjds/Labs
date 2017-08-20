@@ -7,7 +7,10 @@ import {Component} from '@angular/core';
 
     <br/>
 
-    <button class="btn btn-primary">Testando botao</button>
+    <div>
+      <contatos-lista></contatos-lista>
+    </div>
+    
   `
 })
 export class AppComponent {
