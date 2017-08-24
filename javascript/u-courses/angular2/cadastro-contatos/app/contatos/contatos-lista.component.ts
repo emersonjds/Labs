@@ -10,6 +10,5 @@ import { CONTATOS } from './contatos-mock';
     styleUrls: []
 })
 export class ContatoListaComponent {
-
     contatos: Contato[] = CONTATOS;
 }
