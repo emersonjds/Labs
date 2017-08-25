@@ -1,6 +1,5 @@
-
 import { NgModule } from '@angular/core';
-import { AppRouteModule } from './contatos/app-routin.module';
+import { AppRouteModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { ContatosModule } from './contatos/contatos.module';

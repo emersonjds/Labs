@@ -12,4 +12,4 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)]
 })
-export class AppRouteModule {}
+export class AppRouteModule {} 
