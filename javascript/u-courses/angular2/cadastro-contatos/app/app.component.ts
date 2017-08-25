@@ -10,6 +10,8 @@ import {Component} from '@angular/core';
     <div>
       <contatos-lista></contatos-lista>
     </div>
+
+    <router-outlet></router-outlet>
     
   `
 })

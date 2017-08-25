@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { AppRouteModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +13,9 @@ import { AppComponent }  from './app.component';
     ContatosModule,
     AppRouteModule ],
   declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppModule { }
