@@ -2,7 +2,7 @@
   "name": "angular-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && npm run tsc:w | npm run lite",
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
@@ -14,25 +14,25 @@
     }
   ],
   "dependencies": {
-    "@angular/common": "~4.0.0",
-    "@angular/compiler": "~4.0.0",
-    "@angular/core": "~4.0.0",
-    "@angular/forms": "~4.0.0",
-    "@angular/http": "~4.0.0",
-    "@angular/platform-browser": "~4.0.0",
-    "@angular/platform-browser-dynamic": "~4.0.0",
-    "@angular/router": "~4.0.0",
-    "angular-in-memory-web-api": "~0.3.0",
-    "bootstrap": "^4.0.0-alpha.6",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "angular-in-memory-web-api": "^0.3.0",
+    "systemjs": "0.19.40",
     "core-js": "^2.4.1",
     "rxjs": "5.0.1",
-    "systemjs": "0.19.40",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
+    "@types/node": "^6.0.46",
+    "@types/core-js": "^0.9.34",
     "concurrently": "^3.2.0",
     "lite-server": "^2.2.2",
-    "typescript": "~2.1.0",
-    "@types/node": "^6.0.46"
+    "typescript": "^2.1.0"
   }
 }

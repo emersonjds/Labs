@@ -13,9 +13,6 @@ import { AppComponent }  from './app.component';
     ContatosModule,
     AppRouteModule ],
   declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ],
-  exports: [
-    RouterModule
-  ]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
