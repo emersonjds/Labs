@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -7,17 +7,8 @@ import {Component} from '@angular/core';
 
     <br/>
 
-    <div>
-      <contatos-lista></contatos-lista>
-    </div>
-
     <router-outlet></router-outlet>
-    
+
   `
 })
-export class AppComponent {
-  constructor() {
-
-  }
-
-}
+export class AppComponent {}

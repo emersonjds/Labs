@@ -6,11 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var app_routing_module_1 = require("./app-routing.module");
 var platform_browser_1 = require("@angular/platform-browser");
-var contatos_module_1 = require("./contatos/contatos.module");
+var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
+var contatos_module_1 = require("./contatos/contatos.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,10 +23,7 @@ AppModule = __decorate([
             app_routing_module_1.AppRouteModule
         ],
         declarations: [app_component_1.AppComponent],
-        bootstrap: [app_component_1.AppComponent],
-        exports: [
-            router_1.RouterModule
-        ]
+        bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
 exports.AppModule = AppModule;
