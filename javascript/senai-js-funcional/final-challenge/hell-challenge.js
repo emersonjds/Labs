@@ -35,3 +35,24 @@ const obj = {
     ]
   }
 }
+
+
+
+
+
+function mascaraDados(obj) {
+  var dadosSensiveis = ['password', 'payment_options', 'family_plan']
+
+  Object.keys(obj).map(o => {
+    console.log(o)
+    console.log(typeof (obj[o]))
+    if (['string', 'number'].includes(typeof (obj[o])) && dadosSensiveis.includes(o)) {
+      obj[o] = '*******'
+      console.log(obj)
+    }
+    
+  })
+  
+}
+
+mascaraDados(obj)
