@@ -5,6 +5,10 @@ import { ContatoListaComponent } from './contatos-lista.component';
 import { DetalheContato } from './contato-detalhe.component';
 
 @NgModule({
+    imports: [
+        CommonModule,
+        ContatoRouteModule
+    ],
     declarations: [
         ContatoListaComponent, 
         DetalheContato
@@ -12,9 +16,5 @@ import { DetalheContato } from './contato-detalhe.component';
     exports: [
         ContatoListaComponent
     ]
-    // imports: [
-    //     CommonModule,
-    //     ContatoRouteModule
-    // ]
 })
 export class ContatosModule {} 

@@ -8,16 +8,17 @@
 						<th>Nome</th>
 						<th>Email</th>
 						<th>Telefone</th>
-						<th>
-							<button class="btn btn-danger">Deletar</button>
-						</th>
+						<th>Deletar</th
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Fulano de Tal</td>
-						<td>fulano@fulano.com</td>
-						<td>0000-0000</td>
+					<tr *ngFor="let contato from contatos"
+						<td> {{ contato.nome }}</td>
+						<td>{{ contato.email }}</td>
+						<td>{{ contato.telefone }}</td>
+						<td>
+							<button class="btn btn-danger">Deletar</button>
+						</td>
 					</tr>
 				</tbody>
 			</table>
