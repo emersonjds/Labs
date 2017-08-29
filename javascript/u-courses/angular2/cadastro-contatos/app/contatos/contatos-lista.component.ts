@@ -6,8 +6,7 @@ import { CONTATOS } from './contatos-mock';
 @Component({
     moduleId: module.id,
     selector: 'contatos-lista',
-    templateUrl: 'contatos-lista.component.html',
-    styleUrls: []
+    templateUrl: 'contato-lista.component.html'
 })
 export class ContatoListaComponent {
     contatos: Contato[] = CONTATOS;

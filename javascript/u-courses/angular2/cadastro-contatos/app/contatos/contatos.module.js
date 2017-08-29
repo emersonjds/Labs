@@ -23,7 +23,11 @@ ContatosModule = __decorate([
         ],
         declarations: [
             contatos_lista_component_1.ContatoListaComponent,
-            contato_detalhe_component_1.DetalheContato
+            contato_detalhe_component_1.ContatoDetalheComponent
+        ],
+        exports: [
+            contatos_lista_component_1.ContatoListaComponent,
+            contato_detalhe_component_1.ContatoDetalheComponent
         ]
     })
 ], ContatosModule);

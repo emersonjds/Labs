@@ -6,17 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var DetalheContato = (function () {
-    function DetalheContato() {
+var ContatoDetalheComponent = (function () {
+    function ContatoDetalheComponent() {
     }
-    return DetalheContato;
+    return ContatoDetalheComponent;
 }());
-DetalheContato = __decorate([
+ContatoDetalheComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'contato-detalhe',
-        templateUrl: 'contato-detalhe.component.html',
-        styleUrls: []
+        templateUrl: 'contato-detalhe.component.html'
     })
-], DetalheContato);
-exports.DetalheContato = DetalheContato;
+], ContatoDetalheComponent);
+exports.ContatoDetalheComponent = ContatoDetalheComponent;

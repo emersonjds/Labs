@@ -14,8 +14,7 @@ import { ContatoDetalheComponent } from './contato-detalhe.component';
         ContatoDetalheComponent
     ],
     exports: [
-        ContatoListaComponent,
-        ContatoDetalheComponent
+        ContatoListaComponent
     ]
 })
 export class ContatosModule {} 

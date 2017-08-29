@@ -10,8 +10,9 @@ import { ContatosModule } from './contatos/contatos.module';
 @NgModule({
   imports: [ 
     BrowserModule, 
-    ContatosModule,
-    AppRouteModule ],
+    AppRouteModule,
+    ContatosModule
+     ],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
 })
