@@ -3,7 +3,7 @@
 		<div class="col-xs-12">
 			<h2>Meus Contatos</h2>
 
-			<a href="#" class="btn btn-success" routerLink="/contato/save">Novo</a>
+			<a class="btn btn-success" routerLink="/contato/save">Novo</a>
 
 			<table class="table-striped table-hover">
 				<thead>
@@ -15,8 +15,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ngFor="let contato of contatos">
-						<td> {{ contato.nome }}</td>
+					<tr ngFor="let contato from contatos">
+						<td> {{	contato.nome }}</td>
 						<td>{{ contato.email }}</td>
 						<td>{{ contato.telefone }}</td>
 						<td>

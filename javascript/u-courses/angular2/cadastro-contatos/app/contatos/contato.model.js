@@ -1,6 +1,6 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var Contato = (function () {
+exports.__esModule = true;
+var Contato = /** @class */ (function () {
     function Contato(id, nome, email, telefone) {
         this.id = id;
         this.nome = nome;
