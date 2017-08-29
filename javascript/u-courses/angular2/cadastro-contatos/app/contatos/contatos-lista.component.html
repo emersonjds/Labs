@@ -8,11 +8,11 @@
 						<th>Nome</th>
 						<th>Email</th>
 						<th>Telefone</th>
-						<th>Deletar</th
+						<th>Deletar</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let contato from contatos"
+					<tr ngFor="let contato of contatos">
 						<td> {{ contato.nome }}</td>
 						<td>{{ contato.email }}</td>
 						<td>{{ contato.telefone }}</td>

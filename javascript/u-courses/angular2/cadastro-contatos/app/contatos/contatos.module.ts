@@ -10,7 +10,7 @@ import { ContatoDetalheComponent } from './contato-detalhe.component';
         ContatoRouteModule
     ],
     declarations: [
-        ContatoListaComponent, 
+        ContatoListaComponent,
         ContatoDetalheComponent
     ],
     exports: [

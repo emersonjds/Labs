@@ -3,12 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: "**",
     redirectTo: '/contato',
     pathMatch: 'full'
   }
 ]
-
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [
