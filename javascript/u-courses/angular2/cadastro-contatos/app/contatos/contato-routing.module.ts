@@ -7,7 +7,8 @@ import { ContatoDetalheComponent } from './contato-detalhe.component';
 
 const contatoRoutes: Routes = [
     { path: 'contato', component: ContatoListaComponent },
-    { path: 'contato/save', component: ContatoDetalheComponent }
+    { path: 'contato/save', component: ContatoDetalheComponent },
+    { path: 'contato/save/:id', component: ContatoDetalheComponent }
 ]
 
 @NgModule({
@@ -15,7 +16,7 @@ const contatoRoutes: Routes = [
         RouterModule.forChild(contatoRoutes)
     ],
     exports: [
-        RouterModule
+        RouterModule //invoked for use in self module 
     ]
 })
 export class ContatoRouteModule { }

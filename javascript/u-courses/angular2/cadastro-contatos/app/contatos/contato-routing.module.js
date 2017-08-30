@@ -12,7 +12,8 @@ var contatos_lista_component_1 = require("./contatos-lista.component");
 var contato_detalhe_component_1 = require("./contato-detalhe.component");
 var contatoRoutes = [
     { path: 'contato', component: contatos_lista_component_1.ContatoListaComponent },
-    { path: 'contato/save', component: contato_detalhe_component_1.ContatoDetalheComponent }
+    { path: 'contato/save', component: contato_detalhe_component_1.ContatoDetalheComponent },
+    { path: 'contato/save/:id', component: contato_detalhe_component_1.ContatoDetalheComponent }
 ];
 var ContatoRouteModule = /** @class */ (function () {
     function ContatoRouteModule() {
@@ -23,7 +24,7 @@ var ContatoRouteModule = /** @class */ (function () {
                 router_1.RouterModule.forChild(contatoRoutes)
             ],
             exports: [
-                router_1.RouterModule
+                router_1.RouterModule //invoked for use in self module 
             ]
         })
     ], ContatoRouteModule);
