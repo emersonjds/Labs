@@ -11,6 +11,7 @@ var common_1 = require("@angular/common");
 var contato_routing_module_1 = require("./contato-routing.module");
 var contatos_lista_component_1 = require("./contatos-lista.component");
 var contato_detalhe_component_1 = require("./contato-detalhe.component");
+var contato_service_1 = require("./contato.service");
 var ContatosModule = /** @class */ (function () {
     function ContatosModule() {
     }
@@ -26,6 +27,9 @@ var ContatosModule = /** @class */ (function () {
             ],
             exports: [
                 contatos_lista_component_1.ContatoListaComponent
+            ],
+            providers: [
+                contato_service_1.ContatoService
             ]
         })
     ], ContatosModule);

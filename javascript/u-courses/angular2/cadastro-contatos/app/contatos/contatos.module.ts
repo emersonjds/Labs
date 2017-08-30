@@ -4,6 +4,8 @@ import { ContatoRouteModule } from './contato-routing.module';
 import { ContatoListaComponent } from './contatos-lista.component';
 import { ContatoDetalheComponent } from './contato-detalhe.component';
 
+import { ContatoService } from './contato.service';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -15,6 +17,9 @@ import { ContatoDetalheComponent } from './contato-detalhe.component';
     ],
     exports: [
         ContatoListaComponent
+    ],
+    providers: [
+        ContatoService
     ]
 })
 export class ContatosModule {} 
