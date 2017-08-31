@@ -14,6 +14,29 @@ let ContatoService = class ContatoService {
             resolve(contatos_mock_1.CONTATOS);
         });
     }
+    getContatosSlowly() {
+        return new Promise((resolve, reject) => {
+            setTimeout(resolve, 3000);
+        })
+            .then(() => {
+            console.log('Start');
+            return 'start Promise Chain';
+        })
+            .then((param) => {
+            console.log('Second call');
+            console.log(param);
+            return new Promise((resolveInterPromise, reject) => {
+                setTimeout(() => {
+                    console.log('Intern Promise call');
+                    resolveInterPromise();
+                }, 2000);
+            });
+        })
+            .then(() => {
+            console.log('End Promise Chain');
+            return this.getContatos();
+        });
+    }
 };
 ContatoService = __decorate([
     core_1.Injectable()
