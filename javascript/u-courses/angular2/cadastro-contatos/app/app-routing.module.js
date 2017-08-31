@@ -6,26 +6,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var appRoutes = [
+const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
+const appRoutes = [
     {
         path: '',
         redirectTo: '/contato',
         pathMatch: 'full'
     }
 ];
-var AppRouteModule = /** @class */ (function () {
-    function AppRouteModule() {
-    }
-    AppRouteModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes)],
-            exports: [
-                router_1.RouterModule
-            ]
-        })
-    ], AppRouteModule);
-    return AppRouteModule;
-}());
+let AppRouteModule = class AppRouteModule {
+};
+AppRouteModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.RouterModule.forRoot(appRoutes)],
+        exports: [
+            router_1.RouterModule
+        ]
+    })
+], AppRouteModule);
 exports.AppRouteModule = AppRouteModule;

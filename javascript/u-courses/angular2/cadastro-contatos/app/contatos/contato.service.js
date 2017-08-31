@@ -6,17 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var contatos_mock_1 = require("./contatos-mock");
-var ContatoService = /** @class */ (function () {
-    function ContatoService() {
+const core_1 = require("@angular/core");
+const contatos_mock_1 = require("./contatos-mock");
+let ContatoService = class ContatoService {
+    getContatos() {
+        return new Promise((resolve, reject) => {
+            resolve(contatos_mock_1.CONTATOS);
+        });
     }
-    ContatoService.prototype.getContatos = function () {
-        return contatos_mock_1.CONTATOS;
-    };
-    ContatoService = __decorate([
-        core_1.Injectable()
-    ], ContatoService);
-    return ContatoService;
-}());
+};
+ContatoService = __decorate([
+    core_1.Injectable()
+], ContatoService);
 exports.ContatoService = ContatoService;

@@ -6,28 +6,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var contatos_lista_component_1 = require("./contatos-lista.component");
-var contato_detalhe_component_1 = require("./contato-detalhe.component");
-var contatoRoutes = [
+const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
+const contatos_lista_component_1 = require("./contatos-lista.component");
+const contato_detalhe_component_1 = require("./contato-detalhe.component");
+const contatoRoutes = [
     { path: 'contato', component: contatos_lista_component_1.ContatoListaComponent },
     { path: 'contato/save', component: contato_detalhe_component_1.ContatoDetalheComponent },
     { path: 'contato/save/:id', component: contato_detalhe_component_1.ContatoDetalheComponent }
 ];
-var ContatoRouteModule = /** @class */ (function () {
-    function ContatoRouteModule() {
-    }
-    ContatoRouteModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                router_1.RouterModule.forChild(contatoRoutes)
-            ],
-            exports: [
-                router_1.RouterModule //invoked for use in self module 
-            ]
-        })
-    ], ContatoRouteModule);
-    return ContatoRouteModule;
-}());
+let ContatoRouteModule = class ContatoRouteModule {
+};
+ContatoRouteModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            router_1.RouterModule.forChild(contatoRoutes)
+        ],
+        exports: [
+            router_1.RouterModule //invoked for use in self module 
+        ]
+    })
+], ContatoRouteModule);
 exports.ContatoRouteModule = ContatoRouteModule;

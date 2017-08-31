@@ -6,17 +6,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var ContatoDetalheComponent = /** @class */ (function () {
-    function ContatoDetalheComponent() {
-    }
-    ContatoDetalheComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'contato-detalhe',
-            templateUrl: 'contato-detalhe.component.html'
-        })
-    ], ContatoDetalheComponent);
-    return ContatoDetalheComponent;
-}());
+const core_1 = require("@angular/core");
+let ContatoDetalheComponent = class ContatoDetalheComponent {
+};
+ContatoDetalheComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'contato-detalhe',
+        templateUrl: 'contato-detalhe.component.html'
+    })
+], ContatoDetalheComponent);
 exports.ContatoDetalheComponent = ContatoDetalheComponent;
