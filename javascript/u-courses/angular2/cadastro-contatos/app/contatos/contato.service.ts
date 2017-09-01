@@ -26,7 +26,7 @@ export class ContatoService {
                     setTimeout(() => {
                     console.log('Intern Promise call')
                     resolveInterPromise();
-                }, 2000)
+                }, 3000)
             })
         })
         .then(() => {
