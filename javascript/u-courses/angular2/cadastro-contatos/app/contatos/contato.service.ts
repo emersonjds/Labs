@@ -21,7 +21,6 @@ export class ContatoService {
         })
         .then((param: string) => {
             console.log('Second call')
-            console.log(param)
                 return new Promise((resolveInterPromise, reject) => {
                     setTimeout(() => {
                     console.log('Intern Promise call')
