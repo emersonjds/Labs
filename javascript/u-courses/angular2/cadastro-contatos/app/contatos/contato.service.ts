@@ -20,12 +20,18 @@ export class ContatoService {
             return 'start Promise Chain'
         })
         .then((param: string) => {
+            console.log('Start')
             console.log('Second call')
                 return new Promise((resolveInterPromise, reject) => {
                     setTimeout(() => {
                     console.log('Intern Promise call')
                     resolveInterPromise();
                 }, 3000)
+            })
+        })
+        .then(() => {
+            return new Promise((resolve2, reject2) => {
+                console.log('New call promise');
             })
         })
         .then(() => {
