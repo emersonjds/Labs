@@ -13,11 +13,7 @@ export class ContatoService {
 
     getContato(id: number): Promise<Contato> {
         return this.getContatos()
-        .then((contatos: Contato[]) => {
-            return contatos.find((contato) => {
-                return contato.id === id
-            })
-        })
+            .then((contatos: Contato[]) => contatos.find(contato => contato.id === id))
     }
 
     getContatosSlowly(): Promise<Contato[]> {

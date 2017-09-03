@@ -13,6 +13,7 @@ const contato_service_1 = require("./contato.service");
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
 const common_1 = require("@angular/common");
+const contato_model_1 = require("./contato.model");
 let ContatoDetalheComponent = class ContatoDetalheComponent {
     constructor(contatoService, route, location) {
         this.contatoService = contatoService;
@@ -21,13 +22,17 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
     }
     ngOnInit() {
         console.log('On init'); //chamado logo que o component é construido no browser
+        this.contato = new contato_model_1.Contato(0, '', '', ''); //life cicle hook
         this.route.params.forEach((params) => {
             let id = +params['id']; // o valor de mais converte implicitamente a string em number
             this.contatoService.getContato(id)
                 .then((contato) => {
-                console.log(contato);
+                this.contato = contato;
             });
         });
+    }
+    teste() {
+        console.log(this.contato);
     }
 };
 ContatoDetalheComponent = __decorate([

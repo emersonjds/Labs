@@ -13,6 +13,8 @@ import { Contato } from './contato.model';
 })
 export class ContatoDetalheComponent implements OnInit {
 
+    contato: Contato;
+
     constructor(
         private contatoService: ContatoService,
         private route: ActivatedRoute,
@@ -21,16 +23,21 @@ export class ContatoDetalheComponent implements OnInit {
 
     ngOnInit(): void {
         console.log('On init') //chamado logo que o component é construido no browser
+
+        this.contato = new Contato(0, '', '', ''); //life cicle hook
+
         this.route.params.forEach((params: Params) => {
             let id: number = +params['id'] // o valor de mais converte implicitamente a string em number
 
-        this.contatoService.getContato(id)
-            .then((contato: Contato) => {
-                console.log(contato);
-            })
+            this.contatoService.getContato(id)
+                .then((contato: Contato) => {
+                    this.contato = contato;
+                })
         });
+    }
 
-
+    teste() {
+        console.log(this.contato)
     }
 
 }

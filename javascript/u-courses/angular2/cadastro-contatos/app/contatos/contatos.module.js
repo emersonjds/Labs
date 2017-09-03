@@ -11,6 +11,7 @@ const common_1 = require("@angular/common");
 const contato_routing_module_1 = require("./contato-routing.module");
 const contatos_lista_component_1 = require("./contatos-lista.component");
 const contato_detalhe_component_1 = require("./contato-detalhe.component");
+const forms_1 = require("@angular/forms");
 const contato_service_1 = require("./contato.service");
 let ContatosModule = class ContatosModule {
 };
@@ -18,7 +19,8 @@ ContatosModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            contato_routing_module_1.ContatoRouteModule
+            contato_routing_module_1.ContatoRouteModule,
+            forms_1.FormsModule
         ],
         declarations: [
             contatos_lista_component_1.ContatoListaComponent,

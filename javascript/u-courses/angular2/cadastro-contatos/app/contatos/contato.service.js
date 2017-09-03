@@ -16,11 +16,7 @@ let ContatoService = class ContatoService {
     }
     getContato(id) {
         return this.getContatos()
-            .then((contatos) => {
-            return contatos.find((contato) => {
-                return contato.id === id;
-            });
-        });
+            .then((contatos) => contatos.find(contato => contato.id === id));
     }
     getContatosSlowly() {
         return new Promise((resolve, reject) => {
