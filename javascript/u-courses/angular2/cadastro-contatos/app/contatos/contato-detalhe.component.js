@@ -23,6 +23,10 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         console.log('On init'); //chamado logo que o component é construido no browser
         this.route.params.forEach((params) => {
             let id = +params['id']; // o valor de mais converte implicitamente a string em number
+            this.contatoService.getContato(id)
+                .then((contato) => {
+                console.log(contato);
+            });
         });
     }
 };

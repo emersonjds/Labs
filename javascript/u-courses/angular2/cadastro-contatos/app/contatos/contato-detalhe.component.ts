@@ -11,19 +11,26 @@ import { Contato } from './contato.model';
     selector: 'contato-detalhe',
     templateUrl: 'contato-detalhe.component.html'
 })
-export class ContatoDetalheComponent  implements OnInit{
-    
+export class ContatoDetalheComponent implements OnInit {
+
     constructor(
-        private contatoService : ContatoService,
+        private contatoService: ContatoService,
         private route: ActivatedRoute,
         private location: Location
-    ) {}
+    ) { }
 
     ngOnInit(): void {
         console.log('On init') //chamado logo que o component é construido no browser
         this.route.params.forEach((params: Params) => {
-            let id:number = +params['id'] // o valor de mais converte implicitamente a string em number
+            let id: number = +params['id'] // o valor de mais converte implicitamente a string em number
+
+        this.contatoService.getContato(id)
+            .then((contato: Contato) => {
+                console.log(contato);
+            })
         });
+
+
     }
 
 }

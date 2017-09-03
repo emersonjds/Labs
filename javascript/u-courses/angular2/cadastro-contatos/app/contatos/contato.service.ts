@@ -11,28 +11,37 @@ export class ContatoService {
         })
     }
 
+    getContato(id: number): Promise<Contato> {
+        return this.getContatos()
+        .then((contatos: Contato[]) => {
+            return contatos.find((contato) => {
+                return contato.id === id
+            })
+        })
+    }
+
     getContatosSlowly(): Promise<Contato[]> {
         return new Promise((resolve, reject) => {
             setTimeout(resolve, 3000);
         })
-        .then(() => {
-            console.log('Start')
-            return 'start Promise Chain'
-        })
-        .then((param: string) => {
-            console.log('Start')
-            console.log('Second call')
+            .then(() => {
+                console.log('Start')
+                return 'start Promise Chain'
+            })
+            .then((param: string) => {
+                console.log('Start')
+                console.log('Second call')
                 return new Promise((resolveInterPromise, reject) => {
                     setTimeout(() => {
-                    console.log('Intern Promise call')
-                    resolveInterPromise();
-                }, 3000)
+                        console.log('Intern Promise call')
+                        resolveInterPromise();
+                    }, 3000)
+                })
             })
-        })
-        .then(() => {
-            console.log('End Promise Chain')
-            return this.getContatos();
-        })
+            .then(() => {
+                console.log('End Promise Chain')
+                return this.getContatos();
+            })
     }
 }
 

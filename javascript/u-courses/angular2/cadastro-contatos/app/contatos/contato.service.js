@@ -14,6 +14,14 @@ let ContatoService = class ContatoService {
             resolve(contatos_mock_1.CONTATOS);
         });
     }
+    getContato(id) {
+        return this.getContatos()
+            .then((contatos) => {
+            return contatos.find((contato) => {
+                return contato.id === id;
+            });
+        });
+    }
     getContatosSlowly() {
         return new Promise((resolve, reject) => {
             setTimeout(resolve, 3000);
