@@ -30,13 +30,10 @@ export class ContatoService {
             })
         })
         .then(() => {
-            return new Promise((resolve2, reject2) => {
-                console.log('New call promise');
-            })
-        })
-        .then(() => {
             console.log('End Promise Chain')
             return this.getContatos();
         })
     }
 }
+
+//Build => Measure => Learn

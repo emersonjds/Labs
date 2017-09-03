@@ -23,13 +23,13 @@ let ContatoService = class ContatoService {
             return 'start Promise Chain';
         })
             .then((param) => {
+            console.log('Start');
             console.log('Second call');
-            console.log(param);
             return new Promise((resolveInterPromise, reject) => {
                 setTimeout(() => {
                     console.log('Intern Promise call');
                     resolveInterPromise();
-                }, 2000);
+                }, 3000);
             });
         })
             .then(() => {
@@ -42,3 +42,4 @@ ContatoService = __decorate([
     core_1.Injectable()
 ], ContatoService);
 exports.ContatoService = ContatoService;
+//Build => Measure => Learn 
