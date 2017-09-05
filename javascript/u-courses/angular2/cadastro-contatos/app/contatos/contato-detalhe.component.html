@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Salvar Contato</h2>
 
-    <form #contatoForm="formulario">
+    <form #contatoForm="ngForm">
         <div class="form-group">
             <label for="nome">Nome</label>
             <input 
@@ -20,7 +20,8 @@
                 name="email" 
                 class="form-control" 
                 placeholder="Digite o email"
-                [(ngModel)]="contato.email">
+                [(ngModel)]="contato.email"
+                required>
         </div>
 
         <div class="form-group">
@@ -31,12 +32,13 @@
                 class="form-control" 
                 maxlength="14" 
                 placeholder="Digite o telefone"
-                [(ngModel)]="contato.telefone">
+                [(ngModel)]="contato.telefone"
+                required>
         </div>
 
         <button class="btn btn-success">Salvar</button>
         <a class="btn btn-default" routerLink="/">Voltar</a>
     </form>
 
-    <button class="btn btn-warning" (click)="teste()" [disable]="!contatoForm.form.valid" >Objeto</button>
+    <button class="btn btn-warning" (click)="teste()" [disabled]="!contatoForm.form.valid" >Objeto</button>
 </div>
