@@ -25,10 +25,12 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         this.contato = new contato_model_1.Contato(0, '', '', ''); //life cicle hook
         this.route.params.forEach((params) => {
             let id = +params['id']; // o valor de mais converte implicitamente a string em number
-            this.contatoService.getContato(id)
-                .then((contato) => {
-                this.contato = contato;
-            });
+            if (id) {
+                this.contatoService.getContato(id)
+                    .then((contato) => {
+                    this.contato = contato;
+                });
+            }
         });
     }
     teste() {
