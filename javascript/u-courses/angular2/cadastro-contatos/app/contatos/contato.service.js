@@ -14,10 +14,6 @@ let ContatoService = class ContatoService {
             resolve(contatos_mock_1.CONTATOS);
         });
     }
-    // getContato(id: number): Promise<any>{
-    //     return this.getContatos()
-    //         .then((contatos) => contatos.find(contato => contato.id === id))
-    // }
     getContato(id) {
         return this.getContatos()
             .then((contatos) => contatos.find((contato) => contato.id === id));

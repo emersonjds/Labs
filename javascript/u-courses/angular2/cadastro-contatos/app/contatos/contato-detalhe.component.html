@@ -10,7 +10,12 @@
                 class="form-control" 
                 placeholder="Digite o nome" 
                 [(ngModel)]="contato.nome"
-                required>
+                required
+                #spy>
+
+                <div class="alert alert-info">
+                    {{spy.className}}
+                </div>
         </div>
 
         <div class="form-group">
@@ -36,9 +41,9 @@
                 required>
         </div>
 
-        <button class="btn btn-success">Salvar</button>
+        <button class="btn btn-success" [disabled]="!contatoForm.form.valid" >Salvar</button>
         <a class="btn btn-default" routerLink="/">Voltar</a>
     </form>
 
-    <button class="btn btn-warning" (click)="teste()" [disabled]="!contatoForm.form.valid" >Objeto</button>
+    <button class="btn btn-warning" (click)="teste()" >Objeto</button>
 </div>
