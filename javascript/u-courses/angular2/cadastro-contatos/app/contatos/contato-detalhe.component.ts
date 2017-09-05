@@ -29,10 +29,13 @@ export class ContatoDetalheComponent implements OnInit {
         this.route.params.forEach((params: Params) => {
             let id: number = +params['id'] // o valor de mais converte implicitamente a string em number
 
-            this.contatoService.getContato(id)
+            if(id) {
+                this.contatoService.getContato(id)
                 .then((contato: Contato) => {
                     this.contato = contato;
                 })
+            }
+            
         });
     }
 
