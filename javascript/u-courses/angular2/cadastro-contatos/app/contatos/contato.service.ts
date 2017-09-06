@@ -18,7 +18,7 @@ export class ContatoService {
 
     getContatosSlowly(): Promise<Contato[]> {
         return new Promise((resolve, reject) => {
-            setTimeout(resolve, 3000);
+            setTimeout(resolve, 1000);
         })
             .then(() => {
                 console.log('Start')
@@ -31,7 +31,7 @@ export class ContatoService {
                     setTimeout(() => {
                         console.log('Intern Promise call')
                         resolveInterPromise();
-                    }, 3000)
+                    }, 1000)
                 })
             })
             .then(() => {

@@ -1,35 +1,39 @@
 <div class="container">
     <h2>Salvar Contato</h2>
 
-    <form #contatoForm="ngForm">
-        <div class="form-group">
-            <label for="nome">Nome</label>
-            <input 
-                type="text" 
-                name="nome" 
-                class="form-control" 
+    <form #contatoForm="ngForm" novalidate>
+        <div [ngClass]="getFormGroupClass(nome.valid, nome.pristine)">
+
+            <label for="nome" class="form-control-label">Nome</label>
+            <input type="text" 
+                name="nome"
+                #nome="ngModel"
+                [ngClass]="getFormControlClass(nome.valid, nome.pristine)"
                 placeholder="Digite o nome" 
                 [(ngModel)]="contato.nome"
-                required
-                #spy>
+                require>
 
-                <div class="alert alert-info">
-                    {{spy.className}}
+                <div class="form-control-feedback" [hidden]="nome.valid || nome.pristine" >
+                    O campo nome é obrigatório
+                </div>
+        </div>
+    
+        <div  [ngClass]="getFormGroupClass(email.valid, email.pristine)">
+            <label for="email">Email</label>
+            <input type="email" 
+                name="email" 
+                #email="ngModel"
+                placeholder="Digite o email"
+                [(ngModel)]="contato.email"
+                [ngClass]="getFormControlClass(email.valid, email.pristine)"
+                required>
+
+                <div class="form-control-feedback" [hidden]="email.valid || email.pristine" >
+                    O campo email é obrigatório
                 </div>
         </div>
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input 
-                type="email" 
-                name="email" 
-                class="form-control" 
-                placeholder="Digite o email"
-                [(ngModel)]="contato.email"
-                required>
-        </div>
-
-        <div class="form-group">
+        <div [ngClass]="getFormGroupClass(telefone.valid, telefone.pristine)">
             <label for="telefone">Telefone</label>
             <input 
                 type="text" 
@@ -37,8 +41,14 @@
                 class="form-control" 
                 maxlength="14" 
                 placeholder="Digite o telefone"
+                #teletone="ngModel"
                 [(ngModel)]="contato.telefone"
+                [ngClass]="getFormControlClass(telefone.valid, telefone.pristine)"
                 required>
+
+                <div class="form-control-feedback" [hidden]="teletone.valid || teletone.pristine" >
+                    O campo telefone é obrigatório
+                </div>
         </div>
 
         <button class="btn btn-success" [disabled]="!contatoForm.form.valid" >Salvar</button>

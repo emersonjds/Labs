@@ -20,7 +20,7 @@ let ContatoService = class ContatoService {
     }
     getContatosSlowly() {
         return new Promise((resolve, reject) => {
-            setTimeout(resolve, 3000);
+            setTimeout(resolve, 1000);
         })
             .then(() => {
             console.log('Start');
@@ -33,7 +33,7 @@ let ContatoService = class ContatoService {
                 setTimeout(() => {
                     console.log('Intern Promise call');
                     resolveInterPromise();
-                }, 3000);
+                }, 1000);
             });
         })
             .then(() => {
