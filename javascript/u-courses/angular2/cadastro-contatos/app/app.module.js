@@ -9,6 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const app_routing_module_1 = require("./app-routing.module");
+const http_1 = require("@angular/http");
+const angular_in_memory_web_api_1 = require("angular-in-memory-web-api"); //emulate an api
 const app_component_1 = require("./app.component");
 const contatos_module_1 = require("./contatos/contatos.module");
 let AppModule = class AppModule {
@@ -18,7 +20,9 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routing_module_1.AppRouteModule,
-            contatos_module_1.ContatosModule
+            contatos_module_1.ContatosModule,
+            http_1.HttpModule,
+            angular_in_memory_web_api_1.InMemoryWebApiModule
         ],
         declarations: [app_component_1.AppComponent],
         bootstrap: [app_component_1.AppComponent]

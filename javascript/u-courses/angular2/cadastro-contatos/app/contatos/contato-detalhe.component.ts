@@ -64,7 +64,6 @@ export class ContatoDetalheComponent implements OnInit {
     }
 
     onSubmit() :void {
-        
         this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato')
     }
  
