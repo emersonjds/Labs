@@ -39,18 +39,18 @@ export class ContatoDetalheComponent implements OnInit {
         });
     }
 
-    getFormGroupClass(isValid: boolean, isPristine: boolean ): Object {
+    getFormGroupClass(isValid: boolean, isPristine: boolean ): {} {
         return {
             'form-group': true,
             'has-danger': !isValid && !isPristine,
-            'has-success': isValid && isPristine
+            'has-success': isValid && !isPristine
         }
     }
-    getFormControlClass(isValid: boolean, isPristine: boolean ): Object {
+    getFormControlClass(isValid: boolean, isPristine: boolean ): {} {
         return {
             'form-control': true,
             'form-control-danger': !isValid && !isPristine,
-            'form-control-success': isValid && isPristine
+            'form-control-success': isValid && !isPristine
         }
     }
 

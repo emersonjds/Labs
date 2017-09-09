@@ -37,14 +37,14 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         return {
             'form-group': true,
             'has-danger': !isValid && !isPristine,
-            'has-success': isValid && isPristine
+            'has-success': isValid && !isPristine
         };
     }
     getFormControlClass(isValid, isPristine) {
         return {
             'form-control': true,
             'form-control-danger': !isValid && !isPristine,
-            'form-control-success': isValid && isPristine
+            'form-control-success': isValid && !isPristine
         };
     }
     teste() {
