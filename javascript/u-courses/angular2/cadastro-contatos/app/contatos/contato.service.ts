@@ -2,23 +2,34 @@ import { Injectable } from "@angular/core";
 import { Http } from '@angular/http';
 import { Contato } from './contato.model';
 import { CONTATOS } from './contatos-mock';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ContatoService {
 
     private url: string = 'app/contatos';
+    //contato = retorno da web api
+    //app = caminho relativo a raiz da api simulada que foi importada no modulo principal
 
     constructor(
         private http: Http
     ) { }
 
     getContatos(): Promise<Contato[]> {
-        return this.http.get()
+        return this.http.get(this.url)
+            .toPromise() // conversao de Observable para Promise
+            .then(res => res.json().data as Contato[])
+            .catch(this.handleError);
     }
 
     getContato(id: number): Promise<Contato> {
         return this.getContatos()
             .then((contatos: Contato[]) => contatos.find((contato) => contato.id === id))
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.log('Erro ', error)
+        return Promise.reject(error.message || error)
     }
 
     getContatosSlowly(): Promise<Contato[]> {

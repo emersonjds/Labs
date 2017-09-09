@@ -11,17 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
+require("rxjs/add/operator/toPromise");
 let ContatoService = class ContatoService {
+    //contato = retorno da web api
+    //app = caminho relativo a raiz da api simulada que foi importada no modulo principal
     constructor(http) {
         this.http = http;
         this.url = 'app/contatos';
     }
     getContatos() {
-        return this.http.get();
+        return this.http.get(this.url)
+            .toPromise() // conversao de Observable para Promise
+            .then(res => res.json().data)
+            .catch(this.handleError);
     }
     getContato(id) {
         return this.getContatos()
             .then((contatos) => contatos.find((contato) => contato.id === id));
+    }
+    handleError(error) {
+        console.log('Erro ', error);
+        return Promise.reject(error.message || error);
     }
     getContatosSlowly() {
         return new Promise((resolve, reject) => {

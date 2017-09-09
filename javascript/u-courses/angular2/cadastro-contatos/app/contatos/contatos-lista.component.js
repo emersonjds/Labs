@@ -19,7 +19,9 @@ let ContatoListaComponent = class ContatoListaComponent {
         this.contatoService.getContatosSlowly()
             .then((contatos) => {
             this.contatos = contatos;
-        }).catch((err) => console.log(err));
+        }).catch(error => {
+            console.log('Houve um erro ', error);
+        });
     }
 };
 ContatoListaComponent = __decorate([
