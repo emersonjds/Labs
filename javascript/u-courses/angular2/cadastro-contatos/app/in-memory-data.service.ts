@@ -4,7 +4,7 @@ import { Contato } from './contatos/contato.model';
 
 export class InMemoryDataService implements InMemoryDbService {
 
-    createDb() {
+    createDb(): {} {
         let contatos: Contato[] = [
             { id: 1, nome: 'Maria Silva', email: 'm.silva@email.com', telefone: '00 0000-0000' },
             { id: 2, nome: 'Jose Silva', email: 'j.silva@email.com', telefone: '00 0000-0000' },

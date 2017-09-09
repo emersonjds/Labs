@@ -18,7 +18,7 @@ import { ContatosModule } from './contatos/contatos.module';
     AppRouteModule,
     ContatosModule,
     HttpModule,
-    InMemoryWebApiModule
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

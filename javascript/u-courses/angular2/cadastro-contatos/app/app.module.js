@@ -11,6 +11,7 @@ const platform_browser_1 = require("@angular/platform-browser");
 const app_routing_module_1 = require("./app-routing.module");
 const http_1 = require("@angular/http");
 const angular_in_memory_web_api_1 = require("angular-in-memory-web-api"); //emulate an api
+const in_memory_data_service_1 = require("./in-memory-data.service");
 const app_component_1 = require("./app.component");
 const contatos_module_1 = require("./contatos/contatos.module");
 let AppModule = class AppModule {
@@ -22,7 +23,7 @@ AppModule = __decorate([
             app_routing_module_1.AppRouteModule,
             contatos_module_1.ContatosModule,
             http_1.HttpModule,
-            angular_in_memory_web_api_1.InMemoryWebApiModule
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)
         ],
         declarations: [app_component_1.AppComponent],
         bootstrap: [app_component_1.AppComponent]

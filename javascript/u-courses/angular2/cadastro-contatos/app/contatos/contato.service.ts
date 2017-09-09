@@ -1,19 +1,24 @@
 import { Injectable } from "@angular/core";
+import { Http } from '@angular/http';
 import { Contato } from './contato.model';
 import { CONTATOS } from './contatos-mock';
 
 @Injectable()
 export class ContatoService {
 
+    private url: string = 'app/contatos';
+
+    constructor(
+        private http: Http
+    ) { }
+
     getContatos(): Promise<Contato[]> {
-        return new Promise((resolve, reject) => {
-            resolve(CONTATOS)
-        })
+        return this.http.get()
     }
 
-    getContato(id:number): Promise<Contato>{
+    getContato(id: number): Promise<Contato> {
         return this.getContatos()
-        .then((contatos: Contato[]) => contatos.find((contato) => contato.id === id))
+            .then((contatos: Contato[]) => contatos.find((contato) => contato.id === id))
     }
 
     getContatosSlowly(): Promise<Contato[]> {
