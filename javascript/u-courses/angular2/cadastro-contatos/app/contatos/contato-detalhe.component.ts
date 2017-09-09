@@ -30,28 +30,28 @@ export class ContatoDetalheComponent implements OnInit {
         this.route.params.forEach((params: Params) => {
             let id: number = +params['id'] // o valor de mais converte implicitamente a string em number
 
-            if(id) {
+            if (id) {
 
-                this.isNew  = false;
+                this.isNew = false;
 
                 this.contatoService.getContato(id)
-                .then((contato: Contato) => {
-                    this.contato = contato;
-                })
+                    .then((contato: Contato) => {
+                        this.contato = contato;
+                    })
             }
-            
+
         });
     }
 
-    getFormGroupClass(isValid: boolean, isPristine: boolean ): Object {
+    getFormGroupClass(isValid: boolean, isPristine: boolean): Object {
         return {
             'form-group': true,
             'has-danger': !isValid && !isPristine,
             'has-success': isValid && !isPristine
         }
     }
-    
-    getFormControlClass(isValid: boolean, isPristine: boolean ): Object {
+
+    getFormControlClass(isValid: boolean, isPristine: boolean): Object {
         return {
             'form-control': true,
             'form-control-danger': !isValid && !isPristine,
@@ -63,18 +63,18 @@ export class ContatoDetalheComponent implements OnInit {
         console.log(this.contato)
     }
 
-    onSubmit() :void {
+    onSubmit(): void {
         let promise;
-        
-        if(this.isNew) {
+
+        if (this.isNew) {
             promise = this.contatoService.create(this.contato);
         } else {
-
+            promise = this.contatoService.update(this.contato)
         }
 
         promise.then(contato => this.location.back())
 
         // this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato')
     }
- 
+
 }
