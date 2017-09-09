@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Http } from '@angular/http';
+import { Http, Headers, Response } from '@angular/http';
 import { Contato } from './contato.model';
 import { CONTATOS } from './contatos-mock';
 import 'rxjs/add/operator/toPromise';
@@ -10,6 +10,8 @@ export class ContatoService {
     private url: string = 'app/contatos';
     //contato = retorno da web api
     //app = caminho relativo a raiz da api simulada que foi importada no modulo principal
+
+    private headers: Headers = new Headers({ 'Content-type': 'application/json' })
 
     constructor(
         private http: Http
@@ -25,6 +27,14 @@ export class ContatoService {
     getContato(id: number): Promise<Contato> {
         return this.getContatos()
             .then((contatos: Contato[]) => contatos.find((contato) => contato.id === id))
+    }
+
+    create(contato: Contato): Promise<Contato> {
+
+        return this.http.post(this.url, JSON.stringify(contato), { headers: this.headers })
+            .toPromise()
+            .then(response => response.json().data as Contato)
+            .catch(this.handleError);
     }
 
     private handleError(error: any): Promise<any> {

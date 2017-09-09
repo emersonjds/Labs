@@ -53,7 +53,14 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         console.log(this.contato);
     }
     onSubmit() {
-        this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato');
+        let promise;
+        if (this.isNew) {
+            promise = this.contatoService.create(this.contato);
+        }
+        else {
+        }
+        promise.then(contato => this.location.back());
+        // this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato')
     }
 };
 ContatoDetalheComponent = __decorate([

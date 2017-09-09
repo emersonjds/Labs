@@ -13,11 +13,12 @@ const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 let ContatoService = class ContatoService {
-    //contato = retorno da web api
-    //app = caminho relativo a raiz da api simulada que foi importada no modulo principal
     constructor(http) {
         this.http = http;
         this.url = 'app/contatos';
+        //contato = retorno da web api
+        //app = caminho relativo a raiz da api simulada que foi importada no modulo principal
+        this.headers = new http_1.Headers({ 'Content-type': 'application/json' });
     }
     getContatos() {
         return this.http.get(this.url)
@@ -28,6 +29,12 @@ let ContatoService = class ContatoService {
     getContato(id) {
         return this.getContatos()
             .then((contatos) => contatos.find((contato) => contato.id === id));
+    }
+    create(contato) {
+        return this.http.post(this.url, JSON.stringify(contato), { headers: this.headers })
+            .toPromise()
+            .then(response => response.json().data)
+            .catch(this.handleError);
     }
     handleError(error) {
         console.log('Erro ', error);
