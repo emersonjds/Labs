@@ -14,6 +14,7 @@ import { Contato } from './contato.model';
 export class ContatoDetalheComponent implements OnInit {
 
     contato: Contato;
+    private isNew: boolean = true;
 
     constructor(
         private contatoService: ContatoService,
@@ -30,6 +31,9 @@ export class ContatoDetalheComponent implements OnInit {
             let id: number = +params['id'] // o valor de mais converte implicitamente a string em number
 
             if(id) {
+
+                this.isNew  = false;
+
                 this.contatoService.getContato(id)
                 .then((contato: Contato) => {
                     this.contato = contato;
@@ -39,14 +43,15 @@ export class ContatoDetalheComponent implements OnInit {
         });
     }
 
-    getFormGroupClass(isValid: boolean, isPristine: boolean ): {} {
+    getFormGroupClass(isValid: boolean, isPristine: boolean ): Object {
         return {
             'form-group': true,
             'has-danger': !isValid && !isPristine,
             'has-success': isValid && !isPristine
         }
     }
-    getFormControlClass(isValid: boolean, isPristine: boolean ): {} {
+    
+    getFormControlClass(isValid: boolean, isPristine: boolean ): Object {
         return {
             'form-control': true,
             'form-control-danger': !isValid && !isPristine,
@@ -58,4 +63,9 @@ export class ContatoDetalheComponent implements OnInit {
         console.log(this.contato)
     }
 
+    onSubmit() :void {
+        
+        this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato')
+    }
+ 
 }
