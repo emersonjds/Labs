@@ -1,3 +1,4 @@
+import { DialogService } from './../dialog.service';
 import { Contato } from './contato.model';
 import { ContatoService } from './contato.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,10 @@ export class ContatoListaComponent implements OnInit {
 
     private contatos;
 
-    constructor(private contatoService: ContatoService) { }
+    constructor(
+        private contatoService: ContatoService,
+        private dialogService: DialogService
+    ) { }
 
     ngOnInit(): void {
         this.contatoService.getContatosSlowly()
@@ -19,6 +23,21 @@ export class ContatoListaComponent implements OnInit {
                 this.contatos = contatos;
             }).catch(error => {
                 console.log('Houve um erro ', error)
+            })
+    }
+
+    onDelete(contato: Contato): void {
+        this.dialogService.confirm('Deseja deletar o contato ' + contato.nome + ' ?')
+            .then((canDelete: boolean) => {
+                if (canDelete) {
+                    this.contatoService.delete(contato)
+                        .then(() => {
+                            this.contatos = this.contatos.filter(( _ : Contato) => _.id != contato.id)
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+                }
             })
     }
 

@@ -22,7 +22,9 @@
 						<td>{{ c.email }} </td>
 						<td>{{ c.telefone }} </td>
 						<td>
-							<button class="btn btn-danger">Deletar</button>
+							<button class="btn btn-danger" (click)="onDelete(c); $event.stopPropagation()">
+								Deletar
+							</button>
 						</td>
 					</tr>
 				</tbody>

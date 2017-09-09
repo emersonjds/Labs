@@ -9,11 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const dialog_service_1 = require("./../dialog.service");
 const contato_service_1 = require("./contato.service");
 const core_1 = require("@angular/core");
 let ContatoListaComponent = class ContatoListaComponent {
-    constructor(contatoService) {
+    constructor(contatoService, dialogService) {
         this.contatoService = contatoService;
+        this.dialogService = dialogService;
     }
     ngOnInit() {
         this.contatoService.getContatosSlowly()
@@ -23,6 +25,20 @@ let ContatoListaComponent = class ContatoListaComponent {
             console.log('Houve um erro ', error);
         });
     }
+    onDelete(contato) {
+        this.dialogService.confirm('Deseja deletar o contato ' + contato.nome + ' ?')
+            .then((canDelete) => {
+            if (canDelete) {
+                this.contatoService.delete(contato)
+                    .then(() => {
+                    this.contatos = this.contatos.filter((_) => _.id != contato.id);
+                })
+                    .catch(err => {
+                    console.log(err);
+                });
+            }
+        });
+    }
 };
 ContatoListaComponent = __decorate([
     core_1.Component({
@@ -30,6 +46,7 @@ ContatoListaComponent = __decorate([
         selector: 'contatos-lista',
         templateUrl: './contato-lista.component.html'
     }),
-    __metadata("design:paramtypes", [contato_service_1.ContatoService])
+    __metadata("design:paramtypes", [contato_service_1.ContatoService,
+        dialog_service_1.DialogService])
 ], ContatoListaComponent);
 exports.ContatoListaComponent = ContatoListaComponent;
