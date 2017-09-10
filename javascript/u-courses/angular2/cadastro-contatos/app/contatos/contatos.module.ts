@@ -1,6 +1,8 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { ContatoRouteModule } from './contato-routing.module';
+import { ContatoBuscaComponent } from './contato-busca.component';
 import { ContatoListaComponent } from './contatos-lista.component';
 import { ContatoDetalheComponent } from './contato-detalhe.component';
 import { FormsModule } from '@angular/forms';
@@ -15,10 +17,12 @@ import { ContatoService } from './contato.service';
     ],
     declarations: [
         ContatoListaComponent,
-        ContatoDetalheComponent
+        ContatoDetalheComponent,
+        ContatoBuscaComponent
     ],
     exports: [
-        ContatoListaComponent
+        ContatoListaComponent,
+        ContatoBuscaComponent
     ],
     providers: [
         ContatoService
