@@ -72,9 +72,13 @@ export class ContatoDetalheComponent implements OnInit {
             promise = this.contatoService.update(this.contato)
         }
 
-        promise.then(contato => this.location.back())
+        promise.then(contato => this.goBack())
 
         // this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato')
+    }
+
+    goBack(): void {
+        this.location.back()
     }
 
 }

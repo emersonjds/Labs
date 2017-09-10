@@ -60,8 +60,11 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         else {
             promise = this.contatoService.update(this.contato);
         }
-        promise.then(contato => this.location.back());
+        promise.then(contato => this.goBack());
         // this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato')
+    }
+    goBack() {
+        this.location.back();
     }
 };
 ContatoDetalheComponent = __decorate([

@@ -16,9 +16,10 @@ let ContatoListaComponent = class ContatoListaComponent {
     constructor(contatoService, dialogService) {
         this.contatoService = contatoService;
         this.dialogService = dialogService;
+        this.contatos = [];
     }
     ngOnInit() {
-        this.contatoService.getContatosSlowly()
+        this.contatoService.getContatos()
             .then((contatos) => {
             this.contatos = contatos;
         }).catch(error => {

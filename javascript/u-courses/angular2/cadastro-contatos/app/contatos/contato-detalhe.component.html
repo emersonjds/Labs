@@ -51,7 +51,7 @@
         </div>
 
         <button type="submit" class="btn btn-success" [disabled]="!contatoForm.form.valid" >Salvar</button>
-        <a class="btn btn-default" routerLink="/">Voltar</a>
+        <a class="btn btn-default" (click)="goBack()">Voltar</a>
     </form>
 
 </div>

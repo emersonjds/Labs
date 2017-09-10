@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoListaComponent implements OnInit {
 
-    private contatos;
+    private contatos: Contato[] = [];
     mensagem: {};
     classesCss: {};
     private currentTimeout: any;
@@ -22,7 +22,7 @@ export class ContatoListaComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.contatoService.getContatosSlowly()
+        this.contatoService.getContatos()
             .then((contatos: Contato[]) => {
                 this.contatos = contatos;
             }).catch(error => {
