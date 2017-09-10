@@ -53,9 +53,14 @@ let ContatoListaComponent = class ContatoListaComponent {
     mostraMensagem(mensagem) {
         this.mensagem = mensagem;
         this.montarClasses(mensagem.tipo);
-        setTimeout(() => {
-            this.mensagem = undefined;
-        }, 3000);
+        if (mensagem.tipo != 'danger') {
+            if (this.currentTimeout) {
+                clearTimeout(this.currentTimeout);
+            }
+            this.currentTimeout = setTimeout(() => {
+                this.mensagem = {};
+            }, 3000);
+        }
     }
     montarClasses(tipo) {
         this.classesCss = {
