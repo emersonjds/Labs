@@ -11,6 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class ContatoListaComponent implements OnInit {
 
     private contatos;
+    mensagem: {};
+    classesCss: {};
+
 
     constructor(
         private contatoService: ContatoService,
@@ -22,7 +25,10 @@ export class ContatoListaComponent implements OnInit {
             .then((contatos: Contato[]) => {
                 this.contatos = contatos;
             }).catch(error => {
-                console.log('Houve um erro ', error)
+                this.mostraMensagem({
+                    tipo: 'danger',
+                    texto: 'Ocorreu um erro ao buscar a lista de contatos'
+                })
             })
     }
 
@@ -32,13 +38,38 @@ export class ContatoListaComponent implements OnInit {
                 if (canDelete) {
                     this.contatoService.delete(contato)
                         .then(() => {
-                            this.contatos = this.contatos.filter(( _ : Contato) => _.id != contato.id)
+                            this.contatos = this.contatos.filter((_: Contato) => _.id != contato.id)
+
+                            this.mostraMensagem({
+                                tipo: 'success',
+                                texto: 'Contato deletado'
+                            })
                         })
                         .catch(err => {
                             console.log(err)
+                            this.mostraMensagem({
+                                tipo: 'danger',
+                                texto: 'Ocorreu um erro ao deletar o contato'
+                            })
                         })
                 }
             })
+    }
+
+    private mostraMensagem(mensagem: { tipo: string, texto: string }): void {
+        this.mensagem = mensagem;
+        this.montarClasses(mensagem.tipo);
+        setTimeout(() => {
+            this.mensagem = undefined;
+        }, 3000);
+    }
+
+    private montarClasses(tipo: string): void {
+        this.classesCss = {
+            'alert': true
+        }
+
+        this.classesCss['alert-' + tipo] = true;
     }
 
 }

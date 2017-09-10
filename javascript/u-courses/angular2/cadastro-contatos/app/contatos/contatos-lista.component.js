@@ -22,7 +22,10 @@ let ContatoListaComponent = class ContatoListaComponent {
             .then((contatos) => {
             this.contatos = contatos;
         }).catch(error => {
-            console.log('Houve um erro ', error);
+            this.mostraMensagem({
+                tipo: 'danger',
+                texto: 'Ocorreu um erro ao buscar a lista de contatos'
+            });
         });
     }
     onDelete(contato) {
@@ -32,12 +35,33 @@ let ContatoListaComponent = class ContatoListaComponent {
                 this.contatoService.delete(contato)
                     .then(() => {
                     this.contatos = this.contatos.filter((_) => _.id != contato.id);
+                    this.mostraMensagem({
+                        tipo: 'success',
+                        texto: 'Contato deletado'
+                    });
                 })
                     .catch(err => {
                     console.log(err);
+                    this.mostraMensagem({
+                        tipo: 'danger',
+                        texto: 'Ocorreu um erro ao deletar o contato'
+                    });
                 });
             }
         });
+    }
+    mostraMensagem(mensagem) {
+        this.mensagem = mensagem;
+        this.montarClasses(mensagem.tipo);
+        setTimeout(() => {
+            this.mensagem = undefined;
+        }, 3000);
+    }
+    montarClasses(tipo) {
+        this.classesCss = {
+            'alert': true
+        };
+        this.classesCss['alert-' + tipo] = true;
     }
 };
 ContatoListaComponent = __decorate([
