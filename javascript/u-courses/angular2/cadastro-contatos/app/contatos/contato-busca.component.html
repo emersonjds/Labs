@@ -4,7 +4,7 @@
             <h3>Busca</h3>
             <div class="form-group">
                 <label for="search"></label>
-                <input type="search" name="search" class="form-control" placeholder="Digite algo para busca">
+                <input type="search" name="search" class="form-control" placeholder="Digite algo para busca" #searchBox (keyup)="search(searchBox.value)">
             </div>
             
             <div class="list-group">

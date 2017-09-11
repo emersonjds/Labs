@@ -87,6 +87,7 @@ export class ContatoService {
     }
 
     search(term: string): Observable<Contato[]> {
-
+        return this.http.get(`${this.url}/?nome=${term}`)
+            .map((res: Response) => res.json().data as Contato[])
     }
 }

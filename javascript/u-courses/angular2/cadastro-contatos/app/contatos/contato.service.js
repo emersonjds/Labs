@@ -81,6 +81,8 @@ let ContatoService = class ContatoService {
         });
     }
     search(term) {
+        return this.http.get(`${this.url}/?nome=${term}`)
+            .map((res) => res.json().data);
     }
 };
 ContatoService = __decorate([
