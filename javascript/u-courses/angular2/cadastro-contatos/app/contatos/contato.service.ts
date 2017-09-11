@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Http, Headers, Response } from '@angular/http';
 import { Contato } from './contato.model';
 import { CONTATOS } from './contatos-mock';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -84,6 +85,8 @@ export class ContatoService {
                 return this.getContatos();
             })
     }
-}
 
-//Build => Measure => Learn
+    search(term: string): Observable<Contato[]> {
+
+    }
+}

@@ -80,10 +80,11 @@ let ContatoService = class ContatoService {
             return this.getContatos();
         });
     }
+    search(term) {
+    }
 };
 ContatoService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
 ], ContatoService);
 exports.ContatoService = ContatoService;
-//Build => Measure => Learn 
