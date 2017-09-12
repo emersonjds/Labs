@@ -14,6 +14,7 @@ import { Contato } from './contato.model';
 export class ContatoDetalheComponent implements OnInit {
 
     contato: Contato;
+    private isNew: boolean = true;
 
     constructor(
         private contatoService: ContatoService,
@@ -29,33 +30,55 @@ export class ContatoDetalheComponent implements OnInit {
         this.route.params.forEach((params: Params) => {
             let id: number = +params['id'] // o valor de mais converte implicitamente a string em number
 
-            if(id) {
+            if (id) {
+
+                this.isNew = false;
+
                 this.contatoService.getContato(id)
-                .then((contato: Contato) => {
-                    this.contato = contato;
-                })
+                    .then((contato: Contato) => {
+                        this.contato = contato;
+                    })
             }
-            
+
         });
     }
 
-    getFormGroupClass(isValid: boolean, isPristine: boolean ): Object {
+    getFormGroupClass(isValid: boolean, isPristine: boolean): Object {
         return {
             'form-group': true,
             'has-danger': !isValid && !isPristine,
-            'has-success': isValid && isPristine
+            'has-success': isValid && !isPristine
         }
     }
-    getFormControlClass(isValid: boolean, isPristine: boolean ): Object {
+
+    getFormControlClass(isValid: boolean, isPristine: boolean): Object {
         return {
             'form-control': true,
             'form-control-danger': !isValid && !isPristine,
-            'form-control-success': isValid && isPristine
+            'form-control-success': isValid && !isPristine
         }
     }
 
     teste() {
         console.log(this.contato)
+    }
+
+    onSubmit(): void {
+        let promise;
+
+        if (this.isNew) {
+            promise = this.contatoService.create(this.contato);
+        } else {
+            promise = this.contatoService.update(this.contato)
+        }
+
+        promise.then(contato => this.goBack())
+
+        // this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato')
+    }
+
+    goBack(): void {
+        this.location.back()
     }
 
 }

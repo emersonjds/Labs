@@ -19,6 +19,7 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         this.contatoService = contatoService;
         this.route = route;
         this.location = location;
+        this.isNew = true;
     }
     ngOnInit() {
         console.log('On init'); //chamado logo que o component é construido no browser
@@ -26,6 +27,7 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         this.route.params.forEach((params) => {
             let id = +params['id']; // o valor de mais converte implicitamente a string em number
             if (id) {
+                this.isNew = false;
                 this.contatoService.getContato(id)
                     .then((contato) => {
                     this.contato = contato;
@@ -37,18 +39,32 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         return {
             'form-group': true,
             'has-danger': !isValid && !isPristine,
-            'has-success': isValid && isPristine
+            'has-success': isValid && !isPristine
         };
     }
     getFormControlClass(isValid, isPristine) {
         return {
             'form-control': true,
             'form-control-danger': !isValid && !isPristine,
-            'form-control-success': isValid && isPristine
+            'form-control-success': isValid && !isPristine
         };
     }
     teste() {
         console.log(this.contato);
+    }
+    onSubmit() {
+        let promise;
+        if (this.isNew) {
+            promise = this.contatoService.create(this.contato);
+        }
+        else {
+            promise = this.contatoService.update(this.contato);
+        }
+        promise.then(contato => this.goBack());
+        // this.isNew ? console.log('cadastrar novo contato') : console.log('alterar contato')
+    }
+    goBack() {
+        this.location.back();
     }
 };
 ContatoDetalheComponent = __decorate([
