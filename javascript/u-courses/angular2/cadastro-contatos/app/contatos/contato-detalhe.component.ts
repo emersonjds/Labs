@@ -23,6 +23,7 @@ export class ContatoDetalheComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        
         console.log('On init') //chamado logo que o component é construido no browser
 
         this.contato = new Contato(0, '', '', ''); //life cicle hook
