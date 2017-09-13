@@ -1,5 +1,9 @@
+import { ContatoService } from './contato.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
+import { Contato } from './contato.model';
 @Component({
     moduleId: module.id,
     selector: 'contato-busca',
@@ -7,11 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ContatoBuscaComponent implements OnInit {
-    constructor() { }
 
-    ngOnInit() { }
+    contatos: Observable<Contato[]>
+
+    private termosDaBusca: Subject<any> = new Subject<string>()
+
+    constructor(
+        private contatoService: ContatoService
+    ) { }
+
+    ngOnInit(): void {
+        this.contatos = this.termosDaBusca.
+            switchMap(term => term ? this.contatoService.search(term) : Observable.of<Contato[]>([])
+        )
+    }
 
     search(term: string): void {
-        console.log(term)
+        this.termosDaBusca.next(term)
     }
 }
