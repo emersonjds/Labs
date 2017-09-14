@@ -3,9 +3,9 @@ window.onload = () => {
 
     var c = 10, d = 20, e = 60;
 
-    console.log(a)
-    console.log(b)
-    console.log(c)
+    console.log(a);
+    console.log(b);
+    console.log(c);
 
     // -------------------------------------- //
     //Null , undefined, NaN, Infinity
