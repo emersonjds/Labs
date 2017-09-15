@@ -1,4 +1,7 @@
-delete // tornar indefinida uma propriedadde
+delete // O operador delete remove uma propriedade de um objeto.
+delete object.property
+delete object['property']
+
 in // verificar existencia de uma propriedade
 instanceof // verificar o tipo de objeto
 new // Criar objeto
