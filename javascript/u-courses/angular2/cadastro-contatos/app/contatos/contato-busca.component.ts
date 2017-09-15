@@ -13,7 +13,6 @@ import { Contato } from './contato.model';
 export class ContatoBuscaComponent implements OnInit {
 
     contatos: Observable<Contato[]>
-
     private termosDaBusca: Subject<any> = new Subject<string>()
 
     constructor(
@@ -21,12 +20,19 @@ export class ContatoBuscaComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.contatos = this.termosDaBusca.
-            switchMap(term => term ? this.contatoService.search(term) : Observable.of<Contato[]>([])
-        )
+        this.contatos = this.termosDaBusca
+            .debounceTime(300) //aguardo 300ms para emitir novos eventos
+            .distinctUntilChanged() // ignore o proximo termo de busca se for = ao anterior
+            .switchMap(term => {
+                console.log('Fez a busca', term)
+                return term ? this.contatoService.search(term) : Observable.of<Contato[]>([])
+            })
+        this.contatos.subscribe((contatos: Contato[]) => {
+            console.log('retornou do servidor', contatos)
+        })
     }
 
     search(term: string): void {
-        this.termosDaBusca.next(term)
+        this.termosDaBusca.next(term) // adicionando entrada de dados a fila de eventos
     }
 }

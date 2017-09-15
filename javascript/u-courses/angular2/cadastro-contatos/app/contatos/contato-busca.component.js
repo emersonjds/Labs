@@ -19,11 +19,19 @@ let ContatoBuscaComponent = class ContatoBuscaComponent {
         this.termosDaBusca = new rxjs_2.Subject();
     }
     ngOnInit() {
-        this.contatos = this.termosDaBusca.
-            switchMap(term => term ? this.contatoService.search(term) : rxjs_1.Observable.of([]));
+        this.contatos = this.termosDaBusca
+            .debounceTime(300) //aguardo 300ms para emitir novos eventos
+            .distinctUntilChanged() // ignore o proximo termo de busca se for = ao anterior
+            .switchMap(term => {
+            console.log('Fez a busca', term);
+            return term ? this.contatoService.search(term) : rxjs_1.Observable.of([]);
+        });
+        this.contatos.subscribe((contatos) => {
+            console.log('retornou do servidor', contatos);
+        });
     }
     search(term) {
-        this.termosDaBusca.next(term);
+        this.termosDaBusca.next(term); // adicionando entrada de dados a fila de eventos
     }
 };
 ContatoBuscaComponent = __decorate([
