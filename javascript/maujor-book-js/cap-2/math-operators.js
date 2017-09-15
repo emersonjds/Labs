@@ -18,9 +18,10 @@
  // if string and numbers
  "7" - "3" = 4
 
-
  "Ola" + () => {...} = "Ola(){...}"
  "Ola" - "Mundo" = NaN
  "7" - "3" = 4 
+
+ // 
 
 
