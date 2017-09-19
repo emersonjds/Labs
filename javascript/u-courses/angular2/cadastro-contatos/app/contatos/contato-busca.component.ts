@@ -33,6 +33,7 @@ export class ContatoBuscaComponent implements OnInit {
         this.contatos.subscribe((contatos: Contato[]) => {
             console.log('retornou do servidor', contatos)
         })
+        
     }
 
     search(term: string): void {
