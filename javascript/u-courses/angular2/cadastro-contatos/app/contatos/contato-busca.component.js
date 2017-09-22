@@ -22,16 +22,9 @@ let ContatoBuscaComponent = class ContatoBuscaComponent {
         this.contatos = this.termosDaBusca
             .debounceTime(300) //aguardo 300ms para emitir novos eventos
             .distinctUntilChanged() // ignore o proximo termo de busca se for = ao anterior
-            .switchMap(term => {
-            console.log('Fez a busca', term);
-            return term ? this.contatoService.search(term) : rxjs_1.Observable.of([]);
-        }).catch(err => {
-            console.log(err);
-            return rxjs_1.Observable.of([]);
-        });
-        this.contatos.subscribe((contatos) => {
-            console.log('retornou do servidor', contatos);
-        });
+            .switchMap(term => term ? this.contatoService.search(term) : rxjs_1.Observable.of([]))
+            .catch(err => rxjs_1.Observable.of([]));
+        this.contatos.subscribe((contatos) => console.log('retornou do servidor', contatos));
     }
     search(term) {
         this.termosDaBusca.next(term); // adicionando entrada de dados a fila de eventos
