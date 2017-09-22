@@ -25,3 +25,10 @@ for (var i = 0; i <= 20; i++) {
     console.log(i + " ,")
 }
 
+var x = "", j = 0;
+while(j <= 10) {
+    x = j + ", ";
+    j++;
+}
+
+console.log(x)
