@@ -14,11 +14,8 @@
             </div>
             
             <div class="list-group">
-                <div class="list-group-item"></div>
-                <div class="list-group-item"></div>
-                <div class="list-group-item"></div>
-                <div class="list-group-item"></div>
-                <div class="list-group-item"></div>
+                <!--async se inscreve num observable para retornar dados em forma de array, arrays nao conseguem ler obervables-->
+                <div class="list-group-item" *ngFor="let c of contatos | async"></div>
             </div>
 
         </div>
