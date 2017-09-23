@@ -17,12 +17,12 @@ try {
 
 //Trow treatment
 
-var z = "Entre com um numero maior do que 0 e menor do que 10"
+var z = prompt("Entre com um numero maior do que 0 e menor do que 10")
 
 var x = 0;
 try {
     if (x < 0)
-        throw ("erro 1")
+        throw ("erro 1") //referencia para o erro capturado
     if (x > 10)
         throw ("erro 2")
     if (isNaN(parseInt(x)))
@@ -33,5 +33,17 @@ try {
     if (error == "erro 2")
         console.log("O numero deve ser menor que 11")
     if (error == "erro 3")
-        console.log("Entre comente com numeto maior que e menor que 11")
+        console.log("Entre comente com numero maior que e menor que 11")
+}
+
+// Chamada com throw new Error
+try {
+    if (x < 0)
+        throw new Error("o numero deve ser maior do que 0")
+    if (x > 11)
+        throw new Error("O numero deve ser menor do que 11")
+    if (isNaN(parseInt(x)))
+        throw new Error("Digite somente numero maior do que 0 e menor do que 11")
+} catch (error) {
+    console.log(error.message, error.name)
 }
