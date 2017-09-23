@@ -16,8 +16,8 @@ var carro = {
 
 console.log(carro.dimensoes.altura)
 //ou 
-with(carro.dimensoes)
-    console.log(comprimento + "\n" + largura + "\n" + altura)
+with (carro.dimensoes)
+console.log(comprimento + "\n" + largura + "\n" + altura)
 //with traz o escopo do objeto para frente possibilitando o acesso sem as chamadas posteriores
 
 //maneira mais eficaz é referenciando este escopo em uma nova variavel
