@@ -40,10 +40,23 @@ try {
 try {
     if (x < 0)
         throw new Error("o numero deve ser maior do que 0")
+    // quando instanciando um novo erros a propriedade message do objeto string muda seu valor
     if (x > 11)
         throw new Error("O numero deve ser menor do que 11")
     if (isNaN(parseInt(x)))
         throw new Error("Digite somente numero maior do que 0 e menor do que 11")
 } catch (error) {
     console.log(error.message, error.name)
+}
+
+//Outra forma de utilizar o throw
+try {
+    if (x < 0)
+        throw "O numero digitado nao é valido"
+    if (x > 11)
+        throw "O numero deve ser menor do que 11"
+    if (isNaN(parseInt(x)))
+        throw "Digite apenas numeros acima de 0 e menor do que 11 "
+} catch (error) {
+    console.log(error.message)
 }
