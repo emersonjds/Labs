@@ -60,3 +60,26 @@ try {
 } catch (error) {
     console.log(error.message)
 }
+
+//Error handle
+var x = prompt("Digite um numero")
+try {
+    if (x < 0)
+        throw {
+            name: "Erro Javascript",
+            message: "O numero digitado deve ser maior do que 0"
+        }
+    if (x > 11) {
+        throw {
+            name: "Erro Javascript",
+            message: "O numero digitado deve ser menor do que 11"
+        }
+    }
+    if (isNaN(parseInt(x)))
+        throw {
+            name: "Erro Javascript",
+            message: "O numero digitado deve estar entre 0 e 11"
+        }
+} catch (error) {
+    console.log(error.name + "\n" + error.message)
+}
