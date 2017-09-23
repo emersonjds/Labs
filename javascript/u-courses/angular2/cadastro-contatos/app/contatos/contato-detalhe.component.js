@@ -73,8 +73,7 @@ ContatoDetalheComponent = __decorate([
         selector: 'contato-detalhe',
         templateUrl: 'contato-detalhe.component.html'
     }),
-    __metadata("design:paramtypes", [contato_service_1.ContatoService,
-        router_1.ActivatedRoute,
-        common_1.Location])
+    __metadata("design:paramtypes", [contato_service_1.ContatoService, typeof (_a = typeof router_1.ActivatedRoute !== "undefined" && router_1.ActivatedRoute) === "function" && _a || Object, typeof (_b = typeof common_1.Location !== "undefined" && common_1.Location) === "function" && _b || Object])
 ], ContatoDetalheComponent);
 exports.ContatoDetalheComponent = ContatoDetalheComponent;
+var _a, _b;
