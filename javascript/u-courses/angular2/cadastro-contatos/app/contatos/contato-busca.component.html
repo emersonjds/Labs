@@ -13,11 +13,15 @@
                     (keyup)="search(searchBox.value)">
             </div>
             
-            <div class="list-group">
+            <ul class="list-group">
                 <!--async se inscreve num observable para retornar dados em forma de array, arrays nao conseguem ler obervables-->
-                <div class="list-group-item" *ngFor="let c of contatos | async"></div>
-            </div>
-
+                <li 
+                    class="list-group-item cursor-pointer" 
+                    *ngFor="let c of contatos | async" 
+                    (click)="verDetalhe(c)">
+                    {{ c.nome }}
+                </li>
+            </ul>
         </div>
     </div>
 </div>

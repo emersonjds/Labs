@@ -11,31 +11,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const contato_service_1 = require("./contato.service");
 const core_1 = require("@angular/core");
-const rxjs_1 = require("rxjs");
-const rxjs_2 = require("rxjs");
+const router_1 = require("@angular/router");
+const observable_1 = require("rxjs/observable");
+const subject_1 = require("rxjs/subject");
 let ContatoBuscaComponent = class ContatoBuscaComponent {
-    constructor(contatoService) {
+    constructor(contatoService, router) {
         this.contatoService = contatoService;
-        this.termosDaBusca = new rxjs_2.Subject();
+        this.router = router;
+        this.termosDaBusca = new subject_1.Subject();
     }
     ngOnInit() {
         this.contatos = this.termosDaBusca
-            .debounceTime(300) //aguardo 300ms para emitir novos eventos
-            .distinctUntilChanged() // ignore o proximo termo de busca se for = ao anterior
-            .switchMap(term => term ? this.contatoService.search(term) : rxjs_1.Observable.of([]))
-            .catch(err => rxjs_1.Observable.of([]));
-        this.contatos.subscribe((contatos) => console.log('retornou do servidor', contatos));
+            .debounceTime(500) //aguarde 500ms para emitir novos eventos
+            .distinctUntilChanged() // se busca == busca anterior / ignore esta nova busca
+            .switchMap(term => term ? this.contatoService.search(term) : observable_1.Observable.of([]))
+            .catch(e => {
+            console.log(e.message);
+            return observable_1.Observable.of([]);
+        });
     }
     search(term) {
         this.termosDaBusca.next(term); // adicionando entrada de dados a fila de eventos
+    }
+    verDetalhe(contato) {
+        let link = ['contato/save', contato.id];
+        this.router.navigate(link);
     }
 };
 ContatoBuscaComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'contato-busca',
-        templateUrl: 'contato-busca.component.html'
+        templateUrl: 'contato-busca.component.html',
+        styles: [`
+            cursor-pointer:hover {
+                cursor: pointer;
+            }
+        `]
     }),
-    __metadata("design:paramtypes", [contato_service_1.ContatoService])
+    __metadata("design:paramtypes", [contato_service_1.ContatoService,
+        router_1.Router])
 ], ContatoBuscaComponent);
 exports.ContatoBuscaComponent = ContatoBuscaComponent;

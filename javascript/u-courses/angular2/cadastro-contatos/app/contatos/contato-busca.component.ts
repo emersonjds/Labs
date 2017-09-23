@@ -1,37 +1,52 @@
+
 import { ContatoService } from './contato.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
+import { Observable } from 'rxjs/observable';
+import { Subject } from 'rxjs/subject';
 import { Contato } from './contato.model';
+
 @Component({
     moduleId: module.id,
     selector: 'contato-busca',
-    templateUrl: 'contato-busca.component.html'
+    templateUrl: 'contato-busca.component.html',
+    styles: [`
+            cursor-pointer:hover {
+                cursor: pointer;
+            }
+        `]
 })
 
 export class ContatoBuscaComponent implements OnInit {
 
-    contatos: Observable<Contato[]>
-    private termosDaBusca: Subject<any> = new Subject<string>()
+    contatos: Observable<Contato[]> //Observable de contatos
+
+    private termosDaBusca: Subject<string> = new Subject<string>()
 
     constructor(
-        private contatoService: ContatoService
+        private contatoService: ContatoService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
+
         this.contatos = this.termosDaBusca
-            .debounceTime(300) //aguardo 300ms para emitir novos eventos
-            .distinctUntilChanged() // ignore o proximo termo de busca se for = ao anterior
-            //*cancela os observables de pesquisa anterior sempre trazendo o resultado mais recente 
-            .switchMap(term =>  term ? this.contatoService.search(term) : Observable.of<Contato[]>([]))
-            .catch(err => Observable.of<Contato[]>([]))
-        this.contatos.subscribe((contatos: Contato[]) => console.log('retornou do servidor', contatos)
-        )
-        
+            .debounceTime(500) //aguarde 500ms para emitir novos eventos
+            .distinctUntilChanged() // se busca == busca anterior / ignore esta nova busca
+            .switchMap(term => term ? this.contatoService.search(term) : Observable.of<Contato[]>([]))
+            .catch(e => {
+                console.log(e.message)
+                return Observable.of<Contato[]>([])
+            });
     }
 
     search(term: string): void {
         this.termosDaBusca.next(term) // adicionando entrada de dados a fila de eventos
+    }
+
+    verDetalhe(contato: Contato): void {
+        let link = ['contato/save', contato.id];
+        this.router.navigate(link);
     }
 }
