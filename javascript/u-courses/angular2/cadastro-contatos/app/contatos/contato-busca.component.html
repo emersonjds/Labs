@@ -9,8 +9,7 @@
                     name="search" 
                     class="form-control" 
                     placeholder="Digite algo para busca" 
-                    #searchBox 
-                    (keyup)="search(searchBox.value)">
+                    [ngModel]="busca">
             </div>
             
             <ul class="list-group">

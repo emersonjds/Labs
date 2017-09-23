@@ -11,6 +11,7 @@ const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const app_routing_module_1 = require("./app-routing.module");
 const http_1 = require("@angular/http");
+const forms_1 = require("@angular/forms");
 const angular_in_memory_web_api_1 = require("angular-in-memory-web-api"); //emulate an api
 const in_memory_data_service_1 = require("./in-memory-data.service");
 const dialog_service_1 = require("./dialog.service");
@@ -24,6 +25,7 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             app_routing_module_1.AppRouteModule,
             contatos_module_1.ContatosModule,
+            forms_1.FormsModule,
             http_1.HttpModule,
             angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)
         ],
