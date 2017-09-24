@@ -18,6 +18,7 @@ let ContatoBuscaComponent = class ContatoBuscaComponent {
     constructor(contatoService, router) {
         this.contatoService = contatoService;
         this.router = router;
+        this.buscaChange = new core_1.EventEmitter();
         this.termosDaBusca = new subject_1.Subject();
     }
     ngOnInit() {
@@ -36,6 +37,7 @@ let ContatoBuscaComponent = class ContatoBuscaComponent {
     }
     search(term) {
         this.termosDaBusca.next(term); // adicionando entrada de dados a fila de eventos
+        this.buscaChange.emit(term);
     }
     verDetalhe(contato) {
         let link = ['contato/save', contato.id];
@@ -46,6 +48,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", String)
 ], ContatoBuscaComponent.prototype, "busca", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], ContatoBuscaComponent.prototype, "buscaChange", void 0);
 ContatoBuscaComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

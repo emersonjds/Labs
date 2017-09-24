@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   templateUrl: './app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+  
+  log(param: string): void {
+    console.log('capturou o evento ', param)
+  }
+
+}

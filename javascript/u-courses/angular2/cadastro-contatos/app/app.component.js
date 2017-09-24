@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 let AppComponent = class AppComponent {
+    log(param) {
+        console.log('capturou o evento ', param);
+    }
 };
 AppComponent = __decorate([
     core_1.Component({

@@ -31,7 +31,7 @@
     
     <router-outlet></router-outlet>
 
-    <contato-busca [busca]="termo"></contato-busca>
+    <contato-busca [busca]="termo" (buscaChange)="log($event)"></contato-busca>
     
 </div>
 

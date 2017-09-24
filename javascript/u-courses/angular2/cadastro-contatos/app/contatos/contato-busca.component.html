@@ -9,7 +9,8 @@
                     name="search" 
                     class="form-control" 
                     placeholder="Digite algo para busca" 
-                    [ngModel]="busca">
+                    [ngModel]="busca"
+                    (ngModelChange)="search($event)">
             </div>
             
             <ul class="list-group">
