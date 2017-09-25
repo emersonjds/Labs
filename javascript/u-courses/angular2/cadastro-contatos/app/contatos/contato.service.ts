@@ -84,7 +84,7 @@ export class ContatoService implements ServiceInterface<Contato>{
             })
             .then(() => {
                 console.log('End Promise Chain')
-                return this.getContatos();
+                return this.findAll();
             })
     }
 

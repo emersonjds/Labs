@@ -77,7 +77,7 @@ let ContatoService = class ContatoService {
         })
             .then(() => {
             console.log('End Promise Chain');
-            return this.getContatos();
+            return this.findAll();
         });
     }
     search(term) {
