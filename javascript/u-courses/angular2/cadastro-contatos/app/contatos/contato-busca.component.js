@@ -42,6 +42,7 @@ let ContatoBuscaComponent = class ContatoBuscaComponent {
     verDetalhe(contato) {
         let link = ['contato/save', contato.id];
         this.router.navigate(link);
+        this.buscaChange.emit('');
     }
 };
 __decorate([

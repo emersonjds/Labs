@@ -27,10 +27,7 @@
     
     <router-outlet></router-outlet>
 
-    <contato-busca 
-        [busca]="termo" 
-        (buscaChange)="termo=$event">
-    </contato-busca>
+    <contato-busca [(busca)]="termo"></contato-busca>
     
 </div>
 
