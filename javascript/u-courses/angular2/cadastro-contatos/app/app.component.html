@@ -1,9 +1,7 @@
-<nav class="navbar navbar-inverse navbar-toggleable-md">
-    
+<nav class="navbar navbar-inverse bg-faded">
     <a class="navbar-brand" routerLink="/">Contatos</a>
-
     <ul class="nav navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" routerLink="/">
                 Home
                 <span class="sr-only">(current)</span>
@@ -15,8 +13,7 @@
             </a>
         </li>
     </ul>
-
-    <form class="form-inline">
+    <form class="form-inline float-xs-right">
         <input 
             type="text" 
             name="busca"
@@ -24,14 +21,16 @@
             class="form-control" 
             placeholder="Search">
     </form>
-
 </nav>
 
 <div class="container-fluid">
     
     <router-outlet></router-outlet>
 
-    <contato-busca [busca]="termo" (buscaChange)="log($event)"></contato-busca>
+    <contato-busca 
+        [busca]="termo" 
+        (buscaChange)="termo=$event">
+    </contato-busca>
     
 </div>
 
