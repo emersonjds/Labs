@@ -19,7 +19,7 @@ let ContatoListaComponent = class ContatoListaComponent {
         this.contatos = [];
     }
     ngOnInit() {
-        this.contatoService.getContatos()
+        this.contatoService.findAll()
             .then((contatos) => {
             this.contatos = contatos;
         }).catch(error => {

@@ -20,14 +20,14 @@ let ContatoService = class ContatoService {
         //app = caminho relativo a raiz da api simulada que foi importada no modulo principal
         this.headers = new http_1.Headers({ 'Content-type': 'application/json' });
     }
-    getContatos() {
+    findAll() {
         return this.http.get(this.url)
             .toPromise() // conversao de Observable para Promise
             .then(res => res.json().data)
             .catch(this.handleError);
     }
-    getContato(id) {
-        return this.getContatos()
+    find(id) {
+        return this.findAll()
             .then((contatos) => contatos.find((contato) => contato.id === id));
     }
     create(contato) {

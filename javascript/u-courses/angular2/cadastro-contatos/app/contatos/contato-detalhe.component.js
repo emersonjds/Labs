@@ -28,7 +28,7 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
             let id = +params['id']; // o valor de mais converte implicitamente a string em number
             if (id) {
                 this.isNew = false;
-                this.contatoService.getContato(id)
+                this.contatoService.find(id)
                     .then((contato) => {
                     this.contato = contato;
                 });
