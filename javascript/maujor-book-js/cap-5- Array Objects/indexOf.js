@@ -15,6 +15,7 @@ array1.indexOf(1, 3)
 
 //Aceita ainda um terceiro argumento que e booleano sendo true ou falso
 //Quando true faz a busca sem diferenciar o tipo de dado.
-var array2 = [4,5,6,7,8, "d", "e", "g", 1]
-array2.indexOf(1, 3, true) // ignora o tipo de dado passado buscando na lista toda
+var array2 = [1, 2, "a", "b", 2, "c", 1, "a", "45"]
+array2.indexOf(45) // retorna -1 nao existe o numero 45 no array
+array2.indexOf(45, 0, true) // retorna 8 pois ignora o tipo de dado passado buscando na lista toda
 
