@@ -5,5 +5,5 @@ arr.forEach((dado) => {
     if (dado % 2 == 0) {
         console.log(dado + 10)
     }
-    return dado;
+     return dado; // retorna 14
 })
