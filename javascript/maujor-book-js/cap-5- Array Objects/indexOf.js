@@ -9,7 +9,12 @@ arr.indexOf("a") // retorna 5
 
 //O segundo parametro é facultativo e quando definido estabelece o indice do elemento do array a partir do qual (inclusive) devera iniciar-se a busca
 
+//começando a busca o numero 1 a partir da 3 casa 
 var array1 = [4,5,6,7,8, "d", "e", "g", 1]
 array1.indexOf(1, 3)
 
+//Aceita ainda um terceiro argumento que e booleano sendo true ou falso
+//Quando true faz a busca sem diferenciar o tipo de dado.
+var array2 = [4,5,6,7,8, "d", "e", "g", 1]
+array2.indexOf(1, 3, true) // ignora o tipo de dado passado buscando na lista toda
 
