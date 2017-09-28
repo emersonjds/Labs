@@ -51,4 +51,37 @@ var reduzido = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
 // reduzido é [0, 1, 2, 3, 4, 5]
 
 
+// Array.prototype.reduce foi adicionado ao padrão ECMA-262  na quinta edição; e portanto, pode não estar presente em todas as implementações do padrão. Você pode contornar isso inserindo o código a seguir no início de seus scripts, permitindo o uso do reduce em implementações que não possuem suporte nativo a ele.
+
+if (!Array.prototype.reduce) {
+    Array.prototype.reduce = function(callback /*, valorInicial*/) {
+      'use strict';
+      if (this == null) {
+        throw new TypeError('Array.prototype.reduce chamado é nulo (null) ou indefinido (undefined)');
+      }
+      if (typeof callback !== 'function') {
+        throw new TypeError(callback + ' não é uma função')
+      }
+      var t = Object(this), len = t.length >>> 0, k = 0, value;
+      if (arguments.length == 2) {
+        value = arguments[1];
+      } else {
+        while (k < len && !(k in t)) {
+          k++; 
+        }
+        if (k >= len) {
+          throw new TypeError('Reduce possui um array vazio sem um valor inicial');
+        }
+        value = t[k++];
+      }
+      for (; k < len; k++) {
+        if (k in t) {
+          value = callback(value, t[k], k, t);
+        }
+      }
+      return value;
+    };
+  }
+
+
 
