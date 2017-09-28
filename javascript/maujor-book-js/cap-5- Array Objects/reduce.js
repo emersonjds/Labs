@@ -37,3 +37,18 @@
   }, 10); //neste caso previousValue comeca valendo 10 
 // 20
 
+// Soma todos os valores de um array 
+var total = [0, 1, 2, 3].reduce(function(a, b) {
+    return a + b;
+  });
+// total == 6
+
+
+//Redução de um array de arrays
+var reduzido = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+    return a.concat(b);
+  });
+// reduzido é [0, 1, 2, 3, 4, 5]
+
+
+
