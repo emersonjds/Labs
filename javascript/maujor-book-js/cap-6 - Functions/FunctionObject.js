@@ -1,0 +1,1 @@
+var minhaFuncao = new Function(["agr1", "agr2", "agr3", "agr4"], function body)
