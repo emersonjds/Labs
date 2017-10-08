@@ -66,16 +66,10 @@ window.onload() = function () {
 
 window.onload = () => {
     var botao = document.getElementsByName('button');
-
-    auxiliar(j => {
-        return () => {
-            console.log(`voce clicou no botao ${j}`)
-        }
-    })
-
+    auxiliar(j => () => console.log(`voce clicou no botao ${j}`))
     for (var i = 0; i < botao.length; i++) {
         botao[i].click = () => {
-            auxiliar(i) //scape da closure 
+            auxiliar(i) //closure scape
             console.log(`voce clicou no botao ${i}`)
         }
     }
