@@ -1,6 +1,6 @@
 {
-  "name": "aluraCar",
+  "name": "ionic",
   "app_id": "",
-  "integrations": {},
-  "type": "ionic-angular"
+  "v2": true,
+  "typescript": true
 }
