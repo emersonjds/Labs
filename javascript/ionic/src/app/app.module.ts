@@ -29,7 +29,6 @@ import 'rxjs/add/operator/toPromise';
   providers: [
     StatusBar,
     SplashScreen,
-    Http,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
