@@ -27,10 +27,16 @@
                         <h2>{{ acessorio.nome }}</h2>
                         <h3> Valor: R$ {{ acessorio.preco }} </h3>
                     </ion-label>
-                    <ion-toggle color="secondary"></ion-toggle>
+
+                    <ion-toggle #ativo color="secondary" (ionChange)="atualizaTotal(ativo.checked, acessorio)"></ion-toggle>
+
                 </ion-item>
 
             </ion-item-group>
+
+            <ion-item-divider color="ligth">
+                TOTAL : R$ {{ precoTotal}}
+            </ion-item-divider>
 
         </ion-card-content>
     </ion-card>
