@@ -44,8 +44,9 @@ export class HomePage implements OnInit {
       })
   }
 
+  // router semelhante ao router do ang 2, mas a adicão de novos componentes tem comportamento de pilha, quando clicado no back button os itens da pilha vao sendo retirados, junto com a rota de parametro um objeto javascript é passado e a propriedade dessa chave para que o acesso ao objeto seja feita de forma simples.
   seleciona(carro) {
-    this.navCtrl.push(EscolhaPageComponent)
+    this.navCtrl.push(EscolhaPageComponent, { carroSelecionado: carro })
   }
 
 }

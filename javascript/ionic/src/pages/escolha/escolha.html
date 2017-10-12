@@ -5,5 +5,30 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-card>
+        <ion-card-content>
+
+            <ion-item-group>
+                <ion-item-divider color="ligth">
+                    <ion-icon ios="ios-car" md="md-car" item-left></ion-icon>
+                    VEÍCULO
+                </ion-item-divider>
+                <ion-item>{{ carro.nome }}</ion-item>
+                <ion-item>R$ {{ carro.preco }}</ion-item>
+            </ion-item-group>
+
+            <ion-item-group>
+                <ion-item-divider color="ligth">
+                    <ion-icon ios="ios-options" md="md-options" item-left></ion-icon>
+                    ACESSÓRIOS
+                </ion-item-divider>
+                <ion-item>Acessório 1</ion-item>
+                <ion-item>Acessório 2</ion-item>
+            </ion-item-group>
+
+        </ion-card-content>
+    </ion-card>
+
+    <button ion-button block> Avançar no agendamento </button>
 
 </ion-content>
