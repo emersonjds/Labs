@@ -6,6 +6,6 @@ function sLength() {
     if (s != '') {
         document.form.comprimento.value = s.length;
     } else {
-        document.form.text.value = 'Entre com uma string'
+        document.form.texto.value = 'Entre com uma string'
     }
 }
