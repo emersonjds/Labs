@@ -9,3 +9,12 @@ var s = 'DjkAabcrstbEc43Afgbhm';
 var sResultado = s.replace('abc', 'emerson');
 
 console.log(sResultado) // Output DjkAemersonrstbEc43Afgbhm
+
+
+//Exemplo 2 - Com expressao regular 
+
+var x = 'DjkAabcrstbEc43Afgbhm';
+
+var sResultado = x.replace(/abc/g, 'emerson'); // com expressao regular
+
+console.log(sResultado) // Output DjkAemersonrstbEc43Afgbhm
