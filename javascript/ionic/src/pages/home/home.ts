@@ -1,3 +1,4 @@
+import { Carro } from './../../domain/carro/carro';
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { NavController, LoadingController, AlertController } from 'ionic-angular';
@@ -10,7 +11,7 @@ import { EscolhaPageComponent } from './../escolha/escolha';
 })
 export class HomePage implements OnInit {
 
-  public carros;
+  public carros: Carro[];
 
   constructor(
     public navCtrl: NavController,
@@ -45,6 +46,7 @@ export class HomePage implements OnInit {
   }
 
   // router semelhante ao router do ang 2, mas a adicão de novos componentes tem comportamento de pilha, quando clicado no back button os itens da pilha vao sendo retirados, junto com a rota de parametro um objeto javascript é passado e a propriedade dessa chave para que o acesso ao objeto seja feita de forma simples.
+  
   seleciona(carro) {
     this.navCtrl.push(EscolhaPageComponent, { carroSelecionado: carro })
   }

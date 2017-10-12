@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-
 import { NavParams } from 'ionic-angular'
+import { Carro } from './../../domain/carro/carro';
+import { Acessorio } from './../../domain/carro/acessorio';
 
 @Component({
     templateUrl: 'escolha.html'
 })
 export class EscolhaPageComponent {
-    public carro;
-    public acessorios;
+    public carro: Carro;
+    public acessorios: Acessorio[];
     private _precoTotal: number;
 
     constructor(public navParams: NavParams) {
@@ -15,11 +16,11 @@ export class EscolhaPageComponent {
         this._precoTotal = this.carro.preco;
 
         this.acessorios = [
-            { nome: 'Freios ABS', preco: 800 },
-            { nome: 'Ar Condicionado', preco: 300 },
-            { nome: 'Banco de couro', preco: 300 },
-            { nome: 'Teto Solar', preco: 600 },
-            { nome: 'MP3 Player', preco: 300 }
+            new Acessorio('Freios ABS', 800),
+            new Acessorio('Ar Condicionado', 300),
+            new Acessorio('Banco de couro', 300),
+            new Acessorio('Teto Solar', 600),
+            new Acessorio('MP3 Player', 300)
         ]
     }
 
@@ -27,7 +28,7 @@ export class EscolhaPageComponent {
         return this._precoTotal;
     }
 
-    atualizaTotal(ativo: boolean, acessorio) {
+    atualizaTotal(ativo: boolean, acessorio: Acessorio) {
         ativo ? this._precoTotal += acessorio.preco : this._precoTotal -= acessorio.preco;
     }
 
