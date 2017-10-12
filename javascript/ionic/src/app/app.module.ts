@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { EscolhaPageComponent } from './../pages/escolha/escolha';
 
 import { HttpModule } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -14,7 +15,8 @@ import 'rxjs/add/operator/toPromise';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    EscolhaPageComponent
   ],
   imports: [
     HttpModule,
@@ -24,7 +26,8 @@ import 'rxjs/add/operator/toPromise';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    EscolhaPageComponent
   ],
   providers: [
     StatusBar,
