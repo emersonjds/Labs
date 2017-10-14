@@ -12,7 +12,7 @@ function sslice(inicio, fim) {
     var fim = document.form.fim.value;
 
     if (fim == '') {
-        im = s.length + 1;
+        fim = s.length + 1;
     }
 
     var resultado = s.slice(inicio, fim);
