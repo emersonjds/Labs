@@ -1,6 +1,6 @@
 import { Carro } from './../../domain/carro/carro';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Alert } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 @Component({
@@ -14,10 +14,20 @@ export class CadastroPage {
   public endereco: string;
   public email: string;
   public date: string = new Date().toISOString();// o componente devolve em formato de string a data
+  private _alerta: Alert
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: Http) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private _http: Http,
+    private alertCtrl: AlertController) {
     this.carro = navParams.get('carro')
     this.precoTotal = navParams.get('precoTotal')
+
+    this._alerta = this.alertCtrl.create({
+      title: 'Aviso',
+      buttons: [{ text: 'Ok' }]
+    })
   }
 
   agenda() {
@@ -25,8 +35,14 @@ export class CadastroPage {
     this._http
       .get(api)
       .toPromise()
-      .then(() => console.log('Sucesso'))
-      .catch(err => console.log(err.message))
+      .then(() => {
+        this._alerta.setSubTitle('Agendamento realizado com sucesso');
+        this._alerta.present();
+      })
+      .catch(err => {
+        this._alerta.setSubTitle('Nao foi possivel realizar o agendamento, tente mais tarde');
+        this._alerta.present();
+      })
   }
 
 }
