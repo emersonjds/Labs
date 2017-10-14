@@ -19,9 +19,9 @@ export class EscolhaPageComponent {
         this.acessorios = [
             new Acessorio('Freios ABS', 800),
             new Acessorio('Ar Condicionado', 300),
-            new Acessorio('Banco de couro', 300),
-            new Acessorio('Teto Solar', 600),
-            new Acessorio('MP3 Player', 300)
+            // new Acessorio('Banco de couro', 300),
+            // new Acessorio('Teto Solar', 600),
+            // new Acessorio('MP3 Player', 300)
         ]
     }
 
