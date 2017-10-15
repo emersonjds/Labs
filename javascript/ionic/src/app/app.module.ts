@@ -1,3 +1,4 @@
+import { AgendamentoService } from './../domain/agendamento/agendamento-service';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -36,6 +37,7 @@ import 'rxjs/add/operator/toPromise';
   providers: [
     StatusBar,
     SplashScreen,
+    AgendamentoService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

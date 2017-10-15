@@ -1,3 +1,4 @@
+import { AgendamentoService } from './../../domain/agendamento/agendamento-service';
 import { Agendamento } from './../../domain/agendamento/agendamento';
 import { HomePage } from './../home/home';
 import { Carro } from './../../domain/carro/carro';
@@ -19,7 +20,8 @@ export class CadastroPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private _http: Http,
-    private alertCtrl: AlertController) {
+    private alertCtrl: AlertController,
+    private _agendamentoService: AgendamentoService) {
     this.carro = navParams.get('carro')
     this.precoTotal = navParams.get('precoTotal')
 
@@ -36,10 +38,20 @@ export class CadastroPage {
   }
 
   agenda() {
-    let api = `https://aluracar.herokuapp.com/salvarpedido?carro=${this.agendamento.carro.nome}&nome=${this.agendamento.nome}&preco=${this.agendamento.valor}&endereco=${this.agendamento.endereco}&email=${this.agendamento.email}&dataAgendamento=${this.agendamento.data}`;
-    this._http
-      .get(api)
-      .toPromise()
+
+    if (!this.agendamento.nome || !this.agendamento.endereco || !this.agendamento.email) {
+      this.alertCtrl.create({
+        title: 'Preenchimento obrigatório',
+        subTitle: 'Voce deve preencher todas as informações',
+        buttons: [{
+          text: 'Ok'
+        }]
+      }).present();
+
+      return;
+    }
+
+    this._agendamentoService.agenda(this.agendamento)
       .then(() => {
         this._alerta.setSubTitle('Agendamento realizado com sucesso');
         this._alerta.present();
