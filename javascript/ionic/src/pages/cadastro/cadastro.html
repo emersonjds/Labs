@@ -25,22 +25,22 @@
   <form (ngSubmit)="agenda()">
     <ion-item>
       <ion-label stacked>Nome</ion-label>
-      <ion-input name="nome" [(ngModel)]="nome"></ion-input>
+      <ion-input name="nome" [(ngModel)]="agendamento.nome"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Endereco</ion-label>
-      <ion-input name="endereco" [(ngModel)]="endereco"></ion-input>
+      <ion-input name="endereco" [(ngModel)]="agendamento.endereco"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Email</ion-label>
-      <ion-input name="email" type="email" [(ngModel)]="email"></ion-input>
+      <ion-input name="email" type="email" [(ngModel)]="agendamento.email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked>Data</ion-label>
-      <ion-datetime name="data" displayFormat="DD/MM/YY" [(ngModel)]="date"></ion-datetime>
+      <ion-datetime name="data" displayFormat="DD/MM/YY" [(ngModel)]="agendamento.data"></ion-datetime>
     </ion-item>
 
     <button ion-button block type="submit">Finalizar</button>

@@ -1,3 +1,5 @@
+import { Agendamento } from './../../domain/agendamento/agendamento';
+import { HomePage } from './../home/home';
 import { Carro } from './../../domain/carro/carro';
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, Alert } from 'ionic-angular';
@@ -10,11 +12,8 @@ export class CadastroPage {
 
   public carro: Carro;
   public precoTotal: number;
-  public nome: string;
-  public endereco: string;
-  public email: string;
-  public date: string = new Date().toISOString();// o componente devolve em formato de string a data
-  private _alerta: Alert
+  private _alerta: Alert;
+  public agendamento: Agendamento;
 
   constructor(
     public navCtrl: NavController,
@@ -24,14 +23,20 @@ export class CadastroPage {
     this.carro = navParams.get('carro')
     this.precoTotal = navParams.get('precoTotal')
 
+    this.agendamento = new Agendamento(this.carro, this.precoTotal);
+
     this._alerta = this.alertCtrl.create({
       title: 'Aviso',
-      buttons: [{ text: 'Ok' }]
+      buttons: [{ // todo botao tem um handler
+        text: 'Ok', handler: () => {
+          this.navCtrl.setRoot(HomePage) // setando as rotas para raiz 
+        }
+      }]
     })
   }
 
   agenda() {
-    let api = `https://aluracar.herokuapp.com/salvarpedido?carro=${this.carro.nome}&nome=${this.nome}&preco=${this.precoTotal}&endereco=${this.endereco}&email=${this.email}&dataAgendamento=${this.date}`;
+    let api = `https://aluracar.herokuapp.com/salvarpedido?carro=${this.agendamento.carro.nome}&nome=${this.agendamento.nome}&preco=${this.agendamento.valor}&endereco=${this.agendamento.endereco}&email=${this.agendamento.email}&dataAgendamento=${this.agendamento.data}`;
     this._http
       .get(api)
       .toPromise()
