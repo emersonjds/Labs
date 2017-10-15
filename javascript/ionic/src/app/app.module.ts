@@ -1,4 +1,3 @@
-import { AgendamentoService } from './../domain/agendamento/agendamento-service';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -14,12 +13,23 @@ import { CadastroPage } from './../pages/cadastro/cadastro';
 import { HttpModule } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import { AgendamentoService } from './../domain/agendamento/agendamento-service';
+
+//O Ionic possui um serviço padrão chamado Storage. Ele é uma casquinha sobre o LocalForage, um wrapper para diversos bancos do mercado.
+import { Storage } from '@ionic/storage';
+
+function provideStorage() {
+  return new Storage(['indexeddb'], { 
+    name: 'aluracar',
+    storeName: 'agendamentos'
+  });
+}
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    EscolhaPageComponent, 
+    EscolhaPageComponent,
     CadastroPage
   ],
   imports: [
@@ -38,7 +48,8 @@ import 'rxjs/add/operator/toPromise';
     StatusBar,
     SplashScreen,
     AgendamentoService,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: Storage, useFactory: provideStorage }
   ]
 })
 export class AppModule { }

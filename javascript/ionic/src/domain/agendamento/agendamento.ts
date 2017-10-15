@@ -7,6 +7,7 @@ export class Agendamento {
         public nome: string = '',
         public endereco: string = '',
         public email: string = '',
-        public data: string = new Date().toISOString()
+        public data: string = new Date().toISOString(),
+        public confirmado: boolean = false
     ) { }
 }
