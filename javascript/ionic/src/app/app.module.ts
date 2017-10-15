@@ -1,3 +1,4 @@
+import { AgendamentoDao } from './../domain/agendamento/agendamentoDAO';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -39,7 +40,8 @@ function provideStorage() {
   providers: [
     AgendamentoService,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    { provide: Storage, useFactory: provideStorage }
+    { provide: Storage, useFactory: provideStorage },
+    AgendamentoDao
   ]
 })
 export class AppModule { }
