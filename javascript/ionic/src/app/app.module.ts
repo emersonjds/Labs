@@ -7,14 +7,16 @@ import { CadastroPage } from './../pages/cadastro/cadastro';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { AgendamentoService } from './../domain/agendamento/agendamento-service';
-import { Storage } from '@ionic/storage';
+
 //O Ionic possui um serviço padrão chamado Storage. Ele é uma casquinha sobre o LocalForage, um wrapper para diversos bancos do mercado.
 
+import { Storage } from '@ionic/storage';
+
 function provideStorage() {
-  return new Storage(['indexeddb'], {
-    name: 'nomeBanco',
+  return new Storage(['indexeddb'], { 
+    name: 'aluracar',
     storeName: 'agendamentos'
-  })
+  });
 }
 
 @NgModule({

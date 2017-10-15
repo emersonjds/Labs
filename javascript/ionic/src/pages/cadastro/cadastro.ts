@@ -38,7 +38,6 @@ export class CadastroPage {
   }
 
   agenda() {
-
     if (!this.agendamento.nome || !this.agendamento.endereco || !this.agendamento.email) {
       this.alertCtrl.create({
         title: 'Preenchimento obrigatório',
@@ -47,7 +46,6 @@ export class CadastroPage {
           text: 'Ok'
         }]
       }).present();
-
       return;
     }
 
