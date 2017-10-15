@@ -52,13 +52,11 @@ export class CadastroPage {
     }
 
     this._agendamentoService.agenda(this.agendamento)
-      .then(() => {
-        this._alerta.setSubTitle('Agendamento realizado com sucesso');
-        this._alerta.present();
-      })
-      .catch(err => {
-        this._alerta.setSubTitle('Nao foi possivel realizar o agendamento, tente mais tarde');
-        this._alerta.present();
+      .then((confirmado) => {
+        confirmado ?
+          this._alerta.setSubTitle('Agendamento realizado com sucesso') :
+          this._alerta.setSubTitle('Nao foi possivel realizar o agendamento, tente mais tarde');
+          this._alerta.present();
       })
   }
 
