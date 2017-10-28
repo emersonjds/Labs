@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Product List
+        {{ pageTitle }}
     </div>
 
     <div class="panel-body">
@@ -17,22 +17,43 @@
         </div>
 
         <div class="table table-responsive">
+
+            <button class="btn btn-primary">Find Product</button>
+
             <table class="table">
                 <thead>
+                    
                     <tr>
-                        <th>
-                            <button class="btn-btn-primary"></button>
-                        </th>
+                        <th>Image</th>
                         <th>Product</th>
                         <th>Code</th>
                         <th>Available</th>
                         <th>Price</th>
-                        <th>5 Star Rating</th>
+                        <th>Star Rating</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    
+                    <tr *ngFor="let prod of products">
+                        <td>
+                            {{ prod.imgUrl }}
+                        </td>
+                        <td>
+                            {{ prod.productName }}
+                        </td>
+                        <td>
+                            {{ prod.productCode }}
+                        </td>
+                        <td>
+                            {{ prod.releaseDate }}
+                        </td>
+                        <td>
+                            {{ prod.price }}
+                        </td>
+                        <td>
+                            {{ prod.starRating }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
