@@ -26,7 +26,7 @@ export class ProductsListComponent {
             "productCode": "BIC-0023",
             "releaseDate": "March 01, 2016",
             "description": "1 capacity",
-            "price": 1.80,
+            "price": 2.00,
             "starRating": 4.9,
             "imgUrl": "Not Found"
         }

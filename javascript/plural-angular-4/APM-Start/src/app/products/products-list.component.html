@@ -18,13 +18,12 @@
 
         <div class="table table-responsive">
 
-            <button class="btn btn-primary">Find Product</button>
-
-            <table class="table">
+            <table class="table" *ngIf="products && products.length > 0">
                 <thead>
-                    
                     <tr>
-                        <th>Image</th>
+                        <th>
+                            <button class="btn btn-primary">Show Image</button>
+                        </th>
                         <th>Product</th>
                         <th>Code</th>
                         <th>Available</th>
@@ -35,9 +34,8 @@
 
                 <tbody>
                     <tr *ngFor="let prod of products">
-                        <td>
-                            {{ prod.imgUrl }}
-                        </td>
+                        <td></td>
+
                         <td>
                             {{ prod.productName }}
                         </td>
