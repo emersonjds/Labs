@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct } from '../products/products';
 
 @Component({
     selector: 'pm-products',
@@ -13,7 +14,7 @@ export class ProductsListComponent {
     imgMargin: number = 2;
     showImage: boolean = false;
     productFiltered: string = 'cart';
-    products: any[] = [
+    products: IProduct[] = [
         {
             "productId": 2,
             "productName": 'Garden Cart',
@@ -22,7 +23,7 @@ export class ProductsListComponent {
             "description": "15 galoon capacity",
             "price": 32.99,
             "starRating": 4.2,
-            "imgUrl": "http://d2trtkcohkrm90.cloudfront.net/images/emoji/apple/ios-10/256/balloon.png"
+            "imageUrl": "http://d2trtkcohkrm90.cloudfront.net/images/emoji/apple/ios-10/256/balloon.png"
         },
         {
             "productId": 3,
@@ -32,7 +33,7 @@ export class ProductsListComponent {
             "description": "1 capacity",
             "price": 2.00,
             "starRating": 4.9,
-            "imgUrl": "https://www.pascogifts.com/files/cache/square/files/migrated-bic-attriant-d0d8.jpg"
+            "imageUrl": "https://www.pascogifts.com/files/cache/square/files/migrated-bic-attriant-d0d8.jpg"
         }
     ]
 
