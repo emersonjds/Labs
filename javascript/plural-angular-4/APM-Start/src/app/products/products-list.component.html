@@ -49,13 +49,13 @@
                             {{ prod.productName }}
                         </td>
                         <td>
-                            {{ prod.productCode }}
+                            {{ prod.productCode | lowercase}}
                         </td>
                         <td>
                             {{ prod.releaseDate }}
                         </td>
                         <td>
-                            {{ prod.price }}
+                            {{ prod.price | currency: 'BRL': true:'1.2-2'}}
                         </td>
                         <td>
                             {{ prod.starRating }}
