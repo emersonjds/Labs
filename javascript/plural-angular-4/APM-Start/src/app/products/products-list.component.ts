@@ -37,7 +37,7 @@ export class ProductsListComponent implements OnInit {
             "releaseDate": "March 18, 2016",
             "description": "15 galoon capacity",
             "price": 32.99,
-            "starRating": 4.2,
+            "starRating": 3.8,
             "imageUrl": "http://d2trtkcohkrm90.cloudfront.net/images/emoji/apple/ios-10/256/balloon.png"
         },
         {
