@@ -52,11 +52,17 @@ export class ProductsListComponent implements OnInit {
         }
     ]
 
+    //starts with initialize compontn
+    constructor() {
+        this.filteredProducts = this.products;
+        this.listFilter = 'cart';
+    }
+
     performFilter(filterBy: string): IProduct[] {
         filterBy = filterBy.toLocaleLowerCase(); //code starts by converting the filter criteria to lowercase.
         return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
-    
+
 
     toogleImage(): void {
         this.showImage = !this.showImage;
