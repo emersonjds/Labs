@@ -38,10 +38,10 @@
                     <tr *ngFor="let prod of filteredProducts">
                         <td>
                             <img *ngIf='showImage'
-                                [src]='prod.imageUrl' 
-                                alt="" 
-                                [title]='prod.productName' 
-                                [style.width.px]='imgWidth' 
+                                [src]='prod.imageUrl'
+                                alt=""
+                                [title]='prod.productName'
+                                [style.width.px]='imgWidth'
                                 [style.margin.px]="imgMargin">
                         </td>
 
@@ -59,7 +59,10 @@
                         </td>
                         <td>
                             <!-- {{ prod.starRating }} -->
-                            <pm-star [rating]='prod.starRating'></pm-star>
+                            <pm-star
+                              [rating]='prod.starRating'
+                              (notify)="onNotify($event)">
+                            </pm-star>
                         </td>
                     </tr>
                 </tbody>
