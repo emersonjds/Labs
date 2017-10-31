@@ -14,6 +14,21 @@ export class ProductsListComponent implements OnInit {
     imgMargin: number = 2;
     showImage: boolean = false;
     productFiltered: string = 'cart';
+
+    _listFilter: string;
+
+    //ggas
+    get listFilter() {
+        return this._listFilter;
+    }
+
+    set listFilter(value: string) {
+        this._listFilter = value;
+        this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+    }
+
+    filteredProducts: IProduct[];
+
     products: IProduct[] = [
         {
             "productId": 2,
@@ -36,6 +51,12 @@ export class ProductsListComponent implements OnInit {
             "imageUrl": "https://www.pascogifts.com/files/cache/square/files/migrated-bic-attriant-d0d8.jpg"
         }
     ]
+
+    performFilter(filterBy: string): IProduct[] {
+        filterBy = filterBy.toLocaleLowerCase(); //code starts by converting the filter criteria to lowercase.
+        return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    }
+    
 
     toogleImage(): void {
         this.showImage = !this.showImage;
