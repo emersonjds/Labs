@@ -58,7 +58,8 @@
                             {{ prod.price | currency: 'BRL': true:'1.2-2'}}
                         </td>
                         <td>
-                            {{ prod.starRating }}
+                            <!-- {{ prod.starRating }} -->
+                            <pm-star [rating]='prod.starRating'></pm-star>
                         </td>
                     </tr>
                 </tbody>
