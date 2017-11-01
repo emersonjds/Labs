@@ -27,6 +27,7 @@ export class ProductsListComponent implements OnInit {
     this.filteredProducts = this.listFilter
       ? this.performFilter(this.listFilter)
       : this.products;
+//comment
   }
 
   //starts with initialize compontn
