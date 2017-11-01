@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { ProductService } from './products.service';
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from "../products/products";
@@ -33,7 +33,7 @@ export class ProductsListComponent implements OnInit {
   //starts with initialize compontn
   constructor(
     private _productService: ProductService,
-    private _http: HttpClient
+    private _http: Http
   ) { }
 
   ngOnInit(): void {

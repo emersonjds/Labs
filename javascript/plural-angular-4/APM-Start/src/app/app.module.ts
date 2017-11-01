@@ -1,7 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClient} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { Http } from '@angular/http';
 
 import { ProductService } from './products/products.service';
 import { StarComponent } from './shared/start.component';
@@ -20,7 +22,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClient
+    HttpClientModule,
+    Http
   ],
   providers: [
     ProductService
