@@ -30,9 +30,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   //starts with initialize compontn
-  constructor(private _productService: ProductService) {
-    this._listFilter = 'cart';
-  }
+  constructor(private _productService: ProductService) {}
 
   ngOnInit(): void {
     this.products = this._productService.getProducts(); // retorno dos dados da lista para a variavel
