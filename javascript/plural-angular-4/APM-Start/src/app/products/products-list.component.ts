@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { ProductService } from './products.service';
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from "../products/products";
 import { Observable } from 'rxjs';
-import { Http } from '@angular/http';
 
 @Component({
   selector: "pm-products",
@@ -18,6 +18,7 @@ export class ProductsListComponent implements OnInit {
   filteredProducts: IProduct[];
   products: IProduct[] = [];
   _listFilter: string;
+  errorMessage: string;
 
   //ggas
   get listFilter() {
@@ -32,12 +33,16 @@ export class ProductsListComponent implements OnInit {
   //starts with initialize compontn
   constructor(
     private _productService: ProductService,
-    private _http: Http
+    private _http: HttpClient
   ) { }
 
   ngOnInit(): void {
-    this.products = this._productService.getProducts(); // retorno dos dados da lista para a variavel
-    this.filteredProducts = this.products; // array recebendo esses dados
+    this._productService.getProducts()
+      .subscribe(products => {
+        this.products = products
+        this.filteredProducts = this.products; // array recebendo esses deckaradados
+      },
+      error => this.errorMessage = <any>error);
   }
 
   performFilter(filterBy: string): IProduct[] {
