@@ -1,6 +1,8 @@
 import { ProductService } from './products.service';
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from "../products/products";
+import { Observable } from 'rxjs';
+import { Http } from '@angular/http';
 
 @Component({
   selector: "pm-products",
@@ -24,14 +26,14 @@ export class ProductsListComponent implements OnInit {
 
   set listFilter(value: string) {
     this._listFilter = value;
-    this.filteredProducts = this.listFilter
-      ? this.performFilter(this.listFilter)
-      : this.products;
-//comment
+    this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
   }
 
   //starts with initialize compontn
-  constructor(private _productService: ProductService) {}
+  constructor(
+    private _productService: ProductService,
+    private _http: Http
+  ) { }
 
   ngOnInit(): void {
     this.products = this._productService.getProducts(); // retorno dos dados da lista para a variavel
@@ -40,10 +42,8 @@ export class ProductsListComponent implements OnInit {
 
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase(); //code starts by converting the filter criteria to lowercase.
-    return this.products.filter(
-      (product: IProduct) =>
-        product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1
-    );
+    return this.products.filter((product: IProduct) =>
+      product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
   toogleImage(): void {
