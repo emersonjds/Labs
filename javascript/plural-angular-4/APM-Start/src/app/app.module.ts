@@ -9,13 +9,15 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/start.component';
 
 import { ProductService } from './products/products.service';
+import { ProductDetailComponent } from './poducts/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
     ConvertToSpacesPipe,
-    StarComponent
+    StarComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
