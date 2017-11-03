@@ -1,16 +1,14 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { Http } from '@angular/http';
-
-import { ProductService } from './products/products.service';
-import { StarComponent } from './shared/start.component';
-import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
-import { ProductsListComponent } from './products/products-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { ProductsListComponent } from './products/products-list.component';
+import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { StarComponent } from './shared/start.component';
+
+import { ProductService } from './products/products.service';
 
 @NgModule({
   declarations: [
@@ -22,8 +20,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-    Http
+    HttpClientModule
   ],
   providers: [
     ProductService
