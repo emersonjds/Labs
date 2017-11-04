@@ -1,4 +1,8 @@
+import { PageNotFoundComponent } from './products/page-not-found.component';
+import { WelcomeComponent } from './home/welcome.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,7 +13,6 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/start.component';
 
 import { ProductService } from './products/products.service';
-import { ProductDetailComponent } from './poducts/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,21 @@ import { ProductDetailComponent } from './poducts/product-detail/product-detail.
     ProductsListComponent,
     ConvertToSpacesPipe,
     StarComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    WelcomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'products', component: ProductsListComponent },
+      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', component: PageNotFoundComponent },
+    ])
   ],
   providers: [
     ProductService
