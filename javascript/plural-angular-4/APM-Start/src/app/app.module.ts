@@ -28,12 +28,12 @@ import { ProductService } from './products/products.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
+    RouterModule.forRoot([ // chamada de rotas para o modulo principal da aplicação
       { path: 'products', component: ProductsListComponent },
       { path: 'products/:id', component: ProductDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', component: PageNotFoundComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' }, //caminho default da aplicação
+      { path: '**', component: PageNotFoundComponent }, //caso alguma pagina nao seja encontrada chamamos este operador curinga
     ])
   ],
   providers: [
