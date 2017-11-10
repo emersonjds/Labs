@@ -1,3 +1,4 @@
+import { ProductGuardService } from './products/product-guard.service';
 import { PageNotFoundComponent } from './products/page-not-found.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductDetailComponent } from './products/product-detail.component';
@@ -37,7 +38,8 @@ import { ProductService } from './products/products.service';
     ])
   ],
   providers: [
-    ProductService
+    ProductService,
+    ProductGuardService
   ],
   bootstrap: [AppComponent]
 })
