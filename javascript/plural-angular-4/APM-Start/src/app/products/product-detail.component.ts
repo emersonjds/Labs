@@ -1,5 +1,6 @@
+import { ProductService } from './products.service';
 import { IProduct } from './products';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,12 +8,15 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+  @Input() rating: number = 4;
   pageTitle: string = 'Product Detail';
   product: IProduct;
+  products: IProduct[] = [];
 
   constructor(
     private _router: ActivatedRoute,
-    private _route: Router
+    private _route: Router,
+    private _productService: ProductService
   ) { }
 
   ngOnInit() {
@@ -20,20 +24,33 @@ export class ProductDetailComponent implements OnInit {
     // this._router.params -> Observable<any></any>
 
     this.pageTitle += `: ${id}`;
-    this.product = {
-      "productId": id,
-      "productName": "Leaf Rake",
-      "productCode": "GDN-0011",
-      "releaseDate": "March 19, 2016",
-      "price": 19.85,
-      "description": "Leaf rake with 48-inch wooden handle",
-      "starRating": 3.7,
-      "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake_png"
-    }
+
+    this._productService.getProducts().subscribe(products => {
+      this.products = products;
+      products.forEach(data => {
+        if (data.productId == id) {
+          return this.product = {
+            "productId": id,
+            "productName": data.productName,
+            "productCode": data.productCode,
+            "releaseDate": data.releaseDate,
+            "price": data.price,
+            "description": data.description,
+            "starRating": data.starRating,
+            "imageUrl": data.imageUrl
+          }
+        }
+      })
+    })
+
   }
+
+
 
   back(): void {
     this._route.navigate(['/products']);
   }
+
+
 
 }

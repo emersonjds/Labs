@@ -31,7 +31,9 @@ import { ProductService } from './products/products.service';
     HttpClientModule,
     RouterModule.forRoot([ // chamada de rotas para o modulo principal da aplicação
       { path: 'products', component: ProductsListComponent },
-      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'products/:id', 
+        canActivate: [ ProductGuardService],
+        component: ProductDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' }, //caminho default da aplicação
       { path: '**', component: PageNotFoundComponent }, //caso alguma pagina nao seja encontrada chamamos este operador curinga
