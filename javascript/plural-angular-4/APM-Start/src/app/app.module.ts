@@ -1,47 +1,24 @@
-import { ProductGuardService } from './products/product-guard.service';
-import { PageNotFoundComponent } from './products/page-not-found.component';
-import { WelcomeComponent } from './home/welcome.component';
-import { ProductDetailComponent } from './products/product-detail.component';
+import { RoutingModule } from './routing/routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
-import { ProductsListComponent } from './products/products-list.component';
-import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
-import { StarComponent } from './shared/start.component';
 
-import { ProductService } from './products/products.service';
+import { PageNotFoundComponent } from './products/page-not-found.component';
+import { WelcomeComponent } from './home/welcome.component';
+import { ProductModule } from './products/product.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsListComponent,
-    ConvertToSpacesPipe,
-    StarComponent,
-    ProductDetailComponent,
-    WelcomeComponent,
-    PageNotFoundComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([ // chamada de rotas para o modulo principal da aplicação
-      { path: 'products', component: ProductsListComponent },
-      { path: 'products/:id', 
-        canActivate: [ ProductGuardService],
-        component: ProductDetailComponent },
-      { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' }, //caminho default da aplicação
-      { path: '**', component: PageNotFoundComponent }, //caso alguma pagina nao seja encontrada chamamos este operador curinga
-    ])
-  ],
-  providers: [
-    ProductService,
-    ProductGuardService
+    ProductModule,
+    RoutingModule // sempre carregar por ultimo devido ao operador coringa que quebraria as demais rotas
   ],
   bootstrap: [AppComponent]
 })

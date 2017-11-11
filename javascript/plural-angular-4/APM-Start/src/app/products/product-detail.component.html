@@ -7,12 +7,12 @@
     <div class="col-xs-6">
       <h3>Product Details</h3>
 
-      <h4>Name</h4>  <span>{{product.productName}}</span>
-      <h4>Codigo</h4>  {{product.productCode}}
-      <h4>Data de disponibilidade</h4>  {{product.releaseDate}}
-      <h4>Preço</h4>  {{product.price}}
-      <h4>Descrição</h4>  {{product.description}}
-      <h4>Avaliação dos clientes</h4>  
+      <h4>Name</h4> <span>{{product.productName}}</span>
+      <h4>Codigo</h4> {{product.productCode}}
+      <h4>Data de disponibilidade</h4> {{product.releaseDate}}
+      <h4>Preço</h4> {{product.price}}
+      <h4>Descrição</h4> {{product.description}}
+      <h4>Avaliação dos clientes</h4>
       <pm-star [rating]='product.starRating'></pm-star>
     </div>
 
@@ -22,10 +22,9 @@
       <img [src]="product.imageUrl" alt="">
 
     </div>
-
-    
   </div>
-  <button (click)="back()" class="btn btn-default"> <b>< Back </b></button>
+  <div class="panel-footer">
+    <button (click)="back()" class="btn btn-default"> <b>< Back </b></button>
+  </div>
+
 </div>
-
-
