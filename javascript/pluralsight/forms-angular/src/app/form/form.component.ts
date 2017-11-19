@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  public languages: Array<string> = [
+    'portuguese',
+    'english',
+    'spanish'
+  ];
+
   constructor() { }
 
   ngOnInit() {

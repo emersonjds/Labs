@@ -1,17 +1,45 @@
 <div class="container">
-  <h3>Angular Forms</h3>
+  <h3>Employee Form</h3>
   <div class="row">
     <div class="col-xs-6">
       <form action="" #form="ngForm" novalidate>
         <div class="form-group">
-            <label for="">Name</label>
-            <input type="text" class="form-control" placeholder="name" name="firstName" ngModel>
+          <label for="">Name</label>
+          <input type="text" class="form-control" placeholder="name" name="firstName" ngModel>
         </div>
 
         <div class="form-group">
-            <label for="">Last Name</label>
-            <input type="text" class="form-control" placeholder="last name" name="lastName" ngModel>
+          <label for="">Last Name</label>
+          <input type="text" class="form-control" placeholder="last name" name="lastName" ngModel>
         </div>
+
+        <div class="checkbox">
+          <label for=""></label>
+          <input type="checkbox" name="is-full-time" ngModel> Full time Exmployee
+        </div>
+        <br>
+
+        <label for=""> Payment Type</label>
+        <div class="radio">
+          <label for="">
+            <input type="radio" name="pay-type" value="w2" checked> W2
+          </label>
+        </div>
+
+        <div class="radio">
+          <label for="">
+            <input type="radio" name="pay-type" value="1099"> 1099
+          </label>
+        </div>
+
+        <div class="form-group">
+          <select name="language" id="">
+            <option value="" *ngFor="let lang of languages">
+              {{ lang }}
+            </option>
+          </select>
+        </div>
+
 
         <button class="btn btn-primary" type="submit"> Ok</button>
       </form>
