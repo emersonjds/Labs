@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-          <select name="language" id="">
+          <select name="language" id="" name="primaryLanguage" [(ngModel)]="model.primaryLanguage">
             <option value="" *ngFor="let lang of languages">
               {{ lang }}
             </option>
