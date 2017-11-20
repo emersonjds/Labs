@@ -16,25 +16,26 @@
 
         <div class="form-group">
           <label for="">Last Name</label>
-          <input type="text" class="form-control" placeholder="last name" name="lastName" ngModel>
+          <input type="text" class="form-control" placeholder="last name" name="lastName"
+          [(ngModel)]="model.lastName">
         </div>
 
         <div class="checkbox">
           <label for=""></label>
-          <input type="checkbox" name="is-full-time" ngModel> Full time Exmployee
+          <input type="checkbox" name="is-full-time" [(ngModel)]="model.isFullTime"> Full time Exmployee
         </div>
         <br>
 
         <label for=""> Payment Type</label>
         <div class="radio">
           <label for="">
-            <input type="radio" name="pay-type" value="w2" checked> W2
+            <input type="radio" name="paymentType" value="w2" checked [(ngModel)]="model.paymentType"> W2
           </label>
         </div>
 
         <div class="radio">
           <label for="">
-            <input type="radio" name="pay-type" value="1099"> 1099
+            <input type="radio" name="paymentType" value="1099" [(ngModel)]="model.paymentType"> 1099
           </label>
         </div>
 

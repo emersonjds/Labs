@@ -9,7 +9,7 @@ import { Employee } from '../models/employee';
 export class FormComponent implements OnInit {
   public languages: Array<string> = ['portuguese', 'english', 'spanish'];
 
-  model = new Employee('Emerson', 'Silva');
+  model = new Employee('Emerson', 'Silva', true, "w2");
 
   constructor() {}
 
