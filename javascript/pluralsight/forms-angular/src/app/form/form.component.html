@@ -5,14 +5,21 @@
       <form action="" #formulario="ngForm" novalidate>
         <div class="form-group">
           <label for="">Name</label>
-          <input type="text" class="form-control" placeholder="name" name="firstName"
-           [ngModel]="model.firstName"
-           (ngModelChanges)="nameToUpperCase($event)"
-          >
+          <input
+          type="text"
+          class="form-control"
+          placeholder="name"
+          name="firstName"
+          [(ngModel)]="model.firstName"
+          #firstName="ngModel">
         </div>
 
         Model : {{ model | json  }} <br>
         Angular : {{ formulario.value | json }}
+
+        <br>
+        <h3> {{firstName.className}} </h3>
+        <h3> {{firstName.dirty}} </h3>
 
         <div class="form-group">
           <label for="">Last Name</label>
