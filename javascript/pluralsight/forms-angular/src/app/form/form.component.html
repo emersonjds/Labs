@@ -6,13 +6,19 @@
         <div class="form-group">
           <label for="">Name</label>
           <input
-          type="text"
-          class="form-control"
-          placeholder="name"
-          name="firstName"
-          [(ngModel)]="model.firstName"
-          #firstName="ngModel">
+            type="text"
+            class="form-control"
+            placeholder="name"
+            name="firstName"
+            [(ngModel)]="model.firstName"
+            #firstName="ngModel"
+            required>
         </div>
+        <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
+          First name is required
+        </div>
+
+
 
         Model : {{ model | json  }} <br>
         Angular : {{ formulario.value | json }}
