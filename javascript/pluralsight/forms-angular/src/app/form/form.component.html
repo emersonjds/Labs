@@ -49,19 +49,22 @@
       -->
 
 
-        <div class="form-group">
-          <label for="" class="control-label"> Primary Language</label>
+        <!-- <div class="form-group" [class.has-error]="hasPrimaryLanguageError">
+          <label class="control-label"> Primary Language</label>
           <br>
           <select
+            #primaryLanguage
+            class="form-control"
             name="primaryLanguage"
             [(ngModel)]="model.primaryLanguage"
-            [class.has-error]="hasPrimaryLanguageError"
-            (blur)="validatePrimaryLanguage($event)">
+            (blur)="validatePrimaryLanguage(primaryLanguage.value)"
+            (change)="validatePrimaryLanguage(primaryLanguage.value)">
             <option value="default">Select a language...</option>
-            <option value="" *ngFor="let lang of languages" class="form-control">
+            <option value="" *ngFor="let lang of languages">
               {{ lang }}
             </option>
           </select>
+          <br> -->
 
           <button class="btn btn-primary" type="submit"> Ok</button>
         </div>

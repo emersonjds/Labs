@@ -25,12 +25,11 @@ export class FormComponent implements OnInit {
     }
   }
 
-  validatePrimaryLanguage(event) {
+  validatePrimaryLanguage(value) {
     if(this.model.primaryLanguage === 'default') {
       this.hasPrimaryLanguageError = true;
     } else {
       this.hasPrimaryLanguageError = false;
     }
-
   }
 }
