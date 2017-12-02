@@ -3,8 +3,8 @@
   <div class="row">
     <div class="col-xs-6">
       <form action="" #formulario="ngForm" novalidate>
-        <div class="form-group">
-          <label for="">Name</label>
+        <div class="form-group" [class.has-error]="firstName.invalid && firstName.dirty">
+          <label class="control-label">Name</label>
           <input
             type="text"
             class="form-control"
@@ -12,7 +12,8 @@
             name="firstName"
             [(ngModel)]="model.firstName"
             #firstName="ngModel"
-            required>
+            required
+            pattern="...+">
             <!-- #firstName="ngModal" // adicionadno instancia do modelo a variavel de referencia na view para manipulação -->
         </div>
         <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
