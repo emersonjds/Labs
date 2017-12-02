@@ -13,8 +13,6 @@
           First name is required
         </div>
 
-
-
         <!-- Model : {{ model | json  }} <br>
         Angular : {{ formulario.value | json }}
 
@@ -66,8 +64,8 @@
           </select>
           <br> -->
 
-          <button class="btn btn-primary" type="submit"> Ok</button>
-        </div>
+          <button class="btn btn-primary" type="submit" [disabled]="formulario.invalid"> Ok</button>
+
 
 
       </form>
