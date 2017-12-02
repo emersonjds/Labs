@@ -5,16 +5,9 @@
       <form action="" #formulario="ngForm" novalidate>
         <div class="form-group" [class.has-error]="firstName.invalid && firstName.dirty">
           <label class="control-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="name"
-            name="firstName"
-            [(ngModel)]="model.firstName"
-            #firstName="ngModel"
-            required
-            pattern="...+">
-            <!-- #firstName="ngModal" // adicionadno instancia do modelo a variavel de referencia na view para manipulação -->
+          <input type="text" class="form-control" placeholder="name" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel"
+            required pattern="...+">
+          <!-- #firstName="ngModal" // adicionadno instancia do modelo a variavel de referencia na view para manipulação -->
         </div>
         <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
           First name is required
@@ -22,12 +15,12 @@
 
 
 
-        Model : {{ model | json  }} <br>
+        <!-- Model : {{ model | json  }} <br>
         Angular : {{ formulario.value | json }}
 
         <br>
         <h3> {{ firstName.invalid }} </h3>
-        <h3> {{firstName.dirty}} </h3>
+        <h3> {{firstName.dirty}} </h3> -->
 
         <!-- <div class="form-group">
           <label for="">Last Name</label>
@@ -53,16 +46,27 @@
             <input type="radio" name="paymentType" value="1099" [(ngModel)]="model.paymentType"> 1099
           </label>
         </div>
+      -->
+
 
         <div class="form-group">
-          <select name="language" id="" name="primaryLanguage" [(ngModel)]="model.primaryLanguage">
-            <option value="" *ngFor="let lang of languages">
+          <label for="" class="control-label"> Primary Language</label>
+          <br>
+          <select
+            name="primaryLanguage"
+            [(ngModel)]="model.primaryLanguage"
+            [class.has-error]="hasPrimaryLanguageError"
+            (blur)="validatePrimaryLanguage($event)">
+            <option value="default">Select a language...</option>
+            <option value="" *ngFor="let lang of languages" class="form-control">
               {{ lang }}
             </option>
           </select>
+
+          <button class="btn btn-primary" type="submit"> Ok</button>
         </div>
 
-        <button class="btn btn-primary" type="submit"> Ok</button> -->
+
       </form>
     </div>
   </div>

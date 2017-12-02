@@ -9,7 +9,9 @@ import { Employee } from '../models/employee';
 export class FormComponent implements OnInit {
   public languages: Array<string> = ['portuguese', 'english', 'spanish'];
 
-  model = new Employee('Emerson', 'Silva', true, 'w2', 'English');
+  model = new Employee('', '', true, '', 'default');
+
+  public hasPrimaryLanguageError = false;
 
   constructor() {}
 
@@ -21,5 +23,14 @@ export class FormComponent implements OnInit {
     } else {
       this.model.firstName = value;
     }
+  }
+
+  validatePrimaryLanguage(event) {
+    if(this.model.primaryLanguage === 'default') {
+      this.hasPrimaryLanguageError = true;
+    } else {
+      this.hasPrimaryLanguageError = false;
+    }
+
   }
 }
