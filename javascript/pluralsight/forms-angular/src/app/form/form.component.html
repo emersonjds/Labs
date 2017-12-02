@@ -13,6 +13,7 @@
             [(ngModel)]="model.firstName"
             #firstName="ngModel"
             required>
+            <!-- #firstName="ngModal" // adicionadno instancia do modelo a variavel de referencia na view para manipulação -->
         </div>
         <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
           First name is required
@@ -24,10 +25,10 @@
         Angular : {{ formulario.value | json }}
 
         <br>
-        <h3> {{firstName.className}} </h3>
+        <h3> {{ firstName.invalid }} </h3>
         <h3> {{firstName.dirty}} </h3>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="">Last Name</label>
           <input type="text" class="form-control" placeholder="last name" name="lastName"
           [(ngModel)]="model.lastName">
@@ -60,7 +61,7 @@
           </select>
         </div>
 
-        <button class="btn btn-primary" type="submit"> Ok</button>
+        <button class="btn btn-primary" type="submit"> Ok</button> -->
       </form>
     </div>
   </div>
