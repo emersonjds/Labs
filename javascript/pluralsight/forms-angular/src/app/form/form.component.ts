@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee';
 import { Http } from '@angular/http';
 import { NgForm } from '@angular/forms';
-
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -40,13 +39,18 @@ export class FormComponent implements OnInit {
 
 
   submitForm(form: NgForm) {
-    this.formService.sendForm(this.model);
     this.validatePrimaryLanguage(this.model.primaryLanguage);
 
     // tslint:disable-next-line:one-line
     if(this.hasPrimaryLanguageError) {
       return;
     }
+
+    this.formService.sendForm(this.model)
+    .subscribe(
+      data => console.log('success', data),
+      error => console.log('fail', error)
+    );
     // this.model == estrutura passada por form
   }
 }
