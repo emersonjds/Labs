@@ -9,9 +9,10 @@ import { FormService } from '../services/form-post.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { NG2Component } from './components/ng2-forms';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent],
+  declarations: [AppComponent, FormComponent, NG2Component],
   imports: [BrowserModule, FormsModule, HttpModule, RouterModule],
   providers: [FormService],
   bootstrap: [AppComponent]
