@@ -33,7 +33,7 @@ function processForm(req, res) {
             'content-type': 'text/plain'
         });
 
-        res.end(util.inspect({
+        res.end(JSON.stringify({
             fields: fields
         }));
 

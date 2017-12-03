@@ -9,8 +9,6 @@ import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/bufferCount';
 
-
-
 @Injectable()
 export class FormService {
   constructor(private http: Http) { }
@@ -34,7 +32,5 @@ export class FormService {
     console.log('post error' + error);
     return Observable.throw(error.statusText);
   }
-
-
 
 }
