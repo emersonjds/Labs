@@ -1,3 +1,4 @@
+import { FormService } from '../../services/form-post.service';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee';
 
@@ -13,7 +14,7 @@ export class FormComponent implements OnInit {
 
   public hasPrimaryLanguageError = false;
 
-  constructor() {}
+  constructor(private formService: FormService) {}
 
   ngOnInit() {}
 
@@ -26,7 +27,7 @@ export class FormComponent implements OnInit {
   }
 
   validatePrimaryLanguage(value) {
-    if(this.model.primaryLanguage === 'default') {
+    if (this.model.primaryLanguage === 'default') {
       this.hasPrimaryLanguageError = true;
     } else {
       this.hasPrimaryLanguageError = false;
