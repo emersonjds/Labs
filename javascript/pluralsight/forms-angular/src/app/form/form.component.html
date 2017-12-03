@@ -2,11 +2,18 @@
   <h3>Employee Form</h3>
   <div class="row">
     <div class="col-xs-6">
-      <form action="" #formulario="ngForm" novalidate>
+      <form action="" #formulario="ngForm" novalidate (submit)="submitForm(formulario)">
         <div class="form-group" [class.has-error]="firstName.invalid && firstName.dirty">
           <label class="control-label">Name</label>
-          <input type="text" class="form-control" placeholder="name" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel"
-            required pattern="...+">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="name" 
+            name="firstName" 
+            [(ngModel)]="model.firstName" 
+            #firstName="ngModel"
+            required 
+            pattern="...+">
           <!-- #firstName="ngModal" // adicionadno instancia do modelo a variavel de referencia na view para manipulação -->
         </div>
         <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
@@ -20,10 +27,20 @@
         <h3> {{ firstName.invalid }} </h3>
         <h3> {{firstName.dirty}} </h3> -->
 
-        <!-- <div class="form-group">
+        <div class="form-group">
           <label for="">Last Name</label>
-          <input type="text" class="form-control" placeholder="last name" name="lastName"
-          [(ngModel)]="model.lastName">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="last name" 
+            name="lastName"
+            [(ngModel)]="model.lastName"
+            #lastName="ngModel"
+            required>
+
+            <div class="alert alert-danger" *ngIf="lastName.invalid && lastName.dirty" >
+              Last Name is required
+            </div>
         </div>
 
         <div class="checkbox">
@@ -44,17 +61,17 @@
             <input type="radio" name="paymentType" value="1099" [(ngModel)]="model.paymentType"> 1099
           </label>
         </div>
-      -->
 
 
-        <!-- <div class="form-group" [class.has-error]="hasPrimaryLanguageError">
+
+        <div class="form-group" [class.has-error]="hasPrimaryLanguageError">
           <label class="control-label"> Primary Language</label>
           <br>
-          <select
-            #primaryLanguage
-            class="form-control"
-            name="primaryLanguage"
-            [(ngModel)]="model.primaryLanguage"
+          <select 
+            #primaryLanguage="ngModel"
+            class="form-control" 
+            name="primaryLanguage" 
+            [(ngModel)]="model.primaryLanguage" 
             (blur)="validatePrimaryLanguage(primaryLanguage.value)"
             (change)="validatePrimaryLanguage(primaryLanguage.value)">
             <option value="default">Select a language...</option>
@@ -62,11 +79,11 @@
               {{ lang }}
             </option>
           </select>
-          <br> -->
+          <br>
 
-          <button class="btn btn-primary" type="submit" [disabled]="formulario.invalid"> Ok</button>
+          <button class="btn btn-primary" type="submit" [disabled]="formulario.invalid" > Ok</button>
 
-
+        </div>
 
       </form>
     </div>

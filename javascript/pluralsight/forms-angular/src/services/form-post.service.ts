@@ -7,9 +7,7 @@ export class FormService {
   constructor(private http: Http) {}
 
   sendForm(employee: Employee) {
-    this.http.post('./../../../node_server/server..js', body => {
-
-    })
+    console.log(employee);
   }
 
 }

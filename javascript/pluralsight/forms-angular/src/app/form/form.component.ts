@@ -1,6 +1,8 @@
 import { FormService } from '../../services/form-post.service';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee';
+import { Http } from '@angular/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -14,9 +16,11 @@ export class FormComponent implements OnInit {
 
   public hasPrimaryLanguageError = false;
 
-  constructor(private formService: FormService) {}
+  constructor(
+    private formService: FormService,
+    private http: Http) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   nameToUpperCase(value: string) {
     if (value.length > 0) {
@@ -32,5 +36,17 @@ export class FormComponent implements OnInit {
     } else {
       this.hasPrimaryLanguageError = false;
     }
+  }
+
+
+  submitForm(form: NgForm) {
+    this.formService.sendForm(this.model);
+    this.validatePrimaryLanguage(this.model.primaryLanguage);
+
+    // tslint:disable-next-line:one-line
+    if(this.hasPrimaryLanguageError) {
+      return;
+    }
+    // this.model == estrutura passada por form
   }
 }
