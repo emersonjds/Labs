@@ -1,15 +1,3 @@
-// var express = require("express");
-// var bodyParser = require("body-parser"); //json parse
-
-// var app = express();
-
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-
-// app.listen(8081, () => {
-//     console.log('Servidor rodando na porta 8081');
-// })
-
 var http = require('http');
 var formidable = require('formidable');
 var util = require('util');
@@ -18,8 +6,28 @@ var server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type');
 
-    if(req.method.toLocaleLowerCase() === 'post') {
+    if (req.method.toLocaleLowerCase() === 'post') {
         processForm(req, res);
+        return;
+    }
+
+    if (req.method.toLocaleLowerCase() === 'get') {
+        var data = {
+            data: {
+                languages: [
+                    'English',
+                    'Spanish',
+                    'Japa',
+                    'Portuguese',
+                    'German',
+                    'Other'
+                ]
+            }
+        }
+
+        var responseData = JSON.stringify(data);
+        res.end(responseData);
+        console.log('get', responseData);
         return;
     }
     res.end();
@@ -38,7 +46,7 @@ function processForm(req, res) {
         })
 
         res.end(data);
-        
+
         console.log('posted fields: \n');
         console.log(data);
     });

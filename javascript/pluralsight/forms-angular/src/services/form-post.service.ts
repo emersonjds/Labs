@@ -13,16 +13,6 @@ import 'rxjs/add/operator/bufferCount';
 export class FormService {
   constructor(private http: Http) { }
 
-  sendForm(employee: Employee): Observable<any> {
-    const body = JSON.stringify(employee);
-    const headers = new Headers({ 'Content-Type': 'application/json' });
-    const options = new RequestOptions({ headers: headers });
-
-    return this.http.post('http://localhost:3100/postemployee', body, options)
-      .map(this.extractData)
-      .catch(this.handleError);
-  }
-
   public extractData(res: Response) {
     const body = res.json();
     return body.fields || {};
@@ -31,6 +21,27 @@ export class FormService {
   public handleError(error: any) {
     console.log('post error' + error);
     return Observable.throw(error.statusText);
+  }
+
+  public extractLanguage(res: Response) {
+    const body = res.json();
+    return body.data || {};
+  }
+
+  sendForm(employee: Employee): Observable<any> {
+    const body = JSON.stringify(employee);
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+
+    return this.http.post('http://localhost:3100/get-languages', body, options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  getLanguages():Observable<any> {
+   return this.http.get('http://localhost:3100/postemployee')
+   .map(this.extractLanguage)
+   .catch(this.handleError);
   }
 
 }

@@ -17,7 +17,13 @@ export class FormComponent implements OnInit {
 
   constructor(
     private formService: FormService,
-    private http: Http) { }
+    private http: Http) {
+      this.formService.getLanguages()
+      .subscribe(
+        data => this.languages = data.languages,
+        err => console.log('get error', err)
+      );
+    }
 
   ngOnInit() { }
 
@@ -36,7 +42,6 @@ export class FormComponent implements OnInit {
       this.hasPrimaryLanguageError = false;
     }
   }
-
 
   submitForm(form: NgForm) {
     this.validatePrimaryLanguage(this.model.primaryLanguage);
