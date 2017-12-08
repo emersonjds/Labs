@@ -14,7 +14,8 @@
     color: #fff;
     padding: 1em;
     text-align: center;
-    flex-grow: 1;
+    display: flex;
+    flex: 1;
 }
     /* tamanho do item flexivel */
 
