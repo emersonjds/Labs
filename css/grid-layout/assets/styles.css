@@ -35,6 +35,7 @@ html, body {
 
 .box-3 {
     background-color: red;
+    order: 1;
 }
 
 .box-4 {
@@ -43,6 +44,7 @@ html, body {
 
 .box-5 {
     background-color: blue;
+    order: 3;
 }
 
 .box-6 {
