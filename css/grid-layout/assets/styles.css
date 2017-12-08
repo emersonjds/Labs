@@ -7,9 +7,12 @@ html, body {
     display: inline-flex;
     border: 1px solid black;
     flex-direction: column;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
     width: 20%;
+
+    flex-flow: wrap-reverse column-reverse;
+    /* é possivel criar um shortcut para flex-direction e flex-wrap utilizando o "flex-flox: wrap && colum ", com essa mescla das propriedades */
 }
 
 .box-1, .box-2, .box-3,
