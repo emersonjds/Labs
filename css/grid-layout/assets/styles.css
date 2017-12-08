@@ -1,36 +1,37 @@
-html, body {
-    height: 100%;
-    width: 100%;
-}
 
 .container-flex {
-    display: inline-flex;
+    display: flex;
     border: 1px solid black;
-    flex-direction: column;
+    
     /* flex-direction: row;
     flex-wrap: wrap; */
-    width: 20%;
 
-    flex-flow: wrap-reverse column-reverse;
     /* é possivel criar um shortcut para flex-direction e flex-wrap utilizando o "flex-flox: wrap && colum ", com essa mescla das propriedades */
 }
 
-.box-1, .box-2, .box-3,
-.box-4, .box-5, .box-6, .box-7 {
-    height: 40px;
-    width: 40px;
-    border: 1px solid black;
+.flex-items {
+    font-size: 1.2em;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    flex-grow: 1; 
+    /* tamanho do item flexivel */
     display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.box-1, .box-2, .box-3, .box-4, .box-5, .box-6, .box-7 {
+    flex-grow: 1;
+    
 }
 
 .box-1 {
     background-color: yellow;
+    
 }
 
 .box-2 {
     background-color: green;
+    flex-grow: 3;
 }
 
 .box-3 {
