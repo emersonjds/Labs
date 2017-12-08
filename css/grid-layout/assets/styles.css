@@ -15,7 +15,7 @@
     padding: 1em;
     text-align: center;
     display: flex;
-    flex: 1;
+    flex:1;
 }
     /* tamanho do item flexivel */
 
@@ -25,7 +25,8 @@
 
 .box-1 {
     background-color: yellow;
-    flex-grow: 3;
+    flex: 0 0 50%;
+    /* da 50% de tamanho para o item 1 e remonta os demais com 25% cada; */
 }
 
 .box-2 {
