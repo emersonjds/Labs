@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: 100vh;
+    padding: 1em;
+    font-size: 80%;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+header {
+    background-color: orange;
+}
+
+nav {
+    background-color: purple;
+}
+
+main-container {
+    background-color: green;
+    display: flex;
+    height: 100%;
+}
+
+article {
+    background-color: pink;
+    /* flex: 2 2 12em; */
+    flex: 3;
+}
+
+aside {
+    background-color: yellow;
+}
+
+nav, aside {
+    flex: 1;
+}
+
+footer {
+    background-color: blue;
+}
+
+@media only screen and (min-height: 480px) and (max-height: 533px) {
+    main-container {
+        flex-direction: column;
+    }
+
+    aside {
+        display: none;
+    }
+}
