@@ -7,9 +7,13 @@ html, body {
     display: inline-flex;
     border: 1px solid black;
     flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 20%;
 }
 
-.box-1, .box-2, .box-3 {
+.box-1, .box-2, .box-3,
+.box-4, .box-5, .box-6, .box-7 {
     height: 40px;
     width: 40px;
     border: 1px solid black;
@@ -28,4 +32,20 @@ html, body {
 
 .box-3 {
     background-color: red;
+}
+
+.box-4 {
+    background-color: orange;
+}
+
+.box-5 {
+    background-color: blue;
+}
+
+.box-6 {
+    background-color: lightgray;
+}
+
+.box-7 {
+    background-color: pink;
 }
