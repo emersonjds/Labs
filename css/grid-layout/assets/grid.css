@@ -5,11 +5,13 @@ html, body {
 
 .container {
     display: inline-grid;
+    /* shortcut */
     grid: 6em 6em / 6em 6em 6em;
     border: 2px solid black;
     /* grid-template-columns: 6em 6em 6em 6em;
     grid-template-rows: 6em 6em;*/
      
+    grid-template-columns: 6em repeat(4, 6em);
 } 
 
 .grid-item {
@@ -17,7 +19,8 @@ html, body {
     text-align: center;
     padding: 1em;
     border: 1px solid red;
-    grid-area: 1 / 3 / 2 / 4;
+    /* grid-area: 2 / 3 / 3 / 4; */
+
 }
 
 .grid-item-1 {
@@ -49,6 +52,8 @@ html, body {
     grid-column-end: 8;
     grid-row-start: 1;
     grid-row-end: 2; */
+    grid-area: 2 / 4 / 2 / 4;
+    grid-column: 2 / span 4; 
 }
 .grid-item-5 {
     background-color: lightslategray;
