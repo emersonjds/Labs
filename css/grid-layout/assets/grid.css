@@ -1,6 +1,6 @@
 html, body {
-    padding: 1em;
-    margin: 0;
+    /* padding: 1em;
+    margin: 0; */
 } 
 
 .container {
@@ -20,7 +20,7 @@ html, body {
     padding: 1em;
     border: 1px solid red;
     /* grid-area: 2 / 3 / 3 / 4; */
-
+ 
 }
 
 .grid-item-1 {
@@ -64,9 +64,37 @@ html, body {
 }
 
 .grid-item-6 {
-    background-color: orange ;
+    background-color: orange;
     /* grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4; */
+}
+
+.grid-container {
+    display: grid;
+    height: calc(100vh - 2em);
+    grid: [main-content-start] 1fr
+          [main-content-end] 1em
+          [sidebar-start] 25% 
+          [sidebar-end] /
+          6em 1em 1fr;
+}
+
+.grid-item-content {
+    background-color: #9bc850;
+    grid-row: 3 /4;
+    grid-column: main-content-start / main-content-end;
+}
+
+.grid-item-sidebar {
+    background-color: #9bc850;
+    grid-row: 3/4;
+    grid-column: sidebar-start / sidebar-end;
+}
+
+.grid-item-header {
+    background-color: #a62e5c;
+    grid-row: 1/2;
+    grid-column: main-content-start / main-content-end;
 }
