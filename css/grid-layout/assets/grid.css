@@ -27,10 +27,10 @@ html, body {
 
 .grid-item-2 {
     background-color: green;
-    /* grid-column-start: 3;
+    grid-column-start: 3;
     grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2; */
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 .grid-item-3 {
     background-color: blue;
