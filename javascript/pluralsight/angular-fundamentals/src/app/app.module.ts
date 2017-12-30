@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { EventlistComponent } from './eventlist/eventlist.component';
+import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { EventlistComponent } from './eventlist/eventlist.component';
     AppComponent,
     TodoListComponent,
     EventlistComponent,
+    ThumbnailComponent,
   ],
   imports: [
     BrowserModule

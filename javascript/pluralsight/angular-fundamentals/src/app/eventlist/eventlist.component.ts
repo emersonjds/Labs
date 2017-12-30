@@ -4,10 +4,11 @@ import { Component, OnInit } from '@angular/core';
   selector: 'event-list',
   templateUrl: './eventlist.component.html',
   styleUrls: ['./eventlist.component.css']
+
 })
 export class EventlistComponent implements OnInit {
 
-  event = {
+  event1 = {
     id: 1,
     name: 'Angular Connect',
     date: '12/12/2018',
