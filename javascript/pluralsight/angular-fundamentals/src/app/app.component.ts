@@ -1,4 +1,6 @@
+import { EventlistComponent } from './eventlist/eventlist.component';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
