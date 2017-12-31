@@ -1,27 +1,32 @@
-<div class="well hovwerwell thumbnail">
-  <h2>{{event.name}}</h2>
-  <div>
-    Data : {{ event.date }}
-  </div>
-  <div>
-    Time : {{ event.time }}
+<!-- <div class="well hovwerwell thumbnail"> -->
+<div class="panel panel-primary">
+  <h2 class="panel-heading">{{event.name}}</h2>
+  <div class="panel-body">
+    <div>
+      Data : {{ event.date }}
+    </div>
+    <div>
+      Time : {{ event.time }}
+    </div>
+
+    <div>
+      Price : ${{ event.price }}
+    </div>
+
+    <div>
+      <span>
+        Location : {{ event.location.address }}
+      </span>
+
+      <span>s
+        Location : {{ event.location.city }}
+      </span>
+      <span>
+        Location : {{ event.location.country }}
+      </span>
+    </div>
   </div>
 
-  <div>
-    Price : ${{ event.price }}
-  </div>
-
-  <div>
-    <span>
-      Location : {{ event.location.address }}
-    </span>
-
-    <span>
-      Location : {{ event.location.city }}
-    </span>
-    <span>
-      Location : {{ event.location.country }}
-    </span>
-  </div>
 
 </div>
+<br>
