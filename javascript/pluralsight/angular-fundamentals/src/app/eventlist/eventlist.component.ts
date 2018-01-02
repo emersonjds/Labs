@@ -36,7 +36,7 @@ export class EventlistComponent implements OnInit {
   ];
 
   handleClick(event) {
-    console.log(event + 'AQUI ENTROU NO PAI');
+    console.log(event);
   }
 
   constructor() { }
