@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'event-list',
@@ -32,9 +32,12 @@ export class EventlistComponent implements OnInit {
         city: 'London',
         country: 'England'
       }
-    },
+    }
+  ];
 
-  ]
+  handleClick(event) {
+    console.log(event + 'AQUI ENTROU NO PAI');
+  }
 
   constructor() { }
 
