@@ -10,9 +10,7 @@ export class ThumbnailComponent implements OnInit {
 
   @Input() event: any;
   @Output() clicked: EventEmitter = new EventEmitter();
-  public person = {
-    nome: 'Emerson'
-  };
+
 
   constructor() { }
 
@@ -20,7 +18,7 @@ export class ThumbnailComponent implements OnInit {
   }
 
   private handleClick() {
-    this.clicked.emit(console.log(this.person));
+    this.clicked.emit(this.event.name);
   }
 
 }

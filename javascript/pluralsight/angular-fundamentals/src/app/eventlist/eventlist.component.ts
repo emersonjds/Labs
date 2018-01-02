@@ -35,8 +35,8 @@ export class EventlistComponent implements OnInit {
     }
   ];
 
-  handleClick(event) {
-    console.log(event);
+  handleClick(data) {
+    console.log('received', data);
   }
 
   constructor() { }
