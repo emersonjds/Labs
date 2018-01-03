@@ -21,4 +21,8 @@ export class ThumbnailComponent implements OnInit {
     this.clicked.emit(this.event.name);
   }
 
+  logFoo() {
+    console.log('foo');
+  }
+
 }
