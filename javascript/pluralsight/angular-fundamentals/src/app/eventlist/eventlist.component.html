@@ -3,7 +3,7 @@
 
   <div class="row" *ngFor="let evento of events">
     <div class="col-xs-4 eventos" >
-      <thumbnail [event]="evento" #thumbnail (clicked)="handleClick($event)"></thumbnail>
+      <thumbnail [event]="evento" #thumbnail (nextValue)="recebeuValor($event)"></thumbnail>
     </div>
   </div>
 </div>

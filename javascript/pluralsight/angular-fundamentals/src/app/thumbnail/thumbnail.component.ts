@@ -9,6 +9,7 @@ export class ThumbnailComponent implements OnInit {
 
   @Input() event: any;
   @Output() clicked = new EventEmitter<any>();
+  @Output() nextValue = new EventEmitter<any>();
 
   constructor() { }
 
@@ -17,6 +18,10 @@ export class ThumbnailComponent implements OnInit {
 
   private handleClick() {
     this.clicked.emit({nome: 'Emerson', age: 28});
+  }
+
+  private clicou() {
+    this.nextValue.emit('VALOR EMITIDO DO FILHO');
   }
 
 }
