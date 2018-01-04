@@ -1,13 +1,12 @@
+<navbar></navbar>
+
 <div>
   <h1>Upcoming Angular 2 Events </h1>
-
   <div class="row" *ngFor="let evento of events">
-    <div class="col-xs-4 eventos" >
+    <div class="col-xs-4 eventos">
       <thumbnail [event]="evento" #thumbnail (clicked)="handleClick($event)"></thumbnail>
       <button class="btn btn-primary" (click)="thumbnail.mostrarMensagem()">Mostrar Mensagem</button>
       <span> Nome : {{ thumbnail.nome }}</span>
     </div>
   </div>
-
-
 </div>
