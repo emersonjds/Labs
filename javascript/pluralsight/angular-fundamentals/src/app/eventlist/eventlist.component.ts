@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'event-list',
@@ -35,8 +35,8 @@ export class EventlistComponent implements OnInit {
     }
   ];
 
-  handleClick(data) {
-    console.log('received', data);
+  handleClick($event) {
+    console.log('received', $event.name);
   }
 
   constructor() { }

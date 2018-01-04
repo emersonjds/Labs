@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { EventEmitter } from 'events';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'thumbnail',
@@ -9,8 +8,7 @@ import { EventEmitter } from 'events';
 export class ThumbnailComponent implements OnInit {
 
   @Input() event: any;
-  @Output() clicked: EventEmitter = new EventEmitter();
-
+  @Output() clicked = new EventEmitter<any>();
 
   constructor() { }
 
@@ -18,11 +16,7 @@ export class ThumbnailComponent implements OnInit {
   }
 
   private handleClick() {
-    this.clicked.emit(this.event.name);
-  }
-
-  logFoo() {
-    console.log('foo');
+    this.clicked.emit({nome: 'Emerson', age: 28});
   }
 
 }
