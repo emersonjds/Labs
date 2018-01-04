@@ -39,10 +39,6 @@ export class EventlistComponent implements OnInit {
     console.log('received', data);
   }
 
-  recebeuValor(event) {
-    console.log('ACESSO DE DADOS PELO PAI ' + event);
-  }
-
   constructor() { }
 
   ngOnInit() { }

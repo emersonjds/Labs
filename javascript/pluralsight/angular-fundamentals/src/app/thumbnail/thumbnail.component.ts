@@ -9,7 +9,6 @@ export class ThumbnailComponent implements OnInit {
 
   @Input() event: any;
   @Output() clicked = new EventEmitter<any>();
-  @Output() nextValue = new EventEmitter<any>();
 
   constructor() { }
 
@@ -17,11 +16,14 @@ export class ThumbnailComponent implements OnInit {
   }
 
   private handleClick() {
-    this.clicked.emit({nome: 'Emerson', age: 28});
+    this.clicked.emit({ nome: 'Emerson', age: 28 });
   }
 
-  private clicou() {
-    this.nextValue.emit('VALOR EMITIDO DO FILHO');
+  public mostrarMensagem() {
+    console.log('CONSEGUIU MOSTRAR A MENSAGEM');
   }
+
+  // tslint:disable-next-line:member-ordering
+  nome = 'Emerson';
 
 }
