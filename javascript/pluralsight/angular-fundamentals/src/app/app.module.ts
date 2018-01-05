@@ -6,6 +6,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { EventlistComponent } from './eventlist/eventlist.component';
 import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     EventlistComponent,
     ThumbnailComponent,
     NavbarComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule
