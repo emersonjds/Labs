@@ -13,11 +13,20 @@
       Price : ${{ event?.price }}
     </div>
 
-    <div *ngIf="event.location">
+    <!-- expressao com atributo nativo hidden -->
+    <!-- <div [hidden]="event?.location">
+      <span >Location : {{ event?.location?.address }}</span>
+      <span>Location : {{ event?.location?.city }}</span>
+      <span>Location : {{ event?.location?.country }}</span>
+    </div> -->
+
+    <!-- expressao com diretiva estrutural do Angular -->
+    <div *ngIf="event?.location">
       <span >Location : {{ event?.location?.address }}</span>
       <span>Location : {{ event?.location?.city }}</span>
       <span>Location : {{ event?.location?.country }}</span>
     </div>
+
   </div>
 </div>
 
