@@ -9,6 +9,12 @@
       Time : {{ event?.time }}
     </div>
 
+    <div [ngSwitch]="event?.time">
+      <span *ngSwitchCase=" '8:00 A.M' "> Early Start </span>
+      <span *ngSwitchCase=" '10:00 A.M' "> Late Start </span>
+      <span *ngSwitchDefault> Normal Start </span>
+    </div>
+
     <div>
       Price : ${{ event?.price }}
     </div>
@@ -22,7 +28,7 @@
 
     <!-- expressao com diretiva estrutural do Angular -->
     <div *ngIf="event?.location">
-      <span >Location : {{ event?.location?.address }}</span>
+      <span>Location : {{ event?.location?.address }}</span>
       <span>Location : {{ event?.location?.city }}</span>
       <span>Location : {{ event?.location?.country }}</span>
     </div>
