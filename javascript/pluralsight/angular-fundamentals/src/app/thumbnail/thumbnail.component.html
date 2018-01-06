@@ -3,27 +3,20 @@
   <h2 class="panel-heading">{{event.name}}</h2>
   <div class="panel-body">
     <div>
-      Data : {{ event.date }}
+      Data : {{ event?.date }}
     </div>
     <div>
-      Time : {{ event.time }}
-    </div>
-
-    <div>
-      Price : ${{ event.price }}
+      Time : {{ event?.time }}
     </div>
 
     <div>
-      <span>
-        Location : {{ event.location.address }}
-      </span>
+      Price : ${{ event?.price }}
+    </div>
 
-      <span>s
-        Location : {{ event.location.city }}
-      </span>
-      <span>
-        Location : {{ event.location.country }}
-      </span>
+    <div>
+      <span>Location : {{ event?.location?.address }}</span>
+      <span>Location : {{ event?.location?.city }}</span>
+      <span>Location : {{ event?.location?.country }}</span>
     </div>
   </div>
 </div>
