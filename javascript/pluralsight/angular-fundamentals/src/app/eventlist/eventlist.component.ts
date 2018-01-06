@@ -32,6 +32,30 @@ export class EventlistComponent implements OnInit {
         city: 'London',
         country: 'England'
       }
+    },
+    {
+      id: 3,
+      name: 'Angular Connectcut',
+      date: '16/12/2018',
+      time: '13:00 pm',
+      price: 599.99,
+      location: {
+        address: '1055 DT',
+        city: 'London',
+        country: 'England'
+      }
+    },
+    {
+      id: 4,
+      name: 'Angular Connectcut',
+      date: '12/12/2018',
+      time: '7:00 am',
+      price: 450.99,
+      location: {
+        address: '1032 DT',
+        city: 'Budapest',
+        country: 'Russia'
+      }
     }
   ];
 
