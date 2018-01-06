@@ -14,12 +14,12 @@ export class EventlistComponent implements OnInit {
       name: 'Angular Connect',
       date: '12/12/2018',
       time: '10:00 am',
-      price: 599.99,
-      location: {
-        address: '1055 DT',
-        city: 'London',
-        country: 'England'
-      }
+      price: 599.99
+      // location: {
+      //   address: '1055 DT',
+      //   city: 'London',
+      //   country: 'England'
+      // }
     },
     {
       id: 2,

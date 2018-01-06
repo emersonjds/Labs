@@ -13,8 +13,8 @@
       Price : ${{ event?.price }}
     </div>
 
-    <div>
-      <span>Location : {{ event?.location?.address }}</span>
+    <div *ngIf="event.location">
+      <span >Location : {{ event?.location?.address }}</span>
       <span>Location : {{ event?.location?.city }}</span>
       <span>Location : {{ event?.location?.country }}</span>
     </div>
