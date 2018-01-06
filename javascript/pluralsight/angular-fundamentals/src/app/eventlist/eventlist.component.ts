@@ -25,7 +25,7 @@ export class EventlistComponent implements OnInit {
       id: 2,
       name: 'Angular Connect',
       date: '12/12/2018',
-      time: '10:00 am',
+      time: '8:00 am',
       price: 599.99,
       location: {
         address: '1055 DT',
