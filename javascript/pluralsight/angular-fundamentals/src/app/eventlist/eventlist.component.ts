@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { EventService } from './shared/event.service';
 
 @Component({
   selector: 'event-list',
@@ -8,62 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventlistComponent implements OnInit {
 
-  events = [
-    {
-      id: 1,
-      name: 'Angular Connect',
-      date: '12/12/2018',
-      time: '10:00 am',
-      price: 599.99,
-      location: {
-        address: '1055 DT',
-        city: 'London',
-        country: 'England'
-      }
-    },
-    {
-      id: 2,
-      name: 'Angular Connect',
-      date: '12/12/2018',
-      time: '8:00 am',
-      price: 599.99,
-      location: {
-        address: '1055 DT',
-        city: 'London',
-        country: 'England'
-      }
-    },
-    {
-      id: 3,
-      name: 'Angular Connectcut',
-      date: '16/12/2018',
-      time: '13:00 pm',
-      price: 599.99,
-      location: {
-        address: '1055 DT',
-        city: 'London',
-        country: 'England'
-      }
-    },
-    {
-      id: 4,
-      name: 'Angular Connectcut',
-      date: '12/12/2018',
-      time: '7:00 am',
-      price: 450.99,
-      location: {
-        address: '1032 DT',
-        city: 'Budapest',
-        country: 'Russia'
-      }
-    }
-  ];
+  private events: any[];
+
+  constructor(private eventService: EventService) { }
+
+  public ngOnInit() {
+    this.events = this.eventService.getEvent();
+  }
 
   handleClick(data) {
     console.log('received', data);
   }
 
-  constructor() { }
-
-  ngOnInit() { }
 }

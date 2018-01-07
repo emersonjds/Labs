@@ -1,3 +1,4 @@
+import { EventService } from './eventlist/shared/event.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -21,7 +22,7 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
