@@ -10,7 +10,7 @@
     </div>
 
     <div [ngSwitch]="event?.time">
-      <span [class.green]="event?.time === '8:00 am'" *ngSwitchCase=" '8:00 am' "> Early Start </span>
+      <span [class.green]="isStart()" *ngSwitchCase=" '8:00 am' "> Early Start </span>
       <span
         [ngClass]=" {orange: event.time === '10:00 am', bold: event.time === '10:00 am' } "
         *ngSwitchCase=" '10:00 am' ">
