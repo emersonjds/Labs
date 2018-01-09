@@ -1,3 +1,4 @@
+import { HEROES } from './../mock-heroes';
 import { Hero } from './../hero';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,14 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-  hero: Hero = {
-    id: 1,
-    name: 'Windostorm'
-  };
+  heroes = HEROES;
+  selectHero: Hero;
+
+  // onSelectedHero(hero: Hero) {
+  //   this.selectHero = hero;
+  // }
+
+  // hero: Hero = {
+  //   id: 1,
+  //   name: 'Windostorm'
+  // };
 
   constructor() { }
 
   ngOnInit() {
+    // tslint:disable-next-line:no-unused-expression
   }
 
 }
