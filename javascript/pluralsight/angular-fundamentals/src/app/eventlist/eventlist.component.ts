@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+import { EventService } from './shared/event.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'event-list',
@@ -8,38 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventlistComponent implements OnInit {
 
-  events = [
-    {
-      id: 1,
-      name: 'Angular Connect',
-      date: '12/12/2018',
-      time: '10:00 am',
-      price: 599.99,
-      location: {
-        address: '1055 DT',
-        city: 'London',
-        country: 'England'
-      }
-    },
-    {
-      id: 2,
-      name: 'Angular Connect',
-      date: '12/12/2018',
-      time: '10:00 am',
-      price: 599.99,
-      location: {
-        address: '1055 DT',
-        city: 'London',
-        country: 'England'
-      }
-    }
-  ];
+  private events: any[];
+
+  constructor(private eventService: EventService, private toastr: ToastrService) { }
+
+  public ngOnInit() {
+    this.events = this.eventService.getEvent();
+
+    this.showSuccess();
+  }
+
+  showSuccess() {
+    this.toastr.success('Hello World', 'Toaster Fun');
+  }
 
   handleClick(data) {
     console.log('received', data);
   }
 
-  constructor() { }
-
-  ngOnInit() { }
 }

@@ -3,28 +3,40 @@
   <h2 class="panel-heading">{{event.name}}</h2>
   <div class="panel-body">
     <div>
-      Data : {{ event.date }}
+      Data : {{ event?.date }}
     </div>
     <div>
-      Time : {{ event.time }}
+      Time : {{ event?.time }}
+    </div>
+
+    <div [ngSwitch]="event?.time">
+      <span [class.green]="isStart()" *ngSwitchCase=" '8:00 am' "> Early Start </span>
+      <span
+        [ngClass]=" {orange: event.time === '10:00 am', bold: event.time === '10:00 am' } "
+        *ngSwitchCase=" '10:00 am' ">
+        Late Start
+      </span>
+      <span *ngSwitchDefault> Normal Start </span>
     </div>
 
     <div>
-      Price : ${{ event.price }}
+      Price : ${{ event?.price }}
     </div>
 
-    <div>
-      <span>
-        Location : {{ event.location.address }}
-      </span>
+    <!-- expressao com atributo nativo hidden -->
+    <!-- <div [hidden]="event?.location">
+      <span >Location : {{ event?.location?.address }}</span>
+      <span>Location : {{ event?.location?.city }}</span>
+      <span>Location : {{ event?.location?.country }}</span>
+    </div> -->
 
-      <span>s
-        Location : {{ event.location.city }}
-      </span>
-      <span>
-        Location : {{ event.location.country }}
-      </span>
+    <!-- expressao com diretiva estrutural do Angular -->
+    <div *ngIf="event?.location">
+      <span>Location : {{ event?.location?.address }}</span>
+      <span>Location : {{ event?.location?.city }}</span>
+      <span>Location : {{ event?.location?.country }}</span>
     </div>
+
   </div>
 </div>
 

@@ -26,4 +26,8 @@ export class ThumbnailComponent implements OnInit {
   // tslint:disable-next-line:member-ordering
   nome = 'Emerson';
 
+  isStart() {
+    const isEarlyStart = this.event && this.event.time === '8:00 am';
+    return { green: isEarlyStart, bold: isEarlyStart };
+  }
 }
