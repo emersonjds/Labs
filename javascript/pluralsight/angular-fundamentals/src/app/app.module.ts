@@ -1,3 +1,5 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrService } from './eventlist/shared/toastr.service';
 import { EventService } from './eventlist/shared/event.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,6 +10,8 @@ import { EventlistComponent } from './eventlist/eventlist.component';
 import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
+
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -20,9 +24,11 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [EventService],
+  providers: [EventService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
