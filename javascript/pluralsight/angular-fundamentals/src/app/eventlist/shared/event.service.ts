@@ -57,6 +57,30 @@ const EVENTS = [
       city: 'Budapest',
       country: 'Russia'
     }
+  },
+  {
+    id: 5,
+    name: 'Angular Connectcut',
+    date: '17/12/2018',
+    time: '7:00 pm',
+    price: 466.00,
+    location: {
+      address: '1032 DT',
+      city: 'Budapest',
+      country: 'Russia'
+    }
+  },
+  {
+    id: 6,
+    name: 'Angular Connectcut',
+    date: '22/12/2018',
+    time: '14:00 pm',
+    price: 450.99,
+    location: {
+      address: '1032 DT',
+      city: 'Budapest',
+      country: 'Australia'
+    }
   }
 ];
 
