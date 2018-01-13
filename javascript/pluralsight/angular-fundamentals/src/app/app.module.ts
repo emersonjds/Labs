@@ -1,3 +1,4 @@
+import { EventDetails } from './eventlist/event-details/event-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrService } from './eventlist/shared/toastr.service';
 import { EventService } from './eventlist/shared/event.service';
@@ -22,13 +23,14 @@ import { ToastrModule } from 'ngx-toastr';
     ThumbnailComponent,
     NavbarComponent,
     ProfileComponent,
+    EventDetails
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [EventService, ],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
