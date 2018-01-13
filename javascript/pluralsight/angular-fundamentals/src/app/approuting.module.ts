@@ -16,11 +16,10 @@ const routes: Routes = [
   }
 ];
 
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
   ],
-  exports: [ApproutingModule]
+  exports: [RouterModule]
 })
 export class ApproutingModule { }
