@@ -4,8 +4,12 @@ import { Injectable } from '@angular/core';
 export class EventService {
 
   constructor() { }
-  getEvent() {
+  getEvents() {
     return EVENTS;
+  }
+
+  getEvent(id: number) {
+    return EVENTS.find(event => event.id === id);
   }
 }
 
