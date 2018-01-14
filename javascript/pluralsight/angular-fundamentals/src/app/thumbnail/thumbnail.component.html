@@ -1,7 +1,8 @@
 <!-- <div class="well hovwerwell thumbnail"> -->
 <div class="panel panel-primary">
   <h2 class="panel-heading">{{event.name}}</h2>
-  <div class="panel-body">
+  <!-- url query 'string route  + id' -->
+  <div class="panel-body" [routerLink]="['/events', event.id]">
     <div>
       Data : {{ event?.date }}
     </div>
