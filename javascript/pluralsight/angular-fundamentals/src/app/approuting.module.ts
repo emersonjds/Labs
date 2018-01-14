@@ -6,13 +6,16 @@ import { EventDetails } from './eventlist/event-details/event-details.component'
 
 const routes: Routes = [
   {
-    path: '', component: EventlistComponent, pathMatch: 'full'
+    path: 'events', component: EventlistComponent
   },
   {
-    path: 'event/:id', component: EventDetails
+    path: 'events/:id', component: EventDetails
   },
   {
-    path: '**', component: EventlistComponent
+    path: '', redirectTo: '/events', pathMatch: 'full'
+  },
+  {
+    path: '**', redirectTo: '/events'
   }
 ];
 
