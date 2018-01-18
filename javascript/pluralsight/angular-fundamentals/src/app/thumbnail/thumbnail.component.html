@@ -1,53 +1,40 @@
 <!-- <div class="well hovwerwell thumbnail"> -->
-<div class="panel panel-primary">
-  <h2 class="panel-heading">{{event.name}}</h2>
-  <!-- url query 'string route  + id' -->
-  <div class="panel-body" [routerLink]="['/events', event.id]">
-    <div>
-      Data : {{ event?.date }}
-    </div>
-    <div>
-      Time : {{ event?.time }}
-    </div>
 
-    <div [ngSwitch]="event?.time">
-      <span [class.green]="isStart()" *ngSwitchCase=" '8:00 am' "> Early Start </span>
-      <span
-        [ngClass]=" {orange: event.time === '10:00 am', bold: event.time === '10:00 am' } "
-        *ngSwitchCase=" '10:00 am' ">
-        Late Start
-      </span>
-      <span *ngSwitchDefault> Normal Start </span>
+<div class="card" [routerLink]="['/events', event.id]">
+  <div class="card-block">
+    <h4 class="card-title">{{event.name}}</h4>
+    <div class="event-data">
+      <p>Data :
+        <span>{{ event?.date }}</span>
+      </p>
+      <p>Time :
+        <span>{{ event?.time }}</span>
+      </p>
+      <div [ngSwitch]="event?.time">
+        <span [class.green]="isStart()" *ngSwitchCase=" '8:00 am' "> Early Start </span>
+        <span [ngClass]=" {orange: event.time === '10:00 am', bold: event.time === '10:00 am' } " *ngSwitchCase=" '10:00 am' ">
+          Late Start
+        </span>
+        <span *ngSwitchDefault> Normal Start </span>
+      </div>
+      <p>
+        Price : $
+        <span>{{ event?.price }}</span>
+      </p>
+      <hr>
+      <div *ngIf="event?.location">
+        <p>Location</p>
+        <p>Address:
+          <span>{{ event?.location?.address }}</span>
+        </p>
+        <p>City:
+          <span>{{ event?.location?.city }}</span>
+        </p>
+        <p>Country:
+          <span>{{ event?.location?.country }}</span>
+        </p>
+      </div>
     </div>
-
-    <div>
-      Price : ${{ event?.price }}
-    </div>
-
-    <!-- expressao com atributo nativo hidden -->
-    <!-- <div [hidden]="event?.location">
-      <span >Location : {{ event?.location?.address }}</span>
-      <span>Location : {{ event?.location?.city }}</span>
-      <span>Location : {{ event?.location?.country }}</span>
-    </div> -->
-
-    <!-- expressao com diretiva estrutural do Angular -->
-    <div *ngIf="event?.location">
-      <span>Location : {{ event?.location?.address }}</span>
-      <span>Location : {{ event?.location?.city }}</span>
-      <span>Location : {{ event?.location?.country }}</span>
-    </div>
-
+    <button class="btn btn-primary" (click)="handleClick()">Click</button>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      Panel content
-    </div>
-    <div class="panel-footer">Panel footer</div>
-  </div>
-
-
 </div>
-
-<button class="btn btn-primary" (click)="handleClick()">Click</button>
-<br>
