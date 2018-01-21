@@ -2,18 +2,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script>
+        function jsFunction() {
+            document.getElementById("content").innerHTML = "That's how we roll";
+        }
+
+        function initialText() {
+            document.getElementById("content").innerHTML = "This is the current text";
+        }
+    </script>
 </head>
 
 <body>
-    <p id="content"></p>
+    <p id="content"> This is the current text </p>
 
-    <script>
-        document.getElementById("content").innerHTML = "That's how we roll";
-    </script>
+    <button type="button" onclick="jsFunction()"> Click Here</button>
+
+    <button type="button" onclick="initialText()"> Return text</button>
 </body>
 
 </html>
