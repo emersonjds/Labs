@@ -1,8 +1,16 @@
 
 function jsFunction() {
-    document.getElementById("content").innerHTML = "That's how we roll";
+    var element = document.getElementById("content");
+    element.style.color = "red";
+    element.style.fontSize = "14px";
+    element.innerHTML = "That's how we roll";
 }
 
 function initialText() {
-    document.getElementById("content").innerHTML = "This is the current text";
+    var element = document.getElementById("content");
+    element.style.fontSize = "20px";
+    element.style.color = "blue";
+    setTimeout(function () {
+        element.innerHTML = "This is the current text";
+    }, 1000);
 }
