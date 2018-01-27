@@ -32,3 +32,9 @@ function cinco() {
 }
 y + cinco();
 // valor retornado 9 
+
+function somaNumeros(x, y) {
+    return x + y;
+}
+somaNumeros(3, 4);
+// o retorno sera 7 
