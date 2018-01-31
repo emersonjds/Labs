@@ -11,3 +11,18 @@ var objeto = {
 }
 
 objeto.propriedade2 // retorna 10 
+
+var pessoa = {
+    nome: 'Emerson',
+    idade: 28,
+    altura: 1.66
+}
+
+var carro = {
+    modelo: 'Prisma',
+    motor: '2.0'
+} 
+
+var myvar = function() {
+    return 'invocação interna';
+}
