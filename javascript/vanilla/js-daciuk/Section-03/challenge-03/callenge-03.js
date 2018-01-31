@@ -182,8 +182,6 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 
-
-
 // Agora, apresente-se ;)
 pessoa.apresentacao = function() {
     var letra = 'a';
