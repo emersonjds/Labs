@@ -14,15 +14,15 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
 var pessoa = {
-    nome: 'Emerson',
-    sobrenome: 'Junior',
+    nome: 'Emerson Junior',
+    sobrenome: 'Daniel Silva',
     sexo: 'masculino',
     idade: 28,
     altura: 1.66,
     peso: 72,
     andando: false,
     caminhouQuantosMetros: 0
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
@@ -31,7 +31,7 @@ for chamado.
 */
 pessoa.fazerAniversario = function () {
     return pessoa.idade++;
-}
+};
 
     /*
     Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -49,14 +49,14 @@ pessoa.andar = function (mts) {
         pessoa.andando = true;
     }
     return pessoa.caminhouQuantosMetros + mts;
-}
+};
         /*
         Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
         da propriedade `andando` para o valor booleano que representa "falso".
         */
 pessoa.parar = function() {
     pessoa.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -64,7 +64,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 pessoa.nomeCompleto = function() {
     return 'Ola meu nome é ' + pessoa.nome + ' ' + pessoa.sobrenome;
-}
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -72,7 +72,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 pessoa.mostrarIdade = function() {
     return 'Olá eu tenho ' + pessoa.idade +  'anos !';
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -80,7 +80,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
 pessoa.mostrarPeso = function() {
     return 'Eu peso ' + pessoa.peso + 'Kg ';
-}
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
@@ -89,32 +89,32 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 
 pessoa.mostrarAltura = function() {
     return 'Minha altura é ' + pessoa.altura + 'm';
-}
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
 Qual o nome completo da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.nomeCompleto() // 'Emerson Junior'
+pessoa.nomeCompleto(); // 'Emerson Junior'
 
 /*
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarIdade() // '28'
+pessoa.mostrarIdade(); // '28'
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarPeso() // 72 
+pessoa.mostrarPeso();// 72 
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.mostrarAltura() // 1.66 
+pessoa.mostrarAltura(); // 1.66 
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -143,26 +143,26 @@ pessoa.andar(50);
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.andando() // true;
+pessoa.andando(); // true;
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
 if(pessoa.andando()) {
     return pessoa.parar();
-}
+};
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.andando() // false;
+pessoa.andando(); // false;
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-pessoa.caminhouQuantosMetros() // 90mts
+pessoa.caminhouQuantosMetros(); // 90mts
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -201,4 +201,4 @@ pessoa.apresentacao = function() {
          return 'Olá , eu sou o' + ' ' + pessoa.nomeCompleto() + ', tenho ' + pessoa.mostrarIdade() + 
         'anos , meu peso é ' +pessoa.mostrarPeso() + ' e só hoje, eu ja caminhei ' + pessoa.caminhouQuantosMetros() + ' metros!';
     }
-}
+};
