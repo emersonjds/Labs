@@ -30,7 +30,7 @@ alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
 pessoa.fazerAniversario = function () {
-    return pessoa.idade++;
+    pessoa.idade++;
 };
 
     /*
@@ -45,15 +45,13 @@ pessoa.fazerAniversario = function () {
     */
 
 pessoa.andar = function (mts) {
-    if (mts !== undefined) {
-        pessoa.andando = true;
-    }
-    return pessoa.caminhouQuantosMetros + mts;
+    pessoa.caminhouQuantosMetros += mts;
+    pessoa.andando = true;
 };
-        /*
-        Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
-        da propriedade `andando` para o valor booleano que representa "falso".
-        */
+    /*
+    Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
+    da propriedade `andando` para o valor booleano que representa "falso".
+    */
 pessoa.parar = function() {
     pessoa.andando = false;
 };
