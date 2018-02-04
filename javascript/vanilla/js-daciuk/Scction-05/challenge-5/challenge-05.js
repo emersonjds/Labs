@@ -23,18 +23,24 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+
+var numbers = [1,2,3,4,5];
+function getData(array, arg) {
+    return array[arg];
+}
+
+getData(numbers, 2); // return 3
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var valores = ['Emerson', 28, 1.66, true, undefined];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+// ? 
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -50,7 +56,35 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+
+function book(bookName) {
+    var books = {
+        JSNinja: {
+            quantidadePaginas: 200,
+            autor: 'Daciuk',
+            editora: 'JS Supreme' 
+        },
+        Warcraft: {
+            quantidadePaginas: 500,
+            autor: 'Blizzard',
+            editora: 'Blizzard' 
+        },
+        Dots: {
+            quantidadePaginas: 100,
+            autor: 'Blizzard',
+            editora: 'Blizzard' 
+        }
+    };
+
+    if(bookName == books.JSNinja) {
+        return books.JSNinja;
+    } else if ( bookName == books.Warcraft) {
+        return books.Warcraft;
+    } else if (bookName == books.Dots) {
+        return books.Dots;
+    } 
+    return books;
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
