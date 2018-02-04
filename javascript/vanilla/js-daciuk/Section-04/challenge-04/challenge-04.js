@@ -13,10 +13,17 @@ var isTruthy = function (value) {
         value === false ||
         value === '') {
         return false;
-    } else {
-        return true;
-    }
+    } 
+    return true;
 };
+
+var isTruthy = function(param) {
+    return param ? true : false;
+};
+
+var isTruthy = function(param) {
+    return !!param; //validação exata do tipo de retorno 
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0);
@@ -34,7 +41,8 @@ isTruthy('nome');
 isTruthy(1);
 isTruthy({});
 isTruthy([]);
-
+isTruthy(function() {});
+isTruthy( 20 * 30);
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
 seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
@@ -117,19 +125,20 @@ carro.obterMarcaModelo = function () {
     citado acima, no lugar de "pessoas".
     */
 carro.adicionaPessoas = function(numeroPessoas) {
-    if(carro.quantidadePessoas === 5) {
-        return 'O carro já está lotado!';
-    }
 
-    if(carro.quantidadePessoas <= 5) {
-        
-
-        carro.quantidadePessoas += numeroPessoas;
-
+    if(numeroPessoas <= 5) {
+        carro.quantidadePessoas += numeroPessoas
         return 'Já temos ' + carro.quantidadePessoas + ' ' + 'pessoas no carro!';
     }
 
-    
+    if(carro.quantidadePessoas() <= 5 && numeroPessoas <= ) {
+
+    }
+
+    if(carro.quantidadePessoas === 5) {   
+        return 'O carro já está lotado!';
+    }
+
 }
 
 /*
