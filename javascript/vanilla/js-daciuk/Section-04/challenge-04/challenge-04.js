@@ -13,15 +13,15 @@ var isTruthy = function (value) {
         value === false ||
         value === '') {
         return false;
-    } 
+    }
     return true;
 };
 
-var isTruthy = function(param) {
+var isTruthy = function (param) {
     return param ? true : false;
 };
 
-var isTruthy = function(param) {
+var isTruthy = function (param) {
     return !!param; //validação exata do tipo de retorno 
 }
 
@@ -41,8 +41,8 @@ isTruthy('nome');
 isTruthy(1);
 isTruthy({});
 isTruthy([]);
-isTruthy(function() {});
-isTruthy( 20 * 30);
+isTruthy(function () { });
+isTruthy(20 * 30);
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
 seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
@@ -71,7 +71,7 @@ Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
 carro.mudarCor = function (cor) {
-    cor = cor;
+    carro.cor = cor;
 };
 
 /*
@@ -108,37 +108,34 @@ carro.obterMarcaModelo = function () {
     return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 }
 
-    /*
-    Crie um método que irá adicionar pessoas no carro. Esse método terá as
-    seguintes características:
-    - Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
-    número não precisa encher o carro, você poderá acrescentar as pessoas aos
-    poucos.
-    - O método deve retornar a frase: "Já temos [X] pessoas no carro!"
-    - Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
-    deve retornar a frase: "O carro já está lotado!"
-    - Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
-    parâmetro for ultrapassar o limite de assentos do carro, então você deve
-    mostrar quantos assentos ainda podem ser ocupados, com a frase:
-    "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
-    - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
-    citado acima, no lugar de "pessoas".
-    */
-carro.adicionaPessoas = function(numeroPessoas) {
-
-    if(numeroPessoas <= 5) {
-        carro.quantidadePessoas += numeroPessoas
-        return 'Já temos ' + carro.quantidadePessoas + ' ' + 'pessoas no carro!';
+/*
+Crie um método que irá adicionar pessoas no carro. Esse método terá as
+seguintes características:
+- Ele deverá receber por parâmetro o número de pessoas entrarão no carro. Esse
+número não precisa encher o carro, você poderá acrescentar as pessoas aos
+poucos.
+- O método deve retornar a frase: "Já temos [X] pessoas no carro!"
+- Se o carro já estiver cheio, com todos os assentos já preenchidos, o método
+deve retornar a frase: "O carro já está lotado!"
+- Se ainda houverem lugares no carro, mas a quantidade de pessoas passadas por
+parâmetro for ultrapassar o limite de assentos do carro, então você deve
+mostrar quantos assentos ainda podem ser ocupados, com a frase:
+"Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
+- Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
+citado acima, no lugar de "pessoas".
+*/
+carro.adicionaPessoas = function (numeroPessoas) {
+    var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+    if (carro.quantidadePessoas() === carro.assentos && totalPessoas >= carro.assentos) {
+        return 'O carro ja esta lotado!';
     }
-
-    if(carro.quantidadePessoas() <= 5 && numeroPessoas <= ) {
-
+    if(totalPesosas > carro.assentos) {
+        var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas();
+        var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas';
+        return 'Só cabem mais ' + quantasPessoasCabem + ' ' + pluralOuSingular;
     }
-
-    if(carro.quantidadePessoas === 5) {   
-        return 'O carro já está lotado!';
-    }
-
+    carro.quantidadePessoas += numeroPessoas;
+    return 'Já temos ' + carro.quantidadePessoas + ' ' + 'pessoas no carro!';
 }
 
 /*
@@ -164,8 +161,7 @@ carro.mudarCor('verde musgo');
 carro.obterCor(); // verde musgo
 
 // Qual a marca e modelo do carro?
-carro.obterMarca();
-carro.obterModelo();
+carro.obterMarcaModelo();
 
 // Adicione 2 pessoas no carro.
 carro.adicionaPessoas(2);
@@ -174,13 +170,13 @@ carro.adicionaPessoas(2);
 carro.adicionaPessoas(4);
 
 // Faça o carro encher.
-carro.adicionaPessoas(5);
+carro.adicionaPessoas(1);
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionaPessoas(-4);
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionaPessoas(10);
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas;
