@@ -76,11 +76,11 @@ function book(bookName) {
         }
     };
 
-    if(bookName == books.JSNinja) {
+    if(bookName === books.JSNinja) {
         return books.JSNinja;
-    } else if ( bookName == books.Warcraft) {
+    } else if ( bookName === books.Warcraft) {
         return books.Warcraft;
-    } else if (bookName == books.Dots) {
+    } else if (bookName === books.Dots) {
         return books.Dots;
     } 
     return books;
