@@ -76,13 +76,18 @@ function book(bookName) {
         }
     };
 
-    if(bookName === books.JSNinja) {
-        return books.JSNinja;
-    } else if ( bookName === books.Warcraft) {
-        return books.Warcraft;
-    } else if (bookName === books.Dots) {
-        return books.Dots;
-    } 
+    // if(bookName === books.JSNinja) {
+    //     return books.JSNinja;
+    // } else if ( bookName === books.Warcraft) {
+    //     return books.Warcraft;
+    // } else if (bookName === books.Dots) {
+    //     return books.Dots;
+    // } 
+    for( var i in books) {
+        if(bookName === i) {
+            return i;
+        }
+    }
     return books;
 }
 
