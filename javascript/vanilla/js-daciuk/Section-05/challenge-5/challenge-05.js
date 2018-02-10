@@ -102,14 +102,15 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-"O livro " + Object.keys(book())[0] + 'tem' + + 
+"O livro " + Object.keys(book())[0] + 'tem ' + Object.keys(book())[0].quantidadePaginas + 'páginas!' 
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+
+" O autor do livro " + Object.keys(book())[1] + 'é ' + Object.keys(book())[1].autor + '.'  
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
