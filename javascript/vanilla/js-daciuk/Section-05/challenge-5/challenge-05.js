@@ -2,13 +2,13 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var arrayData = [2, true, undefined, null, 'Emerson']; 
+var arrayData = [2, true, undefined, null, 'Emerson'];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 
-function returnArray(array) {
+function returnArray( array ) {
     return array;
 }
 
@@ -24,9 +24,9 @@ no primeiro parâmetro. O índice usado para retornar o valor, deve ser o númer
 segundo parâmetro.
 */
 
-var numbers = [1,2,3,4,5];
-function getData(array, arg) {
-    return array[arg];
+var numbers = [1, 2, 3, 4, 5];
+function getData(array, argValue) {
+    return array[argValue];
 }
 
 getData(numbers, 2); // return 3
@@ -62,27 +62,27 @@ function book(bookName) {
         JSNinja: {
             quantidadePaginas: 200,
             autor: 'Daciuk',
-            editora: 'JS Supreme' 
+            editora: 'JS Supreme'
         },
         Warcraft: {
             quantidadePaginas: 500,
             autor: 'Blizzard',
-            editora: 'Blizzard' 
+            editora: 'Blizzard'
         },
         Dots: {
             quantidadePaginas: 100,
             autor: 'Blizzard',
-            editora: 'Blizzard' 
+            editora: 'Blizzard'
         }
     };
 
-    if(bookName === books.JSNinja) {
+    if (bookName === books.JSNinja) {
         return books.JSNinja;
-    } else if ( bookName === books.Warcraft) {
+    } else if (bookName === books.Warcraft) {
         return books.Warcraft;
     } else if (bookName === books.Dots) {
         return books.Dots;
-    } 
+    }
     // for( var i in books) {
     //     if(bookName === i) {
     //         return i;
@@ -102,7 +102,7 @@ usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
 
-"O livro " + Object.keys(book())[0] + 'tem' + Object.keys(book())[0].quantidadePaginas + 
+"O livro " + Object.keys(book())[0] + 'tem ' + Object.keys(book())[0].quantidadePaginas + 'páginas!'
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
@@ -110,10 +110,12 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
+" O autor do livro " + Object.keys(book())[1] + 'é ' + Object.keys(book())[1].autor + '.'
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+
+"O livro " + Object.keys(book())[3] + " foi publicado pela editora " + Object.key(book())[3].editora + '.'
