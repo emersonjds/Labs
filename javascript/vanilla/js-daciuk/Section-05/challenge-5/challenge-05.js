@@ -95,8 +95,9 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
+var bookName = 'JSNinja';
 
-"O livro JSNinja tem " + book('JSNinja').quantidadePaginas + "páginas ."
+"O livro " + bookName + " tem " + book(bookName).quantidadePaginas + "páginas ."
 // ou
 "O livro " + Object.keys(book())[0] + 'tem ' + Object.keys(book())[0].quantidadePaginas + 'páginas!'
 
@@ -106,7 +107,7 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
-"O autor do livro " + book()[0] +  "é "  + book('JSNinja').autor + "." 
+"O autor do livro " + book()[0] + "é " + book('JSNinja').autor + "."
 
 " O autor do livro " + Object.keys(book())[1] + 'é ' + Object.keys(book())[1].autor + '.'
 
