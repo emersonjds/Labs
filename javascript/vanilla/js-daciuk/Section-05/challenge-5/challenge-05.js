@@ -40,7 +40,12 @@ var valores = ['Emerson', 28, 1.66, true, undefined];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ? 
+
+console.log(getData(valores, 0));
+console.log(getData(valores, 1));
+console.log(getData(valores, 2));
+console.log(getData(valores, 3));
+console.log(getData(valores, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
