@@ -8,7 +8,7 @@ var arrayData = [2, true, undefined, null, 'Emerson'];
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 
-function returnArray( array ) {
+function returnArray(array) {
     return array;
 }
 
@@ -64,36 +64,25 @@ os livros.
 
 function book(bookName) {
     var books = {
-        JSNinja: {
+        'JSNinja': {
             quantidadePaginas: 200,
             autor: 'Daciuk',
             editora: 'JS Supreme'
         },
-        Warcraft: {
+        'Warcraft': {
             quantidadePaginas: 500,
             autor: 'Blizzard',
             editora: 'Blizzard'
         },
-        Dots: {
+        'Dots': {
             quantidadePaginas: 100,
             autor: 'Blizzard',
             editora: 'Blizzard'
         }
     };
 
-    if (bookName === books.JSNinja) {
-        return books.JSNinja;
-    } else if (bookName === books.Warcraft) {
-        return books.Warcraft;
-    } else if (bookName === books.Dots) {
-        return books.Dots;
-    }
-    // for( var i in books) {
-    //     if(bookName === i) {
-    //         return i;
-    //     }
-    // }
-    return books;
+    return !bookName ? books : books[bookName];
+
 }
 
 /*
