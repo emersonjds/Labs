@@ -44,7 +44,11 @@ function showTeamPosition(posicao) {
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+showTeamPosition(1);
+showTeamPosition(3);
+showTeamPosition(6);
+showTeamPosition(5);
+showTeamPosition(2);
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
