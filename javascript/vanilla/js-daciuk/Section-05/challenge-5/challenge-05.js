@@ -107,7 +107,7 @@ a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
 
-"O autor do livro " + book()[0] + "é " + book('JSNinja').autor + "."
+"O autor do livro " + bookName + "é " + book(bookName).autor + "."
 
 " O autor do livro " + Object.keys(book())[1] + 'é ' + Object.keys(book())[1].autor + '.'
 
@@ -116,5 +116,7 @@ Ainda com a função acima, imprima o nome da editora de um livro qualquer, usan
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
+"O livro " + bookName + " foi publicado pela editora " + book(bookName).editora + "."
+
 
 "O livro " + Object.keys(book())[3] + " foi publicado pela editora " + Object.key(book())[3].editora + '.'
