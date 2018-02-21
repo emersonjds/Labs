@@ -73,23 +73,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 
 function convertToHex(color) {
+    var hexa;
     switch (color) {
         case "red":
-            return console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #ff0000');
+            hexa = '#ff0000';
+            break;
         case "blue":
-            return console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #0000ff');
-
+            hexa = '#0000ff';
+            break;
         case "yellow":
-            return console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #ffff00');
-
+            hexa = '#ffff00';
+            break;
         case "purple":
-            return console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #cc33ff');
-
+            hexa = '#cc33ff';
+            break;
         case "brow":
-            return console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #993300');
+            hexa = '#993300';
+            break;
         default:
             return console.log('Não temos o equivalente hexadecimal para ' + color + '.');
     }
+    return console.log('A cor passada foi ' + color + ' e seu hexadecimal é ' + hexa + ' .');
 }
 
 /*
