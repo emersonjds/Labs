@@ -60,7 +60,7 @@ while (value <= 30) {
         console.log(value);
         break;
     }
-    console.log(value)
+    console.log(value);
     value++;
 }
 
