@@ -35,7 +35,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 
 function showTeamPosition(position) {
-    return  position < 1 || position > 5 ?
+    return position < 1 || position > 5 ?
         "Não temos a informação do time que está nessa posição." :
         "O time que está em  " + position + "º lugar é o " + (teams[position - 1]) + ".";
 }
@@ -56,12 +56,7 @@ repetição "while".
 */
 var value = 20;
 while (value <= 30) {
-    if (value === 30) {
-        console.log(value);
-        break;
-    }
-    console.log(value);
-    value++;
+    console.log(value++);
 }
 
 /*
@@ -77,25 +72,25 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 
-function convertToHex(cor) {
-    switch (cor) {
+function convertToHex(color) {
+    switch (color) {
         case "red":
-            console.log('A cor passada foi ' + cor + ' e seu hexadecimal é  #ff0000');
+            console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #ff0000');
             break;
         case "blue":
-            console.log('A cor passada foi ' + cor + ' e seu hexadecimal é  #0000ff');
+            console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #0000ff');
             break;
         case "yellow":
-            console.log('A cor passada foi ' + cor + ' e seu hexadecimal é  #ffff00');
+            console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #ffff00');
             break;
         case "purple":
-            console.log('A cor passada foi ' + cor + ' e seu hexadecimal é  #cc33ff');
+            console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #cc33ff');
             break;
         case "brow":
-            console.log('A cor passada foi ' + cor + ' e seu hexadecimal é  #993300');
+            console.log('A cor passada foi ' + color + ' e seu hexadecimal é  #993300');
             break;
         default:
-            console.log('Não temos o equivalente hexadecimal para ' + cor + '.');
+            console.log('Não temos o equivalente hexadecimal para ' + color + '.');
     }
 }
 
