@@ -32,7 +32,7 @@ isTruthy(NaN);
 isTruthy(null);
 isTruthy(undefined);
 isTruthy(-0);
-isTruthy();
+isTruthy('');
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
