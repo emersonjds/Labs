@@ -25,9 +25,9 @@ function returnObject() {
     return {
         prop1: 1,
         prop2: 'Emerson',
-        prop3: function(x,y) {
+        prop3: function (x, y) {
             return x + y;
         }
     }
 }
-returnObject().prop3(10,12);
+returnObject().prop3(10, 12);
