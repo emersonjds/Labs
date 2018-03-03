@@ -43,3 +43,11 @@ function returnOtherObj() {
 function anotherData() {
     return [1, 2, 3, returnObject().prop3(10, 30), returnOtherObj()];
 }
+
+function receiveANumber(number) {
+    function returnMessage() {
+        return 'Tente novamente';
+    }
+    return number <= 3 ? returnMessage() : 'Numero digitado ' + number;
+}
+
