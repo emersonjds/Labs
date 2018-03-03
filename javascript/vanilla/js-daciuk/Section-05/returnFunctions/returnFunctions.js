@@ -31,3 +31,15 @@ function returnObject() {
     }
 }
 returnObject().prop3(10, 12);
+
+function returnOtherObj() {
+    return {
+        name: 'Paul',
+        age: 28,
+        address: 'Rose Street, 21'
+    }
+}
+
+function anotherData() {
+    return [1, 2, 3, returnObject().prop3(10, 30), returnOtherObj()];
+}
