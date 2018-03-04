@@ -17,7 +17,7 @@ myFunction2([1,2,3,4,5]); // return 2, pois é o valor contido no indice de cham
 
 var obj = {
     propriedade: 'Emerson',
-    curso: 'JAavascript Ninja',
+    curso: 'Javascript Ninja',
     ninja: true
 }
 
