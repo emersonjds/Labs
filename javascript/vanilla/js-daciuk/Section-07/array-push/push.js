@@ -1,4 +1,4 @@
-var arr = [1, 2, 3, 'Emerson', { bola: azul }];
+var arr = [1, 2, 3, 'Emerson', { bola: 'azul' }];
 
 arr.push([1, 2, 3, 4, { carro: 'BMW' }]);
 
