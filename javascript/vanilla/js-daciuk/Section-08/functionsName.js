@@ -1,3 +1,3 @@
 var func = function func() {
-    return func.name;
+    return `teste tempalte string`;
 }
