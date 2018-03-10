@@ -55,19 +55,19 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 
 function calculator(operator) {
-    return function (x, y) {
-        if (operator === "+" ||
-            operator === "-" ||
-            operator === "*" ||
-            operator === "/" ||
-            operator === "%") {
-            debugger;
+    if (operator === "+" ||
+        operator === "-" ||
+        operator === "*" ||
+        operator === "/" ||
+        operator === "%") {
+        return function (x, y) {
+            debugger
             var calculo = parseInt(x + ' ' + operator + ' ' + y);
             debugger;
-            return `Resultado da operação: ${x} ${operator} ${y} = ${calculo}.`
+            console.log(`Resultado da operação: ${x} ${operator} ${y} = ${calculo}.`)
         }
-        return "Operação inválida."
     }
+    return "Operação inválida.";
 }
 
 /*
