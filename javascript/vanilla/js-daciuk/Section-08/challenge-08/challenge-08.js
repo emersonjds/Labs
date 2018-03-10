@@ -5,14 +5,16 @@ desses parâmetros.
 */
 var sum = function calculateSum(x, y) {
     return x + y;
-}
+};
 
 /*
 Invoque a função criada acima, passando dois números que serão somados, e mostre
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log(`A soma de 10 + 20 é ao resultado ${sum(10, 20)}`);
+v1 = 10;
+v2 = 20;
+console.log(`A soma de ${v1} + ${v2} é ao resultado ${sum(v1, v2)}`);
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
