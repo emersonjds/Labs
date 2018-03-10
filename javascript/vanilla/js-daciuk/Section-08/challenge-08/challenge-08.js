@@ -61,11 +61,8 @@ function calculator(operator) {
         operator === '%' ||
         operator === '*') {
         return function (x, y) {
-            debugger
             var calculo = parseInt(x + (operator) + y);
-            debugger
             console.log(`Resultado da operação: ${x} ${operator} ${y} = ${calculo}.`)
-            debugger
         }
     }
     return "Operação inválida."
