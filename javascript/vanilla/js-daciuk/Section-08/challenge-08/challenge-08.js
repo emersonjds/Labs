@@ -55,41 +55,47 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 
 function calculator(operator) {
-    if (operator === "+" ||
-        operator === "-" ||
-        operator === "*" ||
-        operator === "/" ||
-        operator === "%") {
+    if (operator === '+' ||
+        operator === '-' ||
+        operator === '/' ||
+        operator === '%' ||
+        operator === '*') {
         return function (x, y) {
             debugger
-            var calculo = parseInt(x + ' ' + operator + ' ' + y);
-            debugger;
+            var calculo = parseInt(x + (operator) + y);
+            debugger
             console.log(`Resultado da operação: ${x} ${operator} ${y} = ${calculo}.`)
+            debugger
         }
     }
-    return "Operação inválida.";
+    return "Operação inválida."
 }
-
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-// ?
+var sum = calculator('+');
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-// ?
+sum()(10, 20);
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-// ?
+var subtraction = calculator('-')
+var division = calculator('/')
+var multiplication = calculator('*')
+var mod = calculator('%')
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-// ?
+console.log(subtraction()(10, 12));
+console.log(division()(10, 12));
+console.log(multiplication()(10, 12));
+console.log(mod()(10, 12));
