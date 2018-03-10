@@ -34,14 +34,14 @@ function showName() {
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
 
-var varShowName = showName();
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log(`A função ${showName.name} retorna ${varShowName}`);
+console.log(`A função ${varShowName.name} retorna ${varShowName()}`);
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -57,17 +57,29 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 
 function calculator(operator) {
-    if (operator === '+' ||
-        operator === '-' ||
-        operator === '/' ||
-        operator === '%' ||
-        operator === '*') {
-        return function (x, y) {
-            var calculo = parseInt(x + (operator) + y);
-            console.log(`Resultado da operação: ${x} ${operator} ${y} = ${calculo}.`)
+    return function (x, y) {
+        var result;
+        switch (operator) {
+            case '+':
+                result = x + y;
+                break;
+            case '-':
+                result = x - y;
+                break;
+            case '/':
+                result = x / y;
+                break;
+            case '*':
+                result = x * y;
+                break;
+            case '%':
+                result = x % y;
+                break;
+            default:
+                return "Operação inválida."
         }
-    }
-    return "Operação inválida."
+        return `Resultado da operação: ${x} ${operator} ${y} = ${result}.`;
+    };
 }
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
