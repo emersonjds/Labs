@@ -10,11 +10,11 @@ dentro de `console.log` que estão retornando `undefined` retornem o valor
 correto da variável ou função chamada.
 */
 function myFunction() {
+    var number1 = 10;
+    var number2 = 20;
     console.log('Na função `myFunction`, o primeiro número é', number1);
     console.log('Na função `myFunction`, o segundo número é', number2);
-    var number1 = 10;
     return number1 + number2;
-    var number2 = 20;
 }
 myFunction();
 
@@ -22,12 +22,12 @@ myFunction();
     myFunction2();
 */
 function myFunction2() {
-    console.log('A soma de 10 e 20 é igual a', sum ? sum() : undefined);
+    var number1 = 10;
+    var number2 = 20;
     var sum = function sum() {
         return number1 + number2;
     };
-    var number1 = 10;
-    var number2 = 20;
+    console.log('A soma de 10 e 20 é igual a', sum ? sum() : undefined);
     return sum();
 }
 myFunction2();
@@ -36,14 +36,14 @@ myFunction2();
     myFunction3();
 */
 function myFunction3() {
-    console.log('A soma de 40 e 50 é igual a', sum());
-    var number2 = 50;
-    console.log('Na função myFunction3, number1 é igual a', number1);
     var number1 = 40;
-    return sum();
+    var number2 = 50;
     function sum() {
         return number1 + number2;
     };
+    console.log('A soma de 40 e 50 é igual a', sum());
+    console.log('Na função myFunction3, number1 é igual a', number1);
+    return sum();
 }
 myFunction3();
 
@@ -60,13 +60,12 @@ o retorno de `calculator`.
 por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
-// ?
 
 /*
 Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
 passando dois números por parâmetro.
 */
-// ?
+ var sum = calculator(10,20);
 
 /*
 Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
@@ -77,6 +76,8 @@ para a chamada à `calculator` acima.
 uma função anônima que irá retornar a soma dos dois números que essa função
 anônima tem como seus argumentos.
 */
+
+
 console.log('O resultado da soma é:');
 // ?
 
