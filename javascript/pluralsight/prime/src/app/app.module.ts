@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { SettingsComponent } from './settings/settings.component';
     SettingsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
