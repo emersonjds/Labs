@@ -20,4 +20,8 @@ console.log(sum3());
 // IIFE 
 (function () {
     console.log(1 + 2);
+})();
+
+(function () {
+    console.log('new call');
 })(); 
