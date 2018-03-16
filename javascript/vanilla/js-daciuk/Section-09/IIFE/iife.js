@@ -24,4 +24,8 @@ console.log(sum3());
 
 (function () {
     console.log('new call');
-})(); 
+})();
+
+(function () {
+    console.log('this new function!');
+})
