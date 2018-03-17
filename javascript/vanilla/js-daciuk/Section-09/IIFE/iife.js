@@ -26,6 +26,8 @@ console.log(sum3());
     console.log('new call');
 })();
 
-(function () {
-    console.log('this new function!');
-})
+function justReturn () {
+    (function() {
+        console.log('return intern function with callback');
+    })
+}
