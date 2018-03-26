@@ -18,4 +18,10 @@ window.onload = function () {
 
     //null value 
     let casa = null; // the value is passed witch clear;
+
+    typeof (300 / 2); // number 
+    typeof ('Hello World'); // string 
+    typeof (4 < 2); // false 
+    typeof (a + b); // is not defined variables
+    typeof (3 + '6'); // string 
 }
