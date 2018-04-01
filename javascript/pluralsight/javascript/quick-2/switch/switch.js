@@ -2,8 +2,11 @@ window.onload = function () {
     var sign = prompt(`What's your astrological sign ?!`);
 
     switch (sign) {
-        case 'libre':
-            console.log('O signo digitado foi libra');
+        case 'capricornio':
+            console.log(`O signo digitado foi ${sign}`);
+            break;
+        case 'libra':
+            console.log(`O signo digitado foi ${sign}`);
             break;
         default:
             'Nao foi encontrado o signo digitado';
