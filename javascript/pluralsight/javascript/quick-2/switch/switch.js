@@ -8,6 +8,9 @@ window.onload = function () {
         case 'libra':
             console.log(`O signo digitado foi ${sign}`);
             break;
+        case 'escorpiao':
+            console.log(`O signo digitado foi ${sign}`);
+            break;
         default:
             'Nao foi encontrado o signo digitado';
     }
