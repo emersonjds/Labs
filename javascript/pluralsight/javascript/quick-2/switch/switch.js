@@ -15,3 +15,7 @@ window.onload = function () {
             'Nao foi encontrado o signo digitado';
     }
 }
+
+(function() {
+    return `never give up`;
+})();
