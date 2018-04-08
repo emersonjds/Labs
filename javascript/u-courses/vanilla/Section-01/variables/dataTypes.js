@@ -16,6 +16,7 @@ var pessoa = {
     altura: 1.66,
     nome: 'Emerson'
 }
+pessoa.altura // return 1.66
 pessoa['altura'] // return 1.66;
 
 
