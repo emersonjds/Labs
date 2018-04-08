@@ -32,3 +32,8 @@ function cinco() {
     return 5;
 }
 y + cinco(); // return 9 
+
+function soma(x, y) {
+    return x + y;
+}
+soma(10, 20)// return 30 
