@@ -23,3 +23,11 @@ soma += 20; // return 40
 soma -= 10; // return 30
 soma *= 2; // return 60
 soma /= 2; // return 30
+
+== equal to 
+1 == 1 return true , //verify value
+1 === 1 // return true , verify value and type
+1 === "1" // false
+
+!= //diferent 
+!== //iferente mas do mesmo tipo
