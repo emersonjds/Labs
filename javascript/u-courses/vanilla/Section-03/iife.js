@@ -1,3 +1,4 @@
-(function () {
-    return `never give up`;
-})();
+var lessons = {
+    captcher : 1,
+    pages: 232
+}
