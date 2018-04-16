@@ -36,3 +36,11 @@ var carro = {
 carro.cor // return vermelho
 carro.motor // return '2.0'
 carro.portas // 4
+
+// funçoes sao objetos de primeira classe por que podem ser atribuidos a variaveis;
+
+var myvar = function () {
+    return `variavel myvar`;
+}
+myvar // return Function
+myvar() // return `variavel myvar`
