@@ -11,7 +11,7 @@ function sum(x, y) {
 var result = sum(10, 5) + 5
 
 // Qual o valor atualizado dessa variável?
-20
+result // return 20;
 
 // Declare uma nova variável, sem valor.
 var anotherVariable;
@@ -22,17 +22,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 
-function addValue(value) {
-    anotherVariable = value;
+function addValue() {
+    anotherVariable = 25;
     return `O valor da variavel agora é ${anotherVariable}`;
 }
 
 // Invoque a função criada acima.
-addValue(10);
+addValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 
-//"O valor da variavel agora é 10"
+//"O valor da variavel agora é 25"
 
 /*
 Crie uma função com as seguintes características:
