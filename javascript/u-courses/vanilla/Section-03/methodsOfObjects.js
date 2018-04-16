@@ -10,9 +10,11 @@ var pessoa = {
     peso: 75
 }
 
+// object method
 pessoa.andar = function () {
     return `Pessoa andando`;
 }
+
 pessoa.andar(); // return `Pessoa andando`
 pessoa.sobrenome = 'Silva';
 pessoa.nomeCompleto = function() {
