@@ -127,7 +127,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-pessoa.mostrarIdade() // return 31
+pessoa.mostrarIdade() // return 'Olá, eu tenho 31 anos!'
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -141,12 +141,12 @@ pessoa.andar(15);
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.andando();
+pessoa.andando; // return true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.parar();
+pessoa.parar(); // return false
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
