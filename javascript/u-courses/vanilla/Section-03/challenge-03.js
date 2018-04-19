@@ -199,4 +199,4 @@ pessoa.apresentacao = function () {
 pessoa.apresentacao();
 
 let arr = [12, 3, 4, 5, 6];
-arr.map(data => data * 2);
+arr.filter(data => data === 2);
