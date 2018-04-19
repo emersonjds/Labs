@@ -192,8 +192,11 @@ pessoa.apresentacao = function () {
         caminhou = `metro`;
     }
 
-    return `Olá, eu sou ${artigo} ${pessoa.name}, tenho ${pessoa.idade} ${ano}, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${caminhou}!`
+    return `Olá, eu sou ${artigo} ${pessoa.name}, tenho ${pessoa.idade} ${ano}, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${caminhou} !!!`
 }
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
+
+let arr = [12, 3, 4, 5, 6];
+arr.map(data => data * 2);
