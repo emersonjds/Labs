@@ -182,15 +182,9 @@ pessoa.apresentacao = function () {
     var ano = `anos`;
     var caminhou = `metros`;
 
-    if (pessoa.sexo === `Feminino`) {
-        artigo = `a`;
-    }
-    if (pessoa.idade === 1) {
-        ano = `ano`;
-    }
-    if (pessoa.caminhouQuantosMetros === 1) {
-        caminhou = `metro`;
-    }
+    pessoa.sexo === `Feminino` ? artigo = `a` : artigo;
+    pessoa.idade === 1 ? ano = `ano` : ano;
+    pessoa.caminhouQuantosMetros === 1 ? caminhou = `metro` : caminhou;
 
     return `Olá, eu sou ${artigo} ${pessoa.name}, tenho ${pessoa.idade} ${ano}, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${caminhou} !!!`
 }
