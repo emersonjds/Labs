@@ -191,6 +191,3 @@ pessoa.apresentacao = function () {
 
 // Agora, apresente-se ;)
 pessoa.apresentacao();
-
-let arr = [12, 3, 4, 5, 6];
-arr.filter(data => data === 2);
