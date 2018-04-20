@@ -186,7 +186,7 @@ pessoa.apresentacao = function () {
     pessoa.idade === 1 ? ano = `ano` : ano;
     pessoa.caminhouQuantosMetros === 1 ? caminhou = `metro` : caminhou;
 
-    return `Olá, eu sou ${artigo} ${pessoa.name}, tenho ${pessoa.idade} ${ano}, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${caminhou} !!!`
+    return `Olá, eu sou ${artigo} ${pessoa.name} ${pessoa.sobrenome}, tenho ${pessoa.idade} ${ano}, ${pessoa.altura}, meu peso é ${pessoa.peso} e, só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${caminhou} !!!`
 }
 
 // Agora, apresente-se ;)
