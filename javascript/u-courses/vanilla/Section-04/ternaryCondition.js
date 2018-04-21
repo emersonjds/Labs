@@ -6,4 +6,6 @@ var pessoa = {
     sexo: 'Masculino'
 }
 
-var sexo = pessoa.sexo === 'Feminino' ? 'a' : 'o'; 
+var sexo = pessoa.sexo === 'Feminino' ? 'a' : 'o';
+
+1 ? true : false; // return true, because 1 it's truthy 
