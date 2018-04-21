@@ -113,11 +113,9 @@ carro.adicionarPessoasNoCarro = (numeroPessoas) => {
     if (pessoasNoCarro === carro.assentos) {
         return "O carro já está lotado!";
     }
-
     if (pessoasNoCarro === 4) {
         return `Só cabem mais ${carro.assentos - pessoasNoCarro} ${umaPessoa}.`
     }
-
     if (numeroPessoas > carro.assentos && numeroPessoas + pessoasNoCarro > carro.assentos) {
         return `Só cabem mais ${carro.assentos - pessoasNoCarro} pessoas`
     }
