@@ -132,7 +132,7 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.obterCor()
+carro.obterCor() // return vermelho
 
 // Mude a cor do carro para vermelho.
 carro.novaCor(`vermelho`);
