@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('poc-reactive-form App', () => {
+describe('reactive-form App', () => {
   let page: AppPage;
 
   beforeEach(() => {
