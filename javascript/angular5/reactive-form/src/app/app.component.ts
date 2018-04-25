@@ -15,8 +15,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.formulario = this.fb.group({
-      nome: null,
-      email: null
+      nome: [null],
+      email: [null]
     });
   }
 }

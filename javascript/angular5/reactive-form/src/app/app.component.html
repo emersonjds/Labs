@@ -1,14 +1,19 @@
-<div class="container">
-  <form class"formulario" [ngForm]="formulario">
+<form class "formulario" [formGroup]="formulario">
+  <div class="form-group">
     <div class="col-sm-12">
       <label for="nome" class="control-label">Nome</label>
-      <input type="text" class="form-control" formControlName="nome">
     </div>
     <div class="col-sm-12">
-      <label for="senha" class="control-label">Email</label>
-      <input type="email" class="form-control" formControlName="email">
+      <input type="text" class="form-control" formControlName="nome" placeholder="Nome">
     </div>
-    
-    <button class="btn btn-primary">Enviar</button>
-  </form>
-</div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <label for="senha" class="control-label">Email</label>
+    </div>
+    <div class="col-sm-12">
+      <input type="email" class="form-control" formControlName="email" placeholder="email">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
