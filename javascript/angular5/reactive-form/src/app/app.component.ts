@@ -2,7 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -36,15 +36,15 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   onSubmit() {
-    let url = `www.google.com`;
-    console.log(this.formulario);
-
-    console.log(this.formulario.controls.email.value);
-    console.log(this.formulario.controls.nome.value);
-
-    this.http.post(url, JSON.stringify(this.formulario.value))
-      .map(res => res)
-      .subscrible(dados => console.log(dados));
+    this.saveDateForm();
   }
+
+
+  saveDateForm() {
+    localStorage.setItem("nome", this.formulario.controls.nome.value);
+    localStorage.setItem("email", this.formulario.controls.email.value);
+  }
+
+  // #TODO: Implements a post method for an api
 
 }
