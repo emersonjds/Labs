@@ -21,7 +21,7 @@ isTruthy(NaN);
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-isTruthy('Emeron');
+isTruthy('Emerson');
 isTruthy(1);
 isTruthy({ nome: 'Emerson' });
 isTruthy([]);
