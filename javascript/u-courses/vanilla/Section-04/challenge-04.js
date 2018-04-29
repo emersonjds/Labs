@@ -102,8 +102,7 @@ parâmetro for ultrapassar o limite de assentos do carro, então você deve
 mostrar quantos assentos ainda podem ser ocupados, com a frase:
 "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!"
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
-citado acima, no lugar de "pessoas".
-*/
+citado acima, no lugar de "pessoas". */
 
 carro.adicionarPessoasNoCarro = (numeroPessoas) => {
     var pessoasNoCarro = 0;
@@ -121,7 +120,6 @@ carro.adicionarPessoasNoCarro = (numeroPessoas) => {
     }
     return `Já temos ${pessoasNoCarro} pessoas no carro!`;
 }
-
 
 
 /*
