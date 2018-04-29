@@ -8,6 +8,10 @@ var isTruthy = function (value) {
     return !!value;
 };
 
+// or 
+
+let isTruthy = param => !!param;
+
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 
 isTruthy(0);
