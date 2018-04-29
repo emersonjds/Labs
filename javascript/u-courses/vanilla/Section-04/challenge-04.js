@@ -80,7 +80,7 @@ carro.obterModelo = () => carro.modelo;
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-carro.obterMarca = () => carro.obterMarca; 
+carro.obterMarca = () => carro.obterMarca;
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -108,20 +108,17 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas". */
 
 carro.adicionarPessoasNoCarro = (numeroPessoas) => {
-    var pessoasNoCarro = 0;
-    var umaPessoa = `pessoa`;
-    pessoasNoCarro += numeroPessoas;
-
-    if (pessoasNoCarro === carro.assentos) {
-        return "O carro já está lotado!";
+    var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+    var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas';
+    if (carro.quantidadePessoas === carro.assentos) {
+        return `O carro ja esta lotado`;
     }
-    if (pessoasNoCarro === 4) {
-        return `Só cabem mais ${carro.assentos - pessoasNoCarro} ${umaPessoa}.`
+    if (totalPessoas > carro.assentos) {
+        return `So cabem mais ${quantasPessoasCabem} ${pluralOuSingular} `;
     }
-    if (numeroPessoas > carro.assentos && numeroPessoas + pessoasNoCarro > carro.assentos) {
-        return `Só cabem mais ${carro.assentos - pessoasNoCarro} pessoas`
-    }
-    return `Já temos ${pessoasNoCarro} pessoas no carro!`;
+    carro.quantidadePessoas += numeroPessoas;
+    return `Já temos ${carro.quantidadePessoas} pessoas no carro!`;
 }
 
 
