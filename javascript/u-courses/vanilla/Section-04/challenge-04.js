@@ -36,7 +36,6 @@ isTruthy(!undefined);
 isTruthy(!NaN);
 isTruthy([{ nome: 'Emerson' }]);
 
-
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
 seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
@@ -53,7 +52,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 var carro = {
     marca: 'BMW',
     modelo: '325i',
-    placa: 'XYZ2018',
+    placa: 'XYZ-2018',
     ano: 2002,
     cor: 'black',
     quantasPortas: 4,
@@ -81,7 +80,7 @@ carro.obterModelo = () => carro.modelo;
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-carro.obterMarca = () => carro.obterMarca;
+carro.obterMarca = () => carro.obterMarca; 
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
@@ -89,7 +88,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 
-carro.obterMarcaModelo = () => `Esse carro é um ${carro.obterMarca} ${carro.obterModelo}
+carro.obterMarcaModelo = () => `Esse carro é um ${carro.obterMarca()} ${carro.obterModelo()}
 Para retornar os valores de marca e modelo, utilize os métodos criados.`;
 
 /*
