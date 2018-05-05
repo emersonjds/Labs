@@ -14,3 +14,7 @@ function multiply(x,y) {
 }
 
 function calc(multiply(10,28));
+
+function div(x, y) {
+    return x / y
+}
