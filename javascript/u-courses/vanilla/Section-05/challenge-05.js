@@ -41,11 +41,11 @@ Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
 
-returnData(diferentValues, 0);
-returnData(diferentValues, 1);
-returnData(diferentValues, 2);
-returnData(diferentValues, 3);
-returnData(diferentValues, 4);
+console.log(returnData(diferentValues, 0));
+console.log(returnData(diferentValues, 1));
+console.log(returnData(diferentValues, 2));
+console.log(returnData(diferentValues, 3));
+console.log(returnData(diferentValues, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
