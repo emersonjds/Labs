@@ -79,16 +79,8 @@ function book(bookName) {
             editora: 'Alta Books'
         }
     }
-
-    if (bookName === undefined || bookName === null) {
-        return books;
-    }
-
-    return books[bookName];
-
+    return !bookName ? books : books[bookName]
 }
-
-
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
