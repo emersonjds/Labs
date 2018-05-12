@@ -85,7 +85,7 @@ function book(bookName) {
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-book();
+console.log(book());
 // Clean Code: {quantidadePaginas: 416, autor: "Junior Abramov", editora: "Alta Books"}
 // Harry Potter: {quantidadePaginas: 711, autor: "JK Rowlling", editora: "Flecha"}
 //Javascript Ninja: {quantidadePaginas: 231, autor: "Fernando Daciuk", editora: "Novatec"}
