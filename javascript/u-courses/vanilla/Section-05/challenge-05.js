@@ -17,7 +17,7 @@ function returnArray(array) {
 Imprima o segundo índice do array retornado pela função criada acima.
 */
 
-returnArray(numbers)[1];
+console.log(returnArray(numbers)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -104,7 +104,7 @@ usando a frase:
 */
 // "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 var bookName = 'Javascript Ninja';
-console.log(`O livro ${bookName} tem  ${book('Javascript Ninja').quantidadePaginas } páginas!`);
+console.log(`O livro ${bookName} tem  ${book('Javascript Ninja').quantidadePaginas} páginas!`);
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
