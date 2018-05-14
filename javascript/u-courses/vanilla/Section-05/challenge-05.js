@@ -115,3 +115,5 @@ a frase:
 bookName = 'Clean Code';
 console.log(`O livro ${bookName} foi publicado pela editora ${book('Clean Code').editora}.`)
 
+console.log('never give up');
+
