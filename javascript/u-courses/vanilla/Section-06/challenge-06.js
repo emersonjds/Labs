@@ -110,3 +110,4 @@ convertToHex('cinza'); // "O hexadecimal para a cor cinza é #808080"
 convertToHex('roxo'); //"Não temos o equivalente hexadecimal para roxo."
 convertToHex('marrom'); //"Não temos o equivalente hexadecimal para roxo."
 convertToHex('rosa'); //"Não temos o equivalente hexadecimal para roxo."
+convertToHex('red');
