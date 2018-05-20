@@ -80,19 +80,19 @@ function convertToHex(cor) {
 
     switch (cor) {
         case 'amarelo':
-            return `O hexadecimal para a cor ${cor} é ${amarelo}`;
+            console.log(`O hexadecimal para a cor ${cor} é ${amarelo}`);
             break;
         case 'vermelho':
-            return `O hexadecimal para a cor ${cor} é ${vermelho}`;
+            console.log(`O hexadecimal para a cor ${cor} é ${vermelho}`);
             break;
         case 'azul':
-            return `O hexadecimal para a cor ${cor} é ${azul}`;
+            console.log(`O hexadecimal para a cor ${cor} é ${azul}`);
             break;
         case 'preto':
-            return `O hexadecimal para a cor ${cor} é ${preto}`;
+            console.log(`O hexadecimal para a cor ${cor} é ${preto}`);
             break;
         case 'cinza':
-            return `O hexadecimal para a cor ${cor} é ${cinza}`;
+            console.log(`O hexadecimal para a cor ${cor} é ${cinza}`);
             break;
         default:
             return `Não temos o equivalente hexadecimal para ${cor}.`
