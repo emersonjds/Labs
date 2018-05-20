@@ -34,7 +34,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(number) {
-    return number < 1 && number > 5 ?
+    return number < 1 || number > 5 ?
         `O time que está em ${number} lugar é o ${teams[number - 1]} .` :
         `Não temos a informação do time que está nessa posição.`;
 }
