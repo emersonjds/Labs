@@ -10,3 +10,11 @@ function myFunc(x) {
             console.log(`x não é nem 1 nem 2`);
     }
 }
+
+function myFunction() {
+    return [1, 2, 3, 4, 5,]
+}
+
+let getPairNumber = myFunction().map(x => {
+    return x % 2 === 0 ? `${x} é par` : `nao foram encontrados numeros pares`
+});
