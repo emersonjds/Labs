@@ -43,10 +43,10 @@ function showTeamPosition(number) {
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(1) // "O time que está em 1 lugar é o Flamengo ."
-showTeamPosition(2) // "O time que está em 2 lugar é o Corinthians ."
-showTeamPosition(3) // "O time que está em 1 lugar é o Atlético ."
-showTeamPosition(6) // "Não temos a informação do time que está nessa posição."
+console.log(showTeamPosition(1)) // "O time que está em 1 lugar é o Flamengo ."
+console.log(showTeamPosition(2)) // "O time que está em 2 lugar é o Corinthians ."
+console.log(showTeamPosition(3)) // "O time que está em 1 lugar é o Atlético ."
+console.log(showTeamPosition(6)) // "Não temos a informação do time que está nessa posição."
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
