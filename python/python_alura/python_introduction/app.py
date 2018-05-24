@@ -10,3 +10,9 @@ perfil_aspas_simpels = 'Perfil 2'
 
 convidado = 'Emerson Junior Daniel Silva'
 nome_abreviado = convidado [0:14] # this call it is a slice method 
+
+idade = 28
+nome = 'Emerson Junior'
+
+print 'Convite do %s idade %s' (nome, idade); # data contact with special call of the print method
+
