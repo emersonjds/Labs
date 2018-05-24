@@ -34,7 +34,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(number) {
-    return number <= teams.length && number !== 0 ?
+    return number < 1 || number > 5 ?
         `O time que está em ${number} lugar é o ${teams[number - 1]} .` :
         `Não temos a informação do time que está nessa posição.`;
 }
@@ -43,10 +43,10 @@ function showTeamPosition(number) {
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(1) // "O time que está em 1 lugar é o Flamengo ."
-showTeamPosition(2) // "O time que está em 2 lugar é o Corinthians ."
-showTeamPosition(3) // "O time que está em 1 lugar é o Atlético ."
-showTeamPosition(6) // "Não temos a informação do time que está nessa posição."
+console.log(showTeamPosition(1)) // "O time que está em 1 lugar é o Flamengo ."
+console.log(showTeamPosition(2)) // "O time que está em 2 lugar é o Corinthians ."
+console.log(showTeamPosition(3)) // "O time que está em 1 lugar é o Atlético ."
+console.log(showTeamPosition(6)) // "Não temos a informação do time que está nessa posição."
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -72,31 +72,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 */
 
 function convertToHex(cor) {
-    var amarelo = '#FFFF00';
-    var vermelho = '#FF0000';
-    var azul = '#0000FF';
-    var preto = '#000000';
-    var cinza = '#808080';
-
+    var hexa;
     switch (cor) {
-        case 'amarelo':
-            return `O hexadecimal para a cor ${cor} é ${amarelo}`;
+        case 'yellow':
+            hexa = '#FFFF00';
             break;
-        case 'vermelho':
-            return `O hexadecimal para a cor ${cor} é ${vermelho}`;
+        case 'red':
+            hexa = '#FF0000';
             break;
-        case 'azul':
-            return `O hexadecimal para a cor ${cor} é ${azul}`;
+        case 'blue':
+            hexa = '#0000FF';
             break;
-        case 'preto':
-            return `O hexadecimal para a cor ${cor} é ${preto}`;
+        case 'black':
+            hexa = '#000000';
             break;
-        case 'cinza':
-            return `O hexadecimal para a cor ${cor} é ${cinza}`;
+        case 'gray':
+            hexa = '#808080';
             break;
         default:
             return `Não temos o equivalente hexadecimal para ${cor}.`
     }
+    return `O hexadecimal para a cor ${cor} é ${amarelo}`;
 }
 
 /*
@@ -110,3 +106,4 @@ convertToHex('cinza'); // "O hexadecimal para a cor cinza é #808080"
 convertToHex('roxo'); //"Não temos o equivalente hexadecimal para roxo."
 convertToHex('marrom'); //"Não temos o equivalente hexadecimal para roxo."
 convertToHex('rosa'); //"Não temos o equivalente hexadecimal para roxo."
+convertToHex('red');
