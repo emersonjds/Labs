@@ -9,4 +9,4 @@ perfil_aspas_duplas = "Perfil 1"
 perfil_aspas_simpels = 'Perfil 2'
 
 convidado = 'Emerson Junior Daniel Silva'
-convidado[0,14] # this call it is a slice method 
+nome_abreviado = convidado [0:14] # this call it is a slice method 
