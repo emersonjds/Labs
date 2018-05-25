@@ -8,4 +8,9 @@ convites[0]  # //access to position determineted
 convites[0: 2]  # return Emerson Silva , Lucas Silva with slice operator
 convites[1:]  # return Lucas Silva , Ricardo Ledo,
 # When the operator is omitted on all occasions
-convites.append['Wellington Silva']; # add a new data for py array 
+convites.append('Wellington Silva')  # add a new data for py array
+convites.append(10) 
+
+convites.remove(10)
+
+convites.remove('Emerson Silva') # remove item 'Emerson Silva'
