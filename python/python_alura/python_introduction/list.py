@@ -6,4 +6,5 @@ convites = ['Emerson Silva', 'Lucas Silva', 'Ricardo Ledo']
 
 convites[0]  # //access to position determineted
 convites[0: 2]  # return Emerson Silva , Lucas Silva with slice operator
-convites[1:]  # return Lucas Silva , Ricardo Ledo
+convites[1:]  # return Lucas Silva , Ricardo Ledo,
+# When the operator is omitted on all occasions
