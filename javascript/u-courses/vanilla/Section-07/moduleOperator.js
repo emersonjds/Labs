@@ -18,3 +18,7 @@ while (num <= arr.length) {
     })
     num++;
 }
+
+while (num <= 10) {
+    console.log('success')
+}
