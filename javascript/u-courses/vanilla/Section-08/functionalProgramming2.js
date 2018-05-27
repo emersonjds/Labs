@@ -8,7 +8,7 @@ function adder(x) {
 
 var add2 = adder(2);
 console.log(add2(3)) // return 5
-add2(2)(3) // return 5
+adder(2)(3) // return 5
 
 function adder(x) {
     function anotherFunction(y) {
