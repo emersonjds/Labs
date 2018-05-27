@@ -48,9 +48,8 @@ pares entre 10 e 20, inclusive esses 2.
 */
 num = 10;
 console.log('Números pares entre 10 e 20 ');
-while (num < 21) {
-    num % 2 === 0 ? console.log(num) : '';
-    num++;
+while (num <= 20) {
+    num % 2 === 0 ? console.log(num++) : '';
 }
 
 /*
