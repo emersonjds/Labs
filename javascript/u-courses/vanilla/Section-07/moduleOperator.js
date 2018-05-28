@@ -22,3 +22,9 @@ while (num <= arr.length) {
 while (num <= 10) {
     console.log('success')
 }
+
+function func() {
+    return 'recover repository';
+}
+
+
