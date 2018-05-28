@@ -92,3 +92,5 @@ Faça uma operação com cada uma das funções criadas acima, mostrando o resul
 no console.
 */
 // ?
+
+declare to recovery repository
