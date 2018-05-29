@@ -91,20 +91,23 @@ function calculator(operator) {
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-// ?
-// Resultado da operação: ${x} ${operation} ${y} =
+var sum = calculator('+');
+
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-// ?
+console.log(sum(10, 20));
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-// ?
+var substraction = calculator('-');
+var multiplication = calculator('*');
+var division = calculator('/');
+var mod = calculator('%');
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
@@ -112,4 +115,7 @@ no console.
 */
 // ?
 
-declare to recovery repository
+console.log(substraction(10, 8));
+console.log(multiplication(10, 8));
+console.log(division(10, 8));
+console.log(mod(10, 8));
