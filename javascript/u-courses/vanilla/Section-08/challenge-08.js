@@ -13,7 +13,10 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
-console.log(`A soma de 10 e 20 é igual a ${sum(10, 20)}.`);
+
+value1 = 10;
+value2 = 20;
+console.log(`A soma de ${value1} e ${value2} é igual a ${sum(value1, value2)}.`);
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
@@ -60,9 +63,9 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 
 function calculator(operator) {
   if (operator !== '+' || operator !== '-' || operator !== '*' || operator !== '/' || operator !== '%') {
-   return console.log("Operação inválida.");
+    return console.log("Operação inválida.");
   }
-  return function (x, y) { 
+  return function (x, y) {
     var resultado = x + operator + y;
     console.log(`${resultado}`);
   }
