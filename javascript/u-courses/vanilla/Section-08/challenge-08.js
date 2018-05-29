@@ -62,12 +62,28 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 
 function calculator(operator) {
-  if (operator !== '+' || operator !== '-' || operator !== '*' || operator !== '/' || operator !== '%') {
-    return console.log("Operação inválida.");
-  }
   return function (x, y) {
-    var resultado = x + operator + y;
-    console.log(`${resultado}`);
+    var result;
+    switch (operator) {
+      case '+':
+        result = x + y;
+        break;
+      case '-':
+        result = x - y;
+        break;
+      case '*':
+        result = x * y;
+        break;
+      case '/':
+        result = x / y;
+        break;
+      case '%':
+        result = x % y;
+        break;
+      default:
+        return 'Operação inválida';
+    }
+    return `Resultado da operação: ${x} ${operator} ${y} = ${result}.`
   }
 }
 
