@@ -119,3 +119,11 @@ console.log(substraction(10, 8));
 console.log(multiplication(10, 8));
 console.log(division(10, 8));
 console.log(mod(10, 8));
+
+
+
+function getName(name) {
+	return function aceno(aceno) {
+		return `${aceno} ${name}`
+	}
+}
