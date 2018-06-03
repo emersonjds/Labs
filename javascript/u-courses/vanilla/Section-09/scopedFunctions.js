@@ -19,6 +19,8 @@ function myFunction() {
     return sum(); // return 3
 }
 
+console.log( sum () ); // return 'sum is not defined' because javascript don´t know where sum is declared
+
 function myFunction() {
     var number1 = 1;
     var number2 = 2;
