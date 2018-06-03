@@ -20,6 +20,8 @@ function myFunction() {
 console.log(myFunction());
 // In this case the functions work because the hoisting mechanism is works with a literal function , that stay available in all scope of function
 
+
+// Hositing in action
 function myFunction() {
     function sum() { // hoisting mechanism
         return n1 + n2; // closure mechanism
@@ -27,4 +29,15 @@ function myFunction() {
     var n1 = 1;
     var n2 = 2;
     return sum();
+}
+
+// Hoisting with variables
+function myFunction() {
+    var n1 = 1;
+    var n2 = 2;
+    var sum = undefined;
+    return sum ();
+    sum = function sum() {
+        // ... logica function
+    }
 }
