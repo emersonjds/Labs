@@ -41,3 +41,20 @@ function myFunction() {
         // ... logica function
     }
 }
+
+function myFunction() {
+    var number1; // hoisting of variable, can see the variable but not catch your value
+    console.log('Antes de criar', number1);
+    var number1 = 10; // variable are declared and receive value
+    console.log('depois de declarar', number1);
+}
+
+function myFunction() {
+    console.log( sum() );
+    function sum() {
+        return 1 + 2;
+    }
+    console.log( sum() ); 
+}
+
+console.log( myFunction() ); // return 3 twice 
