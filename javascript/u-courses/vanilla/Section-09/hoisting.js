@@ -38,7 +38,7 @@ function myFunction() {
     var sum = undefined;
     return sum ();
     sum = function sum() {
-        // ... logica function
+        // ... logic function
     }
 }
 
