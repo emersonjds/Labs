@@ -38,12 +38,12 @@ correto da variável ou função chamada.
     function myFunction3() {
         var number1 = 40;
         var number2 = 50;
-        function sum() {
-            return number1 + number2;
-        };
         console.log('A soma de 40 e 50 é igual a', sum());
         console.log('Na função myFunction3, number1 é igual a', number1);
         return sum();
+        function sum() {
+            return number1 + number2;
+        };
     }
     myFunction3();
 
