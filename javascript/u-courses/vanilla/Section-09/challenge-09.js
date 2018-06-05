@@ -11,8 +11,8 @@ correto da variável ou função chamada.
 */
     function myFunction() {
         var number1 = 10;
-        console.log('Na função `myFunction`, o primeiro número é', number1);
         var number2 = 20;
+        console.log('Na função `myFunction`, o primeiro número é', number1);
         console.log('Na função `myFunction`, o segundo número é', number2);
         return number1 + number2;
     }
