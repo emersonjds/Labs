@@ -9,8 +9,9 @@ var paciente = document.querySelector('#primeiro-paciente');
 var pesoPaciente = paciente.querySelector('.info-peso').textContent;
 var alturaPaciente = paciente.querySelector('.info-altura').textContent;
 
-if (pesoPaciente < 0)
-    console.log('peso invalido');
+if (pesoPaciente < 0 || pesoPaciente > 1000)
+    console.log('peso invalido')
+
 
 var imc = pesoPaciente / (alturaPaciente * alturaPaciente);
 var infoIMC = document.querySelector('.info-imc');
