@@ -13,3 +13,7 @@ attach(Bank)
 dispersao <- ggplot(Bank, aes(x=age, y=salbeg))
 dispersao - geom_point() - facet_wrap(~sex)
 boxplot(Banco_1$idade ~Banco_1$sexo)
+
+a <- c(0,1,1,1,2,3,5,4)
+a
+boxplot(a)
