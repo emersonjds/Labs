@@ -7,5 +7,4 @@ df = data.frame(nameList, lastNameList, nationalID, ageList)
 
 df$digit = substr(nationalID, 9, 9)
 df$fullName =  paste(df$nameList, df$lastNameList, sep = " ")
-
 df
