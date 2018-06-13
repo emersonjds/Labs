@@ -8,7 +8,7 @@ function myFunction() {
 }
 
 console.log(myFunction()); // return 3
-console.log( sum() ); //return function is not defined because this scope is intern of function 
+console.log(sum()); //return function is not defined because this scope is intern of function 
 
 function myFunction() {
     function sum() {
@@ -19,7 +19,7 @@ function myFunction() {
     return sum(); // return 3
 }
 
-console.log( sum () ); // return 'sum is not defined' because javascript don´t know where sum is declared
+console.log(sum()); // return 'sum is not defined' because javascript don´t know where sum is declared
 
 function myFunction() {
     var number1 = 1;
@@ -30,3 +30,10 @@ function myFunction() {
         return number1 + number2;
     }
 }
+
+function returnFunction() {
+    return function sum(x, y) {
+        return x + y;
+    }
+}
+
