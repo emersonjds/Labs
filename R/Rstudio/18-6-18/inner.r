@@ -22,4 +22,10 @@ sql = sqldf("select * from Apend_A
             Apend_A.id = Apend_B.id")
 sql
 
+attach(Banco)
+subset(Banco, estudo = 10 % sexo == 1)
+selectionados <- Banco[10:20, c("id"),]
+
+boxplot(salario)
+boxplot(salario, outline=FALSE)
 
