@@ -1,22 +1,22 @@
 
 console.log('documento carregado');
 
-var titulo = document.querySelector('.titulo');
+let titulo = document.querySelector('.titulo');
 titulo.innerHTML = 'Maximo Nutrição';
 console.log('requisições de chamadas pre ordendas');
 
-var paciente = document.querySelector('#primeiro-paciente');
+let paciente = document.querySelector('#primeiro-paciente');
 
-var pesoPaciente = paciente.querySelector('.info-peso');
-var peso = pesoPaciente.textContent;
+let pesoPaciente = paciente.querySelector('.info-peso');
+let peso = pesoPaciente.textContent;
 
-var alturaPaciente = paciente.querySelector('.info-altura');
-var altura = alturaPaciente.textContent;
+let alturaPaciente = paciente.querySelector('.info-altura');
+let altura = alturaPaciente.textContent;
 
-var alturaValida = true;
-var pesoValido = true;
+let alturaValida = true;
+let pesoValido = true;
 
-var infoIMC = document.querySelector('.info-imc');
+let infoIMC = document.querySelector('.info-imc');
 
 if (peso <= 0 || peso >= 1000) {
     console.log('peso invalido');
