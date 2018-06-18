@@ -29,3 +29,15 @@ selectionados <- Banco[10:20, c("id"),]
 boxplot(salario)
 boxplot(salario, outline=FALSE)
 
+x=rnorm(100), mean(=10, sd=2)
+x
+hist(x)
+density(x)
+plot(x)
+qqnorm(x); qqline(x)
+hist(density)
+
+Banco[order(Banco$salario, decreasing=TRUE),]
+replace(salario, Salario=100000, 99999)
+boxplot(salario)
+
