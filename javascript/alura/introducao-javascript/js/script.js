@@ -25,7 +25,7 @@ for (var i = 0; i <= pacientes.length; i++) {
         console.log('peso invalido');
         pesoValido = false;
         infoIMC.textContent = 'Peso Invalido';
-        paciente.style.color = red;
+        paciente.style.color = red; // muda a cor da fonte para ficar em vermelho caso atenda a condição
     }
 
     if (altura <= 0 || altura >= 3.00) {
