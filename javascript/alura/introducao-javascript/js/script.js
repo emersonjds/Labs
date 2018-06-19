@@ -6,7 +6,7 @@ titulo.innerHTML = 'Maximo Nutrição';
 console.log('requisições de chamadas pre ordendas');
 
 // let paciente = document.querySelector('#primeiro-paciente');
-let pacientes = document.querySelectorAll('.paciente');
+let pacientes = document.querySelectorAll('.paciente'); // retorna um array com o os dados passados como parametro
 
 for (var i = 0; i <= pacientes.length; i++) {
     let paciente = paciente[i];
