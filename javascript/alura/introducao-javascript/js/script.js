@@ -38,14 +38,3 @@ for (var i = 0; i <= pacientes.length; i++) {
         infoIMC.textContent = imc.toFixed(2); // arredonda as casas decimais para 2 digitos 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
