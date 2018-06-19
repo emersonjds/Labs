@@ -9,17 +9,17 @@ console.log('requisições de chamadas pre ordendas');
 let pacientes = document.querySelectorAll('.paciente'); // retorna um array com o os dados passados como parametro
 
 for (var i = 0; i <= pacientes.length; i++) {
-    let paciente = paciente[i];
-    let pesoPaciente = paciente.querySelector('.info-peso');
-    let peso = pesoPaciente.textContent;
+    var paciente = paciente[i];
+    var pesoPaciente = paciente.querySelector('.info-peso');
+    var peso = pesoPaciente.textContent;
 
-    let alturaPaciente = paciente.querySelector('.info-altura');
-    let altura = alturaPaciente.textContent;
+    var alturaPaciente = paciente.querySelector('.info-altura');
+    var altura = alturaPaciente.textContent;
 
-    let alturaValida = true;
-    let pesoValido = true;
+    var alturaValida = true;
+    var pesoValido = true;
 
-    let infoIMC = document.querySelector('.info-imc');
+    var infoIMC = document.querySelector('.info-imc');
 
     if (peso <= 0 || peso >= 1000) {
         console.log('peso invalido');
