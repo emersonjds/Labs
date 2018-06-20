@@ -13,3 +13,20 @@ loadhistory()
 ls()
 
 x <- 2;
+y = 12;
+
+x <- 5;
+
+#list of pattern
+ls(pattern = "x");
+
+rm(y) #remove
+y
+
+search()
+
+install.packages(sqldf)
+
+list.files()
+dir()
+install.packages()
