@@ -8,6 +8,16 @@ console.log('requisições de chamadas pre ordendas');
 // let paciente = document.querySelector('#primeiro-paciente');
 let pacientes = document.querySelectorAll('.paciente'); // retorna um array com o os dados passados como parametro
 
+// titulo.addEventListener('click', mostraMensagem); // na chamada de função nao é preciso executar ela, assim que o evento é realizado ele auto executa a função
+
+titulo.addEventListener('click', () => {
+    console.log('Fui clicado')
+})
+
+// function mostraMensagem() {
+//     console.log('Eu fui clicado');
+// }
+
 for (var i = 0; i <= pacientes.length; i++) {
     var paciente = paciente[i];
     var pesoPaciente = paciente.querySelector('.info-peso');
@@ -43,9 +53,5 @@ for (var i = 0; i <= pacientes.length; i++) {
         infoIMC.textContent = imc.toFixed(2); // arredonda as casas decimais para 2 digitos 
     }
 
-    titulo.addEventListener('click', mostraMensagem());
 
-    function mostraMensagem() {
-        console.log('Eu fui clicado');
-    }
 }
