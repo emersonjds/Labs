@@ -19,7 +19,7 @@ titulo.addEventListener('click', () => {
 // }
 
 for (var i = 0; i <= pacientes.length; i++) {
-    var paciente = paciente[i];
+    var paciente = pacientes[i];
     var pesoPaciente = paciente.querySelector('.info-peso');
     var peso = pesoPaciente.textContent;
 
@@ -52,6 +52,9 @@ for (var i = 0; i <= pacientes.length; i++) {
         var imc = peso / (altura * altura);
         infoIMC.textContent = imc.toFixed(2); // arredonda as casas decimais para 2 digitos 
     }
-
-
 }
+
+var botaoAdicionar = document.querySelector('#adicionar-paciente'); // chamar sempre com chamada de classe ou id
+botaoAdicionar.addEventListener('click', () => {
+    console.log('To bombando carai')
+})
