@@ -1,9 +1,6 @@
 
-console.log('documento carregado');
-
 let titulo = document.querySelector('.titulo');
 titulo.innerHTML = 'Maximo Nutrição';
-console.log('requisições de chamadas pre ordendas');
 
 // let paciente = document.querySelector('#primeiro-paciente');
 let pacientes = document.querySelectorAll('.paciente'); // retorna um array com o os dados passados como parametro
@@ -20,7 +17,10 @@ titulo.addEventListener('click', () => {
 
 for (var i = 0; i <= pacientes.length; i++) {
     var paciente = pacientes[i];
-    var pesoPaciente = paciente.querySelector('.info-peso');
+
+
+    // var pesoPaciente = paciente.querySelector('.info-peso');
+    let pesoPaciente = paciente.querySelector('.info-peso');
     var peso = pesoPaciente.textContent;
 
     var alturaPaciente = paciente.querySelector('.info-altura');
@@ -55,6 +55,7 @@ for (var i = 0; i <= pacientes.length; i++) {
 }
 
 var botaoAdicionar = document.querySelector('#adicionar-paciente'); // chamar sempre com chamada de classe ou id
-botaoAdicionar.addEventListener('click', () => {
+console.log(botaoAdicionar)
+botaoAdicionar.addEventListener('click', function () {
     console.log('To bombando carai')
-})
+});
