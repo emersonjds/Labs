@@ -25,13 +25,17 @@ for (var i = 0; i <= pacientes.length; i++) {
         console.log('peso invalido');
         pesoValido = false;
         infoIMC.textContent = 'Peso Invalido';
-        paciente.style.color = red; // muda a cor da fonte para ficar em vermelho caso atenda a condição
+        paciente.classList.add('paciente-invalido');
+        // paciente.style.color = red; // muda a cor da fonte para ficar em vermelho caso atenda a condição
+        // paciente.style.backgroundColor = lightcoral; // muda a cor de fundo da linha
     }
 
     if (altura <= 0 || altura >= 3.00) {
         console.log('altura invalida');
         alturaValida = false;
         infoIMC.textContent = 'Altura Invalida';
+        // paciente.style.backgroundColor = lightcoral;
+        paciente.classList.add('paciente-invalido');
     }
 
     if (pesoValido && alturaValida) {
