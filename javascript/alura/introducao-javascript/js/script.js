@@ -42,4 +42,10 @@ for (var i = 0; i <= pacientes.length; i++) {
         var imc = peso / (altura * altura);
         infoIMC.textContent = imc.toFixed(2); // arredonda as casas decimais para 2 digitos 
     }
+
+    titulo.addEventListener('click', mostraMensagem());
+
+    function mostraMensagem() {
+        console.log('Eu fui clicado');
+    }
 }
