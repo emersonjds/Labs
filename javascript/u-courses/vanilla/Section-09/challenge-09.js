@@ -128,3 +128,11 @@ correto da variável ou função chamada.
         return n1 / n2;
     }));
 })();
+
+function giveUp() {
+    return youcan();
+}
+
+function youcan() {
+    return console.log('never give up');
+}
