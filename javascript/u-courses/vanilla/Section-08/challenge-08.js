@@ -123,7 +123,17 @@ console.log(mod(10, 8));
 
 
 function getName(name) {
-	return function aceno(aceno) {
-		return `${aceno} ${name}`
-	}
+  return function aceno(aceno) {
+    return `${aceno} ${name}`
+  }
+}
+
+function getData(data) {
+  return function apiDate() {
+    return fetch(input, 'www.google.com').then(data => {
+      console.log(data.body);
+    }).catch(error => {
+      console.log(error.message);
+    })
+  }
 }
