@@ -16,3 +16,15 @@ function adder(x) {
     }
     return anotherFunction;
 }
+
+function hello(param) {
+    return function (anotherParam) {
+        return `${param} ${anotherParam}`
+    }
+}
+
+hello('Ola')('Mundo')
+//'Ola Mundo'
+var firstParam = hello('Ola')
+firstParam('Mundo')
+    //'Ola Mundo
