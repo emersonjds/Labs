@@ -27,3 +27,14 @@ function callName() {
 }
 
 showOtherFunction(callName) // return 'Emerson Silva'
+
+function returnedFunction(func) {
+    return func()
+}
+//undefined
+function showName() {
+    return 'Emerson Silva'
+}
+//undefined
+returnedFunction(showName)
+//'Emerson Silva'
