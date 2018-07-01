@@ -19,3 +19,7 @@ function myFunction2 () {
 }
 
 myFunction2.name // return myFunction2
+
+var func = function namedFunction() {
+    return 'hi'
+}
