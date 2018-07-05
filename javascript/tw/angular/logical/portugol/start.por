@@ -2,11 +2,10 @@ programa
 {
 	funcao inicio()
 	{
-		escreva("Hello Word\n") // quebra de linha
-		escreva("Digite o seu nome ")
-		cadeia nome //string
-		leia(nome) //atribuição de valor para variavel nome
-		escreva("Ola, " + nome)
+		escreva("Digite um numero")
+		inteiro numero
+		leia(numero)
+		escreva("O numero digitado foi " + numero)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -14,7 +13,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 75; 
+ * @POSICAO-CURSOR = 142; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
