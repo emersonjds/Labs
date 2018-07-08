@@ -1,5 +1,0 @@
-projectKey=advanced-js
-serverUrl=http://localhost:9000
-dashboardUrl=http://localhost:9000/dashboard/index/advanced-js
-ceTaskId=AVq0wv_KUsQJkby-cEwW
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AVq0wv_KUsQJkby-cEwW
