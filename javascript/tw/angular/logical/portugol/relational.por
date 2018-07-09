@@ -19,6 +19,8 @@ programa
 		escreva("Primeiro numero é maior que segundo numero ?! ", primeiroNumeroMaiorSegundoNumero, "\n")
 		escreva("Primeiro numero é igual que segundo numero ?! ", primeiroNumeroIgualSegundoNumero, "\n")
 		escreva("Primeiro numero é menor que segundo numero ?! ", primeiroNumeroMenorSegundoNumero, "\n")
+		escreva("Primeiro numero é maior ou igual ao segundo numero ?! ", primeiroNumeroMaiorIgualSegundoNumero, "\n")
+		escreva("Primeiro numero é menor ou igual ao segundo numero ?! ", primeiroNumeroMenorIgualSegundoNumero, "\n")
 		
 	}
 }
@@ -27,7 +29,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 262; 
+ * @POSICAO-CURSOR = 314; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
