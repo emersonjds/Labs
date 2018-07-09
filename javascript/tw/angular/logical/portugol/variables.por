@@ -6,13 +6,13 @@ programa
 		real distanciaPercorrida
 		real velocidade
 		
-		escreva("Digite a distancia total")
+		escreva("Digite a distancia total: ")
 		leia(distanciaTotal)
 
-		escreva("Digite a distancia percorrida")
+		escreva("Digite a distancia percorrida: ")
 		leia(distanciaPercorrida)
 		
-		escreva("Digite a velocidade (km/h)")
+		escreva("Digite a velocidade (km/h): ")
 		leia(velocidade)
 
 		real distanciaASerPercorrida = distanciaTotal - distanciaPercorrida
@@ -27,7 +27,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 518; 
+ * @POSICAO-CURSOR = 280; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
