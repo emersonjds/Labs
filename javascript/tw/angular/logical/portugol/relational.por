@@ -13,6 +13,8 @@ programa
 		logico primeiroNumeroMaiorSegundoNumero = n1 > n2
 		logico primeiroNumeroIgualSegundoNumero = n1 == n2
 		logico primeiroNumeroMenorSegundoNumero = n1 < n2
+		logico primeiroNumeroMaiorIgualSegundoNumero = n1 >= n2
+		logico primeiroNumeroMenorIgualSegundoNumero = n1 <= n2 
 
 		escreva("Primeiro numero é maior que segundo numero ?! ", primeiroNumeroMaiorSegundoNumero, "\n")
 		escreva("Primeiro numero é igual que segundo numero ?! ", primeiroNumeroIgualSegundoNumero, "\n")
@@ -25,7 +27,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 614; 
+ * @POSICAO-CURSOR = 262; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
