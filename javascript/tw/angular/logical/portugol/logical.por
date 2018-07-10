@@ -13,15 +13,15 @@ programa
 		logico resultadoComOperadorOU = n1 > 10 ou n2 > 20
 		logico resultadoComOperadorNao = nao(n1 > 10 ou n2 > 20)
 		
-		escreva("Resultado da operação ", resultadoComOperadorE , "\n")
-		escreva("Resultado da operação ", resultadoComOperadorOU , "\n")
-		escreva("Resultado da operação ", resultadoComOperadorNao , "\n")
+		escreva("Resultado da operaï¿½ï¿½o ", resultadoComOperadorE , "\n")
+		escreva("Resultado da operaï¿½ï¿½o ", resultadoComOperadorOU , "\n")
+		escreva("Resultado da operaï¿½ï¿½o ", resultadoComOperadorNao , "\n")
 	}
 }
 /* $$$ Portugol Studio $$$ 
  * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
+ * Esta seï¿½ï¿½o do arquivo guarda informaï¿½ï¿½es do Portugol Studio.
+ * Vocï¿½ pode apagï¿½-la se estiver utilizando outro editor.
  * 
  * @POSICAO-CURSOR = 525; 
  * @PONTOS-DE-PARADA = ;
