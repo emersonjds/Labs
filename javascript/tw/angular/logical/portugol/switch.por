@@ -14,7 +14,7 @@ programa
 			escreva("Fevereiro")
 				pare
 			caso 3: 
-			escreva("Março")
+			escreva("Marï¿½o")
 				pare
 			caso 4: 
 			escreva("Abril")
@@ -47,8 +47,8 @@ programa
 }
 /* $$$ Portugol Studio $$$ 
  * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
+ * Esta seï¿½ï¿½o do arquivo guarda informaï¿½ï¿½es do Portugol Studio.
+ * Vocï¿½ pode apagï¿½-la se estiver utilizando outro editor.
  * 
  * @POSICAO-CURSOR = 85; 
  * @PONTOS-DE-PARADA = ;
