@@ -6,7 +6,9 @@ programa
 		enquanto(nome != "sair") {
 			escreva("Informe o nome : ")
 			leia(nome)
-			escreva("Bem vindo ", nome, "\n")
+			se (nome != "sair") {
+				escreva("Bem vindo ", nome, "\n")	
+			}
 		}
 		escreva("Ate logo")
 	}
@@ -16,7 +18,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 187; 
+ * @POSICAO-CURSOR = 131; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
