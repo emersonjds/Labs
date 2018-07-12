@@ -3,19 +3,27 @@ programa
 	funcao inicio()
 	{
 		inteiro numero
-		escreva("Digite o numero para ser verificado: ")
+		inteiro quantidadeDeDivisores = 0
+		escreva("Escreva um numero aleatorio")
 		leia(numero)
-		se(numero % 1 == 0 ou numero % numero == 0 ) {
-			escreva("O numero ", numero, "ï¿½ primo ")
+		para (inteiro i = 1; i <= numero ; i++) {
+			se (numero % i == 0 ) {
+				quantidadeDeDivisores++
+			}
+		}
+		se (quantidadeDeDivisores == 2) {
+			escreva("O numero ", numero, "é primo")
+		} senao {
+			escreva("O numero digitado ", numero, " nao é primo")
 		}
 	}
 }
 /* $$$ Portugol Studio $$$ 
  * 
- * Esta seï¿½ï¿½o do arquivo guarda informaï¿½ï¿½es do Portugol Studio.
- * Vocï¿½ pode apagï¿½-la se estiver utilizando outro editor.
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 215; 
+ * @POSICAO-CURSOR = 404; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
