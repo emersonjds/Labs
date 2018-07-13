@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 void main() {
-  char letra = '';
+  char letra = 'teste';
 scanf("%c", &letra);
-// Enquanto o usuário não apertar ENTER, o console aguardará o usuário terminar a digitação.
-// Quando ENTER for pressionado, o scanf() fará a leitura e transportará o valor lido para a variável apontada
+// Enquanto o usuï¿½rio nï¿½o apertar ENTER, o console aguardarï¿½ o usuï¿½rio terminar a digitaï¿½ï¿½o.
+// Quando ENTER for pressionado, o scanf() farï¿½ a leitura e transportarï¿½ o valor lido para a variï¿½vel apontada
 
-char nome[50]; // Um nome de até 50 caracteres
+char nome[50]; // Um nome de atï¿½ 50 caracteres
 scanf("%s", &nome);
 
 int numero = 0;
