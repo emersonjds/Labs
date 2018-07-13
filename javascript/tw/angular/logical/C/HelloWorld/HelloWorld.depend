@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\cedro_nds\documents\workspace\estudos\labs\javascript\tw\angular\logical\c\helloworld\main.c
+	<stdio.h>
+	<stdlib.h>
+
