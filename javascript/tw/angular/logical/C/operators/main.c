@@ -12,5 +12,6 @@ int main()
     printf("%d - %d = %d \n", numero, numero2, numero - numero2);
     printf("%d x %d = %d \n", numero, numero2, numero * numero2);
     printf("%d / %d = %d \n", numero, numero2, numero / numero2);
+    printf("O resto da divisao de %d com %d é %d \n", numero, numero2, numero % numero2);
     return 0;
 }
