@@ -4,7 +4,7 @@
 int main()
 {
     int mes;
-    printf("Digite o numero do mes");
+    printf("Digite o numero do mes ");
     scanf("%d", &mes);
     switch (mes)
     {
