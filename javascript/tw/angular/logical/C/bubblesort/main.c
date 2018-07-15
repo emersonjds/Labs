@@ -15,7 +15,7 @@ int main()
     for (int i = 0; i < 5; i++)
     {
         numero = vetor[i];
-        printf("\n %d \n", numero);
+        printf("%d \n", numero);
     }
     alteracoes = 1;
     int temporario = 0;
@@ -37,7 +37,7 @@ int main()
     for (int i = 0; i < 5; i++)
     {
         numero = vetor[i];
-        printf("\n %d \n", numero);
+        printf("%d \n", numero);
     }
     return 0;
 }
