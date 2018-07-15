@@ -6,6 +6,7 @@ int main()
     char opcao;
     printf("Usuario, voce é maior de idade ?! ");
     scanf("%s", &opcao);
+    //s used for char treatement 
     switch (opcao)
     {
     case 'S':
