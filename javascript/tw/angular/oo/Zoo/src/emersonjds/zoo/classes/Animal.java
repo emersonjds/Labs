@@ -3,7 +3,7 @@ package emersonjds.zoo.classes;
 public class Animal {
 
     private String name;
-    private String specie;
+    private String species;
     private int age;
     
     // access modifier / type of return / mehotd name 
@@ -16,11 +16,11 @@ public class Animal {
     }
 
     public String getSpecie() {
-      return this.specie;
+      return this.species;
     }
 
-    public void setSpecie(String specie) {
-      this.specie = specie;
+    public void setSpecie(String species) {
+      this.species = species;
     }
 
     public int getAge() {
