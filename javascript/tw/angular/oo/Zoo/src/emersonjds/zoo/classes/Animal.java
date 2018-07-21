@@ -6,7 +6,7 @@ public class Animal {
     private String species;
     private int age;
     
-    // access modifier / type of return / mehotd name 
+    // access modifier / type of return / method name 
     public String getNome () {
     	return this.name;
     }
@@ -30,4 +30,14 @@ public class Animal {
     public void setAge(int age) {
       this.age = age;
     }
+    
+    public void soundEmmiter() {
+    	System.out.println(this.getNome() + "emitiu um barulho");
+    }
+
+    public Boolean isAdult() {
+      return this.getAge() >= 1;
+    }
+
+
 }
