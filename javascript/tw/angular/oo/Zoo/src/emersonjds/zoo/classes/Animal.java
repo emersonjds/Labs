@@ -1,10 +1,9 @@
 package emersonjds.zoo.classes;
 
 public class Animal {
-    char tipo;
-    int peso;
+
+    private String name;
+    private String specie;
+    private int idade;
     
-    public caminhar() {
-        
-    }
 }
