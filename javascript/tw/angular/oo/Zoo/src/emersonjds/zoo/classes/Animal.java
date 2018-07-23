@@ -40,6 +40,11 @@ public class Animal {
     	this.species = species;
     }
     
+    // method overload
+    public Animal(String name) {
+    	this.name = name;
+    }
+    
     public void soundEmmiter() {
     	System.out.println(this.getNome() + "emitiu um barulho");
     }
