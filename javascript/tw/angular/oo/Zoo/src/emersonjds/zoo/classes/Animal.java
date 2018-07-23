@@ -1,6 +1,8 @@
 package emersonjds.zoo.classes;
 
 public class Animal {
+	
+	
 
     private String name;
     private String species;
@@ -29,6 +31,13 @@ public class Animal {
 
     public void setAge(int age) {
       this.age = age;
+    }
+    
+    //over default constructor
+    public Animal(String name, int age, String species) {
+    	this.name = name;
+    	this.age = age;
+    	this.species = species;
     }
     
     public void soundEmmiter() {

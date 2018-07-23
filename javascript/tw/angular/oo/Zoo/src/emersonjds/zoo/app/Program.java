@@ -6,10 +6,17 @@ import emersonjds.zoo.classes.Animal;
 // always use a unique import for itself data
 
 public class Program {
-
 	public static void main(String[] args) {
-		Animal cachorro = new Animal();
-		cachorro.setName("Toto");
+		Animal cachorro = new Animal("Toto", 2, "Cachorro");
+	
+		System.out.println(
+			"Ola seu animal � " + cachorro.getSpecie() + 
+			" o nome do animal � " + cachorro.getNome() + 
+			" e ele tem " + cachorro.getAge() + " anos");
+		if(cachorro.isAdult()) {
+			System.out.println("Animal adulto");
+		} else {
+			System.out.println("Animal nao � adulto");
+		}
 	}
-
 }
