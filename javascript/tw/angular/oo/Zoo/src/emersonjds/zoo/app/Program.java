@@ -8,7 +8,6 @@ import emersonjds.zoo.classes.Animal;
 public class Program {
 	public static void main(String[] args) {
 		Animal cachorro = new Animal("Toto", 2, "Cachorro");
-	
 		System.out.println(
 			"Ola seu animal � " + cachorro.getSpecie() + 
 			" o nome do animal � " + cachorro.getNome() + 

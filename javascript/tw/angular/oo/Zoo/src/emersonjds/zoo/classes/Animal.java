@@ -34,6 +34,7 @@ public class Animal {
     }
     
     //over default constructor
+    // method assign = name of method + params type and amount of params   
     public Animal(String name, int age, String species) {
     	this.name = name;
     	this.age = age;
