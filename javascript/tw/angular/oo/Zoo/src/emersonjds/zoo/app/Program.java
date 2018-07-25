@@ -20,6 +20,9 @@ public class Program {
 			System.out.println("Animal nao ï¿½ adulto");
 		}
 		
-		System.out.println("O nome do gato é " + cat.getNome());
+		System.out.println("O nome do gato ï¿½ " + cat.getNome());
+
+		System.out.println("=================");
+		System.out.println("Barulho do cachorro");
 	}
 }
