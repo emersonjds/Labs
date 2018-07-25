@@ -24,5 +24,7 @@ public class Program {
 
 		System.out.println("=================");
 		System.out.println("Barulho do cachorro");
+		System.out.println("=================");
+		System.out.println("Barulho do gato");
 	}
 }

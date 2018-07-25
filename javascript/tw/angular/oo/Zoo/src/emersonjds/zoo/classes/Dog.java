@@ -13,5 +13,9 @@ public class Dog extends Animal {
 	public Dog (String name, int age) {
 		super(name, age, "Rex");
 	}
+
+	public void soudnEmmitter() {
+		System.out.println("Latido do cachorro");
+	}
 	
 }

@@ -8,6 +8,9 @@ public class Cat extends Animal {
 	public Cat(String name) {
 		super(name, 12, "gato");
 	}
-	
-	//pass parameter for complements anothers fields that don´t declared on function scope 
+	//pass parameter for complements anothers fields that donï¿½t declared on function scope 
+
+	public void soundEmmitter() {
+		System.out.println("O gato esta miando");
+	}
 }

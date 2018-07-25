@@ -44,9 +44,8 @@ public abstract class Animal {
     	this.name = name;
     }
     
-    public void soundEmmiter() {
-    	System.out.println(this.getNome() + "emitiu um barulho");
-    }
+    //abstract method 
+    public abstract void soundEmmiter() {}
 
     public Boolean isAdult() {
       return this.getAge() >= 1;
