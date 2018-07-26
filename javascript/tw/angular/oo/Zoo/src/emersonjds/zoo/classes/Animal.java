@@ -45,7 +45,7 @@ public abstract class Animal {
     }
     
     //abstract method 
-    public abstract void soundEmmiter() {}
+    public abstract void soundEmmiter();
 
     public Boolean isAdult() {
       return this.getAge() >= 1;

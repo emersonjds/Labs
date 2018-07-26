@@ -1,6 +1,5 @@
 package emersonjds.zoo.app;
 
-import emersonjds.zoo.classes.Animal;
 import emersonjds.zoo.classes.Cat;
 import emersonjds.zoo.classes.Dog;
 
@@ -17,11 +16,10 @@ public class Program {
 		} else {
 			System.out.println("Animal nao eh adulto");
 		}
-
 		System.out.println("O nome do gato eh " + cat.getNome());
 		System.out.println("=================");
 		System.out.println("Barulho do cachorro");
-		cachorro.soudnEmmitter();
+		cachorro.soundEmmiter();
 		System.out.println("=================");
 		System.out.println("Barulho do gato");
 		cat.soundEmmiter();
