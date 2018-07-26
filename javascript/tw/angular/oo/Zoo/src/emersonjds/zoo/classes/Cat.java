@@ -12,6 +12,11 @@ public class Cat extends Animal {
 
 	@Override
 	public void soundEmmiter() {
-		System.out.println("Miau");
+		if(isLive) {
+			System.out.println("Miau");
+		} else {
+			System.out.println("The animal is died");
+		}
+		
 	}
 }

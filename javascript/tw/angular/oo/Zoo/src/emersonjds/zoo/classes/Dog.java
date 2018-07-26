@@ -16,7 +16,11 @@ public class Dog extends Animal {
 
 	@Override
 	public void soundEmmiter() {
-		System.out.println("Au Au");
+		if(isLive) {
+			System.out.println("Au Au");
+		} else {
+			System.out.println("The animal is died");
+		}
 	}
 	
 }
