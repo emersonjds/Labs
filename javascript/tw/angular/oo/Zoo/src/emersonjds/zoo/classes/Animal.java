@@ -32,6 +32,7 @@ public abstract class Animal {
       this.age = age;
     }
     
+    //(if Dog.isLive())
     public Boolean isLive() {
     	return isLive;
     }
