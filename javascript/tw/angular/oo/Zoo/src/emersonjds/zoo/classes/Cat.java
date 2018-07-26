@@ -10,7 +10,8 @@ public class Cat extends Animal {
 	}
 	//pass parameter for complements anothers fields that don�t declared on function scope 
 
-	public void soundEmmitter() {
-		System.out.println("O gato esta miando");
+	@Override
+	public void soundEmmiter() {
+		System.out.println("Miau");
 	}
 }
