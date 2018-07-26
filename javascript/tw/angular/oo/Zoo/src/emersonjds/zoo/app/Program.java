@@ -3,8 +3,6 @@ package emersonjds.zoo.app;
 import emersonjds.zoo.classes.Cat;
 import emersonjds.zoo.classes.Dog;
 
-// import emersonjds.zoo.classes.*; import all packages of the package
-// always use a unique import for itself data
 public class Program {
 	public static void main(String[] args) {
 		Dog cachorro = new Dog("Toto", 2, "Cachorro");
