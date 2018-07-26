@@ -16,12 +16,21 @@ public class Program {
 		} else {
 			System.out.println("Animal nao eh adulto");
 		}
-		System.out.println("O nome do gato eh " + cat.getNome());
+		
 		System.out.println("=================");
+		System.out.println("O nome do cachorro eh " + cachorro.getNome());
 		System.out.println("Barulho do cachorro");
 		cachorro.soundEmmiter();
+		
 		System.out.println("=================");
+		System.out.println("O nome do gato eh " + cat.getNome());
 		System.out.println("Barulho do gato");
+		cat.soundEmmiter();
+
+		System.out.println("**********************");
+		cachorro.Die();
+		cat.Die();
+		cachorro.Die();
 		cat.soundEmmiter();
 	}
 }
