@@ -63,4 +63,8 @@ public class Patient {
 	public void cancelConsult() {
 		System.out.println("A consulta foi cancelada com sucesso");
 	}
+
+	public void recoverConsult() {
+		System.out.println("Consulta recuperada pelo sistema");
+	}
 }
