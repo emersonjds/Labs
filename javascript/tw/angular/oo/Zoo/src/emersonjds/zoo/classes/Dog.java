@@ -24,7 +24,7 @@ public class Dog extends Animal {
 	}
 	
 	@Override
-	public boolean isAdult () {
+	public Boolean isAdult () {
 		if(isLive) {
 			return age >= 2;
 		} else {

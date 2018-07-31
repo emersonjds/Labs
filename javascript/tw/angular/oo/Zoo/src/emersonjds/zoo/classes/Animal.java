@@ -55,9 +55,10 @@ public abstract class Animal implements Liver {
   }
 
   // abstract method
+  @Override // override to Interface method
   public abstract void soundEmmiter();
 
-  public boolean isAdult() {
+  public Boolean isAdult() {
     if (this.isLive()) {
       return this.getAge() >= 1;
     } else {
@@ -65,6 +66,7 @@ public abstract class Animal implements Liver {
     }
   }
 
+  @Override
   public final void Die() {
     this.isLive = false;
   }
