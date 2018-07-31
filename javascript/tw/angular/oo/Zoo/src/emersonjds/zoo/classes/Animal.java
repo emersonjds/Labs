@@ -1,6 +1,8 @@
 package emersonjds.zoo.classes;
 
-public abstract class Animal {
+import emersonjds.zoo.interfaces.Liver;
+
+public abstract class Animal implements Liver {
 
   private String name;
   private String species;
