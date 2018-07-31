@@ -63,7 +63,7 @@ public abstract class Animal {
     }
   }
 
-  public void Die() {
+  public final void Die() {
     this.isLive = false;
   }
 
