@@ -4,7 +4,7 @@ public abstract class Animal {
 
   private String name;
   private String species;
-  private int age;
+  protected int age;
   protected boolean isLive;
 
   // access modifier / type of return / method name

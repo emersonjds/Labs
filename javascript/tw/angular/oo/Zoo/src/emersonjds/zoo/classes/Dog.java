@@ -23,5 +23,13 @@ public class Dog extends Animal {
 		}
 	}
 	
-	
+	@Override
+	public boolean isAdult () {
+		if(isLive) {
+			return age > 2;
+		} else {
+			return false;
+		}
+		
+	}
 }
