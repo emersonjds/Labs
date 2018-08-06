@@ -5,8 +5,9 @@ import emersonjds.zoo.classes.Cat;
 
 public class Program {
 	public static void main(String[] args) {
+		//abstract class
 		Animal animal = new Cat("Toto", 2, "animal");
-		animal.setSpecie("Cat");
+						// concrete class
 		System.out.println("Ola seu animal eh " + animal.getSpecie() + " o nome do animal � " + animal.getNome()
 				+ " e ele tem " + animal.getAge() + " anos");
 		if (animal.isAdult()) {
