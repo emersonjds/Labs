@@ -31,16 +31,24 @@ public class Zoologico {
   }
 
   /**
-   * @param animal the animal to set
+   * @param animal the animal to add
    */
   public void addAnimal(Animal animal) {
     this.animais.add(animal);
   }
 
   /**
-   * @param index the index to set
+   * @param index the index of animal to remove
    */
   public void removeAnimal(int indexAnimal) {
     this.animais.remove(indexAnimal);
+  }
+
+  public void listAnimal() {
+    System.out.println("Lista de animais do zoologico");
+    // size is equal to lenght
+    for (int i = 0; i < animais.size(); i++) {
+      System.out.println(" - " + animais.get(i).getNome());
+    }
   }
 }
