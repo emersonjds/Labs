@@ -29,4 +29,18 @@ public class Zoologico {
   public void setName(String name) {
     this.name = name;
   }
+
+  /**
+   * @param animal the animal to set
+   */
+  public void addAnimal(Animal animal) {
+    this.animais.add(animal);
+  }
+
+  /**
+   * @param index the index to set
+   */
+  public void removeAnimal(int indexAnimal) {
+    this.animais.remove(indexAnimal);
+  }
 }
