@@ -28,6 +28,8 @@ public class Program {
 		Zoologico zoo = new Zoologico();
 		zoo.setName("zoo Curso OO");
 		zoo.addAnimal(animal);
+		Animal animal2 = new Cat("Bob", 3);
+		zoo.addAnimal(animal2);
 		System.out.println("Animais do zoologico " + zoo.getName());
 		zoo.listAnimal();
 	}
