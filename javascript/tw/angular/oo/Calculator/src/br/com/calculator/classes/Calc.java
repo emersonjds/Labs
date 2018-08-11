@@ -4,7 +4,7 @@ import br.com.calculator.interfaces.MathCalculator;
 
 public abstract class Calc implements MathCalculator {
 
-	private int numberOne, numberTwo;
+	protected int numberOne, numberTwo;
 
 	public Calc(int numberOne, int numberTwo) {
 		this.numberOne = numberOne;
