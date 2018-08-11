@@ -6,7 +6,7 @@ import br.com.calculator.interfaces.MathCalculator;
 public class App {
 
 	public static void main(String[] args) {
-		String calculo = "/";
+		String calculo = "^";
 		int numberOne = 2;
 		int numberTwo = 2;
 		

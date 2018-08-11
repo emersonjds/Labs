@@ -1,7 +1,5 @@
 package br.com.calculator.classes;
 
-import br.com.calculator.interfaces.MathCalculator;
-
 public class Potentiation extends Calc {
 
 	public Potentiation( int numberOne, int numberTwo) {
