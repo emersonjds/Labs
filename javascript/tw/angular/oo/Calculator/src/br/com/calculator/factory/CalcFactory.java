@@ -7,6 +7,7 @@ import br.com.calculator.classes.Subtraction;
 import br.com.calculator.interfaces.MathCalculator;
 
 public class CalcFactory {
+	
 	public MathCalculator createCalc(int numberOne, int numberTwo, String calc) {
 		if(calc.equals("+")) {
 			return new Adition(numberOne, numberTwo);
