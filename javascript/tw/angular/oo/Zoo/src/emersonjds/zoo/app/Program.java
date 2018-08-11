@@ -32,5 +32,8 @@ public class Program {
 		zoo.addAnimal(animal2);
 		System.out.println("Animais do zoologico " + zoo.getName());
 		zoo.listAnimal();
+
+		zoo.removeAnimal(0);
+		zoo.listAnimal();
 	}
 }
