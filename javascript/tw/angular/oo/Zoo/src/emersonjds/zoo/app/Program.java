@@ -2,6 +2,7 @@ package emersonjds.zoo.app;
 
 import emersonjds.zoo.classes.Animal;
 import emersonjds.zoo.classes.Cat;
+import emersonjds.zoo.classes.Vet;
 import emersonjds.zoo.classes.Zoologico;
 
 public class Program {
@@ -35,5 +36,16 @@ public class Program {
 
 		zoo.removeAnimal(0);
 		zoo.listAnimal();
+		
+		Vet vet = new Vet();
+		vet.setName("Emerson");
+		vet.animalAttend(animal);
+		vet.animalAttend(animal2);
+		vet.listAttendAnimals();
+		
+		System.out.println(" --------------- ");
+		vet.stopAttendAnimal(1);
+		vet.listAttendAnimals();
+		
 	}
 }
