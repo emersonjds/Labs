@@ -24,12 +24,11 @@ public class Program {
 
 		System.out.println("**********************");
 		animal.Die();
-		animal.Die();
 
-		Zoologico Zoo = new Zoologico();
-		Zoo.setName("Zoo Curso OO");
-		Zoo.addAnimal(animal);
-		System.out.println("Animais do zoologico " + Zoo.getName());
-		Zoo.listAnimal();
+		Zoologico zoo = new Zoologico();
+		zoo.setName("zoo Curso OO");
+		zoo.addAnimal(animal);
+		System.out.println("Animais do zoologico " + zoo.getName());
+		zoo.listAnimal();
 	}
 }
