@@ -4,7 +4,8 @@ package br.com.calculator.classes;
  * Multiplication
  */
 public class Multiplication extends Calc{
-    Multiplication( int numberOne, int numberTwo) {
+
+    public Multiplication(int numberOne, int numberTwo) {
         super(numberOne, numberTwo);
     }
 

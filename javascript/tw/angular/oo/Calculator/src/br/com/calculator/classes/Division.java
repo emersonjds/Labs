@@ -10,7 +10,7 @@ public class Division extends Calc{
     }
 
     @Override
-    public Boolean validate() {
+    public Boolean validateOperation() {
         return numberOne >= 0 && numberTwo > 0 ;
     }
 
