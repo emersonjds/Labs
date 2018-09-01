@@ -1,9 +1,9 @@
-# Técnica de Discriminação:  Logistica.
+# Tï¿½cnica de Discriminaï¿½ï¿½o:  Logistica.
 
-# limpar memória do R
+# limpar memï¿½ria do R
 rm(list=ls(all=TRUE))
 
-Inad <- read.table ("F:/LabBDT2018/Inadimplencia.csv", sep=";", row.names=1 , header=T)
+Inad <- read.table ("/Users/emerson/Documents/workspace/Labs/R/Rstudio/data_minning/data/Inadimplencia.csv", sep=";", row.names=1 , header=T)
 
 attach(Inad)
 
@@ -14,10 +14,10 @@ fix(Inad)
 summary(Inad)
 
 
-# Frequência absoluta 
+# Frequï¿½ncia absoluta 
 table(Inad$Atrasos, Inad$Resposta)
 
-# Frequência relativa
+# Frequï¿½ncia relativa
 # cell percentages
 prop.table(table(Atrasos,Resposta))
 
@@ -47,7 +47,7 @@ plot(Inad$RendaMensal, Inad$Resposta)
 
 
 
-#impor para o R considerar como categórica.
+#impor para o R considerar como categï¿½rica.
 # se precisar!
 
 Inad$Resposta <- factor(Inad$Resposta)
@@ -66,7 +66,10 @@ dev.off()
 #definir % de casos de treino
 prt <- 3/4
 
-# amostra de casos de treino aleatória
+#escolha de amostra a ser utilizada
+set.seed(28)
+
+# amostra de casos de treino aleatï¿½ria
 treino <- sample(1:NROW(Inad), as.integer(prt*NROW(Inad)))
 
 # amostra de casos de treino sequencial temporalmente
@@ -85,7 +88,7 @@ prop.table(table(testData$Resposta))
 attach(trainData)
 
 Mod_Inad<- glm(Resposta ~ Atrasos + TempoRel + valorFatura + GastosAlim + RegRisc     
-                 + RendaMensal,trainData, family=binomial(link=logit))
+               + RendaMensal,trainData, family=binomial(link=logit))
 summary(Mod_Inad)
 
 
@@ -95,23 +98,23 @@ summary(predito)
 
 hist(predito)
 
-### Matriz de confusão  
+### Matriz de confusï¿½o  
 
 trainData$fx_predito <- cut(predito, breaks=c(0,0.50,1), right=F)
 
-MC <- table(trainData$Resposta, trainData$fx_predito , deparse.level = 2) # montar a matriz de confusão  
+MC <- table(trainData$Resposta, trainData$fx_predito , deparse.level = 2) # montar a matriz de confusï¿½o  
 show(MC) # mostra os resultados  
-ACC = sum(diag(MC))/sum(MC) # calcula a acurácia  
-show(ACC) # mostra a acurácia  
+ACC = sum(diag(MC))/sum(MC) # calcula a acurï¿½cia  
+show(ACC) # mostra a acurï¿½cia  
 
 
-# Criar variável faixa probabilidade
+# Criar variï¿½vel faixa probabilidade
 fx_predito1 <- cut(predito, breaks=c(0,0.10,0.20,0.30,0.40,0.50,0.60,0.70,0.80,0.90,1), right=F)
 
-# Frequência absoluta
+# Frequï¿½ncia absoluta
 table(fx_predito1,trainData$Resposta)
 
-# Frequência relativa
+# Frequï¿½ncia relativa
 prop.table(table(fx_predito1,trainData$Resposta),2)
 
 plot(fx_predito1 , trainData$Resposta)
@@ -132,12 +135,12 @@ summary(preds2_log)
 hist(preds2_log )
 testData$Pontua <- cut(preds2_log, breaks=c(0,0.50,1), right=F)
 
-### Matriz de confusãoTeste
+### Matriz de confusï¿½oTeste
 
-MC_test <- table(testData$Resposta, testData$Pontua , deparse.level = 2) # montar a matriz de confusão  
+MC_test <- table(testData$Resposta, testData$Pontua , deparse.level = 2) # montar a matriz de confusï¿½o  
 show(MC_test) # mostra os resultados  
-ACC_test = sum(diag(MC_test))/sum(MC) # calcula a acurácia  
-show(ACC_test) # mostra a acurácia  
+ACC_test = sum(diag(MC_test))/sum(MC) # calcula a acurï¿½cia  
+show(ACC_test) # mostra a acurï¿½cia  
 
 
 plot(testData$Pontua , testData$Resposta)
