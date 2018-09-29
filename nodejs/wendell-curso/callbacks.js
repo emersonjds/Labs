@@ -13,6 +13,9 @@
 // npm init -> para inicializar um projeto
 // npm init -y -> para inicializar 
 // sem perguntar nada
+// percebe se que trabalhar com callbacks pode ser trabalhoso e dificil gerenciar , quando temos um fluxo de dados muito grande 
+//necessario validar cada erro individualmente e precisamos garantir o valor de cada função
+// garantir tambem a convenção dos callbacks
 
 // cenario
 // Obter usuario
