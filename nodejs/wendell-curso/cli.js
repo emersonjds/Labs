@@ -19,10 +19,10 @@ Commander
   .option('c, --cadastrar', 'Cadastrar um Heroi')
   .option('l, --listar', 'Listar herois')
 
-  .option('m, --id', 'Id do Heroi')
-  .option('n, --nome', 'Nome do Heroi')
-  .option('i, --idade', 'Idade do Heroi')
-  .option('p, --poder', 'Poder do Heroi')
+  .option('m, --id [value]', 'Id do Heroi')
+  .option('n, --nome [value]', 'Nome do Heroi')
+  .option('i, --idade [value]', 'Idade do Heroi')
+  .option('p, --poder [value]', 'Poder do Heroi')
   .parse(process.argv)
 
   ;
@@ -37,7 +37,7 @@ Commander
     const database = new Database()
     /**
       node cli.js --cadastrar \
-      --nome Lanterna Verde \
+      --nome "Lanterna Verde" \
       --idade 23 \
       --poder Anel 
      */

@@ -1,1 +1,12 @@
-[{"id":2,"name":"Capitao America"}]
+[
+  {
+    "id": 2,
+    "name": "Capitao America"
+  },
+  {
+    "nome": "Lanterna",
+    "idade": "23",
+    "poder": "Anel",
+    "id": 1538241031963
+  }
+]
