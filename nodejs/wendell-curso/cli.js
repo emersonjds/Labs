@@ -18,7 +18,7 @@ Commander
   .version('v1.0')
   .option('-c, --cadastrar', 'Cadastrar um Heroi')
   .option('-l, --listar', 'Listar herois')
-  .option('-r, --remover', 'Remover Heroi')
+  .option('-r, --remover', 'Remover herois pelo Id')
   .option('-m, --id [value]', 'Id do Heroi')
   .option('-n, --nome [value]', 'Nome do Heroi')
   .option('-i, --idade [value]', 'Idade do Heroi')
@@ -56,7 +56,7 @@ Commander
       return;
     }
     /**
-     node cli.js --remove
+     node cli.js --remove --id 1538241031963
      */
     if (Commander.remover) {
       const id = Commander.id;
