@@ -71,12 +71,15 @@ class Database {
 // na pratica é a mesma funçao MAIN
 // com uma sintaxe diferente
 // para o vscode nao se perder na busca da função no hoisting
-; (async function main() {
-  const database = new Database();
-  await database.cadastrar({ id: 1, name: 'War Machine' });
-  await database.remover(1);
-  await database.atualizar(2, 'Maquina de Combate')
+// ; (async function main() {
+//   const database = new Database();
+//   await database.cadastrar({ id: 1, name: 'War Machine' });
+//   await database.remover(1);
+//   await database.atualizar(2, 'Maquina de Combate')
 
-  const dados = await database.listar();
-  console.log('xablau', dados)
-})()
+//   const dados = await database.listar();
+//   console.log('xablau', dados)
+// })()
+
+//exportando a classe para o mundo 
+module.exports = Database;
