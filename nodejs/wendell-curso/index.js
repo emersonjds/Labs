@@ -1,12 +1,12 @@
-http://dontpad.com/studygroup
+// http://dontpad.com/studygroup
 
-https://web.facebook.com/groups/erickwendel/
+// https://web.facebook.com/groups/erickwendel/
 
-https://nodejs.org
+// https://nodejs.org
 
-WIFI
-CD-VISITANTES
-@C3dr0#$2020#
+// WIFI
+// CD-VISITANTES
+// @C3dr0#$2020#
 
 // npm -> repositorio de pacotes do nodejs
 // node -> plataforma de desenvimento
