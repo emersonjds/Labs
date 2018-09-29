@@ -46,9 +46,9 @@ const obterTelefoneAsync = util.promisify(obterTelefone)
 // Quando precisar lançar um erro, chamamos a reject
 // Quando precisar informar que terminou chamamos o resolve
 const minhaPromise = new Promise(function (resolve, reject) {
-    setTimeout(() => {
-        return resolve({ mensagem: 'Callback é kct' })
-    }, 2000);
+  setTimeout(() => {
+    return resolve({ mensagem: 'Callback é kct' })
+  }, 2000);
 })
 
 // quando precisar recuperar o estado Fullfile (ou completo)
@@ -78,46 +78,46 @@ const minhaPromise = new Promise(function (resolve, reject) {
 // por padrão o callback é sempre o ultimo
 // argumento da funcao
 function obterUsuario() {
-    return new Promise(function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
 
-        setTimeout(() => {
-            return resolve({
-                id: 1,
-                nome: 'Aladin',
-                idade: 10,
-                dataNascimento: new Date()
-            })
-        }, 1000);
+    setTimeout(() => {
+      return resolve({
+        id: 1,
+        nome: 'Aladin',
+        idade: 10,
+        dataNascimento: new Date()
+      })
+    }, 1000);
 
-    })
+  })
 
 
 }
 
 
 function obterEndereco(idUsuario) {
-    return new Promise(function (resolve, reject) {
-        setTimeout(() => {
-            return resolve({
-                rua: 'rua dos bobos',
-                numero: 0
-            })
-        }, 1000);
-    })
-    // o setTimeout 
-    // espera uma quantidade de millisegundos
-    // para executar um determinado trecho
+  return new Promise(function (resolve, reject) {
+    setTimeout(() => {
+      return resolve({
+        rua: 'rua dos bobos',
+        numero: 0
+      })
+    }, 1000);
+  })
+  // o setTimeout 
+  // espera uma quantidade de millisegundos
+  // para executar um determinado trecho
 
 
 }
 
 function obterTelefone(idUsuario, callback) {
-    setTimeout(() => {
-        return callback(null, {
-            numero: '11 8908080',
-            ddd: 11
-        })
-    }, 2000);
+  setTimeout(() => {
+    return callback(null, {
+      numero: '11 8908080',
+      ddd: 11
+    })
+  }, 2000);
 }
 
 // passamos uma função que será executada
@@ -164,57 +164,68 @@ function obterTelefone(idUsuario, callback) {
 //`)
 
 obterUsuario()
-    .then(function (resultado) {
-        return obterEndereco(resultado.id)
-            .then(function (endereco) {
-                return {
-                    rua: endereco.rua,
-                    numero: endereco.numero,
-                    nome: resultado.nome,
-                    id: resultado.id
-                }
-            })
-    })
-    .then(function (resultado) {
-        return obterTelefoneAsync(resultado.id)
-        .then(function (telefone) {
-            return {
-                rua: resultado.rua,
-                nome: resultado.nome,
-                id: resultado.id,
-                telefone: telefone.numero,
-            }
-        })
-    })
-    .then(function (resultado) {
-        console.log('resultado', resultado)
-    })
-    .catch(function (error) {
-        console.log('ERRO', error)
-    })
+  .then(function (resultado) {
+    return obterEndereco(resultado.id)
+      .then(function (endereco) {
+        return {
+          rua: endereco.rua,
+          numero: endereco.numero,
+          nome: resultado.nome,
+          id: resultado.id
+        }
+      })
+  })
+  .then(function (resultado) {
+    return obterTelefoneAsync(resultado.id)
+      .then(function (telefone) {
+        return {
+          rua: resultado.rua,
+          nome: resultado.nome,
+          id: resultado.id,
+          telefone: telefone.numero,
+        }
+      })
+  })
+  .then(function (resultado) {
+    console.log('resultado', resultado)
+  })
+  .catch(function (error) {
+    console.log('ERRO', error)
+  })
 
-    //Recentemente na versão ES8 do JS
-    //O Time do C# propos uma feature
-    //para melhorar o fluxo de operações
-    //Agora , o mesmo fluxo que é visualizado
-    // é executado
-    //1 passo -> adicionar a palavra async na assinatura da função
-    // isso faz a função informar que retornara uma PROMISE
+//Recentemente na versão ES8 do JS
+//O Time do C# propos uma feature
+//para melhorar o fluxo de operações
+//Agora , o mesmo fluxo que é visualizado
+// é executado
+//1 passo -> adicionar a palavra async na assinatura da função
+// isso faz a função informar que retornara uma PROMISE
 
-    // 2 passo é adicionar a palavra await na função que queremos manipular o resultado
+// 2 passo é adicionar a palavra await na função que queremos manipular o resultado
 
-    async function main() {
-      const usuario =  await obterUsuario();
-      const endereco = await obterEndereco(usuario.id);
-      const telefone = await obterTelefoneAsync(usuario.id);
-      console.log(`
+async function main() {
+
+  // para manipulação de erros em promise
+  // usando async/await
+  // usamos o block try/catch
+  // quando algo inesperado acontecer 
+  // o catch é ocasionado
+
+  try {
+    const usuario = await obterUsuario();
+    const endereco = await obterEndereco(usuario.id);
+    const telefone = await obterTelefoneAsync(usuario.id);
+    console.log(`
         Nome: ${usuario.nome},
         Endereço: ${usuario.endereco},
         Numero: ${usuario.telefone.numero},
       `)
-    }
+  } catch (error) {
+    console.log('Error', error)
+  }
+}
 
-    main()
-    .then(function (resultado) {
-      console.log('terminou')
-    }).catch(error => console.log('deu ruim', error))
+main()
+  .then(function (resultado) {
+    console.log('terminou')
+  }).catch(error => console.log('deu ruim', error))
