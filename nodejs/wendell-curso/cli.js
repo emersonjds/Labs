@@ -16,13 +16,13 @@ const Database = require('./database')
 
 Commander
   .version('v1.0')
-  .option('c, --cadastrar', 'Cadastrar um Heroi')
-  .option('l, --listar', 'Listar herois')
+  .option('-c, --cadastrar', 'Cadastrar um Heroi')
+  .option('-l, --listar', 'Listar herois')
 
-  .option('m, --id [value]', 'Id do Heroi')
-  .option('n, --nome [value]', 'Nome do Heroi')
-  .option('i, --idade [value]', 'Idade do Heroi')
-  .option('p, --poder [value]', 'Poder do Heroi')
+  .option('-m, --id [value]', 'Id do Heroi')
+  .option('-n, --nome [value]', 'Nome do Heroi')
+  .option('-i, --idade [value]', 'Idade do Heroi')
+  .option('-p, --poder [value]', 'Poder do Heroi')
   .parse(process.argv)
 
   ;
@@ -45,6 +45,16 @@ Commander
       heroi.id = Date.now()
       await database.cadastrar(heroi);
       console.log('Heroi cadastrado com sucesso!')
+      return;
+    }
+    /**
+     node cli.js --listar
+     */
+
+
+    if (Commander.listar) {
+      const resultado = await database.listar()
+      console.log(resultado)
       return;
     }
   }
