@@ -40,7 +40,27 @@ class Database {
     // existem duas formas de mandar uma funcao 
     // podemos chamar function nomeFuncao() {}
     // ou podemos passar um parametro seguido para simular o corpo 
-    const dadosFiltrados = dados.filter(item => item.id === id)
+
+    // retiramos todos que tenham aquele id , e ele retorna uma nova lista
+    const dadosFiltrados = dados.filter(item => item.id !== id)
+
+    await writeFileAsync(this.NOME_ARQUIVO, JSON.stringify(dadosFiltrados))
+
+    console.log('O item foi removido')
+  }
+
+  async atualizar(id, nome) {
+    const dados = await this.obterDados();
+    //para iterar em um array e retornar este mesmo array modificado, usamos a função map
+    const dadosMapeados = dados.map(item => {
+      if (item.id !== id) {
+        return item;
+      }
+      item.name = nome;
+      return item
+    })
+    await writeFileAsync(this.NOME_ARQUIVO, JSON.stringify(dadosMapeados));
+    console.log('Item Atualizado com sucesso')
   }
 
 }
@@ -54,6 +74,9 @@ class Database {
 ; (async function main() {
   const database = new Database();
   await database.cadastrar({ id: 1, name: 'War Machine' });
+  await database.remover(1);
+  await database.atualizar(2, 'Maquina de Combate')
+
   const dados = await database.listar();
   console.log('xablau', dados)
 })()
