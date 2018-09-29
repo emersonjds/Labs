@@ -33,9 +33,15 @@ class Database {
 
 }
 
-const database = new Database();
-
-database.cadastrar({id: 2, name: 'Capitao America'})
-  .then(resultado => {
-    console.log(resultado)
-  })
+//para usar o contexto de async/ await
+// sem precisar adicionar o .then 
+// usarmos uma função que se auto executa
+// na pratica é a mesma funçao MAIN
+// com uma sintaxe diferente
+// para o vscode nao se perder na busca da função no hoisting
+;(async function main() {
+  const database = new Database();
+  await database.cadastrar({id: 1, name: 'War Machine'});
+  const dados = await database.listar();
+  console.log('xablau', dados)
+})()
