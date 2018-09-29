@@ -13,9 +13,59 @@
 // npm init -> para inicializar um projeto
 // npm init -y -> para inicializar 
 // sem perguntar nada
-// percebe se que trabalhar com callbacks pode ser trabalhoso e dificil gerenciar , quando temos um fluxo de dados muito grande 
-//necessario validar cada erro individualmente e precisamos garantir o valor de cada função
-// garantir tambem a convenção dos callbacks
+
+// percebemos que trabalhar com 
+// callbacks pode ser trabalhoso
+// e dificil gerenciar quando temos um 
+// fluxo de dados muito grande
+// precisamos  validar cada erro individualmente
+// e precisamos garantir o valor de cada função
+// e garantir também a convenção dos callbacks
+
+// Para gerenciar melhor as funções usamos o objeto
+// PROMISE
+// Quando inicializamos uma Promise 
+// Temos o estado -> Pending 
+// Quando uma promise acontece um problema
+// Temos o estado -> rejected
+// Quando uma promise acontece o esperado
+// Temos o estado -> success / Fullfilled
+// para criar um objeto promise 
+// recebe uma função com dois parametros
+// 1o Resolve 
+// 2o Reject
+
+// Quando precisamos consumir uma biblioteca de terceiros
+// Em muitos ainda usam CALLBACKS para trabalhar
+// Então podemos converter funções que seguem a CONVENCAO
+// Importamos um módulo nativo do nodejs (somente no backend)
+const util = require('util')
+// convertemos nossas funções para Promise
+const obterTelefoneAsync = util.promisify(obterTelefone)
+
+// Quando precisar lançar um erro, chamamos a reject
+// Quando precisar informar que terminou chamamos o resolve
+const minhaPromise = new Promise(function (resolve, reject) {
+    setTimeout(() => {
+        return resolve({ mensagem: 'Callback é kct' })
+    }, 2000);
+})
+
+// quando precisar recuperar o estado Fullfile (ou completo)
+// temos a função .then
+// quando precisar recuperar o erro
+// temos a função .catch
+// minhaPromise
+//     .then(function (resultado) {
+
+//         return resultado.mensagem
+//     })
+//     .then(function (resultado) {
+//         console.log('Meu Resultado', resultado)
+//     })
+//     .catch(function (erro) {
+//         console.log('DEU RUIM', erro)
+//     })
 
 // cenario
 // Obter usuario
@@ -27,36 +77,47 @@
 // que poderia se chamar qualquer nome
 // por padrão o callback é sempre o ultimo
 // argumento da funcao
-function obterUsuario(callback) {
-  setTimeout(() => {
-      return callback(null, {
-          id: 1,
-          nome: 'Aladin',
-          idade: 10,
-          dataNascimento: new Date()
-      })
-  }, 1000);
-}
-function obterEndereco(idUsuario, callback) {
-  // o setTimeout 
-  // espera uma quantidade de millisegundos
-  // para executar um determinado trecho
+function obterUsuario() {
+    return new Promise(function (resolve, reject) {
 
-  setTimeout(() => {
-      return callback(null, {
-          rua: 'rua dos bobos',
-          numero: 0
-      })
-  }, 1000);
+        setTimeout(() => {
+            return resolve({
+                id: 1,
+                nome: 'Aladin',
+                idade: 10,
+                dataNascimento: new Date()
+            })
+        }, 1000);
+
+    })
+
+
 }
 
-function obterTelefone(idUsuario) {
-  setTimeout(() => {
-      return {
-          numero: '11 8908080',
-          ddd: 11
-      }
-  }, 2000);
+
+function obterEndereco(idUsuario) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            return resolve({
+                rua: 'rua dos bobos',
+                numero: 0
+            })
+        }, 1000);
+    })
+    // o setTimeout 
+    // espera uma quantidade de millisegundos
+    // para executar um determinado trecho
+
+
+}
+
+function obterTelefone(idUsuario, callback) {
+    setTimeout(() => {
+        return callback(null, {
+            numero: '11 8908080',
+            ddd: 11
+        })
+    }, 2000);
 }
 
 // passamos uma função que será executada
@@ -65,34 +126,34 @@ function obterTelefone(idUsuario) {
 // quando trabalhamos com callbacks
 // o primeiro argumento é o erro
 // e o segundo o sucesso
-obterUsuario(function callback(erro, usuario) {
-  console.log('Usuario', usuario)
-  // no java 
-  // 0, null, undefined e vazio === FALSE
-  if (erro) {
-      throw new Error('Deu Ruim em Usuario')
-  }
+// obterUsuario(function callback(erro, usuario) {
+//     console.log('Usuario', usuario)
+//     // no java 
+//     // 0, null, undefined e vazio === FALSE
+//     if (erro) {
+//         throw new Error('Deu Ruim em Usuario')
+//     }
 
-  obterEndereco(usuario.id, function callback1(erro1, endereco) {
-      console.log('Endereco', endereco)
-      if (erro1) {
-          throw new Error('Deum Ruim em Endereco')
-      }
-      obterTelefone(usuario.id, function callback2(erro2,telefone){
-          if(erro2) {
-              throw new Error('Deu Ruim em Telefone')
-          }
+//     obterEndereco(usuario.id, function callback1(erro1, endereco) {
+//         console.log('Endereco', endereco)
+//         if (erro1) {
+//             throw new Error('Deum Ruim em Endereco')
+//         }
+//         obterTelefone(usuario.id, function callback2(erro2, telefone) {
+//             if (erro2) {
+//                 throw new Error('Deu Ruim em Telefone')
+//             }
 
-          console.log(`
-              Nome: ${usuario.nome},
-              Telefone: ${telefone.numero},
-              Endereco: ${endereco.rua}
-          `)
-      })
-  })
-})
+//             console.log(`
+//                 Nome: ${usuario.nome},
+//                 Telefone: ${telefone.numero},
+//                 Endereco: ${endereco.rua}
+//             `)
+//         })
+//     })
+// })
 
-console.log('executa depois do usuario')
+// console.log('executa depois do usuario')
 // const endereco = obterEndereco(usuario.id)
 // const telefone = obterTelefone(usuario.id)
 
@@ -101,3 +162,22 @@ console.log('executa depois do usuario')
 //     Endereco: ${endereco.rua},
 //     Telefone: ${telefone.numero}
 //`)
+
+obterUsuario()
+    .then(function (resultado) {
+        return obterEndereco(resultado.id)
+            .then(function (endereco) {
+                return {
+                    rua: endereco.rua,
+                    numero: endereco.numero,
+                    nome: resultado.nome,
+                    id: resultado.id
+                }
+            })
+    })
+    .then(function (resultado) {
+        console.log('resultado', resultado)
+    })
+    .catch(function (error) {
+        console.log('ERRO', error)
+    })
