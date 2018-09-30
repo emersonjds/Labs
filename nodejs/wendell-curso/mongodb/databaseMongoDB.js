@@ -105,7 +105,7 @@ const Schema = require('mongoose').Schema
 
 // main()
 
-class DataBaseMondoDB {
+class DataBaseMongoDB {
   connect() {
     Mongoose.connect('mongodb://localhost:27017/herois');
     const connection = Mongoose.connection;
@@ -142,14 +142,25 @@ class DataBaseMondoDB {
     return resultado;
   }
 
-  async listar() {
-    const resultado = await this.personagem.find()
+  // no javascript é possivel passar parametros default
+  // caso nada seja passado esse default sera utilizado
+
+  async listar(filtro = {}, limite = 100, ignore = 0) {
+    const resultado = await this.personagem
+      .find(filtro)
+      //limitar quantidade de registros
+      .limit(limite)
+      //ignoramos a quantidade de registros 
+      // para buscar aquela quantidade
+      .skip(ignore)
+
     return resultado;
   }
+
 }
 
 async function main() {
-  const database = new DataBaseMondoDB();
+  const database = new DataBaseMongoDB();
 
   database.connect();
 
@@ -160,6 +171,7 @@ async function main() {
   })
 
   console.log(inserirItem)
+  console.log(await database.listar({}, 3, 2))
 }
 
 main();
