@@ -13,6 +13,7 @@ const Commander = require('commander')
 // usamos somente o nome do modulo (que vai procurar na
 //node modules)
 const Database = require('./database')
+const mongoDBDatabase = require('./mongodb/databaseMongoDB');
 
 Commander
   .version('v1.0')
@@ -36,6 +37,10 @@ Commander
       poder: Commander.poder
     }
     const database = new Database()
+
+    //conectando no banco
+    mongoDBDatabase.connect()
+
     /**
       node cli.js --cadastrar \
       --nome "Lanterna Verde" \
@@ -43,17 +48,22 @@ Commander
       --poder Anel 
      */
     if (Commander.cadastrar) {
-      heroi.id = Date.now()
-      await database.cadastrar(heroi);
+      // heroi.id = Date.now()
+      // await database.cadastrar(heroi);
+      // inserindo no banco de dados
+      await mongoDBDatabase.cadastrar(heroi)
       console.log('Heroi cadastrado com sucesso!')
+      process.exit(0) // informa ao SI que o metodo terminou
       return;
     }
     /**
      node cli.js --listar
      */
     if (Commander.listar) {
-      const resultado = await database.listar()
+      // const resultado = await database.listar()
+      const resultado = await mongoDBDatabase.listar({}, 3, 2)
       console.log(resultado)
+      process.exit(0)
       return;
     }
     /**
@@ -61,9 +71,16 @@ Commander
      */
     if (Commander.remover) {
       //necessario converter para inteiro para remoção 
-      const id = parseInt(Commander.id);
-      await database.remover(id)
-      console.log('Item removido com sucesso')
+      // const id = parseInt(Commander.id);
+      // await database.remover(id)
+      // console.log('Item removido com sucesso')
+      // return;
+      const resultado = mongoDBDatabase.remover({ _id: Commander.id })
+      if (resultado)
+        console.log('Item removido com sucesso')
+      else
+        console.log('Nao foi possivel remover o item')
+      process.exit(0)
       return;
     }
     /**

@@ -139,7 +139,7 @@ class DataBaseMongoDB {
 
   async cadastrar(item) {
     const resultado = await this.personagem.create(item)
-    return resultado;
+    return !!resultado.id;
   }
 
   // no javascript é possivel passar parametros default
@@ -157,21 +157,46 @@ class DataBaseMongoDB {
     return resultado;
   }
 
+  remover(filtro) {
+    const removerResultado = this.personagem.deleteOne(filtro)
+    return !!removerResultado.n
+  }
+
+  async atualizar(id, item) {
+    const resultado = await this.personagem
+      .updateOne({ _id: id }, {
+        $set: item
+      })
+    return !!resultado.nModified
+  }
 }
 
-async function main() {
-  const database = new DataBaseMongoDB();
+// async function main() {
+//   const database = new DataBaseMongoDB();
 
-  database.connect();
+//   database.connect();
 
-  const inserirItem = await database.cadastrar({
-    nome: 'Maquina de Combate',
-    poder: 'Armas',
-    idade: 31
-  })
+//   const inserirItem = await database.cadastrar({
+//     nome: 'Maquina de Combate',
+//     poder: 'Armas',
+//     idade: 31
+//   })
+//   const resultadoRemover = await database.remover({
+//     nome: 'Maquina de Combate'
+//   })
 
-  console.log(inserirItem)
-  console.log(await database.listar({}, 3, 2))
-}
+//   const resultadoAtualizar = await database.atualizar('5bb0d53896a7f79343ad9757', {
+//     name: 'Batman',
+//     poder: 'Dinheiro'
+//   })
 
-main();
+//   console.log(inserirItem)
+//   console.log(await database.listar({}, 3, 2))
+//   console.log('resultadoRemover', resultadoRemover)
+//   console.log('resultadoAtualizar', resultadoAtualizar)
+//   db.personagem.find()
+// }
+
+// main();
+
+module.exports = new DataBaseMongoDB();
