@@ -60,7 +60,6 @@ class Database {
       return item
     })
     await writeFileAsync(this.NOME_ARQUIVO, JSON.stringify(dadosMapeados));
-    console.log('Item Atualizado com sucesso')
   }
 
 }

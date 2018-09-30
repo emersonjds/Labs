@@ -19,6 +19,7 @@ Commander
   .option('-c, --cadastrar', 'Cadastrar um Heroi')
   .option('-l, --listar', 'Listar herois')
   .option('-r, --remover', 'Remover herois pelo Id')
+  .option('-r, --atualizar', 'Atualizar nome pelo Id')
   .option('-m, --id [value]', 'Id do Heroi')
   .option('-n, --nome [value]', 'Nome do Heroi')
   .option('-i, --idade [value]', 'Idade do Heroi')
@@ -59,9 +60,20 @@ Commander
      node cli.js --remove --id 1538241031963
      */
     if (Commander.remover) {
-      const id = Commander.id;
+      //necessario converter para inteiro para remoção 
+      const id = parseInt(Commander.id);
       await database.remover(id)
       console.log('Item removido com sucesso')
+      return;
+    }
+    /**
+     node cli.js --atualizar --id --nome novoNome
+     */
+
+    if (Commander.atualizar) {
+      const id = parseInt(Commander.id);
+      await database.atualizar(id, heroi.name)
+      console.log('Item atualizado com sucesso')
       return;
     }
   }
