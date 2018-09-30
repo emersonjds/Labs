@@ -107,7 +107,7 @@ const Schema = require('mongoose').Schema
 
 class DataBaseMongoDB {
   connect() {
-    Mongoose.connect('mongodb://localhost:27017/herois');
+    Mongoose.connect('mongodb://localhost:27017/herois', { useNewUrlParser: true });
     const connection = Mongoose.connection;
     connection.once('open', () => console.log('db rodando!!!'))
     // modelagem

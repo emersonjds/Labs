@@ -67,7 +67,7 @@ Commander
       return;
     }
     /**
-     node cli.js --remove --id 1538241031963
+     node cli.js --remove --id 5bb0d53896a7f79343ad974c
      */
     if (Commander.remover) {
       //necessario converter para inteiro para remoção 
@@ -75,7 +75,7 @@ Commander
       // await database.remover(id)
       // console.log('Item removido com sucesso')
       // return;
-      const resultado = mongoDBDatabase.remover({ _id: Commander.id })
+      const resultado = await mongoDBDatabase.remover({ _id: Commander.id })
       if (resultado)
         console.log('Item removido com sucesso')
       else
@@ -88,9 +88,24 @@ Commander
      */
 
     if (Commander.atualizar) {
-      const id = parseInt(Commander.id);
-      await database.atualizar(id, heroi.name)
-      console.log('Item atualizado com sucesso')
+      // const id = parseInt(Commander.id);
+      // await database.atualizar(id, heroi.name)
+      // console.log('Item atualizado com sucesso')
+      // return;
+
+      //limpamos a chave do objeto com uma pequena gambiarra
+      const heroiString = JSON.stringify(heroi)
+      const heroiJson = JSON.parse(heroiString)
+
+      const resultado = await mongoDBDatabase
+        .atualizar(Commander.id, heroiJson)
+
+      if (resultado)
+        console.log('item atualizado com sucesso')
+      else
+        console.log('Erro ao atualizar item')
+
+      process.exit(0)
       return;
     }
   }
