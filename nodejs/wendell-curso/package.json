@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "comander": "0.0.1-security",
-    "commander": "^2.18.0"
+    "commander": "^2.18.0",
+    "mongoose": "^5.3.0"
   }
 }

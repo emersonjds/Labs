@@ -27,7 +27,6 @@
 
 // para listar as collections
 // show collections***
-show collections
 //Executar Where
 // traz tudo do Aladin
 db.nomeCollection.find({ name: 'ALADIN' })
@@ -63,6 +62,33 @@ db.personagem.remove({ name: 'P10AEW' })
 
 //contagem de itens
 db.personagem.count({})
+
+// Isso altera o nome da propriedade
+const name = 'P1AEW'
+db.personagem.update({ name: name }, { poder: 'Anel' })
+db.personagem.find({ name: name })
+
+
+// forma correta de setar um campo
+const _id = '5bb0d53896a7f79343ad974d';
+db.personagem.update(
+  { name: name },
+  { $set: { name: 'P0AEW' } },
+  { multi: 1 }
+)
+
+db.personagem.find({ _id: _id })
+db.personagem.find().pretty() // formata o mongo de forma mais visual
+
+// o mongodb permite fazer CAGADA
+// precisamos falar explicitamente o que ele deve fazer
+// para que nao tenhamos problemas na aplicação
+// Instalamos uma biblioteca para validar e conectar no banco
+// npm i mongoose
+
+
+
+
 
 
 
