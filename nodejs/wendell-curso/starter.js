@@ -1,3 +1,0 @@
-function starter() {
-  return 'starter'
-}
