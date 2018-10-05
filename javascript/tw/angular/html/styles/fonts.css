@@ -11,3 +11,43 @@
   font-family: "Times New Roman", Verdana, Geneva, Tahoma, sans-serif;
   font-style: italic;
 }
+
+/* A propriedade font-variant é usada para escolher entre as variantes normal ou small-caps. Por exemplo, uma fonte small-caps é aquela que usa letras maiúsculas de tamanhos reduzidos. */
+.font-variant {
+  font-family: "Times New Roman", Verdana, Geneva, Tahoma, sans-serif;
+  font-variant: small-caps;
+}
+
+/* font-weight é utilizada para definir o peso da fonte. O peso da fonte é a espessura dos traços que formam o caractere. É normalmente utilizado para definir um maior ou menor grau de destaque para o texto. Na tabela abaixo você verá a descrição dos valores aceitos por ordem de peso. */
+.font-weight {
+  font-family: "Times New Roman", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+
+.font-size {
+  font-family: "Times New Roman", Verdana, Geneva, Tahoma, sans-serif;
+  /* Outras medidads */
+  /* font-size: x-large; */
+  /* font-size: 1em;
+  font-size: 20px; */
+  /* font-size: 1.5rem; */
+  font-size: 75%;
+
+}
+
+/* Propriedade utilizada para indicar o grau de condensação ou expansão dos caracteres de uma fonte. Veja abaixo os valores possíveis para esta propriedade:
+
+normal
+ultra-condensed
+extra-condensed
+condensed
+semi-condensed
+ultra-expanded
+extra-expanded
+expanded
+semi-expanded */
+
+.font-strech {
+  font-stretch: condensed;
+}
+/* O resultado de font-stretch varia de acordo com a família da fonte que você estiver usando. Dependendo da família de fonte que você usar não terá nenhuma diferença, pois ela pode não possibilitar diferentes variedades de largura. Mais uma vez, faça alguns testes, e veja a diferença entre cada um dos valores */
