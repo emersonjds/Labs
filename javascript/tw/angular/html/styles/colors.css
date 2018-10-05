@@ -14,11 +14,25 @@ box {
 }
 
 .box-title {
-  height: 40px;
-  width: 80px;
   border-width: 5px;
   border-style: solid;
-  border-color: #00FF00;
+  border-color: #00FF00; 
+  /* hexadecimal */
 }
+
+.box-title-1 {
+  border-width: 5px;
+  background-color: rgba(222, 180, 200, 0.7);
+}
+
+.titulo-1 {
+  color: rgb(0, 0, 0);
+}
+
+.box-title-2 {
+  background-color: hsla(300, 30%, 30%, 0.4);
+} 
+
+/* hsla e hsl funcionam da mesma forma que rgb e rgba  */
 
 
