@@ -1,0 +1,13 @@
+@font-face {
+  font-family: myFont;
+  src: url("../fonts/amaze/AMAZR___.ttf");
+}
+
+.curves-font {
+  font-family: myFont;
+}
+
+.font-style {
+  font-family: "Times New Roman", Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+}
