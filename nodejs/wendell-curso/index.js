@@ -79,7 +79,6 @@ const minhaPromise = new Promise(function (resolve, reject) {
 // argumento da funcao
 function obterUsuario() {
   return new Promise(function (resolve, reject) {
-
     setTimeout(() => {
       return resolve({
         id: 1,
@@ -88,12 +87,8 @@ function obterUsuario() {
         dataNascimento: new Date()
       })
     }, 1000);
-
   })
-
-
 }
-
 
 function obterEndereco(idUsuario) {
   return new Promise(function (resolve, reject) {
@@ -104,11 +99,6 @@ function obterEndereco(idUsuario) {
       })
     }, 1000);
   })
-  // o setTimeout 
-  // espera uma quantidade de millisegundos
-  // para executar um determinado trecho
-
-
 }
 
 function obterTelefone(idUsuario, callback) {
