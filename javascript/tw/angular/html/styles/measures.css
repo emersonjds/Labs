@@ -1,5 +1,6 @@
 /* unidades de medida aceitas
 
+//ABSOLUTAS
 cm - centímetros ( 96px / 2.54 )
 mm - milímetros ( 1/10cm )
 q - 1/4 de milímetro ( 1/40cm )
@@ -8,3 +9,31 @@ pc - pica ( 12pt ou 1/6in )
 px - pixels ( 1/96in )
 pt - pontos ( 1/71in ) */
 
+/* RELATIVAS  */
+
+/* Uma tela de 200px de largura e definimos uma div com 50% de largura, a div terá 100px de largura. Mas se a tela tiver 50px de largura, essa mesma div terá 25px;
+
+As mais usadas são %, em e rem.
+
+% - porcentagem (tecnicamente % não é uma unidade, e sim, um tipo de dado);
+em - relativo ao tamanho da fonte do elemento. Se o tamanho da fonte for 16px e você colocar 0.5em, o valor será igual a 8px;
+rem - igual ao em, mas em relação ao tamanho da fonte do elemento raiz;
+ex - altura da letra x da fonte do elemento;
+ch - largura mais espaçamento em volta do número 0 da fonte do elemento. */
+
+/* OUTRAS UNIDADES */
+/* Ângulos: deg, grad, rad, turn;
+Duração: s, ms;
+Frequência: Hz, kHz;
+Resolução: dpi, dpcm, dppx.
+deg - grau ( um círculo possui 360deg );
+grad - grado ( um círculo possui 400grad );
+rad - radiano ( um círculo possui 2PIrad );
+turn - volta ( um círculo possui 1turn ).
+s - segundos;
+ms - milissegundos ( 1/1000s ).
+Hz - Hertz ( número de ciclos por segundo );
+kHz - KiloHertz ( 1000Hz ).
+dpi - dots per inch ( pontos por polegada );
+dpcm - dots per centimeter ( pontos por centímetro );
+dppx - dots per pixel ( pontos por pixel ). */
