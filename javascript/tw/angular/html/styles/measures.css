@@ -37,3 +37,24 @@ kHz - KiloHertz ( 1000Hz ).
 dpi - dots per inch ( pontos por polegada );
 dpcm - dots per centimeter ( pontos por centímetro );
 dppx - dots per pixel ( pontos por pixel ). */
+
+/* FUNCAO CALC para medidas relativas */
+/* para divisao de tela em 3 partes */
+/* div {
+  width: calc(100% / 3);  */
+  /* a divisao sera exata , o navegador fara o calculo em real time  */
+/* } */
+
+.titulo {
+  background-color: green;
+  width: calc(100% / 6);
+}
+
+.titulo-2  {
+  display: inline-block;
+}
+.titulo-2 h3 {
+  width: calc( (100% / 3) - 2px) ;
+  background-color: blueviolet;
+  border: 1px solid black;
+}
