@@ -5,6 +5,9 @@
 // vision + inert expoem um front end e arquivos estaticos
 // -> hapi-swagger cria uma documentação baseada nas rotas criadas
 
+// instalando um modulo para autenticar token de autenticação, 
+// nunca coloque senha
+// nosso token podera ser descriptografado, mas nunca gerado novamente ou alterado
 
 /*
  Quando trabalhamos com APIs Rest, trabalhamos com serviços sem estado
@@ -81,7 +84,7 @@ async function run(app) {
       config: {
         tags: ['api'],
         description: 'Listar herois com paginação',
-        note: 'Deve enviar o ignore e limite para paginar',
+        notes: 'Deve enviar o ignore e limite para paginar',
         validate: {
           //podemos validar todo tipo de entrada da aplicação
           // ?nome=err = query
@@ -139,6 +142,9 @@ async function run(app) {
         }
       },
       config: {
+        tags: ['api'],
+        description: 'Criar novo heroi',
+        notes: 'Deve enviar nome, poder e idade obrigatoriamente',
         validate: {
           payload: {
             nome: Joi
@@ -172,6 +178,16 @@ async function run(app) {
           console.log('DEU RUIM', e)
           return reply('reu ruim')
         }
+      },
+      config: {
+        tags: ['api'],
+        description: 'Deletar um heroi',
+        notes: 'Deve enviar o ID obrigatoriamente',
+        validate : {
+          params : {
+            id : Joi.string().required()
+          }
+        }
       }
     },
     {
@@ -191,7 +207,13 @@ async function run(app) {
         }
       },
       config: {
+        tags: ['api'],
+        description: 'Atualizar um heroi',
+        notes: 'Deve enviar o ID obrigatoriamente',
         validate: {
+          params : {
+            id: Joi.string().required()
+          },
           payload: {
             nome: Joi
               .string()
@@ -205,6 +227,27 @@ async function run(app) {
               .number()
               .min(18)
               .max(150)
+          }
+        }
+      }
+    },
+    {
+      path: '/login',
+      method: 'POST',
+      handler: (request, reply) => {
+        const {usuario, senha} = request.payload
+        if (usuario !== 'xuxa' || senha !== 123) {
+          return reply('Nao pode acessar')
+        } 
+        return reply()
+      },
+      config: {
+        tags: ['api'],
+        description: 'Efetuar login',
+        validate: {
+          payload: {
+            usuario: Joi.string().required(),
+            senha: Joi.number().integer().required()
           }
         }
       }
