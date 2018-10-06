@@ -146,6 +146,41 @@ async function run(app) {
           return reply('reu ruim')
         }
       }
+    },
+    {
+      path: '/herois/{id}',
+      method: 'PATCH',
+      handler: async (request, reply) => {
+        try {
+          const { id } = request.params;
+          const heroi = { nome, poder, idade } = request.payload;
+          const heroiString = JSON.stringify(heroi)
+          const heroiJSON = JSON.parse(heroiString)
+          const resultado = await Database.atualizar(id, heroiJSON)
+          return reply(resultado)
+        } catch (error) {
+          console.log('DEU RUIM', error)
+          return reply('deu ruim')
+        }
+      },
+      config: {
+        validate: {
+          payload: {
+            nome: Joi
+              .string()
+              .max(100)
+              .min(5),
+            poder: Joi
+              .string()
+              .max(100)
+              .min(3),
+            idade: Joi
+              .number()
+              .min(18)
+              .max(150)
+          }
+        }
+      }
     }
   ])
   await app.start()
