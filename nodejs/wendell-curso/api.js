@@ -1,3 +1,11 @@
+//Instalamos um modulo para observar alterações e reiniciar a aplicação automaticamente
+// npm i nodemoon
+
+//npm i vision@4 hapi-swagger@7 inert@4
+// vision + inert expoem um front end e arquivos estaticos
+// -> hapi-swagger cria uma documentação baseada nas rotas criadas
+
+
 /*
  Quando trabalhamos com APIs Rest, trabalhamos com serviços sem estado
  Não temos mais sessão, não guardamos mais cookies
@@ -32,10 +40,12 @@ ATUALIZAR - PATCH
 // 3o passo: Definir a rota
 // 4o passo: Inicializar o servidor
 
+const Vision = require('vision');
+const HapiSwagger = require('hapi-swagger');
+const Inert = require('inert')
 const Database = require('./mongodb/databaseMongoDB');
 //sabemos que com o Javascript , acontecem algumas bizarrices e nao temos tempo para validar essas coisas
 // para evitar validar variaveis, valores, tipos e regras, podemos definir um conjunto de regras que serao validadas antes de chamar a nossa api
-
 const Hapi = require('hapi');
 const Joi = require('joi');
 const app = new Hapi.Server();
@@ -47,6 +57,20 @@ app.connection({ port: 4000 })
  */
 
 async function run(app) {
+  // Para trabalharmos com swagger , registramos os plugins
+  // definimos o HappiSwagger como o padrao de plugin HapiJS
+  await app.register([
+    Vision,
+    Inert,
+    {
+      register: HapiSwagger,
+      options: {
+        info: {
+          title: 'API Herois', version: 'v1.0'
+        }
+      }
+    }
+  ])
 
   await Database.connect()
 
@@ -55,6 +79,9 @@ async function run(app) {
       path: '/herois',
       method: 'GET',
       config: {
+        tags: ['api'],
+        description: 'Listar herois com paginação',
+        note: 'Deve enviar o ignore e limite para paginar',
         validate: {
           //podemos validar todo tipo de entrada da aplicação
           // ?nome=err = query
