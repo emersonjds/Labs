@@ -113,7 +113,7 @@ async function run(app) {
         validate: {
           headers: Joi.object({
             authorization: Joi.string().required()
-          }),
+          }).unknown(),
           //podemos validar todo tipo de entrada da aplicação
           // ?nome=err = query
           // body = payload
@@ -174,6 +174,9 @@ async function run(app) {
         description: 'Criar novo heroi',
         notes: 'Deve enviar nome, poder e idade obrigatoriamente',
         validate: {
+          headers: Joi.object({
+            authorization: Joi.string().required()
+          }).unknown(),
           payload: {
             nome: Joi
               .string()
@@ -212,6 +215,9 @@ async function run(app) {
         description: 'Deletar um heroi',
         notes: 'Deve enviar o ID obrigatoriamente',
         validate: {
+          headers: Joi.object({
+            authorization: Joi.string().required()
+          }).unknown(),
           params: {
             id: Joi.string().required()
           }
@@ -239,6 +245,9 @@ async function run(app) {
         description: 'Atualizar um heroi',
         notes: 'Deve enviar o ID obrigatoriamente',
         validate: {
+          headers: Joi.object({
+            authorization: Joi.string().required()
+          }).unknown(),
           params: {
             id: Joi.string().required()
           },
