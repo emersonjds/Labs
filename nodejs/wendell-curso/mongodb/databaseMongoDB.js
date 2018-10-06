@@ -147,7 +147,7 @@ class DataBaseMongoDB {
 
   async listar(filtro = {}, limite = 100, ignore = 0) {
     const resultado = await this.personagem
-      .find(filtro)
+      .find(filtro, { __v: 0 })
       //limitar quantidade de registros
       .limit(limite)
       //ignoramos a quantidade de registros 
@@ -157,8 +157,9 @@ class DataBaseMongoDB {
     return resultado;
   }
 
-  remover(filtro) {
-    const removerResultado = this.personagem.deleteOne(filtro)
+  async remover(filtro) {
+    const removerResultado = await this.personagem.deleteOne(filtro)
+    console.log('remover', removerResultado)
     return !!removerResultado.n
   }
 
