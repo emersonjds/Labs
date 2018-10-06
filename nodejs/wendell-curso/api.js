@@ -67,7 +67,21 @@ app.connection({ port: 4000 })
 
 async function run(app) {
 
-  await app.register(HapiJwt)
+  // Para trabalharmos com swagger , registramos os plugins
+  // definimos o HappiSwagger como o padrao de plugin HapiJS
+  await app.register([
+    Vision,
+    Inert,
+    {
+      register: HapiSwagger,
+      options: {
+        info: {
+          title: 'API Herois', version: 'v1.0'
+        }
+      }
+    },
+    HapiJwt
+  ])
 
   // definimos uma estrategia pre definida de autenticacão
   // por padrao é sem autenticação , mas agora, todas as rotas
@@ -84,20 +98,7 @@ async function run(app) {
   })
   app.auth.default('jwt')
 
-  // Para trabalharmos com swagger , registramos os plugins
-  // definimos o HappiSwagger como o padrao de plugin HapiJS
-  await app.register([
-    Vision,
-    Inert,
-    {
-      register: HapiSwagger,
-      options: {
-        info: {
-          title: 'API Herois', version: 'v1.0'
-        }
-      }
-    }
-  ])
+
 
   await Database.connect()
 
@@ -110,6 +111,9 @@ async function run(app) {
         description: 'Listar herois com paginação',
         notes: 'Deve enviar o ignore e limite para paginar',
         validate: {
+          headers: Joi.object({
+            authorization: Joi.string().required()
+          }),
           //podemos validar todo tipo de entrada da aplicação
           // ?nome=err = query
           // body = payload
@@ -207,9 +211,9 @@ async function run(app) {
         tags: ['api'],
         description: 'Deletar um heroi',
         notes: 'Deve enviar o ID obrigatoriamente',
-        validate : {
-          params : {
-            id : Joi.string().required()
+        validate: {
+          params: {
+            id: Joi.string().required()
           }
         }
       }
@@ -235,7 +239,7 @@ async function run(app) {
         description: 'Atualizar um heroi',
         notes: 'Deve enviar o ID obrigatoriamente',
         validate: {
-          params : {
+          params: {
             id: Joi.string().required()
           },
           payload: {
@@ -259,13 +263,16 @@ async function run(app) {
       path: '/login',
       method: 'POST',
       handler: (request, reply) => {
-        const {usuario, senha} = request.payload
+        const { usuario, senha } = request.payload
         if (usuario !== 'xuxa' || senha !== 123) {
           return reply('Nao pode acessar')
-        } 
-        return reply()
+        }
+        const token = Jwt.sign({ usuario: usuario }, 'MINHA_CHAVE_SECRETA')
+        return reply({ token })
       },
       config: {
+        //desabilitamos a autenticação para conseguir um token
+        auth: false,
         tags: ['api'],
         description: 'Efetuar login',
         validate: {
