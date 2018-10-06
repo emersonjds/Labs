@@ -9,6 +9,10 @@
 // nunca coloque senha
 // nosso token podera ser descriptografado, mas nunca gerado novamente ou alterado
 
+// Pacotes para tokenização
+
+// npm i jsonwebtoken hapi-auth-jwt2
+
 /*
  Quando trabalhamos com APIs Rest, trabalhamos com serviços sem estado
  Não temos mais sessão, não guardamos mais cookies
@@ -45,7 +49,9 @@ ATUALIZAR - PATCH
 
 const Vision = require('vision');
 const HapiSwagger = require('hapi-swagger');
-const Inert = require('inert')
+const Jwt = require('jsonwebtoken');
+const HapiJwt = require('hapi-auth-jwt2');
+const Inert = require('inert');
 const Database = require('./mongodb/databaseMongoDB');
 //sabemos que com o Javascript , acontecem algumas bizarrices e nao temos tempo para validar essas coisas
 // para evitar validar variaveis, valores, tipos e regras, podemos definir um conjunto de regras que serao validadas antes de chamar a nossa api
@@ -60,6 +66,24 @@ app.connection({ port: 4000 })
  */
 
 async function run(app) {
+
+  await app.register(HapiJwt)
+
+  // definimos uma estrategia pre definida de autenticacão
+  // por padrao é sem autenticação , mas agora, todas as rotas
+  // precisarao de um token nos headers para funcionar
+
+  app.auth.strategy('jwt', 'jwt', {
+    key: 'MINHA_CHAVE_SECRETA',
+    validateFunc: (decoded, request, callback) => {
+      callback(null, true)
+    },
+    verifyOptions: {
+      algorithms: ['HS256']
+    }
+  })
+  app.auth.default('jwt')
+
   // Para trabalharmos com swagger , registramos os plugins
   // definimos o HappiSwagger como o padrao de plugin HapiJS
   await app.register([
