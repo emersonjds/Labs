@@ -9,6 +9,7 @@
   "author": "Emerson Jr",
   "license": "MIT",
   "dependencies": {
+    "boom": "^7.2.0",
     "comander": "0.0.1-security",
     "commander": "2.18.0",
     "dotenv": "^6.0.0",

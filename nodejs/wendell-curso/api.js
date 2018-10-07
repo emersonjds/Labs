@@ -9,7 +9,14 @@ const { config } = require('dotenv');
 if (process.env.NODE_ENV === 'production')
   config({ path: 'config/.env.prod' })
 else
-  config({ path: 'config/env.dev' })
+  config({ path: 'config/.env.dev' })
+
+console.log('env', process.env);
+
+// instalamos um modulo para padronizar mensagens de erro
+// e status http
+// npm install boom
+const Boom = require('boom');
 
 //Instalamos um modulo para observar alterações e reiniciar a aplicação automaticamente
 // npm i nodemoon
@@ -71,7 +78,7 @@ const Database = require('./mongodb/databaseMongoDB');
 const Hapi = require('hapi');
 const Joi = require('joi');
 const app = new Hapi.Server();
-app.connection({ port: 4000 })
+app.connection({ port: process.env.PORT })
 /*
  Para definir uma rota , definimos uma resposta de acordo com a chamada
  Quando um cliente pedir a /herois, com o metodo GET
@@ -101,7 +108,7 @@ async function run(app) {
   // precisarao de um token nos headers para funcionar
 
   app.auth.strategy('jwt', 'jwt', {
-    key: 'MINHA_CHAVE_SECRETA',
+    key: process.env.JWT_KEY,
     validateFunc: (decoded, request, callback) => {
       callback(null, true)
     },
@@ -160,7 +167,7 @@ async function run(app) {
           return reply(await Database.listar(filtro, limite, ignore))
         } catch (error) {
           console.log('DEU RUIM', error)
-          return reply(error)
+          return reply(Boom.internal('deu ruim'));
         }
         // throw new Error('DEU RUIM')
         // return reply('Ola HApi !!!')
@@ -179,7 +186,7 @@ async function run(app) {
           return reply(resultado)
         } catch (error) {
           console.log('DEU RUIM', error)
-          return reply('DEU RUIM')
+          return reply(Boom.internal('Deu ruim'))
         }
       },
       config: {
@@ -220,7 +227,7 @@ async function run(app) {
           return reply(result)
         } catch (e) {
           console.log('DEU RUIM', e)
-          return reply('reu ruim')
+          return reply(Boom.internal('Deu ruim'))
         }
       },
       config: {
@@ -242,6 +249,8 @@ async function run(app) {
       method: 'PATCH',
       handler: async (request, reply) => {
         try {
+          //simulando um erro
+          // throw Error()
           const { id } = request.params;
           const heroi = { nome, poder, idade } = request.payload;
           const heroiString = JSON.stringify(heroi)
@@ -250,7 +259,7 @@ async function run(app) {
           return reply(resultado)
         } catch (error) {
           console.log('DEU RUIM', error)
-          return reply('deu ruim')
+          return reply(Boom.internal('Deu ruim'))
         }
       },
       config: {
@@ -286,10 +295,10 @@ async function run(app) {
       method: 'POST',
       handler: (request, reply) => {
         const { usuario, senha } = request.payload
-        if (usuario !== 'xuxa' || senha !== 123) {
-          return reply('Nao pode acessar')
+        if (usuario !== process.env.USUARIO || senha !== parseInt(process.env.SENHA)) {
+          return reply(Boom.unauthorized())
         }
-        const token = Jwt.sign({ usuario: usuario }, 'MINHA_CHAVE_SECRETA')
+        const token = Jwt.sign({ usuario: usuario }, process.env.JWT_KEY)
         return reply({ token })
       },
       config: {
