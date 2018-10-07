@@ -1,3 +1,18 @@
+// -------------- HEROKU ---------------------------
+// Para logar no heroku
+// -- heroku login
+
+// para utilizar nossa aplicação no heroku
+// criamos um script para ser executado em produção
+// quando o heroku chamar nossa aplicação
+// devera chamar via 
+// npm run deploy
+// script pre definidos -> start, test
+// caso criar algum script diferente, deve colocar "run" no comando
+
+// para trabalhar com o heroku criar um arquivo de configuração
+// Procfile -> responsavel por falar como nossa aplicação rodara
+
 // Fomos no mlab e criamos nosso database
 // criamos nosso usuario e senha e adicionamos a string de conexao 
 // no .env.prod
@@ -322,7 +337,7 @@ async function run(app) {
     }
   ])
   await app.start()
-  console.log('Api rodando');
+  console.log(`Api rodando em ${process.env.NODE_ENV || "dev"}`);
 }
 
 run(app)
