@@ -1,3 +1,9 @@
+// Fomos no mlab e criamos nosso database
+// criamos nosso usuario e senha e adicionamos a string de conexao 
+// no .env.prod
+// para rodar nossa aplicação e testar
+// NODE_ENV=production nodemon api.js
+
 // Para dividir nossos ambientes, criamos 2 arquivos 
 // que serao nossos arquivos de desenvolvimento e produção
 // apos inserir esses arquivos em nosso ambiente , conseguimos
