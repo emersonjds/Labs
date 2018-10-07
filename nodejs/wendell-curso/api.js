@@ -1,3 +1,28 @@
+// Quando uma aplicação entra em segundo plano
+// ela manda um sinal para o sistema operacional informando que terminou a execução
+// pm2-runtime arquivo.js
+// copiamos do pm2 e colamos no terminal da aplicação o link de conexao de monitoramento
+// do pm2
+// heroku config:set PM2_PUBLIC_KEY=3g2x5u8qm0ck65i PM2_SECRET_KEY=3y02zy2zy21vpvb 
+
+// ---------------- Controle de Aplicação -----------------
+// Para controlar e metrificar nossa aplicação
+// vamos usar uma ferramenta , que caso aconteça alguma 
+// situação inesperada ( cpu max, memoria max, espaco disco)
+// vai alertar aos devs , ou reiniciar a aplicação
+// npm i pm2 -g
+
+// para inicializar uma aplicação e rodar em segundo plano
+// pm2 start --name nomeAPI arquivo,js
+
+// para parar a aplicação 
+// pm2 stop nomeApi
+
+// pm2 list - listar todas
+// pm2 monit nomeApi - mostrar painel 
+// caso queira mais instancia 
+// pm2 start --name nomeApi 10      
+
 // -------------- HEROKU ---------------------------
 // Para logar no heroku
 // -- heroku login
@@ -39,8 +64,6 @@ if (process.env.NODE_ENV === 'production')
   config({ path: 'config/.env.prod' })
 else
   config({ path: 'config/.env.dev' })
-
-console.log('env', process.env);
 
 // instalamos um modulo para padronizar mensagens de erro
 // e status http
