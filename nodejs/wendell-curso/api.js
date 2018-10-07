@@ -1,3 +1,16 @@
+// Para dividir nossos ambientes, criamos 2 arquivos 
+// que serao nossos arquivos de desenvolvimento e produção
+// apos inserir esses arquivos em nosso ambiente , conseguimos
+// obter esses dados a partir da variavel global 
+// process.env do NodeJS
+// para visualizar as variaveis dos arquivos, instalamos um modulo chamado dotenv
+// npm i dotenv
+const { config } = require('dotenv');
+if (process.env.NODE_ENV === 'production')
+  config({ path: 'config/.env.prod' })
+else
+  config({ path: 'config/env.dev' })
+
 //Instalamos um modulo para observar alterações e reiniciar a aplicação automaticamente
 // npm i nodemoon
 

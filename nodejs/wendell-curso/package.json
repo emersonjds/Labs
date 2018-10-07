@@ -11,6 +11,7 @@
   "dependencies": {
     "comander": "0.0.1-security",
     "commander": "2.18.0",
+    "dotenv": "^6.0.0",
     "hapi": "16.6.3",
     "hapi-auth-jwt2": "7.1.0",
     "hapi-swagger": "^7.10.0",
