@@ -2,6 +2,14 @@
 // Para logar no heroku
 // -- heroku login
 
+//heroku apps
+
+//gitinit para inicializar o repositorio
+//criar o .gitignore para ignorar os arquivos
+// para criar uma aplicação
+// heroku apps:create api-heroes-emersonjds
+// git push heroku master
+
 // para utilizar nossa aplicação no heroku
 // criamos um script para ser executado em produção
 // quando o heroku chamar nossa aplicação
