@@ -1,0 +1,18 @@
+/* Letter Spacing
+A função do letter-spacing é aplicar um espaço entre as letras do texto do elemento. */
+.letter-spacing {
+  letter-spacing: 1em;
+}
+
+/* Word Spacing
+Define um espaçamento entre as palavras do texto. */
+.word-spacing {
+  word-spacing: 10px;
+}
+
+/* Line Height
+Aplica a altura da linha em porcentagem. */
+.line-height {
+  line-height: 2em;
+}
+
