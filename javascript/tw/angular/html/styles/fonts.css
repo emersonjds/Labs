@@ -51,3 +51,9 @@ semi-expanded */
 .font-strech {
   font-stretch: condensed;
 }
+
+/* A propriedade font-size-adjust especifica que o tamanho da fonte deve ser escolhido baseado na altura das letras minúsculas. Recurso utilizado para melhorar a legibilidade de caracteres muitos pequenos. */
+.font-size-adjust  {
+  font: 1em;
+  font-size-adjust: 0.545;
+}

@@ -1,0 +1,63 @@
+.color-text {
+  color: blue;
+}
+
+/* text-indent
+A propriedade text-indent permite aplicar espaço à primeira linha de um parágrafo. */
+.text-indent {
+  text-indent: 20px;
+}
+
+/* text-align
+Com a propriedade text-align, os textos podem ser alinhados à esquerda (left), à direita (right) ou centralizados (center). Tem também o valor justify, que justifica o texto. */
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* text-decoration
+A propriedade text-decoration possibilita aplicar "efeitos" ou "decorações" em textos. Você pode sublinhar textos, riscar o texto com uma linha, colocar uma linha sobre o texto e etc. No exemplo a seguir o cabeçalho <h1 > é sublinhado, o cabeçalho < h2 > leva uma linha em cima e o cabeçalho <h3 > é cortado por uma linha */
+.line-throught {
+  text-decoration: line-throught;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* text-transform
+A propriedade text-transform controla o tipo de "caixa" (maiúscula ou minúscula) do texto. Você pode escolher entre capitalize, uppercase ou lowercase, independente do modo como o texto foi informado no HTML.
+
+capitalize - Capitaliza a primeira letra de cada palavra. Por exemplo: "treinaweb cursos" transforma-se em "Treinaweb Cursos";
+uppercase - Converte todas as letras para maiúscula. Por exemplo: "treinaweb cursos" transforma-se em "TREINAWEB CURSOS";
+lowercase - Converte todas as letras para minúscula. Por exemplo: "TREINAWEB CURSOS" transforma-se em "treinaweb cursos";
+none - Sem transformações - o texto é apresentado como foi informado no HTML. */
+
+.letter {
+  text-transform: uppercase;
+}
+
+/* Text Shadow
+Essa propriedade adiciona sombras ao texto.
+
+A posição horizontal, posição vertical, nível de ofuscação e cor da sombra.
+ */
+
+ .text-shadow {
+  text-shadow: 2px 2px 5px #FF0000;
+ }
