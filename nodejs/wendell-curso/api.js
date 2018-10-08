@@ -7,7 +7,7 @@
 
 // ---------------- Controle de Aplicação -----------------
 // Para controlar e metrificar nossa aplicação
-// vamos usar uma ferramenta , que caso aconteça alguma 
+// vamos usar uma ferramenta , que caso aconteça alguma  
 // situação inesperada ( cpu max, memoria max, espaco disco)
 // vai alertar aos devs , ou reiniciar a aplicação
 // npm i pm2 -g

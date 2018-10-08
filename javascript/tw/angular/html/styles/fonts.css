@@ -47,7 +47,7 @@ extra-expanded
 expanded
 semi-expanded */
 
+/* O resultado de font-stretch varia de acordo com a família da fonte que você estiver usando. Dependendo da família de fonte que você usar não terá nenhuma diferença, pois ela pode não possibilitar diferentes variedades de largura. Mais uma vez, faça alguns testes, e veja a diferença entre cada um dos valores */
 .font-strech {
   font-stretch: condensed;
 }
-/* O resultado de font-stretch varia de acordo com a família da fonte que você estiver usando. Dependendo da família de fonte que você usar não terá nenhuma diferença, pois ela pode não possibilitar diferentes variedades de largura. Mais uma vez, faça alguns testes, e veja a diferença entre cada um dos valores */
