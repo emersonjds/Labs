@@ -1,0 +1,7 @@
+/* Fixed Position 
+Quando definimos a propriedade como fixed , o elemento sera posicionado em relação a tela
+Nao importa se houver conteudo suficiente para dar scroll, o elemento sempre estara fixo na tela na mesma posição */
+
+.any-div {
+  position: fixed;
+}
