@@ -75,3 +75,19 @@ katakana-iroha;
   /* list-style-type: lower-alpha; */
   list-style-type: upper-alpha;
 }
+
+
+/* -------------------------------------------------- */
+/* List-Style */
+/* maneira abreviada de escrevermos uma regra para as propriedades das listas. Podemos declarar duas das propriedades estudadas em uma única regra */
+
+.list-style {
+  /* list-style: inside url("https://treinaweb-cursos.s3.amazonaws.com/prod/5/arquivos/seta.gif") 
+  */
+  /* list-style: position type; */
+  list-style: outside circle;
+}
+
+.intern-outside-list { 
+  list-style: outside square;
+}
