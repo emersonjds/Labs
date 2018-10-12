@@ -64,3 +64,14 @@ katakana-iroha;
   list-style-type: circle; 
   /* list-style-type: square; */
 }
+
+
+/* ------------------------------------------- */
+/* Listas ordenadas são aquelas que ao invés de um marcador, possuem números ou letras. */
+.order-list-style {
+  /* list-style-type: decimal; */
+  /* list-style-type: lower-roman; */
+  /* list-style-type: upper-roman; */
+  /* list-style-type: lower-alpha; */
+  list-style-type: upper-alpha;
+}
