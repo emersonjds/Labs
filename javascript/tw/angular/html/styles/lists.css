@@ -1,0 +1,49 @@
+/* Lists 
+As propriedades relativas às listas permitem controlar diversos aspectos da apresentação de uma lista, como escolher os símbolos para os marcadores, usar uma imagem como marcador ou escolher a posição dos marcadores.
+
+A seguir serão explicadas as seguintes propriedades:
+
+list-style-image;
+list-style-position;
+list-style-type;
+list-style (forma abreviada).
+Valores válidos para as propriedades da lista:
+
+list-style-image
+
+none: Nada definido;
+url: url("caminho/marcador.gif").
+list-style-position
+
+outside: marcador fora do alinhamento do texto;
+inside: marcador alinhado com texto.
+list-style-type
+
+none: sem marcador;
+disc: círculo (bolinha cheia);
+circle: circunferência (bolinha vazia);
+square: quadrado cheio;
+decimal: números 1, 2, 3, 4, ...;
+decimal-leading-zero;
+lower-roman: romano minúsculo i, ii, iii, iv, ...;
+upper-roman: romano maiúsculo I, II, III, IV, ...;
+lower-alpha: letra minúscula a, b, c, d, ...;
+upper-alpha: letra maiúscula A, B, C, D, ...;
+lower-greek;
+lower-latin;
+upper-latin;
+hebrew;
+armenian;
+georgian;
+cjk-ideographic;
+hiragana;
+katakana;
+hiragana-iroha;
+katakana-iroha;
+
+*/
+
+/* img-list  */
+.course-list {
+  list-style-image: url("https://treinaweb-cursos.s3.amazonaws.com/prod/5/arquivos/seta.gif")
+}
