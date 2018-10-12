@@ -47,3 +47,20 @@ katakana-iroha;
 .course-list {
   list-style-image: url("https://treinaweb-cursos.s3.amazonaws.com/prod/5/arquivos/seta.gif")
 }
+
+/* Esta propriedade altera a posição dos marcadores */
+.inside-list {
+  list-style-position: inside;
+}
+
+.outside-list {
+  list-style-position: outside;
+}
+
+ /* Esta propriedade define o tipo de marcador (estilo) a ser usado  */
+.list-style-type { 
+  /* list-style-type: none; */
+  /* list-style-type: disc; */
+  list-style-type: circle; 
+  /* list-style-type: square; */
+}
