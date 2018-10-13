@@ -1,0 +1,47 @@
+/* necessario informar que o escopo de root sera responsavel pela declaração das variaveis */
+
+/* Pense no escopo como o lugar onde as variáveis vivem.
+imagine a situação
+<div>ABC</div> <span>DEF</span>
+div{
+  --minha-cor: red;
+}
+span{
+  color: var(--minha-cor);
+}
+O exemplo acima não irá tornar a cor da fonte do Span vermelha. Isso porque nós declaramos a variável "--minha-cor" dentro do seletor Div. Isso faz com que o escopo da variável "--minha-cor" seja lá dentro, ou seja, apenas dentro daquelas chaves ( { e } ) que a variável existe. Fora é como se ela nunca tivesse sido declarada.
+
+Quando uma variável só existe dentro de um determinado escopo, chamamos de variável local.
+
+Caso a gente altere o HTML para: */
+
+/* <div>ABC <span>DEF</span> </div>
+
+Agora sim irá funcionar, pois como Span agora está dentro da Div, ela compartilha o escopo de seu elemento pai. Porém, o pai não compartilha o escopo de seus filhos.
+
+Mas e se precisarmos utilizar a variável em vários lugares? Podemos utilizar a chamada variável global. Esse é o nome dado às variáveis que vivem no escopo global, ou seja, podem ser acessadas de qualquer parte por qualquer um. Para isso, declaramos a variável no seletor da raiz do documento */
+
+/* :root{
+  --minha-cor: red;
+}
+
+div{
+  background-color: var(--minha-cor);
+}
+
+span{
+  color: var(--minha-cor);
+} */
+
+:root {
+  --main-bg-color: red;
+}
+
+/* para pegar o valor guardado da variavel é necessario chamar a função 'var' e passar a cor como parametro */
+span {
+  background-color: var(--main-bg-color);
+}
+
+/* É possivel tambem alterar as variaveis por meio de vanila diretamente */
+
+/* document.documentElement.style.setProperty('--minha-cor', 'blue') */
