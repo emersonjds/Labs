@@ -1,7 +1,9 @@
+/* necessario informar que o escopo de root sera responsavel pela declaração das variaveis */
 :root {
   --main-bg-color: red;
 }
 
+/* para pegar o valor guardado da variavel é necessario chamar a função 'var' e passar a cor como parametro */
 .class {
   background-color: var(--red-color);
 }
