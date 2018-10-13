@@ -4,6 +4,12 @@
   empty-cells: hide;
 }
 
+thead {
+  background-color: blue;
+  color: white;
+  padding: 1em;
+}
+
 /* Border Colapse 
 Indica que os elementos da tabela devem se juntar */
 /* table {
