@@ -1,0 +1,27 @@
+/* Border */
+.table, th, td, th {
+  border: 1px solid black;
+}
+
+/* Border Colapse 
+Indica que os elementos da tabela devem se juntar */
+/* table {
+  border-collapse: collapse;
+} */
+
+/* Border Spacing
+Indica a distancia entre as bordas das células da tabela */
+/* table {
+  border-collapse: separate;
+  border-spacing: 10px 50px;
+} */
+
+/* Caption Side */
+/* Indica aonde a legenda da tabela sera posicionada, para isso é necessario incluir a tag caption */ 
+/* caption {
+  caption-side: bottom;
+} */
+
+/* Empty Cells
+Define quando uma célula vazia deve ser oculta
+Disponivel apenas quando as bordas estao separadas  */
