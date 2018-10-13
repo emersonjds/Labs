@@ -250,3 +250,11 @@ input:not(:hover) {
   background-color: black;
 }
 
+.minhalista.primaria .stilo2:first-child span {
+  background-color: pink;
+}
+
+.minhalista.primaria .stilo2:last-child span  {
+  background-color: purple;
+}
+
