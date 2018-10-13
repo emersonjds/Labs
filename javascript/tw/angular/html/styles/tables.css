@@ -1,6 +1,7 @@
 /* Border */
 .table, th, td, th {
   border: 1px solid black;
+  empty-cells: hide;
 }
 
 /* Border Colapse 
