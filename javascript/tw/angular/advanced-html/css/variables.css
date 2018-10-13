@@ -34,7 +34,7 @@ span{
 } */
 
 :root {
-  --main-bg-color: red;
+  --main-bg-color:red;
 }
 
 /* para pegar o valor guardado da variavel é necessario chamar a função 'var' e passar a cor como parametro */
@@ -42,6 +42,7 @@ span {
   background-color: var(--main-bg-color);
 }
 
+
 /* É possivel tambem alterar as variaveis por meio de vanila diretamente */
 
-/* document.documentElement.style.setProperty('--minha-cor', 'blue') */
+/* document.documentElement.style.setProperty('--minha-cor', 'blue') */ 
