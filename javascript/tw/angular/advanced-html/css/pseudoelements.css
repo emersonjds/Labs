@@ -1,0 +1,8 @@
+/* Pseudo Elementos se comportam como elementos HTML, mas são criados a partir do CSS.
+
+Podemos inserir dois pseudo elementos em cada elemento HTML: um antes e outro depois. */
+
+div::before {
+  content: "DEF - "; 
+  /* insere DEF antes do valor ja informado dentro da div */
+}
