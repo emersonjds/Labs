@@ -24,3 +24,9 @@ Então quando temos muitas imagens, como uma coleção de ícones, costumamos ju
 Ferramenta para sprites
 SpriteCow: http://spritecow.com/
 SpritePad: http://wearekiss.com/spritepad */
+.my-icon {
+  height: 30px;
+  width: 110px;
+  background-image: url('../img/sprite.png');
+  background-repeat: no-repeat;
+}
