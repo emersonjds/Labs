@@ -1,0 +1,10 @@
+/* Font Icons
+Prática que nos permite criar ícones. Nesta técnica nós utilizamos fontes.
+
+A vantagem é que as fontes podem ser alteradas por CSS, como a cor, tamanho, sombra, etc. E tudo isso sem perder a qualidade!
+
+Para isso utilizamos os Pseudo Elementos! */
+.my-icon::after {
+  content: "\00a9"; 
+  /* copyright */
+}
