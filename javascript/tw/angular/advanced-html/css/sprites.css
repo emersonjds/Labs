@@ -1,0 +1,26 @@
+/* Sprite é basicamente um conjunto de imagens juntas em um mesmo arquivo.
+
+Você deve estar se perguntando: por que alguém misturaria várias imagens em uma só?
+
+Vamos pensar no seguinte exemplo:
+
+Quando o navegador vai exibir uma imagem, ele faz uma requisição ao servidor pedindo qual imagem ele quer exibir. Essa requisição leva um tempo, e então será feito o download da imagem, que demora dependendo da velocidade da conexão do usuário.
+
+Imagine que fazer o pedido da imagem demore 1 segundo, e a nossa imagem leva 1 segundo também para chegar ao nosso computador. Então o tempo total da requisição será 2 segundos, certo?
+
+Agora imagine que a gente tenha cinco imagens para exibir. 2 x 5 = 10. Levaremos 10 segundos para receber todas as imagens.
+
+Mas e se todas as imagens estivessem agrupadas em um mesmo arquivo?
+
+Se cada imagem demora 1 segundo para ser baixada, vamos imaginar que as 5 imagens agora estão em um mesmo arquivo e, portanto, demora 5 segundos para ser baixada.
+
+Acontece que por ser um único arquivo, só iremos fazer 1 requisição (a que leva 1 segundo, lembra?).
+
+Então agora, o nosso tempo total para receber todas as imagens deixou de ser 10 segundos e passou para 6 segundos!
+
+Então quando temos muitas imagens, como uma coleção de ícones, costumamos juntar todos em uma única imagem. */
+/* 
+
+Ferramenta para sprites
+SpriteCow: http://spritecow.com/
+SpritePad: http://wearekiss.com/spritepad */
