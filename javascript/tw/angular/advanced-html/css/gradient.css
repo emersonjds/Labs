@@ -17,14 +17,26 @@ Radial: A cor de início começa no centro. Podemos indicar se queremos uma form
   /* background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, rgb(214, 24, 214)); */
 
   /* indicar que se repitam */
-  background: repeating-linear-gradient(to right, red, orange, yellow, green, blue, indigo, rgb(214, 24, 214));
+  background: repeating-linear-gradient(to right, red, orange, yellow, green, blue, indigo, rgb(216, 32, 216));
 }
 
-.radial-gradient {
-  height: 200px;
+/* .radial-gradient {
+  height: 200px; */
    /* background: radial-gradient(red, green); */
    /* background: radial-gradient(red, green 30%) */
    /* background: radial-gradient(ellipse, red, green) */
-   background: repeating-linear-gradient(red, green 25%)
+   /* background: repeating-linear-gradient(red, green 25%) */
+/* } */
+
+/* Junto podemos indicar a posição. Temos os seguintes valores:
+
+closest-side;
+farthest-side;
+closest-corner;
+farthest-corner. */
+.radial-gradient {
+  height: 400px;
+   /* background: radial-gradient(closest-corner at 20% 50%, red, green) */
+  background: repeating-radial-gradient(red, orange, yellow, green, blue, indigo, rgb(216, 32, 216)25%)
 }
 
