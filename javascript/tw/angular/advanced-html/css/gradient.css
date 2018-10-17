@@ -22,5 +22,9 @@ Radial: A cor de início começa no centro. Podemos indicar se queremos uma form
 
 .radial-gradient {
   height: 200px;
-   background: radial-gradient(red, green);
+   /* background: radial-gradient(red, green); */
+   /* background: radial-gradient(red, green 30%) */
+   /* background: radial-gradient(ellipse, red, green) */
+   background: repeating-linear-gradient(red, green 25%)
 }
+
