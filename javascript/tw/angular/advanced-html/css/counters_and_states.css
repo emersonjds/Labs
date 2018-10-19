@@ -14,3 +14,19 @@
 .up-counter:hover {
   counter-increment: meuContador;
 }
+
+.menu {
+color: #fff;
+background-color: #252525;
+margin: 0;
+padding: 10px;
+display: none;
+}
+
+.menu-item {
+  list-style-type: none;
+}
+
+#meuMarcador:checked + .menu {
+  display: block;
+}
