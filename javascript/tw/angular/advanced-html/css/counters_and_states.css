@@ -1,0 +1,16 @@
+.counter-reset {
+  counter-reset: meuContador;
+  /* counter reset , zera o contador */
+}
+
+.print-counter::after {
+  content: counter(meuContador)
+}
+
+.up-counter {
+  counter-increment: meuContador;
+}
+
+.up-counter:hover {
+  counter-increment: meuContador;
+}
