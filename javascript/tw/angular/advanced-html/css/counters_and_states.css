@@ -4,14 +4,16 @@
 }
 
 .print-counter::after {
+  /* mostra o contador na tela */
   content: counter(meuContador)
 }
 
-.up-counter {
+/* .up-counter {
   counter-increment: meuContador;
-}
+} */
 
 .up-counter:hover {
+  /* quando o mouse passar em cima automaticamente sera acrescido mais 1 */
   counter-increment: meuContador;
 }
 
