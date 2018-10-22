@@ -1,0 +1,33 @@
+{
+  "opt": {
+    "opt_code": 123,
+    "prove_value": true,
+    "description": "string",
+    "filial": "string",
+    "client_social_name": "string", // sugestion
+    "vd_vi": "string",
+    "project_code": 1234,
+    "recipe": {
+      "opt_code": 123,
+      "recipe_line_item": "string",
+      "unit_price_with_discount": 123.1,
+      "product_description": "string",
+      "amount": 1,
+      "erp_product_code": 12345
+    }
+  },
+  "client": {
+    "erp_code": 123,
+    "social_name": "string",
+    "cnpj": "string",
+    "contact": 12345,
+    "status": 1,
+    "private_or_gov": "string",
+    "address": {
+      "street": "string",
+      "city": "string",
+      "state": "string",
+      "cep": 12345678
+    }
+  }
+}
