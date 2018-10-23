@@ -9,6 +9,11 @@ seletor {
   filter: nome_do_filtro( valor );
 }
 
+img {
+  height: 200px;
+  width: 400px;
+}
+
 /* Blur (px)
 Borra a imagem. Quanto maior o valor , maior o borrao */
 
