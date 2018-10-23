@@ -64,3 +64,6 @@ Passamos os ângulos relativos aos eixos X, Y e Z. Caso queira mudar apenas um d
 }
 
 /* Importante colocar o webkit pois a estrutura 3d ainda nao esta funcionando em todos os navegadores */
+/* chrome -> -webkit-transform
+ms -> -ms-transform
+mozilla -> -moz-transform */

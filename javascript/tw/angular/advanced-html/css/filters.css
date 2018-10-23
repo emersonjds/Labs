@@ -1,0 +1,10 @@
+/* Filtros
+Os filtros são utilizados para aplicar efeitos visuais nos elementos. É mais utilizado no elemento <img>.
+
+São efeitos iguais aos presentes em softwares de edição de imagem, onde podemos alterar a saturação, brilho, deixar uma imagem com escala cinza, etc. */
+
+Sintaxe Basica
+
+seletor {
+  filter: nome_do_filtro( valor );
+}
