@@ -1,0 +1,13 @@
+/* Transforms
+As transformações são efeitos que nos permitem mudar a forma, tamanho e posição de um elemento. Há dois tipos: 2D e 3D.
+
+A propriedade usada é a "transform", e passamos uma função relacionada à propriedade que queremos alterar.
+
+Vamos usar como base o seguinte HTML e CSS: */
+
+div {
+  height: 200px;
+  width: 400px;
+  background-color: red;
+  border: 5px solid black;
+}
