@@ -8,3 +8,36 @@ Sintaxe Basica
 seletor {
   filter: nome_do_filtro( valor );
 }
+
+/* Blur (px)
+Borra a imagem. Quanto maior o valor , maior o borrao */
+
+.blur {
+  /* sempre em px a densidade */
+  filter: blur(20px)
+}
+
+/* Brightness(%)
+
+Ajusta o brilho da imagem.
+
+0% deixa a imagem totalmente preta.
+
+100% representa a imagem original.
+
+Valores acima de 100% deixarão a imagem mais clara. */
+
+.brigthness {
+  /* filter: brightness(30%) */
+  filter: brightness(130%)
+}
+
+/* Contrast (%)
+Ajusta o contraste da imagem, isso é, a distância entre a cor mais clara e a mais escura presente na imagem.
+0% deixa a imagem completamente preta.
+100% representa a imagem original.
+Valores acima de 100% deixarão a imagem com menos contraste */
+
+.contrast {
+  filter: contrast(45%)
+}
