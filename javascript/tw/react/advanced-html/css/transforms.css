@@ -1,0 +1,97 @@
+/* Transforms
+As transformações são efeitos que nos permitem mudar a forma, tamanho e posição de um elemento. Há dois tipos: 2D e 3D.
+
+A propriedade usada é a "transform", e passamos uma função relacionada à propriedade que queremos alterar.
+
+Vamos usar como base o seguinte HTML e CSS: */
+
+.div {
+  height: 200px;
+  width: 400px;
+  background-color: red;
+  border: 5px solid black;
+  /* 50 para direita , 100 para baixo */
+  transform: translate(50px, 100px) 
+}
+
+/* Translate */
+
+/* translate() 
+Essa função move um elemento em relação à sua posição original. Os parâmetros passados para a função são o X e o Y. */
+
+
+.div-1 {
+  height: 200px;
+  width: 400px;
+  background-color: green;
+  border: 5px solid black;
+  /* 50 para direita , 100 para baixo */
+  transform: translate(50px, 100px) 
+}
+
+/* Translate X e Y
+Caso queira alterar apenas o X ou apenas o Y, existem as funções translateX e translateY. */
+
+.div-2 {
+  height: 200px;
+  width: 400px;
+  background-color: yellow;
+  border: 5px solid black;
+  transform: rotate(20deg)
+}
+/* 
+Note que por padrão, o centro do elemento é utilizado como ponto para as transformações.
+
+Você pode alterar este ponto utilizando a propriedade "transform-origin", passando como valor "top", "right", "bottom" ou "left".
+
+Caso queira que uma das pontas seja utilizada, basta juntar dois valores, como por exemplo, "top left": */
+
+.div-3 {
+  height: 200px;
+  width: 400px;
+  background-color: pink;
+  border: 5px solid black;
+  transform: rotate(20deg);
+  transform-origin: top left;
+}
+
+/* Scale
+Essa função permite redimensionar o elemento de acordo com um valor relativo.
+
+O valor 1 seria igual a 100%, 0.5 igual a 50%.
+
+A função espera receber o valor da largura e depois da altura.
+
+Neste exemplo colocamos a largura para ser 50% maior do que o original (150%) e a altura apenas 80%: */
+
+.div-4 {
+  height: 200px;
+  width: 400px;
+  background-color: brown;
+  border: 5px solid black;
+  transform: scale(1.5, 0.8);
+  margin-left: 5em;
+}
+
+/* Skew
+skew()
+Esta função inclina o elemento de acordo com os eixos X e Y. */
+.div-5 {
+  height: 200px;
+  width: 400px;
+  background-color: orange;
+  border: 5px solid black;
+  transform: skew(20deg, 10deg);
+}
+
+/* Matrix
+Esta função combina todas as funções de transformação 2d em uma só.
+
+A ordem dos parâmetros é: scaleX, skewY, skewX, scaleY, translateX e translateY. */
+.div-6 {
+  height: 200px;
+  width: 400px;
+  background-color: orange;
+  border: 5px solid black;
+  transform: matrix(1, -0.3, 0, 1, 0, 0)
+}

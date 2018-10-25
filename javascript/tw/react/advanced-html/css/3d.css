@@ -1,0 +1,69 @@
+/* Além das transformações 2D, temos também as transformações 3D. A diferença é o acréscimo do eixo Z nas funções.
+
+Primeiro temos que indicar um valor de perspectiva para ativar os efeitos 3D. Esse valor vai indicar a intensidade do efeito, como se fosse o tamanho do local onde o objeto 3D irá existir.
+
+Quanto maior o valor mais perto o elemento estará e, portanto, um efeito menor será aplicado.
+
+Podemos indicar a perspectiva de duas maneiras: */
+
+/* div {
+  perspective: 500;
+}
+
+div {
+  -webkit-transform: perspective(500);
+} */
+
+.div-1 {
+  height: 200px;
+  width: 400px;
+  background-color: orange;
+  border: 5px solid black;
+  -webkit-transform: perspective(500) rotateX(40deg);
+}
+
+.div-2 {
+  height: 200px;
+  width: 400px;
+  background-color: red;
+  border: 5px solid black;
+  -webkit-transform: perspective(300) rotateX(40deg)
+}
+
+/* Com eixo Y  */
+.div-3  {
+  height: 200px;
+  width: 400px;
+  background-color: blue;
+  border: 5px solid black;
+  -webkit-transform: perspective(500) rotateY(40deg)
+}
+
+/* translate3d
+Passamos os ângulos relativos aos eixos X, Y e Z. Caso queira mudar apenas um dos eixos, utilize as funções translateX, translateY ou translateZ.
+Aqui utilizamos a função translateZ com o valor -100px.
+
+Parece que nós redimensionamos o elemento, mas na verdade nós fizemos ele se afastar da tela. */
+.div-4 {
+  height: 200px;
+  width: 400px;
+  background-color: yellow;
+  border: 5px solid black;
+  -webkit-transform: perspective(200) translateZ(100px)
+}
+
+/* Scale 3d
+Passamos os ângulos relativos aos eixos X, Y e Z. Caso queira mudar apenas um dos eixos, utilize as funções scaleX, scaleY ou scaleZ. */
+.div-5 {
+  height: 200px;
+  width: 400px;
+  background-color: pink;
+  border: 5px solid black;
+  -webkit-transform: perspective(200) scale3d(1.2, 0.8, 1)
+  perspective(500)
+}
+
+/* Importante colocar o webkit pois a estrutura 3d ainda nao esta funcionando em todos os navegadores */
+/* chrome -> -webkit-transform
+ms -> -ms-transform
+mozilla -> -moz-transform */
