@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,27 @@
     <link rel="stylesheet" href="../css//transitions.css">
     <title>Transitions</title>
 </head>
+
 <body>
-    
+
     <div class="light-transition"></div>
+
+    <br>
+
+    <div class="js-transition"></div>
+
 </body>
+
+<script>
+    var element = document.getElementsByClassName('.js-transition');
+    setInterval(() => {
+        element.style.backgroundColor = 'blue'
+    }, 2000);
+    setTimeout(() => {
+        setInterval(() => {
+            element.style.backgroundColor = 'red'
+        }, 2000);
+    }, 1000);
+</script>
+
 </html>
