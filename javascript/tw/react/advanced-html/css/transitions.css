@@ -46,9 +46,9 @@ Em seguida precisamos alterar o valor de "width". Nós utilizamos outro seletor 
     width: 200px;
     height: 100px;
 
-    transition: all 1s;
+    transition: width 1s, background-color 1s;
 }
 
 .js-transition:hover {
-    transition: width 1s, background-color 1s;
+    transition: all 1s;
 }

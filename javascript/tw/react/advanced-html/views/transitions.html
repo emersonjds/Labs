@@ -20,13 +20,14 @@
 </body>
 
 <script>
-    var element = document.getElementsByClassName('.js-transition');
+    var element = document.getElementsByTagName('div')[0];
     setInterval(() => {
-        element.style.backgroundColor = 'blue'
+        element.style.backgroundColor = "blue";
     }, 2000);
+
     setTimeout(() => {
         setInterval(() => {
-            element.style.backgroundColor = 'red'
+            element.style.backgroundColor = "red";
         }, 2000);
     }, 1000);
 </script>
