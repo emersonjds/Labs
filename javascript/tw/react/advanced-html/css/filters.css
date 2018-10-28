@@ -46,3 +46,28 @@ Valores acima de 100% deixarão a imagem com menos contraste */
 .contrast {
   filter: contrast(45%)
 }
+
+/* drop-shadows(posição_horizontal posição_vertical dispersão cor) */
+/* Possibilita a aplicação de sombras na imagem, com efeito igual às propriedades "text-shadow" e "box-shadow".
+
+Passamos a posição horizontal, a posição vertical, valor de dispersão e a cor da sombra.
+
+Para ter o mesmo efeito que o exemplo abaixo, é necessário o uso de uma imagem com fundo transparente. */
+
+.drop {
+  filter: drop-shadow(5px 15px 15px blue)
+}
+
+/* Gray Scale (%)
+Aplica o filtro para tornar a imagem mais acinzentada 
+0% para imagem natural e 100 para imagem totalmente cinza  */
+.grayscale {
+  filter: grayscale(100%)
+}
+
+/* Hue Rotate ( angulo ) 
+Altera a matriz de cores da imagem, para isso é necessario conhecer a roda de cores */
+/* O circulo possui 360 graus . O valor que passamos para a função hue-rotate é o angulo que queremos girar da roda de coras da imagem. O valor deve estar no range de 0 a 360. */
+.hue_rotate {
+  filter: hue-rotate(230deg)
+}
