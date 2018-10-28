@@ -71,3 +71,37 @@ Altera a matriz de cores da imagem, para isso é necessario conhecer a roda de c
 .hue_rotate {
   filter: hue-rotate(230deg)
 }
+
+/* Invert (%)
+Inverte as cores da imagem, 0 representa a imagem original ja 100% deixara a imagem com cores completamente invertidas  */
+.invert {
+  filter: invert(100%)
+}
+
+/* Opacity (%)
+Atribui um nivel de transparencia na imagem, 100% representa a imagem original , 0% deixara a imagem totalmente transparente
+Esta função é igual a propriedade opacity */
+.opacity {
+  filter: opacity(20%)
+}
+
+/* Saturate (%)
+Altera o nivel de saturação da imagem
+0% deixa a imagem sem saturação alguma
+100% representa a imagem original.
+Valores acima de 100% deixarão a imagem supersaturada */
+.saturate {
+  filter : saturate(40%)
+}
+
+/* Sépia (%)
+Transforma as cores da imagem para sépia
+0% representa a imagem original
+100% deixará a imagem totalmente sépia */
+.sepia {
+  filter: sepia(100%)
+}
+
+/* CSSgram
+Está lib baseada nos filtros do CSS , o CSSgram , recria os filtros do instagram apenas com CSS
+Da pra conferir o funcionamento  neste link http://una.im/CSSgram/ */
