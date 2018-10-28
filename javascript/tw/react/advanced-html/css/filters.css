@@ -47,6 +47,7 @@ Valores acima de 100% deixarão a imagem com menos contraste */
   filter: contrast(45%)
 }
 
+/* Drop Shadow */
 /* drop-shadows(posição_horizontal posição_vertical dispersão cor) */
 /* Possibilita a aplicação de sombras na imagem, com efeito igual às propriedades "text-shadow" e "box-shadow".
 
