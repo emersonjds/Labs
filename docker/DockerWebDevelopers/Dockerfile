@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:latest 
 
 MAINTAINER Dan Wahlin
 
@@ -11,3 +11,5 @@ RUN npm install supervisor -g
 EXPOSE 3000
 
 ENTRYPOINT ["supervisor", "server.js"]
+
+
