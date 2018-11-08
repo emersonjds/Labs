@@ -6,6 +6,7 @@ required: true
 schema:
   $ref: '#/definitions/newAlbum'
 
+# Definitions always in the end of file 
 definitions:
   newAlbum:
     properties:
@@ -23,3 +24,29 @@ post:
       required: true
       schema:
         $ref: '#/definitions/newAlbum'
+
+# Schema Objects
+# You can add other objects types as values
+# Simply use a type of object
+# Then add a new lvl with properties
+# Continue just like you did before
+  author:
+    type: object
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+
+# Schema objects with $ref
+  autor:
+    type: object
+    additionalProperties:
+      $ref: '#/definitions/person'
+
+# Schema Array
+  relatedAlbuIds:
+    type: array
+      items:
+        type: string
+
