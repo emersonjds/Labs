@@ -1,0 +1,41 @@
+title: Wizard's Choice
+author: Delight Games
+sections: 
+  - id: intro
+    content:
+      - > 
+        You are a young wizard seeking treasure and glory. You
+        are walking along a path in the forest. Night has just 
+        fallen and you're thinking about how it might be a good
+        idea to find a campsite. After all, you are in goblin
+        territory, and it is dangerous to travel in the dark.
+      - Suddenly you smell something awful. What do you do?
+
+    choices:
+      - description: Dive flat on your face
+        id: dive 
+
+      - description: Hide
+        id: hide 
+
+      - description: Stop and listen
+        id: stop 
+
+  - id: hide
+    content:
+      - > 
+        When in doubt, hiding is a fine strategy. And the
+        forest offers plenty of cover. 
+      - > 
+        Now inside the brush, you can see green, glowing eyes
+        staring at you from behind a tree several paces away.
+        You hear a snort as several green-skinned goblins charge
+        out of hiding toward you.
+      - What do you do?
+
+    choices:
+      - description: Fight the goblins
+        id: fight
+
+      - description: Run away
+        id: run
