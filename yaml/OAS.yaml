@@ -1,0 +1,13 @@
+# Every Open API file need this
+swagge: '2.0'
+
+# this is your document metadata
+
+info:
+  version: "0.0.1"
+  title: Example Photo Service
+
+host: api.example.com
+basePath: /photo
+schemes:
+  - https
