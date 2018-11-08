@@ -12,6 +12,11 @@ basePath: /photo
 schemes:
   - https
 
+consumes:
+  - application/json
+produces:
+  - -application/json
+
 #For define a request all body will have this metadata
 # -> URL endpoint
 # -> HTTML Method
