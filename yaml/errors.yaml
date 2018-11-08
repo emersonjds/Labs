@@ -1,0 +1,16 @@
+responses:
+  200:
+    description: Successful response
+  
+  401: 
+    description: Unauthorized
+    schema:
+      $ref: '#/definitions/error'
+
+definitions:
+  error:
+    properties:
+      code: 
+        type: integer
+      message:
+        type: string

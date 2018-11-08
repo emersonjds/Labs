@@ -1,8 +1,22 @@
 security:
   - api_key: []
+  - basic_auth: []
+  - oauth_example: 
+    - write:albums
 
 securityDefinitions: 
   api_key:
     type: apiKey
     name: application-key
     in: header
+  basic_auth:
+    type: basic
+  oauth_example:
+    type: oauth2
+    authorizationUrl: http://example.com/autenticate
+    flow: implicit
+      scopes:
+        write:albums: modify albums
+        read:albums: read your albums
+
+    
