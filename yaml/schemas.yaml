@@ -47,6 +47,34 @@ post:
 # Schema Array
   relatedAlbuIds:
     type: array
-      items:
-        type: string
+    items:
+      type: string
 
+# Schema array with $ref
+  photos:
+    type: array
+    items:
+      $ref: '#/definitions/photo'
+
+# Required property
+  photo:
+    properties:
+      id:
+        type: integer
+      longitude:
+        type: integer
+      latitude:
+        type: number
+      required:
+        id
+
+# -----------------------------------------------------
+  # Response Body
+  # Response Example
+  responses:
+    200:
+      description: Successfull
+      schema:
+        $ref: '#/definitions/album'
+
+# Custom Headers
