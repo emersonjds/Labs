@@ -11,3 +11,42 @@ host: api.example.com
 basePath: /photo
 schemes:
   - https
+
+#For define a request all body will have this metadata
+# -> URL endpoint
+# -> HTTML Method
+# -> Path parameters
+# -> Query parameters
+# -> Also (covered later):
+#   Request body
+#   Responses
+
+# Query parametes
+
+# GET https://api.example.com/photo/album?start=2017-09-01&emd=2017-09-31
+
+# Endpoints
+paths:
+  # Photo Album
+  /album:
+    # Get one or more albuns
+    get:
+      # Query parameters
+      parameters: 
+        # Starting date
+        - name: start
+          in: query
+          required: false
+          type: string
+        # Ending date
+        - name: end
+          in: query
+          required: false
+  /album/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+
