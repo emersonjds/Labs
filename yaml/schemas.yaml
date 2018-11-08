@@ -1,0 +1,25 @@
+# $ref
+# $ref is a special OAS key that indicates that value is a reference to a structure somewhere else in the YAML file
+ 
+in: body
+required: true
+schema:
+  $ref: '#/definitions/newAlbum'
+
+definitions:
+  newAlbum:
+    properties:
+      name:
+        type: string
+      value:
+        type: number
+
+# Example of post Request
+post:
+  # Query params
+  parameters:
+    - name: album
+      in: body
+      required: true
+      schema:
+        $ref: '#/definitions/newAlbum'
