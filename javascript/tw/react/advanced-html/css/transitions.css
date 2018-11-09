@@ -52,3 +52,21 @@ Em seguida precisamos alterar o valor de "width". Nós utilizamos outro seletor 
 .js-transition:hover {
     transition: all 1s;
 }
+
+/* Curva de velocidade de transição
+Quando criamos uma transição, temos algo chamado de "Curva da Velocidade de Transição".
+
+Essa propriedade também é muito presente em softwares de animação, também conhecida como "Curva de Animação". Ela indica a velocidade em que a animação será realizada.
+
+Temos alguns valores pré-definidos: */
+/* ease a transição começa acelerando e termina desacelerando
+
+linear a transição mantém uma velocidade constante
+
+ease-in a transição começa acelerando e mantém uma velocidade constante até o final
+
+ease-out a transição começa com uma velocidade constante e vai desacelerando no final
+
+ease-in-out a transição é lenta no começo e no final, mantendo uma velocidade constante no meio
+
+cubic-bezier(n,n,n,n) permite que a gente defina nossos próprios valores para a curva da velocidade */
