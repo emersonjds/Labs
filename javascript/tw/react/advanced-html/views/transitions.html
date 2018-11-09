@@ -11,25 +11,21 @@
 
 <body>
 
-    <div class="light-transition"></div>
+    <div></div>
 
-    <br>
+    <script>
+        var element = document.getElementsByTagName('div')[0];
+        setInterval(() => {
+            element.style.backgroundColor = "blue";
+        }, 2000);
 
-    <div class="js-transition"></div>
-
+        setTimeout(() => {
+            setInterval(() => {
+                element.style.backgroundColor = "red";
+            }, 2000);
+        }, 1000);
+    </script>
 </body>
 
-<script>
-    var element = document.getElementsByTagName('div')[0];
-    setInterval(() => {
-        element.style.backgroundColor = "blue";
-    }, 2000);
-
-    setTimeout(() => {
-        setInterval(() => {
-            element.style.backgroundColor = "red";
-        }, 2000);
-    }, 1000);
-</script>
 
 </html>
