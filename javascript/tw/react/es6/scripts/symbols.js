@@ -18,5 +18,5 @@ console.log(a === b);
 // Isso fez com que “a” e “b” armazenem o mesmo Symbol, fazendo da comparação, verdadeira.
 // Caso você não saiba qual a chave do Symbol para poder retorná-lo com “for()”, use a função “keyFor()”, a qual recebe um Symbol e retorna a chave dele.
 
-Symbol.keyFor('a');
+Symbol.keyFor('a'); // retorna a chave do objeto e nao o valor contido nesta propriedade
 // Atenção: a função “JSON.stringify()” ignora todas as propriedades definidas com Symbols
