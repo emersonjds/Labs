@@ -44,7 +44,24 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-	"use strict";
+	'use strict';
+	
+	var myConst = 7;
+	
+	var person = { name: 'Emerson'
+	
+	  // person = 'Emerson' // return Error
+	
+	};person.name = 'Maria'; // ok
+	
+	console.log(myConst);
+	console.log(person);
+	
+	for (var i = 0; i < 10; i++) {}
+	console.log(i);
+	
+	for (var _l = 2; _l <= 10; _l++) {}
+	console.log(l);
 
 /***/ })
 /******/ ]);
