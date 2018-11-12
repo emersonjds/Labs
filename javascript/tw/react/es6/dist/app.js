@@ -61,7 +61,15 @@
 	console.log(i);
 	
 	for (var _l = 2; _l <= 10; _l++) {}
-	console.log(l);
+	console.log(l); // l is not defined , because let just works in yourself scope
+	
+	var a = 2;
+	
+	{
+	  var _a = 3;
+	  console.log(_a);
+	}
+	console.log(a);
 
 /***/ })
 /******/ ]);
