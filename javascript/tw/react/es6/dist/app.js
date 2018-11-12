@@ -44,32 +44,14 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-	'use strict';
+	"use strict";
 	
-	var myConst = 7;
-	
-	var person = { name: 'Emerson'
-	
-	  // person = 'Emerson' // return Error
-	
-	};person.name = 'Maria'; // ok
-	
-	console.log(myConst);
-	console.log(person);
-	
-	for (var i = 0; i < 10; i++) {}
-	console.log(i);
-	
-	for (var _l = 2; _l <= 10; _l++) {}
-	console.log(l); // l is not defined , because let just works in yourself scope
-	
-	var a = 2;
-	
-	{
-	  var _a = 3;
-	  console.log(_a);
-	}
-	console.log(a);
+	var myObj = {};
+	var a = { value: 1 };
+	var b = { value: 2 };
+	myObj.set(a, 5);
+	myObj.set(b, 10);
+	console.log(myObj.get(a), myObj.get(b));
 
 /***/ })
 /******/ ]);
