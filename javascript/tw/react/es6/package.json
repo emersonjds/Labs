@@ -16,5 +16,8 @@
     "webpack": "^1.12.6"
   },
   "author": "Emerson Jr",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
 }
