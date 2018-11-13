@@ -28,3 +28,19 @@ var p2 = Promise.resolve(77);
 Promise.race([p1, p2]).then((value) => {
   console.log(value)
 })
+// Nossa resposta será o “77”, já que ele será resolvido primeiro.
+
+// -----------------------------------------------------------------
+// Promise All
+// Essa função recebe uma lista de Promises e executa o “then()” apenas quando todas as Promises forem resolvidas ou quando houver o primeiro erro de uma Promise.
+var p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(500)
+  }, 2000)
+})
+
+var p2 = Promise.resolve(77);
+
+Promise.all([p1, p2]).then(value => {
+  console.log(value)
+})
