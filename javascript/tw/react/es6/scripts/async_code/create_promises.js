@@ -21,5 +21,14 @@ var myPromise2 = new Promise((resolve, reject) => {
 })
 
 myPromise2.then(value => {
-  console.log(`My value is ${value}`)
+  console.log(`My value is ${value}`);
+}).then(value => {
+  console.log(`My value is ${value}`);
+  return 900;
+}).then(value => {
+  console.log(`My value is ${value}`);
+  return 100;
+}).then(value => {
+  console.log(`My value is ${value}`);
+  return 700
 })
