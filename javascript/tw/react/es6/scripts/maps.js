@@ -23,3 +23,7 @@ console.log(myObj.get(a), myObj.get(b));
 // Não podemos usar “[ ]” para acessar as propriedades. Para isso, use “get()” e “set()”;
 // Podemos limpar todo o conteúdo com a função “clear()”;
 // Para pegar o número de chaves, use “size” ao invés de “length”.
+
+let data = new Map();
+data.clear() // reseta os dados do Map
+data.size // retorna o tamanho desse map
