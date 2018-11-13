@@ -25,7 +25,6 @@ function* myGenerator1() {
 function* myGenerator2() {
   yield* [1, 2, 3, 4, 5]
 }
-[...myGenerator2]
-for(var g of myGenerator2) {
-  console.log(g.next())
-}
+
+var myGen2 = myGenerator2();
+myGen2.next(); // executa sequencialmente a cada ponto de parada do yield
