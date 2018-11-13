@@ -19,3 +19,19 @@ import {Calc as MyClass} from './Calc';
 // É recomendado que você só importe o que for usar. Caso você realmente precise importar tudo do módulo, pode usar “*” para importar o módulo inteiro. Para isso, é obrigatório dar um nome, o qual será como uma variável que virá com todas as funcionalidades do módulo.
 
 import * as MyModule from './Calc'; // adicionando um alias para importar tudo o que estiver no mddulo
+
+
+// ----------------------------------------------------------------
+// Importação de Modulo padrao
+
+import Something from './Calc';
+
+// Veja que não usamos chaves “{ }”, e colocamos um nome “Something”. Não temos nada sendo exportado com esse nome. Como não indicamos com chaves o que queremos importar, o que está marcado como “default” será importado. Quando estivermos nessa situação, podemos colocar o nome que quisermos. Isso é um atalho para o seguinte comando:
+
+// Preferir sempre importar com o nome verdadeiro para poder manter seu código mais fácil de entender.
+
+import Calc from './Calc';
+
+// Podemos também importar outras coisas, mesmo quando estamos importando o “default”:
+
+import Something, { myVar } from './Calc';
