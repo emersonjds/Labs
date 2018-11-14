@@ -8,6 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
+<!-- Como vimos, React é uma biblioteca para a criação de interfaces de usuário. Basicamente a utilizamos para criar views. Portanto, podemos integrá-lo com frameworks MVC, MVVM, MVP, etc, mas normalmente é utilizado sozinho.
+
+Ele se baseia na ideia de criarmos componentes que podem ser reutilizados em toda a aplicação e até em outras aplicações. Mais para frente teremos uma aula apenas sobre componentes, e veremos com mais detalhes sobre o que são e como criá-los.
+
+O React tem boa performance, pois evita acessar diretamente o DOM. O DOM (Document Object Model) é a interface entre HTML e JavaScript. Se quisermos deixar o HTML dinâmico, teremos que utilizá-lo. O problema é que o acesso ao DOM é muito lento.
+
+O React mantém uma cópia do DOM em memória, chamada de Virtual-DOM. Quando algum dado é alterado e é necessária uma alteração na view, o React verifica pelo Virtual-DOM quais as partes que devem ser alteradas. Com isso, ele acessa o DOM o menor número possível de vezes, alterando unicamente onde é necessário.
+
+Vamos começar com um exemplo simples! -->
+
 <body>
   <div id="app"></div>
 
@@ -19,6 +29,10 @@
     var minhadiv = document.getElementById('app');
     ReactDOM.render(
       React.DOM.h1(
+        // Como primeiro argumento, criamos um elemento H1. O objeto DOM do React contém todas as tags do HTML. Portanto, o "h1" é referente à tag "<h1></h1>"
+        //         Quando chamamos um elemento do objeto DOM do react, podemos passar atributos no primeiro parâmetro e algum conteúdo no segundo parâmetro.
+
+        // Quando não queremos nenhum atributo, passamos null. No segundo, colocamos a string "Hello World!". Isto resultará em:
         { id: 'meuTitulo' }, 'Hello World'
       ),
       minhadiv
