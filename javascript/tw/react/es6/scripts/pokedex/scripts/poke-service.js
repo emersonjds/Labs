@@ -1,48 +1,32 @@
-function request(url, callback) {
-	var xmlhttp = new XMLHttpRequest();
-	
-	
-	xmlhttp.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
-			var response = JSON.parse(this.responseText);
-			callback(response);
-		}
-	}
-	xmlhttp.open('GET', url, true);
-	xmlhttp.setRequestHeader('Content-Type', 'application/json');
-	xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-	xmlhttp.send();
-}
-
-var PokeService = {
-	url: '//pokeapi.co/api/v1',
-	// url: '//dev.treinaweb.com.br/pokeapi',
+export const PokeService = {
+	get url() {
+		return '//pokeapi.co/api/v1'
+		// url: '//dev.treinaweb.com.br/pokeapi',
+	},
 	list: [],
-	listAll: function (callback) {
+	listAll: function () {
 		if (this.list.length) {
-			return callback()
+			return Promise.resolve(this.list)
 		} else {
-			var that = this;
-			request(this.url + '/pokedex/1', function (response) {
-				var pkmList = response.pokemon;
-				pkmList = pkmList.map(function (pokemon) {
-					var number = that.getNumberFromURL(pokemon.resource_uri);
-					pokemon.number = number;
-					return pokemon;
+			return fetch(`${this.url}pokemon/1`)
+				.then(response => response.json())
+				.then(response => response.pokemon)
+				.then(pkmList => {
+					return pkmList.map(pokemon => {
+						var number = that.getNumberFromURL(pokemon.resource_uri);
+						return Object.assign({}, pokemon, { number })
+					})
+						.filter((pokemon) => (pokemon.number < 1000))
+						.sort((a, b) => (a.number > b.number ? 1 : -1))
+						.map((pokemon) => {
+							pokemon.number = ('000' + pokemon.number).slice(-3);
+							return Object.assign({}, pokemon, { number })
+						})
 				})
-					.filter(function (pokemon) {
-						return (pokemon.number < 1000)
-					})
-					.sort(function (a, b) {
-						return (a.number > b.number ? 1 : -1);
-					})
-					.map(function (pokemon) {
-						pokemon.number = ('000' + pokemon.number).slice(-3);
-						return pokemon
-					})
-				that.list = pkmList;
-				callback(pkmList)
-			})
+				.then(list => {
+					this.list = list;
+					return list;
+				})
 		}
 	},
 	getNumberFromURL: function (url) {

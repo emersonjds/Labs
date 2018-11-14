@@ -1,30 +1,30 @@
-var listFilter = '',
-  listElement = document.getElementById('pokeList'),
-  inputElement = document.getElementById('pokeFilter'),
-  pokeballElement = document.getElementById('pokeballBack');
+import { PokeService } from './poke-service';
+import { ListService } from './list-service';
 
-  inputElement.addEventListener('keyup', function() {
-    listFilter = this.value;
-    setList();
-  })
+let listFilter = '';
+const listElement = document.querySelector('#pokeList');
+const inputElement = document.querySelector('#pokeFilter');
+const pokeballElement = document.querySelector('#pokeballBack');
 
-  window.addEventListener('scroll', function() {
-    var rotation = 'translateY(-50%) rotateZ' + (window.scrollY / 15) + 'deg)';
-    pokeballElement.style.transform = rotation;
-  })
+inputElement.addEventListener('keyup', (event) =>  {
+  listFilter = event.target.value;
+  setList();
+})
+
+window.addEventListener('scroll', () => {
+  var rotation = `translateY(-50%) rotateZ (${window.scrollY / 15})deg)`;
+  pokeballElement.style.transform = rotation;
+})
 
 function setList() {
-  PokeService.listAll(function (pkmList) {
-    var list = filterLlist(pkmList);
-    var template = ListService.createList(list)
-    listElement.innerHTML = template;
-  })
+  PokeService.listAll()
+  .then(filterLlist)
+  .then(ListService.createList)
+  .then(template => listElement.innerHTML = template;
 }
 
 function filterLlist(pkmList) {
-  return pkmList.filter(function (pkm) {
-    return pkm.name.indexOf(listFilter.toLocaleLowerCase) !== -1;
-  })
+  return pkmList.filter(pkm => pkm.name.includes(listFilter.toLocaleLowerCase));
 }
 
 setList();
