@@ -1,7 +1,8 @@
 var gulp = require('gulp');
-webpack = require('webpack');
+var webpack = require('webpack');
 
 gulp.task("webpack", function (callback) {
+  console.log('running webpack');
   webpack({
     entry: `./scripts/app.js`, // arquivo principal
     output: { // saida
@@ -27,5 +28,5 @@ gulp.task("webpack", function (callback) {
   console.log("[webpack]", stats.toString({
     //output options
   }));
-  callback;
+  callback();
 });
