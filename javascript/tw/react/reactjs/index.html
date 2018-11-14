@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <!-- Load our React component. -->
+  <script src="like_button.js"></script>
+  
+  <script>
+
+    var minhadiv = document.getElementById('app');
+    ReactDOM.render(
+      React.DOM.h1({id: 'meuTitulo'},'Hello World'),
+      minhadiv);
+
+  </script>
+
+</body>
+
+</html>
