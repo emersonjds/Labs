@@ -11,29 +11,32 @@
 
 <body>
   <div id="app"></div>
-  <!-- Se precisarmos criar uma condição, como este código se transformará em funções JavaScript, não poderemos criar um "if" dentro das chaves. Neste caso, utilizamos operadores ternários. -->
-
-  <button>
-    {
-        isOpen ? "Fechar" : "Abrir"
-    }
-	</button>
-
-	<ul>
-		{
-			lista.map((item) => {
-				return <li> {item.valor} </li>
-			})
-		}
-  </ul>
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
   <script>
-  	var lista = [{valor: 10}, {valor: 20}, {valor: 30}];
+    let minhaDiv = document.getElementById('app');
+    var lista = [{ valor: 10 }, { valor: 20 }, { valor: 30 }];
+    ReactDOM.render(
+      <h1 id="meuTitulo">
+        {
+          lista.map((item) => {
+            return <li>{item.valor}</li>
+          })
+        }
+      </h1>,
+      minhaDiv,
+      <button className="x" style={{marginTop: '5px'}} onCLick={funcaoQualquer}>
+        {
+          isOpen ? 'Fechar' : 'Abrir'
+        }
+      </button>
+    )
+
+
   </script>
-        <!-- Dica
-        Pela grande semelhança do JSX com HTML, muitos pensam que para criar comentários podemos fazer simplesmente como comentamos um HTML (). Isto está errado, pois lembre-se que este trecho de código deverá ser transpilado para JavaScript. -->
-      <!-- {/* comentário */} -->
+  <!-- Dica
+    Pela grande semelhança do JSX com HTML, muitos pensam que para criar comentários podemos fazer simplesmente como comentamos um HTML (). Isto está errado, pois lembre-se que este trecho de código deverá ser transpilado para JavaScript. -->
+  <!-- {/* comentário */} -->
 </body>
 
 </html>
