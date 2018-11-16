@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
     "babel-polyfill": "^6.3.14",
@@ -20,6 +21,7 @@
     "gulp-livereload": "^4.0.0",
     "gulp-util": "^3.0.6",
     "require-dir": "^1.0.0",
+    "typescript": "^3.1.6",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",

@@ -21,6 +21,11 @@ gulp.task("webpack", function (callback) {
           }
         }
       ]
+      // loaders: [{
+      //   test: /\.tsx?$/,
+      //   loader: 'awesome-typescript-loader',
+      //   exclude: /(node_modules|bower_components)/
+      // }]
     }
   }, function (err, stats) {
     if (err) throw new gutil.PluginError("webpack", err);
