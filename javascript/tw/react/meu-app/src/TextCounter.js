@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class TextCounter extends Component {
 
   // assim como passamos propriedades para as tags em html os componentes teem suas proprias propriedades que sao declaradas dentro do objeto defaultProps
@@ -24,6 +23,7 @@ class TextCounter extends Component {
     return (
       //todo component React tem um componente raiz, neste caso a div
       <div>
+        {this.props.title}
         <textarea onChange={this.handleChangeEvent.bind(this)}/>
         <div>
           {/* O bind é feito com um par de chaves */}
