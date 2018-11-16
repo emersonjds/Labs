@@ -1,8 +1,6 @@
-
-class Button extends React.Component {
-	render() {
-  	<button>5<button/>
-  }
+const Button = function() {
+	return (
+  	<button>Go</button>
+  )
 }
-
-ReactDOM.render(<Button label="DO" />, mountNode);
+ReactDOM.render(<Button />, mountNode);
