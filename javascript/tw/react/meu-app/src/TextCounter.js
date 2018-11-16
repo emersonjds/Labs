@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
+
 class TextCounter extends Component {
 
+  // assim como passamos propriedades para as tags em html os componentes teem suas proprias propriedades que sao declaradas dentro do objeto defaultProps
   static defaultProps = {
     title: ''
   }
@@ -15,8 +17,7 @@ class TextCounter extends Component {
   handleChangeEvent(event) {
     var element = event.target,
       value = element.value;
-
-    this.setState({ totalChairs: text.lenght })
+    this.setState({ totalChairs: value.length})
   }
 
   render() {
