@@ -8,7 +8,7 @@ const Star = (props) => {
   return (
     <div className="col-5">
       {_.range(props.randomNumbersOfStars).map(i =>
-      	<i key={i} className="fa fa-star"></i>	
+        <i key={i} className="fa fa-star"></i>
       )}
     </div>
   )
@@ -25,9 +25,11 @@ const Button = (props) => {
 const Answer = (props) => {
   return (
     <div className="col-5">
-    {props.selectedNumbers.map((number, i) => 
-    	<span key={i}>{number}</span>	
-    )}
+      {props.selectedNumbers.map((number, i) =>
+        <span key={i} onClick={() => props.unselectedNumber(number)}>
+          {number}
+        </span>
+      )}
     </div>
   )
 }
@@ -35,7 +37,7 @@ const Answer = (props) => {
 const Numbers = (props) => {
 
   const numberClassName = (number) => {
-    if(props.selectedNumbers.indexOf(number) >= 0) {
+    if (props.selectedNumbers.indexOf(number) >= 0) {
       return 'selected'
     }
   }
@@ -45,7 +47,7 @@ const Numbers = (props) => {
       <div>
         {Numbers.list.map((number, i) => {
           <span key={i} className={numberClassName(number)}
-            		onClick={() => props.selectNumber(number)}>
+            onClick={() => props.selectNumber(number)}>
             {number}
           </span>
         })}
@@ -58,27 +60,36 @@ Numbers.list = _.range(1, 10) // lodash gera numeros aleatorios entre 1 e 10
 
 class Game extends React.Component {
   state = {
-    selectedNumbers: [1,2,3],
+    selectedNumbers: [],
     randomNumbersOfStars: 1 + Math.floor(Math.random() * 9)
   };
   selectNumber = (clickedNumbers) => {
-  	this.setState(prevState => ({
-    	selectedNumbers: prevState.selectedNumbers.concat(clickedNumber)
+    if (this.state.selectedNumbers.indexOf(clickedNumbers) >= 0) { return; }
+    this.setState(prevState => ({
+      selectedNumbers: prevState.selectedNumbers.concat(clickedNumbers)
     }))
   };
-  
-  render() { 
+  unselectedNumber = (clickedNumber) => {
+    this.setState(prevState =>({
+      selectedNumbers: prevState.selectNumber
+        .filter(number => number !== clickedNumber)
+    }));
+  }
+  render() {
     return (
       <div className="container">
         <h3>Play Nine</h3>
         <hr />
         <div className="row">
-          <Star randomNumbersOfStars={this.state.randomNumbersOfStars}/>
+          <Star randomNumbersOfStars={this.state.randomNumbersOfStars} />
           <Button />
-          <Answer selectedNumbers={this.state.selectedNumbers}/>
+          <Answer 
+            selectedNumbers={this.state.selectedNumbers} 
+            unselectedNumber={this.state.unselectedNumber}
+          />
         </div>
         <br />
-        <Numbers selectedNumbers={this.state.selectedNumbers}/>
+        <Numbers selectedNumbers={this.state.selectedNumbers} />
       </div>
     )
   }
