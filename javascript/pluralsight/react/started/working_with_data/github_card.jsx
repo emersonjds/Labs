@@ -53,7 +53,6 @@ class Form extends React.Component {
       </form>
     )
   }
-
 }
 
 class App extends React.Component {
