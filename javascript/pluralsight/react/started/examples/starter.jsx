@@ -20,7 +20,6 @@ class Button extends React.Component {
 				conter: prevState.conter + 1
 			}
 		})
-		
 	}
 
 	render() {
