@@ -93,12 +93,15 @@ Numbers.list = _.range(1, 10) // lodash gera numeros aleatorios entre 1 e 10
 
 class Game extends React.Component {
 
+  static randomNumber = () => 1 + Math.floor(Math.random() * 9);
+
   state = {
     selectedNumbers: [9],
-    randomNumbersOfStars: 1 + Math.floor(Math.random() * 9),
+    randomNumbersOfStars: Game.randomNumber(),
     usedNumbers: [],
     answerIsCorrect: null,
-    redraws: 5
+    redraws: 5,
+    doneStatus: 'Game Over'
   };
 
   selectNumber = (clickedNumber) => {
@@ -128,14 +131,14 @@ class Game extends React.Component {
       usedNumbers: prevState.usedNumbers.concat(prevState.selectedNumbers),
       selectedNumbers: [],
       answerIsCorrect: null,
-      randomNumbersOfStars: 1 + Math.floor(Math.random() * 9)
+      randomNumbersOfStars: Game.randomNumber()
     }));
   };
 
   redraw = () => {
     if (this.state.redraws === 0) { return; }
     this.setState(prevState => ({
-      randomNumbersOfStars: 1 + Math.floor(Math.random() * 9),
+      randomNumbersOfStars: Game.randomNumber(),
       answerIsCorrect: null,
       selectedNumbers: [],
       redraws: prevState.redraws - 1
@@ -148,7 +151,8 @@ class Game extends React.Component {
       randomNumbersOfStars,
       answerIsCorrect,
       usedNumbers,
-      redraws
+      redraws,
+      doneStatus
     } = this.state
 
     return (
@@ -171,15 +175,25 @@ class Game extends React.Component {
           />
         </div>
         <br />
-        <Numbers
-          selectedNumbers={selectedNumbers}
-          selectNumber={this.selectNumber}
-          usedNumbers={usedNumbers}
-        />
+        {doneStatus ?
+          <DoneFrame doneStatus={doneStatus} /> :
+          <Numbers
+            selectedNumbers={selectedNumbers}
+            selectNumber={this.selectNumber}
+            usedNumbers={usedNumbers}
+          />
+        }
       </div>
     )
   }
+}
 
+const DoneFrame = (props) => {
+  return (
+    <div className="text-center">
+      <h2>{props.doneStatus}</h2>
+    </div>
+  )
 }
 
 class App extends React.Component {
