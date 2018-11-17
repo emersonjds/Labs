@@ -14,9 +14,13 @@ class Button extends React.Component {
 
 	handleClick = () => {
 		// this.state.counter++;
-		this.setState = ({
-			counter: this.state.counter + 1
+		this.setState((prevState) => {
+			// sempre que for atualizar um state utilizando o valor por ele colocar, utilizar a função prevState
+			return {
+				conter: prevState.conter + 1
+			}
 		})
+		
 	}
 
 	render() {
