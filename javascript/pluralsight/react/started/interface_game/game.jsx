@@ -101,7 +101,7 @@ class Game extends React.Component {
     usedNumbers: [],
     answerIsCorrect: null,
     redraws: 5,
-    doneStatus: 'Game Over'
+    doneStatus: null
   };
 
   selectNumber = (clickedNumber) => {
@@ -143,6 +143,17 @@ class Game extends React.Component {
       selectedNumbers: [],
       redraws: prevState.redraws - 1
     }))
+  }
+  
+  updateDoneStatus = () => {
+    this.setState(prevState => {
+      if(prevState.usedNumbers.lenght === 9 ) {
+        return {doneStatus: 'Done. Nice !'};
+      }
+      if(prevState.redraws === 0 && !this.possibleSolutions(prevState)) {
+        return {doneStatus: 'Game Over'}
+      }
+    })
   }
 
   render() {
