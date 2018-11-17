@@ -38,5 +38,17 @@ const CardList = (props) => {
   )
 }
 
+class Form extends React.Component {
+  render() {
+    return (
+      <div>
+        <input style={{}} type="text"/>
+        <CardList cards={data}/>
+      </div>
+    )
+  }
+}
+
 //create a reference for array or list in declaration of component
-ReactDOM.render(<CardList cards={data} />, mountNode);
+// ReactDOM.render(<CardList cards={data} />, mountNode);
+ReactDOM.render(<Form />, mountNode);
