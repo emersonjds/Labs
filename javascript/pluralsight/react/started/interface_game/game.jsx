@@ -1,5 +1,3 @@
-const _ = require('lodash');
-
 const Star = (props) => {
   const numbersOfStar = 1 + Math.floor(Math.random() * 9)
   // let stars = [];
@@ -10,8 +8,8 @@ const Star = (props) => {
   return (
     <div className="col-5">
       {_.range(numbersOfStar).map(i => {
-          <i key={i} className="fa fa-star"></i>
-        })
+        <i key={i} className="fa fa-star"></i>
+      })
       }
     </div>
   )
@@ -28,9 +26,9 @@ const Button = (props) => {
 const Answer = (props) => {
   return (
     <div className="col-5">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
+    {props.selectedNumbers.map((number, i) => 
+    	<span key={i}>{number}</span>	
+    )}
     </div>
   )
 }
@@ -50,16 +48,9 @@ const Numbers = (props) => {
 Numbers.list = _.range(1, 10) // lodash gera numeros aleatorios entre 1 e 10
 
 class Game extends React.Component {
-  render() {
-    return (
-      <div>
-        <h3> Play Game</h3>
-      </div>
-    )
-  }
-}
-
-class App extends React.Component {
+  state = {
+    selectedNumbers: [1,2,3]
+  };
   render() {
     return (
       <div className="container">
@@ -68,11 +59,19 @@ class App extends React.Component {
         <div className="row">
           <Star />
           <Button />
-          <Answer />
+          <Answer selectedNumbers={this.state.selectedNumbers}/>
         </div>
         <br />
         <Numbers />
       </div>
+    )
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return (
+      <Game />
     )
   }
 }
