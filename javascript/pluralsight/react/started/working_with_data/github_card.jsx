@@ -12,16 +12,31 @@ const Card = (props) => {
   )
 }
 
+let data = [
+  {
+    name: "Emerson Silva",
+    avatar_url: "https://avatars2.githubusercontent.com/u/12503997?s=460&v=4",
+    company: "Facebook"
+  },
+  {
+    name: "Emerson Silva",
+    avatar_url: "https://avatars2.githubusercontent.com/u/12503997?s=460&v=4",
+    company: "Facebook"
+  },
+  {
+    name: "Emerson Silva",
+    avatar_url: "https://avatars2.githubusercontent.com/u/12503997?s=460&v=4",
+    company: "Facebook"
+  }
+]
+
 const CardList = (props) => {
   return (
     <div>
-      <Card 
-        name="Emerson Silva"
-        avatar_url="https://avatars2.githubusercontent.com/u/12503997?s=460&v=4"
-        company="Facebook"
-      />
+      {props.cards.map(card => <Card {...card} />)}
     </div>
   )
 }
 
-ReactDOM.render(<CardList />, mountNode);
+//create a reference for array or list in declaration of component
+ReactDOM.render(<CardList cards={data} />, mountNode);
