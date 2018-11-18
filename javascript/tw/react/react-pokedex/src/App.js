@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PokeListItem, { pokeListItem } from './Components/pokeListItem';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <img className="pokeball-back" id="pokeball-back"
+          src="//hanashiro.github.io/pokedex/images/pokeball.svg"
+        />
+        <input type="text" id="pokeFilter" placeholder="digite o nome buscado" />
+        <h2> Teste </h2>
+
+        <PokeListItem />
+        <PokeListItem />
+        <PokeListItem />
+        <PokeListItem />
+        <PokeListItem />
+        <PokeListItem />
+        <PokeListItem />
+        <PokeListItem />
       </div>
     );
   }
