@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import PokeListItem, { pokeListItem } from './Components/pokeListItem';
+import { MyListItem, MyList } from './myList';
 
 class App extends Component {
   render() {
@@ -14,13 +15,19 @@ class App extends Component {
         <h2> Teste </h2>
 
         <PokeListItem />
-        <PokeListItem />
-        <PokeListItem />
-        <PokeListItem />
-        <PokeListItem />
-        <PokeListItem />
-        <PokeListItem />
-        <PokeListItem />
+
+        <br />
+
+        <MyListItem text="ABC" color="blue" onClick={console.log.bind(console, 'item clicado')} />
+
+        <br />
+
+        <MyList>
+          <span>ABC</span>
+          <span>DEF</span>
+        </MyList>
+
+        
       </div>
     );
   }
