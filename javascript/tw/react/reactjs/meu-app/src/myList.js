@@ -21,7 +21,7 @@ export class MyListItem extends React.Component {
   render() {
     var props = this.props,
       state = this.state,
-      style = { "color": props.color };
+      style = { "color": props.color,  listStyleType: 'none'};
     return (
       <li onClick={this.click} style={style} >{props.text}  - {state.totalClicks}
         <button onClick={this.removeItem.bind(this, props.index)}> X </button>
