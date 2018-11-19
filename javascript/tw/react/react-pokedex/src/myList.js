@@ -1,5 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom'
+import { render } from 'react-dom';
+import Events from 'events';
+var Channel = new Events.Emitter();
 
 export class MyListItem extends React.Component {
   state = {
@@ -8,7 +10,8 @@ export class MyListItem extends React.Component {
   click = () => {
     var totalClicks = ++this.state.totalClicks;
     this.setState({ totalClicks });
-    this.props.onClick && this.props.onClick();
+    // this.props.onClick && this.props.onClick();
+    Channel.emit('listItem:click');
   }
 
   render() {
@@ -24,6 +27,14 @@ export class MyListItem extends React.Component {
 export class MyList extends React.Component {
   state = {
     totalClicks: 0
+  }
+
+  componentDidMount = () => {
+    Channel.on('listItem:click', this.childClick);
+  }
+
+  componentWillUnmount = () => {
+    Channel.removeListener('listItem:click', this.childClick);
   }
 
   childClick = () => {
