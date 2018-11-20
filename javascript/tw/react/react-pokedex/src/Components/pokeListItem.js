@@ -4,7 +4,8 @@ export default class PokeListItem extends Component {
   static defaultProps = {
     pkm: {
       name: 'Blastoise', number : '025'
-    }
+    },
+    data: []
   }
 
   render() {
