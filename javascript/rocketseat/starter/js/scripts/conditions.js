@@ -10,10 +10,8 @@ function returnSexWithSwitch(sex) {
     switch (sex) {
         case 'F':
             return console.log('Feminino')
-            break;
         case 'M':
             return console.log('Masculino')
-            break;
         default:
             return console.log('Valor nao informado')
     }
