@@ -17,6 +17,19 @@
   </div>
 
   <script src="./DOM/dom.js"></script>
+  <script>
+
+    var linkElement = document.createElement('a');
+    linkElement.setAttribute('href', 'http://rocketseat.com.br');
+
+    var textElement = document.createTextNode('Acessar site')
+
+    linkElement.appendChild(textElement);
+
+    var containerElement = document.querySelector('#app');
+    containerElement.appendChild(linkElement);
+
+  </script>
 </body>
 
 </html>
