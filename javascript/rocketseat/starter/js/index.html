@@ -12,22 +12,32 @@
 
   <div id="app">
     <!-- <button onmouseover="showAlert()">Press Me</button> -->
-    <input type="text" name="nome" id="nome">
-    <button class="botao">Adicionar</button>
+    <!-- <input type="text" name="nome" id="nome">
+    <button class="botao">Adicionar</button> -->
+    <div class="box"></div>
   </div>
+
+  
 
   <script src="./DOM/dom.js"></script>
   <script>
 
-    var linkElement = document.createElement('a');
-    linkElement.setAttribute('href', 'http://rocketseat.com.br');
+    // var linkElement = document.createElement('a');
+    // linkElement.setAttribute('href', 'http://rocketseat.com.br');
 
-    var textElement = document.createTextNode('Acessar site')
+    // var textElement = document.createTextNode('Acessar site')
 
-    linkElement.appendChild(textElement);
+    // linkElement.appendChild(textElement);
 
-    var containerElement = document.querySelector('#app');
-    containerElement.appendChild(linkElement);
+    // var containerElement = document.querySelector('#app');
+    // containerElement.appendChild(linkElement);
+
+    //add styles
+    
+    var boxElement = document.querySelector('.box')
+    boxElement.style.width = '100px';
+    boxElement.style.height = '100px';
+    boxElement.style.backgroundColor = '#f00';
 
   </script>
 </body>
