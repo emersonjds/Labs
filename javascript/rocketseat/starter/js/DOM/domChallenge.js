@@ -57,6 +57,10 @@ function returnDate() {
   return new Date()
 }
 
+function getPersonByID(id) {
+  return id;
+}
+
 
 
 
