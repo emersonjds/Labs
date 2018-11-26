@@ -53,14 +53,6 @@ for (nome of nomes) {
   addItem(nome);
 }
 
-function returnDate() {
-  return new Date()
-}
-
-function getPersonByID(id) {
-  return id;
-}
-
 
 
 
