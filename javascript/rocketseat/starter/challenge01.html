@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Exercício 02</title>
+</head>
+
+<body>
+  <input type="text" name="user">
+  <button onclick="listRepositories()">Adicionar</button>
+
+  <ul></ul>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    var listElement = document.querySelector('ul');
+    var inputElement = document.querySelector('input');
+    function renderRepositories(repositories) {
+      for (repo of repositories) {
+        const textElement = document.createTextNode(repo.name);
+        const liElement = document.createElement('li');
+        liElement.appendChild(textElement);
+        listElement.appendChild(liElement);
+      }
+    }
+    function listRepositories() {
+      var user = inputElement.value;
+      if (!user) return;
+      axios.get('https://api.github.com/users/' + user + '/repos')
+        .then(function (response) {
+          renderRepositories(response.data);
+        })
+    }
+  </script>
+</body>
+
+</html>
