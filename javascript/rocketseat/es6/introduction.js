@@ -1,0 +1,3 @@
+function introduction() {
+  return 'starter';
+}
