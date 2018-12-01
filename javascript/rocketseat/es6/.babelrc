@@ -1,0 +1,4 @@
+{
+  //este pacote entende qual o ambiente trabalhado,no caso o navegador, desta forma as funcionalidades novas sao ajustadas para modelos de funções dos proprios navegadores
+  "presets": ["@babel/preset-env"]
+}
