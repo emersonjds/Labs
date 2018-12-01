@@ -32,9 +32,9 @@ returnRest(1, 3, 4, 5, 6) // [4, 5, 6]
 
 // SPREAD OPERATOR - Propagar informações ou repassar para outra estrutura de dados
 
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const arr3 = [...arr1, ...arr2]; // [1,2,3,4,5,6]
+const valores = [1, 2, 3];
+const valores1 = [4, 5, 6];
+const valores2 = [...arr1, ...arr2]; // [1,2,3,4,5,6]
 
 // ou com objetos
 const usuario1 = {

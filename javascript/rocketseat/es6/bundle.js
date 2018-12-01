@@ -45,10 +45,10 @@ var arr = [1, 2, 3, 6, 9, 12];
 var newArray = arr.map(function (data) {
   return data * 2;
 });
-var newArray1 = arr.map(function (data) {
+var newArray1 = arr.map(function () {
   return 'teste';
 });
-var newArra2 = arr.map(function (data) {
+var newArray2 = arr.map(function () {
   return [1, 3, 4, 52];
 }); // Para retornar um objeto nestes moedes é necessario que ele seja embrulhado em um parenteses assim como no JSX
 // Com operações com retornos simples de informações as chaves nao sao necessarias 
@@ -223,6 +223,14 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -276,10 +284,12 @@ soma(1, 2, 3, 4); // 10
 returnRest(1, 3, 4, 5, 6); // [4, 5, 6]
 // SPREAD OPERATOR - Propagar informações ou repassar para outra estrutura de dados
 
-var arr1 = [1, 2, 3];
-var arr2 = [4, 5, 6];
-var arr3 = arr1.concat(arr2); // [1,2,3,4,5,6]
+var valores = [1, 2, 3];
+var valores1 = [4, 5, 6];
+
+var valores2 = _toConsumableArray(arr1).concat(_toConsumableArray(arr2)); // [1,2,3,4,5,6]
 // ou com objetos
+
 
 var usuario1 = {
   name: 'Maria',
