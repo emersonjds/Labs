@@ -218,3 +218,75 @@ function showName(_ref) {
 
 showName(usuario);
 "use strict";
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+// REST - Pegar o resto das propriedades
+var usuario = {
+  nome: 'Emerson',
+  idade: 23,
+  empresa: 'Kromm4'
+};
+
+var nome = usuario.nome,
+    userData = _objectWithoutProperties(usuario, ["nome"]);
+
+console.log(nome); // Emerson 
+
+console.log(userData); // Object { idade: 23, empresa: "Kromm4" }
+// Tambem pode ser utilizado em arrays junto com desestruturação
+
+var arr = [1, 2, 3, 4];
+var a = arr[0],
+    b = arr[1],
+    c = arr.slice(2);
+console.log(a); // 1
+
+console.log(b); // 2
+
+console.log(c); // [3, 4]
+// Utilização com função
+
+function soma() {
+  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
+    params[_key] = arguments[_key];
+  }
+
+  return params.reduce(function (total, next) {
+    return total + next;
+  });
+}
+
+function returnRest(a, b) {
+  for (var _len2 = arguments.length, params = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+    params[_key2 - 2] = arguments[_key2];
+  }
+
+  return params;
+}
+
+soma(1, 2, 3, 4); // 10
+
+returnRest(1, 3, 4, 5, 6); // [4, 5, 6]
+// SPREAD OPERATOR - Propagar informações ou repassar para outra estrutura de dados
+
+var arr1 = [1, 2, 3];
+var arr2 = [4, 5, 6];
+var arr3 = arr1.concat(arr2); // [1,2,3,4,5,6]
+// ou com objetos
+
+var usuario1 = {
+  name: 'Maria',
+  age: 18
+};
+
+var usuario2 = _objectSpread({}, usuario1, {
+  name: 'Emerson' // Ele mantem todas as propriedades do objeto e so altera aquele que for notificado na operação
+
+});
