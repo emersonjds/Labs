@@ -26,6 +26,10 @@ const sum = arr.reduce(function(total, next) {
 // next = 3
 // total + next = 4
 
+const numbers = [1,2,3,4,5];
+const autoMultiply = numbers.reduce((proximo, atual) => { return proximo * atual});
+// return 120
+
 // E assim sucessivamente , até ele retornar a soma de todos os valores presentes no array
 
 // Filter
@@ -38,3 +42,4 @@ const find = arr.find(function(item){
   return item === 4;
 }); //return 4
 // Caso o find nao encontre o valor ele retorna undefined
+
