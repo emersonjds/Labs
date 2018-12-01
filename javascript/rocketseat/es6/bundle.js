@@ -224,6 +224,17 @@ var idade = 29;
 console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade));
 "use strict";
 
+var nome = 'Emerson';
+var idade = 29; // quando nome da propriedade do objeto tem o mesmo nome da variavel que voce vai passar como valor o es6 permite que seja passado somente o nome da propriedade , o javascript ja subentende que tem uma variavel com aquele mesmo nome no codigo e passa o valor dela como o valor daquela propriedade dentro do objeto
+
+var user = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Krommasys'
+};
+console.log(user); // {nome: 'Emerson', idade: 29, empresa: 'Krommasys'}
+"use strict";
+
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
