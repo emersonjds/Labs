@@ -118,7 +118,10 @@ const usuario2 = {
 
 const usuario3 = {
   ...usuario,
-  endereco: { ...usuario.endereco, cidade: 'Lontras' }
+  endereco: {
+    ...usuario.endereco,
+    cidade: 'Lontras'
+  }
 }
 
 //  ---------------------------------------------------------------------------------------------
