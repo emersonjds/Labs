@@ -15,6 +15,18 @@ class App {
     this.formEl.onsubmit = event => this.addRepository(event);
   }
 
+  setLoading(loading = true) {
+    if (loading === true) {
+      let loadingEl = document.createElement('span');
+      loadingEl.appendChild(document.createTextNode('Carregando...'));
+      loadingEl.setAttribute('id', 'loading');
+
+      this.formEl.appendChild(loadingEl);
+    } else {
+      document.querySelector('#loading').remove();
+    }
+  }
+
   async addRepository() {
     event.preventDefault();
 
@@ -39,7 +51,7 @@ class App {
       this.inputEl.value = '';
       this.render();
     } catch (e) {
-      alert('O repositorio nao existe', e.message);
+      alert('O repositorio nao existe');
     }
 
     this.setLoading(false);
@@ -61,7 +73,7 @@ class App {
 
       let linkEl = document.createElement('a');
       linkEl.setAttribute('target', '_blank');
-      linkEl.setAttribute('href', repo.html_url);
+      // linkEl.setAttribute('href', repo.html_url);
       linkEl.appendChild(document.createTextNode('Acessar'));
 
       let listItemEl = document.createElement('li');
@@ -74,17 +86,6 @@ class App {
     })
   }
 
-  setLoading(loading = true) {
-    if (loading === true) {
-      let loadingEl = document.createElement('span');
-      loadingEl.appendChild(document.createTextNode('Carregando...'));
-      loading.setAttribute('id', 'loading');
-
-      this.formEl.appendChild(loadingEl);
-    } else {
-      document.getElementById('loading').remove;
-    }
-  }
 }
 
 new App();
