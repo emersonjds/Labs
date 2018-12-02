@@ -220,11 +220,6 @@ showName(usuario);
 "use strict";
 
 var nome = 'Emerson';
-var idade = 29;
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade));
-"use strict";
-
-var nome = 'Emerson';
 var idade = 29; // quando nome da propriedade do objeto tem o mesmo nome da variavel que voce vai passar como valor o es6 permite que seja passado somente o nome da propriedade , o javascript ja subentende que tem uma variavel com aquele mesmo nome no codigo e passa o valor dela como o valor daquela propriedade dentro do objeto
 
 var user = {
@@ -316,3 +311,8 @@ var usuario2 = _objectSpread({}, usuario1, {
   name: 'Emerson' // Ele mantem todas as propriedades do objeto e so altera aquele que for notificado na operação
 
 });
+"use strict";
+
+var nome = 'Emerson';
+var idade = 29;
+console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade));
