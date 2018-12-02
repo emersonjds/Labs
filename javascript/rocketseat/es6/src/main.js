@@ -5,7 +5,7 @@ class App {
     this.repositories = [];
 
     this.formEl = document.querySelector('#repo-form');
-    this.inputEl = document.querySelector('input[name]=repository')
+    this.inputEl = document.querySelector('#repo-data');
     this.listEl = document.querySelector('#repo-list');
 
     this.registerHandlers();
@@ -25,6 +25,8 @@ class App {
     }
 
     const response = await api.get(`/repos/${repoInput}`);
+
+    console.log(response);
 
     const { name, description, html_url, owner: { avatar_url } } = response.data;
 
