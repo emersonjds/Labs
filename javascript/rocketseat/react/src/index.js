@@ -3,21 +3,31 @@ import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 
 class Button extends Component {
+
+  static defaultProps = {
+    children: 'Salvar'
+  }
+
+  static PropTypes = {
+    onClick: PropTypes.func.isRequired,
+    children: PropTypes.string
+  }
+
   render() {
     return <button class="btn btn-primary" onClick={this.props.onClick}>{this.props.children}</button>
   }
 }
 
 //set default prop of Component
-Button.defaultPops = {
-  children: 'Salvar'
-}
+// Button.defaultPops = {
+//   children: 'Salvar'
+// }
 
-// set propTypes in props and childrens values
-Button.PropTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.string
-}
+// set propTypes in props and childrens values, set the sort of values
+// Button.PropTypes = {
+//   onClick: PropTypes.func.isRequired,
+//   children: PropTypes.string
+// }
 
 class App extends Component {
 
