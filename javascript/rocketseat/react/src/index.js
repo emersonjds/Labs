@@ -31,15 +31,27 @@ class Button extends Component {
 
 class App extends Component {
 
-  handleClick() {
-    alert('Teste');
+  state = {
+    counter: 0
   }
+
+  handleClick = () => {
+    this.setState({
+      counter: this.state.counter + 1
+    })
+  }
+  // sempre que for declarar uma função dentro da classe, utilizar a notação de variavel que recebe uma function , desta forma o this centraliza o bind de escopo para a classe e nao para a função quando declarado de forma anonima
+  // handleClick() { // 
+  //this.setState({ counter: this.state.counter++ })
+  // desta forma a palavra reservada this usa o escopo da função para se auto chamar
+  // }
 
   render() {
     return (
       <main class="container">
         <Fragment>
           <h1>Hello</h1>
+          <h2>{this.state.counter}</h2>
           <Button onClick={this.handleClick}>
             Enviar dados
           </Button>
