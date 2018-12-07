@@ -1,10 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { render } from 'react-dom';
+import PropTypes from 'prop-types';
 
 class Button extends Component {
   render() {
     return <button class="btn btn-primary" onClick={this.props.onClick}>{this.props.children}</button>
   }
+}
+
+//set default prop of Component
+Button.defaultPops = {
+  children: 'Salvar'
 }
 
 class App extends Component {
