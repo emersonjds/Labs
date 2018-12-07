@@ -3,17 +3,19 @@ import { render } from 'react-dom';
 
 class Button extends Component {
   render() {
-    return <a href="#">Enviar </a>
+    return <button class="btn btn-primary">Enviar </button>
   }
 }
 
 class App extends Component {
   render() {
     return (
-      <Fragment>
-        <h1>Hello</h1>
-        <Button></Button>
-      </Fragment>
+      <main class="container">
+        <Fragment>
+          <h1>Hello</h1>
+          <Button></Button>
+        </Fragment>
+      </main>
     )
   }
 }
