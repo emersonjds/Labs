@@ -13,6 +13,12 @@ Button.defaultPops = {
   children: 'Salvar'
 }
 
+// set propTypes in props and childrens values
+Button.PropTypes = {
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.string
+}
+
 class App extends Component {
 
   handleClick() {
