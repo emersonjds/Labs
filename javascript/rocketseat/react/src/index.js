@@ -10,7 +10,7 @@ class Button extends Component {
 class App extends Component {
 
   handleClick() {
-    alert('Pau no cu do Ian');
+    alert('Teste');
   }
 
   render() {
