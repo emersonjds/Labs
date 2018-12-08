@@ -32,3 +32,19 @@ Nome do arquivo sempre legitimo com o nome da classe
 
 Componentes com estado e sem estado
 Componentes sem estados , sao chamados Stateless ( sem estado) desta forma ele é auto declarativo , em forma de função ( Button Component)
+
+Ciclos de vida do Component
+componentDidMount (Assim que o componente é montado)
+Ideal para chamadas a apis ou cadastro de eventos em listerners
+
+componentwWillUnmount(Assim que o componente é finalizado)
+Utilizado para retirar os listeners do componente 
+
+shouldComponentUpdate(nextProps, nextState) {}
+Com este metodo o componente consegue controlar qualuqer alteração de propriedades ou estados e passar alguma informação para que o render nao seja disparado novamente
+por exemplo se quero que o proximo estado so renderize valores menores que 10 , posso utilizar o nextState
+
+return nextState.counter <= 10 o render ira executar até valores menores que isso, depois disso o estado mesmo recebendo os valores nao sera atualizado 
+
+componentDidUpdate 
+Esta propriedade informa que o estado ou alguma propriedade foi alterada, entao apos esta atualização é possivel passar mais alguma regra para o componente

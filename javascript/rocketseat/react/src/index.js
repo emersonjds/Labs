@@ -7,6 +7,23 @@ class App extends Component {
   state = {
     counter: 0
   }
+
+  componentDidMount() {
+
+  }
+
+  componentwWillUnmount() {
+
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.counter <= 10
+  }
+
+  componentDidUpdate(prepProps, prevState) {
+    
+  }
+
   handleClick = () => {
     this.setState({
       counter: this.state.counter + 1
