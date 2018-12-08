@@ -1,0 +1,34 @@
+
+Fragments
+Para que nao haja quebra de layout existe uma outra propriedade chamada Fragment que pode ser utilizada ao inves da div na renderização do componente a chamada do children do metodo props , pega todo o conteudo que foi passado internamente para um outro componente
+
+Setando Propriedades Default
+//set default prop of Component
+// Button.defaultPops = {
+//   children: 'Salvar'
+// }
+// set propTypes in props and childrens values, set the sort of values
+// Button.PropTypes = {
+//   onClick: PropTypes.func.isRequired,
+//   children: PropTypes.string
+// }
+
+
+Arrow functions como variaveis
+sempre que for declarar uma função dentro da classe, utilizar a notação de variavel que recebe uma function , desta forma o this centraliza o bind de escopo para a classe e nao para a função quando declarado de forma anonima
+handleClick() { 
+this.setState({ counter: this.state.counter++ })
+desta forma a palavra reservada this usa o escopo da função para se auto chamar
+}
+
+
+States
+Os estados no react sao assincronos, desta forma caso seja necessario saber exatamente o que esta ocorrendo no momento da alteração de um estado, é possivel utilizado o conceito de fila de estados
+this.setState(state => ({state.counter + 1})) // neste exemplo a variavel de referencia state, se refere a fila de estados, é muito raro que isso seja utilizado porem é bom saber que o conceito de fila tambem atua em arquiteturas react 
+
+Stateless Vs Statefull
+É regra , ter no maximo 1 componente por arquivo JS 
+Nome do arquivo sempre legitimo com o nome da classe
+
+Componentes com estado e sem estado
+Componentes sem estados , sao chamados Stateless ( sem estado) desta forma ele é auto declarativo , em forma de função ( Button Component)
