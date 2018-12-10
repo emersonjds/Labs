@@ -48,3 +48,9 @@ return nextState.counter <= 10 o render ira executar até valores menores que is
 
 componentDidUpdate 
 Esta propriedade informa que o estado ou alguma propriedade foi alterada, entao apos esta atualização é possivel passar mais alguma regra para o componente
+
+ESTILOS NO REACT
+para o carregamento de arquivos de estilo na aplicação é necessario a inclusao de 2 novas bibliotecas, css-loader e ou style-loader que é configurado diretamente no weback seguindo a regra de leitura de arquivos js na area de rules
+Para leitura de arquivos sass é necessario o carregamento do sass-loader e o node-sass
+
+É  possivel ainda passar estilos inline utilizando chaves duplas {{ color: red }}, porem nao é recomendado o idela é utilizar estilos separados , chamadas para classes sao feitas utilizando o 'className'

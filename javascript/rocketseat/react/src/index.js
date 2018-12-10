@@ -3,25 +3,11 @@ import { render } from 'react-dom';
 
 import Button from './Button';
 
+import './style.scss';
+
 class App extends Component {
   state = {
     counter: 0
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentwWillUnmount() {
-
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return nextState.counter <= 10
-  }
-
-  componentDidUpdate(prepProps, prevState) {
-    
   }
 
   handleClick = () => {
@@ -32,7 +18,7 @@ class App extends Component {
 
   render() {
     return (
-      <main class="container">
+      <main className="container">
         <Fragment>
           <h1>Hello</h1>
           <h2>{this.state.counter}</h2>
