@@ -25,6 +25,7 @@
     "eslint": "^5.10.0",
     "node-sass": "^4.11.0",
     "prettier-eslint": "^8.8.2",
+    "scss-loader": "^0.0.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
