@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const BoxList = styled.div`
-  width: 200px;
+  width: 250px;
   background-color: #fff;
   display: flex;
   padding: 10px;
@@ -27,7 +27,7 @@ export const BoxList = styled.div`
         font-style: italic;
       }
       /* aplicar nos pares */
-      &:nth-child(2n - 1) { 
+      &:nth-child(2n - 1) {
       background: #f5f5f5;
       }
     }

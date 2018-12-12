@@ -1,39 +1,37 @@
 import React from "react";
-import { Container, BoxList, Header, List } from "./style";
+import { Container, BoxList, Header } from "./style";
 
-const CompartList = () => (
-  // #TODO: CONTAINER
+const CompartList = ({ repositories }) => (
   <Container>
-    {/* #TODO: Inter-Box */}
-   
-    <BoxList>
-      <Header>
-        <img
-          src="https://avatars3.githubusercontent.com/u/69631?v=4"
-          alt="facebook"
-        />
-        <strong>Titulo</strong>
-        <small>nome-resumido</small>
-      </Header>
+    {
+      repositories.map(repository => (
+        <BoxList key={repository.id}>
+          <Header>
+            <img src={repository.owner.avatar_url} alt={repository.owner.login} />
+            <strong>{repository.name}</strong>
+            <small>{repository.owner.login}</small>
+          </Header>
 
-      <ul>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-      </ul>
-    </BoxList>
+          <ul>
+            <li>
+              {repository.stargazers_count} <small> Stars</small>
+            </li>
+            <li>
+              {repository.forks_count} <small> Forks</small>
+            </li>
+            <li>
+              {repository.open_issues_count} <small> Issues </small>
+            </li>
+            <li>
+              {repository.pushed_at} <small> Last Commit</small>
+            </li>
+            <li>
+              95,999 <small> Teste</small>
+            </li>
+          </ul>
+        </BoxList>
+        ))
+    }
   </Container>
 );
 
