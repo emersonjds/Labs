@@ -21,6 +21,7 @@ export const Form = styled.div`
     font-size: 18px;
     color: #444;
     border-radius: 3px;
+    border: ${props => (props.withError ? "2px solid #F00" : 0)};
   }
   button {
     cursor: pointer;
