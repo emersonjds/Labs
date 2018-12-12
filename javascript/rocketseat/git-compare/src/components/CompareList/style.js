@@ -2,19 +2,37 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: auto;
-  min-width: 600px;
-  margin-top: 20px;
+  flex-direction: row;
+  margin-top: 50px;
 `;
 
 export const BoxList = styled.div`
   width: 200px;
-  background-color: #f3f3f3;
+  background-color: #fff;
   display: flex;
   padding: 10px;
   border-radius: 15px;
   flex-direction: column;
-  margin: 0 20px;
+  margin: 0 15px;
+
+  ul {
+    list-style: none;
+    li{
+      font-weight: bold;
+    padding: 12px 20px;
+      small {
+        font-weight: normal;
+        font-size: 12px;
+        color: #999;
+        font-style: italic;
+      }
+      /* aplicar nos pares */
+      &:nth-child(2n - 1) { 
+      background: #f5f5f5;
+      }
+    }
+  }
+
 `;
 
 export const Header = styled.header`
@@ -29,8 +47,7 @@ export const Header = styled.header`
   }
 
   strong {
-    text-transform: uppercase;
-    color: gray;
+    color: black;
   }
 `;
 
@@ -46,6 +63,5 @@ export const List = styled.ul`
     padding: 10px;
     justify-content: space-around;
     width: 80%;
-    text-align: center;
   }
 `;

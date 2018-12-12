@@ -5,6 +5,7 @@ const CompartList = () => (
   // #TODO: CONTAINER
   <Container>
     {/* #TODO: Inter-Box */}
+   
     <BoxList>
       <Header>
         <img
@@ -15,7 +16,7 @@ const CompartList = () => (
         <small>nome-resumido</small>
       </Header>
 
-      <List>
+      <ul>
         <li>
           95,999 <small> Teste</small>
         </li>
@@ -31,36 +32,7 @@ const CompartList = () => (
         <li>
           95,999 <small> Teste</small>
         </li>
-      </List>
-    </BoxList>
-
-    <BoxList>
-      <Header>
-        <img
-          src="https://avatars3.githubusercontent.com/u/69631?v=4"
-          alt="facebook"
-        />
-        <strong>Titulo</strong>
-        <small>nome-resumido</small>
-      </Header>
-
-      <List>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-        <li>
-          95,999 <small> Teste</small>
-        </li>
-      </List>
+      </ul>
     </BoxList>
   </Container>
 );
