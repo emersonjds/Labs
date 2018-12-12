@@ -2,7 +2,7 @@ import React from "react";
 import { Container, BoxList, Header } from "./style";
 import PropTypes from "prop-types";
 
-const CompartList = ({ repositories }) => (
+const CompareList = ({ repositories }) => (
   <Container>
     {repositories.map(repository => (
       <BoxList key={repository.id}>
@@ -23,10 +23,7 @@ const CompartList = ({ repositories }) => (
             {repository.open_issues_count} <small> Issues </small>
           </li>
           <li>
-            {repository.pushed_at} <small> Last Commit</small>
-          </li>
-          <li>
-            95,999 <small> Teste</small>
+            {repository.lastCommit} <small> Last Commit</small>
           </li>
         </ul>
       </BoxList>
@@ -51,4 +48,4 @@ CompareList.propTypes = {
   ).isRequired
 };
 
-export default CompartList;
+export default CompareList;
