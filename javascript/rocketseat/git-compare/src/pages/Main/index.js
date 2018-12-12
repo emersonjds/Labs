@@ -43,4 +43,3 @@ export default class Main extends Component {
   }
 }
 
-// api.github.com / repos / facebook / react;
