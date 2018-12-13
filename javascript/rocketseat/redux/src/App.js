@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import { Provider } from "react-redux";
+import store from "./store";
+import TodoList from "./components/TodoList";
 
 class App extends Component {
   render() {
     return (
-      <h1>Hello World</h1>
+      // provider passa pra todos os componentes as alterações que mudaram no store
+      <Provider store={store}>
+        <TodoList />
+      </Provider>
     );
   }
 }
