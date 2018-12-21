@@ -4,8 +4,8 @@ const INITIAL_STATE = [
   { id: 3, text: "curso AI" },
   { id: 4, text: "curso GraphQL" },
   { id: 5, text: "curso Python" },
-  { id: 6, text: "curso GraphQL" },
-  { id: 7, text: "curso GraphQL" }
+  { id: 6, text: "curso C#" },
+  { id: 7, text: "curso Java" }
 ];
 
 export default function todos(state = INITIAL_STATE, action) {
