@@ -18,7 +18,7 @@ const TodoList = ({ todos, addTodo }) => {
       <button onClick={() => addTodo("Fazer alguma coisa")}>
         {" "}
         Adicionar Texto
-      </button>
+      </button> 
     </Fragment>
   );
 };

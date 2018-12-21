@@ -2,6 +2,7 @@ const INITIAL_STATE = [
   { id: 1, text: "fazer café" },
   { id: 2, text: "estudar" },
   { id: 3, text: "curso AI" }
+  { id: 4, text: "curso GraphQL" }
 ];
 
 export default function todos(state = INITIAL_STATE, action) {
