@@ -21,7 +21,7 @@ module.exports = {
     //regras
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$/, // todos os arquivos terminando com .js
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
