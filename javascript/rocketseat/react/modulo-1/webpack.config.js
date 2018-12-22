@@ -12,6 +12,11 @@ module.exports = {
     filename: "bundle.js"
   },
 
+  devServer: {
+    //pasta que o wbp fica monitorando para atualizar o bundle final
+    contentBase: path.resolve(__dirname, "public")
+  },
+
   module: {
     //regras
     rules: [
