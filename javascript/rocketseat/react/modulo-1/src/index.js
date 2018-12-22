@@ -1,10 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { Component, Fragment } from "react";
+import { render } from "react-dom";
 
-class App extends React.Component {
+class Button extends Component {
   render() {
-    return <h1>Teste</h1>;
+    return <a href="#">Salvar</a>;
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <h1>Teste</h1>
+        <Button />
+      </Fragment>
+    );
+  }
+}
+
+render(<App />, document.getElementById("app"));
