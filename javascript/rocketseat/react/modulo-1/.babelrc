@@ -1,0 +1,8 @@
+{
+  "presets": [
+    //faz a transformação de tudo o que é novo para o navegador ser compilado e entendido
+    "@babel/preset-env",
+    // faz com que tudo referente ao react seja entendido pelo navegador
+    "@babel/preset-react"
+  ]
+}
