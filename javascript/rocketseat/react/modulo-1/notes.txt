@@ -1,0 +1,40 @@
+PROPS **
+todo componente pode ter propriedades que sao colocadas quando o componente é chamado, ja na componente em si para se utilizar do valor daquela propriedade, 
+acessamos utilizando o "props"
+
+Exemplo
+Component Button
+<Button title="Enviar" />
+uso do valor dentro do componente
+return <a href="#" > {this.props.title} </a>
+
+E assim pode ser utilizado qualquer valor que for passado como propriedade para o componente
+
+Uma outra forma de acesso a valores dos componentes é atraves da propriedade children, sempre que valores forem passados para dentro de um componente o mesmo pode ser acessado atraves desta propriedade
+Exemplo
+<Button> Enviar </Button>
+O valor "Envar" pode ser acessado no componente por this.props.children
+return <a href="#" > {this.props.children} </a>
+
+
+é possivel ainda passar funções como propriedades dos componentes, o controle desta chamada de funcão pode ser feito pelo componente que esta utilizando aquele outro componente ou diretamente pelo componente quando disparado a founção.
+
+Por exemplo, digamos que o componente App utiliza o Componente Button
+
+<App>
+  Dentro de app a uma founçã antes do render que executa algo.
+  chamaNome() {
+    console.log('Chama nome');
+  }
+  <Button onClick={this.chamaNome}></Button>
+</App>
+
+Ja no componente Button é acessado o valor da propriedade para que a função seja executada
+<Button>
+  return (
+    <button onClick={this.props.chamaNome}></button>
+    ** o componente ganha uma propriedade chamada onClick que consegue acessar o valor da função que foi passada como parametro, nao é necessario parenteses para execução isto é implicito na declaração do JSX
+  )
+</Button>
+---------------------------------------------- // --------------------------------
+
