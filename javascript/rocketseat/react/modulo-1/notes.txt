@@ -38,3 +38,21 @@ Ja no componente Button é acessado o valor da propriedade para que a função s
 </Button>
 ---------------------------------------------- // --------------------------------
 
+PropsTypes e Default Props
+Quando nao passamos diretamente valores para as propriedades dos componente, podemos setar valores padroes para eles assim que sao renderizados.
+Por Exemplo o botao pode ser utilizado em varios pontos da aplicação, mas nao é necessario que sempre seja passado um title ou uma função para ele é possivel apenas chamar ele
+<Button/>
+<Button title="Enviar" />
+
+Quando o botao é somente chamado podemos predefinir suas propriedades padroes utlizando o conceito de defaultProps e PropTypes
+Button.defaultProps = {
+  children: 'Enviar'
+}
+Neste caso se nao for passado nenhum valor para children, assim que o botao for renderizado ele vao inicializar com o valor Enviar nele
+
+Para utilizar o PropTypes é necessario instalar a lib auxiliar prop-types, que permite que as propriedades sejam tipadas, sejam implicitamente setadas para que os valores sejam o mais padronizado possivel
+Apos importar a biblioteca basta setar o valor das props 
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
+Neste caso a propriedade onClick é do tipo Função é ela é requirida, ja que a declaração é sempre um Button
