@@ -4,5 +4,6 @@
     "@babel/preset-env",
     // faz com que tudo referente ao react seja entendido pelo navegador
     "@babel/preset-react"
-  ]
+  ],
+  "plugins": ["@babel/proposal-class-properties"]
 }

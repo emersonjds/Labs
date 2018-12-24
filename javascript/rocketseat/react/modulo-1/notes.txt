@@ -56,3 +56,39 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 Neste caso a propriedade onClick é do tipo Função é ela é requirida, ja que a declaração é sempre um Button
+
+Para que estes valores possam ser declarados diretamente na classe, é possivel utilizar um plugin do babel que deixa que as props e default props sejam declaradas dentro com componente como metodos estaticos
+para isso basta utilizar o @babel/proposal-class-properties e setar seu conteudo no babelrc na area de plugins
+
+----------------------------- // --------------------------------------
+
+STATE AND IMMUTABILITY
+Basicamente o estado é uma variavel que fica dentro do componente e contem todas as informações que podem ser manipuladas por esse componente. O state sempre é um objeto.
+No react utiliza-se muito o conceito de imutabilidade, desta forma nao é possivel setar o valor do estado diretamente com VanillaJS, é necessario repor o valor atual com um novo valor.
+Por exemplo, supondo que ao clicar num botao um valor sera atualizado, a função que faz essa manipulação nao pode simplismente setar o valor do estado com ++
+
+state = {
+  counter: 0,
+}
+
+//errado
+fn() {
+  this.state.counter++;
+}
+
+//certo
+fn() {
+  this.setState({
+    counter: this.state.counter + 1
+  })
+}
+
+Desta forma o valor sera alterado porem sem usar diretamente o state .
+Se a founçã for declarada como fn e corpo o this ira se referenciar ao escopo da função
+O ideal é sempre utilizar arrow functions nas classes em react
+
+fn = () => {}
+
+**Nota
+Toda vez que o valor do state é alterado ou alguma propriedade sofre alteração o metodo render do componente é executado novamente, isso é padrao, ele sempre sera rerenderizado
+
