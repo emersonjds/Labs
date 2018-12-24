@@ -92,3 +92,23 @@ fn = () => {}
 **Nota
 Toda vez que o valor do state é alterado ou alguma propriedade sofre alteração o metodo render do componente é executado novamente, isso é padrao, ele sempre sera rerenderizado
 
+*Nota
+A função setState é tratada de forma assincrona quando executada, se encadeado duas chamadas setState, o react utiliza um processo de fila para armazenadar os valores do state da class e os valores do state que sera ajustado no setState, por exemplo
+
+state = {
+  counter: 0
+}
+
+Quando setState for chamado para mudar aquele valor ...
+this.setState({
+  counter: this.state.counter + 1
+})
+a chamada do setState demora alguns mili segundos a mais do que o render ja que existe a fila de funções que esta sendo executada em sequencia com o High Order Functions .... desta forma caso seja necessario ja utilizar o retorno deste valor é necessario utilizar um callback para entender o valor atual do setState ...
+this.setState({counter: this.state.counter +1}, () => {
+  neste ponto o retorno do primeiro parametro fica em memoria e é jogado para este callback que pode executar uma outra ... 
+})
+
+Uma outra forma de utilizar isto seria declarando uma variavel de referencia assim que o setState é chamado, esta variavel, indica o valor atual do state na fila de High Orders ...
+deste forma ...
+this.setState(state => ({counter: state.counter + 1}))
+O valor de state neste caso é o valor de execução direto da fila de operações.

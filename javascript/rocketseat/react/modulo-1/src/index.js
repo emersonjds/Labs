@@ -32,13 +32,8 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <h1>Teste</h1>
-        <Button
-          onClick={() => {
-            alert("clicado");
-          }}
-        />
-        <Button onClick={this.handleClick}>Enviar</Button>
+        Valor: {this.state.counter} <br />
+        <Button onClick={this.handleClick}>Somar</Button>
       </Fragment>
     );
   }
