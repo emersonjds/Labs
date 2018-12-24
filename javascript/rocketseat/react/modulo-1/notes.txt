@@ -112,3 +112,28 @@ Uma outra forma de utilizar isto seria declarando uma variavel de referencia ass
 deste forma ...
 this.setState(state => ({counter: state.counter + 1}))
 O valor de state neste caso é o valor de execução direto da fila de operações.
+
+---------------------------------------- // ----------------------------------------
+
+STATELESS X STATEFULL
+Tratando de boas praticas, no react o ideal é ter apenas um componente por arquivo, isso facilita na manutenção da aplicação.
+Alguns pontos...
+O nome do arquivo .js que for criado sempre deve ir de encontro com o nome da classe que sera criada
+Button.js ... class Button .... 
+
+A diferença entre stateless vs statefull é que componente stateless nao possuem estados, desta forma no momento em que for declarado, ele é declarado em forma de constante ...
+Exemplo
+
+const Button = (props) => ()
+Utiliza-se parenteses e nao chaves por que a função ja ira retornar estrutura JSX , isso tambem pode ser utilizado nas chamadas de pontos de classe para executar determinada lógica.
+Para se ter acesso as props que sao passadas na chamada deste componente, esta constante recebe como parametro as props , que podem ser utilizadas posteriormente dentro do componente.
+Um outro ponto a se atentar é que no final do arquivo deve-se exportar essa constante para que outros componentes possam importa-lo.
+A parte de prop-types tambem é utilizada de maneira externa dentro do arquivo.
+Por exemplo
+
+Button.defaultProps = {} ....
+Button.propTypes = {} ... 
+
+Ja componentes que vao possuir estados, o ideal é que sejam declarados como classes, utilizando os metodos padroes de acesso 
+
+
