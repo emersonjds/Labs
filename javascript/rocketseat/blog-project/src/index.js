@@ -3,13 +3,16 @@ import ReactDOM from "react-dom";
 import "./styles/app.scss";
 
 import Header from "./components/Header";
+import PostBox from "./components/PostBox";
 
 class App extends Component {
   render() {
     return (
       <Fragment>
         <Header />
-        <div className="container" />
+        <div className="container">
+          <PostBox />
+        </div>
       </Fragment>
     );
   }

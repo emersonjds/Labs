@@ -18,4 +18,22 @@
   height: 90vh;
   width: 100%;
   background-color: lightgray;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .box {
+    margin-top: 15px;
+    height: auto;
+    width: 350px;
+    background-color: aliceblue;
+
+    .headerBox {
+      display: flex;
+      img {
+        height: 70px;
+        width: 70px;
+        border-radius: 20px;
+      }
+    }
+  }
 }
