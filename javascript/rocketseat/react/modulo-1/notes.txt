@@ -1,5 +1,5 @@
 PROPS **
-todo componente pode ter propriedades que sao colocadas quando o componente é chamado, ja na componente em si para se utilizar do valor daquela propriedade, 
+todo componente pode ter propriedades que sao colocadas quando o componente é chamado, ja na componente em si para se utilizar do valor daquela propriedade,
 acessamos utilizando o "props"
 
 Exemplo
@@ -51,7 +51,7 @@ Button.defaultProps = {
 Neste caso se nao for passado nenhum valor para children, assim que o botao for renderizado ele vao inicializar com o valor Enviar nele
 
 Para utilizar o PropTypes é necessario instalar a lib auxiliar prop-types, que permite que as propriedades sejam tipadas, sejam implicitamente setadas para que os valores sejam o mais padronizado possivel
-Apos importar a biblioteca basta setar o valor das props 
+Apos importar a biblioteca basta setar o valor das props
 Button.propTypes = {
   onClick: PropTypes.func.isRequired
 };
@@ -105,7 +105,7 @@ this.setState({
 })
 a chamada do setState demora alguns mili segundos a mais do que o render ja que existe a fila de funções que esta sendo executada em sequencia com o High Order Functions .... desta forma caso seja necessario ja utilizar o retorno deste valor é necessario utilizar um callback para entender o valor atual do setState ...
 this.setState({counter: this.state.counter +1}, () => {
-  neste ponto o retorno do primeiro parametro fica em memoria e é jogado para este callback que pode executar uma outra ... 
+  neste ponto o retorno do primeiro parametro fica em memoria e é jogado para este callback que pode executar uma outra ...
 })
 
 Uma outra forma de utilizar isto seria declarando uma variavel de referencia assim que o setState é chamado, esta variavel, indica o valor atual do state na fila de High Orders ...
@@ -119,7 +119,7 @@ STATELESS X STATEFULL
 Tratando de boas praticas, no react o ideal é ter apenas um componente por arquivo, isso facilita na manutenção da aplicação.
 Alguns pontos...
 O nome do arquivo .js que for criado sempre deve ir de encontro com o nome da classe que sera criada
-Button.js ... class Button .... 
+Button.js ... class Button ....
 
 A diferença entre stateless vs statefull é que componente stateless nao possuem estados, desta forma no momento em que for declarado, ele é declarado em forma de constante ...
 Exemplo
@@ -132,9 +132,9 @@ A parte de prop-types tambem é utilizada de maneira externa dentro do arquivo.
 Por exemplo
 
 Button.defaultProps = {} ....
-Button.propTypes = {} ... 
+Button.propTypes = {} ...
 
-Ja componentes que vao possuir estados, o ideal é que sejam declarados como classes, utilizando os metodos padroes de acesso 
+Ja componentes que vao possuir estados, o ideal é que sejam declarados como classes, utilizando os metodos padroes de acesso
 
 
 ------------------------------------------------ // --------------------------------
@@ -154,7 +154,7 @@ state = {
 
 Digamos que o state sofra algum tipo de alteração e que por padrao a aplicação so possa mostrar valores do counter até 10, chamando o metodo shouldComponentUpdate(nextProps, nextState) é possivel controlar isso
 shouldComponentUpdate(nextProps, nextState) {
-  return nextState.counter <= 10; 
+  return nextState.counter <= 10;
   com isso o contador ira parar no valor 10 na tela, o state em si continuara sendo incrementado porem o render nao é mas executado por que o shouldComponentUpdate consegue controlar o que renderiza e o que nao renderiza na atualização de informaçoes
 }
 
@@ -167,5 +167,10 @@ Para que o javascript entenda os estilos que estao sendo passados no componente,
 Para utilizar o sass , basta utilizar o sass-loader e o node-sass
 A utilização de classes css no componente é chamado por className e é possivel ainda utilizar estilos inline
 
+---------------------------------------//-------------------------------------------
+Patterns
+É importante sempre utilizar padroes nos projetos em React, um dos modelos mais utilizados é o eslint do Airbnb
+que pode ser configurado instalando a lib eslint como devDependencies
+para executar basta executar o comando --init em node_modules/.bin/eslint e escolher o guia Airbnb com formato JSON
 
 
