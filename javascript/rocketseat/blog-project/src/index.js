@@ -1,14 +1,18 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { Component, Fragment } from "react";
+import ReactDOM from "react-dom";
 import "./styles/app.scss";
 
 import Header from "./components/Header";
 
 class App extends Component {
   render() {
-    <Header />;
-    return <h1>Teste</h1>;
+    return (
+      <Fragment>
+        <Header />
+        <div className="container" />
+      </Fragment>
+    );
   }
 }
 
-render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));
