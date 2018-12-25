@@ -137,3 +137,35 @@ Button.propTypes = {} ...
 Ja componentes que vao possuir estados, o ideal é que sejam declarados como classes, utilizando os metodos padroes de acesso 
 
 
+------------------------------------------------ // --------------------------------
+
+CICLO DE VIDA DE COMPONENTES
+Os ciclos de vida sao semelhantes aos ja implementados no Angular, com inicialização , apos efetuar determinada ação e ou o componente ser destruido.
+
+componentDidMount() {} -> executado automaticamente na inicialização do componente, muito utilizado para trabalhar com request e busca de dados , cadastrar eventos listeners.
+
+componentWillUnmount() {} -> esse metodo é executado quando o componente deixa de existir na aplicação, geralmente é utilizado para limpar listeners que tenham sido criados no componentDidMount.
+
+shouldComponentUpdate(nextProps, nextState) {} -> Esse metodo é executado toda vez que alguma propriedade ou estado do component é alterada, é possivel controlar a atualização destas informações diretamente com esse metodo.
+Por exemplo
+state = {
+  counter: 0
+}
+
+Digamos que o state sofra algum tipo de alteração e que por padrao a aplicação so possa mostrar valores do counter até 10, chamando o metodo shouldComponentUpdate(nextProps, nextState) é possivel controlar isso
+shouldComponentUpdate(nextProps, nextState) {
+  return nextState.counter <= 10; 
+  com isso o contador ira parar no valor 10 na tela, o state em si continuara sendo incrementado porem o render nao é mas executado por que o shouldComponentUpdate consegue controlar o que renderiza e o que nao renderiza na atualização de informaçoes
+}
+
+componentDidUpdate(prevProps, prevState) {} -> executado depois que algum estado ou propriedade sofre alguma alteração ja ter ocorrido, apos o render ter sido executado
+
+------------------------------------------ // --------------------------------------------------
+
+ESTILOS NO REACT
+Para que o javascript entenda os estilos que estao sendo passados no componente, é necessario o carregamento de libs externas e confifuração das mesmas no Webpack, no caso de eostilizaçã pode-ser utilizar a style-loader e css-loader , como dependencias de desenvolvimento
+Para utilizar o sass , basta utilizar o sass-loader e o node-sass
+A utilização de classes css no componente é chamado por className e é possivel ainda utilizar estilos inline
+
+
+
