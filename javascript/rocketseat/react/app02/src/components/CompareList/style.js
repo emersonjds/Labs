@@ -12,6 +12,7 @@ export const Repository = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 3px;
+  margin: 0 10px;
   header {
     padding: 30px;
     display: flex;
