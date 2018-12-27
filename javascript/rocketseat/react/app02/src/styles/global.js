@@ -13,6 +13,7 @@ body {
   text-rendering: optimizeLegibility !important;
   /* fonte mais legivel no google chrome */
   -webkit-font-smoothing: antialiased !important;
+  font-family: sans-serif;
 }
 
 `;
