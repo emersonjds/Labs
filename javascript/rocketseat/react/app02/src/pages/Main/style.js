@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +13,7 @@ const Container = styled.div`
   }
 `;
 
-const Form = styled.form`
+export const Form = styled.form`
   display: flex;
   max-width: 400px;
   width: 100%;
@@ -46,17 +45,3 @@ const Form = styled.form`
     }
   }
 `;
-
-const Main = () => (
-  <Container>
-    <h1>Git Compare</h1>
-    {/* <img src="#"> */}
-
-    <Form>
-      <input type="text" placeholder="usuario/repositorio" />
-      <button type="submit">Ok</button>
-    </Form>
-  </Container>
-);
-
-export default Main;
