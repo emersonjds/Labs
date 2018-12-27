@@ -1,0 +1,13 @@
+CSS IN JS
+Styled Components
+é uma forma de criar componentes estilizando as tags html
+Exemplo :
+const Title = styled.h1`
+  font-size: 1.5em,
+  text-align: center,
+  color: palevioletred
+`
+O styled components por si so ja traz todas as tags html para serem estilizadas e utilizadas como componentes dentro de outros componentes.
+o estilização é escopada , quer dizer o componente estilizado criado num componente, funciona somente naquele componente, nao havendo quebra de estilos com outros componentes, desta forma é possivel ter o memso styled componente em 3 componentes diferentes mas cada um com seus estilos indepentendes
+
+É possivel ainda ter um estilo global que fica em  volta da aplicação, para isso basta utilizar a lib createGlobalStyle presente na biblioteca de styled components e importar dentro do componente raiz da aplicação
