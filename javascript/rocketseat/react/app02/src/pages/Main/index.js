@@ -14,18 +14,15 @@ export default class Main extends Component {
 
   async componentDidMount() {
     this.setState({ loading: true });
-
     this.setState({ loading: false, repositories: await this.getLocalRepositories() });
   }
 
   handleAddRepository = async (e) => {
     e.preventDefault();
     e.stopPropagation();
-
     this.setState({
       loading: true,
     });
-
     try {
       const { data: repository } = await api.get(`/repos/${this.state.repositoryInput}`);
       repository.lastCommit = moment(repository.pushed_at).fromNow();
