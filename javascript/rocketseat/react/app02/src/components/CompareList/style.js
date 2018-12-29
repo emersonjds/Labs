@@ -1,18 +1,25 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #fff;
   flex-direction: row;
   border-radius: 5px;
-  width: 200px;
   margin-top: 20px;
+  display: flex;
 `;
+
+// export const RepositoryBox = styled.div`
+//   display: flex;
+//   height: auto;
+// `;
 
 export const Repository = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 3px;
   margin: 0 10px;
+  width: 200px;
+  margin-right: 10px;
+  background-color: #fff;
   header {
     padding: 30px;
     display: flex;

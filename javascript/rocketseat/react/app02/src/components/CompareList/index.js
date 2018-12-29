@@ -4,7 +4,6 @@ import { Container, Repository } from './style';
 const CompareList = ({ repositories }) => (
   <Container>
     {repositories.map(repository => (
-      // eslint-disable-next-line no-unused-expressions
       <Repository key={repository.id}>
         <header>
           <img src={repository.owner.avatar_url} alt={repository.owner.login} />
