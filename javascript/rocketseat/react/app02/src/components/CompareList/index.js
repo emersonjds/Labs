@@ -42,9 +42,8 @@ const CompareList = ({ repositories }) => (
   </Container>
 );
 
-CompareList.defaultProps = {};
 // eslint-disable-next-line react/no-typos
-CompareList.PropTypes = {
+CompareList.propTypes = {
   repositories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,

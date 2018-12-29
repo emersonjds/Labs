@@ -28,6 +28,9 @@ export default class Main extends Component {
         repositories: [...this.state.repositories, repository],
         repositoryError: false,
       });
+      const { repositories } = this.state;
+      repositories.map(data => localStorage.setItem({ data }));
+      console.log(localStorage);
     } catch (err) {
       this.setState({
         repositoryError: true,
