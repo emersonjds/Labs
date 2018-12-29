@@ -7,11 +7,6 @@ export const Container = styled.div`
   display: flex;
 `;
 
-// export const RepositoryBox = styled.div`
-//   display: flex;
-//   height: auto;
-// `;
-
 export const Repository = styled.div`
   display: flex;
   flex-direction: column;
