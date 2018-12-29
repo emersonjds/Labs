@@ -31,7 +31,7 @@ const CompareList = ({ repositories }) => (
             {' '}
           </li>
           <li>
-            {repository.pushed_at}
+            {repository.lastCommit}
             {' '}
             <small>Last Commit</small>
             {' '}
@@ -58,7 +58,7 @@ CompareList.PropTypes = {
       open_issues_count: PropTypes.number,
       pushed_at: PropTypes.string,
     }),
-  ),
+  ).isRequired,
 };
 
 export default CompareList;

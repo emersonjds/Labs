@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import { Form, Container } from './style';
 import CompareList from '../../components/CompareList';
 import api from '../../services/api';
@@ -14,10 +15,13 @@ export default class Main extends Component {
     e.stopPropagation();
 
     try {
-      const response = await api.get(`/repos/${this.state.repositoryInput}`);
+      const { data: repository } = await api.get(`/repos/${this.state.repositoryInput}`);
+
+      repository.lastCommit = moment(repository.pushed_at).fromNow();
+
       this.setState({
         repositoryInput: '',
-        repositories: [...this.state.repositories, response.data],
+        repositories: [...this.state.repositories, repository],
       });
     } catch (e) {
       console.log('erro', e);
