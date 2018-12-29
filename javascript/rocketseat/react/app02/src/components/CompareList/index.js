@@ -7,39 +7,33 @@ const CompareList = ({ repositories }) => (
       // eslint-disable-next-line no-unused-expressions
       <Repository key={repository.id}>
         <header>
-          <img src={repository.owner.avatar_url} alt="avatar" />
-          <strong>Titulo</strong>
-          <small>facebook</small>
+          <img src={repository.owner.avatar_url} alt={repository.owner.login} />
+          <strong>{repository.name}</strong>
+          <small>{repository.owner.login}</small>
         </header>
         <ul>
           <li>
-            9999
+            {repository.stargazers_count}
             {' '}
-            <small>stars</small>
-            {' '}
-          </li>
-          <li>
-            9999
-            {' '}
-            <small>stars</small>
+            <small>Stars</small>
             {' '}
           </li>
           <li>
-            9999
+            {repository.forks_count}
             {' '}
-            <small>stars</small>
-            {' '}
-          </li>
-          <li>
-            9999
-            {' '}
-            <small>stars</small>
+            <small>Forks</small>
             {' '}
           </li>
           <li>
-            9999
+            {repository.open_issues_count}
             {' '}
-            <small>stars</small>
+            <small>Issues</small>
+            {' '}
+          </li>
+          <li>
+            {repository.pushed_at}
+            {' '}
+            <small>Last Commit</small>
             {' '}
           </li>
         </ul>
