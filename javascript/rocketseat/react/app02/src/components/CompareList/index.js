@@ -1,47 +1,50 @@
 import React from 'react';
 import { Container, Repository } from './style';
 
-const CompareList = () => (
+const CompareList = ({ repositories }) => (
   <Container>
-    <Repository>
-      <header>
-        <img src="https://avatars3.githubusercontent.com/u/69631?v=4" />
-        <strong>Titulo</strong>
-        <small>facebook</small>
-      </header>
-      <ul>
-        <li>
-          9999
-          {' '}
-          <small>stars</small>
-          {' '}
-        </li>
-        <li>
-          9999
-          {' '}
-          <small>stars</small>
-          {' '}
-        </li>
-        <li>
-          9999
-          {' '}
-          <small>stars</small>
-          {' '}
-        </li>
-        <li>
-          9999
-          {' '}
-          <small>stars</small>
-          {' '}
-        </li>
-        <li>
-          9999
-          {' '}
-          <small>stars</small>
-          {' '}
-        </li>
-      </ul>
-    </Repository>
+    {repositories.map(repository => (
+      // eslint-disable-next-line no-unused-expressions
+      <Repository key={repository.id}>
+        <header>
+          <img src={repository.owner.avatar_url} alt="avatar" />
+          <strong>Titulo</strong>
+          <small>facebook</small>
+        </header>
+        <ul>
+          <li>
+            9999
+            {' '}
+            <small>stars</small>
+            {' '}
+          </li>
+          <li>
+            9999
+            {' '}
+            <small>stars</small>
+            {' '}
+          </li>
+          <li>
+            9999
+            {' '}
+            <small>stars</small>
+            {' '}
+          </li>
+          <li>
+            9999
+            {' '}
+            <small>stars</small>
+            {' '}
+          </li>
+          <li>
+            9999
+            {' '}
+            <small>stars</small>
+            {' '}
+          </li>
+        </ul>
+      </Repository>
+    ))}
   </Container>
 );
 
