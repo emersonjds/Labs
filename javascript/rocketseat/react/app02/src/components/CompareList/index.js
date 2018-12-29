@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Repository } from './style';
 
 const CompareList = ({ repositories }) => (
@@ -40,5 +41,24 @@ const CompareList = ({ repositories }) => (
     ))}
   </Container>
 );
+
+CompareList.defaultProps = {};
+// eslint-disable-next-line react/no-typos
+CompareList.PropTypes = {
+  repositories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      owner: PropTypes.shape({
+        login: PropTypes.string,
+        avatar_url: PropTypes.string,
+      }),
+      stargazers_count: PropTypes.number,
+      forks_count: PropTypes.number,
+      open_issues_count: PropTypes.number,
+      pushed_at: PropTypes.string,
+    }),
+  ),
+};
 
 export default CompareList;
