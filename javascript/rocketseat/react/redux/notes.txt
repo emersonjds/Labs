@@ -1,0 +1,13 @@
+Redux
+O fluxo de operação do Redux parte de um componente que passa uma informação para uma Action ( geralmente a Action ira se comunicar com algum outro componente que faz requets ) e chega na store, dentro da Store ha os reducers que vai escutar qual a citou foi disparada e o reducer responsável por aquela ação ira atualizar o estado do Store, que sera repassado para todos os componentes que estão conectados aqueles reducers.
+Então o fluxo é sempre , componente -> action -> reducers -> atualizar o store -> retorna a informação para os componentes conectados
+
+As actions , os middlewares buscam informações de APis, essas informações são repassadas para o store do redux, o os reducers alteram as informações do estado que retorna para os componentes
+
+
+Para configurar o redux é necessario instalar 2 dependencias
+redux + react-redux
+
+É necessario configurar o arquivo de Store
+
+No arquivo principal da aoplicaçã é necessario informar que estamos conectados a esse Store que foi criado, desta forma é utilizado o Provider do react-redux, esse Componente garante que a aplicação esta conectada ao Store, ele é passado como uma propriedade , assim como é passado para um componente comum. O Provider garante que a api de contexto do React seja passada para todos os componentes da aplicação
