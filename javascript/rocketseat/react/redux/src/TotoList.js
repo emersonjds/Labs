@@ -6,11 +6,7 @@ import { connect } from "react-redux";
 
 const TodoList = ({ todos, addTodo }) => (
   <Fragment>
-    <ul>
-      {todos.map(todo => (
-        <li key={todo.id}>{todo.text}</li>
-      ))}
-    </ul>
+    <ul>{todos && todos.map(todo => <li key={todo.id}>{todo.text}</li>)}</ul>
     <button onClick={() => addTodo("Novo Todo")}>Adicionar Todo</button>
   </Fragment>
 );
