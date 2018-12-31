@@ -11,3 +11,15 @@ redux + react-redux
 É necessario configurar o arquivo de Store
 
 No arquivo principal da aoplicaçã é necessario informar que estamos conectados a esse Store que foi criado, desta forma é utilizado o Provider do react-redux, esse Componente garante que a aplicação esta conectada ao Store, ele é passado como uma propriedade , assim como é passado para um componente comum. O Provider garante que a api de contexto do React seja passada para todos os componentes da aplicação
+
+REDUCERS
+Os reducers sempre serao funções puras, que receberao parametros e retornarão novos estados
+*Todo reducer recebe 2 parametros, o estado atual ( state) e a action que ira executar dentro de m switch
+Exemplo
+export default function todos(state, action) {} ...
+O reducer fica esperando a execução de uma action passada por algum componente, apos receber o valor do stado atual com a operação da action ele retorna um novo estado para o componente, essa operação é sempre a mesma , reducer sempre recebe estado atual e a action que ira executar , atualiza o estado e retorna
+*Todos os reducers escutam todas as Actions, porem dentro dele que ocorre a alteração de estado ou nao
+* Toda action tem um type, esse type significa um id dentro das actions
+type: 'ADD_TODO'
+
+O que deve ser entendido é que o estado inicial que entra no reducer é o estado atual da aplicação , junto com a action que é sempre uma AÇAO de alteração de estado é alterado o state e retornado aos componentes que escutam aquele reducer
