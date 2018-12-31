@@ -23,3 +23,7 @@ O reducer fica esperando a execução de uma action passada por algum componente
 type: 'ADD_TODO'
 
 O que deve ser entendido é que o estado inicial que entra no reducer é o estado atual da aplicação , junto com a action que é sempre uma AÇAO de alteração de estado é alterado o state e retornado aos componentes que escutam aquele reducer
+
+Nos componentes quando chamados o mapStateToProps estamos conectando o nome da propriedade do Store ao componente, em tradução literal seria, mapeie os estados em Propriedades para o meu componente, desta forma o componente implicitamente com Props esta se conectando diretamente a Store
+
+Ja quando utilizamos o mapDispatchToProps, estamos passando a action que sera disparada do componente para a Action que se comunica com o reducer, o dispatch neste caso pode ser entendido como uma ação a ser executada, toda action envia 2 parametros o type ( que seria o id da Action) e por boas praticas se envia o Payload que seria qualquer outro valor que a action ira direcionar para o reducer
