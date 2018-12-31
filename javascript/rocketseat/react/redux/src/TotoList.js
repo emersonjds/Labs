@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+//esta função associa o dispatch as funçoes que foram criadas no arquivo de Actions
+import { bindActionCreators } from "redux";
+import * as todoActions from "./store/actions/todos";
 
 //essa prop conecta o componente com alguma informação do reducer do redux
 import { connect } from "react-redux";
@@ -18,15 +21,8 @@ const mapStateToProps = state => ({
 });
 
 // o dispatch sao as actions que serao disparadas do componente para as Actions em si
-const mapDispatchToProps = dispatch => ({
-  addTodo: text =>
-    dispatch({
-      type: "ADD_TODO",
-      payload: {
-        text
-      }
-    })
-});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(todoActions, dispatch);
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
