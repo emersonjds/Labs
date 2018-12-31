@@ -29,7 +29,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 TodoList.propTypes = {
-  addTodo: PropTypes.func.isRequired,
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
