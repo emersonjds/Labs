@@ -21,9 +21,9 @@ const mapStateToProps = state => ({
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired
-    })
+      id: PropTypes.number,
+      text: PropTypes.string
+    }).isRequired
   )
 };
 
