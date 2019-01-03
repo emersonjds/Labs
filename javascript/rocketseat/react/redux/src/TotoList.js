@@ -7,9 +7,17 @@ import * as todoActions from "./store/actions/todos";
 //essa prop conecta o componente com alguma informação do reducer do redux
 import { connect } from "react-redux";
 
-const TodoList = ({ todos, addTodo }) => (
+const TodoList = ({ todos, addTodo, removeTodo }) => (
   <Fragment>
-    <ul>{todos && todos.map(todo => <li key={todo.id}>{todo.text}</li>)}</ul>
+    <ul>
+      {todos &&
+        todos.map(todo => (
+          <li key={todo.id}>
+            {todo.text}
+            <button onClick={() => removeTodo(todo.id)}>Remover</button>
+          </li>
+        ))}
+    </ul>
     <button onClick={() => addTodo("Novo Todo")}>Adicionar Todo</button>
   </Fragment>
 );
@@ -25,6 +33,8 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(todoActions, dispatch);
 
 TodoList.propTypes = {
+  addTodo: PropTypes.func.isRequired,
+  removeTodo: PropTypes.func.isRequired,
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
