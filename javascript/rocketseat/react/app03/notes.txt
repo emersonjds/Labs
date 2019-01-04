@@ -1,0 +1,25 @@
+CSS IN JS
+Styled Components
+é uma forma de criar componentes estilizando as tags html
+Exemplo :
+const Title = styled.h1`
+  font-size: 1.5em,
+  text-align: center,
+  color: palevioletred
+`
+O styled components por si so ja traz todas as tags html para serem estilizadas e utilizadas como componentes dentro de outros componentes.
+o estilização é escopada , quer dizer o componente estilizado criado num componente, funciona somente naquele componente, nao havendo quebra de estilos com outros componentes, desta forma é possivel ter o memso styled componente em 3 componentes diferentes mas cada um com seus estilos indepentendes
+
+É possivel ainda ter um estilo global que fica em  volta da aplicação, para isso basta utilizar a lib createGlobalStyle presente na biblioteca de styled components e importar dentro do componente raiz da aplicação
+
+Utilizando styled components é possivel ainda estilizar os subcomponentes de um componente que ja esta sendo utilizado da mesma forma que é possivel fazer aninhamento de estilos com sass
+
+Quando utilizado o styled components , temos acesso a todas as propriedades do componente estilizado que foi criado, desta forma é possivel chamar o mesmo como uma variavel padrao com template string e fazer alguma regra de negócio diretamtente na area de estilos
+------------------------------------ // ---------------------------------
+Notas
+Para importar uma imagem diretamente a um componente, declaramos ele como uma variavel que ira armazenar a instancia da imagem que esteja em determinado repositorio
+Exemplo
+import logo from '../assets/img.png';
+
+desta forma é possivel utlizar o 'logo' como uma variavel comum no jsx
+
