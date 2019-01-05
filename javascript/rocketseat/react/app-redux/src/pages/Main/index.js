@@ -26,7 +26,7 @@ export default class Main extends Component {
             <p>
               <strong>Facebook/react</strong>
             </p>
-            <a href="#">Acessar github</a>
+            <a href="https://www.github.com">Acessar github</a>
           </li>
         </ul>
       </Fragment>
