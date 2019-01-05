@@ -5,6 +5,6 @@ if (process.env.NODE_ENV === "development") {
   const tron = Reactotron.configure()
     .use(reactotronRedux())
     .connect();
-  tron.clear();
+  tron.clear(); // limpar a lista principal do reactotron
   console.tron = tron;
 }

@@ -31,3 +31,8 @@ Ja quando utilizamos o mapDispatchToProps, estamos passando a action que sera di
 É boa pratica ainda deixar todas as actions em arquivos separados, assim quaisquers outros componentes podem utilizar essas actions para disparar ações.
 
 
+
+--------------------------------- // --------------------------------
+ROUTER
+Para utilizar o sistema de rotas no react é necessario baixar a lib react-router-dom que faz esse gerenciamento, criar um arquivo de rotas e por la fazer toda configuração, bem semelhante ao que ja é feito no Angular
+
