@@ -58,12 +58,10 @@ class Main extends Component {
   }
 }
 
-// mpp state to props
 const mapStateToProps = state => ({
   favorites: state.favorites
 });
 
-// Map actions to props
 const mapDispathToProps = dispatch =>
   bindActionCreators(FavoriteActions, dispatch);
 
