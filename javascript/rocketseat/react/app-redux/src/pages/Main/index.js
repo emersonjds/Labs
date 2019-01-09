@@ -58,10 +58,12 @@ class Main extends Component {
   }
 }
 
+//Reducers
 const mapStateToProps = state => ({
   favorites: state.favorites
 });
 
+//Actions
 const mapDispathToProps = dispatch =>
   bindActionCreators(FavoriteActions, dispatch);
 
