@@ -1,9 +1,11 @@
-export const addFavoriteRequest = () => ({
-  type: "ADD_FAVORITE_REQUEST"
+export const addFavoriteRequest = repository => ({
+  type: "ADD_FAVORITE_REQUEST",
+  payload: { repository }
 });
 
-export const addFavoriteSuccess = () => ({
-  type: "ADD_FAVORITE_SUCCESS"
+export const addFavoriteSuccess = data => ({
+  type: "ADD_FAVORITE_SUCCESS",
+  payload: { data }
 });
 
 //REQUEST -> SAGA -> CHAMADA API > SUCCESS
