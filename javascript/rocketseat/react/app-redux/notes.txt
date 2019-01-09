@@ -39,3 +39,16 @@ Para utilizar o sistema de rotas no react é necessario baixar a lib react-route
 // digamos que tenham duas rotas de nome iguais, quando a o Switch ve esse tipo de ação ele para o render e identifica exatamente o que esta sendo passado como base na url, e possivel tambem utilizar a palavra reservada "exact" desta forma o sistema de rota so é disparado quando aquela rota exata que esta sendo passada no path for identificada
 <Route exact path="/" component={Main} />
 
+---------------------------------- // --------------------------------------
+SAGAS
+O redux-saga é um middleware responsavel por fazer as requests, ele fica entre a action e o reducer , neste caso ele fica responsavel por escutar a action , fazer a request e entregar o resultado para o reducer poder continuar com o fluxo do redux
+Desta forma a camada do Store ganha mais uma camada que sao os sagas, dentro do arquivo de sagas é configurado as funçoes que irao fazer o pedido de dados a api e que ira retornar o valor diretamente para o reducer que estiver conectado com este saga
+o metodo All é o metodo do Saga que lida com diversos sagas simultaneamente.
+o asteristico apos a função indica que ela é uma função do modelo 'Generator', desta forma esta função tem comportamento parecido com o async await para busca ou passagem de dados para apis externas, o generator é muito mais poderoso do que o async await, por baixo dos panos o babel é o responsavel por transformar o async await em um Generator para ser utilizado dentro do React.
+o yield neste caso é o await, quer dizer, quando  founção identifica esta palavra ela fica esperando até que alguma operação seja finalizada para seguir o fluxo normal.
+
+Apos a configuração do saga em si é necesario passar essas informações de middleware para o Store, desta forma é criado um array de middlewares ja que o redux pode ter mais de uma chamada de requisições.
+o compose é responsavel por compor varios middlewares atraves do applyMiddlewares que no fim das contas vai receber esse array de middlewares que foi criado no inicio da coonfiguração.
+
+por fim o sagaMiddleware.run(sagas); // esta função informa para a aplicação que os sagas estao configurados e prontos para uso
+
