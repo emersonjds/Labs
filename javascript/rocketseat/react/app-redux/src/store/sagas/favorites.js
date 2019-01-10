@@ -8,6 +8,7 @@ export function* addFavorite(action) {
     `/repos/${action.payload.repositoryData}`
   );
 
+  // compose object
   const repositoryData = {
     id: data.id,
     name: data.full_name,
@@ -15,5 +16,5 @@ export function* addFavorite(action) {
     url: data.html_url
   };
 
-  put();
+  yield put(addFavoriteSuccess(repositoryData));
 }
