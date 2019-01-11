@@ -29,6 +29,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
     "reactotron-cli": "^1.7.0",
     "reactotron-react-js": "^2.1.4",
     "reactotron-redux": "^2.1.3"
