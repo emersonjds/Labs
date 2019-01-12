@@ -23,20 +23,18 @@ class Main extends Component {
   };
 
   handleAddRepository = (event) => {
-    const { repositoryInput, addFavoriteRequest } = this.state;
     event.preventDefault();
-    addFavoriteRequest(repositoryInput);
+    this.props.addFavoriteRequest(this.state.repositoryInput);
   };
 
   render() {
-    const { favorites, repositoryInput } = this.state;
     return (
       <Fragment>
         <form onSubmit={this.handleAddRepository}>
           <input
             placeholder="usuario/value"
             // eslint-disable-next-line react/destructuring-assignment
-            value={repositoryInput}
+            value={this.state.repositoryInput}
             onChange={e => this.setState({
               repositoryInput: e.target.value,
             })
@@ -46,7 +44,7 @@ class Main extends Component {
         </form>
 
         <ul>
-          {favorites.map(favorite => (
+          {this.props.favorites.map(favorite => (
             <li key={favorite.id}>
               <p>
                 <strong>{favorite.name}</strong>

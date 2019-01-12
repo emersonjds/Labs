@@ -3,7 +3,7 @@ import api from '../../services/api';
 import { addFavoriteSuccess } from '../actions/favorites';
 
 export function* addFavorite(action) {
-  const { data } = yield call(api.get, `/repos/${action.payload.repositoryData}`);
+  const { data } = yield call(api.get, `/repos/${action.payload.repository}`);
 
   // compose object
   const repositoryData = {
