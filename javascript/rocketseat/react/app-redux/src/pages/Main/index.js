@@ -1,10 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as FavoriteActions from "../../store/actions/favorites";
-
-import PropTypes from "prop-types";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import * as FavoriteActions from '../../store/actions/favorites';
 
 class Main extends Component {
   static propTypes = {
@@ -14,40 +13,46 @@ class Main extends Component {
         id: PropTypes.number,
         name: PropTypes.string,
         description: PropTypes.string,
-        url: PropTypes.string
-      }).isRequired
-    )
-  };
-  state = {
-    repositoryInput: ""
+        url: PropTypes.string,
+      }).isRequired,
+    ),
   };
 
-  handleAddRepository = event => {
+  state = {
+    repositoryInput: '',
+  };
+
+  handleAddRepository = (event) => {
+    const { repositoryInput, addFavoriteRequest } = this.state;
     event.preventDefault();
-    this.props.addFavoriteRequest(this.state.repositoryInput);
+    addFavoriteRequest(repositoryInput);
   };
 
   render() {
+    const { favorites, repositoryInput } = this.state;
     return (
       <Fragment>
         <form onSubmit={this.handleAddRepository}>
           <input
             placeholder="usuario/value"
-            value={this.state.repositoryInput}
-            onChange={e =>
-              this.setState({
-                repositoryInput: e.target.value
-              })
+            // eslint-disable-next-line react/destructuring-assignment
+            value={repositoryInput}
+            onChange={e => this.setState({
+              repositoryInput: e.target.value,
+            })
             }
           />
           <button type="submit">Adicionar</button>
         </form>
 
         <ul>
-          {this.props.favorites.map(favorite => (
+          {favorites.map(favorite => (
             <li key={favorite.id}>
               <p>
-                <strong>{favorite.name}</strong>({favorite.description})
+                <strong>{favorite.name}</strong>
+(
+                {favorite.description}
+)
               </p>
               <a href={favorite.url}>Acessar</a>
             </li>
@@ -58,16 +63,15 @@ class Main extends Component {
   }
 }
 
-//Reducers
+// Reducers
 const mapStateToProps = state => ({
-  favorites: state.favorites
+  favorites: state.favorites,
 });
 
-//Actions
-const mapDispathToProps = dispatch =>
-  bindActionCreators(FavoriteActions, dispatch);
+// Actions
+const mapDispathToProps = dispatch => bindActionCreators(FavoriteActions, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispathToProps
+  mapDispathToProps,
 )(Main);
