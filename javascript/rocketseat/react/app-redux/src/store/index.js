@@ -7,9 +7,10 @@ import sagas from './sagas';
 const middlewares = [];
 
 const sagaMonitor = process.env.NODE_ENV === 'development' ? console.tron.createSagaMonitor() : null;
-const sagaMiddleware = createSagaMiddleware();
 
-middlewares.push(sagaMiddleware({ sagaMonitor }));
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
+
+middlewares.push(sagaMiddleware);
 
 // neste ponto sao passado os reducers
 // const store = createStore(reducers);
