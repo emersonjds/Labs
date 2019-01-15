@@ -55,3 +55,7 @@ por fim o sagaMiddleware.run(sagas); // esta função informa para a aplicação
 Com a adição do saga o fluxo de informações fica um pouco diferente.
 O saga é o middleware responsavel pelo fluxo de dados de apis e comunicação com o reducer, entao o componente ira disparar uma action que vai ter um type , e essa action é escutada pelo Saga , o saga faz a chamada para a api retorna os dados e chama a outra Action ( geralmente de sucess ou error) passando esse payload de dados .... o fluxo ira ser sempre desta forma
 *Sempre isso sempre vai acontecer : request -> saga > chamada api -> success
+
+----------------------------------------------------------
+DUCK PATTERN
+O duck pattern traz o conceito de em um unico arquivo estar listado as actions e os reducers, deixando separado somente os sagas que utilizam essas estruturas separadas.

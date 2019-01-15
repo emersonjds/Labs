@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import * as FavoriteActions from '../../store/actions/favorites';
+import { Creators as FavoriteActions } from '../../store/ducks/favorites';
 
 class Main extends Component {
   static propTypes = {

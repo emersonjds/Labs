@@ -11,6 +11,7 @@ favoritos
   </p>
 );
 
+// eslint-disable-next-line react/no-typos
 Footer.Proptypes = {
   count: Proptypes.number.isRequired,
 };

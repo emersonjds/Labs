@@ -1,7 +1,7 @@
 // inicializa o redux na aplicação
 import { createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import reducers from './reducers';
+import reducers from './ducks';
 import sagas from './sagas';
 
 const middlewares = [];
