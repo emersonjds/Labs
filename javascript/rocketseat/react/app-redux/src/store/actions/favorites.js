@@ -8,4 +8,9 @@ export const addFavoriteSuccess = data => ({
   payload: { data },
 });
 
+export const addFavoriteFailure = error => ({
+  type: 'ADD_FAVORITE_FAILURE',
+  payload: { error },
+});
+
 // REQUEST -> SAGA -> CHAMADA API > SUCCESS
