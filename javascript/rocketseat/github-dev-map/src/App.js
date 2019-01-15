@@ -47,6 +47,23 @@ export default class Map extends Component {
         }
         onViewportChange={viewport => this.setState({ viewport })}
       >
+        <ul
+          style={{
+            height: "80vh",
+            background: "white",
+            padding: "10px",
+            zIndex: 1,
+            position: "absolute",
+            margin: "10px",
+            width: "120px"
+          }}
+        >
+          <li>Teste</li>
+          <li>Teste</li>
+          <li>Teste</li>
+          <li>Teste</li>
+          <li>Teste</li>
+        </ul>
         <Marker
           latitude={-23.5439948}
           longitude={-46.6065452}
