@@ -23,10 +23,11 @@ export default class Map extends Component {
 
   _resize = () => {
     this.setState({
-      ...this.state.viewport({
+      viewport: {
+        ...this.state.viewport,
         width: window.innerWidth,
         height: window.innerHeight
-      })
+      }
     });
   };
 
