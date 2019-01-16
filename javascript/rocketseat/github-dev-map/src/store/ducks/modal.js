@@ -46,7 +46,7 @@ export const Creators = {
     type: Types.SHOW,
     payload: { cordinates }
   }),
-  hideModal: () => {
-    type: Types.HIDE;
-  }
+  hideModal: () => ({
+    type: Types.HIDE
+  })
 };

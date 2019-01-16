@@ -44,6 +44,7 @@ class Map extends Component {
     // console.log(e.lngLat);
 
     await showModal({ latitude, longitude });
+    m;
   };
 
   render() {

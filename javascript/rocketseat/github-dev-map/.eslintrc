@@ -14,14 +14,6 @@
       }
     ],
     "global-require": "off",
-    "import/prefer-default-export": "off",
-    "no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePatter": "^_"
-      }
-    ],
-    "consistent-return": "off",
-    "no-useless-return": "off"
+    "import/prefer-default-export": "off"
   }
 }
