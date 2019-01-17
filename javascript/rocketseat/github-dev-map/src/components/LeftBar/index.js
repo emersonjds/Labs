@@ -7,9 +7,9 @@ import { Creators as UsersActions } from '../../store/ducks/users';
 
 import './styles.css';
 
-const LetBar = ({ users, removeUser }) => (
+const LeftBar = ({ users, removeUser }) => (
   <div className="left-bar">
-    {!users.data.lenght && <p> Nenhum usuario adicionado </p>}
+    {!users.data.length && <p>Nenhum usuário adicionado</p>}
     <ul>
       {users.data.map(user => (
         <li key={user.id}>
@@ -37,7 +37,18 @@ const LetBar = ({ users, removeUser }) => (
   </div>
 );
 
-LetBar.protoTypes = {
+LeftBar.propTypes = {
   users: PropTypes.shape({}).isRequired,
   removeUser: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = state => ({
+  users: state.users,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(UsersActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(LeftBar);
