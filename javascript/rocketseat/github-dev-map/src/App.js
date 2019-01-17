@@ -1,85 +1,27 @@
-import React, { Component } from "react";
-import MapGL, { Marker } from "react-map-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import dotenv from 'dotenv';
+import React, { Fragment } from 'react';
+import './config/ReactotronConfig';
 
-export default class Map extends Component {
-  state = {
-    viewport: {
-      width: window.innerWidth,
-      height: window.innerHeight,
-      latitude: -23.5439948,
-      longitude: -46.6065452,
-      zoom: 14
-    }
-  };
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-  componentDidMount() {
-    window.addEventListener("resize", this._resize);
-  }
+import { Provider } from 'react-redux';
+import store from './store';
 
-  componentWillMount() {
-    window.removeEventListener("resize", this._resize);
-  }
+import Routes from './routes';
 
-  _resize = () => {
-    this.setState({
-      viewport: {
-        ...this.state.viewport,
-        width: window.innerWidth,
-        height: window.innerHeight
-      }
-    });
-  };
+import 'font-awesome/css/font-awesome.css';
+import './styles.css';
 
-  handleMapClick(e) {
-    const [latitude, longitude] = e.lngLat;
-    console.log(latitude, longitude);
-  }
+dotenv.config();
 
-  render() {
-    return (
-      <MapGL
-        {...this.state.viewport}
-        onClick={this.handleMapClick}
-        mapStyle="mapbox://styles/mapbox/basic-v9"
-        mapboxApiAccessToken={
-          "pk.eyJ1IjoiZW1lcnNvbmpkcyIsImEiOiJjanF5NGZjZHcwMDJ5M3lsandvaGlvcXBrIn0.mHlWfI4BpweXRc5sF6q1Jw"
-        }
-        onViewportChange={viewport => this.setState({ viewport })}
-      >
-        <ul
-          style={{
-            height: "80vh",
-            background: "white",
-            padding: "10px",
-            zIndex: 1,
-            position: "absolute",
-            margin: "10px",
-            width: "120px"
-          }}
-        >
-          <li>Teste</li>
-          <li>Teste</li>
-          <li>Teste</li>
-          <li>Teste</li>
-          <li>Teste</li>
-        </ul>
-        <Marker
-          latitude={-23.5439948}
-          longitude={-46.6065452}
-          onClick={this.handleMapClick}
-          captureClick={true}
-        >
-          <img
-            style={{
-              borderRadius: 100,
-              width: 48,
-              height: 48
-            }}
-            src="https://avatars2.githubusercontent.com/u/12503997?v=4"
-          />
-        </Marker>
-      </MapGL>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <Fragment>
+      <Routes />
+      <ToastContainer autoClose={4000} />
+    </Fragment>
+  </Provider>
+);
+
+export default App;
