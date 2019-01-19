@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
-import GlobalStyles from "./styles/global";
+import GlobalStyle from "./styles/global";
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <GlobalStyles />
+        <GlobalStyle />
         <h1>Teste</h1>
       </Fragment>
     );
