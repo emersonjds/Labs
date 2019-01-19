@@ -9,6 +9,42 @@ export const Container = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  /* pegar primeira div  */
+  > div {
+    padding: 25px;
+  }
+`;
+
+export const Nav = styled.ul`
+  list-style: none;
+  margin-top: 25px;
+
+  & :first-child {
+    margin-top: 0;
+  }
+
+  li {
+    a {
+      color: inherit;
+      text-decoration: none;
+      line-height: 32px;
+      font-size: 13px;
+      font-weight: ${props => (props.main ? 'bold' : 'normal')};
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    span {
+      font-size: 11px;
+      text-transform: uppercase;
+      line-height: 22px;
+      letter-spacing: 1.11px;
+      font-weight: light;
+    }
+  }
 `;
 
 export const NewPlaylist = styled.button`
