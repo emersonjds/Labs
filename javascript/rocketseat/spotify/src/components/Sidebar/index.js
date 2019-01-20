@@ -57,6 +57,7 @@ const Sidebar = () => (
         </li>
       </Nav>
     </div>
+
     <NewPlaylist>
       <img src={AddPlaylistIcon} alt="Adicionar Playlist" />
       Nova Playlist
