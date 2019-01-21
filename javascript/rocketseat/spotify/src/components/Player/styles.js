@@ -53,6 +53,22 @@ export const Controls = styled.div`
   }
 `;
 
+export const Time = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+
+  span {
+    font-size: 11px;
+    color: #b3b3b3;
+  }
+`;
+
+export const ProgressSlider = styled.div`
+  width: 500px;
+  margin: 0 15px;
+`;
+
 export const Volume = styled.div`
   display: flex;
   margin-right: 20px;
