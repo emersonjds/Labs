@@ -35,3 +35,31 @@ export const Current = styled.div`
     }
   }
 `;
+
+export const Progress = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const Controls = styled.div`
+  display: flex;
+  align-items: center;
+
+  button {
+    margin: 0 15px;
+    background: transparent;
+    border: 0;
+  }
+`;
+
+export const Volume = styled.div`
+  display: flex;
+  margin-right: 20px;
+  width: 100px;
+  align-items: center;
+
+  img {
+    margin-right: 5px;
+  }
+`;
