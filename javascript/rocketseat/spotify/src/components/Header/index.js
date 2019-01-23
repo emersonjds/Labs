@@ -8,7 +8,8 @@ const Header = () => (
       <input placeholder="Search" />
     </Search>
     <User>
-      <img src="" alt="avatar" />
+      <img src="https://avatars2.githubusercontent.com/u/12503997?v=4" alt="avatar" />
+      Emerson Silva
     </User>
   </Container>
 );
