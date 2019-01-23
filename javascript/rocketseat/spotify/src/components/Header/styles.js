@@ -27,9 +27,15 @@ export const Search = styled.div`
 `;
 
 export const User = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #fff;
+
   img {
     width: 27px;
     height: 27px;
     border-radius: 50%;
+    margin-right: 5px;
   }
 `;
