@@ -1,4 +1,4 @@
-import { createGlobalStyle, styled } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import 'rc-slider/assets/index.css';
 
@@ -23,7 +23,5 @@ body {
   color: #FFF;
 }
 `;
-
-export const Content = styled.div``;
 
 export default GlobalStyle;

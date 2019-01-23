@@ -13,4 +13,4 @@ const Header = () => (
   </Container>
 );
 
-export const Header;
+export default Header;

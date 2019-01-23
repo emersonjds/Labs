@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import GlobalStyle, { Content } from './styles/global';
-import { Wrapper, Container } from './styles/components';
+import GlobalStyle from './styles/global';
+import { Wrapper, Container, Content } from './styles/components';
 
 import Sidebar from './components/Sidebar';
 import Player from './components/Player';

@@ -26,4 +26,10 @@ export const Search = styled.div`
   }
 `;
 
-export const User = styled.div``;
+export const User = styled.div`
+  img {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+  }
+`;
