@@ -1,10 +1,15 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Search, User } from './styles';
 
 const Header = () => (
   <Container>
-
+    <Search>
+      <input placeholder="Search" />
+    </Search>
+    <User>
+      <img src="" alt="avatar" />
+    </User>
   </Container>
 );
 
