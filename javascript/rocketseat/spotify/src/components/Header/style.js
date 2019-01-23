@@ -1,11 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-import {Content} from './styles';
-
-const Header = () => (
-  <Content>
-
-  </Content>
-);
-
-export const Header;
+export const Container = styled.header`
+  display: flex;
+  justify-content: space-between;
+`;
