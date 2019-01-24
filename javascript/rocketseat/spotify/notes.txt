@@ -10,4 +10,4 @@ styled(Link)
 Neste caso esta sendo importado afunção Link da biblioteca  'react-router-dom' e sendo passado no lugar de uma tag 'a' desta forma o link semantico a , foi transformado num link funcional do React
 
 A tag link do cmponente de rotas quando passado num styled component ou passado diretamente em uma tag utiliza o to="rota para aonde sera redirecionado"
-to="playlists/1" , neste caso esta sendo passado o id de parametro que é pedido numa rota
+to="/playlists/1" , neste caso esta sendo passado o id de parametro que é pedido numa rota

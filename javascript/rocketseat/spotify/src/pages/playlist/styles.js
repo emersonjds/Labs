@@ -1,5 +1,7 @@
-import React from 'react';
+import styled from 'styled-components';
 
-const Playlist = () => <h1>playlist</h1>;
+export const Container = styled.div`
+  margin-top: 30px;
+`;
 
-export default Playlist;
+export const Header = styled.div``;
