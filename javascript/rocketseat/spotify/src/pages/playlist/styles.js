@@ -49,3 +49,5 @@ export const Header = styled.div`
     }
   }
 `;
+
+export const Songlist = styled.table``;
