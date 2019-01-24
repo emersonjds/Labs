@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Header } from './styles';
+import ClockIcon from '../../assets/images/clock.svg';
+import PlusIcon from '../../assets/images/plus.svg';
 
 const Playlist = () => (
   <Container>
@@ -15,6 +17,30 @@ const Playlist = () => (
         <button type="button">play</button>
       </div>
     </Header>
+
+    <Songlist>
+      <thead>
+        <th />
+        <th>Titulo</th>
+        <th>Artista</th>
+        <th>Album</th>
+        <th>
+          <img src={ClockIcon} alt="timer" />
+        </th>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="plus" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
+      </tbody>
+    </Songlist>
   </Container>
 );
 
