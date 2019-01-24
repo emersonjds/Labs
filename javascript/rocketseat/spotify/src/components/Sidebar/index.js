@@ -10,9 +10,6 @@ const Sidebar = () => (
         <li>
           <a href=""> Navegar </a>
         </li>
-        <li>
-          <a href=""> Navegar </a>
-        </li>
       </Nav>
 
       <Nav>

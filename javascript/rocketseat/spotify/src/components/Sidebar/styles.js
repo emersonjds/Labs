@@ -18,7 +18,7 @@ export const Container = styled.aside`
 
 export const Nav = styled.ul`
   list-style: none;
-  margin-top: 25px;
+  margin-top: 28px;
 
   & :first-child {
     margin-top: 0;
