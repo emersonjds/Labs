@@ -3,3 +3,8 @@ icon site - iconscout
 
 O BrowserRouter da acesso a parametros que venham da URL query Strings
 Quando o BrowserRouter é chamado no App.js , todos os componentes tem acesso a dados que sao passados na url , como parametros ou querie strings, isso é muito importante na construção de um aplicativo
+
+Styled component aceita qualquer tipo de parametro nao somente tags html, é possivel inicializar um styled-component como uma função
+
+styled(Link)
+Neste caso esta sendo importado afunção Link da biblioteca  'react-router-dom' e sendo passado no lugar de uma tag 'a' desta forma o link semantico a , foi transformado num link funcional do React
