@@ -8,7 +8,7 @@ const Sidebar = () => (
     <div>
       <Nav main>
         <li>
-          <a href=""> Navegar </a>
+          <a href="www.googe.com"> Navegar </a>
         </li>
       </Nav>
 
@@ -17,31 +17,31 @@ const Sidebar = () => (
           <span>Biblioteca</span>
         </li>
         <li>
-          <a href=""> Seu Daily Mix </a>
+          <a href="www.googe.com"> Seu Daily Mix </a>
         </li>
         <li>
-          <a href=""> Tocados Recentemente </a>
+          <a href="www.googe.com"> Tocados Recentemente </a>
         </li>
         <li>
-          <a href=""> Musicas </a>
+          <a href="www.googe.com"> Musicas </a>
         </li>
         <li>
-          <a href=""> Albuns </a>
+          <a href="www.googe.com"> Albuns </a>
         </li>
         <li>
-          <a href=""> Artistas </a>
+          <a href="www.googe.com"> Artistas </a>
         </li>
         <li>
-          <a href=""> Estações </a>
+          <a href="www.googe.com"> Estações </a>
         </li>
         <li>
-          <a href=""> Arquivos Locais </a>
+          <a href="www.googe.com"> Arquivos Locais </a>
         </li>
         <li>
-          <a href=""> Videos </a>
+          <a href="www.googe.com"> Videos </a>
         </li>
         <li>
-          <a href=""> Podcasts </a>
+          <a href="www.googe.com"> Podcasts </a>
         </li>
       </Nav>
 
@@ -50,7 +50,7 @@ const Sidebar = () => (
           <span>Playlists</span>
         </li>
         <li>
-          <a href=""> Melhores do Rock </a>
+          <a href="www.googe.com"> Melhores do Rock </a>
         </li>
       </Nav>
     </div>

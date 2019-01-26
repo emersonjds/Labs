@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import './config/reactotron';
 import GlobalStyle from './styles/global';
 import { Wrapper, Container, Content } from './styles/components';
 
