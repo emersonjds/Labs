@@ -46,6 +46,7 @@ export const Header = styled.div`
       margin-top: 10px;
       font-size: 12px;
       letter-spacing: 1.11px;
+      text-transform: uppercase;
     }
   }
 `;
