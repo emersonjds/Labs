@@ -1,4 +1,4 @@
-import { call, put } from 'redux-saga';
+import { call, put } from 'redux-saga/effects';
 // call for result of promise
 // put send information to reducer with payload
 import api from '../../services/api';
