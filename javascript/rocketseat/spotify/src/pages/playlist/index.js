@@ -9,8 +9,37 @@ import PlusIcon from '../../assets/images/plus.svg';
 import Loading from '../../components/Loading';
 
 class Playlist extends Component {
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.number,
+      }),
+    }).isRequired,
+    getPlaylistDetailsRequest: PropTypes.func.isRequired,
+    playlistDetails: PropTypes.shape({
+      data: PropTypes.shape({
+        thumbnail: PropTypes.string,
+        title: PropTypes.string,
+        description: PropTypes.string,
+        songs: PropTypes.arrayOf(PropTypes.shape({
+          id: PropTypes.number,
+          title: PropTypes.string,
+          author: PropTypes.string,
+          album: PropTypes.string,
+        })),
+      }),
+      loading: PropTypes.bool,
+    }).isRequired,
+  }
+
   componentDidMount() {
     this.loadPlaylistDetails();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.loadPlaylistDetails();
+    }
   }
 
   loadPlaylistDetails = () => {
