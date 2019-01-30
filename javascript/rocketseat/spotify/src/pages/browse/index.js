@@ -8,6 +8,8 @@ import {
 } from './styles';
 import { Creators as PlaylistActions } from '../../store/ducks/playlist';
 
+import Loading from '../../components/Loading';
+
 class Browse extends Component {
   static propTypes = {
     getPlaylistRequest: PropTypes.func.isRequired,
@@ -20,6 +22,7 @@ class Browse extends Component {
           description: PropTypes.string,
         }),
       ),
+      loading: PropTypes.bool.isRequired,
     }).isRequired,
   };
 
@@ -32,7 +35,11 @@ class Browse extends Component {
     const { playlists } = this.props;
     return (
       <Container>
-        <Title>Navegar</Title>
+        <Title>
+          Navegar
+          {playlists.loading && <Loading />}
+          {' '}
+        </Title>
         <List>
           {playlists.data.map(playlist => (
             <PlayList key={playlist.id} to={`/playlists/${playlist.id}`}>
