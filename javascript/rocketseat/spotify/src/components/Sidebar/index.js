@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionsCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 import { Container, NewPlaylist, Nav } from './styles';
-import { Cretors as PlaylistActions } from '../../store/ducks/playlist';
+import { Creators as PlaylistActions } from '../../store/ducks/playlist';
 
 import AddPlaylistIcon from '../../assets/images/add_playlist.svg';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class SideBar extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.getPlaylistRequest();
+  }
 
   render() {
     return (
@@ -72,4 +74,13 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar;
+const mapStateToProps = state => ({
+  playlists: state.playlists,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(PlaylistActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SideBar);
