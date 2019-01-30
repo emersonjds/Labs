@@ -5,14 +5,13 @@ export const Container = styled.aside`
   width: 200px;
   background: #121212;
   color: #b3b3b3;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   /* pegar primeira div  */
   > div {
-    padding: 25px;
+    padding: 0 25px;
   }
 `;
 

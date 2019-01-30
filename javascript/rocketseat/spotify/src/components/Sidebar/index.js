@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Container, NewPlaylist, Nav } from './styles';
@@ -9,8 +10,21 @@ import AddPlaylistIcon from '../../assets/images/add_playlist.svg';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class SideBar extends Component {
+  static propTypes = {
+    getPlaylistRequest: PropTypes.func.isRequired,
+    playlists: PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number,
+          tittle: PropTypes.string,
+        }),
+      ),
+    }).isRequired,
+  };
+
   componentDidMount() {
-    this.props.getPlaylistRequest();
+    const { getPlaylistRequest } = this.props;
+    getPlaylistRequest();
   }
 
   render() {
@@ -46,15 +60,6 @@ class SideBar extends Component {
             <li>
               <a href="www.googe.com"> Estações </a>
             </li>
-            <li>
-              <a href="www.googe.com"> Arquivos Locais </a>
-            </li>
-            <li>
-              <a href="www.googe.com"> Videos </a>
-            </li>
-            <li>
-              <a href="www.googe.com"> Podcasts </a>
-            </li>
           </Nav>
 
           <Nav>
@@ -67,12 +72,12 @@ class SideBar extends Component {
               </li>
             ))}
           </Nav>
-        </div>
 
-        <NewPlaylist>
-          <img src={AddPlaylistIcon} alt="Adicionar Playlist" />
-          Nova Playlist
-        </NewPlaylist>
+          <NewPlaylist>
+            <img src={AddPlaylistIcon} alt="Adicionar Playlist" />
+            Nova Playlist
+          </NewPlaylist>
+        </div>
       </Container>
     );
   }
