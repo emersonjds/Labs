@@ -1,47 +1,58 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   Container, Title, List, PlayList,
 } from './styles';
+import { Creators as PlaylistActions } from '../../store/ducks/playlist';
 
-const Browse = () => (
-  <Container>
-    <Title>Navegar</Title>
+class Browse extends Component {
+  static propTypes = {
+    getPlaylistRequest: PropTypes.func.isRequired,
+    playlists: PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number,
+          tittle: PropTypes.string,
+          thimbnail: PropTypes.string,
+          description: PropTypes.string,
+        }),
+      ),
+    }).isRequired,
+  };
 
-    <List>
-      <PlayList to="/playlists/1">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg/220px-Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg"
-          alt="teste"
-        />
-        <strong>Teste</strong>
-        <p>Lorem Ipsom</p>
-      </PlayList>
-      <PlayList to="/playlists/1">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg/220px-Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg"
-          alt="teste"
-        />
-        <strong>Teste</strong>
-        <p>Lorem Ipsom</p>
-      </PlayList>
-      <PlayList to="/playlists/1">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg/220px-Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg"
-          alt="teste"
-        />
-        <strong>Teste</strong>
-        <p>Lorem Ipsom</p>
-      </PlayList>
-      <PlayList to="/playlists/1">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg/220px-Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg"
-          alt="teste"
-        />
-        <strong>Teste</strong>
-        <p>Lorem Ipsom</p>
-      </PlayList>
-    </List>
-  </Container>
-);
+  componentDidMount() {
+    const { getPlaylistRequest } = this.props;
+    getPlaylistRequest();
+  }
 
-export default Browse;
+  render() {
+    const { playlists } = this.props;
+    return (
+      <Container>
+        <Title>Navegar</Title>
+        <List>
+          {playlists.data.map(playlist => (
+            <PlayList key={playlist.id} to={`/playlists/${playlist.id}`}>
+              <img src={playlist.thumbnail} alt={playlist.title} />
+              <strong>{playlist.title}</strong>
+              <p>{playlist.description}</p>
+            </PlayList>
+          ))}
+        </List>
+      </Container>
+    );
+  }
+}
+const mapStateToProps = state => ({
+  playlists: state.playlists,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(PlaylistActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Browse);

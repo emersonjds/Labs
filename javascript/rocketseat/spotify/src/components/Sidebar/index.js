@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Container, NewPlaylist, Nav } from './styles';
 import { Creators as PlaylistActions } from '../../store/ducks/playlist';
+import { Container, NewPlaylist, Nav } from './styles';
 
 import AddPlaylistIcon from '../../assets/images/add_playlist.svg';
 
@@ -34,7 +34,7 @@ class SideBar extends Component {
         <div>
           <Nav main>
             <li>
-              <a href="www.googe.com"> Navegar </a>
+              <Link to="/"> Navegar </Link>
             </li>
           </Nav>
 
