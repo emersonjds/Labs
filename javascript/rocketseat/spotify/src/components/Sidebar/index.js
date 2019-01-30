@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Container, NewPlaylist, Nav } from './styles';
@@ -59,9 +60,11 @@ class SideBar extends Component {
             <li>
               <span>Playlists</span>
             </li>
-            <li>
-              <a href="www.googe.com"> Melhores do Rock </a>
-            </li>
+            {this.props.playlists.map(playlist => (
+              <li key={playlist.id}>
+                <Link to={`playlists/${playlist.id}`}>{playlist.title}</Link>
+              </li>
+            ))}
           </Nav>
         </div>
 
