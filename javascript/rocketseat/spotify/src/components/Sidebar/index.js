@@ -14,6 +14,7 @@ class SideBar extends Component {
   }
 
   render() {
+    const { playlists } = this.props;
     return (
       <Container>
         <div>
@@ -60,7 +61,7 @@ class SideBar extends Component {
             <li>
               <span>Playlists</span>
             </li>
-            {this.props.playlists.map(playlist => (
+            {playlists.data.map(playlist => (
               <li key={playlist.id}>
                 <Link to={`playlists/${playlist.id}`}>{playlist.title}</Link>
               </li>
