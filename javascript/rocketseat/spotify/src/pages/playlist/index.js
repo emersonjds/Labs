@@ -19,17 +19,21 @@ class Playlist extends Component {
   };
 
   renderDetails = () => {
+    const playlist = this.props.playlistDetails.data;
     return (
       <Container>
         <Header>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg/220px-Radio_Music_Society_%28Esperanza_Spalding_album%29_cover.jpg"
-            alt="teste"
-          />
+          <img src={playlist.thumbnail} alt={playlist.title} />
           <div>
             <span>PLAYLIST</span>
-            <h1>ROCK</h1>
-            <p>Numero de musicas</p>
+            <h1>{playlist.title}</h1>
+            {!!playlist.songs && (
+            <p>
+              {playlist.songs.length}
+              {' '}
+              Numero de musicas
+            </p>
+            )}
             <button type="button">play</button>
           </div>
         </Header>
@@ -46,18 +50,28 @@ class Playlist extends Component {
           </thead>
           <tbody>
             <tr>
-              <td>
-                <img src={PlusIcon} alt="plus" />
-              </td>
-              <td>Papercut</td>
-              <td>Linkin Park</td>
-              <td>Hybrid Theory</td>
-              <td>3:26</td>
+              {!playlist.songs ? (
+                <tr>
+                  <td colSpan={5}>Nenhuma musica cadastrada</td>
+                </tr>
+              ) : (
+                playlist.songs.map(song => (
+                  <tr key={song.id}>
+                    <td>
+                      <img src={PlusIcon} alt="plus" />
+                    </td>
+                    <td>{song.title}</td>
+                    <td>{song.author}</td>
+                    <td>{song.album}</td>
+                    <td>3:26</td>
+                  </tr>
+                ))
+              )}
             </tr>
           </tbody>
         </Songlist>
       </Container>
-    )
+    );
   };
 
   render() {
