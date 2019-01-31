@@ -21,16 +21,18 @@ class Playlist extends Component {
         thumbnail: PropTypes.string,
         title: PropTypes.string,
         description: PropTypes.string,
-        songs: PropTypes.arrayOf(PropTypes.shape({
-          id: PropTypes.number,
-          title: PropTypes.string,
-          author: PropTypes.string,
-          album: PropTypes.string,
-        })),
+        songs: PropTypes.arrayOf(
+          PropTypes.shape({
+            id: PropTypes.number,
+            title: PropTypes.string,
+            author: PropTypes.string,
+            album: PropTypes.string,
+          }),
+        ),
       }),
       loading: PropTypes.bool,
     }).isRequired,
-  }
+  };
 
   componentDidMount() {
     this.loadPlaylistDetails();
@@ -60,7 +62,7 @@ class Playlist extends Component {
             <p>
               {playlist.songs.length}
               {' '}
-              Numero de musicas
+Numero de musicas
             </p>
             )}
             <button type="button">play</button>
@@ -78,25 +80,23 @@ class Playlist extends Component {
             </th>
           </thead>
           <tbody>
-            <tr>
-              {!playlist.songs ? (
-                <tr>
-                  <td colSpan={5}>Nenhuma musica cadastrada</td>
+            {!playlist.songs ? (
+              <tr>
+                <td colSpan={5}>Nenhuma musica cadastrada</td>
+              </tr>
+            ) : (
+              playlist.songs.map(song => (
+                <tr key={song.id}>
+                  <td>
+                    <img src={PlusIcon} alt="plus" />
+                  </td>
+                  <td>{song.title}</td>
+                  <td>{song.author}</td>
+                  <td>{song.album}</td>
+                  <td>3:26</td>
                 </tr>
-              ) : (
-                playlist.songs.map(song => (
-                  <tr key={song.id}>
-                    <td>
-                      <img src={PlusIcon} alt="plus" />
-                    </td>
-                    <td>{song.title}</td>
-                    <td>{song.author}</td>
-                    <td>{song.album}</td>
-                    <td>3:26</td>
-                  </tr>
-                ))
-              )}
-            </tr>
+              ))
+            )}
           </tbody>
         </Songlist>
       </Container>
@@ -117,7 +117,7 @@ class Playlist extends Component {
 }
 
 const mapStateToProps = state => ({
-  playlistDetails: state.playlists,
+  playlistDetails: state.playlistDetails,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(PlaylistDetailsActions, dispatch);

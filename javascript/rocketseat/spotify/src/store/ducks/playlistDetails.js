@@ -1,6 +1,6 @@
 export const Types = {
-  GET_REQUEST: 'playlistsDetails/GET_REQUEST',
-  GET_SUCCESS: 'playlistsDetails/GET_SUCCESS',
+  GET_REQUEST: 'playlistDeatils/GET_REQUEST',
+  GET_SUCCESS: 'playlistDeatils/GET_SUCCESS',
 };
 
 const INITIAL_STATE = {
@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   loading: false,
 };
 
-export default function playlistsDetails(state = INITIAL_STATE, action) {
+export default function playlistDeatils(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.GET_REQUEST:
       return {
