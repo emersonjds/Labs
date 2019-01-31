@@ -21,6 +21,10 @@ body {
   height: 100%;
   background-color: #181818;
   color: #FFF;
+
+  button {
+    cursor: pointer;
+  }
 }
 `;
 
