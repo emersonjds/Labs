@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { Creators as PlaylistDetailsActions } from '../../store/ducks/playlistDetails';
+import { Creators as PLayerActions } from '../../store/ducks/player';
 import { Container, Header, Songlist } from './styles';
 import ClockIcon from '../../assets/images/clock.svg';
 import PlusIcon from '../../assets/images/plus.svg';
@@ -32,6 +33,7 @@ class Playlist extends Component {
       }),
       loading: PropTypes.bool,
     }).isRequired,
+    loadSong: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -86,7 +88,7 @@ Numero de musicas
               </tr>
             ) : (
               playlist.songs.map(song => (
-                <tr key={song.id}>
+                <tr onDoubleClick={() => this.props.loadSong(song)} key={song.id}>
                   <td>
                     <img src={PlusIcon} alt="plus" />
                   </td>
@@ -120,7 +122,7 @@ const mapStateToProps = state => ({
   playlistDetails: state.playlistDetails,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(PlaylistDetailsActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ ...PlaylistDetailsActions, ...PLayerActions }, dispatch);
 
 export default connect(
   mapStateToProps,

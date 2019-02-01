@@ -1,11 +1,14 @@
 import React from 'react';
 import Slider from 'rc-slider';
+import { connect } from 'react-redux';
+
+import Sound from 'react-sound';
+import PropTypes from 'prop-types';
 import {
   Container, Current, Volume, Progress, Controls, Time, ProgressSlider,
 } from './styles';
 
 import VolumeIcon from '../../assets/images/volume.svg';
-
 import ShuffleIcon from '../../assets/images/shuffle.svg';
 import PlayIcon from '../../assets/images/play.svg';
 import BackwardIcon from '../../assets/images/backward.svg';
@@ -14,8 +17,10 @@ import RepeatIcon from '../../assets/images/repeat.svg';
 
 console.tron.log('Teste');
 
-const Player = () => (
+const Player = ({ player }) => (
   <Container>
+    {!!player.currentSong && <Sound url={player.currentSong.file} playStatus={player.status} />}
+
     <Current>
       <img
         src="https://images-na.ssl-images-amazon.com/images/I/91OKWPQcuEL._SL1500_.jpg"
@@ -70,4 +75,17 @@ const Player = () => (
   </Container>
 );
 
-export default Player;
+Player.propTypes = {
+  player: PropTypes.shape({
+    currentSong: PropTypes.shape({
+      file: PropTypes.string,
+    }),
+    status: PropTypes.string,
+  }).isRequired,
+};
+
+const mapStateToProps = state => ({
+  player: state.player,
+});
+
+export default connect(mapStateToProps)(Player);
