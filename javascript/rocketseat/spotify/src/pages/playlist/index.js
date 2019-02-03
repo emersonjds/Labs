@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { Creators as PlaylistDetailsActions } from '../../store/ducks/playlistDetails';
 import { Creators as PLayerActions } from '../../store/ducks/player';
-import { Container, Header, Songlist } from './styles';
+import { Container, Header, Songlist , SongItem } from './styles';
 import ClockIcon from '../../assets/images/clock.svg';
 import PlusIcon from '../../assets/images/plus.svg';
 import Loading from '../../components/Loading';
@@ -34,7 +34,14 @@ class Playlist extends Component {
       loading: PropTypes.bool,
     }).isRequired,
     loadSong: PropTypes.func.isRequired,
+    currentSong: PropTypes.shape({
+      id: PropTypes.number,
+    }).isRequired,
   };
+
+  state = {
+    selectedSong: null,
+  }
 
   componentDidMount() {
     this.loadPlaylistDetails();
@@ -88,7 +95,13 @@ Numero de musicas
               </tr>
             ) : (
               playlist.songs.map(song => (
-                <tr onDoubleClick={() => this.props.loadSong(song)} key={song.id}>
+                <SongItem
+                  onClick={() => this.setState({selectedSong: song.id})}
+                  onDoubleClick={() => this.props.loadSong(song) }
+                  key={song.id}
+                  selected={this.state.selectedSong === song.id}
+                  playing={this.props.currentSong && this.props.currentSong.id === song.id}
+                >
                   <td>
                     <img src={PlusIcon} alt="plus" />
                   </td>
@@ -96,7 +109,7 @@ Numero de musicas
                   <td>{song.author}</td>
                   <td>{song.album}</td>
                   <td>3:26</td>
-                </tr>
+                </SongItem>
               ))
             )}
           </tbody>
@@ -120,6 +133,7 @@ Numero de musicas
 
 const mapStateToProps = state => ({
   playlistDetails: state.playlistDetails,
+  currentSong: state.player.currentSong,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ ...PlaylistDetailsActions, ...PLayerActions }, dispatch);
