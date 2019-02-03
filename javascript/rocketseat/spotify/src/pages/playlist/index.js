@@ -97,7 +97,7 @@ Numero de musicas
               playlist.songs.map(song => (
                 <SongItem
                   onClick={() => this.setState({selectedSong: song.id})}
-                  onDoubleClick={() => this.props.loadSong(song) }
+                  onDoubleClick={() => this.props.loadSong(song, playlist.songs) }
                   key={song.id}
                   selected={this.state.selectedSong === song.id}
                   playing={this.props.currentSong && this.props.currentSong.id === song.id}
