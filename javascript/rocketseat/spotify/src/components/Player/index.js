@@ -96,7 +96,7 @@ const Player = ({
             max={1000}
             onChange={value => handlePosition(value / 1000)}
             onAfterChange={value => setPosition(value / 1000)}
-            
+            value={progress}
           />
         </ProgressSlider>
         <span>{duration}</span>
@@ -155,10 +155,8 @@ const mapStateToProps = state => ({
   position: msToTime(state.player.position),
   duration: msToTime(state.player.duration),
   positionShown: msToTime(state.player.positionShown),
-  // eslint-disable-next-line radix
-  progress: parseInt(
-    (state.player.positionShown || state.player.position) * (1000 / state.player.duration, 10),
-  ) || 0,
+  progress: parseInt((state.player.positionShown
+    || state.player.position) * (1000 / state.player.duration), 10) || 0,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(PlayerActions, dispatch);
