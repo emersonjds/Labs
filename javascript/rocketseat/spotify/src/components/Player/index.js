@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Slider from 'rc-slider';
 import { connect } from 'react-redux';
 
@@ -20,14 +20,21 @@ const Player = ({ player }) => (
     {!!player.currentSong && <Sound url={player.currentSong.file} playStatus={player.status} />}
 
     <Current>
-      <img
-        src="https://images-na.ssl-images-amazon.com/images/I/91OKWPQcuEL._SL1500_.jpg"
-        alt="Teste"
-      />
-      <div>
-        <span> Times Like These</span>
-        <small>Foo Fighters</small>
-      </div>
+      {!!player.currentSong && (
+        <Fragment>
+          <img src={player.currentSong.thumbnail} alt={player.currentSong.tittle} />
+          <div>
+            <span>
+              {player.currentSong.title}
+              {' '}
+            </span>
+            <small>
+              {player.currentSong.author}
+              {' '}
+            </small>
+          </div>
+        </Fragment>
+      )}
     </Current>
 
     <Progress>
@@ -76,6 +83,9 @@ const Player = ({ player }) => (
 Player.propTypes = {
   player: PropTypes.shape({
     currentSong: PropTypes.shape({
+      thumbnail: PropTypes.string,
+      title: PropTypes.string,
+      author: PropTypes.string,
       file: PropTypes.string,
     }),
     status: PropTypes.string,
