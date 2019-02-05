@@ -1,0 +1,7 @@
+Enzyme 
+Biblioteca do Airbnb para testes , deve ser instalada como dependencia 
+
+Por padrao o create-react-app busca os arquivos de Setup para testes de um arquivo na raiz chamado setupTests.js, porem é possivel criar um repositorio separado para configurar esse setup 
+Toda vez que for utilizado a lib do enzyme, é necessario verificar em qual versao do React ela vai rodar, cada versao do Enzyme tem functions que podem nao funcionar em outras versoes.
+Neste caso é necessario chamar o Adapter da lib enzyme-adapter-react-(numero da versao)
+import Adapter from 'enzyme-adapter-react-16' (exemplo)
