@@ -17,21 +17,31 @@ const todos = [
   }
 ];
 
-describle('Todolist component', () => {
+describe("Todolist component", () => {
   it("should render three tags <li>", () => {
     const wrapper = shallow(<TodoList />);
     wrapper.setState({ todos });
     expect(wrapper.find("li").length === 3);
   });
 
-  it('should be able to add new todo', () => {
+  it("should be able to add new todo", () => {
     const wrapper = shallow(<TodoList />);
 
     wrapper.setState({todos});
-    wrapper.find('button').simulate('click');
+    wrapper.find("button").simulate("click");
 
-    expect(wrapper.state('todos')).length > 3;
+    expect(wrapper.state("todos")).toHaveLength(4);
   });
+
+  it("should be able to remove todo", () => {
+    const wrapper = shallow(<TodoList />);
+
+    wrapper.setState({todos});
+
+    wrapper.find("li").first().simulate("click");
+
+    expect(wrapper.state("todos")).not.toContain(todos[0]);
+  })
 })
 
 
