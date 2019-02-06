@@ -11,3 +11,5 @@ a palavra 'it' indica o descritivo do teste, a partir dela ja é possivel saber 
 A palavra expect() serve para dizermos o que esperamos como resultado daquele teste caso tudo ocorra bem
 
 A palavra reservada shallow esta disponivel somente no enzyme, neste caso ela é responsavel por criar uma arvore de elementos no DOM
+No enzyme existe funçoes que podem adicionar dados aos componentes e estruturas de dados como Arrays e Objetos 
+w
