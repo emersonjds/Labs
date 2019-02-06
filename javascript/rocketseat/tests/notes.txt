@@ -9,7 +9,10 @@ import Adapter from 'enzyme-adapter-react-16' (exemplo)
 Para trabalhar com testes utilizamos algumas palavras chaves para execução do script
 a palavra 'it' indica o descritivo do teste, a partir dela ja é possivel saber o que aquele teste esta fazendo. 
 A palavra expect() serve para dizermos o que esperamos como resultado daquele teste caso tudo ocorra bem
+Quando se cria varios testes e todos eles estao relacionados a um unico componente, um unico recurso, podemos utilizar o 'describle' para agrupar os testes de um recurso ou componente em questao.
+Dentro do describle ficam agrupados todos os its que descrevem o teste que sera feito
+
 
 A palavra reservada shallow esta disponivel somente no enzyme, neste caso ela é responsavel por criar uma arvore de elementos no DOM
 No enzyme existe funçoes que podem adicionar dados aos componentes e estruturas de dados como Arrays e Objetos 
-w
+

@@ -17,8 +17,21 @@ const todos = [
   }
 ];
 
-it("should render three tags <li>", () => {
-  const wrapper = shallow(<TodoList />);
-  wrapper.setState({ todos });
-  expect(wrapper.find("li").length === 3);
-});
+describle('Todolist component', () => {
+  it("should render three tags <li>", () => {
+    const wrapper = shallow(<TodoList />);
+    wrapper.setState({ todos });
+    expect(wrapper.find("li").length === 3);
+  });
+
+  it('should be able to add new todo', () => {
+    const wrapper = shallow(<TodoList />);
+
+    wrapper.setState({todos});
+    wrapper.find('button').simulate('click');
+
+    expect(wrapper.state('todos')).length > 3;
+  });
+})
+
+
