@@ -8,7 +8,7 @@ export default class TodoList extends Component {
   addTodo = () => {
     this.setState({
       todos: [...this.state.todos, {id: Math.random(), text: "Novo todo"}]
-    })
+    });
   }
 
   removeTodo = (id) => {
@@ -19,14 +19,13 @@ export default class TodoList extends Component {
     return (
       <Fragment>
         <ul>
-          {this.state.todos.map(todo => {
-            // eslint-disable-next-line no-unused-expressions
-            <li 
-              onClick={() => this.removeTodo(todo.id)}
-              key={todo.id}  
-            >{todo.text} 
-            </li>;
-          })}
+          {
+            this.state.todos.map(todo => (
+              <li onClick={() => this.removeTodo(todo.id)} key={todo.id}>
+              {todo.text}
+              </li>
+            ))
+          }
         </ul>
         <button type="button" onClick={this.addTodo}>Add todo</button>
       </Fragment>
