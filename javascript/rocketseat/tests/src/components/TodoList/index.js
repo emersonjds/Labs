@@ -12,7 +12,7 @@ export default class TodoList extends Component {
     }
   }
 
-  saveTodo = () => {
+  saveTodos = () => {
     localStorage.setItem("todos", JSON.stringify(this.state.todos));
   };
 
@@ -20,12 +20,12 @@ export default class TodoList extends Component {
     this.setState({
       todos: [...this.state.todos, { id: Math.random(), text: "Novo todo" }]
     });
-    this.saveTodo();
+    this.saveTodos();
   };
 
   removeTodo = id => {
     this.setState({ todos: this.state.todos.filter(todo => todo.id !== id) });
-    this.saveTodo();
+    this.saveTodos();
   };
 
   render() {
