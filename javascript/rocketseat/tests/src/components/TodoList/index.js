@@ -5,29 +5,42 @@ export default class TodoList extends Component {
     todos: []
   };
 
-  addTodo = () => {
-    this.setState({
-      todos: [...this.state.todos, {id: Math.random(), text: "Novo todo"}]
-    });
+  componentDidMount() {
+    const todos = localStorage.getItem("todos");
+    if (todos) {
+      this.setState({ todos: JSON.parse(todos) });
+    }
   }
 
-  removeTodo = (id) => {
+  saveTodo = () => {
+    localStorage.setItem("todos", JSON.stringify(this.state.todos));
+  };
+
+  addTodo = () => {
+    this.setState({
+      todos: [...this.state.todos, { id: Math.random(), text: "Novo todo" }]
+    });
+    this.saveTodo();
+  };
+
+  removeTodo = id => {
     this.setState({ todos: this.state.todos.filter(todo => todo.id !== id) });
-  }
-  
+    this.saveTodo();
+  };
+
   render() {
     return (
       <Fragment>
         <ul>
-          {
-            this.state.todos.map(todo => (
-              <li onClick={() => this.removeTodo(todo.id)} key={todo.id}>
+          {this.state.todos.map(todo => (
+            <li onClick={() => this.removeTodo(todo.id)} key={todo.id}>
               {todo.text}
-              </li>
-            ))
-          }
+            </li>
+          ))}
         </ul>
-        <button type="button" onClick={this.addTodo}>Add todo</button>
+        <button type="button" onClick={this.addTodo}>
+          Add todo
+        </button>
       </Fragment>
     );
   }

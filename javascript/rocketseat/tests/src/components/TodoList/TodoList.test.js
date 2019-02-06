@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import TodoList from "./index";
+import sinon from "sinon";
 
 const todos = [
   {
@@ -26,18 +27,25 @@ describe("Todolist component", () => {
 
   it("should be able to add new todo", () => {
     const wrapper = shallow(<TodoList />);
-    wrapper.setState({todos});
+    wrapper.setState({ todos });
     wrapper.find("button").simulate("click");
     expect(wrapper.state("todos")).toHaveLength(4);
   });
 
   it("should be able to remove todo", () => {
     const wrapper = shallow(<TodoList />);
-    wrapper.setState({todos});
-    wrapper.find("li").first().simulate('click');
+    wrapper.setState({ todos });
+    wrapper
+      .find("li")
+      .first()
+      .simulate("click");
     expect(wrapper.state("todos")).not.toContain(todos[0]);
   });
-  
-})
 
+  it("should load todos from localStorage", () => {
+    sinon.stub(localStorage, "getItem").returns(JSON.stringify(todos));
+    const wrapper = shallow(<TodoList />);
 
+    expect(wrapper.state("todos")).toEqual(todos);
+  });
+});
