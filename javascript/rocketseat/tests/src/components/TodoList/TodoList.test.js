@@ -45,7 +45,13 @@ describe("Todolist component", () => {
   it("should load todos from localStorage", () => {
     sinon.stub(localStorage, "getItem").returns(JSON.stringify(todos));
     const wrapper = shallow(<TodoList />);
-
     expect(wrapper.state("todos")).toEqual(todos);
+  });
+
+  it("should save todos to localStorage when added new todo", () => {
+    const spy = sinon.spy(localStorage, "setItem");
+    const wrapper = shallow(<TodoList />);
+    wrapper.instance().addTodo();
+    expect(spy.calledOnce).toBe(true);
   });
 });
