@@ -14,6 +14,7 @@ export default class TodoList extends Component {
   removeTodo = (id) => {
     this.setState({ todos: this.state.todos.filter(todo => todo.id !== id) });
   }
+  
   render() {
     return (
       <Fragment>

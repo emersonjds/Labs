@@ -35,11 +35,8 @@ describe("Todolist component", () => {
 
   it("should be able to remove todo", () => {
     const wrapper = shallow(<TodoList />);
-
     wrapper.setState({todos});
-
     wrapper.find("li").first().simulate("click");
-
     expect(wrapper.state("todos")).not.toContain(todos[0]);
   })
 })
