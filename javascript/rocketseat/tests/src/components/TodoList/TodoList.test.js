@@ -8,11 +8,11 @@ const todos = [
     text: "Lavar a louça"
   },
   {
-    id: 2,
+    id: 1,
     text: "React"
   },
   {
-    id: 3,
+    id: 2,
     text: "Python"
   }
 ];
@@ -20,5 +20,5 @@ const todos = [
 it("should render three tags <li>", () => {
   const wrapper = shallow(<TodoList />);
   wrapper.setState({ todos });
-  expect(wrapper.find("li")).toHaveLength(3);
+  expect(wrapper.find("li").length === 3);
 });
