@@ -1,7 +1,8 @@
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { Creators as TodosActions } from "../../store/ducks/todos";
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { Creators as TodosActions } from '../../store/ducks/todos';
 
 const TodoList = ({ todos, addTodo, removeTodo }) => (
   <Fragment>
@@ -12,20 +13,28 @@ const TodoList = ({ todos, addTodo, removeTodo }) => (
         </li>
       ))}
     </ul>
-    <button type="button" onClick={addTodo("Novo Todo")}>
+    <button type="button" onClick={addTodo('Novo Todo')}>
       Add todo
     </button>
   </Fragment>
 );
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(TodosActions, dispatch);
+TodoList.propTypes = {
+  todos: PropTypes.shape({
+    id: PropTypes.number,
+    text: PropTypes.string,
+  }).isRequired,
+  addTodo: PropTypes.func.isRequired,
+  removeTodo: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => bindActionCreators(TodosActions, dispatch);
 
 const mapStateToProps = state => ({
-  todos: state.todos
+  todos: state.todos,
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(TodoList);
