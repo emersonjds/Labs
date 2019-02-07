@@ -18,5 +18,9 @@ No enzyme existe funçoes que podem adicionar dados aos componentes e estruturas
 O enzyme utiliza o JS DOM para simular um virtual DOM e executar os testes, desta forma se utilizarmos chamadas a LocalStorage ou mesmo a APIs ele nao vai conseguir executar essas chamadas por que o JS Dom nao permite isso , para isso utiliza-se stubbys e outros ambientes mockados.
 o Stub sevre para simular retornos de uma funçao, ja o outro metodo Spy , serve para inspecionar quantas vezes uma função foi executada , quantas vezes foi executada, com quais valores foi executada.
 
+OBS:
+- Quando se esta testando componentes é muito importante entender que os componentes devem ser tratados como independentes de outros componentes, essa é a forma ideal de testas sempre com interdependencia entre componentes
+- Ao testar redux nao é necessario testar os reducers, o ideal verificar se as actions foram chamadas o restante é verificado de outra maneira.
+
 
 
