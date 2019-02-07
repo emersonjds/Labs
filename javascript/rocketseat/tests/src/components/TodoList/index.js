@@ -12,7 +12,7 @@ const TodoList = ({ todos, addTodo, removeTodo }) => (
         </li>
       ))}
     </ul>
-    <button type="button" onClick={addTodo}>
+    <button type="button" onClick={addTodo("Novo Todo")}>
       Add todo
     </button>
   </Fragment>

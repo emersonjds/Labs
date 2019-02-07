@@ -3,11 +3,9 @@ import { shallow } from "enzyme";
 import TodoList from "./index";
 import sinon from "sinon";
 import createMockStore from "redux-mock-store";
-
 import { Creators as TodoActions } from "../../store/ducks/todos";
 
-const mockStore = createMockStore();
-const store = mockStore({
+const INITIAL_STATE = {
   todos: [
     {
       id: 0,
@@ -22,41 +20,35 @@ const store = mockStore({
       text: "Python"
     }
   ]
-});
+};
+
+const mockStore = createMockStore();
+const store = mockStore(INITIAL_STATE);
 
 describe("Todolist component", () => {
-  fit("should render three tags <li>", () => {
+  it("should render three tags <li>", () => {
     const wrapper = shallow(<TodoList />, { context: { store } });
-    expect(wrapper.find("li").length === 3);
+    expect(wrapper.dive().find("li")).toHaveLength(3);
   });
 
   it("should be able to add new todo", () => {
-    const wrapper = shallow(<TodoList />);
-    wrapper.setState({ todos });
-    wrapper.find("button").simulate("click");
-    expect(wrapper.state("todos")).toHaveLength(4);
+    const wrapper = shallow(<TodoList />, { context: { store } });
+    wrapper
+      .dive()
+      .find("button")
+      .simulate("click");
+    expect(store.getActions()).toContainEqual(TodoActions.addTodo("Novo Todo"));
   });
 
   it("should be able to remove todo", () => {
-    const wrapper = shallow(<TodoList />);
-    wrapper.setState({ todos });
+    const wrapper = shallow(<TodoList />, { context: { store } });
     wrapper
+      .dive()
       .find("li")
       .first()
       .simulate("click");
-    expect(wrapper.state("todos")).not.toContain(todos[0]);
-  });
-
-  it("should load todos from localStorage", () => {
-    sinon.stub(localStorage, "getItem").returns(JSON.stringify(todos));
-    const wrapper = shallow(<TodoList />);
-    expect(wrapper.state("todos")).toEqual(todos);
-  });
-
-  it("should save todos to localStorage when added new todo", () => {
-    const spy = sinon.spy(localStorage, "setItem");
-    const wrapper = shallow(<TodoList />);
-    wrapper.instance().addTodo();
-    expect(spy.calledOnce).toBe(true);
+    expect(store.getActions()).toContainEqual(
+      TodoActions.removeTodo(INITIAL_STATE.todos[0].id)
+    );
   });
 });
