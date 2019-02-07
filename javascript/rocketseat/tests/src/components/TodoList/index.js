@@ -8,8 +8,10 @@ const TodoList = ({ todos, addTodo, removeTodo }) => (
   <Fragment>
     <ul>
       {todos.map(todo => (
-        <li onClick={() => removeTodo(todo.id)} key={todo.id}>
+        <li key={todo.id}>
           {todo.text}
+          {' '}
+          <button className="remove" type="button" onClick={() => removeTodo(todo.id)} />
         </li>
       ))}
     </ul>
