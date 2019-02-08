@@ -1,4 +1,7 @@
 export const Types = {
+  GET_REQUEST: 'todos/GET_REQUEST',
+  GET_SUCCESS: 'todos/GET_REQUEST',
+  GET_FAILURE: 'todos/GET_FAILURE',
   ADD: 'todos/ADD',
   REMOVE: 'todos/REMOVE',
 };
@@ -25,4 +28,8 @@ export const Creators = {
     type: Types.REMOVE,
     payload: { id },
   }),
+
+  getTodosRequest: () => ({ type: Types.GET_REQUEST }),
+  getTodosSuccess: data => ({ type: Types.GET_SUCCESS, payload: { data } }),
+  getTodosFailure: error => ({ type: Types.GET_FAILURE, payload: { error } }),
 };
