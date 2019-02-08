@@ -25,5 +25,5 @@ OBS:
 - Quando se esta testando componentes é muito importante entender que os componentes devem ser tratados como independentes de outros componentes, essa é a forma ideal de testas sempre com interdependencia entre componentes
 - Ao testar redux nao é necessario testar os reducers, o ideal verificar se as actions foram chamadas o restante é verificado de outra maneira.
 - Para testes com redux o ideal é utilizar o redux-mock-store junto com o Jest
-
+- Para verificar o report de testes que foi feito na aplicação basta rodar o yarn add --coverage, ele gera um relatorio informando todos os dados referentes a aplicação.
 
