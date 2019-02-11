@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View, TextInput } from "react-native";
 
 export default class App extends Component {
   render() {
@@ -7,6 +7,9 @@ export default class App extends Component {
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <View style={styles.box} />
+        <View style={styles.data}>
+          <TextInput style={styles.input} placeholder="seu email" />
+        </View>
       </View>
     );
   }
@@ -28,5 +31,10 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     backgroundColor: "#F00"
+  },
+  input: {
+    borderRadius: 3,
+    borderColor: "#000000",
+    backgroundColor: "#cecece"
   }
 });
