@@ -1,0 +1,1 @@
+O sistema de Rotas do React-Native é um pouco diferente do sistema do React comum , a diversos modelos de navegação disponveis, click, menus laterais e abas , é importante se atentar a isso no momento da criação do aplicativo para conseguir ter uma fluidez nas ideias que forem sendo pensadas.
