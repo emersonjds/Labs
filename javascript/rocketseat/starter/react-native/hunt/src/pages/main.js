@@ -13,8 +13,6 @@ export default class Main extends Component {
     return (
       <View>
         <Text> Pagina Main </Text>
-        <Text> New Render </Text>
-        <Text> New Render </Text>
       </View>
     );
   }
