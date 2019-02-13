@@ -14,6 +14,7 @@ export default class Main extends Component {
       <View>
         <Text> Pagina Main </Text>
         <Text> New Render </Text>
+        <Text> New Render </Text>
       </View>
     );
   }
