@@ -2,7 +2,7 @@ import React from "react";
 import { Text, WebView } from "react-native";
 
 const Product = ({ navigation }) => (
-  <WebView source={{ uri: navigation.params.product.title.url }} />
+  <WebView source={{ uri: navigation.state.params.product.url }} />
 );
 
 Product.navigationOptions = ({ navigation }) => {
