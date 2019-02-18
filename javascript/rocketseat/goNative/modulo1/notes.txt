@@ -1,0 +1,6 @@
+Resetar o cache 
+O sistemad e build run-ios ou run-android é executado uma unica vez, para rodas novamente a plataforma basta utilizar o react-native start, a nao ser que haja alguma dependencia que peca a linkagem de alguma biblioteca nativa
+
+Para limpeza de erros e cache
+react-native start --reset-cache
+
