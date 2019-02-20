@@ -6,9 +6,8 @@ const todos = [{ id: 0, todo: "Fazer Café" }];
 
 export default class App extends Component {
   state = {
-    // usuario: "Emerson",
-    // todos,
-    text: ""
+    usuario: "Emerson",
+    todos
   };
 
   componentDidMount() {
@@ -29,20 +28,14 @@ export default class App extends Component {
   };
 
   render() {
-    // const { todos } = this.state;
+    const { todos } = this.state;
     return (
-      // <Fragment>
-      //   <View style={styles.container}>
-      //     <Text>{this.state.usuario}</Text>
-      //     {todos.map(todo => (
-      //       <Todo key={todo.id} title={todo.title} />
-      //     ))}
-      //     <Button title="Adicionar todo" onPress={this.addTodo} />
-
-      //   </View>
-      // </Fragment>
       <View style={styles.container}>
-        <Text>{this.state.text}</Text>
+        <Text>{this.state.usuario}</Text>
+        {todos.map(todo => (
+          <Todo key={todo.id} title={todo.title} />
+        ))}
+        <Button title="Adicionar todo" onPress={this.addTodo} />
       </View>
     );
   }
