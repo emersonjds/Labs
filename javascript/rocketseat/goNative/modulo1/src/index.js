@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import Todo from "./components/Todo";
 
@@ -6,9 +6,21 @@ const todos = [{ id: 0, todo: "Fazer Café" }];
 
 export default class App extends Component {
   state = {
-    usuario: "Emerson",
-    todos
+    // usuario: "Emerson",
+    // todos,
+    text: ""
   };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState(
+        {
+          text: "Hello World"
+        },
+        3000
+      );
+    });
+  }
 
   addTodo = () => {
     this.setState({
@@ -17,14 +29,20 @@ export default class App extends Component {
   };
 
   render() {
-    const { todos } = this.state;
+    // const { todos } = this.state;
     return (
+      // <Fragment>
+      //   <View style={styles.container}>
+      //     <Text>{this.state.usuario}</Text>
+      //     {todos.map(todo => (
+      //       <Todo key={todo.id} title={todo.title} />
+      //     ))}
+      //     <Button title="Adicionar todo" onPress={this.addTodo} />
+
+      //   </View>
+      // </Fragment>
       <View style={styles.container}>
-        <Text>{this.state.usuario}</Text>
-        {todos.map(todo => (
-          <Todo key={todo.id} title={todo.title} />
-        ))}
-        <Button title="Adicionar todo" onPress={this.addTodo} />
+        <Text>{this.state.text}</Text>
       </View>
     );
   }
