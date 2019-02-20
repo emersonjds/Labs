@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 import { View, Text } from "react-native";
 
-const Todo = props => (
+const Todo = ({ title }) => (
   <View>
-    <Text>{props.title}</Text>
+    <Text>{title}</Text>
   </View>
 );
 
