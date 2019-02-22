@@ -17,6 +17,10 @@ export default class App extends Component {
     });
   };
 
+  removeTodo = id => {
+    this.state.todos.map(todo => todo.filter(todo.id === id));
+  };
+
   render() {
     const { todos } = this.state;
     return (
