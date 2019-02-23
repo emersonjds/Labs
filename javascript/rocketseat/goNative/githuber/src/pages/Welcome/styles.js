@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
   error: {
     color: colors.danger,
-    textAlign: center,
+    textAlign: 'center',
     marginTop: metrics.baseMargin,
   },
   text: {

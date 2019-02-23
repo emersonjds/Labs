@@ -29,12 +29,12 @@ export default class Welcome extends Component {
 
   signIn = async () => {
     const { userName } = this.state;
-    const { navigation } = this.props;
+    const { navigate } = this.props.navigation;
     this.setState({ loading: true });
     try {
       await this.checkUserExist(userName);
       await this.saveUser(userName);
-      navigation.navigate('Repositories');
+      navigate('Repositories');
     } catch (e) {
       this.setState({ loading: false, error: true });
       console.tron.log('usuario nao encontrado');
@@ -49,7 +49,7 @@ export default class Welcome extends Component {
         <Text style={styles.text}>
           Para continuar precisamos que voce informe seu usuario do github
         </Text>
-        {error & <Text style={styles.error}>Houve um erro</Text>}
+        {error ? <Text style={styles.error}>Usuario nao encontrado</Text> : null}
         <View style={styles.form}>
           <TextInput
             style={styles.input}
