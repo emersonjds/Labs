@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AsyncStorage } from 'react-native';
 
-import Routes from './routes';
+import createNavigator from './routes';
 
-const white = '#F5FCFF';
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: white,
-  },
-});
+export default class App extends Component {
+  state = {
+    userChecked: false,
+    userLogged: false,
+  };
 
-const App = () => (
-  <View style={styles.container}>
-    <Routes />
-  </View>
-);
+  async componentDidMount() {
+    const username = AsyncStorage.getItem('@Githuber:username');
+    this.setState({
+      userChecked: true,
+      userLogged: !!username,
+    });
+  }
 
-export default App;
+  render() {
+    const { userChecked, userLogged } = this.setState;
+    if (!userChecked) return null;
+
+    const Routes = createNavigator(userLogged);
+    return <Routes />;
+  }
+}
+
+// !! transforma o valor em booleano , caso existe ele se torna true se nao false
