@@ -14,6 +14,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 24,
   },
+  error: {
+    color: colors.danger,
+    textAlign: center,
+    marginTop: metrics.baseMargin,
+  },
   text: {
     textAlign: 'center',
     marginTop: metrics.baseMargin,
