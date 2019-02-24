@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './config/ReactotronConfig';
 import { AsyncStorage } from 'react-native';
 
 import createNavigator from './routes';
@@ -10,7 +11,7 @@ export default class App extends Component {
   };
 
   async componentDidMount() {
-    const username = AsyncStorage.getItem('@Githuber:username');
+    const username = await AsyncStorage.getItem('@Githuber:username');
     this.setState({
       userChecked: true,
       userLogged: !!username,
@@ -18,7 +19,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { userChecked, userLogged } = this.setState;
+    const { userChecked, userLogged } = this.state;
     if (!userChecked) return null;
 
     const Routes = createNavigator(userLogged);
