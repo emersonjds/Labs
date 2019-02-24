@@ -18,13 +18,15 @@ export default class Welcome extends Component {
     error: false,
   };
 
-  checkUserExist = async (username) => {
-    const user = await api.get(`/users/${username}`);
+  checkUserExist = async (userName) => {
+    console.tron.log(userName);
+    console.log(userName);
+    const user = await api.get(`/users/${userName}`);
     return user;
   };
 
-  saveUser = async (username) => {
-    await AsyncStorage.setItem('@githuber: username', username);
+  saveUser = async (userName) => {
+    await AsyncStorage.setItem('@githuber: username', userName);
   };
 
   signIn = async () => {
