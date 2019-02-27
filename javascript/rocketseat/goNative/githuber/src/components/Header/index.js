@@ -16,7 +16,7 @@ const Header = ({ title }) => (
   </View>
 );
 
-Header.PropTypes = {
+Header.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
