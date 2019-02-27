@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: metrics.basePadding,
     paddingTop: getStatusBarHeight(),
   },
+  icon: {
+    color: colors.darker,
+  },
   title: {
     color: colors.darker,
     fontSize: 16,

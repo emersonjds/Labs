@@ -13,6 +13,7 @@
     "react-native": "0.58.5",
     "react-native-gesture-handler": "^1.0.16",
     "react-native-status-bar-height": "^2.2.0",
+    "react-native-vector-icons": "^6.3.0",
     "react-navigation": "^3.3.0",
     "reactotron-react-native": "^2.2.0"
   },
