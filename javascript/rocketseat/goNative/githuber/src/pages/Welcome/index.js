@@ -46,7 +46,6 @@ export default class Welcome extends Component {
       navigation.navigate('Repositories');
     } catch (e) {
       this.setState({ loading: false, error: true });
-      console.tron.log('usuario nao encontrado');
     }
   };
 
@@ -58,7 +57,7 @@ export default class Welcome extends Component {
         <Text style={styles.text}>
           Para continuar precisamos que voce informe seu usuario do github
         </Text>
-        {error ? <Text style={styles.error}>Usuario nao encontrado</Text> : null}
+        {error && <Text style={styles.error}>Usuario nao encontrado</Text>}
         <View style={styles.form}>
           <TextInput
             style={styles.input}
