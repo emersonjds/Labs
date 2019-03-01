@@ -1,20 +1,34 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "plugin:react-native/all"],
-  "plugins": ["react-native", "jsx-a11y", "import"],
   "env": {
+    "browser": true,
     "jest": true
   },
+  "plugins": ["react-native", "jsx-a11y", "import"],
+  "extends": ["airbnb", "plugin:react-native/all"],
   "rules": {
-    "react/js-filename-extension": [
+    "react/jsx-filename-extension": [
       "error",
       {
-        "extensions": [".jsx", ".js"]
+        "extensions": [".js", ".jsx"]
       }
     ],
-    "import/prefer-default-export": "off"
+    "global-require": "off",
+    "no-console": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
   },
   "globals": {
     "__DEV__": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }

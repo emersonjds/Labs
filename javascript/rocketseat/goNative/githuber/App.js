@@ -1,4 +1,5 @@
-import "./src/config/ReactotronConfig";
+import "~/config/ReactotronConfig";
+import "~/config/DevToolsConfig";
 
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
