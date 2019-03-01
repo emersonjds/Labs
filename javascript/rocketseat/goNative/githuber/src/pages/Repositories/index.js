@@ -9,7 +9,6 @@ const Repositories = () => (
     <Header title="Repositorios" />
     <View>
       <Text>Repositories</Text>
-      <Text>Repositories</Text>
     </View>
   </View>
 );

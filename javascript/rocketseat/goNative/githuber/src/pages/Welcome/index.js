@@ -20,30 +20,30 @@ export default class Welcome extends Component {
   };
 
   state = {
-    userName: '',
+    username: '',
     loading: false,
     error: false,
   };
 
-  checkUserExist = async (userName) => {
-    console.tron.log(userName);
-    console.log(userName);
-    const user = await api.get(`/users/${userName}`);
+  checkUserExist = async (username) => {
+    console.tron.log(username);
+    console.log(username);
+    const user = await api.get(`/users/${username}`);
     return user;
   };
 
-  saveUser = async (userName) => {
-    await AsyncStorage.setItem('@githuber: username', userName);
+  saveUser = async (username) => {
+    await AsyncStorage.setItem('@Githuber: username', username);
   };
 
   signIn = async () => {
-    const { userName } = this.state;
-    const { navigate } = this.props.navigation;
+    const { username } = this.state;
+    const { navigation } = this.props;
     this.setState({ loading: true });
     try {
-      await this.checkUserExist(userName);
-      await this.saveUser(userName);
-      navigate('Repositories');
+      await this.checkUserExist(username);
+      await this.saveUser(username);
+      navigation.navigate('Repositories');
     } catch (e) {
       this.setState({ loading: false, error: true });
       console.tron.log('usuario nao encontrado');
@@ -51,7 +51,7 @@ export default class Welcome extends Component {
   };
 
   render() {
-    const { userName, loading, error } = this.state;
+    const { username, loading, error } = this.state;
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Bem-vindo</Text>
@@ -65,8 +65,8 @@ export default class Welcome extends Component {
             autoCapitalize="none"
             placeholder="Digite seu usario"
             underlineColorAndroid="transparent"
-            value={userName}
-            onChangeText={text => this.setState({ userName: text })}
+            value={username}
+            onChangeText={text => this.setState({ username: text })}
           />
         </View>
         <TouchableOpacity style={styles.button} onPress={this.signIn}>
