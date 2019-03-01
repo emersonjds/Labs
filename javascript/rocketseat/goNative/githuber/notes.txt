@@ -1,4 +1,0 @@
-Quando um componente criado nao é declarado no arquivo de rotas, para que ele consiga trafegar para outra rota é necessario importar a função 'withNavigation' do 'react-navigation',
-A classe tambem é alterada na declaração para uma classe comum sem export, no fim do arquivo no export default é passado o withNavigation como uma HighOrderFunction
-withNavigation(nomeDoComponent);
-Deste forma agora esse componente sem ter sido declarado explicitamente no arquivo de rotas, consegue acessar metodos de navegação.
