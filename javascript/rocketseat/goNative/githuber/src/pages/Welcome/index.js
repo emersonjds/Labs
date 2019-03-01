@@ -25,15 +25,13 @@ export default class Welcome extends Component {
     error: false,
   };
 
-  checkUserExist = async (username) => {
-    console.tron.log(username);
-    console.log(username);
+  checkUserExists = async (username) => {
     const user = await api.get(`/users/${username}`);
     return user;
   };
 
   saveUser = async (username) => {
-    await AsyncStorage.setItem('@Githuber: username', username);
+    await AsyncStorage.setItem('@Githuber:username', username);
   };
 
   signIn = async () => {
@@ -41,10 +39,11 @@ export default class Welcome extends Component {
     const { navigation } = this.props;
     this.setState({ loading: true });
     try {
-      await this.checkUserExist(username);
+      console.log(username);
+      await this.checkUserExists(username);
       await this.saveUser(username);
       navigation.navigate('Repositories');
-    } catch (e) {
+    } catch (err) {
       this.setState({ loading: false, error: true });
     }
   };
@@ -62,6 +61,7 @@ export default class Welcome extends Component {
           <TextInput
             style={styles.input}
             autoCapitalize="none"
+            autoCorrect={false}
             placeholder="Digite seu usario"
             underlineColorAndroid="transparent"
             value={username}
