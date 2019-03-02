@@ -1,22 +1,9 @@
 import React, { Component } from "react";
 import "./config/ReactotronConfig";
-import { StyleSheet, Text, View } from "react-native";
+import Routes from "./routes";
 
 export default class App extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-      </View>
-    );
+    return <Routes />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  }
-});

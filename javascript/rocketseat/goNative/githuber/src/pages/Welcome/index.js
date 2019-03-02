@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { Component } from "react";
 
-import { View } from 'react-native';
+import { View, Text } from "react-native";
+import styles from "./styles";
 
-// import styles from './styles';
-
-const Welcome = () => <View />;
-
-export default Welcome;
+export default class Welcome extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Welcome</Text>
+      </View>
+    );
+  }
+}
