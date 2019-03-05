@@ -8,7 +8,6 @@ export default class Welcome extends Component {
     return (
       <View style={styles.container}>
         <Text>Welcome</Text>
-        <Text>Welcome Screen</Text>
       </View>
     );
   }
