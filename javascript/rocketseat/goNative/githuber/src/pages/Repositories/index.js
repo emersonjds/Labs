@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, AsyncStorage } from 'react-native';
 import styles from './styles';
+
+AsyncStorage.clear();
 
 export default class Repositories extends Component {
   state = {};

@@ -47,7 +47,6 @@ export default class Welcome extends Component {
       navigation.navigate('Repositories');
     } catch (err) {
       this.setState({ loading: false, error: true });
-      console.tron.log('Usuario inexistente');
     }
   };
 
