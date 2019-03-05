@@ -21,13 +21,14 @@ export default class Welcome extends Component {
         </Text>
         <View style={styles.form}>
           <TextInput
+            style={styles.input}
             autoCapitalize="none"
             autoCorrect={false}
             placeholder="Digite seu usuario github"
             underlineColorAndroid="transparent"
           />
           <TouchableOpacity style={styles.button} onPress={() => {}}>
-            <Text style={styles.buttonText} />
+            <Text style={styles.buttonText}>Prosseguir</Text>
           </TouchableOpacity>
         </View>
       </View>

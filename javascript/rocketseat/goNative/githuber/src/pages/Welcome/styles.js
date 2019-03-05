@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     justifyContent: "center",
     backgroundColor: colors.secundary,
-    padding: metrics.basePaggind * 2
+    padding: metrics.basePadding * 2
   },
   title: {
     textAlign: "center",
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 15,
     marginTop: metrics.baseMargin,
-    color: colors.light,
+    color: colors.white,
     lineHeight: 21
   },
   form: {
