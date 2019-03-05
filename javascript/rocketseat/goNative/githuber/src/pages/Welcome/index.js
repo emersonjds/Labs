@@ -27,9 +27,11 @@ export default class Welcome extends Component {
 
   signIn = async () => {
     const { username } = this.state;
+    const { navigation } = this.props;
     try {
       await this.checkUserExists(username);
       await this.saveUser(username);
+      navigation.navigate("Repositories");
     } catch (err) {
       console.log("usuario inexistente");
     }
