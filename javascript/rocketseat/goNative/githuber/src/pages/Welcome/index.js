@@ -1,52 +1,59 @@
-import React, { Component } from "react";
-import api from "../../services/api";
-
+import React, { Component } from 'react';
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
   StatusBar,
-  AsyncStorage
-} from "react-native";
-import styles from "./styles";
+  AsyncStorage,
+  ActivityIndicator,
+} from 'react-native';
+import api from '../../services/api';
+
+import styles from './styles';
 
 export default class Welcome extends Component {
   state = {
-    username: ""
+    username: '',
+    loading: false,
+    error: false,
   };
 
-  checkUserExists = async username => {
+  checkUserExists = async (username) => {
     const user = await api.get(`/users/${username}`);
     return user;
   };
 
-  saveUser = async username => {
-    await AsyncStorage.getItem("@Githuber:username", username);
+  saveUser = async (username) => {
+    await AsyncStorage.setItem('@Githuber:username', username);
   };
 
   signIn = async () => {
     const { username } = this.state;
     const { navigation } = this.props;
+    this.setState({
+      loading: true,
+    });
     try {
       await this.checkUserExists(username);
       await this.saveUser(username);
-      navigation.navigate("Repositories");
+      navigation.navigate('Repositories');
     } catch (err) {
-      console.log("usuario inexistente");
+      this.setState({ loading: false, error: true });
+      console.tron.log('Usuario inexistente');
     }
   };
 
   render() {
-    const { username } = this.state;
+    const { username, loading, error } = this.state;
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
         <Text style={styles.title}> Bem vindo</Text>
         <Text style={styles.text}>
-          {" "}
           Para continuar é necessario informar seu usuario no github.
         </Text>
+        {error && <Text style={styles.error}>Usuario Inexistente</Text>}
         <View style={styles.form}>
           <TextInput
             style={styles.input}
@@ -58,7 +65,11 @@ export default class Welcome extends Component {
             onChangeText={text => this.setState({ username: text })}
           />
           <TouchableOpacity style={styles.button} onPress={this.signIn}>
-            <Text style={styles.buttonText}>Prosseguir</Text>
+            {loading ? (
+              <ActivityIndicator size="small" color="FFF" />
+            ) : (
+              <Text style={styles.buttonText}> Prosseguir</Text>
+            )}
           </TouchableOpacity>
         </View>
       </View>

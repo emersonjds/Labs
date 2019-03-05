@@ -10,9 +10,10 @@ const styles = StyleSheet.create({
     padding: metrics.basePadding * 2
   },
   title: {
-    textAlign: "center",
     color: colors.white,
-    fontWeight: "bold"
+    fontSize: 17,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   text: {
     textAlign: "center",
@@ -41,7 +42,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: colors.white,
     fontWeight: "bold",
-    fontSize: 16
+    fontSize: 15
+  },
+  error: {
+    color: colors.danger,
+    textAlign: "center",
+    marginTop: metrics.baseMargin
   }
 });
 
