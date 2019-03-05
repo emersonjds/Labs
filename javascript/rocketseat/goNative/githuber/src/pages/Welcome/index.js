@@ -8,11 +8,18 @@ import {
   AsyncStorage,
   ActivityIndicator,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import api from '../../services/api';
 
 import styles from './styles';
 
 export default class Welcome extends Component {
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }).isRequired,
+  };
+
   state = {
     username: '',
     loading: false,
@@ -50,9 +57,7 @@ export default class Welcome extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
         <Text style={styles.title}> Bem vindo</Text>
-        <Text style={styles.text}>
-          Para continuar é necessario informar seu usuario no github.
-        </Text>
+        <Text style={styles.text}>Para continuar é necessario informar seu usuario no github.</Text>
         {error && <Text style={styles.error}>Usuario Inexistente</Text>}
         <View style={styles.form}>
           <TextInput

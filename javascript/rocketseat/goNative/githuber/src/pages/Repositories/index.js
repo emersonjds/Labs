@@ -1,9 +1,15 @@
-import React from "react";
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+import styles from './styles';
 
-import { View } from "react-native";
+export default class Repositories extends Component {
+  state = {};
 
-// import styles from './styles';
-
-const Repositories = () => <View />;
-
-export default Repositories;
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Respositories</Text>
+      </View>
+    );
+  }
+}
