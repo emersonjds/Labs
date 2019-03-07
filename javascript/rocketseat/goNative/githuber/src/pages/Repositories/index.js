@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
-import { View, AsyncStorage } from 'react-native';
-import styles from './styles';
+import React from 'react';
+import { View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import Header from '../../components/Header';
 
-AsyncStorage.clear();
+const Repositories = () => (
+  <View>
+    <Header title="Repositorios" />
+  </View>
+);
 
-export default class Repositories extends Component {
-  state = {};
+Repositories.navigationOptions = {
+  tabBarIcon: ({ tintColor }) => <Icon name="list-alt" size={20} color={tintColor} />,
+};
 
-  render() {
-    return (
-      <View>
-        <Header title="Repositorios" />
-      </View>
-    );
-  }
-}
+export default Repositories;
