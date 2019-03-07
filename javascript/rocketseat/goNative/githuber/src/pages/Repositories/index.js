@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, AsyncStorage } from 'react-native';
+import { View, AsyncStorage } from 'react-native';
 import styles from './styles';
+import Header from '../../components/Header';
 
 AsyncStorage.clear();
 
@@ -9,8 +10,8 @@ export default class Repositories extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Respositories</Text>
+      <View>
+        <Header title="Repositorios" />
       </View>
     );
   }
