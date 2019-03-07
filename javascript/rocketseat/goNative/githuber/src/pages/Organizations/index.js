@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { View, AsyncStorage } from 'react-native';
+import Header from '../../components/Header';
 
-import { View } from 'react-native';
+AsyncStorage.clear();
 
-// import styles from './styles';
+export default class Organizations extends Component {
+  state = {};
 
-const Organizations = () => <View />;
-
-export default Organizations;
+  render() {
+    return (
+      <View>
+        <Header title="Organizations" />
+      </View>
+    );
+  }
+}
