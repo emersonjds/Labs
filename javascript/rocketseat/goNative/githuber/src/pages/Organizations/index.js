@@ -5,18 +5,14 @@ import Header from '../../components/Header';
 
 AsyncStorage.clear();
 
-export default class Organizations extends Component {
-  navigationOptions = {
-    tabBarIcon: ({ tintColor }) => <Icon name="building" size={20} color={tintColor} />,
-  };
+const Organizations = () => (
+  <View>
+    <Header title="Organizações" />
+  </View>
+);
 
-  state = {};
+Organizations.navigationOptions = {
+  tabBarIcon: ({ tintColor }) => <Icon name="building" size={20} color={tintColor} />,
+};
 
-  render() {
-    return (
-      <View>
-        <Header title="Organizações" />
-      </View>
-    );
-  }
-}
+export default Organizations;

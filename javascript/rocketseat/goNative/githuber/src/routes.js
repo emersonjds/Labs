@@ -4,7 +4,7 @@ import {
   createBottomTabNavigator,
 } from 'react-navigation';
 
-import {colors} from './styles/index';
+import { colors } from './styles/index';
 
 import Welcome from './pages/Welcome';
 import Repositories from './pages/Repositories';
@@ -19,14 +19,16 @@ const Routes = (userLogged = false) => createAppContainer(
           Repositories,
           Organizations,
         },
-        tabBarOptions: {
-          showIcon: true,
-          showLabel: false,
-          activeTintColor: colors.white,
-          inactiveTintColor: colors.whiteTransparent,
-          style: {
-            backgroundColor: colors.secundary
-          }
+        {
+          tabBarOptions: {
+            showIcon: true,
+            showLabel: false,
+            activeTintColor: colors.white,
+            inactiveTintColor: colors.whiteTransparent,
+            style: {
+              backgroundColor: colors.secundary,
+            },
+          },
         },
       ),
     },
