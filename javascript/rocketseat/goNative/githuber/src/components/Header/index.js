@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 
-import { View, Text, TouchableOpacity } from 'react-native';
+import {
+  View, Text, TouchableOpacity, AsyncStorage,
+} from 'react-native';
+import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 // eslint-disable-next-line react/prefer-stateless-function
-export default class Header extends Component {
+class Header extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }).isRequired,
+  };
+
+  signOut = async () => {
+    const { navigation } = this.props;
+    await AsyncStorage.clear();
+    navigation.navigate('Welcome');
   };
 
   render() {
@@ -17,8 +30,12 @@ export default class Header extends Component {
       <View style={styles.container}>
         <View style={styles.left} />
         <Text style={styles.title}>{title}</Text>
-        <TouchableOpacity onPress={() => {}} />
+        <TouchableOpacity onPress={this.signOut}>
+          <Icon name="exchange" size={16} style={styles.icon} />
+        </TouchableOpacity>
       </View>
     );
   }
 }
+
+export default withNavigation(Header);
