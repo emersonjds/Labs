@@ -33,7 +33,6 @@ class Header extends Component {
         <TouchableOpacity onPress={this.signOut}>
           <Icon name="exchange" size={16} style={styles.icon} />
         </TouchableOpacity>
-        <Text>Changes on Header</Text>
       </View>
     );
   }

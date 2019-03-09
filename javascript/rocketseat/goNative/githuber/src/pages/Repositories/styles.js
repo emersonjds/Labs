@@ -3,10 +3,11 @@ import { colors, metrics } from '../../styles/index';
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    color: colors.primary,
+    backgroundColor: colors.lighter,
     flex: 1,
-    justifyContent: 'center',
+  },
+  loading: {
+    marginTop: metrics.baseMargin * 2,
   },
 });
 

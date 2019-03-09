@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import { View, AsyncStorage, Text } from 'react-native';
+import {
+  View, AsyncStorage, ActivityIndicator, FlatList,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Header from '../../components/Header';
 import api from '../../services/api';
+import RepositoryItem from './RepositoryItem';
+import styles from './styles';
 
 const TabIcon = ({ tintColor }) => <Icon name="list-alt" size={20} color={tintColor} />;
 TabIcon.propTypes = {
@@ -16,23 +20,40 @@ export default class Repositories extends Component {
   };
 
   state = {
+    // eslint-disable-next-line react/no-unused-state
     data: [],
+    loading: true,
   };
 
   async componentDidMount() {
     const username = await AsyncStorage.getItem('@Githuber: username');
-    const response = await api.get(`/users/${username}/repos`);
+    const { data } = await api.get(`/users/${username}/repos`);
     this.setState({
-      data: response.data,
+      // eslint-disable-next-line react/no-unused-state
+      data,
+      loading: false,
     });
   }
 
-  render() {
+  renderListItem = ({ item }) => <RepositoryItem repository={item} />;
+
+  renderlist = () => {
     const { data } = this.state;
     return (
-      <View>
+      <FlatList
+        data={data}
+        keyExtractor={item => String(item.id)}
+        renderItem={this.renderListItem}
+      />
+    );
+  };
+
+  render() {
+    const { loading } = this.state;
+    return (
+      <View style={styles.container}>
         <Header title="Repositorios" />
-        {data && data.map(repo => <Text>{repo.name}</Text>)}
+        {loading ? <ActivityIndicator styles={styles.loading} /> : this.renderList()}
       </View>
     );
   }

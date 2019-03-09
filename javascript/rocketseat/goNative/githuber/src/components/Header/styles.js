@@ -5,6 +5,7 @@ import { colors, metrics } from '../../styles/index';
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    backgroundColor: colors.white,
     borderBottomColor: colors.light,
     borderBottomWidth: 1,
     flexDirection: 'row',
@@ -13,13 +14,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: metrics.basePadding,
     // paddingTop: getStatusBarHeight(),
   },
+  icon: {
+    color: colors.dark,
+  },
   title: {
     color: colors.dark,
     fontSize: 16,
     fontWeight: 'bold',
-  },
-  icon: {
-    color: colors.dark,
   },
 });
 
