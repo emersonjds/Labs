@@ -43,7 +43,7 @@ export default class Repositories extends Component {
       <FlatList
         data={data}
         keyExtractor={item => String(item.id)}
-        renderItem={item => this.renderListItem(item)}
+        renderItem={this.renderListItem}
       />
     );
   };

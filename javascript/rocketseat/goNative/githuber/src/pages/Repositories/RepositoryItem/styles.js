@@ -5,22 +5,18 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
     borderRadius: metrics.baseRadius,
-    padding: metrics.basePadding,
     marginHorizontal: metrics.baseMargin * 2,
     marginTop: metrics.baseMargin,
+    padding: metrics.basePadding,
   },
-  title: {
-    fontSize: 14,
-    fontWeight: 'bold',
+  info: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginRight: metrics.baseMargin,
   },
   infoContainer: {
     flexDirection: 'row',
     marginTop: metrics.baseMargin,
-  },
-  info: {
-    flexDirection: 'row',
-    marginRight: metrics.baseMargin,
-    alignItems: 'center',
   },
   infoIcon: {
     color: colors.dark,
@@ -29,6 +25,10 @@ const styles = StyleSheet.create({
     color: colors.dark,
     fontSize: 12,
     marginLeft: metrics.baseMargin / 2,
+  },
+  title: {
+    fontSize: 14,
+    fontWeight: 'bold',
   },
 });
 
