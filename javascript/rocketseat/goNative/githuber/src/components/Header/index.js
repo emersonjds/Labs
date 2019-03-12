@@ -30,6 +30,7 @@ class Header extends Component {
       <View style={styles.container}>
         <View style={styles.left} />
         <Text style={styles.title}>{title}</Text>
+        <Text>Config Header</Text>
         <TouchableOpacity onPress={this.signOut}>
           <Icon name="exchange" size={16} style={styles.icon} />
         </TouchableOpacity>

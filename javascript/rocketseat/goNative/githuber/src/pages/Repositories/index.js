@@ -43,7 +43,7 @@ export default class Repositories extends Component {
       <FlatList
         data={data}
         keyExtractor={item => String(item.id)}
-        renderItem={this.renderListItem}
+        renderItem={item => this.renderListItem(item)}
       />
     );
   };
@@ -53,7 +53,7 @@ export default class Repositories extends Component {
     return (
       <View style={styles.container}>
         <Header title="Repositorios" />
-        {loading ? <ActivityIndicator styles={styles.loading} /> : this.renderList()}
+        {loading ? <ActivityIndicator styles={styles.loading} /> : this.renderList}
       </View>
     );
   }
