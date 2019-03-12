@@ -23,27 +23,36 @@ export default class Repositories extends Component {
     // eslint-disable-next-line react/no-unused-state
     data: [],
     loading: true,
+    refreshing: false,
   };
 
   async componentDidMount() {
+    this.loadingRepositories();
+  }
+
+  renderListItem = ({ item }) => <RepositoryItem repository={item} />;
+
+  loadingRepositories = async () => {
+    this.setState({ refreshing: true });
     const username = await AsyncStorage.getItem('@Githuber: username');
     const { data } = await api.get(`/users/${username}/repos`);
     this.setState({
       // eslint-disable-next-line react/no-unused-state
       data,
       loading: false,
+      refreshing: false,
     });
-  }
-
-  renderListItem = ({ item }) => <RepositoryItem repository={item} />;
+  };
 
   renderlist = () => {
-    const { data } = this.state;
+    const { data, refreshing } = this.state;
     return (
       <FlatList
         data={data}
         keyExtractor={item => String(item.id)}
         renderItem={this.renderListItem}
+        onRefresh={this.loadingRepositories}
+        refreshing={refreshing}
       />
     );
   };
