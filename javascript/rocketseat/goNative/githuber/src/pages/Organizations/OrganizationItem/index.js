@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 // import styles from './styles';
 
-const OrganizationItem = () => <View />;
+const OrganizationItem = () => (
+  <View>
+    <Text>Organization Item</Text>
+  </View>
+);
 
 export default OrganizationItem;
