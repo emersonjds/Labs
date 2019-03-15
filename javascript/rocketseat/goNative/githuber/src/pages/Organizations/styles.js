@@ -1,12 +1,17 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../styles/index';
+import { colors, metrics } from '../../styles/index';
 
 const styles = StyleSheet.create({
+  columWapper: {
+    justifyContent: 'space-between',
+    marginHorizontal: metrics.baseMargin * 2,
+  },
   container: {
-    alignItems: 'center',
-    color: colors.primary,
+    backgroundColor: colors.lighter,
     flex: 1,
-    justifyContent: 'center',
+  },
+  loading: {
+    marginTop: metrics.baseMargin,
   },
 });
 

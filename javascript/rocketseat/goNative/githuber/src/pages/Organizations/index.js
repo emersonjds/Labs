@@ -55,6 +55,8 @@ export default class Organizations extends Component {
         renderItem={this.renderListItem}
         onRefresh={this.loadingOrganizations}
         refreshing={refreshing}
+        numColumns={2}
+        columnWrapperStyle={styles.columWapper}
       />
     );
   };
