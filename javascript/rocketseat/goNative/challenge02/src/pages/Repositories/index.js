@@ -5,7 +5,7 @@ import styles from "./styles";
 export class Repositories extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text> textInComponent </Text>
       </View>
     );
