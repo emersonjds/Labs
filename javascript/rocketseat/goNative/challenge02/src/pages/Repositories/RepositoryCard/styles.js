@@ -3,11 +3,24 @@ import { metrics, colors } from "../../../styles";
 
 const styles = StyleSheet.create({
   container: {
-    height: 120,
-    width: "80%",
-    backgroundColor: "orange",
+    height: 80,
+    width: metrics.screenWidth,
+    backgroundColor: "lightgray",
     borderColor: "#000",
-    borderWidth: 1
+    borderWidth: 1,
+    marginTop: metrics.baseMargin,
+    flexDirection: "row",
+    padding: metrics.basePadding,
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: metrics.baseMargin
+  },
+  detailsRepo: {
+    marginLeft: metrics.baseMargin,
+    flexDirection: "row"
+  },
+  titles: {
+    marginLeft: metrics.baseMargin
   }
 });
 

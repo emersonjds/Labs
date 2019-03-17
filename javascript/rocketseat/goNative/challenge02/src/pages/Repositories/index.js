@@ -23,9 +23,9 @@ export class Repositories extends Component {
         </View>
         <View style={styles.line} />
 
-        <View>
-          <RepositoryCard />
-        </View>
+        <RepositoryCard />
+        <RepositoryCard />
+        <RepositoryCard />
       </View>
     );
   }
