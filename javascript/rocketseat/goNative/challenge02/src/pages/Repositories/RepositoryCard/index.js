@@ -5,16 +5,17 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 export class RepositoryCard extends Component {
   render() {
+    const { repository } = this.props;
     return (
       <View style={styles.container}>
         <View style={styles.detailsRepo}>
           <Image
-            source={require("../../../images/face.png")}
+            source={repository.owner.avatar_url}
             style={{ height: 50, width: 50 }}
           />
           <View style={styles.titles}>
-            <Text style={styles.titleRepo}>Titulo</Text>
-            <Text style={styles.descriptionRepo}>Descriçào</Text>
+            <Text style={styles.titleRepo}>{repository.name}</Text>
+            <Text style={styles.descriptionRepo}>{repository.full_name}</Text>
           </View>
         </View>
 

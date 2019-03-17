@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { Text, View, TextInput, TouchableOpacity } from "react-native";
+import {
+  View,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+  ActivityIndicator
+} from "react-native";
 import styles from "./styles";
 import Header from "../../components/Header";
 import RepositoryCard from "./RepositoryCard";
@@ -9,17 +15,33 @@ import api from "../../services/api";
 export class Repositories extends Component {
   state = {
     repositoryName: "",
+    loading: false,
     data: []
   };
 
   getRepositories = async () => {
     const { repositoryName } = this.state;
-    const response = await api.get(`/${repositoryName}`);
-    this.setState({ data: response.data });
+    console.log(repositoryName);
+    const { data } = await api.get(`repos/${repositoryName}`);
+    this.setState({ data });
+    console.log(data);
+  };
+
+  renderListItem = ({ item }) => <RepositoryCard repository={item} />;
+
+  renderList = () => {
+    const { data } = this.state;
+    return (
+      <FlatList
+        data={data}
+        keyExtractor={item => String(item.id)}
+        renderItem={this.renderListItem}
+      />
+    );
   };
 
   render() {
-    const { repositoryName } = this.state;
+    const { repositoryName, loading } = this.state;
     return (
       <View style={styles.container}>
         <Header title="Repositories" />
@@ -43,8 +65,7 @@ export class Repositories extends Component {
           </TouchableOpacity>
         </View>
         <View style={styles.line} />
-
-        <RepositoryCard />
+        {loading ? <ActivityIndicator /> : this.renderList}
       </View>
     );
   }
