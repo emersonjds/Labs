@@ -8,7 +8,8 @@ export class RepositoryCard extends Component {
     const { repository } = this.props;
     return (
       <View style={styles.container}>
-        <View style={styles.detailsRepo}>
+        <Text>{repository.owner.html_url}</Text>
+        {/* <View style={styles.detailsRepo}>
           <Image
             source={repository.owner.avatar_url}
             style={{ height: 50, width: 50 }}
@@ -21,7 +22,7 @@ export class RepositoryCard extends Component {
 
         <View style={styles.icon}>
           <Icon name="angle-right" size={20} />
-        </View>
+        </View> */}
       </View>
     );
   }

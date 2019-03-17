@@ -23,7 +23,7 @@ export class Repositories extends Component {
     const { repositoryName } = this.state;
     console.log(repositoryName);
     const { data } = await api.get(`repos/${repositoryName}`);
-    this.setState({ data });
+    this.setState({ data: data });
     console.log(data);
   };
 
