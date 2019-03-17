@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     marginTop: metrics.baseMargin
   },
   detailsRepo: {
-    marginLeft: metrics.baseMargin,
     flexDirection: "row"
   },
   titles: {
