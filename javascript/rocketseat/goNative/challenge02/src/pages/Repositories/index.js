@@ -36,7 +36,7 @@ export class Repositories extends Component {
           />
           <TouchableOpacity onPress={this.getRepositories}>
             <Icon
-              name="search"
+              name="plus"
               size={20}
               style={{ color: "#000", marginTop: 10 }}
             />
