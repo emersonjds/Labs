@@ -3,12 +3,13 @@ import { Text, View, Image } from "react-native";
 import styles from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-export class RepositoryCard extends Component {
+export default class RepositoryCard extends Component {
   render() {
     const { repository } = this.props;
+    console.log("repository card", repository);
     return (
       <View style={styles.container}>
-        <Text>{repository.owner.html_url}</Text>
+        <Text>{repository.full_name}</Text>
         {/* <View style={styles.detailsRepo}>
           <Image
             source={repository.owner.avatar_url}
@@ -16,7 +17,7 @@ export class RepositoryCard extends Component {
           />
           <View style={styles.titles}>
             <Text style={styles.titleRepo}>{repository.name}</Text>
-            <Text style={styles.descriptionRepo}>{repository.full_name}</Text>
+            <Text style={styles.descriptionRepo}>{repository.full_name}</Te4xt>
           </View>
         </View>
 
@@ -27,5 +28,3 @@ export class RepositoryCard extends Component {
     );
   }
 }
-
-export default RepositoryCard;
