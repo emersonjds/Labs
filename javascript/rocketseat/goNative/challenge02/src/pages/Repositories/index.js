@@ -27,7 +27,7 @@ export class Repositories extends Component {
     console.log(data);
   };
 
-  renderListItem = ({ item }) => <RepositoryCard repository={item} />;
+  // renderListItem = ({ item }) => <RepositoryCard repository={item} />;
 
   renderList = () => {
     const { data } = this.state;
