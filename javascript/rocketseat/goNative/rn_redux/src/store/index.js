@@ -3,8 +3,10 @@ import { createStore } from "redux";
 INITIAL_STATE = ["Fazer café", "Estudar Native", "cozinhar"];
 
 //Reducer
-function reducer({ state = INITIAL_STATE, action }) {
-  console.log(action);
+function reducer(state = INITIAL_STATE, action) {
+  if (action.type === "ADD_TODO") {
+    return [...state, action.text];
+  }
   return state;
 }
 
