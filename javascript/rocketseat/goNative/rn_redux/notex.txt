@@ -1,0 +1,13 @@
+Num contexto geral o redux é um grande objeto que trabalha com as alterações de estados que serao compartilhados pela aplicação ou componentes.
+
+Chamamos o estado global (Objeto) de Store, que é o que abstrai todos os dados e alteração de dados passados pelos reducers
+
+Chamamos de objeto global (Store) a função que vai armazenar os dados vindos do Reducers para repassar para os componentes que a esse objeto global estiver conectado.
+
+Sempre que criamos uma Store essa função recebe como parametro uma outra funcão, geralmente os reducer que farao a manipulação dos dados
+
+É necessario ainda disponibilizar esse grande Store para toda aplicação a fim de que todos os componentes consigam ouvir essas alteracões.
+
+Com a utilização do redux temos que conectar nossos componentes a esse grande objeto maior , desta forma é disponilizado uma interface chamada { connect } que vem no react-redux, desta forma o componente consegue entender se houve ou nao 
+
+Com toda essa configuração o componente recebe uma nova função chamada mapStateToProps que como o proprio nome sugere, mapeia os estados (states = variaveis) da Store para serem utilizados como propriedades do componente
