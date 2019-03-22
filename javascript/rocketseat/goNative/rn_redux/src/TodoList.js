@@ -20,6 +20,7 @@ const TodoList = ({ todos, dispatch }) => (
         dispatch({ type: "ADD_TODO", text: "Adicionar novo todo" })
       }
     />
+    <Text>Other Options</Text>
   </View>
 );
 
