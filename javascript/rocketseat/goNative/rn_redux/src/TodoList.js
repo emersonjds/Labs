@@ -12,7 +12,12 @@ const TodoList = ({ todos, dispatch }) => (
     }}
   >
     {todos.map(todo => (
-      <Text key={todo}>{todo}</Text>
+      <Text
+        style={{ textDecorationLine: todo.completed ? "line-through" : none }}
+        key={todo.id}
+      >
+        {todo.text}
+      </Text>
     ))}
     <Button
       title="Adicionar novo todo"
