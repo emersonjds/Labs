@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, Button } from "react-native";
 import { connect } from "react-redux";
-import * as TodoActions from "./store/actions/todos";
+import * as TodoActions from "./store/actions/todostodos";
 
 const TodoList = ({ todos, addTodo, markAsCompleted }) => (
   <View
