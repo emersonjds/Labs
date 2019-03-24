@@ -27,3 +27,6 @@ com isso o Reducer verifica qual o type foi enviado como parametro e executa alg
 
 Os componentes que sao conectados ao Redux recebem um outro parametro que é o 'dispatch' ele fica responsavel por disparar essas ações e o nome da ação para os reducers.
 
+
+BindActionsCreators
+Este função é responsavel por imbutir o dispatch nas funções que sao criadas num arquivo de Actions, isso é associado ao mapDispatchToProps que como o proprio nome sugere, mapeias as actions criadas em propriedades do componente
