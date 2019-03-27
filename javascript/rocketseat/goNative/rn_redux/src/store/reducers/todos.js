@@ -19,6 +19,11 @@ INITIAL_STATE = [
     id: 3,
     text: "cozinhar",
     completed: false
+  },
+  {
+    id: 4,
+    text: "finish course",
+    completed: false
   }
 ];
 
