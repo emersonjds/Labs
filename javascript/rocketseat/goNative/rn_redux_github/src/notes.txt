@@ -1,0 +1,1 @@
+o combineReducers é responsavel por transformar nosso objeto state do Redux em uma grande massa de dados em forma de objeto , aonde cada propriedade desse objeto acessada é um reducer diferente;
