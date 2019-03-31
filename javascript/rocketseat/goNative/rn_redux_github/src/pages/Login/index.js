@@ -13,7 +13,7 @@ export default class Login extends Component {
     try {
       await api.get(`/users/${username}`);
     } catch (e) {
-      console.log(e);
+      console.tron.log(e);
     }
   };
 
