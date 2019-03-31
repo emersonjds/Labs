@@ -8,6 +8,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "16.8.3",
     "react-native": "0.59.2",
     "react-native-gesture-handler": "^1.1.0",
@@ -15,7 +16,8 @@
     "react-redux": "^6.0.1",
     "reactotron-react-native": "^3.2.1",
     "reactotron-redux": "^3.1.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
