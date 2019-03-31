@@ -6,7 +6,6 @@ import styles from "./styles";
 const Home = () => (
   <View style={styles.container}>
     <Text>Home Screen</Text>
-    <Text>Teste</Text>
   </View>
 );
 
