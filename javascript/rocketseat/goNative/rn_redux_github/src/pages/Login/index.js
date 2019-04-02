@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { Container, Button, Input, TextButton, Error } from "./styles";
+import { Text } from "react-native";
 import api from "../../services/api";
 
 export default class Login extends Component {
@@ -31,6 +32,7 @@ export default class Login extends Component {
         <Button onPress={this.handleSubmit}>
           <TextButton>Entrar</TextButton>
         </Button>
+        <Text>Test</Text>
       </Container>
     );
   }
