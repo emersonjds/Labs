@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import { Container, Button, Input, TextButton, Error } from "./styles";
-import { Text } from "react-native";
 import api from "../../services/api";
 
 import { connect } from "react-redux";
