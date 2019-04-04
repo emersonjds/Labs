@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { Container, Button, Input, TextButton, Error } from "./styles";
+import { StatusBar } from "react-native";
 import api from "../../services/api";
 
 import { connect } from "react-redux";
@@ -29,8 +30,8 @@ class Login extends Component {
     const { error } = this.props;
     return (
       <Container>
+        <StatusBar barStyle="light-content" />
         {error && <Error>Usuario Inexistente </Error>}
-
         <Input
           autoCapitalize="none"
           autoCorrect={false}
@@ -41,6 +42,7 @@ class Login extends Component {
         <Button onPress={this.handleSubmit}>
           <TextButton>Entrar</TextButton>
         </Button>
+        <Text>Teste code</Text>
       </Container>
     );
   }
