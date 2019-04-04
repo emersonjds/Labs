@@ -42,7 +42,6 @@ class Login extends Component {
         <Button onPress={this.handleSubmit}>
           <TextButton>Entrar</TextButton>
         </Button>
-        <Text>Teste code</Text>
       </Container>
     );
   }
