@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 
 import { Container, Button, Input, TextButton, Error } from "./styles";
-import { StatusBar } from "react-native";
-import api from "../../services/api";
+import { StatusBar, ActivityIndicator } from "react-native";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -15,19 +14,13 @@ class Login extends Component {
 
   handleSubmit = async () => {
     const { username } = this.state;
-    const { loginSuccess, loginFailed, navigation } = this.props;
-    try {
-      await api.get(`/users/${username}`);
-      loginSuccess(username);
-      navigation.navigate("Repositories");
-    } catch (e) {
-      loginFailed(e);
-    }
+    const { loginRequest } = this.props;
+    loginRequest(username);
   };
 
   render() {
     const { username } = this.state;
-    const { error } = this.props;
+    const { error, loading } = this.props;
     return (
       <Container>
         <StatusBar barStyle="light-content" />
@@ -40,7 +33,11 @@ class Login extends Component {
           onChangeText={text => this.setState({ username: text })}
         />
         <Button onPress={this.handleSubmit}>
-          <TextButton>Entrar</TextButton>
+          {loading ? (
+            <ActivityIndicator size="small" color="#FFF" />
+          ) : (
+            <TextButton>Entrar</TextButton>
+          )}
         </Button>
       </Container>
     );
