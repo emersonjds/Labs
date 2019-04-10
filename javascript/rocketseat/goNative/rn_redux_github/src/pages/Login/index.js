@@ -28,7 +28,7 @@ class Login extends Component {
         <Input
           autoCapitalize="none"
           autoCorrect={false}
-          placeholder="Digite seu usaurio"
+          placeholder="Digite seu usuario"
           value={username}
           onChangeText={text => this.setState({ username: text })}
         />
@@ -37,7 +37,6 @@ class Login extends Component {
           {loading ? (
             <ActivityIndicator size="small" color="#FFF" />
           ) : (
-            <TextButton>Entrar</TextButton>
           )}
         </Button>
       </Container>
