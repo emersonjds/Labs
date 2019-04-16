@@ -40,6 +40,7 @@ class Login extends Component {
             <TextButton>Entrar</TextButton>
           )}
         </Button>
+        <Text>Awesome project</Text>
       </Container>
     );
   }
