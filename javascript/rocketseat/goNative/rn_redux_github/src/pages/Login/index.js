@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Container, Button, Input, TextButton, Error } from "./styles";
+import { Container, Button, Input, TextButton, Error, Text } from "./styles";
 import { StatusBar, ActivityIndicator } from "react-native";
 
 import { connect } from "react-redux";
@@ -8,9 +8,12 @@ import { bindActionCreators } from "redux";
 import * as LoginActions from "../../store/actions/login";
 
 class Login extends Component {
-  state = {
-    username: ""
-  };
+  constructor(props){
+    super(props);
+    state = {
+      username: ''
+    }
+  }
 
   handleSubmit = async () => {
     const { username } = this.state;
@@ -40,7 +43,6 @@ class Login extends Component {
             <TextButton>Entrar</TextButton>
           )}
         </Button>
-        <Text>Awesome project</Text>
       </Container>
     );
   }
