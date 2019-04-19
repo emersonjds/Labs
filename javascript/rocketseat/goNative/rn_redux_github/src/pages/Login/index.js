@@ -9,10 +9,10 @@ import * as LoginActions from "../../store/actions/login";
 
 class Login extends Component {
   state = {
-    username: ''
+    username: ""
   };
 
-  handleSubmit = async  () => {
+  handleSubmit = async () => {
     const { username } = this.state;
     const { loginRequest } = this.props;
     await loginRequest(username);
