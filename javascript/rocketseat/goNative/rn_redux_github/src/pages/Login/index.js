@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import { Container, Button, Input, TextButton, Error, Text } from "./styles";
-import { StatusBar, ActivityIndicator } from "react-native";
+import { Container, Button, Input, TextButton, Error } from "./styles";
+import { StatusBar, ActivityIndicator, Text } from "react-native";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -32,7 +32,6 @@ class Login extends Component {
           value={username}
           onChangeText={text => this.setState({ username: text })}
         />
-        <Text>Changes on Screen</Text>
         <Button onPress={this.handleSubmit}>
           {loading ? (
             <ActivityIndicator size="small" color="#FFF" />
