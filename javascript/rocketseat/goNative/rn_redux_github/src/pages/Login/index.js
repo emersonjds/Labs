@@ -45,7 +45,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-  error: state.login.error
+  error: state.login.error,
+  loading: state.login.loading
 });
 
 const mapDispatchToProps = dispatch =>
