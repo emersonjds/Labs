@@ -8,15 +8,11 @@ import { bindActionCreators } from "redux";
 import * as LoginActions from "../../store/actions/login";
 
 class Login extends Component {
-  constructor(props) {
-    super(props)
-    state = {
-      username: ''
-    }
-  }
+  state = {
+    username: ''
+  };
 
-
-  handleSubmit = async () => {
+  handleSubmit = async  () => {
     const { username } = this.state;
     const { loginRequest } = this.props;
     await loginRequest(username);
