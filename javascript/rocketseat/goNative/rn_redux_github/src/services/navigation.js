@@ -1,4 +1,4 @@
-import { NavigationActions } from 'react-navigation';
+import { NavigationActions } from "react-navigation";
 
 let navigator;
 
@@ -12,5 +12,5 @@ export function navigate(routerName, params) {
       routerName,
       params
     })
-  )
+  );
 }
