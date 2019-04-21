@@ -1,13 +1,12 @@
-export const RepositoriesRequest = () => ({
-  type: "REPOSITORIES_REQUEST",
-  payload: {}
+export const repositoriesRequest = () => ({
+  type: "REPOSITORIES_REQUEST"
 });
 
-export const RepositoriesSuccess = data => ({
+export const repositoriesSuccess = data => ({
   type: "REPOSITORIES_SUCCESS",
   payload: { data }
 });
 
-export const RepositoriesFailed = () => ({
+export const repositoriesFailed = () => ({
   type: "REPOSITORIES_FAILED"
 });
