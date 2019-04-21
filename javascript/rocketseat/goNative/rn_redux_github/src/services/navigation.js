@@ -6,11 +6,13 @@ export function setNavigator(ref) {
   navigator = ref;
 }
 
-export function navigate(routerName, params) {
+export function navigate(routeName, params) {
   navigator.dispatch(
     NavigationActions.navigate({
-      routerName,
+      routeName,
       params
     })
   );
 }
+
+// always use routeName, cause it's a patterns in React
