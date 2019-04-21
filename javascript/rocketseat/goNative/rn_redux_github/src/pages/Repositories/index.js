@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as RepositoriesActions from "../../store/actions/repositories";
+import { Creators as RepositoriesActions } from "../../store/ducks/repositories";
 
 import { Text, ActivityIndicator } from "react-native";
 import { Container } from "./styles";
