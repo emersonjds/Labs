@@ -12,10 +12,8 @@
     "react": "16.8.3",
     "react-native": "0.59.2",
     "react-native-gesture-handler": "^1.1.0",
-    "react-navigation": "^3.5.1",
+    "react-navigation": "^3.8.1",
     "react-redux": "^6.0.1",
-    "reactotron-react-native": "^3.2.2",
-    "reactotron-redux": "^3.1.0",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.2",
     "styled-components": "^4.2.0"
@@ -29,7 +27,10 @@
     "eslint-plugin-react": "^7.12.4",
     "jest": "^24.5.0",
     "metro-react-native-babel-preset": "^0.53.1",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "16.8.3",
+    "reactotron": "^0.9.0",
+    "reactotron-react-native": "^3.2.2",
+    "reactotron-redux": "^3.1.0"
   },
   "jest": {
     "preset": "react-native"
