@@ -39,7 +39,6 @@ class Login extends Component {
             <TextButton>Entrar</TextButton>
           )}
         </Button>
-        <Text>Changes</Text>
       </Container>
     );
   }
