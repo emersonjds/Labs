@@ -5,8 +5,10 @@ import {
   StyleSheet,
   Animated,
   TouchableWithoutFeedback,
+  Touchableopacity,
   Button,
-  Dimensions
+  Dimensions,
+  Fragment
 } from "react-native";
 
 export class Opacity extends Component {
@@ -15,6 +17,13 @@ export class Opacity extends Component {
   };
 
   startAnimation = () => {
+    Animated.timing(this.state.animation, {
+      toValue: -300,
+      duration: 1000
+    }).start();
+  };
+
+  endAnimation = () => {
     Animated.timing(this.state.animation, {
       toValue: 300,
       duration: 1000
@@ -31,7 +40,11 @@ export class Opacity extends Component {
     };
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.startAnimation}>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            this.startAnimation();
+          }}
+        >
           <Animated.View style={[styles.box, animatedStyle]} />
         </TouchableWithoutFeedback>
       </View>
@@ -42,12 +55,16 @@ export class Opacity extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+    position: "relative",
+    alignItems: "stretch",
+    width: "100%"
   },
   box: {
-    width: 50,
-    height: 50,
+    // width: 50,
+    height: 450,
+    bottom: -350,
+    position: "absolute",
+    width: "100%",
     backgroundColor: "tomato"
   }
 });
