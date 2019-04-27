@@ -8,12 +8,9 @@ import {
 } from "react-native";
 
 export default class AnimatedClass extends Component {
-  constructor() {
-    super();
-    state = {
-      animation: new Animated.Value(1)
-    };
-  }
+  state = {
+    animation: new Animated.Value(1)
+  };
 
   startAnimation = () => {
     Animated.timing(this.state.animation, {
