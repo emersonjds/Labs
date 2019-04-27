@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 import AnimatedClass from "./Animated";
+import Opacity from "./Opacity";
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <AnimatedClass />
+        {/* <AnimatedClass /> */}
+        <Opacity />
       </View>
     );
   }
