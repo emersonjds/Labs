@@ -42,15 +42,12 @@ export class Opacity extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "stretch",
-    width: Dimensions.get("window").width,
-    position: "relative"
+    alignItems: "center",
+    justifyContent: "center"
   },
   box: {
-    width: "100%",
-    position: "absolute",
-    height: 80,
-    bottom: 0,
+    width: 50,
+    height: 50,
     backgroundColor: "tomato"
   }
 });
