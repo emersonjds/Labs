@@ -16,7 +16,7 @@ export class Opacity extends Component {
 
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: -300,
+      toValue: 300,
       duration: 1000
     }).start();
   };
