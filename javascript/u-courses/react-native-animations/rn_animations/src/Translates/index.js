@@ -27,7 +27,6 @@ export class Translate extends Component {
     return (
       <View style={styles.container}>
         <Animated.View style={[styles.box, animatedStyle]} />
-        <Text>Changes on Template</Text>
       </View>
     );
   }
