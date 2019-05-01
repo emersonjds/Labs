@@ -1,26 +1,33 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Animated } from "react-native";
+import { Text, View, Animated, StyleSheet } from "react-native";
 
 export class Translate extends Component {
+
   state = {
-    animation: Animated.Value(0)
-  };
+    animation = new Animated.Value(0)
+  }
+
+  componentDidMount() {
+    Animated.timing(this.state.animation, {
+      toValue: -300,
+      duration: 500
+    }).start();
+  }
 
   render() {
     const animatedStyle = {
       transform: [
         {
-          translateX: this.state.animation
+          translateY: this.state.animation
         },
         {
-          translateY: this.state.animation
+          translateX: this.state.animation
         }
       ]
-    };
-
+    }
     return (
       <View style={styles.container}>
-        <Animated.View style={[styles.box, animatedStyle]} />
+        <Animated.View style={[styles.box, animatedStyle]}/>
       </View>
     );
   }
@@ -29,14 +36,14 @@ export class Translate extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  box: {
-    height: 50,
-    width: 50,
-    backgroundColor: "orange"
+  box : {
+    height: 80,
+    width: 80,
+    backgroundColor: 'tomato'
   }
-});
+})
 
 export default Translate;
