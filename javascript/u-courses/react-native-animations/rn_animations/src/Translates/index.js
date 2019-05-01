@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  Animated,
-  TouchableWithoutFeedback
-} from "react-native";
+import { View, StyleSheet, Animated } from "react-native";
 
 export class Translate extends Component {
   state = {
