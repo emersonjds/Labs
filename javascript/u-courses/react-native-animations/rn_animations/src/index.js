@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 import AnimatedClass from "./Animated";
 import Opacity from "./Opacity";
-// import Translate from "./Translate";
+import Translate from "./Translates";
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
         {/* <AnimatedClass /> */}
-        <Opacity />
-        {/* <Translate /> */}
+        {/* <Opacity /> */}
+        <Translate />
       </View>
     );
   }

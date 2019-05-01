@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { Text, View, Animated, StyleSheet } from "react-native";
 
 export class Translate extends Component {
-
   state = {
-    animation = new Animated.Value(0)
-  }
+    animation: new Animated.Value(0)
+  };
 
   componentDidMount() {
     Animated.timing(this.state.animation, {
@@ -24,10 +23,10 @@ export class Translate extends Component {
           translateX: this.state.animation
         }
       ]
-    }
+    };
     return (
       <View style={styles.container}>
-        <Animated.View style={[styles.box, animatedStyle]}/>
+        <Animated.View style={[styles.box, animatedStyle]} />
       </View>
     );
   }
@@ -36,14 +35,14 @@ export class Translate extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center"
   },
-  box : {
+  box: {
     height: 80,
     width: 80,
-    backgroundColor: 'tomato'
+    backgroundColor: "red"
   }
-})
+});
 
 export default Translate;
