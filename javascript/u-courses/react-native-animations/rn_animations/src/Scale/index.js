@@ -13,9 +13,10 @@ export class ScaleAnimation extends Component {
   };
 
   startAnimation = () => {
+    console.log("teste");
     Animated.timing(this.state.animation, {
       toValue: 2,
-      duration: 1000
+      duration: 1500
     }).start();
   };
 
@@ -26,19 +27,19 @@ export class ScaleAnimation extends Component {
     const animatedStyled = {
       transform: [
         {
-          scale: this.state.animation
+          scaleX: this.state.animation
         }
       ]
     };
 
     return (
-      <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={() => this.startAnimation}>
-          <Animated.View style={[styles.box, animatedStyled]}>
-            <Text>This side for </Text>
-          </Animated.View>
-        </TouchableWithoutFeedback>
-      </View>
+      // <View style={styles.container}>
+      <TouchableWithoutFeedback onPress={() => this.startAnimation}>
+        <Animated.View style={[styles.box, animatedStyled]}>
+          <Text>This side for </Text>
+        </Animated.View>
+      </TouchableWithoutFeedback>
+      // </View>
     );
   }
 }
@@ -50,8 +51,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   box: {
-    height: 80,
-    width: 80,
+    height: 150,
+    width: 150,
     backgroundColor: "blue"
   }
 });

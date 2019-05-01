@@ -12,7 +12,7 @@ export default class App extends Component {
         {/* <AnimatedClass /> */}
         {/* <Opacity /> */}
         {/* <Translate /> */}
-        <Scale />
+        <ScaleAnimation />
       </View>
     );
   }
