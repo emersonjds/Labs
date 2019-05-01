@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 import AnimatedClass from "./Animated";
 import Opacity from "./Opacity";
 import Translate from "./Translates";
+import ScaleAnimation from "./Scale";
 
 export default class App extends Component {
   render() {
@@ -10,7 +11,8 @@ export default class App extends Component {
       <View style={styles.container}>
         {/* <AnimatedClass /> */}
         {/* <Opacity /> */}
-        <Translate />
+        {/* <Translate /> */}
+        <Scale />
       </View>
     );
   }
