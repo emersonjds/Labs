@@ -4,19 +4,21 @@ import {
   View,
   StyleSheet,
   TouchableWithoutFeedback,
-  Animated
+  Animated,
+  Easing
 } from "react-native";
 
-export class ScaleAnimation extends Component {
+export default class ScaleAnimation extends Component {
   state = {
     animation: new Animated.Value(1)
   };
 
   startAnimation = () => {
-    console.log("teste");
+    // console.log("clicado");
     Animated.timing(this.state.animation, {
-      toValue: 2,
-      duration: 1500
+      toValue: -1,
+      duration: 500,
+      easing: Easing.ease
     }).start();
   };
 
@@ -24,7 +26,7 @@ export class ScaleAnimation extends Component {
   // with negative value, scale cause a flip in the element
 
   render() {
-    const animatedStyled = {
+    const animatedStyles = {
       transform: [
         {
           scaleX: this.state.animation
@@ -33,13 +35,13 @@ export class ScaleAnimation extends Component {
     };
 
     return (
-      // <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={() => this.startAnimation}>
-        <Animated.View style={[styles.box, animatedStyled]}>
-          <Text>This side for </Text>
-        </Animated.View>
-      </TouchableWithoutFeedback>
-      // </View>
+      <View style={styles.container}>
+        <TouchableWithoutFeedback onPress={this.startAnimation}>
+          <Animated.View style={[styles.box, animatedStyles]}>
+            <Text>This side for </Text>
+          </Animated.View>
+        </TouchableWithoutFeedback>
+      </View>
     );
   }
 }
@@ -56,5 +58,3 @@ const styles = StyleSheet.create({
     backgroundColor: "blue"
   }
 });
-
-export default ScaleAnimation;
