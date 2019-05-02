@@ -4,6 +4,7 @@ import AnimatedClass from "./Animated";
 import Opacity from "./Opacity";
 import Translate from "./Translates";
 import ScaleAnimation from "./Scale";
+import WidthAndHeightAnimations from "./WidthAndHeight";
 
 export default class App extends Component {
   render() {
@@ -12,7 +13,8 @@ export default class App extends Component {
         {/* <AnimatedClass /> */}
         {/* <Opacity /> */}
         {/* <Translate /> */}
-        <ScaleAnimation />
+        {/* <ScaleAnimation /> */}
+        <WidthAndHeightAnimations />
       </View>
     );
   }
