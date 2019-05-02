@@ -1,16 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import {
-  Text,
   View,
   Animated,
   TouchableWithoutFeedback,
-  Easing,
   StyleSheet
 } from "react-native";
 
-export class WidthAndHeightAnimations extends Component {
+export default class WidthAndHeightAnimations extends React.Component {
   state = {
     animation: Animated.Value(150)
+  };
+
+  startAnimation = () => {
+    Animated.timing(this.state.animation, {
+      toValue: 300,
+      duration: 1000
+    }).start();
   };
 
   render() {
@@ -20,7 +25,9 @@ export class WidthAndHeightAnimations extends Component {
     };
     return (
       <View style={styles.container}>
-        <Animated.View style={[styles.box, animatedStyles]} />
+        <TouchableWithoutFeedback onPress={this.startAnimation}>
+          <Animated.View style={[styles.box, animatedStyles]} />
+        </TouchableWithoutFeedback>
       </View>
     );
   }
@@ -38,5 +45,3 @@ export const styles = StyleSheet.create({
     backgroundColor: "tomato"
   }
 });
-
-export default WidthAndHeightAnimations;
