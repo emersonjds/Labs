@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   View,
   Animated,
@@ -6,7 +6,7 @@ import {
   StyleSheet
 } from "react-native";
 
-export default class WidthAndHeightAnimations extends React.Component {
+export class WidthAndHeightAnimations extends Component {
   state = {
     animation: Animated.Value(150)
   };
@@ -45,3 +45,5 @@ export const styles = StyleSheet.create({
     backgroundColor: "tomato"
   }
 });
+
+export default WidthAndHeightAnimations;
