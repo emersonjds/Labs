@@ -14,7 +14,7 @@ export default class App extends Component {
         {/* <Opacity /> */}
         {/* <Translate /> */}
         <ScaleAnimation />
-        <WidthAndHeightAnimations />
+        {/* <WidthAndHeightAnimations /> */}
       </View>
     );
   }
