@@ -25,7 +25,7 @@ export class WidthAndHeightAnimations extends Component {
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.startAnimation}>
           <Animated.View style={[styles.box, animatedStyles]}>
-            <Text>Long Text in the box</Text>
+            <Text>Fugiat et et ut cillum excepteur.</Text>
           </Animated.View>
         </TouchableWithoutFeedback>
       </View>
