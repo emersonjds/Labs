@@ -18,8 +18,8 @@ export class WidthAndHeightAnimations extends Component {
   };
   render() {
     const animatedStyles = {
-      // widht: this.state.animation,
-      // height: this.state.animation
+      widht: this.state.animation,
+      height: this.state.animation
     };
     return (
       <View style={styles.container}>
@@ -40,8 +40,8 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   box: {
-    height: 150,
-    width: 150,
+    // height: 150,
+    // width: 150,
     backgroundColor: "tomato"
   }
 });
