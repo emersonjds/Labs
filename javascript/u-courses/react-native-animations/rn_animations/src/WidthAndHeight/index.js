@@ -3,12 +3,13 @@ import {
   View,
   Animated,
   TouchableWithoutFeedback,
-  StyleSheet
+  StyleSheet,
+  Text
 } from "react-native";
 
 export class WidthAndHeightAnimations extends Component {
   state = {
-    animation: Animated.Value(150)
+    animation: new Animated.Value(150)
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {

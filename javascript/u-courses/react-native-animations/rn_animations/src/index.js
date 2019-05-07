@@ -5,6 +5,7 @@ import Opacity from "./Opacity";
 import Translate from "./Translates";
 import ScaleAnimation from "./Scale";
 import WidthAndHeightAnimations from "./WidthAndHeight";
+import BoxResize from "./BoxResize";
 
 export default class App extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class App extends Component {
         {/* <Translate /> */}
         {/* <ScaleAnimation /> */}
         <WidthAndHeightAnimations />
+        {/* <BoxResize /> */}
       </View>
     );
   }
