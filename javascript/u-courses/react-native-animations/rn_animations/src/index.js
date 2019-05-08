@@ -7,6 +7,7 @@ import ScaleAnimation from "./Scale";
 import WidthAndHeightAnimations from "./WidthAndHeight";
 import BoxResize from "./BoxResize";
 import InterPolation from "./Interpolation";
+import AbsolutAnimation from "./AbsolutAnimation";
 
 export default class App extends Component {
   render() {
@@ -18,7 +19,8 @@ export default class App extends Component {
         {/* <ScaleAnimation /> */}
         {/* <WidthAndHeightAnimations /> */}
         {/* <BoxResize /> */}
-        <InterPolation />
+        {/* <InterPolation /> */}
+        <AbsolutAnimation />
       </View>
     );
   }
