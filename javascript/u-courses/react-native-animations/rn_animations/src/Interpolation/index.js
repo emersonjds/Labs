@@ -28,8 +28,8 @@ export class InterPolation extends Component {
 
     return (
       <View style={styles.container}>
-        <View style={styles.box2} />
-        <Animated.View style={[styles.box, boxStyle]} />
+        <View style={styles.box} />
+        <Animated.View style={[styles.box1, boxStyle]} />
         {/* </View> */}
       </View>
     );
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: "tomato"
   },
-  box2: {
+  box1: {
     width: 100,
     height: 100,
     backgroundColor: "blue"
