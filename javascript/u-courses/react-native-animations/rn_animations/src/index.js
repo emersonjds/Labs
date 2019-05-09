@@ -9,6 +9,7 @@ import BoxResize from "./BoxResize";
 import InterPolation from "./Interpolation";
 import AbsolutAnimation from "./AbsolutAnimation";
 import MultiInterpolation from "./MultiInterpolation";
+import RotatoInterpolate from "./RotatoInterpolate";
 
 export default class App extends Component {
   render() {
@@ -22,7 +23,8 @@ export default class App extends Component {
         {/* <BoxResize /> */}
         {/* <InterPolation /> */}
         {/* <AbsolutAnimation /> */}
-        <MultiInterpolation />
+        {/* <MultiInterpolation /> */}
+        <RotatoInterpolate />
       </View>
     );
   }
