@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     bottom: 0,
     backgroundColor: "tomato",
-    borderTopRadius: 20
+    borderRadius: 20
   },
   bottom: {
     height: 50,
