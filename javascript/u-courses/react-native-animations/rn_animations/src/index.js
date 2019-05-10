@@ -9,7 +9,7 @@ import BoxResize from "./BoxResize";
 import InterPolation from "./Interpolation";
 import AbsolutAnimation from "./AbsolutAnimation";
 import MultiInterpolation from "./MultiInterpolation";
-import RotatoInterpolate from "./RotatoInterpolate";
+import RotatoInterpolate from "./AnimationsProperties/RotatoInterpolate";
 
 export default class App extends Component {
   render() {
