@@ -10,6 +10,7 @@ import InterPolation from "./AnimationsProperties/Interpolation";
 import AbsolutAnimation from "./AnimationsProperties/AbsolutAnimation";
 import MultiInterpolation from "./AnimationsProperties/MultiInterpolation";
 import RotatoInterpolate from "./AnimationsProperties/RotatoInterpolate";
+import AnimatedPorcentage from "./AnimationsProperties/AnimatedPorcentage";
 
 export default class App extends Component {
   render() {
@@ -24,7 +25,8 @@ export default class App extends Component {
         {/* <InterPolation /> */}
         {/* <AbsolutAnimation /> */}
         {/* <MultiInterpolation /> */}
-        <RotatoInterpolate />
+        {/* <RotatoInterpolate /> */}
+        <AnimatedPorcentage />
       </View>
     );
   }
