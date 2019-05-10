@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-import AnimatedClass from "./Animated";
-import Opacity from "./Opacity";
-import Translate from "./Translates";
-import ScaleAnimation from "./Scale";
-import WidthAndHeightAnimations from "./WidthAndHeight";
-import BoxResize from "./BoxResize";
-import InterPolation from "./Interpolation";
-import AbsolutAnimation from "./AbsolutAnimation";
-import MultiInterpolation from "./MultiInterpolation";
+import AnimatedClass from "./AnimationsProperties/Animated";
+import Opacity from "./AnimationsProperties/Opacity";
+import Translate from "./AnimationsProperties/Translates";
+import ScaleAnimation from "./AnimationsProperties/Scale";
+import WidthAndHeightAnimations from "./AnimationsProperties/WidthAndHeight";
+import BoxResize from "./AnimationsProperties/BoxResize";
+import InterPolation from "./AnimationsProperties/Interpolation";
+import AbsolutAnimation from "./AnimationsProperties/AbsolutAnimation";
+import MultiInterpolation from "./AnimationsProperties/MultiInterpolation";
 import RotatoInterpolate from "./AnimationsProperties/RotatoInterpolate";
 
 export default class App extends Component {
