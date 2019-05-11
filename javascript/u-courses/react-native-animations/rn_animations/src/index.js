@@ -23,10 +23,10 @@ export default class App extends Component {
         {/* <WidthAndHeightAnimations /> */}
         {/* <BoxResize /> */}
         {/* <InterPolation /> */}
-        {/* <AbsolutAnimation /> */}
+        <AbsolutAnimation />
         {/* <MultiInterpolation /> */}
         {/* <RotatoInterpolate /> */}
-        <AnimatedPorcentage />
+        {/* <AnimatedPorcentage /> */}
       </View>
     );
   }
