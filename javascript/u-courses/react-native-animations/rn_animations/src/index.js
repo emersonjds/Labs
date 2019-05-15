@@ -24,7 +24,7 @@ export default class App extends Component {
         {/* <BoxResize /> */}
         {/* <InterPolation /> */}
         {/* TODO: #PETMAP */}
-        <AbsolutAnimation />
+        {/* <AbsolutAnimation /> */}
         {/* <MultiInterpolation /> */}
         {/* <RotatoInterpolate /> */}
         {/* <AnimatedPorcentage /> */}
