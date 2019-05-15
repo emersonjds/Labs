@@ -12,12 +12,32 @@ export class SpringAnimation extends Component {
     animation: new Animated.Value(1)
   };
 
-  springAnimation = {};
+  springAnimation = () => {
+    Animated.spring(this.state.animation, {
+      toValue: 1.5,
+      friction: 2,
+      tension: 140
+    }).start(() => {
+      //call a one callback Animated
+      Animated.timing(this.state.animation, {
+        toValue: 1,
+        duration: 500
+      }).start();
+    });
+  };
+
   render() {
+    const animatedSpring = {
+      transform: [
+        {
+          scale: this.state.animation
+        }
+      ]
+    };
     return (
       <View style={style.container}>
         <TouchableWithoutFeedback onPress={this.springAnimation}>
-          <Animated.View style={style.box} />
+          <Animated.View style={[style.box, animatedSpring]} />
         </TouchableWithoutFeedback>
       </View>
     );
@@ -27,12 +47,12 @@ export class SpringAnimation extends Component {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "center"
   },
   box: {
     height: 150,
-    widht: 150,
+    width: 150,
     backgroundColor: "tomato"
   }
 });
