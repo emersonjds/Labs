@@ -41,8 +41,6 @@ export const styles = StyleSheet.create({
     alignItems: "center"
   },
   box: {
-    // height: 150,
-    // width: 150,
     backgroundColor: "tomato"
   }
 });
