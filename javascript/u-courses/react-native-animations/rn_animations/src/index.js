@@ -13,6 +13,7 @@ import RotatoInterpolate from "./AnimationsProperties/RotatoInterpolate";
 import AnimatedPorcentage from "./AnimationsProperties/AnimatedPorcentage";
 import EasingAnimation from "./AnimatedFunctions/Easing";
 import SpringAnimation from "./AnimatedFunctions/Spring";
+import LoopAnimation from "./AnimatedFunctions/Loop";
 
 export default class App extends Component {
   render() {
@@ -31,7 +32,8 @@ export default class App extends Component {
         {/* <RotatoInterpolate /> */}
         {/* <AnimatedPorcentage /> */}
         {/* <EasingAnimation /> */}
-        <SpringAnimation />
+        {/* <SpringAnimation /> */}
+        <LoopAnimation />
       </View>
     );
   }

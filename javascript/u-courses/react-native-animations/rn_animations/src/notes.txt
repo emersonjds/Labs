@@ -1,5 +1,12 @@
+ANIMATED FUNCTIONS
+
 SPRING Animation
 Spring ou (mola) permite que sejam criados animacoes mais focadas no mundo real sem utilizacao de parametrizacao de tempo
 A animacao é baseada em tensao e fricçao.
 Tensao : Define o quando de força esta sendo colocado na mola se estivermos falando do mundo real.
 Fricçao: Define o qual rapido a energia da tensao sera dissipada, em palavras simples o tempo que a animacao voltara ao valor de 0
+
+LOOP
+Loop ou (repeticao) é usado quando e necessario que uma animacao continue intermitantemente,
+e possivel ainda passar a quantidade de iteracoes que a animacao tera com a utilizacao da funcao Loop do Animated
+As intereacoes devem ser compostas pela chamada de animated.Loop(animated.timing(), {iterations: n} ).start();
