@@ -14,6 +14,7 @@ import AnimatedPorcentage from "./AnimationsProperties/AnimatedPorcentage";
 import EasingAnimation from "./AnimatedFunctions/Easing";
 import SpringAnimation from "./AnimatedFunctions/Spring";
 import LoopAnimation from "./AnimatedFunctions/Loop";
+import EventAnimation from "./AnimatedFunctions/Event";
 
 export default class App extends Component {
   render() {
@@ -33,7 +34,8 @@ export default class App extends Component {
         {/* <AnimatedPorcentage /> */}
         {/* <EasingAnimation /> */}
         {/* <SpringAnimation /> */}
-        <LoopAnimation />
+        {/* <LoopAnimation /> */}
+        <EventAnimation />
       </View>
     );
   }
