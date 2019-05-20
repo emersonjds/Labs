@@ -10,3 +10,9 @@ LOOP
 Loop ou (repeticao) é usado quando e necessario que uma animacao continue intermitantemente,
 e possivel ainda passar a quantidade de iteracoes que a animacao tera com a utilizacao da funcao Loop do Animated
 As intereacoes devem ser compostas pela chamada de animated.Loop(animated.timing(), {iterations: n} ).start();
+
+Animated Event
+O animated Event é um metodo automatico que seta um valor de um Animated.Value(), dando um array com chave e valor, tipicamente
+pode ser usado em eventos de scroll de tela ou PanResponder ( que e a uniao de varios eventos de touch na tela) , esta funcao
+recebe um array de instrucoes retornando uma outra funcao, quando a funcao é chamada as instrucoes sao chamadas e aplicadas ,
+quando executado fica implicitamente dito que esta se setando o valor default passado no state com esse array de instrucoes
