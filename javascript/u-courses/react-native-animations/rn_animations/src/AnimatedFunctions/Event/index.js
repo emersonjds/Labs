@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Text, View, Animated, ScrollView, Stylesheet } from "react-native";
+import { Text, View, Animated, ScrollView, StyleSheet } from "react-native";
 
 export class EventAnimation extends Component {
   state = {
-    animation: Animated.Value(0)
+    animation: new Animated.Value(0)
   };
 
   render() {
@@ -13,7 +13,7 @@ export class EventAnimation extends Component {
     });
 
     const backgroundStyle = {
-      bacjgroundColor: backgroundInterpolate
+      backgroundColor: backgroundInterpolate
     };
 
     return (
@@ -39,7 +39,7 @@ export class EventAnimation extends Component {
   }
 }
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1
   },
