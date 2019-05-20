@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, View, Animated, ScrollView, StyleSheet } from "react-native";
 
-export class EventAnimation extends Component {
+export default class EventAnimation extends Component {
   state = {
     animation: new Animated.Value(0)
   };
@@ -32,7 +32,7 @@ export class EventAnimation extends Component {
             }
           ])}
         >
-          <Animated.Value style={[styles.content, backgroundStyle]} />
+          <Animated.View style={[styles.content, backgroundStyle]} />
         </ScrollView>
       </View>
     );
@@ -47,5 +47,3 @@ const styles = StyleSheet.create({
     height: 3000
   }
 });
-
-export default EventAnimation;
