@@ -32,7 +32,9 @@ export default class EventAnimation extends Component {
             }
           ])}
         >
-          <Animated.View style={[styles.content, backgroundStyle]} />
+          <Animated.View style={[styles.content, backgroundStyle]}>
+            <Text>EventAnimation</Text>
+          </Animated.View>
         </ScrollView>
       </View>
     );
@@ -41,7 +43,8 @@ export default class EventAnimation extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    width: "100%"
   },
   content: {
     height: 3000
