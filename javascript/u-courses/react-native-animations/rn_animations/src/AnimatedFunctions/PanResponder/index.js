@@ -15,7 +15,6 @@ export default class PanResponder extends Component {
     return (
       <View>
         <Text> textInComponent </Text>
-        <Text>Config with PanResponder</Text>
       </View>
     );
   }
