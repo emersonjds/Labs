@@ -6,7 +6,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Hello World'),
+          title: Text('Hello Rectangle'),
         ),
         body: HelloRectangle(),
       ),
