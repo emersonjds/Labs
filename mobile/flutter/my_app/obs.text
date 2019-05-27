@@ -1,0 +1,3 @@
+Widgets sao as apis responsaveis por trazer interecao ao app do flutter
+Basicamente tudo do aplicativo é composto por Widgets, botoes, telas, e um componente Flutter tambem é rerenderizado com qualquer alteracao de estado que possa ocorrer
+Um Widget e descrito como parte de uma interace de usuario nativa.
