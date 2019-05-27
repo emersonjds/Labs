@@ -1,3 +1,19 @@
 Widgets sao as apis responsaveis por trazer interecao ao app do flutter
 Basicamente tudo do aplicativo é composto por Widgets, botoes, telas, e um componente Flutter tambem é rerenderizado com qualquer alteracao de estado que possa ocorrer
 Um Widget e descrito como parte de uma interace de usuario nativa.
+
+O Flutter possui uma colecao imensa de Widgets que esta em expansao, sendo criada diariamente por diversos devs
+Containers, Row/ Column / Icons / IconsButtons, Offstage, Stack , Expandand 
+Theme, Stack, Animation , Gesture Detector, Layout Builder, Dropdown tudo é um Widget.
+Assim como no React Native e no React , existem Widgets Stateless e Statefull
+ 
+StatelessWidget 
+Sao Imutaveis e precisam ser finais quando inicializados. (const)
+Passamos propriedades personalizadas quando criamos o Widget (background color, height, width), depois de criado as propriedades nao podem ser alteradas
+
+StatelesWidget
+Os StatelesWidgets nao sao interativos, entao ha uma classe StatefullWidget que cria objetos de estado.
+
+
+
+
