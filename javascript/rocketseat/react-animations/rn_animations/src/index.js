@@ -1,16 +1,21 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Animated, PanResponder } from "react-native";
+import { StyleSheet, View, Animated, PanResponder } from "react-native";
 
 export default class App extends Component {
   state = {
-    ballY: new Animated.Value(0)
+    ball: new Animated.ValueXY({ x: 0, y: 0 })
   };
 
   componentWillMount() {
     this._panResponder = PanResponder.create({
-      onMoveShouldSetPanResponder: (e, gestureState) => {
-        console.log("gestureState", gestureState);
-      }
+      onMoveShouldSetPanResponder: (e, gestureState) => {},
+      onPanResponderMove: Animated.event([
+        null,
+        {
+          dy: this.state.ball.y,
+          dx: this.state.ball.x
+        }
+      ])
     });
   }
 
@@ -19,7 +24,19 @@ export default class App extends Component {
       <View style={styles.container}>
         <Animated.View
           {...this._panResponder.panHandlers}
-          style={[styles.ball, {}]}
+          style={[
+            styles.ball,
+            {
+              transform: [
+                {
+                  translateX: this.state.ball.x
+                },
+                {
+                  translateY: this.state.ball.y
+                }
+              ]
+            }
+          ]}
         />
       </View>
     );
