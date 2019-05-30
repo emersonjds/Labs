@@ -1,2 +1,10 @@
 a funcao getTranslateTransform, retorna o valor do translateY e do translateX, 
 desta forma nao é mecessario passar a informacao dentro de um transform na area de estilos, basta chamar a funcao
+
+Quanto utilizado a funcao interpolate, e necessario se atentar para a quantidade de pixels que esta sendo manipulada,
+quando calculado o valor que sera setado e necessario passar mais uma propriedade que é o "clamp" , ele nao permite que 
+os pixels continuem sendo passado mesmo apos ele ter chegado ao valor fixo do inputRange, que seria o valor maximo de arrasto
+é importante se atentar a isso nas animacoes
+Outro detalhe importante quando existe manipulacao de scrollView, é passar o "scrollEventThrottle" que é um intervalo de seguranca
+que o React Native utiliza para executar os frames de animacao.
+

@@ -9,7 +9,8 @@ import {
   StyleSheet,
   Dimensions,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  Animated
 } from "react-native";
 
 import User from "./components/User";
@@ -18,6 +19,7 @@ const { width } = Dimensions.get("window");
 
 export default class App extends Component {
   state = {
+    scrollOfSet: new Animated.Value(0),
     userSelected: null,
     userInfoVisible: false,
     users: [
@@ -77,7 +79,18 @@ export default class App extends Component {
 
   renderList = () => (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView
+        scrollEventThrottle={16}
+        onScroll={Animated.event([
+          {
+            nativeEvent: {
+              contentOffset: {
+                y: this.state.scrollOfSet
+              }
+            }
+          }
+        ])}
+      >
         {this.state.users.map(user => (
           <User
             key={user.id}
@@ -96,7 +109,18 @@ export default class App extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
 
-        <View style={styles.header}>
+        <Animated.View
+          style={[
+            styles.header,
+            {
+              height: this.state.scrollOfSet.interpolate({
+                inputRange: [0, 140],
+                outputRange: [200, 70],
+                extrapolate: "clamp"
+              })
+            }
+          ]}
+        >
           <Image
             style={styles.headerImage}
             source={userSelected ? { uri: userSelected.thumbnail } : null}
@@ -105,7 +129,7 @@ export default class App extends Component {
           <Text style={styles.headerText}>
             {userSelected ? userSelected.name : "GoNative"}
           </Text>
-        </View>
+        </Animated.View>
         {this.state.userInfoVisible ? this.renderDetail() : this.renderList()}
       </View>
     );
@@ -120,8 +144,7 @@ const styles = StyleSheet.create({
   header: {
     paddingTop: Platform.OS === "ios" ? 40 : 20,
     paddingHorizontal: 15,
-    backgroundColor: "#2E93E5",
-    height: 200
+    backgroundColor: "#2E93E5"
   },
 
   headerImage: {
