@@ -126,9 +126,20 @@ export default class App extends Component {
             source={userSelected ? { uri: userSelected.thumbnail } : null}
           />
 
-          <Text style={styles.headerText}>
+          <Animated.Text
+            style={[
+              styles.headerText,
+              {
+                fontSize: this.state.scrollOfSet.interpolate({
+                  inputRange: [120, 140],
+                  outputRange: [24, 16],
+                  extrapolate: "clamp"
+                })
+              }
+            ]}
+          >
             {userSelected ? userSelected.name : "GoNative"}
-          </Text>
+          </Animated.Text>
         </Animated.View>
         {this.state.userInfoVisible ? this.renderDetail() : this.renderList()}
       </View>
