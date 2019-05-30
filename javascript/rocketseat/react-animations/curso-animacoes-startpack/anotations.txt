@@ -1,0 +1,2 @@
+a funcao getTranslateTransform, retorna o valor do translateY e do translateX, 
+desta forma nao é mecessario passar a informacao dentro de um transform na area de estilos, basta chamar a funcao
