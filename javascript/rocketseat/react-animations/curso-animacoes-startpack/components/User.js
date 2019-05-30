@@ -10,10 +10,12 @@ import {
   StyleSheet,
   Dimensions,
   TouchableWithoutFeedback,
-  Animated
+  Animated,
+  PanResponder
 } from "react-native";
 
 import Icon from "react-native-vector-icons/FontAwesome";
+const { width } = Dimensions.get("window").width;
 
 export default class User extends Component {
   state = {
@@ -35,6 +37,38 @@ export default class User extends Component {
     ]).start();
   }
 
+  componentWillMount() {
+    this._penResponder = PanResponder.create({
+      onPanResponderTerminationRequest: () => false,
+
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderMove: Animated.event([
+        null,
+        {
+          x: this.state.offset.x
+        }
+      ]),
+
+      onPanResponderRelease: () => {
+        if (this.state.offset.x._value < -200) {
+          Alert.alert("Deleted");
+        }
+
+        Animated.spring(this.state.offset.x, {
+          toValue: 0,
+          bounciness: 10
+        }).start();
+      },
+
+      onPanResponderTerminate: () => {
+        Animated.spring(this.state.offset.x, {
+          toValue: 0,
+          bounciness: 10
+        }).start();
+      }
+    });
+  }
+
   render() {
     const { user } = this.props;
 
@@ -42,7 +76,15 @@ export default class User extends Component {
       <Animated.View
         style={[
           {
-            transform: [...this.state.offset.getTranslateTransform()]
+            transform: [
+              ...this.state.offset.getTranslateTransform(),
+              {
+                rotateZ: this.state.offset.x.interpolate({
+                  inputRange: [width * -1, width],
+                  outputRange: ["-50deg", "50deg"]
+                })
+              }
+            ]
           },
           this.state.opactity
         ]}
