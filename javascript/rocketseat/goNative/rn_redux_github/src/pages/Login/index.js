@@ -32,11 +32,12 @@ class Login extends Component {
           value={username}
           onChangeText={text => this.setState({ username: text })}
         />
+
         <Button onPress={this.handleSubmit}>
           {loading ? (
             <ActivityIndicator size="small" color="#FFF" />
           ) : (
-            <TextButton>Entrar</TextButton>
+            <TextButton>Acessar Sistema</TextButton>
           )}
         </Button>
         
