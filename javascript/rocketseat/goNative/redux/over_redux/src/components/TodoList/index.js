@@ -4,15 +4,24 @@ import { connect } from "react-redux";
 
 const TodoList = ({ todos, dispatch }) => {
   return (
-    <Fragment>
-      <View style={styles.container}>
-        {todos && todos.map(todo => <Text key={todo}>{todo}</Text>)}
-        <Button
-          onPress={() => dispatch({ type: "ADD_TODO", text: "Novo Todo" })}
-          title="Adicionar Todo"
-        />
-      </View>
-    </Fragment>
+    <View style={styles.container}>
+      {todos &&
+        todos.map(todo => (
+          <Text
+            onPress={() => dispatch({ type: "MARK_AS_COMPLETED", id: todo.id })}
+            style={{
+              textDecorationLine: todo.completed ? "line-through" : "none"
+            }}
+            key={todo.id}
+          >
+            {todo.text}
+          </Text>
+        ))}
+      <Button
+        onPress={() => dispatch({ type: "ADD_TODO", text: "Novo Todo" })}
+        title="Adicionar Todo"
+      />
+    </View>
   );
 };
 const styles = StyleSheet.create({
