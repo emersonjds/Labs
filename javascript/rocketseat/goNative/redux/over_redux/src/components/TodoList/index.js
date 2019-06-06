@@ -1,12 +1,18 @@
-import React, { Component } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React, { Component, Fragment } from "react";
+import { Text, View, StyleSheet, Button } from "react-native";
 import { connect } from "react-redux";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, dispatch }) => {
   return (
-    <View style={styles.container}>
-      {todos && todos.map(todo => <Text key={todo}>{todo}</Text>)}
-    </View>
+    <Fragment>
+      <View style={styles.container}>
+        {todos && todos.map(todo => <Text key={todo}>{todo}</Text>)}
+        <Button
+          onPress={() => dispatch({ type: "ADD_TODO", text: "Novo Todo" })}
+          title="Adicionar Todo"
+        />
+      </View>
+    </Fragment>
   );
 };
 const styles = StyleSheet.create({
