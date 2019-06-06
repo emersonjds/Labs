@@ -1,7 +1,9 @@
 import { createStore } from "redux";
 
-function reducer() {
-  return ["Fazer cafe", "estudar RN"];
+const INITIAL_STATE = ["Fazer cafe", "estudar RN", "entender RN"];
+
+function reducer(state = INITIAL_STATE, action) {
+  return state;
 }
 
 const store = createStore(reducer);
