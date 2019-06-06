@@ -1,14 +1,16 @@
 import React, { Component, Fragment } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as TodoActions from "../../store/actions/todos";
 
-const TodoList = ({ todos, dispatch }) => {
+const TodoList = ({ todos, addTodo, markAsCompleted }) => {
   return (
     <View style={styles.container}>
       {todos &&
         todos.map(todo => (
           <Text
-            onPress={() => dispatch({ type: "MARK_AS_COMPLETED", id: todo.id })}
+            onPress={() => markAsCompleted(todo.id)}
             style={{
               textDecorationLine: todo.completed ? "line-through" : "none"
             }}
@@ -17,10 +19,7 @@ const TodoList = ({ todos, dispatch }) => {
             {todo.text}
           </Text>
         ))}
-      <Button
-        onPress={() => dispatch({ type: "ADD_TODO", text: "Novo Todo" })}
-        title="Adicionar Todo"
-      />
+      <Button onPress={addTodo} title="Adicionar Todo" />
     </View>
   );
 };
@@ -36,4 +35,10 @@ const mapStateToProps = state => ({
   todos: state
 });
 
-export default connect(mapStateToProps)(TodoList);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(TodoActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);
