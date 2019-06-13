@@ -15,7 +15,7 @@ export class Main extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Spark Default Template </Text>
+        <Text> Spark Default Template - Changes </Text>
       </View>
     );
   }
