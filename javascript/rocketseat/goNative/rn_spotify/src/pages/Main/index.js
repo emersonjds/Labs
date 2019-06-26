@@ -18,7 +18,7 @@ export class Main extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Spark Default Template </Text>
+        <Text> Spark </Text>
         <View
           style={{
             height: 100,
