@@ -9,9 +9,9 @@ const INITAL_STATE = ["fazer cafe", "estudar rn", "teste"];
 
 function reducer(state = INITAL_STATE, action) {
   console.log(action);
-  // if (action.type === "ADD_TODO") {
-  //   return [...state, text];
-  // }
+  if (action.type === "ADD_TODO") {
+    return [...state, action.text];
+  }
   return state;
 }
 
