@@ -4,17 +4,22 @@ import { connect } from "react-redux";
 
 class TodoList extends Component {
   render() {
-    const { todos, dispatch } = this.props;
+    const { todos, addTodo, markAsCompleted } = this.props;
 
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         {todos.map(todo => (
-          <Text key={todo}>{todo}</Text>
+          <Text
+            key={todo.id}
+            style={{
+              textDecorationLine: todo.completed ? "line-through" : "none"
+            }}
+            onPress={() => markAsCompleted(todo.id)}
+          >
+            {todo.text}
+          </Text>
         ))}
-        <Button
-          title="Adicionar Todo"
-          onPress={() => dispatch({ type: "ADD_TODO", text: "Novo texto" })}
-        />
+        <Button title="Adicionar Todo" onPress={() => addTodo()} />
       </View>
     );
   }
@@ -24,4 +29,16 @@ const mapStateToProps = state => ({
   todos: state
 });
 
-export default connect(mapStateToProps)(TodoList);
+const mapDispatchToProps = dispatch => ({
+  addTodo: () => dispatch({ type: "ADD_TODO", text: "Novo texto" }),
+  markAsCompleted: id =>
+    dispatch({
+      type: "MARK_AS_COMPLETED",
+      id: id
+    })
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);

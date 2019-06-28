@@ -37,3 +37,7 @@ por padrao quando um componente esta conectado ao store ele automagicamente ganh
 Toda vez que um dispath e disparado todos os reducers escutam aquela action, porem so o reducer especifico ira tratar os dados
 Quando um reducer nao age em cima de uma action disparada o ideal e simplismente retornar o state sem alteracoes,
 o que vai de encontro a imutabilidade de estados no JS.
+Quando o componente comeca a ter muitas actions , o ideal e separar estas funcoes em arquivos separados.
+Relembrando sempre que o componente utiliza o metodo "connect" do react-redux ele tem acesso a funcao core "dispatch" 
+A funcao mapDispatchToProps, mapeia essas actions em propriedades para que o componente consiga fazer as chamadas e 
+repassar os dados para que o reducer trate eles 
