@@ -41,3 +41,5 @@ Quando o componente comeca a ter muitas actions , o ideal e separar estas funcoe
 Relembrando sempre que o componente utiliza o metodo "connect" do react-redux ele tem acesso a funcao core "dispatch" 
 A funcao mapDispatchToProps, mapeia essas actions em propriedades para que o componente consiga fazer as chamadas e 
 repassar os dados para que o reducer trate eles 
+Separando as actions num arquivo separado, basta utilizar o bindActionCreators do redux para embrulhar essas actions com 
+a funcao dispatch do redux, desta forma o componente continua acessando as actions porem de forma externa

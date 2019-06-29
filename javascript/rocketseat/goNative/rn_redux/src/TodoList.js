@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Text, View, Button } from "react-native";
 import { connect } from "react-redux";
+import * as LoginActions from "./store/actions/todos";
+import { bindActionCreators } from "redux";
 
 class TodoList extends Component {
   render() {
@@ -29,14 +31,8 @@ const mapStateToProps = state => ({
   todos: state
 });
 
-const mapDispatchToProps = dispatch => ({
-  addTodo: () => dispatch({ type: "ADD_TODO", text: "Novo texto" }),
-  markAsCompleted: id =>
-    dispatch({
-      type: "MARK_AS_COMPLETED",
-      id: id
-    })
-});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(LoginActions, dispatch);
 
 export default connect(
   mapStateToProps,

@@ -30,13 +30,15 @@ function reducer(state = INITAL_STATE, action) {
         ...state,
         {
           id: Math.random(),
-          text: action.text,
+          text: action.payload.text,
           completed: false
         }
       ];
     case "MARK_AS_COMPLETED":
       return state.map(todo =>
-        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+        todo.id === action.payload.id
+          ? { ...todo, completed: !todo.completed }
+          : todo
       );
     default:
       return state;
