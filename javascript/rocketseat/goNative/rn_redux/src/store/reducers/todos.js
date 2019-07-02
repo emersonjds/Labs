@@ -19,6 +19,11 @@ const INITAL_STATE = [
     id: 4,
     text: "Add a new Todo",
     completed: false
+  },
+  {
+    id: 5,
+    text: "Add a new Todo",
+    completed: false
   }
 ];
 
