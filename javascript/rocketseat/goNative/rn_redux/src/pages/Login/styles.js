@@ -4,11 +4,17 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const InputLogin = styled.TextInput`
   height: 52;
   width: 100%;
+  border: 1px;
+  border-color: #000;
+  border-radius: 10;
 `;
 
 export const ButtonLogin = styled.TouchableOpacity`
@@ -17,6 +23,10 @@ export const ButtonLogin = styled.TouchableOpacity`
   margin-top: 15;
   align-items: center;
   justify-content: center;
+  border: 1px;
+  border-color: #000;
+  background-color: orange;
+  border-radius: 10;
 `;
 
 export const TextButton = styled.Text`
