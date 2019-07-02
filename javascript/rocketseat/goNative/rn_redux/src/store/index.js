@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from "redux";
 
-import todos from "./reducers/todos";
+import login from "./reducers/login";
 
 const composer = __DEV__
   ? compose(
@@ -9,6 +9,6 @@ const composer = __DEV__
     )
   : applyMiddleware(...[]);
 
-const store = createStore(todos, composer);
+const store = createStore(login, composer);
 
 export default store;
