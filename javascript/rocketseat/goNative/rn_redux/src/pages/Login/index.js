@@ -11,6 +11,7 @@ import api from "../../services/api";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as LoginActions from "../../store/actions/login";
+import { ActivityIndicator } from "react-native";
 
 class Login extends Component {
   state = {
@@ -18,18 +19,12 @@ class Login extends Component {
   };
   handleSubmit = async () => {
     const { username } = this.state;
-    const { loginSuccess, loginFailure, navigation } = this.props;
-    try {
-      await api.get(`/users/${username}`);
-      loginSuccess(username);
-      navigation.navigate("Repositories");
-    } catch (err) {
-      loginFailure();
-    }
+    const { loginRequest } = this.props;
+    loginRequest(username);
   };
   render() {
     const { username } = this.state;
-    const { error } = this.props;
+    const { error, loading } = this.props;
     return (
       <Container>
         {error && <Error> Usuario Invalido </Error>}
@@ -44,8 +39,13 @@ class Login extends Component {
             })
           }
         />
+
         <ButtonLogin onPress={this.handleSubmit}>
-          <TextButton>LOGIN</TextButton>
+          {loading ? (
+            <ActivityIndicator size="small" color="#FFF" />
+          ) : (
+            <TextButton>LOGIN</TextButton>
+          )}
         </ButtonLogin>
       </Container>
     );
@@ -53,7 +53,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-  error: state.login.error
+  error: state.login.error,
+  loading: state.login.loading
 });
 
 const mapDispatchToProps = dispatch =>

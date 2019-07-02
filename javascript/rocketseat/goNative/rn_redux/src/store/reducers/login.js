@@ -1,11 +1,18 @@
 //reducer
 const INITAL_STATE = {
   username: null,
-  error: false
+  error: false,
+  loading: false
 };
 
 export default function login(state = INITAL_STATE, action) {
   switch (action.type) {
+    case "LOGIN_REQUEST":
+      return {
+        ...state,
+        loading: true
+      };
+
     case "LOGIN_SUCCESS":
       return {
         ...state,
