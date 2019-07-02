@@ -14,22 +14,12 @@ const INITAL_STATE = [
     id: 3,
     text: "inscrever nos hackas",
     completed: false
-  },
-  {
-    id: 4,
-    text: "Add a new Todo",
-    completed: false
-  },
-  {
-    id: 5,
-    text: "Add a new Todo",
-    completed: false
   }
 ];
 
 // Actions
 // Adicionar um todo
-// Marcar como completo
+// Marcar como completoe
 
 export default function todos(state = INITAL_STATE, action) {
   switch (action.type) {
