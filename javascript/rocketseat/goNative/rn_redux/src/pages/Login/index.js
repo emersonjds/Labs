@@ -43,7 +43,7 @@ class Login extends Component {
           {loading ? (
             <ActivityIndicator size="small" color="#FFF" />
           ) : (
-            <TextButton>ACESSAR</TextButton>
+            <TextButton>ENTRAR</TextButton>
           )}
         </ButtonLogin>
       </Container>
