@@ -9,4 +9,5 @@ const App = () => (
     <TodoList />
   </Provider>
 );
+
 export default App;
