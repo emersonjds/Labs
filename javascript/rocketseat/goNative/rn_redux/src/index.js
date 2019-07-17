@@ -1,24 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-} from 'react-native';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { Provider } from 'react-redux';
+import store from './store';
+import TodoList from './TodoList';
 
 const App = () => (
   // eslint-disable-next-line react/jsx-filename-extension
-  <View style={styles.container}>
-    <Text>
-      Home
-    </Text>
-  </View>
+  <Provider store={store}>
+    <TodoList />
+  </Provider>
 );
 export default App;
