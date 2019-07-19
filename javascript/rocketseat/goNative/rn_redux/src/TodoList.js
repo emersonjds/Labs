@@ -12,6 +12,7 @@ const TodoList = ({ todos, dispatch }) => (
       <Text
         style={{ textDecorationLine: todo.completed ? 'line-through' : 'none' }}
         key={todo.id}
+        onPress={() => dispatch({ type: 'MARK_AS_COMPLETED', id: todo.id })}
       >
         {todo.text}
       </Text>
