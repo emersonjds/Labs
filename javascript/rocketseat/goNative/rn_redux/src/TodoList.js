@@ -2,9 +2,11 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as TodoActions from './store/actions/todos';
 
 // eslint-disable-next-line react/prop-types
-const TodoList = ({ todos, dispatch }) => (
+const TodoList = ({ todos, addTodo, markAsCompleted }) => (
   // eslint-disable-next-line react/jsx-filename-extension
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     {// eslint-disable-next-line react/prop-types
@@ -12,14 +14,14 @@ const TodoList = ({ todos, dispatch }) => (
       <Text
         style={{ textDecorationLine: todo.completed ? 'line-through' : 'none' }}
         key={todo.id}
-        onPress={() => dispatch({ type: 'MARK_AS_COMPLETED', id: todo.id })}
+        onPress={() => markAsCompleted(todo.id)}
       >
         {todo.text}
       </Text>
     ))}
     <Button
       title="Adicionar Todo"
-      onPress={() => dispatch({ type: 'ADD_TODO', text: 'Novo Todo' })}
+      onPress={addTodo}
     />
   </View>
 );
@@ -29,4 +31,7 @@ const mapStateToProps = state => ({
   todos: state,
 });
 
-export default connect(mapStateToProps)(TodoList);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(TodoActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
