@@ -20,7 +20,7 @@ const TodoList = ({ todos, addTodo, markAsCompleted }) => (
       </Text>
     ))}
     <Button
-      title="Adicionar Todo"
+      title="Adicionar Tarefa"
       onPress={addTodo}
     />
   </View>
@@ -31,7 +31,6 @@ const mapStateToProps = state => ({
   todos: state,
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(TodoActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(TodoActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
