@@ -20,7 +20,7 @@ const TodoList = ({ todos, addTodo, markAsCompleted }) => (
       </Text>
     ))}
     <Button
-      title="Adicionar Task"
+      title="Adicionar Tarefa"
       onPress={addTodo}
     />
   </View>
