@@ -1,0 +1,32 @@
+O saga e responsavel por cuidar das chamadas para servidores ou tratamento de dados 
+nos bancos de dados com o qual a aplicacao conversa, ele intercepta as chamadas feitas
+e faz o tratamento retornando outras actions com o resultado dela.
+
+para utilizar o Saga e necessario importar o redux-saga e acessar seus metodos
+a partir do saga/effets, esses effects e que sao responsaveis por esse tratamento de dados
+de requisicoes, sincronas e assincronas.
+
+O saga funciona com funcoes do tipo generators, que no final seriam como "async e awaits" 
+comuns porem de uma forma especial, os async e awaits da vida no final sao sagas encapsulados
+
+Alem disso o generator consegue ter funcoes que os async await nao consegue executar
+
+Quando o Saga efetua uma operacao de API isso nao interrompe a Action de chegar ao reducer
+para fazer alguma operacao de estado da aplicacao, desta forma e possivel efetuar
+alteracoes de estado com interacoes do Sa
+
+De forma generica o contexto seria este
+
+actionRequest -> saga interecpta a action -> chama api -> com os dados retornados ->
+chamaOutraAction(dadosRetornados) -> ActionContinua o fluxo normalmente
+
+Effects mais utilizados do saga
+all -> responsavel por fazer os awaits dos sagas que estao sendo executados
+
+call -> retorna promises, responsavel por executar os metodos HTTP
+
+takeLastest -> executa somente a ultima interecao de request, evitando varios
+cliques para requests
+
+put -> funciona como o dispatch para chamada das actions
+

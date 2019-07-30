@@ -1,0 +1,45 @@
+O Reducer e a funcao responsavel por fazer a manipulacao dos estados da aplicacao,
+em resumo o reducer e uma funcao que recebe 2 parametros, state ( que seria o state inicail e uma action)
+a partir da action o switch efetua as alteracoes no estado e retorna o novo dado para o componente que esta 
+conectado aquele reducer.
+
+Ex: Escopo de um reducer simples
+
+const INITIAL_STATE = {
+
+}
+
+export function reducer(state = INITIAL_STATE, action ) {
+    switch(name_action) {
+        ...
+    }
+    default:
+        return state;
+}
+
+Actions
+Uma action e uma acao que sera enviada do componente para o reducer para que o estado seja alterado
+o corpo de uma action e composto por um type (nome da action, string em caixa alta) e um payload (dados que podem ou nao vir do component)
+
+Exemplo de uma action
+{
+    type: "ADICIONAR_NOVO_TODO",
+    payload: {
+        id: math.random(),
+        text: "novo Todo"
+    }
+}
+
+Para que um componente dispare uma action para um reducer, e necessario a utilizacao da funcao dispatch, essa funcao 
+minimamente falando seria um "grito" que o component esta enviado para o reducer, passando ou nao dados atraves do payload
+por padrao quando um componente esta conectado ao store ele automagicamente ganha acesso a esta funcao de dispatch
+
+Toda vez que um dispath e disparado todos os reducers escutam aquela action, porem so o reducer especifico ira tratar os dados
+Quando um reducer nao age em cima de uma action disparada o ideal e simplismente retornar o state sem alteracoes,
+o que vai de encontro a imutabilidade de estados no JS.
+Quando o componente comeca a ter muitas actions , o ideal e separar estas funcoes em arquivos separados.
+Relembrando sempre que o componente utiliza o metodo "connect" do react-redux ele tem acesso a funcao core "dispatch" 
+A funcao mapDispatchToProps, mapeia essas actions em propriedades para que o componente consiga fazer as chamadas e 
+repassar os dados para que o reducer trate eles 
+Separando as actions num arquivo separado, basta utilizar o bindActionCreators do redux para embrulhar essas actions com 
+a funcao dispatch do redux, desta forma o componente continua acessando as actions porem de forma externa
