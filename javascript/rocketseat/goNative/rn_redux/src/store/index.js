@@ -1,5 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
-import todos from './reducers/todos';
+// import todos from './reducers/todos';
+import reducer from './reducers/login';
 
 // eslint-disable-next-line no-undef
 const composer = __DEV__
@@ -9,6 +10,6 @@ const composer = __DEV__
   )
   : applyMiddleware(...[]);
 
-const store = createStore(todos, composer);
+const store = createStore(reducer, composer);
 
 export default store;
