@@ -2,18 +2,21 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   padding: 0 20px;
 `;
 
 export const Title = styled.Text`
   font-size: 15;
+  text-align: center;
+  font-size: 20;
 `;
 
-export const InputText = styled.TextInput`
+export const InputText = styled.TextInput.attrs({
+  placeholderTextColor: '#cecece',
+})`
   height: 52;
-  width: 100%;
   border-radius: 10px;
   border-color: #cecece;
   border-width: 1px;
@@ -23,7 +26,6 @@ export const InputText = styled.TextInput`
 
 export const ButtonLogin = styled.TouchableOpacity`
   height: 52;
-  width: 100%;
   background-color: purple;
   border-radius: 10px;
   align-items: center;
@@ -34,4 +36,11 @@ export const ButtonLogin = styled.TouchableOpacity`
 export const TextButton = styled.Text`
   color: #fff;
   font-weight: bold;
+`;
+
+export const TextError = styled.Text`
+  font-size: 16;
+  font-weight: bold;
+  color: red;
+  text-align: center;
 `;

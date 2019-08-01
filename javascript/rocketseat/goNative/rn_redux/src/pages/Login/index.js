@@ -6,11 +6,31 @@ import {
   InputText,
   ButtonLogin,
   TextButton,
+  TextError,
+  Alert,
 } from './styles';
+
+import api from '../../services/api';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export class Login extends Component {
+
+  state = {
+    username: ''
+  }
+
+  handleSubmit = async () => {
+    const { username } = this.state;
+
+    try {
+      await api.get(`/users/${username}`);
+    } catch(err) {
+      Alert.alert(err)
+    }
+  };
+
   render() {
+    const { username } = this.state;
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <Container>
@@ -18,11 +38,13 @@ export class Login extends Component {
           Login
         </Title>
         <InputText
-          placeholder="usuario github"
-          autoCorrect="false"
+          placeholder="Usuario do github"
+          autoCorrect={false}
           autoCapitalize="none"
+          value={username}
+          onChangeText={text => this.setState({username: text})}
         />
-        <ButtonLogin>
+        <ButtonLogin onPress={this.handleSubmit}>
           <TextButton>
             LOGAR
           </TextButton>
