@@ -7,12 +7,6 @@ export const Container = styled.View`
   padding: 0 20px;
 `;
 
-export const Title = styled.Text`
-  font-size: 15;
-  text-align: center;
-  font-size: 20;
-`;
-
 export const InputText = styled.TextInput.attrs({
   placeholderTextColor: '#cecece',
 })`

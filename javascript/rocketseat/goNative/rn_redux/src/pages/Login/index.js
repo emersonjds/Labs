@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 import {
   Container,
   Title,
@@ -9,34 +8,37 @@ import {
   TextError,
   Alert,
 } from './styles';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as LoginActions from '../../store/actions/login';
 
 import api from '../../services/api';
 
 // eslint-disable-next-line react/prefer-stateless-function
-export class Login extends Component {
+class Login extends Component {
 
-  state = {
-    username: ''
-  }
+  state = { username: '' };
 
   handleSubmit = async () => {
     const { username } = this.state;
-
+    const { loginSuccess, loginFailure } = this.props;
     try {
       await api.get(`/users/${username}`);
+      loginSuccess(username);
     } catch(err) {
-      Alert.alert(err)
+      loginFailure();
     }
   };
 
   render() {
     const { username } = this.state;
+    const { error } = this.props;
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <Container>
-        <Title>
-          Login
-        </Title>
+        {
+          error && <TextError> Usuario inexistente</TextError>
+        }
         <InputText
           placeholder="Usuario do github"
           autoCorrect={false}
@@ -54,4 +56,12 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+  error: state.login.error
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(LoginActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
+4
