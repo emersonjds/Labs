@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
-import { Container } from './styles';
+import {
+  Container,
+  Title,
+  InputText,
+  ButtonLogin,
+  TextButton,
+} from './styles';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export class Login extends Component {
@@ -8,7 +14,19 @@ export class Login extends Component {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <Container>
-        <Text> Login </Text>
+        <Title>
+          Login
+        </Title>
+        <InputText
+          placeholder="usuario github"
+          autoCorrect="false"
+          autoCapitalize="none"
+        />
+        <ButtonLogin>
+          <TextButton>
+            LOGAR
+          </TextButton>
+        </ButtonLogin>
       </Container>
     );
   }
