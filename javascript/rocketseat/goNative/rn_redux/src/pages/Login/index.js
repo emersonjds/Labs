@@ -21,10 +21,11 @@ class Login extends Component {
 
   handleSubmit = async () => {
     const { username } = this.state;
-    const { loginSuccess, loginFailure } = this.props;
+    const { loginSuccess, loginFailure, navigation } = this.props;
     try {
       await api.get(`/users/${username}`);
       loginSuccess(username);
+      navigation.navigate('Repositories')
     } catch(err) {
       loginFailure();
     }
