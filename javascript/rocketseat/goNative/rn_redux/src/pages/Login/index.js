@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Container,
   Title,
@@ -6,51 +6,43 @@ import {
   ButtonLogin,
   TextButton,
   TextError,
-  Alert,
-} from './styles';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as LoginActions from '../../store/actions/login';
+  Alert
+} from "./styles";
+import { ActivityIndicator } from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as LoginActions from "../../store/actions/login";
 
-import api from '../../services/api';
+import api from "../../services/api";
 
-// eslint-disable-next-line react/prefer-stateless-function
 class Login extends Component {
-
-  state = { username: '' };
+  state = { username: "" };
 
   handleSubmit = async () => {
     const { username } = this.state;
-    const { loginSuccess, loginFailure, navigation } = this.props;
-    try {
-      await api.get(`/users/${username}`);
-      loginSuccess(username);
-      navigation.navigate('Repositories')
-    } catch(err) {
-      loginFailure();
-    }
+    const { loginRequest } = this.props;
+    loginRequest(username);
   };
 
   render() {
     const { username } = this.state;
-    const { error } = this.props;
+    const { error, loading } = this.props;
     return (
-      // eslint-disable-next-line react/jsx-filename-extension
       <Container>
-        {
-          error && <TextError> Usuario inexistente</TextError>
-        }
+        {error && <TextError> Usuario inexistente</TextError>}
         <InputText
           placeholder="Usuario do github"
           autoCorrect={false}
           autoCapitalize="none"
           value={username}
-          onChangeText={text => this.setState({username: text})}
+          onChangeText={text => this.setState({ username: text })}
         />
         <ButtonLogin onPress={this.handleSubmit}>
-          <TextButton>
-            LOGAR
-          </TextButton>
+          {loading ? (
+            <ActivityIndicator size={22} color="#fff" />
+          ) : (
+            <TextButton>LOGAR</TextButton>
+          )}
         </ButtonLogin>
       </Container>
     );
@@ -58,11 +50,14 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-  error: state.login.error
+  error: state.login.error,
+  loading: state.login.loading
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(LoginActions, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
-
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);
