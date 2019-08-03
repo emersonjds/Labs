@@ -10,7 +10,7 @@ const RepositoriesTab = createStackNavigator({
 const Routes = createAppContainer(
   createSwitchNavigator({
     Login,
-    Repositories,
+    RepositoriesTab,
   }),
 );
 
