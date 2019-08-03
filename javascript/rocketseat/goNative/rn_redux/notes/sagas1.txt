@@ -1,0 +1,76 @@
+o redux-saga é a lib responsavel por tratar as requisicoes assincronas da
+aplicacao.
+
+Ela funciona com funcoes do tipo generators , que no fim das contas é o que
+o async e await abstrai por baixo dos panos, sempre retornando uma promise
+
+Com o redux saga , utilizamos os principais metodos chamados de "effects"
+
+import {} from 'redux-saga/effects';
+
+dentro disso a diversas funcoes que sao utilizadas para o tratamento tanto de
+requests quando para chamada de outras actions, partindo do mesmo principio
+das responsabilidades do reducers se comunicando com as actions.
+
+dentro disso tempos 2 operadores que afirmam que a funcao se trata de uma
+funcao generator
+
+function "*" o asterisco de forma simples seria o "async"
+"yield" de forma simples seria o "await"
+
+function* nomeFunction() {
+  return yield algum effect
+}
+
+E necessario ainda configurar dentro do arquivo raiz da store o saga
+
+CONFIGURACAO PADRAO DA STORE COM SAGA
+
+import { createStore, compose, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import rootReducer from './reducers';
+import rootSaga from './sagas';
+
+const middlewares = [];
+
+const sagaMiddleware = createSagaMiddleware();
+
+middlewares.push(sagaMiddleware);
+
+const composer = __DEV__
+  ? compose(
+    applyMiddleware(...middlewares),
+    console.tron.createEnhancer(),
+  )
+  : applyMiddleware(...middlewares);
+
+const store = createStore(rootReducer, composer);
+
+sagaMiddleware.run(rootSaga);
+
+export default store;
+
+O saga tem diversos effects que podem ser utilizados
+de forma generica quando utilizado o metodo takeLatest , ele recebe dois
+parametros, o tipo da action e a funcao que sera executada quando aquele type
+for identificado, as funcoes podem ser criadas em arquivos separados
+ou no proprio arquivo de configuracao do saga caso seja uma aplicacao pequena.
+
+desta forma
+
+export default function* rootSaga() {
+  return yield all([
+    takeLatest('LOGIN_REQUEST', login),
+    takeLatest('SAVE_DB', callDB),
+  ])
+}
+
+function* login(action) {
+....xxx
+}
+
+function* callDB(action) {
+  ....xxx
+}
+
+
