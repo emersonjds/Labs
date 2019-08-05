@@ -10,7 +10,6 @@ const sagaMiddleware = createSagaMiddleware();
 
 middlewares.push(sagaMiddleware);
 
-
 // eslint-disable-next-line no-undef
 const composer = __DEV__
   ? compose(

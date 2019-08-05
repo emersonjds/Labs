@@ -13,8 +13,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as LoginActions from "../../store/actions/login";
 
-import api from "../../services/api";
-
 class Login extends Component {
   state = { username: "" };
 
