@@ -73,4 +73,6 @@ function* callDB(action) {
   ....xxx
 }
 
-
+Dentro do Saga e possivel ainda buscar dados que estejam dentro de um estado
+no redux, para conseguir este acesso eh necessario utilizar o effect select
+do saga, desta forma ele consegue acesso a todos os estados da aplicacao
