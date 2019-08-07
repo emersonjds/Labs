@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
 import { Container } from "./styles";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, Text } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as RepositoriesActions from "../../store/actions/repositories";
@@ -23,9 +22,9 @@ class Repositories extends Component {
         {repositories.loading ? (
           <ActivityIndicator size="small" color="#000" />
         ) : (
-          repositories.data.map(repository => {
-            <Text key={repository.id}>repository.name</Text>;
-          })
+          repositories.data.map(repository => (
+            <Text key={repository.id}>{repository.name}</Text>
+          ))
         )}
       </Container>
     );
