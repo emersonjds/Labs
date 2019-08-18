@@ -7,7 +7,6 @@ import { setNavigator } from './services/navigation';
 import Routes from './routes';
 
 const App = () => (
-  // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
     <Routes ref={setNavigator} />
   </Provider>
