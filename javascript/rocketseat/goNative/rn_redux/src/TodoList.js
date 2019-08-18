@@ -3,10 +3,8 @@ import {Text, View, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 
 export class TodoList extends Component {
-  state = {};
   render() {
     const {todos} = this.props;
-
     return (
       <View style={styles.container}>
         {todos.map(todo => (
