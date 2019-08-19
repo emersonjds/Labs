@@ -8,12 +8,23 @@ export class TodoList extends Component {
     return (
       <View style={styles.container}>
         {todos.map(todo => (
-          <Text key="todo">{todo}</Text>
+          <Text
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{
+              textDecorationLine: todo.completed ? 'line-through' : 'none',
+            }}
+            key={todo.id}>
+            {todo.text}
+          </Text>
         ))}
         <Button
           title="Adicionar novo Todo"
           onPress={() =>
-            dispatch({type: 'ADD_NEW_TODO', text: 'Adicionar novo Todo'})
+            dispatch({
+              type: 'ADD_NEW_TODO',
+              text: 'Adicionar novo Todo',
+              completed: false,
+            })
           }
         />
       </View>
