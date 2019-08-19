@@ -11,7 +11,6 @@ export class TodoList extends Component {
       <View style={styles.container}>
         {todos.map(todo => (
           <Text
-            // eslint-disable-next-line react-native/no-inline-styles
             style={{
               textDecorationLine: todo.completed ? 'line-through' : 'none',
             }}
