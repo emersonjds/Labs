@@ -6,7 +6,6 @@ if (__DEV__) {
     .useReactNative()
     .use(reactotronRedux())
     .connect();
-
   tron.clear();
   console.tron = tron;
 }

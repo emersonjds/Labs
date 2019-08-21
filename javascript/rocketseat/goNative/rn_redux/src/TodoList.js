@@ -19,7 +19,7 @@ export class TodoList extends Component {
             {todo.text}
           </Text>
         ))}
-        <Button title="Adicionar novo Todo" onPress={() => addTodo} />
+        <Button title="Adicionar novo Todo" onPress={() => addTodo()} />
       </View>
     );
   }
