@@ -14,11 +14,6 @@ const INITIAL_STATE = [
     text: 'estudar os cursos diariamente',
     completed: false,
   },
-  {
-    id: 4,
-    text: 'Brazil JS',
-    completed: false,
-  },
 ];
 
 export default function todos(state = INITIAL_STATE, action) {
