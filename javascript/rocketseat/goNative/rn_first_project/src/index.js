@@ -1,14 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Start project</Text>
-    </View>
-  );
-};
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -17,5 +9,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Start project</Text>
+    </View>
+  );
+};
 
 export default App;
