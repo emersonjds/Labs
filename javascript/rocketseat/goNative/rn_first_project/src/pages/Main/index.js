@@ -1,20 +1,25 @@
-import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import React, { Component } from 'react';
 
-// import { Container } from './styles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { Container, Form, Input, SubmitButton } from './styles';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+Icon.loadFont();
 
-export default function Main() {
-  return (
-    <View style={styles.container}>
-      <Text>Emerson</Text>
-    </View>
-  );
+export default class Main extends Component {
+  static navigationOptions = {
+    title: 'Usuarios',
+  };
+
+  render() {
+    return (
+      <Container>
+        <Form>
+          <Input autoCapitalize="none" autoCorrect={false} />
+          <SubmitButton>
+            <Icon name="add" size={20} color="#eee" />
+          </SubmitButton>
+        </Form>
+      </Container>
+    );
+  }
 }
