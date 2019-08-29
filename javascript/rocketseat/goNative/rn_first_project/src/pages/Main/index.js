@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Keyboard, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   Container,
@@ -24,6 +25,13 @@ export default class Main extends Component {
     title: 'Usuarios',
   };
 
+  // eslint-disable-next-line react/static-property-placement
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }).isRequired,
+  };
+
   // eslint-disable-next-line react/sort-comp
   constructor(props) {
     super(props);
@@ -36,6 +44,7 @@ export default class Main extends Component {
 
   async componentDidMount() {
     const { users } = await AsyncStorage.getItem('users');
+    console.tron.log(users);
     if (users) {
       this.setState({ users: JSON.parse(users) });
     }
@@ -69,6 +78,11 @@ export default class Main extends Component {
     });
 
     Keyboard.dismiss();
+  };
+
+  handleNavigation = user => {
+    const { navigation } = this.props;
+    navigation.navigate('User', { user });
   };
 
   render() {
@@ -105,7 +119,7 @@ export default class Main extends Component {
               <Avatar source={{ uri: item.avatar }} />
               <Name>{item.login}</Name>
               <Bio>{item.bio}</Bio>
-              <ProfileButton>
+              <ProfileButton onPress={() => this.handleNavigation(item)}>
                 <ProfileButtonText>Ver Perfil</ProfileButtonText>
               </ProfileButton>
             </User>
