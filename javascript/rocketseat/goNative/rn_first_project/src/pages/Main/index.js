@@ -19,10 +19,13 @@ import api from '../../services/api';
 Icon.loadFont();
 
 export default class Main extends Component {
-  state = {
-    newUser: '',
-    users: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      newUser: '',
+      users: [],
+    };
+  }
 
   handleAddUser = async () => {
     const { users, newUser } = this.state;
