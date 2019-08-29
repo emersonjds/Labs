@@ -71,7 +71,7 @@ export default class Main extends Component {
           renderItem={({ item }) => (
             <User>
               <Avatar source={{ uri: item.avatar }} />
-              <Name>{item.name}</Name>
+              <Name>{item.login}</Name>
               <Bio>{item.bio}</Bio>
               <ProfileButton>
                 <ProfileButtonText>Ver Perfil</ProfileButtonText>
