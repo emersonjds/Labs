@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import api from '../../services/api';
 import {
@@ -28,9 +27,12 @@ export class User extends Component {
     }).isRequired,
   };
 
-  state = {
-    starredRepos: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      starredRepos: [],
+    };
+  }
 
   async componentDidMount() {
     const { navigation } = this.props;
