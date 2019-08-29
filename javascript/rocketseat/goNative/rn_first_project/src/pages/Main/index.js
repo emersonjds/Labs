@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import { Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Container, Form, Input, SubmitButton } from './styles';
+import {
+  Container,
+  Form,
+  Input,
+  SubmitButton,
+  List,
+  User,
+  Avatar,
+  Name,
+  Bio,
+  ProfileButton,
+  ProfileButtonText,
+} from './styles';
 import api from '../../services/api';
 
 Icon.loadFont();
@@ -20,7 +32,7 @@ export default class Main extends Component {
       name: response.data.name,
       login: response.data.login,
       bio: response.data.bio,
-      avatar: response.data.avatar,
+      avatar: response.data.avatar_url,
     };
 
     this.setState({
@@ -53,6 +65,20 @@ export default class Main extends Component {
             <Icon name="add" size={20} color="#eee" />
           </SubmitButton>
         </Form>
+        <List
+          data={users}
+          keyExtractor={user => user.login}
+          renderItem={({ item }) => (
+            <User>
+              <Avatar source={{ uri: item.avatar }} />
+              <Name>{item.name}</Name>
+              <Bio>{item.bio}</Bio>
+              <ProfileButton>
+                <ProfileButtonText>Ver Perfil</ProfileButtonText>
+              </ProfileButton>
+            </User>
+          )}
+        />
       </Container>
     );
   }
