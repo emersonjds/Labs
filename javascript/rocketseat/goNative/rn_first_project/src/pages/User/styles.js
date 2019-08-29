@@ -53,10 +53,11 @@ export const AvatarRepo = styled.Image`
 
 export const Info = styled.View`
   margin-left: 10px;
-  flex: 1;
 `;
 
-export const OwnerRepo = styled.Text`
+export const OwnerRepo = styled.Text.attrs({
+  numberOfLines: 1,
+})`
   font-size: 15px;
   font-weight: bold;
   color: #333;
