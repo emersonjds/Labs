@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text } from 'react-native';
 import api from '../../services/api';
 import {
   Container,
@@ -21,7 +20,6 @@ export class User extends Component {
     title: navigation.getParam('user').name,
   });
 
-  // eslint-disable-next-line react/no-typos
   static PropTypes = {
     navigation: PropTypes.shape({
       getParam: PropTypes.func,
@@ -61,11 +59,9 @@ export class User extends Component {
           renderItem={({ item }) => (
             <ContainerRepo>
               <AvatarRepo source={{ uri: item.owner.avatar_url }} />
-              {/* <Text>{item.name}</Text> */}
               <Info>
                 <OwnerRepo>{item.name}</OwnerRepo>
                 <RepoDescription>{item.owner.login}</RepoDescription>
-                {/* <Text>{item.name}</Text> */}
               </Info>
             </ContainerRepo>
           )}
