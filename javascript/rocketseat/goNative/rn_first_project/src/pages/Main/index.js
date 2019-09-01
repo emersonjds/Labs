@@ -32,7 +32,6 @@ export default class Main extends Component {
     }).isRequired,
   };
 
-  // eslint-disable-next-line react/sort-comp
   constructor(props) {
     super(props);
     this.state = {
