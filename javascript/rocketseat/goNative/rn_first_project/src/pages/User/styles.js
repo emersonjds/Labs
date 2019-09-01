@@ -38,7 +38,7 @@ export const List = styled.FlatList.attrs({
 
 export const ContainerRepo = styled.View`
   background: #f5f5f5;
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 10px 15px;
   margin-bottom: 20px;
   align-items: center;
