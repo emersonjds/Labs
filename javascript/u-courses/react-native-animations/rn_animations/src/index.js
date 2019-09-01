@@ -28,14 +28,14 @@ export default class App extends Component {
         {/* <BoxResize /> */}
         {/* <InterPolation /> */}
         {/* TODO: #PETMAP */}
-        {/* <AbsolutAnimation /> */}
+        <AbsolutAnimation />
         {/* <MultiInterpolation /> */}
         {/* <RotatoInterpolate /> */}
         {/* <AnimatedPorcentage /> */}
         {/* <EasingAnimation /> */}
         {/* <SpringAnimation /> */}
         {/* <LoopAnimation /> */}
-        <EventAnimation />
+        {/* <EventAnimation /> */}
       </View>
     );
   }

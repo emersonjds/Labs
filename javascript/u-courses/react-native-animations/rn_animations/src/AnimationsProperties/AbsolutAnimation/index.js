@@ -43,7 +43,7 @@ export class AbsolutAnimation extends Component {
             onPress={this.finishAnimation}
             style={styles.bottom1}
           />
-          <Animated.Text>Changed with Animated.Text</Animated.Text>
+          <Animated.Text></Animated.Text>
         </Animated.View>
       </View>
     );
