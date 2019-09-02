@@ -5,10 +5,13 @@ module.exports = {
   },
   extends: [
     'airbnb',
+    'prettier',
+    'prettier/react'
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    __DEV__: 'readonly'
   },
   parserOptions: {
     ecmaFeatures: {
@@ -19,7 +22,16 @@ module.exports = {
   },
   plugins: [
     'react',
+    'prettier'
   ],
   rules: {
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['.jsx','.js' ]
+      }
+    ],
+    'import/prefer-default-exports': 'off'
   },
 };
