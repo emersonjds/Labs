@@ -12,13 +12,13 @@ export default function Home() {
             alt="tenis"
           />
           <strong>Tenis</strong>
-        <span>R$ 129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" />
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
+          <span>R$ 129,90</span>
+          <button type="button">
+            <div>
+              <MdAddShoppingCart size={16} color="#FFF" />
+            </div>
+            <span>ADICIONAR AO CARRINHO</span>
+          </button>
         </li>
 
         <li>
@@ -27,13 +27,13 @@ export default function Home() {
             alt="tenis"
           />
           <strong>Tenis</strong>
-        <span>R$ 129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" />
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
+          <span>R$ 129,90</span>
+          <button type="button">
+            <div>
+              <MdAddShoppingCart size={16} color="#FFF" />
+            </div>
+            <span>ADICIONAR AO CARRINHO</span>
+          </button>
         </li>
 
         <li>
@@ -42,18 +42,15 @@ export default function Home() {
             alt="tenis"
           />
           <strong>Tenis</strong>
-        <span>R$ 129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" />
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
+          <span>R$ 129,90</span>
+          <button type="button">
+            <div>
+              <MdAddShoppingCart size={16} color="#FFF" />
+            </div>
+            <span>ADICIONAR AO CARRINHO</span>
+          </button>
         </li>
-
       </ProductList>
-
-
     </>
   );
 }
