@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import './config/ReactotronConfig';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
 import GlobalStyles from './styles/global';
