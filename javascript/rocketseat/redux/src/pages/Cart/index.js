@@ -8,9 +8,12 @@ import { Container, ProductTable, Total } from './styles';
 import { connect } from 'react-redux';
 
 class Cart extends Component {
-  state = {
-    data: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+    };
+  }
 
   componentDidMount() {
     const { cartData } = this.props;
