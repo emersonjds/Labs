@@ -8,13 +8,20 @@ import { Container, ProductTable, Total } from './styles';
 import { connect } from 'react-redux';
 
 class Cart extends Component {
-  constructor() {
-    super(props);
-    this.state = {
-      data: [],
-    };
+  state = {
+    data: [],
+  };
+
+  componentDidMount() {
+    const { cartData } = this.props;
+    this.setState({
+      data: cartData,
+    });
   }
+
   render() {
+    const { data } = this.state;
+    console.tron.log(data);
     return (
       <Container>
         <ProductTable>
@@ -74,7 +81,7 @@ class Cart extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.cart,
+  cartData: state.cart,
 });
 
 export default connect(mapStateToProps)(Cart);
