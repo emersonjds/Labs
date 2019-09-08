@@ -24,6 +24,7 @@ class Cart extends Component {
 
   render() {
     const { data } = this.state;
+    // eslint-disable-next-line react/prop-types
     const { dispatch } = this.props;
     return (
       <Container>
@@ -54,7 +55,7 @@ class Cart extends Component {
                       onClick={() =>
                         dispatch({
                           type: 'REMOVE_FROM_CART',
-                          payload: { id: product.id },
+                          id: product.id,
                         })
                       }>
                       <MdRemoveCircleOutline size={20} color="#7159c1" />
