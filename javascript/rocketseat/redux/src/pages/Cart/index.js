@@ -24,7 +24,6 @@ class Cart extends Component {
 
   render() {
     const { data } = this.state;
-    // eslint-disable-next-line react/prop-types
     const { dispatch } = this.props;
     return (
       <Container>
@@ -50,14 +49,7 @@ class Cart extends Component {
                 </td>
                 <td>
                   <div>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        dispatch({
-                          type: 'REMOVE_FROM_CART',
-                          id: product.id,
-                        })
-                      }>
+                    <button type="button">
                       <MdRemoveCircleOutline size={20} color="#7159c1" />
                     </button>
                     <input type="number" readOnly value={product.amount} />
@@ -70,7 +62,14 @@ class Cart extends Component {
                   <strong>R$ 258,80</strong>
                 </td>
                 <td>
-                  <button type="button">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      dispatch({
+                        type: 'REMOVE_FROM_CART',
+                        payload: { id: product.id },
+                      })
+                    }>
                     <MdDelete size="20" ccolor="#7159c1" />
                   </button>
                 </td>
