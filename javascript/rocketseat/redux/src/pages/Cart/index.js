@@ -4,8 +4,8 @@ import {
   MdRemoveCircleOutline,
   MdDelete,
 } from 'react-icons/md';
-import { Container, ProductTable, Total } from './styles';
 import { connect } from 'react-redux';
+import { Container, ProductTable, Total } from './styles';
 
 class Cart extends Component {
   constructor(props) {
@@ -24,6 +24,7 @@ class Cart extends Component {
 
   render() {
     const { data } = this.state;
+    const { dispatch } = this.props;
     return (
       <Container>
         <ProductTable>
@@ -40,10 +41,7 @@ class Cart extends Component {
             {data.map(product => (
               <tr key={product.id}>
                 <td>
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                  />
+                  <img src={product.image} alt={product.title} />
                 </td>
                 <td>
                   <strong>{product.title}</strong>
@@ -51,7 +49,14 @@ class Cart extends Component {
                 </td>
                 <td>
                   <div>
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        dispatch({
+                          type: 'REMOVE_FROM_CART',
+                          payload: { id: product.id },
+                        })
+                      }>
                       <MdRemoveCircleOutline size={20} color="#7159c1" />
                     </button>
                     <input type="number" readOnly value={product.amount} />

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
+import { connect } from 'react-redux';
 import { ProductList } from './styles';
 import api from '../../services/api';
 import { formatPrice } from '../../util/format';
-import { connect } from 'react-redux';
 
 class Home extends Component {
   constructor(props) {
