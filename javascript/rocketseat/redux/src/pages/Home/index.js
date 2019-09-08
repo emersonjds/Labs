@@ -30,7 +30,7 @@ class Home extends Component {
 
     dispatch({
       type: 'ADD_TO_CART',
-      product
+      payload: { product },
     });
   };
 
@@ -44,7 +44,9 @@ class Home extends Component {
               <img src={product.image} alt={product.title} />
               <strong>{product.title}</strong>
               <span>{product.priceFormatted}</span>
-              <button type="button" onClick={() => this.handleAddToCart(product)}>
+              <button
+                type="button"
+                onClick={() => this.handleAddToCart(product)}>
                 <div>
                   <MdAddShoppingCart size={16} color="#FFF" />
                 </div>

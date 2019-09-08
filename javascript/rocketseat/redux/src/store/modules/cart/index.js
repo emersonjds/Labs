@@ -8,13 +8,13 @@ export default function cart(state = INITIAL_STATE, action) {
     case 'ADD_TO_CART':
       return produce(state, draft => {
         const productIndex = draft.findIndex(
-          p => p.id === action.product.id
+          p => p.id === action.payload.product.id
         );
         if (productIndex >= 0) {
           draft[productIndex].amount += 1;
         } else {
           draft.push({
-            ...action.product,
+            ...action.payload.product,
             amount: 1,
           });
         }
