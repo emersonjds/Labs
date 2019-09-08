@@ -30,7 +30,7 @@ class Home extends Component {
 
     dispatch({
       type: 'ADD_TO_CART',
-      payload: { product },
+      product
     });
   };
 
