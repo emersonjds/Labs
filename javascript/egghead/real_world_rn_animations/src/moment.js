@@ -12,12 +12,17 @@ const { width, height } = Dimensions.get('window');
 
 export class Moment extends Component {
   render() {
-    const { image, title } = this.props;
+    const { image, title, translateX } = this.props;
+    const animatedStyled = {
+      transform: [
+        { translateX }
+      ]
+    };
     return (
       <View style={styles.container}>
         <Animated.Image
           source={image}
-          style={styles.image}
+          style={[styles.image, animatedStyled]}
           resizeMode="cover"
         />
         <View style={[StyleSheet.absoluteFill, styles.center]}>

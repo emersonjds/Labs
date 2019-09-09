@@ -34,6 +34,20 @@ const Images = [
   },
 ];
 
+const getInterpolate = (animatedScroll, i, imageLength) => {
+  const inputRange = [
+    (i - 1) * width,
+    i * width,
+    (i + 1) * width
+  ]
+  const outputRange = i === 0 ? [0,0,150] : [-300, 0, 150];
+  return animatedScroll.interpolate({
+    inputRange,
+    outputRange,
+    extrapolate: "clamp"
+  })
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -59,7 +73,9 @@ class App extends Component {
             },
           ])}>
           {Images.map((image, i) => (
-            <Moment key={i} {...image} />
+            <Moment key={i} {...image}
+              translateX={getInterpolate(this.state.animatedScroll, i, Images.length)}
+            />
           ))}
         </ScrollView>
       </View>
