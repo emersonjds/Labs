@@ -48,6 +48,8 @@ const getInterpolate = (animatedScroll, i, imageLength) => {
   })
 }
 
+const getSeparate = i =>  <View key={i} style={[styles.separate, { left: (i - 1) * width - 2.5 }]} />;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -77,6 +79,7 @@ class App extends Component {
               translateX={getInterpolate(this.state.animatedScroll, i, Images.length)}
             />
           ))}
+          {Array.apply(null, {length: Images.length + 1}).map((_, i) => getSeparate(i))}
         </ScrollView>
       </View>
     );
@@ -86,9 +89,15 @@ class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width,
-    height,
+    backgroundColor: '#333',
   },
+  separate: {
+    backgroundColor: '#000',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    width: 5
+  }
 });
 
 export default App;
