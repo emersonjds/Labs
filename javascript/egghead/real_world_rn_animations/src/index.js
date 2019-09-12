@@ -78,9 +78,6 @@ class App extends Component {
             <Moment key={i} {...image}
               translateX={getInterpolate(this.state.animatedScroll, i, Images.length)}
             />
-            <Text>
-              Teste
-            </Text>
           ))}
           {Array.apply(null, {length: Images.length + 1}).map((_, i) => getSeparate(i))}
         </ScrollView>
