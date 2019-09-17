@@ -24,6 +24,16 @@ class Cart extends Component {
     });
   }
 
+  increment(product) {
+    const { updateAmount } = this.props;
+    updateAmount(product.id, product.amount + 1);
+  }
+
+  decrement(product) {
+    const { updateAmount } = this.props;
+    updateAmount(product.id, product.amount - 1);
+  }
+
   render() {
     const { data } = this.state;
     const { removeFromCart } = this.props;
@@ -51,11 +61,15 @@ class Cart extends Component {
                 </td>
                 <td>
                   <div>
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() => this.decrement(product)}>
                       <MdRemoveCircleOutline size={20} color="#7159c1" />
                     </button>
                     <input type="number" readOnly value={product.amount} />
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() => this.increment(product)}>
                       <MdAddCircleOutline size={20} color="#7159c1" />
                     </button>
                   </div>

@@ -7,3 +7,9 @@ export const removeFromCart = id => ({
   type: 'REMOVE_FROM_CART',
   id,
 });
+
+export const updateAmount = (id, amount) => ({
+  type: 'UPDATE_AMOUNT',
+  id,
+  amount,
+});
