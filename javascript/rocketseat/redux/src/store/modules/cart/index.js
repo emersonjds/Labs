@@ -10,14 +10,13 @@ export default function cart(state = INITIAL_STATE, action) {
         const productIndex = draft.findIndex(
           p => p.id === action.payload.product.id
         );
-        if (productIndex >= 0) {
-          draft[productIndex].amount += 1;
-        } else {
-          draft.push({
-            ...action.payload.product,
-            amount: 1,
-          });
-        }
+        // eslint-disable-next-line no-unused-expressions
+        productIndex >= 0
+          ? (draft[productIndex].amount += 1)
+          : draft.push({
+              ...action.payload.product,
+              amount: 1,
+            });
       });
     case 'REMOVE_FROM_CART':
       return produce(state, draft => {
