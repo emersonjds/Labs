@@ -15,7 +15,7 @@ export class AbsolutAnimation extends Component {
 
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 700,
+      toValue: 400,
       duration: 1000,
     }).start();
   };
