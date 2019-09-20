@@ -1,15 +1,21 @@
-export const addToCart = product => ({
-  type: 'ADD_TO_CART',
-  payload: { product },
-});
+export function addToCart(product) {
+  return {
+    type: '@cart/ADD',
+    payload: { product },
+  };
+}
 
-export const removeFromCart = id => ({
-  type: 'REMOVE_FROM_CART',
-  id,
-});
+export function removeFromCart(id) {
+  return {
+    type: '@cart/REMOVE',
+    id,
+  };
+}
 
-export const updateAmount = (id, amount) => ({
-  type: 'UPDATE_AMOUNT',
-  id,
-  amount,
-});
+export function updateAmount(id, amount) {
+  return {
+    type: 'UPDATE_AMOUNT',
+    id,
+    amount,
+  };
+}

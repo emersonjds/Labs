@@ -1,7 +1,7 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
-import cart from './cart'
+import cart from './cart';
 
 export default combineReducers({
   cart,
-})
+});
