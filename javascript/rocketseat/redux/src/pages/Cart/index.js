@@ -75,7 +75,7 @@ class Cart extends Component {
                   </div>
                 </td>
                 <td>
-                  <strong>R$ 258,80</strong>
+                  <strong>R$ 260,80</strong>
                 </td>
                 <td>
                   <button
