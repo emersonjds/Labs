@@ -14,7 +14,7 @@ export function removeFromCart(id) {
 
 export function updateAmount(id, amount) {
   return {
-    type: 'UPDATE_AMOUNT',
+    type: '@cart/UPDATE_AMOUNT',
     id,
     amount,
   };
