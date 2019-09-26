@@ -67,7 +67,7 @@ function Cart({ cartData, removeFromCart, updateAmount, total }) {
         </tbody>
       </ProductTable>
       <footer>
-        <button type="button">Fechar Pedido</button>
+        <button type="button">Finalizar Pedido</button>
         <Total>
           <span>TOTAL</span>
           <strong>{total}</strong>
