@@ -7,16 +7,8 @@ export default function cart(state = INITIAL_STATE, action) {
   switch (action.type) {
     case '@cart/ADD_SUCCESS':
       return produce(state, draft => {
-        const productIndex = draft.findIndex(
-          p => p.id === action.payload.product.id
-        );
-        // eslint-disable-next-line no-unused-expressions
-        productIndex >= 0
-          ? (draft[productIndex].amount += 1)
-          : draft.push({
-              ...action.payload.product,
-              amount: 1,
-            });
+        const { product } = action;
+        draft.push(product);
       });
     case '@cart/REMOVE':
       return produce(state, draft => {
