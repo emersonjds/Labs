@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 function App() {
-  const [names, setName] = useState(['Emerson', 'Maria', 'Jose'])
-  const [newName, setNewName] = useState('')
+  const [names, setName] = useState(['Emerson', 'Maria', 'Jose']);
+  const [newName, setNewName] = useState('');
 
   const addName = () => {
-    setName([...names, newName])
-    setNewName('')
-  }
+    setName([...names, newName]);
+    setNewName('');
+  };
 
   return (
-    // eslint-disable-next-line react/jsx-filename-extension
     <>
       <ul>
         {names.map(name => (
@@ -22,7 +21,7 @@ function App() {
         Adicionar novo nome
       </button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
