@@ -9,6 +9,7 @@ function App() {
     setNewName('');
   };
 
+  //componentDidMount, simulate that operation when a component it's started
   useEffect(() => {
     const dataNames = localStorage.getItem('names');
     if (dataNames) {
