@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 function App() {
   const [names, setName] = useState([]);
   const [newName, setNewName] = useState('');
 
-  const addName = () => {
+  const addName = useCallback(() => {
     setName([...names, newName]);
     setNewName('');
-  };
+  }, [newName, names]);
 
   //componentDidMount, simulate that operation when a component it's started
   useEffect(() => {
