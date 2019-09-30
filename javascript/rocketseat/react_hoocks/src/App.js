@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 function App() {
   const [names, setName] = useState([]);
@@ -22,6 +22,10 @@ function App() {
     localStorage.setItem('names', JSON.stringify(names));
   }, [names]);
 
+  //We use "useMemo" to calculate anything that involves change in internal variables declared with useState,
+  //so , when the variable tech to change the value, useMemo is involked
+  const nameSize = useMemo(() => names.length, [names]);
+
   return (
     <>
       <ul>
@@ -29,6 +33,8 @@ function App() {
           <li key={name}>{name}</li>
         ))}
       </ul>
+      <br />
+      <h4>Voce tem {nameSize} tecnologias cadastradas</h4>
       <input value={newName} onChange={e => setNewName(e.target.value)} />
       <button type="button" onClick={addName}>
         Adicionar novo nome
