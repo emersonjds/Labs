@@ -27,5 +27,7 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'no-param-reassign': [2, { props: false }],
+    'react-hooks/rules-of-hooks': 'error', //enable intellisense
+    'react-hooks/exhaustive-deps': 'warn', //enable intellisense
   },
 };
