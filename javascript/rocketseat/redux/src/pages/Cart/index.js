@@ -4,13 +4,12 @@ import {
   MdRemoveCircleOutline,
   MdDelete,
 } from 'react-icons/md';
-import { connect, useSelector, useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Container, ProductTable, Total } from './styles';
 import * as CartActions from '../../store/modules/cart/actions';
 import { formatPrice } from '../../util/format';
 
-function Cart() {
+export default function Cart() {
   const cartData = useSelector(state =>
     state.cart.map(product => ({
       ...product,
@@ -93,23 +92,3 @@ function Cart() {
     </Container>
   );
 }
-
-const mapStateToProps = state => ({
-  // cartData: state.cart.map(product => ({
-  //   ...product,
-  //   subtotal: formatPrice(product.price * product.amount),
-  // })),
-  total: formatPrice(
-    state.cart.reduce((total, product) => {
-      return total + product.price * product.amount;
-    }, 0)
-  ),
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(CartActions, dispatch);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Cart);

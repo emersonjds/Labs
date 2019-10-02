@@ -9,10 +9,11 @@ import * as CartActions from '../../store/modules/cart/actions';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
+
   const amount = useSelector(state =>
     state.cart.reduce((sumAmount, product) => {
       sumAmount[product.id] = product.amount;
-      return amount;
+      return sumAmount;
     }, {})
   );
 
