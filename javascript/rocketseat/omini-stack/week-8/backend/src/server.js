@@ -1,6 +1,7 @@
 const express = require("express");
 const moongose = require("mongoose");
 const routes = require("./routes");
+const cors = require("cors");
 
 const server = express();
 
@@ -11,6 +12,7 @@ moongose.connect(
     useUnifiedTopology: true
   }
 );
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 
