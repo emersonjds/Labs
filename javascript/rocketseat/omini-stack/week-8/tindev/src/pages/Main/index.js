@@ -44,7 +44,7 @@ export default function Main({navigation}) {
     await api.post(`devs/${user._id}/deslikes`, null, {
       headers: {user: id},
     });
-    setUsers(users.filter(user => user._id !== id));
+    setUsers(rest);
   }
 
   async function handleLogout() {
@@ -80,18 +80,20 @@ export default function Main({navigation}) {
           ))
         )}
       </View>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={handleDesLike}>
-          <Text>
-            <Icon name="close" size={35} color="red" />
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleLike}>
-          <Text>
-            <Icon name="hearto" size={35} color="#7FDB6A" />
-          </Text>
-        </TouchableOpacity>
-      </View>
+      {users.length > 0 && (
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={handleDesLike}>
+            <Text>
+              <Icon name="close" size={35} color="red" />
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={handleLike}>
+            <Text>
+              <Icon name="hearto" size={35} color="#7FDB6A" />
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </SafeAreaView>
   );
 }
