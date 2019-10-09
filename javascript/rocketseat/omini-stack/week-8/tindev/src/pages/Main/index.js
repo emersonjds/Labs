@@ -32,14 +32,16 @@ export default function Main({navigation}) {
     loadUsers();
   }, [id]);
 
-  async function handleLike(id) {
-    await api.post(`devs/${id}/likes`, null, {
+  async function handleLike() {
+    const [user, ...rest] = users;
+    await api.post(`devs/${user._id}/likes`, null, {
       headers: {user: id},
     });
-    setUsers(users.filter(user => user._id !== id));
+    setUsers(rest);
   }
-  async function handleDesLike(id) {
-    await api.post(`devs/${id}/deslikes`, null, {
+  async function handleDesLike() {
+    const [user, ...rest] = users;
+    await api.post(`devs/${user._id}/deslikes`, null, {
       headers: {user: id},
     });
     setUsers(users.filter(user => user._id !== id));
@@ -79,12 +81,12 @@ export default function Main({navigation}) {
         )}
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleDesLike}>
           <Text>
             <Icon name="close" size={35} color="red" />
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleLike}>
           <Text>
             <Icon name="hearto" size={35} color="#7FDB6A" />
           </Text>
