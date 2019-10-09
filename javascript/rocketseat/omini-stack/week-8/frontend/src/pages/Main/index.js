@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
+import { FiHeart, FiX } from "react-icons/fi";
 
 // import { Container } from './styles';
 import "./styles.css";
@@ -50,10 +51,11 @@ export default function Main({ match }) {
               </footer>
               <div className="buttons">
                 <button type="button" onClick={() => handleDesLike(user._id)}>
-                  Core
+                   <FiX size={26} color="#FF5864
+" />
                 </button>
                 <button type="button" onClick={() => handleLike(user._id)}>
-                  Core
+                  <FiHeart size={26} color="#1CE8A9" />
                 </button>
               </div>
             </li>
