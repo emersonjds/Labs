@@ -1,4 +1,8 @@
 import React, {useEffect, useState} from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
+import Icon from 'react-native-vector-icons/AntDesign';
+Icon.loadFont();
+
 import {
   View,
   Text,
@@ -11,36 +15,79 @@ import logo from '../../assets/img/log.png';
 import {Logo} from './styles';
 import api from '../../services/api';
 
-export default function Main() {
+export default function Main({navigation}) {
+  const id = navigation.getParam('user'); // id login on application
+  console.log(id);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    async function loadUsers() {
+      const response = await api.get('/devs', {
+        headers: {
+          user: id,
+        },
+      });
+      setUsers(response.data);
+    }
+    loadUsers();
+  }, [id]);
+
+  async function handleLike(id) {
+    await api.post(`devs/${id}/likes`, null, {
+      headers: {user: id},
+    });
+    setUsers(users.filter(user => user._id !== id));
+  }
+  async function handleDesLike(id) {
+    await api.post(`devs/${id}/deslikes`, null, {
+      headers: {user: id},
+    });
+    setUsers(users.filter(user => user._id !== id));
+  }
+
+  async function handleLogout() {
+    AsyncStorage.clear();
+    navigation.navigate('Login');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <Logo source={logo} />
+      <TouchableOpacity onPress={handleLogout}>
+        <Logo source={logo} />
+      </TouchableOpacity>
 
       <View style={styles.cardsContainer}>
-        <View style={styles.card}>
-          <Image
-            style={styles.avatar}
-            source={{
-              uri: 'https://avatars2.githubusercontent.com/u/12503997?v=4',
-            }}
-          />
-          <View style={styles.footer}>
-            <Text style={styles.name}>Emerson</Text>
-            <Text style={styles.bio}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              fugit repellendus, esse rem explicabo voluptatem soluta quo
-              aliquam et assumenda minima saepe id facere aperiam eligendi totam
-              optio, quam laborum!
-            </Text>
-          </View>
-        </View>
+        {users.length === 0 ? (
+          <Text style={styles.message}>Voce nao possui mais matchs :( </Text>
+        ) : (
+          users.map((user, index) => (
+            <View
+              key={user._id}
+              style={[styles.card, {zIndex: users.length - index}]}>
+              <Image
+                style={styles.avatar}
+                source={{
+                  uri: user.avatar,
+                }}
+              />
+              <View style={styles.footer}>
+                <Text style={styles.name}>{user.name}</Text>
+                <Text style={styles.bio}>{user.bio}</Text>
+              </View>
+            </View>
+          ))
+        )}
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button}>
-          <Text>Deslike</Text>
+          <Text>
+            <Icon name="close" size={35} color="red" />
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text>Like</Text>
+          <Text>
+            <Icon name="hearto" size={35} color="#7FDB6A" />
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -105,12 +152,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 20,
-    elevation: 2,
-    shadowColor: '#000',
-    opacity: 0.05,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
+    // elevation: 2,
+    // shadowColor: '#000',
+    // opacity: 0.05,
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+  },
+  empty: {
+    alignSelf: 'center',
+    color: '#999',
+    fontWeight: 'bold',
   },
 });
