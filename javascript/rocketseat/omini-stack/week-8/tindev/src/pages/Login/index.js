@@ -21,9 +21,9 @@ export default function Login({navigation}) {
       username: user,
     });
     const {_id} = response.data;
-    console.log(_id);
+
     await AsyncStorage.setItem('user', _id);
-    navigation.navigate('Main', {_id});
+    navigation.navigate('Main', {user: _id});
   }
 
   return (
