@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import {Image} from 'react-native';
 
-export const Container = styled.View`
+export const Container = styled.KeyboardAvoidingView`
   flex: 1;
   background-color: #fefefe;
   align-items: center;
@@ -14,7 +14,7 @@ export const Logo = styled(Image)`
   width: 85;
 `;
 export const UserInput = styled.TextInput.attrs({
-  placeholderTextColor: '#cecece',
+  placeholderTextColor: '#999',
 })`
   height: 52;
   width: 100%;
