@@ -1,41 +1,34 @@
-const express = require("express");
-const moongose = require("mongoose");
-const cors = require("cors");
+  
+const express = require('express')
+const mongoose = require('mongoose')
+const cors = require('cors')
 
-const routes = require("./routes");
+const routes = require('./routes.js')
 
-const app = express();
-const server = require("http").Server(app);
-const io = require("socket.io")(server); //configuracao de socket io
+const app = express()
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
 
-const connectedUSers = {};
+const connectedUsers = {}
 
-io.on("connection", socket => {
-  const { user } = socket.handshake.query;
-  connectedUSers[user] = socket.id;
-});
+io.on('connection', socket => {
+    const { user } = socket.handshake.query
+    connectedUsers[user] = socket.id
+})
 
-moongose.connect(
-  "mongodb+srv://oministack8:phiberoptiks2@omstack8-awcfj.mongodb.net/oministack8?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-);
+mongoose.connect('mongodb+srv://oministack8:phiberoptiks2@omstack8-awcfj.mongodb.net/test?retryWrites=true&w=majority', {
+    useNewUrlParser: true   
+})
 
-//midlleware
 app.use((req, res, next) => {
-  try {
-    req.io = io;
-    req.connectedUSers = connectedUSers;
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
+    req.io = io
+    req.connectedUsers = connectedUsers
 
-app.use(cors());
-app.use(express.json());
-app.use(routes);
+    return next()
+})
 
-server.listen(3333);
+app.use(cors())
+app.use(express.json())
+app.use(routes)
+
+server.listen(3333)
