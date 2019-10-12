@@ -91,7 +91,7 @@ export default function Main({ match, history }) {
       )}
 
       {
-        matchDev ? (
+        matchDev && (
           <div className="match-container">
             <h3>Deu Match</h3>
             <img className="avatar" src={matchDev.avatar} alt="avatar"/>
@@ -101,11 +101,7 @@ export default function Main({ match, history }) {
             </p>
             <button type="button" onClick={() => setMatchDev(null)}>Fechar</button>
           </div>
-        ) : <div>
-          <h3>
-            Outro Conteudo
-          </h3>
-        </div>
+        )
       }
     </div>
   );
