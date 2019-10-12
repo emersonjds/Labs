@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import io from "socket.io-client";
 import api from "../../services/api";
 import { FiHeart, FiX } from "react-icons/fi";
 
@@ -19,6 +20,15 @@ export default function Main({ match }) {
       setUsers(response.data);
     }
     loadUsers();
+  }, [match.params.id]);
+
+  useEffect(() => {
+    const socket = io("http://localhost:3333", {
+      // when to do a connection, query params are send to server
+      query: {
+        user: match.params.id
+      }
+    });
   }, [match.params.id]);
 
   async function handleLike(id) {
@@ -51,8 +61,11 @@ export default function Main({ match }) {
               </footer>
               <div className="buttons">
                 <button type="button" onClick={() => handleDesLike(user._id)}>
-                   <FiX size={26} color="#FF5864
-" />
+                  <FiX
+                    size={26}
+                    color="#FF5864
+"
+                  />
                 </button>
                 <button type="button" onClick={() => handleLike(user._id)}>
                   <FiHeart size={26} color="#1CE8A9" />
