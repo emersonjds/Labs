@@ -8,8 +8,12 @@ const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server); //configuracao de socket io
 
+const connectedUSers = {};
+
 io.on("connection", socket => {
-  console.log("nova conexao", socket.id);
+  const { user } = socket.handshake.query;
+  console.log(user, socket.id);
+  connectedUSers[user] = socked.id;
 });
 
 moongose.connect(
@@ -19,6 +23,12 @@ moongose.connect(
     useUnifiedTopology: true
   }
 );
+
+app.use((req, res, next) => {
+  req.io = io;
+  req.connectedUSers = connectedUSers;
+  return next();
+});
 app.use(cors());
 app.use(express.json());
 app.use(routes);
