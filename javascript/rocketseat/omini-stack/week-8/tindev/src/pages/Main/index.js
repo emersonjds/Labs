@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/AntDesign';
+import io from 'socket.io-client';
 Icon.loadFont();
 
 import {
@@ -19,6 +20,7 @@ export default function Main({navigation}) {
   const id = navigation.getParam('user'); // id login on application
   console.log(id);
   const [users, setUsers] = useState([]);
+  const [matchDev, setMatchDev] = useState(true);
 
   useEffect(() => {
     async function loadUsers() {
@@ -30,6 +32,16 @@ export default function Main({navigation}) {
       setUsers(response.data);
     }
     loadUsers();
+  }, [id]);
+
+  useEffect(() => {
+    const socket = io('http://localhost:3333', {
+      // when to do a connection with socket the query params are sent to server
+      query: {user: id},
+    });
+    socket.on('match', dev => {
+      setMatchDev(dev);
+    });
   }, [id]);
 
   async function handleLike() {
@@ -91,6 +103,18 @@ export default function Main({navigation}) {
             <Text>
               <Icon name="hearto" size={35} color="#7FDB6A" />
             </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+      {matchDev && (
+        <View style={styles.matchContainer}>
+          <Image style={styles.matchAvatar} source={{uri: matchDev.avatar}} />
+          <Text style={styles.matchName}>{matchDev.name}</Text>
+          <Text style={styles.matchBio}>{matchDev.bio}</Text>
+          <TouchableOpacity
+            style={styles.closeMatch}
+            onPress={() => setMatchDev(null)}>
+            <Text>Fechar</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -156,17 +180,44 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 20,
-    // elevation: 2,
-    // shadowColor: '#000',
-    // opacity: 0.05,
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 2,
-    // },
   },
   empty: {
     alignSelf: 'center',
     color: '#999',
+    fontWeight: 'bold',
+  },
+  matchContainer: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,,0.8)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  matchAvatar: {
+    width: 160,
+    height: 160,
+    borderRadius: 80,
+    borderWidth: 5,
+    borderColor: '#FFF',
+    marginVertical: 30,
+  },
+  matchName: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#FFF',
+  },
+  matchBio: {
+    marginTop: 10,
+    fontSize: 16,
+    color: 'rgba(255,255,255,0.8)',
+    lineHeight: 24,
+    textAlign: 'center',
+    paddingHorizontal: 30,
+  },
+  closeMatch: {
+    fontSize: 16,
+    color: 'rgba(255,255,255,0.8)',
+    textAlign: 'center',
+    marginTop: 30,
     fontWeight: 'bold',
   },
 });
