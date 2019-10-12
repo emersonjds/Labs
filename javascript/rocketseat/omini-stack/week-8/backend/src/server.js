@@ -12,8 +12,10 @@ const connectedUSers = {};
 
 io.on("connection", socket => {
   const { user } = socket.handshake.query;
-  console.log(user, socket.id);
-  connectedUSers[user] = socked.id;
+  // console.log("user", user, "socket", socket.id);
+  connectedUSers[user] = socket.id;
+
+  console.log("usuario conectado", connectedUSers);
 });
 
 moongose.connect(
