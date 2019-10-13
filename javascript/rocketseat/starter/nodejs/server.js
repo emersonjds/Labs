@@ -13,9 +13,7 @@ moongose.connect("mongodb://localhost:27017/nodeapi", {
 
 requireDir("./src/models");
 
-//primeira rota
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+//Rotas
+app.use("/api", require("./src/routes"));
 
 app.listen(3333);
