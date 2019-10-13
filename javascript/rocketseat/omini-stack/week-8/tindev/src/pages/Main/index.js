@@ -20,7 +20,7 @@ export default function Main({navigation}) {
   const id = navigation.getParam('user'); // id login on application
   console.log(id);
   const [users, setUsers] = useState([]);
-  const [matchDev, setMatchDev] = useState(true);
+  const [matchDev, setMatchDev] = useState(null);
 
   useEffect(() => {
     async function loadUsers() {
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   },
   matchContainer: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,,0.8)',
+    backgroundColor: 'rgba(0,0,0,0.8)',
     justifyContent: 'center',
     alignItems: 'center',
   },
