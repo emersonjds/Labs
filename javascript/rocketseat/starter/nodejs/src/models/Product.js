@@ -1,4 +1,5 @@
 const moongose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate");
 
 const ProductSchema = new moongose.Schema(
   {
@@ -19,5 +20,8 @@ const ProductSchema = new moongose.Schema(
     timestamps: true
   }
 );
+
+//add paginate plugin
+ProductSchema.plugin(mongoosePaginate);
 
 moongose.model("Product", ProductSchema);
