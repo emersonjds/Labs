@@ -8,10 +8,7 @@ actionButton.addEventListener("click", function(event) {
 function criaPaciente() {
   var form = document.querySelector("#form-adiciona");
 
-  var nome = form.nome.value;
-  var peso = form.peso.value;
-  var altura = form.altura.value;
-  var gordura = form.gordura.value;
+  var paciente = getPatientsOfForm(form);
 
   var pacienteTr = document.createElement("tr");
 
@@ -35,4 +32,16 @@ function criaPaciente() {
 
   var tabalePacientes = document.querySelector("#tabela-pacientes");
   tabalePacientes.appendChild(pacienteTr);
+}
+
+function getPatientsOfForm(form) {
+  var paciente = {
+    nome: form.nome.value,
+    peso: form.peso.value,
+    altura: form.altura.value,
+    gordura: form.gordura.value,
+    imc: calculaImc(form.peso.value, form.altura.value)
+  };
+
+  return paciente;
 }
