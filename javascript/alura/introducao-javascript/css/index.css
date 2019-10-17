@@ -135,3 +135,7 @@ button:disabled {
 .alertColor {
   background-color: lightcoral;
 }
+
+#mensagens-de-erro {
+  color: red;
+}
