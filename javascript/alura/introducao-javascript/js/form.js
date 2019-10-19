@@ -62,7 +62,7 @@ function mountTd(dado, classe) {
 function validPatient(paciente) {
   var erros = [];
 
-  if (!validWeight(paciente.peso)) erros.push("Peso Invalido");
+  if (!validWeight(paciente.peso)) erros.push("Peso Incorreto");
 
   if (!valideHeight(paciente.altura)) erros.push("Altura Invalida");
 
