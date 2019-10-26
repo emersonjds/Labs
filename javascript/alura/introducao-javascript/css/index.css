@@ -139,3 +139,18 @@ button:disabled {
 #mensagens-de-erro {
   color: red;
 }
+
+.fadeOut {
+  opacity: 0;
+  transition: 0.05s;
+}
+
+#patient-filter {
+  width: 200;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.hideElement {
+  display: none;
+}

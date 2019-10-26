@@ -85,6 +85,12 @@ function validPatient(paciente) {
   return erros;
 }
 
+function AddPatientsOnTable(patient) {
+  var pacienteTr = mountTr(patient);
+  var tabela = document.querySelector("#tabela-pacientes");
+  tabela.appendChild(pacienteTr);
+}
+
 function exibeMensagemDeErros(erros) {
   var ul = document.querySelector("#mensagens-de-erro");
   ul.innerHTML = "";
