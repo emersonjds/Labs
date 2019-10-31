@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="project">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/controllers/photos-controller.js"></script>
     <title>Document</title>
   </head>
-  <body></body>
+  <body ng-controller="PhotoController">
+    <div class="jumbotron">
+      <h4>
+        Start Application
+      </h4>
+    </div>
+
+    <img src="{{ photo.url }}" alt="{{ photo.title }}" />
+  </body>
 </html>
