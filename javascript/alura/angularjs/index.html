@@ -19,7 +19,19 @@
         Start Application
       </h4>
     </div>
-
-    <img src="{{ photo.url }}" alt="{{ photo.title }}" />
+    <div ng-repeat="photo in photos" class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{ photo.title }}
+        </h3>
+      </div>
+      <div class="panel-body">
+        <img
+          class="img-responsive center-block"
+          src="{{ photo.url }}"
+          alt="{{ photo.title }}"
+        />
+      </div>
+    </div>
   </body>
 </html>
