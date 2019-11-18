@@ -1,1 +1,1 @@
-angular.module("project", ["myDirectives"]);
+angular.module("project", ["myDirectives", "ngAnimate"]);
