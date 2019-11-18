@@ -1,1 +1,1 @@
-angular.module('project', []);
+angular.module("project", ["myDirectives"]);
