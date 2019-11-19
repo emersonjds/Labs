@@ -1,0 +1,28 @@
+Directives
+
+ddo = directive definition object
+ddo.restrict = can use like atribute in a determineted div or like a html tag
+
+When use directive on html the name of directive uses trace do declare
+for example myPanel in js archive, on html we use my-panel, it's convention to angular community
+
+All directives can have only one isolated scope, very similar to the controller $ scope
+but this scope does not influence the external context in which this directive is called
+
+So that there is communication when the directive is called in the middle of
+the html and it is possible to pass which data will be treated
+within the directive with the @ character, if the attribute
+name is the same as declared within the directive scope,
+just use the @ that the directive understands the association that is made with the declared tag
+
+example
+<my-panel title="title"></my-panel>
+
+On directive title is called with title: @ because the property is equal
+
+NG-TRANSCLUDE
+
+Whenever there are child elements in a directive it is necessary 
+to use the angular ng-transclude, so the directive can render the child elements within it, 
+and in the markup it is necessary to use ng-transclude for that code snippet to render
+
