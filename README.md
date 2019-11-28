@@ -1,4 +1,4 @@
-![Labs Logo](labs.png "Labs")
+![Labs Logo](code.jpeg "Labs")
 
 ## Welcome
 
