@@ -1,12 +1,11 @@
 .populares {
-  padding: 3rem 2rem;
+  padding: 3rem 0;
 }
 
 .populares__conteudo {
   display: flex;
   flex-wrap: wrap;
   grid-area: conteudo;
-  padding: 1rem;
 }
 
 .populares__titulo {
@@ -70,6 +69,9 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #dcdcdc;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  width: calc(100% - 1rem);
 }
 
 .populares__botao {
