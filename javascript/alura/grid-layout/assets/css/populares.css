@@ -12,14 +12,14 @@
   font-weight: 500;
 }
 
-.populares__card {
+/* .populares__card {
   display: grid;
   grid-template-areas:
     "card-imagem"
     "card-corpo";
   grid-template-columns: 100%;
   background: #fdfdfd;
-}
+} */
 
 .populares__card:nth-child() {
   margin-right: none;
