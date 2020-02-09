@@ -6,5 +6,5 @@ void main() {
     fatorial *= i;
     sum += fatorial;
   }
-  print("O resultado e $sum");
+  print("O resultado é $sum");
 }
