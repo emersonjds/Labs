@@ -10,15 +10,17 @@
       var n1 = prompt("Digite um numero");
       var n2 = prompt("Digite outro numero");
 
-      n1 = parseFloat(n1);
-      n2 = parseFloat(n2);
-
+      n1 = parseInt(n1);
+      n2 = parseInt(n2);
       var coverage = (n1 + n2) / 2;
 
-      if (coverage > 5) {
-        alert(`Parabens voce foi aprovado, sua nota final foi ${coverage}`);
+      isMoreThatFive = false;
+
+      if (coverage >= 5) {
+        isMoreThatFive = !isMoreThatFive;
+        alert(`A media calculada de ${n1} e de ${n2} é ${isMoreThatFive}`);
       } else {
-        `Infelizmente voce nao foi aprovado, sua nota final foi ${coverage}`;
+        alert(`A media calculada de ${n1} e de ${n2} é ${isMoreThatFive}`);
       }
     </script>
   </body>
