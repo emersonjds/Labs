@@ -18,15 +18,13 @@
       } else {
         var sortedNumber = parseInt(Math.random() * 2);
         alert("O numero sorteado foi" + sortedNumber);
-        if (sortedNumber === 0 && n1 > n2) {
+        if (
+          (sortedNumber === 0 && n1 > n2) ||
+          (sortedNumber === 1 && n1 < n2)
+        ) {
           alert("O jogador n1 venceu");
         } else {
           alert("O jogador n2 venceu");
-        }
-        if (sortedNumber === 1 && n1 < n2) {
-          alert("O jogador n1 venceu");
-        } else {
-          alert("O jogador 2 venceu");
         }
       }
     </script>
