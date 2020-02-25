@@ -5,5 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      var n1 = prompt("Jogador 1 digite 0 ou 1 ");
+      var n2 = prompt("Jogador 2 digite 0 ou 1 ");
+
+      var n1 = parseFloat(n1);
+      var n2 = parseFloat(n2);
+
+      if (n1 == n2) {
+        alert("Houve empate");
+      }
+      sortedNumber = parseInt(Math.random * 2);
+      alert(`O numero sorteado foi ${sortedNumber}`);
+      if (sortedNumber == 0) {
+        if (n1 == sortedNumber) {
+          alert("O jogador n1 venceu");
+        } else {
+          alert("O jogador n2 venceu");
+        }
+      }
+      if (sortedNumber == 1) {
+        if (sortedNumber == n1) {
+          alert("o jogador n1 venceu");
+        } else {
+          alert("o jogador n2 venceu");
+        }
+      }
+    </script>
+  </body>
 </html>
