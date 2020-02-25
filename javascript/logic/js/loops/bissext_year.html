@@ -7,12 +7,14 @@
   </head>
   <body>
     <script>
-      var n1 = parseInt(prompt("Digite um numero"));
-      for (var i = 0; i <= 50; i++) {
-        document.write(`${n1} * ${i} = ${n1 * i} </br>`);
-        if (i % 10 === 0 && i > 0) {
-          document.write("<hr>");
+      var year = 1004;
+      while (year <= 2020) {
+        if (!(year % 100 === 0) || year % 400 === 0) {
+          document.write("ano " + year + "<br>");
+        } else {
+          document.write(year + " não é bissexto" + "</br>");
         }
+        year += 4;
       }
     </script>
   </body>

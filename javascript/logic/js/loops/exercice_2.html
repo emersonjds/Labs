@@ -7,13 +7,13 @@
   </head>
   <body>
     <script>
-      var n1 = parseInt(prompt("Digite um numero"));
-      for (var i = 0; i <= 50; i++) {
-        document.write(`${n1} * ${i} = ${n1 * i} </br>`);
-        if (i % 10 === 0 && i > 0) {
-          document.write("<hr>");
+      var year = 1004;
+      do {
+        document.write("Ano " + year + "</br>");
+        if (year % 4 === 0) {
+          year += 4;
         }
-      }
+      } while (year < 2017);
     </script>
   </body>
 </html>
