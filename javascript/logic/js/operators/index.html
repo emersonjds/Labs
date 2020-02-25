@@ -18,15 +18,14 @@
       } else {
         sortedNumber = parseInt(Math.random() * 2);
         alert(`O numero sorteado foi ${sortedNumber}`);
-        if (sortedNumber == 0) {
-          if (n1 == sortedNumber) {
+        if (sortedNumber === 0) {
+          if (n1 < n2) {
             alert("O jogador n1 venceu");
           } else {
             alert("O jogador n2 venceu");
           }
-        }
-        if (sortedNumber == 1) {
-          if (sortedNumber == n1) {
+        } else {
+          if (n1 > n2) {
             alert("o jogador n1 venceu");
           } else {
             alert("o jogador n2 venceu");
