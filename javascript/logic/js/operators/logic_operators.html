@@ -14,7 +14,7 @@
 
       coverage = (n1 + n2) / 2;
 
-      if (coverage > 5 || n1 > 0 || n2 > 0) {
+      if (coverage <= 5 || n1 === 0 || n2 === 0) {
         alert("Voce foi aprovado");
       } else {
         alert("Voce foi reprovado");

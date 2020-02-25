@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var n1 = prompt("Digite um numnero");
+      var n2 = prompt("Digite um outro numero");
+
+      n1 = parseInt(n1);
+      n2 = parseInt(n2);
+
+      if (n1 === n2) {
+        alert("Voces empataram");
+      } else {
+        var sortedNumber = parseInt(Math.random() * 2);
+        alert("O numero sorteado foi" + sortedNumber);
+        if (sortedNumber === 0 && n1 > n2) {
+          alert("O jogador n1 venceu");
+        } else {
+          alert("O jogador n2 venceu");
+        }
+        if (sortedNumber === 1 && n1 < n2) {
+          alert("O jogador n1 venceu");
+        } else {
+          alert("O jogador 2 venceu");
+        }
+      }
+    </script>
+  </body>
+</html>
