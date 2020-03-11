@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sum()">+</button>
+    <button onclick="multiply()">*</button>
+    <button onclick="minus()">-</button>
+    <button onclick="division()">/</button>
+    <div class="output"></div>
+    <script>
+      var n = parseInt(prompt("Digite um numero"));
+      write();
+
+      function write() {
+        var out = document.querySelector(".output");
+        out.innerHTML = n;
+      }
+
+      function sum() {
+        var anyOne = parseInt(prompt("Digite outro numero"));
+        n += anyOne;
+        write();
+      }
+
+      function multiply() {
+        var anyOne = parseInt(prompt("Digite outro numero"));
+        n *= anyOne;
+        write();
+      }
+
+      function minus() {
+        var anyOne = parseInt(prompt("Digite outro numero"));
+        n -= anyOne;
+        write();
+      }
+
+      function division() {
+        var anyOne = parseInt(prompt("Digite outro numero"));
+        n /= anyOne;
+        write();
+      }
+    </script>
+  </body>
+</html>
