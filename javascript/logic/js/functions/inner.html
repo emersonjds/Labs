@@ -6,13 +6,19 @@
     <title>Document</title>
   </head>
   <body>
+    <button class="create" onclick="create()">Create</button>
+    <button class="clear" onclick="clear()">Clear</button>
     <div id="output"></div>
     <script>
+      function create(number) {
+        alert("teste");
+      }
+
       var out = document.querySelector("#output");
       var msg = "";
-      for (var i = 0; i <= 1000; i++) {
-        msg += `i ${i} </br>`;
-      }
+      // for (var i = 0; i <= 1000; i++) {
+      //   msg += `i ${i} </br>`;
+      // }
 
       out.innerHTML = msg;
     </script>
