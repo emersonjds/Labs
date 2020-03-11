@@ -6,13 +6,15 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="output"></div>
     <script>
-      function t() {
-        return function calc(x, y) {
-          return x * y;
-        };
+      var out = document.querySelector("#output");
+      var msg = "";
+      for (var i = 0; i <= 1000; i++) {
+        msg += `i ${i} </br>`;
       }
-      t()(5, 2);
+
+      out.innerHTML = msg;
     </script>
   </body>
 </html>
