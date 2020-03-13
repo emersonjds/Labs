@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="calc('+')">+</button>
+    <button onclick="calc('-')">-</button>
+    <button onclick="calc('*')">*</button>
+    <button onclick="calc('/')">/</button>
+    <div class="output"></div>
+    <script>
+      var n = parseInt(prompt("Digite um numero"));
+      write();
+
+      function write() {
+        var out = document.querySelector(".output");
+        out.innerHTML = n;
+      }
+
+      function calc(param) {
+        var anyOne = parseInt(prompt("Digite outro numero"));
+
+        switch (param) {
+          case "+":
+            n += anyOne;
+            write();
+            break;
+          case "-":
+            n -= anyOne;
+            write();
+            break;
+          case "*":
+            n *= anyOne;
+            write();
+            break;
+          case "/":
+            n /= anyOne;
+            write();
+            break;
+          default:
+            alert("nao foi passado qual a operacao a ser processada");
+        }
+      }
+    </script>
+  </body>
+</html>
