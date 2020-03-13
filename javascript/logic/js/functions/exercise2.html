@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showArea(largura, altura)">Show area</button>
+
+    <script>
+      // the variables was loaded on page, for that reason the function dont return undefined
+      var largura = parseInt(prompt("Digite a largura"));
+      var altura = parseInt(prompt("Digite a autura"));
+
+      function showArea(largura, altura) {
+        alert("O valor da area é : " + largura * altura);
+      }
+    </script>
+  </body>
+</html>
