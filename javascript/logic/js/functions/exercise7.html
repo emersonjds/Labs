@@ -34,6 +34,9 @@
       }
 
       function verifyNumbers(n1, n2) {
+        if (n1 === undefined || n2 === undefined) {
+          throw new Error("calculadora precisa receber 2 numeros");
+        }
         if (isNaN(n1) || isNaN(n2)) {
           throw new Error("um dos numeros informados nao é do tipo numerico");
           return 0;
