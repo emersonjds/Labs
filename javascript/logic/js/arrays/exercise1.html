@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var days = new Array(
+        "domingo",
+        "segunda",
+        "terca",
+        "quarta",
+        "quinta",
+        "sexta",
+        "sabado"
+      );
+
+      var dayOfWeek = new Date().getDay();
+
+      var msg = "";
+
+      for (var i = 0; i < days.length; i++) {
+        if (dayOfWeek === i) {
+          alert("Bem vindo, hoje é " + days[i]);
+        }
+      }
+    </script>
+  </body>
+</html>
