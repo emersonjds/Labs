@@ -23,6 +23,12 @@ class Counter extends Component {
     });
   };
 
+  handleChange = event => {
+    this.setState({
+      username: event.target.value
+    });
+  };
+
   render() {
     return (
       <div>
@@ -32,6 +38,9 @@ class Counter extends Component {
           <button onClick={this.decrement}>Click to -</button>
         </p>
         <p>You typed: {this.state.username}</p>
+        <p>
+          <input type="text" onChange={this.handleChange} />
+        </p>
       </div>
     );
   }

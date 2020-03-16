@@ -30,7 +30,7 @@ class App extends React.Component {
       <div className="App">
         <Message msg={null} />
         <Time />
-        <Counter />
+        <Counter username="Emerson" />
         Hello {firstName} {lastName} !
       </div>
     );
