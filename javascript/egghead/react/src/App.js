@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import PropTypes from "prop-types";
+import Message from "./components/Message";
 
 // App.propTypes = {
 //   firstName: PropTypes.string.isRequired,
@@ -25,6 +26,7 @@ class App extends React.Component {
     const { firstName, lastName } = this.props;
     return (
       <div className="App">
+        <Message msg={null} />
         Hello {firstName} {lastName} !
       </div>
     );
