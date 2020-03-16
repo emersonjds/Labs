@@ -1,14 +1,10 @@
 import React from "react";
 import "./styles.css";
+import PropTypes from "prop-types";
 
-const PropTypes = {
-  string(props, propName, componentName) {
-    if (typeof props[propName] !== "string") {
-      return new Error(
-        `Hey, you should pas a string for ${propName} but you pass a ${props[propName]} for a ${componentName}`
-      );
-    }
-  }
+App.propTypes = {
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired
 };
 
 export default function App(props) {
@@ -18,8 +14,3 @@ export default function App(props) {
     </div>
   );
 }
-
-App.propTypes = {
-  firstName: PropTypes.string,
-  lastName: PropTypes.string
-};
