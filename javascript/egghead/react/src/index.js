@@ -6,7 +6,7 @@ import App from "./App";
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
-    <App firstName="Emerson" lastName="Silva" />
+    <App firstName="Emerson" />
   </React.StrictMode>,
   rootElement
 );
