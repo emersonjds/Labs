@@ -5,6 +5,7 @@ import Message from "./components/Message";
 import Time from "./components/Time";
 import Counter from "./components/Counter";
 import Cronometer from "./components/Cronometer";
+import BindCounter from "./components/BindCounter";
 
 // App.propTypes = {
 //   firstName: PropTypes.string.isRequired,
@@ -35,6 +36,8 @@ class App extends React.Component {
         Hello {firstName} {lastName} !
         <br />
         <Cronometer />
+        <br />
+        <BindCounter />
       </div>
     );
   }
