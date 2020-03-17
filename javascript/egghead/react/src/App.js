@@ -6,6 +6,7 @@ import Time from "./components/Time";
 import Counter from "./components/Counter";
 import Cronometer from "./components/Cronometer";
 import BindCounter from "./components/BindCounter";
+import ReactRefs from "./components/ReactRefs";
 
 // App.propTypes = {
 //   firstName: PropTypes.string.isRequired,
@@ -38,6 +39,8 @@ class App extends React.Component {
         <Cronometer />
         <br />
         <BindCounter />
+        <br />
+        <ReactRefs children="Hello There" className="totally-centered" />
       </div>
     );
   }
