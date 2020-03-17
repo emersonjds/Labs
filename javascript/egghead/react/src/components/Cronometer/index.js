@@ -33,7 +33,7 @@ export default class Cronometer extends React.Component {
     });
   };
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     clearInterval(this.timer);
   }
 
@@ -42,10 +42,10 @@ export default class Cronometer extends React.Component {
     return (
       <div>
         <label>{lapse}ms</label>
-        <button onClick={this.handleRunClick}>
+        <button onClick={this.handleRunClick.bind(this)}>
           {running ? "Start" : "Stop"}
         </button>
-        <button onClick={this.handleClearClick}>Clear</button>
+        <button onClick={this.handleClearClick.bind(this)}>Clear</button>
       </div>
     );
   }
