@@ -7,6 +7,7 @@ import Counter from "./components/Counter";
 import Cronometer from "./components/Cronometer";
 import BindCounter from "./components/BindCounter";
 import ReactRefs from "./components/ReactRefs";
+import Forms from "./components/Forms";
 
 // App.propTypes = {
 //   firstName: PropTypes.string.isRequired,
@@ -41,6 +42,7 @@ class App extends React.Component {
         <BindCounter />
         <br />
         <ReactRefs children="Hello There" className="totally-centered" />
+        <Forms />
       </div>
     );
   }
