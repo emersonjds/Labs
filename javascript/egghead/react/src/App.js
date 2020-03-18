@@ -9,6 +9,7 @@ import BindCounter from "./components/BindCounter";
 import ReactRefs from "./components/ReactRefs";
 import Forms from "./components/Forms";
 import DynamicForm from "./components/DynamicForm";
+import List from "./components/List";
 
 // App.propTypes = {
 //   firstName: PropTypes.string.isRequired,
