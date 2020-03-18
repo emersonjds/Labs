@@ -8,6 +8,7 @@ import Cronometer from "./components/Cronometer";
 import BindCounter from "./components/BindCounter";
 import ReactRefs from "./components/ReactRefs";
 import Forms from "./components/Forms";
+import DynamicForm from "./components/DynamicForm";
 
 // App.propTypes = {
 //   firstName: PropTypes.string.isRequired,
@@ -53,6 +54,8 @@ class App extends React.Component {
             return null;
           }}
         />
+        <br />
+        <DynamicForm />
       </div>
     );
   }
