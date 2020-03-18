@@ -73,7 +73,7 @@ export default class DynamicForm extends Component {
             cols="30"
             rows={DynamicForm.availableoptions.length}
             onChange={this.handleMultilineChange}
-            value={multiline}
+            defaultValue={multiline}
           ></textarea>
         </div>
         <div>
@@ -81,13 +81,12 @@ export default class DynamicForm extends Component {
           <br />
           <select
             value={multipleSelect}
-            name=""
-            id=""
             multiple
             size={DynamicForm.availableoptions.length}
+            onChange={this.handleMultiSelectChange}
           >
             {DynamicForm.availableoptions.map(data => (
-              <option key={data} optionValue={data}>
+              <option key={data} optionvalues={data}>
                 {data}
               </option>
             ))}
