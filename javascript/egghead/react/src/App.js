@@ -42,7 +42,17 @@ class App extends React.Component {
         <BindCounter />
         <br />
         <ReactRefs children="Hello There" className="totally-centered" />
-        <Forms />
+        <Forms
+          getErrorMessage={value => {
+            if (value.length < 3) {
+              return `the field accepts in minimum 3 characters`;
+            }
+            if (!value.includes("s")) {
+              return `Values do not include 's' but it should necessary`;
+            }
+            return null;
+          }}
+        />
       </div>
     );
   }
