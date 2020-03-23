@@ -5,14 +5,14 @@ import { observer } from "mobx-react";
 @observer
 export default class Temperature extends Component {
   @observable unit = "C";
-  @observable tempetatureCelsius = 25;
+  @observable temperatureCelsius = 25;
 
   @computed get temperatureKelvin() {
     return this.tempetatureCelsius + 9 / 5 + 32;
   }
 
   @computed get temperatureFahrenheit() {
-    return this.tempetatureCelsius + 273.15;
+    return this.temperatureCelsius + 273.15;
   }
 
   @computed get temperature() {
@@ -22,11 +22,11 @@ export default class Temperature extends Component {
       case "F":
         return this.temperatureFahrenheit + "F*";
       case "C":
-        return this.tempetatureCelsius + "C*";
+        return this.temperatureCelsius + "C*";
     }
   }
 
   render() {
-    return <div>Emerson </div>;
+    return <div>{this.tempetatureCelsius} </div>;
   }
 }
