@@ -9,14 +9,15 @@ import {
 } from "mobx";
 import { observer } from "mobx-react";
 
-useStrict(true); // mobx don't permite anything changes on validate strict mode
+// useStrict = true; // mobx don't permite anything changes on validate strict mode
 
 @observer
 export default class Temperature extends Component {
   // @observable unit = "C";
   // @observable temperatureCelsius = 25;
 
-  constructor() {
+  constructor(props) {
+    super(props);
     extendObservable(this, {
       unit: "C",
       temperatureCelsius: 25
@@ -50,7 +51,7 @@ export default class Temperature extends Component {
     this.temperatureCelsius(degrees);
   }
 
-  //when you named and actions , debugger identify the modification in that action
+  //when you named and actions , debugger identify the modification in that action and allow visualize that action
   @action("update temperature and unit")
   setData(degrees, unit) {
     this.setCelsius(degrees);
@@ -58,7 +59,19 @@ export default class Temperature extends Component {
   }
 
   render() {
-    return <div>{this.tempetatureCelsius} </div>;
+    return <TView temperature={temps} />;
+  }
+}
+
+@observer
+class TView extends Component {
+  render() {
+    const t = this.props.temperature;
+    return t.map(data => (
+      <li key={data.id}>
+        {data.name}, {data.temperature.temperatureCelsius}
+      </li>
+    ));
   }
 }
 
@@ -85,9 +98,7 @@ const t = observable({
 });
 
 // dynamic array with asMap
-const temps = observable(
-  asMap({
-    Amsterdam: new Temperature(),
-    Rome: new Temperature()
-  })
-);
+const temps = observable([
+  { id: 1, name: "Amsterdam", temperature: new Temperature() },
+  { id: 2, name: "Rome", temperature: new Temperature() }
+]);
