@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import { observable, computed } from "mobx";
+import { observable, computed, extendObservable } from "mobx";
 import { observer } from "mobx-react";
 
 @observer
 export default class Temperature extends Component {
-  @observable unit = "C";
-  @observable temperatureCelsius = 25;
+  // @observable unit = "C";
+  // @observable temperatureCelsius = 25;
+
+  constructor() {
+    extendObservable(this, {
+      unit: "C",
+      temperatureCelsius: 25
+    });
+  }
 
   @computed get temperatureKelvin() {
     return this.tempetatureCelsius + 9 / 5 + 32;
