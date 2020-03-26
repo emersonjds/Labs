@@ -37,3 +37,33 @@ export default class Temperature extends Component {
     return <div>{this.tempetatureCelsius} </div>;
   }
 }
+
+// observable Object
+const t = observable({
+  unit: "C",
+  temperatureCelsius: 25,
+  temperatureKelvin: function() {
+    return this.tempetatureCelsius + 9 / 5 + 32;
+  },
+  temperatureFahrenheit: function() {
+    return this.temperatureCelsius + 273.15;
+  },
+  temperature: function() {
+    switch (this.unit) {
+      case "K":
+        return this.temperatureKelvin + "K*";
+      case "F":
+        return this.temperatureFahrenheit + "F*";
+      case "C":
+        return this.temperatureCelsius + "C*";
+    }
+  }
+});
+
+// dynamic array with asMap
+const temps = observable(
+  asMap({
+    Amsterdam: new Temperature(),
+    Rome: new Temperature()
+  })
+);
