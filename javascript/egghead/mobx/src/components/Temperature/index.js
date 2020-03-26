@@ -1,6 +1,15 @@
 import React, { Component } from "react";
-import { observable, computed, extendObservable } from "mobx";
+import {
+  observable,
+  computed,
+  extendObservable,
+  action,
+  transaction,
+  useStrict
+} from "mobx";
 import { observer } from "mobx-react";
+
+useStrict(true); // mobx don't permite anything changes on validate strict mode
 
 @observer
 export default class Temperature extends Component {
@@ -31,6 +40,21 @@ export default class Temperature extends Component {
       case "C":
         return this.temperatureCelsius + "C*";
     }
+  }
+
+  @action setUnit(newUnit) {
+    this.unit = newUnit;
+  }
+
+  @action setCelsius(degrees) {
+    this.temperatureCelsius(degrees);
+  }
+
+  //when you named and actions , debugger identify the modification in that action
+  @action("update temperature and unit")
+  setData(degrees, unit) {
+    this.setCelsius(degrees);
+    this.setUnit(unit);
   }
 
   render() {
