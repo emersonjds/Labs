@@ -11,12 +11,20 @@
   </head>
   <body>
     <script>
-      var person = {
-        name: "Emerson",
-        age: 30
-      };
+      //  for create an object like OO its necessary create a function with parameters , like to properties in Java
+      function Person(name, age, address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+      }
 
-      console.log(Object.getOwnPropertyNames(person));
+      var newPerson = new Person("Emerson", 30, "Rua Gonzaga, 106");
+      console.log(newPerson);
+
+      var lapis = new Object();
+      lapis.name = "lapis";
+      lapis.price = 1.5;
+      console.log(lapis);
     </script>
   </body>
 </html>
