@@ -12,6 +12,14 @@
         this.name = name;
         this.price = price;
         this.store = store;
+        //method declared like on property of object
+        this.comprar = function(qtd) {
+          if (!qtd) {
+            this.store = 1;
+          }
+          this.store--;
+          console.log("item comprado estoque atual " + this.store);
+        };
       }
 
       var caneta = new Product("caneta", 1.5, 200);
@@ -20,6 +28,7 @@
       msg += "Nome " + caneta.name + "</br>";
       msg += "Price " + caneta.price + "</br>";
       msg += "Store " + caneta.store + "</br>";
+      console;
 
       document.querySelector("#output").innerHTML = msg;
     </script>
