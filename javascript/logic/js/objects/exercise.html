@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      function Product(name, price, store) {
+        this.name = name;
+        this.price = price;
+        this.store = store;
+      }
+
+      var caneta = new Product("caneta", 1.5, 200);
+
+      var msg = "";
+      msg += "Nome " + caneta.name + "</br>";
+      msg += "Price " + caneta.price + "</br>";
+      msg += "Store " + caneta.store + "</br>";
+
+      document.querySelector("#output").innerHTML = msg;
+    </script>
+  </body>
+</html>
