@@ -6,7 +6,9 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      docs: []
+      docs: [],
+      docsInfo: {},
+      page: 1
     };
   }
 
@@ -14,27 +16,53 @@ class Main extends Component {
     this.loadProducts();
   }
 
-  loadProducts = async () => {
-    const response = await api.get("/products");
-    const { docs } = response.data;
+  loadProducts = async (page = 1) => {
+    const response = await api.get(`/products?page=${page}`);
+    const { docs, ...docsInfo } = response.data;
     this.setState({
-      docs
+      docs,
+      docsInfo,
+      page
     });
     console.log("documentos carregados", this.state.docs);
   };
 
+  prevButton = () => {
+    const { page } = this.state;
+    if (page === 1) return;
+    const pageNumber = page - 1;
+    this.loadProducts(pageNumber);
+  };
+
+  nextButton = () => {
+    const { page, docsInfo } = this.state;
+    if (page === docsInfo.pages) return;
+    const pageNumber = page + 1;
+    this.loadProducts(pageNumber);
+  };
+
   render() {
-    const { docs } = this.state;
+    const { docs, page, docsInfo } = this.state;
     return (
-      <div className="product-list">
-        {docs.map(document => (
-          <article key={document._id}>
-            <strong>{document.title}</strong>
-            <p>{document.description}</p>
-            <a>Acessar</a>
-          </article>
-        ))}
-      </div>
+      <>
+        <div className="product-list">
+          {docs.map(document => (
+            <article key={document._id}>
+              <strong>{document.title}</strong>
+              <p>{document.description}</p>
+              <a>Acessar</a>
+            </article>
+          ))}
+          <div className="actions">
+            <button disabled={page === 1} onClick={this.prevButton}>
+              Anterior
+            </button>
+            <button disabled={page === docsInfo.page} onClick={this.nextButton}>
+              Próximo
+            </button>
+          </div>
+        </div>
+      </>
     );
   }
 }
