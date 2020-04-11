@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import ColumList from "./components/ColumList";
+
+import ColumnList from "./components/ColumList";
+
+import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
@@ -11,31 +14,32 @@ class App extends Component {
     this.state = { tasks };
   }
 
-  updateLocalStorageTasks = (tasks) => {
+  updateLocalStorage = (tasks) => {
     const stringified = JSON.stringify(tasks);
     window.localStorage.setItem("toDoListTasks", stringified);
   };
 
   updateAndSave = (tasks) => {
-    this.updateLocalStorageTasks(tasks);
+    this.updateLocalStorage(tasks);
     this.setState({ tasks });
   };
 
-  addTodo = (e) => {
+  addTask = (e) => {
     e.preventDefault();
+
     let { tasks } = this.state;
     const value = e.target.querySelector("input").value;
-    console.log(value);
     const newTask = {
       id: tasks.length + 1,
       description: value,
       status: "To Do",
     };
+    e.target.querySelector("input").value = "";
     tasks = tasks.concat(newTask);
     this.updateAndSave(tasks);
   };
 
-  updateTodo = (task, target) => {
+  updateTask = (target, task) => {
     let { tasks } = this.state;
     tasks = tasks
       .filter((t) => t.id !== task.id)
@@ -43,35 +47,31 @@ class App extends Component {
         ...task,
         status: target.checked ? "Done" : "To Do",
       });
+    this.updateAndSave(tasks);
   };
 
   render() {
-    const { tasks } = this.state;
+    const { tasks = [] } = this.state;
     const columns = [
-      {
-        title: "To Do",
-        tasks,
-      },
-      {
-        title: "Done",
-        tasks,
-      },
+      { title: "To Do", tasks },
+      { title: "Done", tasks },
     ];
 
     return (
       <div className="App">
-        <h3>Todo React</h3>
-
-        {/* TODO form adicionar task */}
-        {columns.map((colum) => (
-          <ColumList
-            key={colum.title}
-            columTitle={colum.title}
-            tasks={tasks}
-            addTodo={this.addTodo}
-            updateTodo={this.updateTodo}
-          />
-        ))}
+        <div className="App-container">
+          <div className="app-lists">
+            {columns.map((column) => (
+              <ColumnList
+                key={column.title}
+                columnTitle={column.title}
+                tasks={column.tasks}
+                addTask={this.addTask}
+                updateTask={this.updateTask}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
