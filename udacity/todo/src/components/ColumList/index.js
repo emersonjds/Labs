@@ -16,9 +16,13 @@ const ColumList = ({ tasks, columTitle, addTodo, updateTodo }) => {
       <ul>
         <br />
         {currentTasks.map((task) => (
-          <li key={task.columTitle}>
-            {task.description}
-            <input type="checkbox"></input>
+          <li key={task.id}>
+            <input
+              type="checkbox"
+              onChange={(e) => updateTodo(task, e.target)}
+              checked={columTitle === "Done"}
+            ></input>
+            <span>{task.description}</span>
           </li>
         ))}
       </ul>
