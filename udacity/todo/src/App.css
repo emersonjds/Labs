@@ -42,7 +42,6 @@
 }
 
 .container-tasks {
-  max-width: 400px;
   width: 100%;
   display: flex;
   justify-content: space-between;
