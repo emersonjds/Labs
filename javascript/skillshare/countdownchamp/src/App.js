@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Clock from './Clock'
 import "./App.css";
 
 export default class App extends Component {
@@ -6,7 +7,7 @@ export default class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      deadline: 'December, 14th, 2020',
+      deadline: 'December 14, 2020',
       newDeadline: null
     }
   }
@@ -23,10 +24,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="App-title">{deadline}</div>
-        <div className="App-days">14 days</div>
-        <div className="App-hr">37 hrs</div>
-        <div className="App-min">22 min</div>
-        <div className="App-sec">10 sec</div>
+        <Clock deadline={this.state.deadline}/>
         <div>
           <input type="text" placeholder="Digite a data" onChange={e => this.setState({
             newDeadline: e.target.value,
