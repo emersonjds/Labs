@@ -14,8 +14,11 @@ export default class Clock extends Component {
     getTimeUntil(deadline) {
       const time = Date.parse(deadline) - Date.parse(new Date());
       console.log(' time ', time );
-      const seconds = Math.floor((time/1000)%60)
-      console.log(seconds)
+      const seconds = Math.floor((time/1000) % 60)
+      const minutes = Math.floor((time/1000/60) % 60);
+      const hour = Math.floor((time/(1000*60*60)) % 24);
+      const days = Math.floor((time/(1000*60*60*24)));
+
     }
 
     render() {
