@@ -4,6 +4,14 @@ var n2 = "";
 var clicadoEmIgual = false;
 
 function incluirDigito(value) {
+  if (n2 && operacao && clicadoEmIgual) {
+    clicadoEmIgual = false;
+    limpar();
+    n1 = value;
+    mostraNoDisplay(n1);
+    return;
+  }
+
   if (operacao !== null) {
     n2 += value;
     mostraNoDisplay(n2);
@@ -40,8 +48,10 @@ function mostraNoDisplay(valor) {
 }
 
 function limpar() {
-  var display = document.getElementById("display");
-  display.innerHTML = "0";
+  n1 = 0;
+  operacao = null;
+  n2 = "";
+  mostraNoDisplay(n1);
 }
 
 function iniciarCalculo(simbolo) {
@@ -70,3 +80,29 @@ function finalizarCalculo() {
   n1 = result;
   mostraNoDisplay(n1);
 }
+
+incluirPonto = () => {
+  if (operacao && n2 === "") {
+    n2 = "0.";
+  } else if (operacao && n2) {
+    n2 += ".";
+  } else {
+    n1 += ".";
+  }
+};
+
+obterPorcento = () => {
+  if (!n2) {
+    limpar();
+    n2 = "";
+    mostraNoDisplay(n1);
+  } else {
+    if (operacao === "+" || operacao === "-") {
+      var porcento = (n1 * n2) / 100;
+    } else {
+      var porcento = n2 / 100;
+    }
+    n2 = porcento;
+    mostraNoDisplay(n1);
+  }
+};
