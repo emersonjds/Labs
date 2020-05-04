@@ -6,20 +6,40 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="output"></div>
+
     <script>
-      function sort() {
-        return Math.floor(Math.random() * 60);
-      }
+      var numerosSorteados = sortedNumbers();
+      var output = document.querySelector("#output");
+      var msg = `<p> Numeros sorteados ${numerosSorteados} </p> `;
 
-      var count = 0;
-      var numbers = [];
+      var myNumbers = [10, 17, 24, 33, 38, 41];
 
-      while (numbers.length < 6) {
-        var number = sort();
-        if (numbers.indexOf(number) === -1) {
-          numbers.push(number);
+      for (var i = 0; i < myNumbers.length; i++) {
+        if (numerosSorteados.indexOf(myNumbers[i]) === -1) {
+          msg += ` ${myNumbers[i]} <p> errou </p>`;
+        } else {
+          msg += ` ${myNumbers[i]} <p> acertou </p>`;
         }
       }
+      output.innerHTML = msg;
+
+      function sortedNumbers() {
+        var sorteados = [];
+        function sort() {
+          return Math.floor(Math.random() * 60);
+        }
+
+        while (sorteados.length < 6) {
+          var number = sort();
+          if (sorteados.indexOf(number) === -1) {
+            sorteados.push(number);
+          }
+        }
+        return sorteados;
+      }
+
+      console.log(numerosSorteados);
     </script>
   </body>
 </html>
