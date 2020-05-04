@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sort() {
+        return Math.floor(Math.random() * 60);
+      }
+
+      var count = 0;
+      var numbers = [];
+
+      while (numbers.length < 6) {
+        var number = sort();
+        if (numbers.indexOf(number) === -1) {
+          numbers.push(number);
+        }
+      }
+    </script>
+  </body>
+</html>
