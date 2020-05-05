@@ -48,7 +48,7 @@ function mostraNoDisplay(valor) {
 }
 
 function limpar() {
-  n1 = 0;
+  n1 = "0";
   operacao = null;
   n2 = "";
   mostraNoDisplay(n1);
