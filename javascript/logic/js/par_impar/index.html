@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Par ou Impar</h3>
+    <p>Digite um numero de 0 a 5</p>
+    <input type="text" id="input" min="0" max="5" />
+    <button onclick="play()">Jogar</button>
+
+    <div id="output"></div>
+  </body>
+
+  <script>
+    var nAI = "";
+    var nPlayer = "";
+    var verifyOperation = "par";
+
+    function sortedNumber(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    function play() {
+      var userInputed = Number(document.querySelector("#input").value);
+      nAI = sortedNumber(5);
+      var calcOperation = userInputed + nAI;
+      var msg = document.querySelector("#output");
+
+      if (calcOperation % 2 === 0) {
+        msg.innerHTML = `
+        n sorteado computador : ${nAI} <br />
+        n computado jogador : ${userInputed} <br />
+        n soma dor valores : ${calcOperation} <br />
+        O valor retornado foi ${verifyOperation}`;
+      } else {
+        verifyOperation = "impar";
+        msg.innerHTML = `
+        n sorteado computador : ${nAI} <br />
+        n computado jogador : ${userInputed} <br />
+        n soma dor valores : ${calcOperation} <br />
+        O valor retornado foi ${verifyOperation}`;
+      }
+    }
+  </script>
+</html>
