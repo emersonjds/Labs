@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vectors</title>
+  </head>
+  <body>
+    <div id="output"></div>
+  </body>
+  <script>
+    var msg = "";
+    var notas = [
+      [5, 7, 8, 10],
+      [4, 6, 9, 10],
+      [9, 9, 6, 10],
+    ];
+
+    function calculaNotasBimestrais(arrayNotas) {
+      for (var i = 0; i < arrayNotas.length; i++) {
+        for (var j = 0; j < arrayNotas[i].length; j++) {
+          msg = `O aluno ${arrayNotas.indexOf(arrayNotas[i])} com as notas ${
+            arrayNotas[i]
+          } ficou com media de ${Math.round(
+            arrayNotas[i].reduce(
+              (accumulator, currentValue) => accumulator + currentValue
+            ) / 6,
+            0
+          )}`;
+        }
+        return msg;
+      }
+    }
+
+    calculaNotasBimestrais(notas);
+    document.querySelector("#output").innerHTML = msg;
+  </script>
+</html>
