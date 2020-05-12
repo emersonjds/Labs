@@ -22,12 +22,15 @@
       msg += `<p> Notas do ${i + 1} bimestre ${notas[i].join(", ")} </ p>`;
 
       var notaBimestre = 0;
+      var mediaAnual = 0;
       for (var j = 0; j < notas[i].length; j++) {
         notaBimestre += notas[i][j];
+        mediaAnual += notaBimestre;
       }
       var mediaBimestre = notaBimestre / notas[i].length;
-      msg += `Media do  ${i + 1} bimestre ${mediaBimestre}`;
+      msg += ` <p> Media do  ${i + 1} bimestre ${mediaBimestre} <p>`;
     }
+    msg += ` <p> Media do ano ${(mediaAnual / notas.length).toFixed(1)} <p>`;
 
     document.querySelector("#output").innerHTML = msg;
   </script>
