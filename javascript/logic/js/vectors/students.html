@@ -32,6 +32,8 @@
         },
       ];
 
+      var mediaAlunos = 0;
+
       for (var i = 0; i < alunos.length; i++) {
         var mediaAnual = 0;
         msg += ` <p> Aluno ${alunos[i].nome} </p>`;
@@ -39,11 +41,14 @@
 
         for (var j = 0; j < alunos[i].notas.length; j++) {
           mediaAnual += alunos[i].notas[j];
+          mediaAlunos += mediaAnual;
         }
         msg += ` <p> Media do ano ${
           mediaAnual / alunos[i].notas.length
         } </p> <hr /> `;
       }
+      var mediaFinalAlunos = mediaAnual / alunos.length;
+      msg += ` <p> <strong> Media final da sala ${mediaFinalAlunos} <strong> </p>  `;
       document.querySelector("#output").innerHTML = msg;
     </script>
   </body>
