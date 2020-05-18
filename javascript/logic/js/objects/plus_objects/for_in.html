@@ -16,6 +16,54 @@
       for (props in person) {
         console.log(props + ": " + person[props]);
       }
+
+      //formal sintaxe
+
+      var obj = new Object();
+      obj.name = "Name of person";
+      obj.func = function () {
+        return "return of function";
+      };
+
+      console.log(obj.name);
+      console.log(obj.func());
+
+      //literal form
+      var anotherObject = {
+        name: "another nane object",
+        method: function () {
+          console.log("return of second object");
+        },
+      };
+
+      console.log(anotherObject.name); // 'name'
+      console.log(anotherObject.method()); //execute method in object
+
+      //Constructor Classes
+      var birthDate = new Date();
+      var person = new Object();
+      var dataArray = new Array();
+
+      function Endereco(logradouto, cep) {
+        this.logradouro = logradouro;
+        this.cep = cep;
+      }
+
+      var endereco1 = new Endereco("Santa Paula", "09540110");
+
+      function Endereco(log, num, cep) {
+        this.logradouto = log;
+        this.num = num;
+        this.cep = cep;
+
+        this.enderecoCompleto = function () {
+          console.log(this.cep + ", " + this.logradouto + ", " + this.num);
+        };
+      }
+
+      var meuEndereco = new Endereco("Santa Paula", 106, "898989-234");
+      console.log(meuEndereco.enderecoCompleto());
+      // 898989-234, 'Santa Paula', '106'
     </script>
   </body>
 </html>
