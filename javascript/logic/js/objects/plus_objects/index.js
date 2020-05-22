@@ -1,7 +1,7 @@
 function Endereco(obj) {
   this.logradouro = obj.logradouro || "";
   this.cep = obj.cep || "";
-  this.numero = obj.numero || "";
+  this.numero = obj.numero || 0;
 }
 
 function Aluno(nome, endereco) {

@@ -50,10 +50,17 @@
       ];
 
       var msg = "";
-      for (var i = 0; i < alunos.length; i++) {
-        for (props in alunos[i]) {
-          msg = `${props}: ${alunos[i][props].nome}`;
+      var enderecos = [];
+      alunos.map((aln) => {
+        enderecos.push(aln.aluno.endereco);
+      });
+
+      for (var i = 0; i < enderecos.length; i++) {
+        var endereco = enderecos[i];
+        for (end in endereco) {
+          msg += `${end} : ${endereco[end]} </br>`;
         }
+        msg += "<hr>";
       }
 
       document.querySelector("#output").innerHTML = msg;
