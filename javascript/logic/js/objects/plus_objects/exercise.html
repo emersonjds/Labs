@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Criar um array de objetos "alunos", cada aluno tem um endereço, neste caso
+      criar um padrao de escrita de endereços utilizando funcao construtora de
+      objetos.
+    </p>
+
+    <div id="output"></div>
+
+    <script src="./index.js"></script>
+    <script>
+      var alunos = [
+        {
+          aluno: new Aluno(
+            "Emerson",
+            new Endereco({
+              logradouro: "Osvaldo Cruz",
+              cep: "09540-110",
+              numero: 106,
+            })
+          ),
+        },
+        {
+          aluno: new Aluno(
+            "Maria",
+            new Endereco({
+              logradouro: "Santa Paula",
+              cep: "095444-110",
+              numero: 259,
+            })
+          ),
+        },
+        {
+          aluno: new Aluno(
+            "Claudio",
+            new Endereco({
+              logradouro: "Vila Paula",
+              cep: "09540-119",
+              numero: 1113,
+            })
+          ),
+        },
+      ];
+
+      var msg = "";
+      for (var i = 0; i < alunos.length; i++) {
+        for (props in alunos[i]) {
+          msg = `${props}: ${alunos[i][props].nome}`;
+        }
+      }
+
+      document.querySelector("#output").innerHTML = msg;
+    </script>
+  </body>
+</html>
