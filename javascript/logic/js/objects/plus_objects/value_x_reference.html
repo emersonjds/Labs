@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var values = [1, 2, 3, 4];
+      var dobrado = doubleArr(values);
+
+      function doubleArr(arr) {
+        var arrayTemp = []; // ao criar um array en tempo de execucao estou criando uma nova referencia na memoria, desta forma os valors do array inicial nao é sobrescrito
+        for (var i = 0; i < arr.length; i++) {
+          arrayTemp.push(values[i] * 2);
+        }
+        return arrayTemp;
+      }
+
+      console.log(values);
+      console.log(dobrado);
+    </script>
+  </body>
+</html>
