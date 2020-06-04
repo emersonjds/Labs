@@ -15,6 +15,14 @@
         return msg;
       }
 
+      function recursiveSayBla(n) {
+        if (n > 1) {
+          return recursiveSayBla(--n) + "bla";
+        } else {
+          return "bla";
+        }
+      }
+
       console.log(sayBla(3));
     </script>
   </body>
