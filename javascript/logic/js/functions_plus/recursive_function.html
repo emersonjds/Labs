@@ -15,9 +15,8 @@
         return msg;
       }
 
-      function recursiveSayBla(n) {
-        return n > 1 ? recursiveSayBla(--n) + " bla" : " bla";
-      }
+      const recursiveSayBla = (n) =>
+        n > 1 ? recursiveSayBla(--n) + " bla" : " bla";
 
       console.log(sayBla(3));
       console.log(recursiveSayBla(10));
