@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci</title>
+  </head>
+  <body>
+    <script>
+      // fibonacci
+      // 1 1 2 3 5 8 11
+      function fibonacci(n) {
+        var a = 1;
+        var b = 0;
+        var temp;
+        while (n--) {
+          temp = a;
+          console.log("temp", temp);
+          a = a + b;
+          console.log("a", a);
+          b = temp;
+          console.log("b", b);
+        }
+        return b;
+      }
+
+      // normal function
+      function recursiveFibonnaci(n) {
+        if (n <= 2) {
+          return 1;
+        }
+        return recursiveFibonnaci(n - 1) + recursiveFibonnaci(n - 2);
+      }
+
+      // es6;
+      recursiveFibonnaci = (n) =>
+        n <= 2 ? 1 : recursiveFibonnaci(n - 1) + recursiveFibonnaci(n - 2);
+
+      fibonacci(4);
+
+      recursiveFibonnaci(5);
+    </script>
+  </body>
+</html>
