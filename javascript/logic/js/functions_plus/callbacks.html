@@ -6,6 +6,27 @@
     <title>Callbacks</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      function test1() {
+        console.log("teste 1");
+      }
+
+      function test2(param) {
+        console.log("retorno do parametro", param);
+      }
+
+      function execute(cb) {
+        console.log("execute");
+        if (typeof cb === "function") {
+          cb("este é o parametro passado");
+        }
+      }
+
+      executa(function (x) {
+        console.log("parametro de callback", x);
+      });
+
+      execute(test2);
+    </script>
   </body>
 </html>
