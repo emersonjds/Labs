@@ -22,11 +22,30 @@
         }
       }
 
-      executa(function (x) {
+      execute(function (x) {
         console.log("parametro de callback", x);
       });
 
       execute(test2);
+
+      function sayHello(name, cb) {
+        if (typeof cb === "function") {
+          return cb(name);
+        }
+        return console.log("sayHello", name);
+      }
+
+      function sayGoodNight(name) {
+        console.log("Good Night", name);
+      }
+
+      function sayGoodAfternoon(name) {
+        console.log("Good Afternoon", name);
+      }
+
+      sayHello("Emerson");
+      sayHello("Emerson", sayGoodNight);
+      sayHello("Emerson", sayGoodAfternoon);
     </script>
   </body>
 </html>

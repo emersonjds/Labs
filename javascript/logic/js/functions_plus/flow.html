@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flow</title>
+  </head>
+  <body>
+    <script>
+      function testReturn() {
+        for (var i = 0; i < 10; i++) {
+          console.log(i);
+          if (i === 5) {
+            return "fim da funcao";
+          }
+        }
+      }
+
+      var retorno = testReturn();
+      console.log(retorno);
+
+      function testContinue() {
+        for (var i = 0; i < 10; i++) {
+          if (i === 5) {
+            continue;
+          }
+          console.log(i);
+        }
+        return "fim da funcao continue";
+      }
+      const test = testContinue();
+      console.log(test);
+
+      function testBreak() {
+        for (var i = 0; i < 10; i++) {
+          console.log(i);
+          if (i === 5) {
+            break;
+          }
+        }
+        console.log("parada do loop");
+        console.log("fim da funcao");
+      }
+
+      testBreak();
+    </script>
+  </body>
+</html>
