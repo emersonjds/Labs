@@ -1,4 +1,5 @@
 const express = require("express");
+const uniquid = require("uniqid");
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.post("/projects", (req, res) => {
   const { name, owner } = req.body;
 
   const project = {
-    id: Math.round(Math.random() * 10),
+    id: uniquid(),
     name,
     owner,
   };

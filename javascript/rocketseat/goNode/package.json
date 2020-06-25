@@ -11,8 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "uuid": "^8.2.0",
-    "uuidv4": "^6.1.1"
+    "uniqid": "^5.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
