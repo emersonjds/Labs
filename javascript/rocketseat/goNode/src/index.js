@@ -5,29 +5,33 @@ const app = express();
 //isso habilita o Express a entender padroes JSON sendo passado atraves das rotas
 app.use(express.json());
 
+const projects = [];
+
 app.get("/", (req, res) => {
-  return res.json({
-    message: "Node running",
-  });
+  return res.json(projects);
 });
 
 app.get("/projects", (req, res) => {
-  const query = req.query;
-  console.log(query);
+  // const query = req.query;
+  // console.log(query);
 
-  return res.json(["Projeto 1", "Projeto 2", "Projeto 3"]);
+  return res.json(projects);
 });
 
 app.post("/projects", (req, res) => {
-  const data = req.body;
-  console.log(data);
+  const { name, owner } = req.body;
 
-  return res.json([
-    "Projeto 1",
-    "Projeto 2",
-    "Projeto 3",
-    "Novo Projeto Adicionado",
-  ]);
+  const project = {
+    id: Math.round(Math.random() * 10),
+    name,
+    owner,
+  };
+
+  projects.push(project);
+
+  return res.json({
+    message: "project created",
+  });
 });
 
 app.put("/projects/:id", (req, res) => {
