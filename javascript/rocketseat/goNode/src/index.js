@@ -1,5 +1,6 @@
 const express = require("express");
 const uniquid = require("uniqid");
+const { response } = require("express");
 
 const app = express();
 
@@ -32,20 +33,38 @@ app.post("/projects", (req, res) => {
 
   return res.json({
     message: "project created",
+    data: project,
   });
 });
 
 app.put("/projects/:id", (req, res) => {
-  const data = req.params;
+  const { id } = req.params;
+  const { title, owner } = req.body;
 
-  console.log(data);
+  //find by index on Array
+  const projectIndex = projects.findIndex((project) => project.id === id);
 
-  return res.json([
-    "Projeto 4",
-    "Projeto 2",
-    "Projeto 3",
-    "Novo Projeto Adicionado",
-  ]);
+  // case not found
+  if (projectIndex < 0) {
+    return response.status(401).json({
+      error: "Not Found",
+    });
+  }
+
+  // create a new project with changed data passa from param
+  const project = {
+    id,
+    title,
+    owner,
+  };
+
+  // changed data on array by position of project
+  projects[projectIndex] = project;
+
+  return res.json({
+    message: "Data changed",
+    data: project,
+  });
 });
 
 app.delete("/projects/:id", (req, res) => {
