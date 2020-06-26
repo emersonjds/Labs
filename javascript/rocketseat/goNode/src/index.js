@@ -13,10 +13,14 @@ app.get("/", (req, res) => {
 });
 
 app.get("/projects", (req, res) => {
-  // const query = req.query;
-  // console.log(query);
+  //create filter
+  const { title } = req.params;
 
-  return res.json(projects);
+  const results = title
+    ? projects.filter((project) => project.title.includes(title))
+    : projects;
+
+  return res.json(results);
 });
 
 app.post("/projects", (req, res) => {
