@@ -79,9 +79,8 @@ app.delete("/projects/:id", (req, res) => {
   // remove data from array passing the index and how many positions will remove
   projects.splice(projectIndex, 1);
 
-  return res.status(201).json({
-    message: "Data removed",
-  });
+  // when use delete method, we return status 204 and clear response
+  return res.status(201).send();
 });
 
 //Always created an application in node it's necessary to say where the application will be listening
