@@ -1,6 +1,5 @@
 const express = require("express");
 const uniquid = require("uniqid");
-const { response } = require("express");
 
 const app = express();
 
@@ -21,11 +20,11 @@ app.get("/projects", (req, res) => {
 });
 
 app.post("/projects", (req, res) => {
-  const { name, owner } = req.body;
+  const { title, owner } = req.body;
 
   const project = {
     id: uniquid(),
-    name,
+    title,
     owner,
   };
 
@@ -68,6 +67,8 @@ app.put("/projects/:id", (req, res) => {
 });
 
 app.delete("/projects/:id", (req, res) => {
+  const { id } = req.params;
+
   const projectIndex = projects.findIndex((project) => project.id === id);
 
   if (projectIndex < 0) {
@@ -80,7 +81,7 @@ app.delete("/projects/:id", (req, res) => {
   projects.splice(projectIndex, 1);
 
   // when use delete method, we return status 204 and clear response
-  return res.status(201).send();
+  return res.status(204).send();
 });
 
 //Always created an application in node it's necessary to say where the application will be listening
