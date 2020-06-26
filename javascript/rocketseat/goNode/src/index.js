@@ -46,7 +46,7 @@ app.put("/projects/:id", (req, res) => {
 
   // case not found
   if (projectIndex < 0) {
-    return response.status(401).json({
+    return res.status(401).json({
       error: "Not Found",
     });
   }
@@ -68,7 +68,20 @@ app.put("/projects/:id", (req, res) => {
 });
 
 app.delete("/projects/:id", (req, res) => {
-  return res.json(["Projeto 1", "Projeto 2", "Projeto 3"]);
+  const projectIndex = projects.findIndex((project) => project.id === id);
+
+  if (projectIndex < 0) {
+    return res.status(401).json({
+      error: "Not Found",
+    });
+  }
+
+  // remove data from array passing the index and how many positions will remove
+  projects.splice(projectIndex, 1);
+
+  return res.status(201).json({
+    message: "Data removed",
+  });
 });
 
 //Always created an application in node it's necessary to say where the application will be listening
