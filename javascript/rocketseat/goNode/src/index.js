@@ -8,6 +8,16 @@ app.use(express.json());
 
 const projects = [];
 
+//Middlewares
+
+function loggedRequest(req, res, next) {
+  const { method, url } = req;
+  console.log(`[${method.toUpperCase()}] ${url}`);
+  next();
+}
+
+app.use(loggedRequest);
+
 app.get("/", (req, res) => {
   return res.json(projects);
 });
@@ -70,7 +80,7 @@ app.put("/projects/:id", (req, res) => {
   });
 });
 
-app.delete("/projects/:id", (req, res) => {
+app.delete("/projects/:id", loggedRequest, (req, res) => {
   const { id } = req.params;
 
   const projectIndex = projects.findIndex((project) => project.id === id);
