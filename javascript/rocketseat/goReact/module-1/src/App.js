@@ -1,19 +1,24 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 
-export default class App extends Component {
-  render() {
-    return (
-      <>
-        <Header title="Emerson">
-          <ul>
-            <li>Home</li>
-            <li>Quem somos</li>
-            <li>Formulario</li>
-          </ul>
-        </Header>
-        <h1>Testando nome</h1>
-      </>
-    );
+export default function App() {
+  const projects = useState(["projeto 1", "projeto 2"]);
+
+  function handleAddProject() {
+    projects.push(`Novo projeto ${new Date.now()}`);
   }
+
+  return (
+    <>
+      <Header title="Emerson"></Header>
+      <ul>
+        {projects.map((project) => (
+          <li key={project}>{project}</li>
+        ))}
+      </ul>
+      <button type="button" onClick={handleAddProject}>
+        Adicionar Projeto
+      </button>
+    </>
+  );
 }
