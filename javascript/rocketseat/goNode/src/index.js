@@ -1,10 +1,12 @@
 const express = require("express");
 const uniquid = require("uniqid");
+const cors = require('cors')
 
 const app = express();
 
 //isso habilita o Express a entender padroes JSON sendo passado atraves das rotas
 app.use(express.json());
+app.use(cors());
 
 const projects = [];
 
