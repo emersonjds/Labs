@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/emerson/.nvm/versions/node/v13.3.0/bin/node /usr/local/bin/yarn dev
+  /Users/emerson/.nvm/versions/node/v13.3.0/bin/node /usr/local/bin/yarn add acios
 
 PATH: 
   /Users/emerson/.nvm/versions/node/v13.3.0/bin:/Users/emerson/.zplugin/polaris/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/emerson/development/flutter/bin
@@ -14,12 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/emerson/Documents/workspace/Labs/javascript/rocketseat/goNode/package.json: Unexpected token / in JSON at position 131
-      at JSON.parse (<anonymous>)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:304:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:315:13
+  Error: https://registry.yarnpkg.com/acios: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66938:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140622:22)
+      at Request.emit (events.js:219:5)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141594:10)
+      at Request.emit (events.js:219:5)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141516:12)
+      at Object.onceWrapper (events.js:308:28)
+      at IncomingMessage.emit (events.js:224:7)
+      at endReadableNT (_stream_readable.js:1206:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
 
 npm manifest: 
   {
@@ -29,13 +34,14 @@ npm manifest:
     "main": "src/index.js",
     "scripts": {
       "dev": "nodemon"
-      // "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "express": "^4.17.1"
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "uniqid": "^5.2.0"
     },
     "devDependencies": {
       "nodemon": "^2.0.4"
@@ -286,6 +292,14 @@ Lockfile:
     version "0.4.0"
     resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.0.tgz#beb437e7022b3b6d49019d088665303ebe9c14ba"
     integrity sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg==
+  
+  cors@^2.8.5:
+    version "2.8.5"
+    resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.5.tgz#eac11da51592dd86b9f06f6e7ac293b3df875d29"
+    integrity sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
+    dependencies:
+      object-assign "^4"
+      vary "^1"
   
   crypto-random-string@^2.0.0:
     version "2.0.0"
@@ -804,6 +818,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
     integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
   
+  object-assign@^4:
+    version "4.1.1"
+    resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
+    integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+  
   on-finished@~2.3.0:
     version "2.3.0"
     resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -1117,6 +1136,11 @@ Lockfile:
     dependencies:
       debug "^2.2.0"
   
+  uniqid@^5.2.0:
+    version "5.2.0"
+    resolved "https://registry.yarnpkg.com/uniqid/-/uniqid-5.2.0.tgz#0d0589a7e9ce07116848126764fbff0b68e74329"
+    integrity sha512-LH8zsvwJ/GL6YtNfSOmMCrI9piraAUjBfw2MCvleNE6a4pVKJwXjG2+HWhkVeFcSg+nmaPKbMrMOoxwQluZ1Mg==
+  
   unique-string@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/unique-string/-/unique-string-2.0.0.tgz#39c6451f81afb2749de2b233e3f7c5e8843bd89d"
@@ -1160,7 +1184,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
     integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
   
-  vary@~1.1.2:
+  vary@^1, vary@~1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
     integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
