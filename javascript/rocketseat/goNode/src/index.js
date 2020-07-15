@@ -34,11 +34,11 @@ app.get("/projects", (req, res) => {
 });
 
 app.post("/projects", (req, res) => {
-  const { title, owner } = req.body;
+  const { name, owner } = req.body;
 
   const project = {
     id: uniquid(),
-    title,
+    name,
     owner,
   };
 
