@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import "./App.css";
-import black_woman from "./assets/img/black_woman.jpeg";
 
 export default function App() {
   const [projects, setProjects] = useState(["projeto 1", "projeto 2"]);
@@ -14,9 +13,6 @@ export default function App() {
   return (
     <>
       <Header title="Emerson"></Header>
-
-      {/* numa aplicacao React tamanho de imagens podem ser carregados como variaveis  */}
-      <img width={250} src={black_woman} alt="" />
       <ul>
         {projects.map((project) => (
           <li key={project}>{project}</li>
