@@ -13,9 +13,16 @@ export default function App() {
     });
   }, []);
 
-  function handleAddProject() {
+  async function handleAddProject() {
     //neste momento em que um novo array foi chamado, uma nova estrutura esta sendo criada nao alterando a anterior
-    setProjects([...projects, `Novo projeto ${new Date().getTime()}`]);
+    // setProjects([...projects, `Novo projeto ${new Date().getTime()}`]);
+    const response = await api.post("/projects", {
+      name: `Novo projeto ${new Date().getTime()}`,
+      owner: "Emerson Silva",
+    });
+
+    const project = response.data;
+    setProjects([...projects, project.data]);
   }
 
   return (

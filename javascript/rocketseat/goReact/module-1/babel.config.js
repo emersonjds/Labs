@@ -4,6 +4,7 @@ module.exports = {
     "@babel/preset-env", // converte codigo antigo de acordo com o ambiente para aceitar configuracoes mais atuais
     "@babel/preset-react",
   ],
+  plugins: ["@babel/plugin-transform-runtime"],
 };
 
 // com a adicao do babel o navegador entender e faz a transpilacao
