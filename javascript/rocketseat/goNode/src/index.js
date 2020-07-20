@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 const projects = [];
-
+const repositories = [];
 //Middlewares
 
 function loggedRequest(req, res, next) {
@@ -34,6 +34,48 @@ app.get("/projects", (req, res) => {
 
   return res.json(results);
 });
+
+
+app.get("/repositories", (req, res) => {
+  console.log(res.json(repositories))
+  return res.json(repositories);
+});
+
+
+app.post('/repositories', (req, res) => {
+  const { url, title, techs} = req.body;
+  console.log(req.body)
+
+  const project = {
+    id: uniquid(),
+    url, 
+    title, 
+    techs
+  }
+  repositories.push(project)
+  return res.json({
+    message: 'project create',
+    data: project
+  })
+})
+
+app.delete("/repositories/:id", (req, res) => {
+  const { id } = req.params;
+
+  const repositoryIndex = repositories.findIndex((repository) => repository.id === id);
+
+  if (repositoryIndex < 0) {
+    return res.status(401).json({
+      error: "Not Found",
+    });
+  }
+
+  // remove data from array passing the index and how many positions will remove
+  repositories.splice(repositoryIndex, 1);
+
+  // when use delete method, we return status 204 and clear response
+  return res.status(204).send();
+})
 
 app.post("/projects", (req, res) => {
   const { name, owner } = req.body;
@@ -101,6 +143,6 @@ app.delete("/projects/:id", loggedRequest, (req, res) => {
 });
 
 //Always created an application in node it's necessary to say where the application will be listening
-app.listen(3000, () => {
+app.listen(3333, () => {
   console.log("🚀 back-end rodando");
 });
