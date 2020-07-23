@@ -1,12 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-import {View, Text, StyleSheet} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  FlatList,
+  StatusBar,
+} from 'react-native';
+
+import api from './services/api';
 
 export default function App() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {}, []);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello World</Text>
-    </View>
+    <>
+      <StatusBar barStyle="light-content" />
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.text}>Hello World</Text>
+      </SafeAreaView>
+    </>
   );
 }
 
