@@ -13,13 +13,20 @@ import api from './services/api';
 export default function App() {
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    api.get('projects').then((response) => {
+      setProjects(response.data);
+    });
+  }, []);
 
   return (
     <>
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={styles.container}>
         <Text style={styles.text}>Hello World</Text>
+        {projects.map((data) => (
+          <Text key={data.id}>{data.title}</Text>
+        ))}
       </SafeAreaView>
     </>
   );
