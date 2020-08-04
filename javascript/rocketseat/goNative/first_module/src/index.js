@@ -33,11 +33,6 @@ export default function App() {
             {'\n'}
           </Text>
         ))}
-        {/* {projects.map((data) => (
-          <Text key={data.id} style={styles.text}>
-            {data.title}
-          </Text>
-        ))} */}
       </SafeAreaView>
     </>
   );
