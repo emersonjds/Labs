@@ -9,12 +9,14 @@ import {
 } from 'react-native';
 
 import api from './services/api';
+import axios from 'axios';
 
 export default function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    api.get('projects').then((response) => {
+    axios.get('http://192.168.15.51:3333/projects').then((response) => {
+      console.log('dados', response.data);
       setProjects(response.data);
     });
   }, []);
@@ -25,7 +27,9 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         <Text style={styles.text}>Hello World</Text>
         {projects.map((data) => (
-          <Text key={data.id}>{data.title}</Text>
+          <Text key={data.id} style={styles.text}>
+            {data.title}
+          </Text>
         ))}
       </SafeAreaView>
     </>
@@ -35,7 +39,7 @@ export default function App() {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
   },
