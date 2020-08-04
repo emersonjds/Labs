@@ -27,12 +27,14 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         <Text style={styles.text}>API Data {'\n'}</Text>
 
-        {projects.map((data) => (
-          <Text key={data.id} style={styles.text}>
-            {data.name} {data.owner}
-            {'\n'}
-          </Text>
-        ))}
+        <FlatList
+          styles={{alignItems: 'center', justify: 'center'}}
+          data={projects}
+          keyExtractor={(project) => project.id}
+          renderItem={({item: project}) => (
+            <Text style={styles.text}>{project.name}</Text>
+          )}
+        />
       </SafeAreaView>
     </>
   );
