@@ -1,15 +1,31 @@
 const express = require("express");
 const uniquid = require("uniqid");
-const cors = require('cors')
+const cors = require("cors");
 
 const app = express();
 app.use(cors());
 //isso habilita o Express a entender padroes JSON sendo passado atraves das rotas
 app.use(express.json());
 
-
 const projects = [];
 const repositories = [];
+const nativeDada = [
+  {
+    id: Math.random(),
+    name: "Emerson",
+    job: "Software Engineer",
+  },
+  {
+    id: Math.random(),
+    name: "Emerson",
+    job: "Software Engineer",
+  },
+  {
+    id: Math.random(),
+    name: "Emerson",
+    job: "Software Engineer",
+  },
+];
 //Middlewares
 
 function loggedRequest(req, res, next) {
@@ -35,34 +51,38 @@ app.get("/projects", (req, res) => {
   return res.json(results);
 });
 
-
 app.get("/repositories", (req, res) => {
-  console.log(res.json(repositories))
+  console.log(repositories);
   return res.json(repositories);
 });
 
+app.get('/rn_data', (req, res) => {
+  return res.json(nativeDada)
+})
 
-app.post('/repositories', (req, res) => {
-  const { url, title, techs} = req.body;
-  console.log(req.body)
+app.post("/repositories", (req, res) => {
+  const { url, title, techs } = req.body;
+  console.log(req.body);
 
   const project = {
     id: uniquid(),
-    url, 
-    title, 
-    techs
-  }
-  repositories.push(project)
+    url,
+    title,
+    techs,
+  };
+  repositories.push(project);
   return res.json({
-    message: 'project create',
-    data: project
-  })
-})
+    message: "project create",
+    data: project,
+  });
+});
 
 app.delete("/repositories/:id", (req, res) => {
   const { id } = req.params;
 
-  const repositoryIndex = repositories.findIndex((repository) => repository.id === id);
+  const repositoryIndex = repositories.findIndex(
+    (repository) => repository.id === id
+  );
 
   if (repositoryIndex < 0) {
     return res.status(401).json({
@@ -75,7 +95,7 @@ app.delete("/repositories/:id", (req, res) => {
 
   // when use delete method, we return status 204 and clear response
   return res.status(204).send();
-})
+});
 
 app.post("/projects", (req, res) => {
   const { name, owner } = req.body;
