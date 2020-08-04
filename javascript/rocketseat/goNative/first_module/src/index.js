@@ -25,12 +25,19 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={styles.container}>
-        <Text style={styles.text}>Hello World</Text>
+        <Text style={styles.text}>API Data {'\n'}</Text>
+
         {projects.map((data) => (
+          <Text key={data.id} style={styles.text}>
+            {data.name} {data.owner}
+            {'\n'}
+          </Text>
+        ))}
+        {/* {projects.map((data) => (
           <Text key={data.id} style={styles.text}>
             {data.title}
           </Text>
-        ))}
+        ))} */}
       </SafeAreaView>
     </>
   );
