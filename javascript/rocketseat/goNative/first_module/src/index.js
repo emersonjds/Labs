@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   FlatList,
   StatusBar,
+  TextInput,
 } from 'react-native';
 
 import api from './services/api';
@@ -35,6 +36,8 @@ export default function App() {
             <Text style={styles.text}>{project.name}</Text>
           )}
         />
+        <Text>Include a new project</Text>
+        <TextInput autoCorrect={false} autofocus={true} autoCapitalize="none" />
       </SafeAreaView>
     </>
   );
