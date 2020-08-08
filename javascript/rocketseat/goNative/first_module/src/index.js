@@ -16,7 +16,7 @@ export default function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('http://192.168.15.51:3333/projects').then((response) => {
+    api.get('projects').then((response) => {
       console.log('dados', response.data);
       setProjects(response.data);
     });
