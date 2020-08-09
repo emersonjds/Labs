@@ -17,7 +17,6 @@ export default function App() {
 
   useEffect(() => {
     api.get('projects').then((response) => {
-      console.log('dados', response.data);
       setProjects(response.data);
     });
   }, []);
