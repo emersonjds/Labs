@@ -64,17 +64,18 @@ app.post("/repositories", (req, res) => {
   const { url, title, techs } = req.body;
   console.log(req.body);
 
-  const project = {
+  const repository = {
     id: uniquid(),
     url,
     title,
     techs,
   };
   repositories.push(project);
-  return res.json({
-    message: "project create",
-    data: project,
-  });
+  // return res.json({
+  //   message: "project create",
+  //   data: project,
+  // });
+  return res.json(repository)
 });
 
 app.delete("/repositories/:id", (req, res) => {
@@ -108,10 +109,14 @@ app.post("/projects", (req, res) => {
 
   projects.push(project);
 
-  return res.json({
-    message: "project created",
-    data: project,
-  });
+  // return res.json({
+  //   message: "project created",
+  //   data: project,
+  // });
+  console.log('project', project)
+  console.log('projects', projects)
+  return res.json(projects);
+
 });
 
 app.put("/projects/:id", (req, res) => {
