@@ -61,7 +61,7 @@ app.get('/rn_data', (req, res) => {
 })
 
 app.post("/repositories", (req, res) => {
-  const { url, title, techs } = req.body;
+  const { url, title, techs, likes } = req.body;
   console.log(req.body);
 
   const repository = {
@@ -69,14 +69,29 @@ app.post("/repositories", (req, res) => {
     url,
     title,
     techs,
+    likes
   };
-  repositories.push(project);
+  repositories.push(repository);
   // return res.json({
   //   message: "project create",
   //   data: project,
   // });
   return res.json(repository)
 });
+
+app.post('/repositories/:id/like', (req, res) => {
+  const { id } = req.params;
+
+  const repository = repositories.find(repository => repository.id === id);
+
+  if (!repository) {
+    return res.status(400).send();
+  }
+  
+  repository.likes += 1;
+
+  return res.json(repository);
+})
 
 app.delete("/repositories/:id", (req, res) => {
   const { id } = req.params;
