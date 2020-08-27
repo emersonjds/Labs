@@ -49,7 +49,7 @@ export default function App() {
             <Text style={styles.text}>{project.name}</Text>
           )}
         />
-        <Text>Include a new project</Text>
+        <Text>New Project</Text>
         <TextInput autoCorrect={false} autofocus={true} autoCapitalize="none" />
         <TouchableOpacity style={styles.button} onPress={handleAddProject}>
           <Text style={styles.textButton}>Adicionar Novo Projeto</Text>
