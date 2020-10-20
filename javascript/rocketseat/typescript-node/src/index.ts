@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-  return res.json({message: 'GET ROUTE'})
+  return res.json({message: 'GET'})
 })
 
 app.listen(3000, () => {
