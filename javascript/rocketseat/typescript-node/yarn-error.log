@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/emerson/.nvm/versions/node/v13.3.0/bin/node /Users/emerson/.yarn/bin/yarn.js dev:server
+  /Users/emerson/.nvm/versions/node/v13.3.0/bin/node /Users/emerson/.yarn/bin/yarn.js add @types/uniquid -D
 
 PATH: 
   /Users/emerson/.yarn/bin:/Users/emerson/.config/yarn/global/node_modules/.bin:/Users/emerson/.nvm/versions/node/v13.3.0/bin:/Users/emerson/.zplugin/polaris/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/emerson/development/flutter/bin
@@ -14,12 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/emerson/Documents/workspace/Labs/javascript/rocketseat/typescript-node/package.json: Unexpected string in JSON at position 139
-      at JSON.parse (<anonymous>)
-      at /Users/emerson/.yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/Users/emerson/.yarn/lib/cli.js:310:30)
-      at /Users/emerson/.yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/@types%2funiquid: Not found
+      at Request.params.callback [as _callback] (/Users/emerson/.yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/Users/emerson/.yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:219:5)
+      at Request.<anonymous> (/Users/emerson/.yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:219:5)
+      at IncomingMessage.<anonymous> (/Users/emerson/.yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:308:28)
+      at IncomingMessage.emit (events.js:224:7)
+      at endReadableNT (_stream_readable.js:1206:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
 
 npm manifest: 
   {
@@ -28,13 +33,15 @@ npm manifest:
     "main": "nodemon ./dist",
     "license": "MIT",
     "scripts": {
-      "build": "tsc"
-      "dev:server": "ts-node-dev src/index.ts"
+      "build": "tsc",
+      "dev:server": "ts-node-dev --inspect --transpile-only --ignore node_modules src/server.ts",
+      "start": "node dist/index.js"
     },
     "dependencies": {
       "cors": "^2.8.5",
       "express": "^4.17.1",
-      "typescript": "^4.0.3"
+      "typescript": "^4.0.3",
+      "uniqid": "^5.2.0"
     },
     "devDependencies": {
       "@types/cors": "^2.8.8",
@@ -1623,6 +1630,11 @@ Lockfile:
     integrity sha512-nrXZwwXrD/T/JXeygJqdCO6NZZ1L66HrxM/Z7mIq2oPanoN0F1nLx3lwJMu6AwJY69hdixaFQOuoYsMjE5/C2A==
     dependencies:
       debug "^2.2.0"
+  
+  uniqid@^5.2.0:
+    version "5.2.0"
+    resolved "https://registry.yarnpkg.com/uniqid/-/uniqid-5.2.0.tgz#0d0589a7e9ce07116848126764fbff0b68e74329"
+    integrity sha512-LH8zsvwJ/GL6YtNfSOmMCrI9piraAUjBfw2MCvleNE6a4pVKJwXjG2+HWhkVeFcSg+nmaPKbMrMOoxwQluZ1Mg==
   
   unique-string@^2.0.0:
     version "2.0.0"
