@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors());
+app.use(cors()); //enable cors
 
 //habilitar que a aplicação consiga entender dados vindos em JSON
 app.use(express.json());

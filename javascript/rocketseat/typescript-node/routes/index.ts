@@ -1,4 +1,5 @@
-import {Router} from 'express'
+import express, {Router} from 'express'
+import cors from 'cors';
 import appointmentsRouter from './appointment.routes';
 
 const routes = Router();
