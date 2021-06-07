@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, {useState, useCallback} from 'react';
 
 import {
   ButtonAdd,
@@ -12,8 +12,8 @@ import {
 export const Home = () => {
   const [mySkills, setMySkills] = useState('');
   const [skills, setSkills] = useState([]);
-  const inputSkill = useRef();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleAddSkill = useCallback(() => {
     setSkills([...skills, mySkills]);
     setMySkills('');
@@ -26,15 +26,14 @@ export const Home = () => {
         placeholder="your skill"
         placeholderTextColor="#cecece"
         onChangeText={text => setMySkills(text)}
-        ref={inputSkill}
         value={mySkills}
       />
-      <Title style={{ marginTop: 20 }}>Welcome, Emerson</Title>
+      <Title style={{marginTop: 20}}>Welcome, Emerson</Title>
       <ButtonAdd onPress={handleAddSkill}>
         <TextButton>Add</TextButton>
       </ButtonAdd>
 
-      <Title style={{ marginTop: 20 }}>My Skills</Title>
+      <Title style={{marginTop: 20}}>My Skills</Title>
 
       {skills && skills.map(data => <TextSkill key={data}>{data}</TextSkill>)}
     </Container>
