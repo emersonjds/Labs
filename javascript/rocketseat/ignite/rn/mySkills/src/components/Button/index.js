@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {ButtonAdd, TextButton} from './styles';
+import { ButtonAdd, TextButton } from './styles';
 
 const ButtonComponent = () => {
   return (
@@ -10,4 +10,4 @@ const ButtonComponent = () => {
   );
 };
 
-export {ButtonComponent};
+export { ButtonComponent };
