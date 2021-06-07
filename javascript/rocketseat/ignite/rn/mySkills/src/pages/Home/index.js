@@ -9,6 +9,8 @@ import {
   TextSkill,
 } from './styles';
 
+import {ButtonComponent} from '../../components/Button';
+
 export const Home = () => {
   const [mySkills, setMySkills] = useState('');
   const [skills, setSkills] = useState([]);
@@ -28,13 +30,9 @@ export const Home = () => {
         onChangeText={text => setMySkills(text)}
         value={mySkills}
       />
-      <Title style={{marginTop: 20}}>Welcome, Emerson</Title>
-      <ButtonAdd onPress={handleAddSkill}>
-        <TextButton>Add</TextButton>
-      </ButtonAdd>
-
+      <Title style={{marginTop: 20}}>Welcome, Emerson</Title>w
+      <ButtonComponent onPress={handleAddSkill} />
       <Title style={{marginTop: 20}}>My Skills</Title>
-
       {skills && skills.map(data => <TextSkill key={data}>{data}</TextSkill>)}
     </Container>
   );

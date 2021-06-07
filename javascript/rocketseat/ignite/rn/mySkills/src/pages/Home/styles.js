@@ -20,20 +20,6 @@ export const InputText = styled.TextInput`
   border-radius: 5px;
 `;
 
-export const ButtonAdd = styled.TouchableOpacity`
-  height: 52px;
-  background-color: blueviolet;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-`;
-
-export const TextButton = styled.Text`
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-`;
-
 export const TextSkill = styled.Text`
   color: #000;
   font-size: 16px;
