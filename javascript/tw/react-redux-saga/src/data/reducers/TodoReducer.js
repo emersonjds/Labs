@@ -21,7 +21,7 @@ const TodoReducer = (state = [], action) => {
       return [...state.slice(0, itemIndex), ...state.slice(itemIndex + 1)]
     case TodoConstants.TODO_CLEAR:
       //verify different items of array
-      return state.filter(item => item.id !== action.id)
+      return state.filter(item => !item.isChecked)
     default: return state
   }
 
