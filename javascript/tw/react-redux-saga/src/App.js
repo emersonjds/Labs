@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 class App extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.dispatch(TodoActions.list());
   }
 
@@ -18,18 +18,18 @@ class App extends Component {
       { dispatch } = props;
     return (
       <div className="App">
-        <NewToDoItem onAdd={(description) => { dispatch(TodoActions.create(description)) } } />
+        <NewToDoItem onAdd={(description) => { dispatch(TodoActions.create(description)) }} />
         <hr />
-        <button className="tw-btn" onClick={() => { dispatch(TodoActions.clear())} } >Limpar</button>
+        <button className="tw-btn" onClick={() => { dispatch(TodoActions.clear()) }} >Limpar</button>
         <hr />
-        <ToDoList items={props.todoList} onRemove={(id) => { dispatch(TodoActions.remove(id))} } onUpdate={ (item) => {dispatch(TodoActions.update(item))} } />
+        <ToDoList items={props.todoList} onRemove={(id) => { dispatch(TodoActions.remove(id)) }} onUpdate={(item) => { dispatch(TodoActions.update(item)) }} />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  todoList: state.TodoReducer
+const mapStateToProps = ({ TodoReducer }) => ({
+  todoList: TodoReducer
 })
 
 export default connect(mapStateToProps)(App);
