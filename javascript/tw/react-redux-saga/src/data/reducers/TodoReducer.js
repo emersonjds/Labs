@@ -15,10 +15,13 @@ const TodoReducer = (state = [], action) => {
       ]
     case TodoConstants.TODO_REMOVE:
       // state.filter(id => id !== action.id)
+      //get index of array
       const itemIndex = state.findIndex(item => item.id === action.id)
       // cut array
       return [...state.slice(0, itemIndex), ...state.slice(itemIndex + 1)]
-
+    case TodoConstants.TODO_CLEAR:
+      //verify different items of array
+      return state.filter(item => item.id !== action.id)
     default: return state
   }
 
