@@ -22,6 +22,14 @@ const TodoReducer = (state = [], action) => {
     case TodoConstants.TODO_CLEAR:
       //verify different items of array
       return state.filter(item => !item.isChecked)
+    case TodoConstants.TODO_UPDATE:
+      return state.map(item => {
+        if (item.id === action.item.id) {
+          return action.item
+        }
+        return item
+      })
+
     default: return state
   }
 
