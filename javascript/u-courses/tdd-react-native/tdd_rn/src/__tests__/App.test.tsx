@@ -1,4 +1,5 @@
-function add(a, b) {
+// @ts-ignore
+function add(a: number, b: number) {
   return a + b;
 }
 
