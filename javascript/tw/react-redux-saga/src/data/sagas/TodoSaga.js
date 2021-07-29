@@ -25,6 +25,7 @@ function* watchCreate(){
     yield takeEvery(TodoActions.TODO_CREATE, create)
 }
 
+// eslint-disable-next-line require-yield
 function* remove({id}){
     TodoService.remove(id);
 }
@@ -39,7 +40,7 @@ function* clear(){
 
     const newTodoList = todoList.filter(item => !item.isChecked),
         toRemove = todoList.filter(item => item.isChecked);
-        
+
     toRemove.forEach(item => TodoService.remove(item.id) )
 
     yield put(TodoActions.listResponse(newTodoList))
