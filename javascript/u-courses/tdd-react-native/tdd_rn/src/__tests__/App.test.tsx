@@ -1,9 +1,13 @@
-function add(x: number, y: number) {
-  return x + y;
-}
+import React from 'react';
 
-describe('first test', () => {
-  it('sum of values', () => {
-    expect(add(2, 2)).toBe(4);
-  });
-});
+import { render } from '@testing-library/react-native'
+
+import App from '../App';
+
+describe('App', () => {
+  test('should render correctly', () => {
+    render(<App />)
+  })
+})
+
+
