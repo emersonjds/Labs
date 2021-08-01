@@ -1,5 +1,5 @@
-function add(a: number, b: number) {
-  return a + b;
+function add(x: number, y: number) {
+  return x + y;
 }
 
 describe('first test', () => {
