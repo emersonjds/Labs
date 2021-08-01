@@ -6,7 +6,8 @@ import App from '../App';
 
 describe('App', () => {
   test('should render correctly', () => {
-    render(<App />)
+    const wrapper = render(<App />)
+    wrapper.getByTestId('app')
   })
 })
 
