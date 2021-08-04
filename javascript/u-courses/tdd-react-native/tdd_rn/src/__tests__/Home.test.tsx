@@ -9,4 +9,10 @@ describe('Home', () => {
     const wrapper = render(<Home />)
     wrapper.getByTestId('home')
   })
+
+  test('render correctly with props', () => {
+    const wrapper = render(<Home />)
+    wrapper.getByTestId('home')
+  })
 })
+
