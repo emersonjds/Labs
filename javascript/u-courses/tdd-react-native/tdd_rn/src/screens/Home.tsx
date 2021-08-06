@@ -9,7 +9,8 @@ const Home: React.FC = () => {
       Colors.DARKER_GRAY,
       Colors.LIGHT_GRAY,
     ]}
-    style={styles.container}>
+    style={styles.container}
+    testID="home">
     <Text>
       Emerson
     </Text>
