@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Colors} from './constants';
+import { Colors } from './constants';
 
 const Home: React.FC = () => {
   return (
