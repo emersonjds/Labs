@@ -7,9 +7,6 @@ import { Colors } from './constants';
 const Home: React.FC = () => {
   const now = moment(new Date());
 
-  useEffect(() => {
-    console.log(now.format('MMM DD, YYYY'));
-  });
   return (
     <View style={styles.container} testID="home-screen">
       <View style={styles.container}>
