@@ -2,8 +2,6 @@ import React from 'react';
 
 import { render } from '@testing-library/react-native';
 
-jest.mock('react-native-linear-gradient', () => 'LinearGradient');
-
 import Home from '../screens/Home';
 
 describe('Home', () => {
