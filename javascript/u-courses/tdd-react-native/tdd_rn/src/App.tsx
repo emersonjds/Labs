@@ -8,9 +8,6 @@ const App: React.FC = () => (
       <Home />
     </View>
   </>
-)
-
-
-
+);
 
 export default App;
