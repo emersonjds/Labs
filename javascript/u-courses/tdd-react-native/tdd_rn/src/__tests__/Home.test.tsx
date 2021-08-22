@@ -4,25 +4,30 @@ import { render } from '@testing-library/react-native';
 
 import Home from '../screens/Home';
 
-describe('Home', () => {
-  test('render correctly', () => {
+describe('Home Screen', () => {
+  test('should render corretly', () => {
     const wrapper = render(<Home />);
-    wrapper.getByTestId('home');
+    wrapper.getByTestId('home-screen');
   });
 
-  describe('Title Section', () => {
+  describe('title section', () => {
     beforeEach(() => {
       jest.useFakeTimers('modern');
-      jest.setSystemTime(946684800000); // Simulate Jan 1 2000
+      jest.setSystemTime(946684800000); // Saturday , 01 Jan , 2000 00:00 UTC
     });
 
     afterEach(() => {
       jest.useRealTimers();
     });
 
-    test('should contain current time', () => {
+    test('should contain current date', () => {
       const wrapper = render(<Home />);
-      wrapper.getByTestId('Jan 01, 2000');
+      wrapper.getByText('Aug 22, 2021');
+    });
+
+    test('should contain current day', () => {
+      const wrapper = render(<Home />);
+      wrapper.getByText('Sunday');
     });
   });
 });
