@@ -11,15 +11,6 @@ describe('Home Screen', () => {
   });
 
   describe('title section', () => {
-    beforeEach(() => {
-      jest.useFakeTimers('modern');
-      jest.setSystemTime(946684800000); // Saturday , 01 Jan , 2000 00:00 UTC
-    });
-
-    afterEach(() => {
-      jest.useRealTimers();
-    });
-
     test('should contain current date', () => {
       const wrapper = render(<Home />);
       wrapper.getByText('Aug 22, 2021');
@@ -27,7 +18,7 @@ describe('Home Screen', () => {
 
     test('should contain current day', () => {
       const wrapper = render(<Home />);
-      wrapper.getByText('Sunday');
+      wrapper.getByText('Sun');
     });
   });
 });
