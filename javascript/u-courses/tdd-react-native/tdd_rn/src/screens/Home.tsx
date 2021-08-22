@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 import { Colors } from './constants';
@@ -9,11 +9,9 @@ const Home: React.FC = () => {
 
   return (
     <View style={styles.container} testID="home-screen">
-      <View style={styles.container}>
-        <View style={styles.title}>
-          <Text style={styles.date}>{String(now.format('MMM DD, YYYY'))}</Text>
-          <Text style={styles.day}>{now.format('ddd')}</Text>
-        </View>
+      <View style={styles.title}>
+        <Text style={styles.date}>{String(now.format('MMM DD, YYYY'))}</Text>
+        <Text style={styles.day}>{now.format('ddd')}</Text>
       </View>
     </View>
   );
