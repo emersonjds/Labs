@@ -13,12 +13,12 @@ describe('Home Screen', () => {
   describe('title section', () => {
     test('should contain current date', () => {
       const wrapper = render(<Home />);
-      wrapper.getByText('Aug 22, 2021');
+      wrapper.getByText('Aug 25, 2021');
     });
 
     test('should contain current day', () => {
       const wrapper = render(<Home />);
-      wrapper.getByText('Sun');
+      wrapper.getByText('Wed');
     });
   });
 });
