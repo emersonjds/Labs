@@ -1,6 +1,8 @@
 import moment from 'moment';
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import WeatherCordinates from '../components/WeatherCordinates';
+import WeatherCurrent from '../components/WeatherCurrent';
 
 import { Colors } from './constants';
 
@@ -13,6 +15,8 @@ const Home: React.FC = () => {
         <Text style={styles.date}>{String(now.format('MMM DD, YYYY'))}</Text>
         <Text style={styles.day}>{now.format('ddd')}</Text>
       </View>
+      <WeatherCurrent />
+      <WeatherCordinates />
     </View>
   );
 };
