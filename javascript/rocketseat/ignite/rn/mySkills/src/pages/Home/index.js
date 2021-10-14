@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import colors from '../../Contants';
 
 const Home = () => {
   return (
@@ -9,7 +10,7 @@ const Home = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FC',
+        backgroundColor: colors.gray,
       }}
     />
   );
