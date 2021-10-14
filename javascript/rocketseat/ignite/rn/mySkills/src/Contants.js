@@ -1,0 +1,25 @@
+const colors = {
+  black: '#000000',
+  white: '#ffffff',
+  red: '#ff0000',
+  green: '#00ff00',
+  blue: '#0000ff',
+  yellow: '#ffff00',
+  magenta: '#ff00ff',
+  cyan: '#00ffff',
+  gray: '#808080',
+  darkGray: '#404040',
+  lightRed: '#ff8080',
+  lightGreen: '#80ff80',
+  lightBlue: '#8080ff',
+  lightYellow: '#ffff80',
+  lightMagenta: '#ff80ff',
+  lightCyan: '#80ffff',
+  lightGray: '#c0c0c0',
+  darkRed: '#800000',
+  darkGreen: '#008000',
+  darkBlue: '#000080',
+  darkYellow: '#808000',
+};
+
+export default colors;
