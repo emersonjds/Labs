@@ -1,18 +1,18 @@
 import React from 'react';
-import { View } from 'react-native';
-import Colors from '../../Contants';
+import { ButtonAdd, Container, InputDefault, Title, TextButtonAdd } from './styles';
 
 const Home = () => {
   return (
-    <View
-      // eslint-disable-next-line react-native/no-inline-styles
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: Colors.gray,
-      }}
-    />
+    <Container>
+      <Title>Your Skills</Title>
+      <InputDefault placeholder="What do you know?" />
+
+      <Title style={{ marginTop: 20 }}>Your Skills</Title>
+
+      <ButtonAdd>
+        <TextButtonAdd>Add</TextButtonAdd>
+      </ButtonAdd>
+    </Container>
   );
 };
 
