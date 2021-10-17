@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Text } from 'react-native';
+import ButtonDefault from '../../components/ButtonDefault';
 import Colors from '../../Contants';
 import {
-  ButtonAdd,
   Container,
   InputDefault,
   Title,
-  TextButtonAdd,
   ButtonSkill,
   TextSkill,
 } from './styles';
@@ -16,6 +15,7 @@ const Home = () => {
   const [skylls, setSkylls] = useState([]);
 
   const handleAddSkill = () => {
+    console.log('clicado');
     setSkylls([...skylls, mySkill]);
     setMySkill('');
   };
@@ -29,9 +29,7 @@ const Home = () => {
         value={mySkill}
       />
 
-      <ButtonAdd onPress={handleAddSkill}>
-        <TextButtonAdd>Add</TextButtonAdd>
-      </ButtonAdd>
+      <ButtonDefault title="Add" onPress={() => handleAddSkill()} />
 
       <Title mt={20}>Your Skills</Title>
 
