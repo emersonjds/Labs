@@ -7,6 +7,8 @@ import {
   InputDefault,
   Title,
   TextButtonAdd,
+  ButtonSkill,
+  TextSkill,
 } from './styles';
 
 const Home = () => {
@@ -26,19 +28,22 @@ const Home = () => {
         onChangeText={setMySkill}
         value={mySkill}
       />
-      <Title mt={20}>Your Skills</Title>
-
-      {skylls.map((skill, index) => {
-        return (
-          <Text key={index} style={{ color: Colors.white }}>
-            * {skill}
-          </Text>
-        );
-      })}
 
       <ButtonAdd onPress={handleAddSkill}>
         <TextButtonAdd>Add</TextButtonAdd>
       </ButtonAdd>
+
+      <Title mt={20}>Your Skills</Title>
+
+      {skylls.map((skill, index) => {
+        return (
+          <ButtonSkill>
+            <TextSkill key={index} style={{ color: Colors.white }}>
+              {skill}
+            </TextSkill>
+          </ButtonSkill>
+        );
+      })}
     </Container>
   );
 };
