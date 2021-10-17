@@ -37,10 +37,8 @@ const Home = () => {
 
       {skylls.map((skill, index) => {
         return (
-          <ButtonSkill>
-            <TextSkill key={index} style={{ color: Colors.white }}>
-              {skill}
-            </TextSkill>
+          <ButtonSkill key={index}>
+            <TextSkill style={{ color: Colors.white }}>{skill}</TextSkill>
           </ButtonSkill>
         );
       })}
