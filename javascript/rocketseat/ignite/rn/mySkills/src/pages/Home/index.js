@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Text } from 'react-native';
 import ButtonDefault from '../../components/ButtonDefault';
+import ContainerSkill from '../../components/ContainerSkill';
 import Colors from '../../Contants';
 import {
   Container,
@@ -34,11 +35,7 @@ const Home = () => {
       <Title mt={20}>Your Skills</Title>
 
       {skylls.map((skill, index) => {
-        return (
-          <ButtonSkill key={index}>
-            <TextSkill style={{ color: Colors.white }}>{skill}</TextSkill>
-          </ButtonSkill>
-        );
+        return <ContainerSkill skill={skill} index={index} />;
       })}
     </Container>
   );
