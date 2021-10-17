@@ -15,19 +15,25 @@ const Home = () => {
 
   const handleAddSkill = () => {
     setSkylls([...skylls, mySkill]);
-    setTimeout(() => {
-      setMySkill('');
-    }, 1000);
+    setMySkill('');
   };
 
   return (
     <Container>
       <Title>Your Skills</Title>
-      <InputDefault placeholder="What do you know?" onChangeText={setMySkill} />
+      <InputDefault
+        placeholder="What do you know?"
+        onChangeText={setMySkill}
+        value={mySkill}
+      />
       <Title mt={20}>Your Skills</Title>
 
-      {skylls.map(skill => {
-        return <Text style={{ color: Colors.white }}> * {skill}</Text>;
+      {skylls.map((skill, index) => {
+        return (
+          <Text key={index} style={{ color: Colors.white }}>
+            * {skill}
+          </Text>
+        );
       })}
 
       <ButtonAdd onPress={handleAddSkill}>
