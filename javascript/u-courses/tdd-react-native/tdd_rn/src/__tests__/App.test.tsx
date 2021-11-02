@@ -1,12 +1,11 @@
-import React from 'react';
+function sum(a: number, b: number): number {
+    return a + b;
+}
 
-import { render } from '@testing-library/react-native';
+describe('Test function sum', () => {
+    it('should be return a correct value of function', () => {
+        expect(sum(1, 2)).toBe(3);
+    });
+})
 
-import App from '../App';
-
-describe('App', () => {
-  test('should render correctly', () => {
-    const wrapper = render(<App />);
-    wrapper.getByTestId('app');
-  });
-});
+export { }
