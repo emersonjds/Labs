@@ -1,3 +1,16 @@
 import styled from 'styled-components/native';
+import {
+  FlexboxProps,
+  ColorProps,
+  BorderRadiusProps,
+  HeightProps,
+  WidthProps,
+} from 'styled-system';
 
-export const Container = styled.View``;
+type BoxProps = FlexboxProps &
+  ColorProps &
+  BorderRadiusProps &
+  HeightProps &
+  WidthProps;
+
+export const Container = styled.View<BoxProps>``;

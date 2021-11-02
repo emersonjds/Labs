@@ -1,10 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const Box: React.FC = () => {
-  return <View testID="Box" />;
+  return <Container testID="Box" />;
 };
 
 export default Box;
