@@ -2,8 +2,12 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Box: React.FC = () => {
-  return <Container testID="Box" />;
+interface BoxProps {
+  testID?: string;
+}
+
+const Box: React.FC<BoxProps> = ({ testID }) => {
+  return <Container testID={testID} />;
 };
 
 export default Box;

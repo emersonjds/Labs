@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
+import Box from '../../components/Box';
 
 const Home: React.FC = () => {
-  return <View testID="home" />;
+  return <Box testID="home" />;
 };
 
 export default Home;
