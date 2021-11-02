@@ -4,7 +4,8 @@ import App from '../App';
 
 describe('Test App', () => {
   it('should render corretly', () => {
-    render(<App />);
+    const wrapper = render(<App />);
+    wrapper.getByTestId('App');
   });
 });
 
