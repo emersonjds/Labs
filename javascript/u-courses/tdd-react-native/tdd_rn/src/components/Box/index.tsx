@@ -2,11 +2,9 @@ import React from 'react';
 
 import { Container } from './styles';
 
-interface BoxProps {
-  testID?: string;
-}
+import { ViewProps } from 'react-native';
 
-const Box: React.FC<BoxProps> = ({ testID }) => {
+const Box: React.FC<ViewProps> = ({ testID }) => {
   return <Container testID={testID} />;
 };
 
