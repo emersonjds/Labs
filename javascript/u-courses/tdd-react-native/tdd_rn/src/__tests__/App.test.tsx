@@ -1,10 +1,11 @@
-function sum(a: number, b: number): number {
-  return a + b;
-}
+import React from 'react';
+import renderer from 'react-test-renderer';
+import App from '../App';
 
-describe('Test function sum', () => {
-  it('should be return a correct value of function', () => {
-    expect(sum(1, 2)).toBe(3);
+describe('Test App', () => {
+  it('should render correctly', () => {
+    const tree = renderer.create(<App />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
 
