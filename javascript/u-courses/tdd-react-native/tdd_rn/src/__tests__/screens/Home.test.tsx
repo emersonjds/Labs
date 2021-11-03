@@ -4,6 +4,7 @@ import Home from '../../screens/Home';
 
 describe('Home', () => {
   it('renders correctly', () => {
-    render(<Home />);
+    const wrapper = render(<Home />);
+    wrapper.getByTestId('home-screen');
   });
 });
