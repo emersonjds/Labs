@@ -91,7 +91,6 @@
 				7E7424D7B1DBD13069577E79 /* Pods-tdd_rn-tdd_rnTests.debug.xcconfig */,
 				3D74AFA3674D4F04AC36FA45 /* Pods-tdd_rn-tdd_rnTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -485,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RN7HUN2AZ8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = tdd_rn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RN7HUN2AZ8;
 				INFOPLIST_FILE = tdd_rn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
