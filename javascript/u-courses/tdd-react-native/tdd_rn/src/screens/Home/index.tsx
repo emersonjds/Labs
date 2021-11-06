@@ -1,10 +1,15 @@
+import moment from 'moment';
 import React from 'react';
 import { Text, SafeAreaView } from 'react-native';
 
 import { Box, BoxFull } from '../../components/Box/styles';
 import { Colors } from '../../Contants';
 
+
+
 function Home() {
+  const now = moment(new Date())
+
   return (
     <SafeAreaView style={{
       flex: 1
@@ -15,8 +20,10 @@ function Home() {
             style={{
               fontSize: 20,
               color: Colors.white,
-            }}>
-            Date
+            }}
+            testID='date'
+          >
+            {now.format('dddd MMMM, YYYY')}
           </Text>
         </Box>
         <Box width="100%" justifyContent="center" style={{
