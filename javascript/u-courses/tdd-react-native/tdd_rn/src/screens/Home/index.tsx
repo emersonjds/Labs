@@ -1,9 +1,14 @@
 import React from 'react';
-import Box from '../../components/Box';
-import BoxGradient from '../../components/BoxGradient';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Home: React.FC = () => {
-  return <BoxGradient testID="home-screen" />;
+  return (
+    <LinearGradient
+      colors={['red', 'blue']}
+      testID="home-screen"
+      style={{ flex: 1 }}
+    />
+  );
 };
 
 export default Home;
