@@ -1,12 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
-import Box from '../../components/Box';
+import { Box, BoxFull } from '../../components/Box/styles';
 
 function Home() {
   return (
-    <Box>
-      <Text>Home</Text>
-    </Box>
+    <BoxFull bg="blue" p={20}>
+      <Box />
+    </BoxFull>
   );
 }
 
