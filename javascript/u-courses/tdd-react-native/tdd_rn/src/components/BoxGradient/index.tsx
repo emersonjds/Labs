@@ -1,13 +1,13 @@
 import React from 'react';
 import { ContainerGradient } from './styles';
 
-interface Props {
-  c1: string;
-  c2: string;
+interface BoxGradientProps {
+  colorOne: string;
+  colorTwo: string;
 }
 
-const BoxGradient: React.FC<Props> = ({ c1, c2 }) => {
-  return <ContainerGradient c1={c1} c2={c2} />;
-}
+const BoxGradient: React.FC<BoxGradientProps> = ({ colorOne, colorTwo }) => {
+  return <ContainerGradient ccolorOne1={colorOne} colorTwo={colorTwo} />;
+};
 
 export default BoxGradient;
