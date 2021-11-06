@@ -3,7 +3,7 @@ import { Box, BoxFull } from '../../components/Box/styles';
 
 function Home() {
   return (
-    <BoxFull bg="blue" p={20}>
+    <BoxFull bg="blue" p={20} testID="home-screen">
       <Box />
     </BoxFull>
   );
