@@ -16,8 +16,6 @@ type ContainerGradientProps = FlexboxProps &
   WidthProps &
   ViewProps;
 
-export const ContainerGradient: ContainerGradientProps = styled
-  .View(LinearGradient)
-  .attrs({
-    colors: ($props: any) => [$props.c1, $props.c2],
-  })``;
+export const ContainerGradient = styled.View(LinearGradient).attrs({
+  colors: ($props: any) => [$props.colorOne, $props.colorTwo],
+})<ContainerGradientProps>``;
