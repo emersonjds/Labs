@@ -1,19 +1,43 @@
+import { JSXElementConstructor } from 'react';
 import { ViewProps } from 'react-native';
 import styled from 'styled-components/native';
 
 import {
-  FlexboxProps,
+  color,
+  flex,
+  space,
   ColorProps,
-  BorderRadiusProps,
   HeightProps,
+  FlexboxProps,
+  BorderRadiusProps,
   WidthProps,
+  SpaceProps,
+  BorderProps,
+  PositionProps,
 } from 'styled-system';
 
-type BoxProps = FlexboxProps &
-  ColorProps &
-  BorderRadiusProps &
-  HeightProps &
-  WidthProps &
-  ViewProps;
+type BoxProps =
+  | SpaceProps
+  | ColorProps
+  | HeightProps
+  | ViewProps
+  | BorderProps
+  | BorderRadiusProps
+  | FlexboxProps
+  | WidthProps
+  | PositionProps;
 
-export const Container = styled.View<BoxProps>``;
+export const BoxFull = styled.View<BoxProps>`
+  ${color}
+  ${space}
+  ${flex}
+  flex: 1;
+  position: relative;
+`;
+
+export const Box = styled.View<BoxProps>`
+  ${color}
+  ${space}
+  ${flex}
+	position: relative;
+`;

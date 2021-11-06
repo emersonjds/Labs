@@ -1,9 +1,12 @@
 import React from 'react';
-import Box from '../../components/Box';
+import { Box, BoxFull } from '../../components/Box/styles';
 
-const Home: React.FC = () => {
-  return <Box testID="home-screen" />;
-  // changes
-};
+function Home() {
+  return (
+    <BoxFull bg="blue" p={20} testID="home-screen">
+      <Box />
+    </BoxFull>
+  );
+}
 
 export default Home;
