@@ -7,6 +7,9 @@ import {
   BorderRadiusProps,
   HeightProps,
   WidthProps,
+  background,
+  flex,
+  space
 } from 'styled-system';
 
 type BoxProps = FlexboxProps &
@@ -16,4 +19,9 @@ type BoxProps = FlexboxProps &
   WidthProps &
   ViewProps;
 
-export const Container = styled.View<BoxProps>``;
+export const Container = styled.View<BoxProps>`
+  ${background}
+  ${flex}
+  ${space}
+  flex: 1;
+`;
