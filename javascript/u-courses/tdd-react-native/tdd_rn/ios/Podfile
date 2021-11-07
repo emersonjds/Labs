@@ -12,6 +12,8 @@ target 'tdd_rn' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-geolocation', :path => '../node_modules/@react-native-community/geolocation'
+
   target 'tdd_rnTests' do
     inherit! :complete
     # Pods for testing
