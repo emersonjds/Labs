@@ -4,20 +4,6 @@ import Home from '../../screens/Home';
 import moment from 'moment';
 
 describe('Home', () => {
-  test('renders correctly', () => {
-    const wrapper = render(<Home />);
-    wrapper.getByTestId('home-screen');
-  });
-
-  test('should contain current date', () => {
-    const wrapper = render(<Home />);
-    wrapper.getByText('November 06, 2021')
-  });
-
-  test('should contain current day', () => {
-    const wrapper = render(<Home />);
-    wrapper.getByText('Saturday');
-  });
 
   describe('tests on container', () => {
     beforeEach(() => {
@@ -40,5 +26,23 @@ describe('Home', () => {
     });
 
   })
+
+
+  test('renders correctly', () => {
+    const wrapper = render(<Home />);
+    wrapper.getByTestId('home-screen');
+  });
+
+  test('should contain current date', () => {
+    const wrapper = render(<Home />);
+    wrapper.getByText('Nov 06, 2021')
+  });
+
+  test('should contain current day', () => {
+    const wrapper = render(<Home />);
+    wrapper.getByText('Saturday');
+  });
+
+
 });
 
