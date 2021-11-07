@@ -1,6 +1,9 @@
 import moment from 'moment';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import WeatherCoordinates from '../../components/WeatherCoordinates';
+import WeatherCurrent from '../../components/WeatherCurrent';
+import { Colors } from '../../Contants';
 
 function Home() {
   const now = moment(new Date())
@@ -12,6 +15,8 @@ function Home() {
       <Text style={styles.title}>
         {now.format('MMM DD, YYYY')}
       </Text>
+      <WeatherCurrent />
+      <WeatherCoordinates />
     </View>
   );
 }
@@ -22,13 +27,33 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 20,
+    backgroundColor: Colors.black,
   },
   subtitle: {
     fontSize: 20,
+    color: Colors.white,
   },
   title: {
     fontSize: 30,
+    color: Colors.white,
   }
 })
 
 export default Home;
+
+ // "jest": {
+  //   "verbose": true,
+  //   "moduleFileExtensions": [
+  //     "ts",
+  //     "tsx",
+  //     "js",
+  //     "jsx",
+  //     "json",
+  //     "node"
+  //   ],
+  //   "moduleDirectories": [
+  //     "node_modules",
+  //     "bower_components",
+  //     "src"
+  //   ]
+  // }

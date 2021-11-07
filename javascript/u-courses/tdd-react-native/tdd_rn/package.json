@@ -40,21 +40,5 @@
   },
   "resolutions": {
     "@types/react": "^17"
-  },
-  "jest": {
-    "verbose": true,
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "bower_components",
-      "src"
-    ]
   }
 }
