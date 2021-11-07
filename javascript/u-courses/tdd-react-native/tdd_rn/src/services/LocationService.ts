@@ -1,5 +1,4 @@
 import GetLocation from 'react-native-get-location';
-
 class LocationService {
   static async getCurrentPosition() {
     return GetLocation.getCurrentPosition({

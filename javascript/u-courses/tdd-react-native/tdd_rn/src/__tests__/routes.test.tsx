@@ -6,7 +6,7 @@ import Home from '../screens/Home';
 jest.mock('../screens/Home', () => jest.fn());
 
 describe('AppNavigator', () => {
-    test('Should render Home by default', async () => {
-        (Home as jest.Mock).mockReturnValueOnce(<View testID="home" />);
-    })
-})
+  test('Should render Home by default', async () => {
+    (Home as jest.Mock).mockReturnValueOnce(<View testID="home" />);
+  });
+});
