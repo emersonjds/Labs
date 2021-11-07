@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import Home from '../../screens/Home';
-import moment from 'moment';
 import { View } from 'react-native';
 import WeatherCurrent from '../../components/WeatherCurrent';
 
