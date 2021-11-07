@@ -1,10 +1,17 @@
-import React from 'react';
-import { View } from 'react-native';
+import GetLocation from "react-native-get-location";
 
-// import { Container } from './styles';
+class LocationService {
+  static async getCurrentPosition() {
+    return GetLocation.getCurrentPosition({
+      enableHighAccuracy: true,
+      timeout: 15000,
+    }).then((location) => {
+      return {
+        latitude: location.latitude,
+        longitude: location.longitude,
+      }
+    })
+  }
+}
 
-const LocaltionService: React.FC = () => {
-  return <View />;
-};
-
-export default LocaltionService;
+export default LocationService;

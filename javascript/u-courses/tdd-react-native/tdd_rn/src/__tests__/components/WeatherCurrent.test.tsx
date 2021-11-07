@@ -7,5 +7,5 @@ describe('WeatherCoordinates', () => {
     const wrapper = render(<WeatherCurrent />);
     wrapper.getByTestId('WeatherCurrent');
   });
-  test('should navigate to another screen', () => {});
+  test('should navigate to another screen', () => { });
 });
