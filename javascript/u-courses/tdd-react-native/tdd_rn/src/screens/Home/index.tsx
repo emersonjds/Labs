@@ -40,20 +40,3 @@ const styles = StyleSheet.create({
 })
 
 export default Home;
-
- // "jest": {
-  //   "verbose": true,
-  //   "moduleFileExtensions": [
-  //     "ts",
-  //     "tsx",
-  //     "js",
-  //     "jsx",
-  //     "json",
-  //     "node"
-  //   ],
-  //   "moduleDirectories": [
-  //     "node_modules",
-  //     "bower_components",
-  //     "src"
-  //   ]
-  // }
