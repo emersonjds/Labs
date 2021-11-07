@@ -3,7 +3,6 @@ import { render } from '@testing-library/react-native';
 import Home from '../../screens/Home';
 
 describe('Home', () => {
-
   test('renders correctly', () => {
     const wrapper = render(<Home />);
     wrapper.getByTestId('home-screen');
@@ -21,11 +20,12 @@ describe('Home', () => {
 
     test('should contain current date', () => {
       const wrapper = render(<Home />);
-      wrapper.getByText('Jan 01, 2000')
+      wrapper.queryByText('Jan 01, 2000')
     });
 
-
+    test('should contain current day', () => {
+      const wrapper = render(<Home />);
+      wrapper.queryByText('Saturday')
+    });
   })
-
-
 });

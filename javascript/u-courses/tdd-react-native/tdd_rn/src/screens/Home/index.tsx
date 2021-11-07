@@ -1,8 +1,6 @@
 import moment from 'moment';
 import React from 'react';
-import { Text, SafeAreaView } from 'react-native';
-
-import { Box, BoxFull } from '../../components/Box/styles';
+import { Text, SafeAreaView, View } from 'react-native';
 import { Colors } from '../../Contants';
 
 
@@ -11,34 +9,19 @@ function Home() {
   const now = moment(new Date())
 
   return (
-    <SafeAreaView style={{
-      flex: 1
+    <View testID="home-screen" style={{
+      marginTop: 40,
+      flex: 1,
+      justifyContent: 'center',
+      paddingHorizontal: 20,
     }}>
-      <BoxFull p={20} testID="home-screen" bg={Colors.dark}>
-        <Box mt={40} width="100%" height={30} justifyContent="center" mb={10}>
-          <Text
-            style={{
-              fontSize: 20,
-              color: Colors.white,
-            }}
-            testID='date'
-          >
-            {now.format('dddd MMMM, YYYY')}
-          </Text>
-        </Box>
-        <Box width="100%" justifyContent="center" style={{
-          bordertoWidth: 1,
-          borderColor: Colors.accent,
-        }}>
-          <Text style={{
-            fontSize: 60,
-            color: Colors.white
-          }}>
-            Date
-          </Text>
-        </Box>
-      </BoxFull>
-    </SafeAreaView>
+      <Text style={{ fontSize: 20 }}>
+        {now.format('dddd')}
+      </Text>
+      <Text style={{ fontSize: 30 }}>
+        {now.format('MMMM DD, YYYY')}
+      </Text>
+    </View>
 
   );
 }
