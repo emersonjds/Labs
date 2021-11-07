@@ -17,8 +17,7 @@
     "moment": "^2.29.1",
     "react": "17.0.1",
     "react-native": "0.64.1",
-    "react-native-gesture-handler": "^1.10.3",
-    "react-native-reanimated": "^2.2.3",
+    "react-native-get-location": "2.0.0",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   },

@@ -1,14 +1,11 @@
-import Geolocation from '@react-native-community/geolocation';
+import GetLocation from 'react-native-get-location';
 
 class LocationService {
   static async getCurrentPosition() {
-    return Geolocation.getCurrentPosition(
-      (position: { coords: { latitude: any; longitude: any } }) => {
-      return {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-      };
-    });
+    return GetLocation.getCurrentPosition({
+      enableHighAccuracy: true,
+      timeout: 15000,
+    }).then(({ latitude, longitude }) => ({ latitude, longitude }));
   }
 }
 
