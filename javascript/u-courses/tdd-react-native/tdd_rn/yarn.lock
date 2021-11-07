@@ -5903,10 +5903,10 @@ react-native-codegen@^0.0.6:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
-react-native-linear-gradient@^2.5.6:
-  version "2.5.6"
-  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
-  integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
+react-native-get-location@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-get-location/-/react-native-get-location-2.1.2.tgz#d039502ba792a2fdbcea1f24c4c364601388cec9"
+  integrity sha512-gTGdp1n9S7916gMF4UKHeK4aj5bqat/5fVPGZeo6SUPxRMt49kSphnUGk9H1aWDw42K/pkVjaJ+yspYXMqj8rg==
 
 react-native@0.64.1:
   version "0.64.1"
