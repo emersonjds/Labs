@@ -20,12 +20,12 @@ describe('Home', () => {
 
   test('should contain current date', () => {
     const wrapper = render(<Home />);
-    wrapper.getByText('Nov 06, 2021');
+    wrapper.getByText('Nov 07, 2021');
   });
 
   test('should contain current day', () => {
     const wrapper = render(<Home />);
-    wrapper.getByText('Saturday');
+    wrapper.getByText('Sunday');
   });
 
   test('should contain a section to get current weather', () => {
@@ -37,24 +37,3 @@ describe('Home', () => {
     expect(WeatherCurrent).toHaveBeenCalled();
   });
 });
-
-// describe('tests on container', () => {
-//   beforeEach(() => {
-//     jest.useFakeTimers('modern')
-//     jest.setSystemTime(946684800000) // Saturday, 01 January 2000 00:00:00 GMT
-//   });
-
-//   afterEach(() => {
-//     jest.useRealTimers()
-//   })
-
-//   test('should contain current date', () => {
-//     const wrapper = render(<Home />);
-//     wrapper.getByText('Jan 01, 2000')
-//   });
-
-//   test('should contain current day', () => {
-//     const wrapper = render(<Home />);
-//     wrapper.getByText('Saturday');
-//   });
-// })
