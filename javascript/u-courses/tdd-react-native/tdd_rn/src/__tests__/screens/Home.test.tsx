@@ -25,7 +25,7 @@ describe('Home', () => {
     wrapper.getByText('Saturday');
   });
 
-  test('should contain current time', () => {
+  test('should contain a section to get current weather', () => {
     (WeatherCurrent as jest.Mock).mockReturnValue(<View testID="weatherCurrentMock" />)
     const wrapper = render(<Home />);
     wrapper.getByTestId('weatherCurrentMock');
