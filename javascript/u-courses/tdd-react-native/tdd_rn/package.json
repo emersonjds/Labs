@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "test-watch": "jest --watch",
+    "jestTest": "NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.js ",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
@@ -41,7 +42,7 @@
     "@types/react": "^17"
   },
   "jest": {
-    "preset": "react-native",
+    "verbose": true,
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -49,6 +50,11 @@
       "jsx",
       "json",
       "node"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "src"
     ]
   }
 }

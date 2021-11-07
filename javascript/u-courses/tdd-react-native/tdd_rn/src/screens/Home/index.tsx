@@ -1,13 +1,9 @@
 import moment from 'moment';
 import React from 'react';
-import { Text, SafeAreaView, View } from 'react-native';
-import { Colors } from '../../Contants';
-
-
+import { Text, View } from 'react-native';
 
 function Home() {
   const now = moment(new Date())
-
   return (
     <View testID="home-screen" style={{
       marginTop: 40,

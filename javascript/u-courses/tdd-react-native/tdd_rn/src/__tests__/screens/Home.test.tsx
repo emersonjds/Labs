@@ -1,11 +1,22 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import Home from '../../screens/Home';
+import moment from 'moment';
 
 describe('Home', () => {
   test('renders correctly', () => {
     const wrapper = render(<Home />);
     wrapper.getByTestId('home-screen');
+  });
+
+  test('should contain current date', () => {
+    const wrapper = render(<Home />);
+    wrapper.getByText('November 06, 2021')
+  });
+
+  test('should contain current day', () => {
+    const wrapper = render(<Home />);
+    wrapper.getByText('Saturday');
   });
 
   describe('tests on container', () => {
@@ -20,12 +31,14 @@ describe('Home', () => {
 
     test('should contain current date', () => {
       const wrapper = render(<Home />);
-      wrapper.queryByText('Jan 01, 2000')
+      wrapper.getByText('Jan 01, 2000')
     });
 
     test('should contain current day', () => {
       const wrapper = render(<Home />);
-      wrapper.queryByText('Saturday')
+      wrapper.getByText('Saturday');
     });
+
   })
 });
+
