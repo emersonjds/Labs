@@ -4,9 +4,12 @@ import Home from '../../screens/Home';
 import { View } from 'react-native';
 import WeatherCurrent from '../../components/WeatherCurrent';
 
-jest.mock('../../components/WeatherCurrent', () => jest.fn().mockReturnValue(null));
-jest.mock('../../components/WeatherCoordinates', () => jest.fn().mockReturnValue(null));
-
+jest.mock('../../components/WeatherCurrent', () =>
+  jest.fn().mockReturnValue(null),
+);
+jest.mock('../../components/WeatherCoordinates', () =>
+  jest.fn().mockReturnValue(null),
+);
 
 describe('Home', () => {
   // real tests
@@ -17,7 +20,7 @@ describe('Home', () => {
 
   test('should contain current date', () => {
     const wrapper = render(<Home />);
-    wrapper.getByText('Nov 06, 2021')
+    wrapper.getByText('Nov 06, 2021');
   });
 
   test('should contain current day', () => {
@@ -26,11 +29,13 @@ describe('Home', () => {
   });
 
   test('should contain a section to get current weather', () => {
-    (WeatherCurrent as jest.Mock).mockReturnValue(<View testID="weatherCurrentMock" />)
+    (WeatherCurrent as jest.Mock).mockReturnValue(
+      <View testID="weatherCurrentMock" />,
+    );
     const wrapper = render(<Home />);
     wrapper.getByTestId('weatherCurrentMock');
     expect(WeatherCurrent).toHaveBeenCalled();
-  })
+  });
 });
 
 // describe('tests on container', () => {
@@ -53,4 +58,3 @@ describe('Home', () => {
 //     wrapper.getByText('Saturday');
 //   });
 // })
-

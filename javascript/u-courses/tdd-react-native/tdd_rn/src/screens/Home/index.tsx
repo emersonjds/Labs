@@ -6,15 +6,11 @@ import WeatherCurrent from '../../components/WeatherCurrent';
 import { Colors } from '../../Contants';
 
 function Home() {
-  const now = moment(new Date())
+  const now = moment(new Date());
   return (
     <View testID="home-screen" style={styles.container}>
-      <Text style={styles.subtitle}>
-        {now.format('dddd')}
-      </Text>
-      <Text style={styles.title}>
-        {now.format('MMM DD, YYYY')}
-      </Text>
+      <Text style={styles.subtitle}>{now.format('dddd')}</Text>
+      <Text style={styles.title}>{now.format('MMM DD, YYYY')}</Text>
       <WeatherCurrent />
       <WeatherCoordinates />
     </View>
@@ -36,7 +32,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     color: Colors.white,
-  }
-})
+  },
+});
 
 export default Home;
