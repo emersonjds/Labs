@@ -2,6 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import Home from '../../screens/Home';
 import moment from 'moment';
+import { View } from 'react-native';
+import WeatherCurrent from '../../components/WeatherCurrent';
+
+jest.mock('../../components/WeatherCurrent', () => jest.fn().mockReturnValue(null));
+jest.mock('../../components/WeatherCoordinates', () => jest.fn().mockReturnValue(null));
+
 
 describe('Home', () => {
   // real tests
@@ -19,6 +25,13 @@ describe('Home', () => {
     const wrapper = render(<Home />);
     wrapper.getByText('Saturday');
   });
+
+  test('should contain current time', () => {
+    (WeatherCurrent as jest.Mock).mockReturnValue(<View testID="weatherCurrentMock" />)
+    const wrapper = render(<Home />);
+    wrapper.getByTestId('weatherCurrentMock');
+    expect(WeatherCurrent).toHaveBeenCalled();
+  })
 });
 
 // describe('tests on container', () => {
