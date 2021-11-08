@@ -4,7 +4,12 @@ class LocationService {
     return GetLocation.getCurrentPosition({
       enableHighAccuracy: true,
       timeout: 15000,
-    }).then(({ latitude, longitude }) => ({ latitude, longitude }));
+    }).then(location => {
+      return {
+        latitude: location.latitude,
+        longitude: location.longitude,
+      };
+    });
   }
 }
 
