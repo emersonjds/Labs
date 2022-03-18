@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
+import { SkiaDemo } from './Skia';
 
 const App: React.FC = () => (
   <SafeAreaView>
@@ -8,6 +9,7 @@ const App: React.FC = () => (
         padding: 10,
       }}>
       <Text>Skia Studies</Text>
+      <SkiaDemo />
     </View>
   </SafeAreaView>
 );
