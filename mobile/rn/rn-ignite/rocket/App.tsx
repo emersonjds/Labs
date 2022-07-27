@@ -1,11 +1,11 @@
 import React from 'react';
-import Index from "./src/screens/SignIn";
-import {NativeBaseProvider, Box} from 'native-base'
-import {THEME} from "./src/styles/theme";
+import {NativeBaseProvider} from 'native-base'
 import {useFonts} from "expo-font";
 import {Roboto_400Regular, Roboto_700Bold} from "@expo-google-fonts/roboto";
 import {Text, View} from "react-native";
-
+import Loading from "./src/components/Loading";
+import SignIn from "./src/screens/SignIn";
+import {THEME} from "./src/styles/theme";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -26,7 +26,9 @@ export default function App() {
     <NativeBaseProvider
       theme={THEME}
     >
-      <Index />
+      {
+        fontsLoaded ? <SignIn/> : <Loading/>
+      }
     </NativeBaseProvider>
   );
 }
