@@ -2,7 +2,6 @@ import React from 'react';
 import SignIn from "./src/screens/SignIn";
 import {NativeBaseProvider, Box} from 'native-base'
 import {THEME} from "./src/styles/theme";
-import AppLoading from 'expo-app-loading';
 import {useFonts} from "expo-font";
 import {Roboto_400Regular, Roboto_700Bold} from "@expo-google-fonts/roboto";
 import {Text, View} from "react-native";
@@ -27,9 +26,7 @@ export default function App() {
     <NativeBaseProvider
       theme={THEME}
     >
-      <Box>
-        Emerson
-      </Box>
+      <SignIn />
     </NativeBaseProvider>
   );
 }
