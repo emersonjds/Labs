@@ -1,5 +1,7 @@
 import React from "react";
 import {Heading, VStack} from "native-base";
+import Logo from "../../assets/logo_primary.svg"
+import Input from "../../components/Input";
 
 const Index = () => {
   return (
@@ -10,9 +12,17 @@ const Index = () => {
       px={8}
       pt={24}
     >
+      <Logo />
       <Heading color="gray.100" fontSize={"xl"} mt={20} mb={6}>
         Acesse sua conta
       </Heading>
+      <Input
+        placeholder={'E-mail'}
+        mb={5}
+      />
+      <Input
+        placeholder={'Senha'}
+      />
     </VStack>
   )
 }
