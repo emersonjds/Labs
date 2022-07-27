@@ -1,5 +1,5 @@
 import React from 'react';
-import SignIn from "./src/screens/SignIn";
+import Index from "./src/screens/SignIn";
 import {NativeBaseProvider, Box} from 'native-base'
 import {THEME} from "./src/styles/theme";
 import {useFonts} from "expo-font";
@@ -26,7 +26,7 @@ export default function App() {
     <NativeBaseProvider
       theme={THEME}
     >
-      <SignIn />
+      <Index />
     </NativeBaseProvider>
   );
 }

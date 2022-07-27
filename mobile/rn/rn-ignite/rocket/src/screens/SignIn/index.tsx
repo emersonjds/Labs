@@ -1,7 +1,7 @@
 import React from "react";
 import {Heading, VStack} from "native-base";
 
-const SignIn = () => {
+const Index = () => {
   return (
     <VStack
       flex={1}
@@ -17,4 +17,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn;
+export default Index;
