@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Heading, Icon, VStack, useTheme} from "native-base";
 import Logo from "../../assets/logo_primary.svg"
 import Input from "../../components/Input";
@@ -8,6 +8,15 @@ import Button from "../../components/Button";
 const SignIn = () => {
 
   const {colors} = useTheme();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const data = () => {
+    console.log({
+      email,
+      password
+    })
+  }
 
   return (
     <VStack
@@ -29,6 +38,8 @@ const SignIn = () => {
           ml={5}
         />
         }
+        value={email}
+        onChangeText={setEmail}
       />
       <Input
         placeholder={'Senha'}
@@ -38,11 +49,14 @@ const SignIn = () => {
         />
         }
         secureTextEntry={true}
+        value={password}
+        onChangeText={setPassword}
       />
 
       <Button
         title="Entrar"
         w="full"
+        onPress={data}
       />
     </VStack>
   )
