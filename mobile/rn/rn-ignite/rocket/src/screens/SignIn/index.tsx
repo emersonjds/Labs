@@ -1,9 +1,13 @@
 import React from "react";
-import {Heading, Icon, VStack} from "native-base";
+import {Heading, Icon, VStack, useTheme} from "native-base";
 import Logo from "../../assets/logo_primary.svg"
 import Input from "../../components/Input";
+import {Envelope, Key} from 'phosphor-react-native'
 
-const Index = () => {
+const SignIn = () => {
+
+  const {colors} = useTheme();
+
   return (
     <VStack
       flex={1}
@@ -12,20 +16,29 @@ const Index = () => {
       px={8}
       pt={24}
     >
-      <Logo />
+      <Logo/>
       <Heading color="gray.100" fontSize={"xl"} mt={20} mb={6}>
         Acesse sua conta
       </Heading>
       <Input
         placeholder={'E-mail'}
         mb={5}
-        InputLeftElement={<Icon as  />}
+        InputLeftElement={<Icon
+          as={<Envelope color={colors.gray[300]}/>}
+          ml={5}
+        />
+        }
       />
       <Input
         placeholder={'Senha'}
+        InputLeftElement={<Icon
+          as={<Key color={colors.gray[300]}/>}
+          ml={5}
+        />
+        }
       />
     </VStack>
   )
 }
 
-export default Index;
+export default SignIn;
