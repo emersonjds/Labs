@@ -43,8 +43,6 @@ const SignIn = () => {
       <Button
         title="Entrar"
         w="full"
-        mt={8}
-        bg="green.500"
       />
     </VStack>
   )

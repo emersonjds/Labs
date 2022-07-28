@@ -8,11 +8,19 @@ type Props = IButtonProps & {
 const Button: FC<Props> = ({title, ...rest}) => {
   return (
     <ButtonNativeBase
+      mt={8}
+      height={14}
+      bg="green.700"
+      fontSize="sm"
+      rounded="sm"
+      _pressed={{
+        bg: "green.500",
+      }}
       {...rest}
     >
       <Heading
         color="white"
-        fontSize="xl"
+        fontSize="sm"
       >
         {title ? title : 'Entrar'}
       </Heading>
