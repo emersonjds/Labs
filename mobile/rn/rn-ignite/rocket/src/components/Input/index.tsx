@@ -11,6 +11,11 @@ const Input = ({...rest}: IInputProps) => {
       color="white"
       placeholderTextColor="gray.300"
       {...rest}
+      _focus={{
+        borderWidth: 1,
+        borderColor: "gray.500",
+        bg: "gray.700",
+      }}
     />
   )
 }

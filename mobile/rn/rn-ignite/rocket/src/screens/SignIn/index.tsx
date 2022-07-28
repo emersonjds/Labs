@@ -3,6 +3,7 @@ import {Heading, Icon, VStack, useTheme} from "native-base";
 import Logo from "../../assets/logo_primary.svg"
 import Input from "../../components/Input";
 import {Envelope, Key} from 'phosphor-react-native'
+import Button from "../../components/Button";
 
 const SignIn = () => {
 
@@ -36,7 +37,10 @@ const SignIn = () => {
           ml={5}
         />
         }
+        secureTextEntry={true}
       />
+
+      <Button />
     </VStack>
   )
 }
