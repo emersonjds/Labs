@@ -40,7 +40,12 @@ const SignIn = () => {
         secureTextEntry={true}
       />
 
-      <Button />
+      <Button
+        title="Entrar"
+        w="full"
+        mt={8}
+        bg="green.500"
+      />
     </VStack>
   )
 }

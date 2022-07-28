@@ -1,17 +1,14 @@
 import {Button as ButtonNativeBase, IButtonProps, Heading} from 'native-base'
 import {FC} from "react";
 
-type Props = {
+type Props = IButtonProps & {
   title: string;
 }
 
-const Button: FC<Props> = ({title}) => {
+const Button: FC<Props> = ({title, ...rest}) => {
   return (
     <ButtonNativeBase
-      width={'100%'}
-      height={50}
-      mt={8}
-      bg="green.500"
+      {...rest}
     >
       <Heading
         color="white"
