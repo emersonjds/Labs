@@ -1,5 +1,5 @@
 import React from "react";
-import {Heading, VStack} from "native-base";
+import {Heading, Icon, VStack} from "native-base";
 import Logo from "../../assets/logo_primary.svg"
 import Input from "../../components/Input";
 
@@ -19,6 +19,7 @@ const Index = () => {
       <Input
         placeholder={'E-mail'}
         mb={5}
+        InputLeftElement={<Icon as  />}
       />
       <Input
         placeholder={'Senha'}
