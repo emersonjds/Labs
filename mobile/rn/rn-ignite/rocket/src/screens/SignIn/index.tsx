@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import {Heading, Icon, VStack, useTheme} from "native-base";
+import React, { useState } from "react";
+import { Heading, Icon, VStack, useTheme } from "native-base";
 import Logo from "../../assets/logo_primary.svg"
 import Input from "../../components/Input";
-import {Envelope, Key} from 'phosphor-react-native'
+import { Envelope, Key } from 'phosphor-react-native'
 import Button from "../../components/Button";
 
 const SignIn = () => {
 
-  const {colors} = useTheme();
+  const { colors } = useTheme();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,7 +26,7 @@ const SignIn = () => {
       px={8}
       pt={24}
     >
-      <Logo/>
+      <Logo />
       <Heading color="gray.100" fontSize={"xl"} mt={20} mb={6}>
         Acesse sua conta
       </Heading>
@@ -34,7 +34,7 @@ const SignIn = () => {
         placeholder={'E-mail'}
         mb={5}
         InputLeftElement={<Icon
-          as={<Envelope color={colors.gray[300]}/>}
+          as={<Envelope color={colors.gray[300]} />}
           ml={5}
         />
         }
@@ -44,7 +44,7 @@ const SignIn = () => {
       <Input
         placeholder={'Senha'}
         InputLeftElement={<Icon
-          as={<Key color={colors.gray[300]}/>}
+          as={<Key color={colors.gray[300]} />}
           ml={5}
         />
         }
