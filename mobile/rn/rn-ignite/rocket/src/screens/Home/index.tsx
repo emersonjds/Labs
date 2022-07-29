@@ -36,6 +36,7 @@ const Home = () => {
 
         <HStack
           justifyContent={'space-between'}
+          space={4}
         >
           <Filter title="Em Andamento" type="open" />
           <Filter title="Finalizado" type="closed" />

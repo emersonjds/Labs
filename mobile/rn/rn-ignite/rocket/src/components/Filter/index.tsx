@@ -17,16 +17,23 @@ const Filter: FC<FilterProps> = (
 ) => {
 
   const { colors } = useTheme()
+  const colorType = type === 'open' ? colors.secondary[700] : colors.green[300]
 
   return (
-
     <Button
-      w="45%"
       variant="outline"
+      borderColor={colorType}
+      borderWidth={isActive ? 1 : 0}
+      bgColor="gray.600"
+      flex={1}
+      size="sm"
+      {...rest}
     >
       <Text
-        color="white"
-      >
+        color={isActive ? colorType : "gray.300"}
+        fontSize="xs"
+        textTransform={"uppercase"}>
+
         {title}
       </Text>
     </Button>
