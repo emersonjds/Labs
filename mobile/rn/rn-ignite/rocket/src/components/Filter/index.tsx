@@ -32,8 +32,8 @@ const Filter: FC<FilterProps> = (
       <Text
         color={isActive ? colorType : "gray.300"}
         fontSize="xs"
-        textTransform={"uppercase"}>
-
+        textTransform={"uppercase"}
+      >
         {title}
       </Text>
     </Button>
