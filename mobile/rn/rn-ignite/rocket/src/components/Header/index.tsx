@@ -11,7 +11,7 @@ const Header = () => {
       w="full"
       justifyContent="space-between"
       alignItems="center"
-      bg="gray.700"
+      bg="gray.500"
       pt={12}
       pb={5}
       px={6}
