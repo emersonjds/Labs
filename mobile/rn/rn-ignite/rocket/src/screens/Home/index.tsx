@@ -1,4 +1,5 @@
 import { Heading, HStack, Text, useTheme, VStack } from 'native-base'
+import Filter from '../../components/Filter';
 import Header from '../../components/Header';
 
 const Home = () => {
@@ -32,7 +33,16 @@ const Home = () => {
             1
           </Text>
         </HStack>
+
+        <HStack
+          justifyContent={'space-between'}
+        >
+          <Filter title="Em Andamento" type="open" />
+          <Filter title="Finalizado" type="closed" />
+        </HStack>
       </VStack>
+
+
 
     </VStack>
   );
