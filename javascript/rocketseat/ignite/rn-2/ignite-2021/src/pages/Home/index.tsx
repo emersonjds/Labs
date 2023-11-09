@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const Login: React.FC = () => {
+const Home: React.FC = () => {
   return <View />;
 }
 
-export default Login;
+export default Home;
