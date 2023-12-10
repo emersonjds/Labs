@@ -3,7 +3,7 @@ export default function Home() {
     <>
       <div>
         <h1>
-          Home test
+          Home
         </h1>
       </div>
     </>
