@@ -7,19 +7,7 @@ import { HomeComponent } from './home/home.component';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HomeComponent],
-  // templateUrl: './app.component.html',
-  template: `
-     <main>
-    <header class="brand-name">
-      <img class="brand-logo" src="/assets/logo.png" alt="logo" 
-      height="50px" width="50px"
-      aria-hidden="true">
-    </header>
-    <section class="content">
-      <app-home></app-home>
-    </section>
-  </main>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
