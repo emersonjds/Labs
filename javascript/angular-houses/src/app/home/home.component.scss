@@ -1,3 +1,5 @@
+@import '../../styles';
+
 .results {
   display: grid;
   column-gap: 14px;
@@ -7,8 +9,16 @@
   justify-content: space-around;
 }
 
+.buttonText {
+  padding: 10px;
+  border: solid 1px $primary-color;
+  background: $primary-color;
+  color: white;
+  border-radius: 8px;
+}
+
 input[type="text"] {
-  border: solid 1px var(--primary-color);
+  border: solid 1px $primary-color;
   padding: 10px;
   border-radius: 8px;
   margin-right: 4px;
