@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
         <button class="primary" type="button">Search</button>
       </form>
     </section>
-  `,
+`,
   styleUrls: ['./home.component.scss'],
 })
 
