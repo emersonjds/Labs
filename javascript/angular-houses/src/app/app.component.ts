@@ -9,13 +9,18 @@ import { HomeComponent } from './home/home.component';
   imports: [CommonModule, RouterOutlet, HomeComponent],
   // templateUrl: './app.component.html',
   template: `
-    <main>
-      <section class="content">
-        <app-home></app-home>
-      </section>
-    </main>
+     <main>
+    <header class="brand-name">
+      <img class="brand-logo" src="/assets/logo.png" alt="logo" 
+      height="50px" width="50px"
+      aria-hidden="true">
+    </header>
+    <section class="content">
+      <app-home></app-home>
+    </section>
+  </main>
   `,
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'Homes';
