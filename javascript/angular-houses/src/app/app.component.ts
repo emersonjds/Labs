@@ -11,4 +11,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Angular Studies';
+  isFullWidth: any;
+  isCentered: any;
 }
