@@ -26,23 +26,15 @@ button {
 
 @media (min-width: 500px) and (max-width: 768px) {
   .results {
-    grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
   }
-
   input[type="text"] {
-    width: 70%;
-  }
+      width: 70%;
+  }   
 }
 
 @media (max-width: 499px) {
   .results {
-    grid-template-columns: 1fr;
-  }
+      grid-template-columns: 1fr;
+  }    
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
