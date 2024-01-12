@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
     <section>
       <form>
         <input type="text" placeholder="Filter by city">
-        <button class="buttonText" type="button">Search</button>
+        <button class="buttonText" type="button">Search House</button>
       </form>
     </section>
 `,
