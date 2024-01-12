@@ -1,15 +1,10 @@
 <main>
-  <div class="container-fluid" [ngClass]="{
-      'container-fluid--full': isFullWidth,
-      'container-fluid--center': isCentered,
-      'container-fluid--center--full': isCentered && isFullWidth
-    }">
-    <h1>
-      {{
-      title
-      }}
-    </h1>
-  </div>
+  <header class="brand-name">
+    <img class="brand-logo" src="/assets/logo.png" alt="logo" height="50px" width="50px" aria-hidden="true">
+  </header>
+  <section class="content">
+    <app-home></app-home>
+  </section>
 </main>
 
 
