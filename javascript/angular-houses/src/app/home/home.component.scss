@@ -26,25 +26,26 @@ input[type="text"] {
   width: 30%;
 }
 
-button {
-  padding: 10px;
-  border: solid 1px var(--primary-color);
-  background: var(--primary-color);
-  color: white;
-  border-radius: 8px;
-}
+// button {
+//   padding: 10px;
+//   border: solid 1px var(--primary-color);
+//   background: var(--primary-color);
+//   color: white;
+//   border-radius: 8px;
+// }
 
 @media (min-width: 500px) and (max-width: 768px) {
   .results {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
+
   input[type="text"] {
-      width: 70%;
-  }   
+    width: 70%;
+  }
 }
 
 @media (max-width: 499px) {
   .results {
-      grid-template-columns: 1fr;
-  }    
+    grid-template-columns: 1fr;
+  }
 }
