@@ -6,7 +6,7 @@ export default function FaqPage() {
       <h1>FAQ</h1>
       <p>Here is the FAQ page</p>
       <Link href="/" passHref>
-        <a>Go to Home</a>
+        Go to Home
       </Link>
     </div>
   );

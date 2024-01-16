@@ -6,7 +6,7 @@ export default function HomePage() {
       <h1>Home</h1>
       <p>Welcome to the home page!</p>
       <Link href="/faq" passHref>
-        <a>Go to FAQ</a>
+        Go to FAQ
       </Link>
     </>
   );
