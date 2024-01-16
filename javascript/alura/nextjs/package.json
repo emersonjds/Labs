@@ -2,5 +2,11 @@
   "name": "nextjs",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "eslint-config-next": "12",
+    "next": "12",
+    "react": "17",
+    "react-dom": "17"
+  }
 }
