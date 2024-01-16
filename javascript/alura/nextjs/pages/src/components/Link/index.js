@@ -1,7 +1,9 @@
-export default function LinkComponent({ href, textLink }) {
+import NextLink from "next/link";
+
+export default function LinkComponent({ href, children, ...props }) {
   return (
-    <Link href={href} passHref>
-      <a>{textLink}</a>
-    </Link>
+    <NextLink href={href}>
+      <a {...props}>{children}</a>
+    </NextLink>
   );
 }
