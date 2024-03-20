@@ -1,6 +1,0 @@
-module Pods_rocket {
-  umbrella header "Pods-rocket-umbrella.h"
-
-  export *
-  module * { export * }
-}

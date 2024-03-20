@@ -1,7 +1,0 @@
-{
-  "todos": [
-    { "id": 0, "text": "Lavar a louça" },
-    { "id": 1, "text": "Pythom" },
-    { "id": 2, "text": "React" }
-  ]
-}

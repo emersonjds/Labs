@@ -1,9 +1,0 @@
-Existe uma configuração pronta para conseguir executar uma aplicação react no Heroku
-esta disponivel no link https://github.com/mars/create-react-app-buildpack
-
-Ja logado no heroku é necessario criar o projeto e colocar a configuração do buildpack em seguida
-heroku create react-heroku-emersonjds --buildpack mars/create-react-app 
-
-Em seguida é necessario criar um arquivo static.json na raiz do projeto e configurar ele
-o root indica para o heroku aonde ir buscar os arquivos
-ja o /routes indica para o heroku sempre apontar para o index.html para criar as rotas amigaveis

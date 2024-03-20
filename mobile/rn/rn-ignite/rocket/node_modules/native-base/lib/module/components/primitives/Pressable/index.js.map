@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.tsx"],"names":["default","Pressable"],"mappings":"AAAA,SAASA,OAAO,IAAIC,SAApB,QAAqC,aAArC","sourcesContent":["export { default as Pressable } from './Pressable';\nexport type { IPressableProps } from './types';\n"]}
