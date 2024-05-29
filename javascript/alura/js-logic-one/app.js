@@ -9,4 +9,3 @@ if (otherNumber == secretNumber) {
 } else {
   alert("Voce errou");
 }
- 
