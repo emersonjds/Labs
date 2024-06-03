@@ -1,6 +1,6 @@
 alert("Welcome to secret number game");
 
-let secretNumber = 42;
+let secretNumber = 40;
 
 let otherNumber = prompt("Choose a number between 0 and 30");
 
