@@ -9,3 +9,15 @@ if (weekDay == "Saturday" || weekDay == "Sunday") {
 } else {
   console.log("Have a nice week");
 }
+
+// Type of Number
+
+let number = null;
+
+number = prompt('Write a number');
+
+if(number < 0 ) {
+    console.log(`You write ${number}, this number is negative`)
+} else {
+    console.log(`You write ${number}, this number is positive`)
+}
