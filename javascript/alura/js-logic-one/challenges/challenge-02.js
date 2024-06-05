@@ -14,10 +14,10 @@ if (weekDay == "Saturday" || weekDay == "Sunday") {
 
 let number = null;
 
-number = prompt('Write a number');
+number = prompt("Write a number");
 
-if(number < 0 ) {
-    console.log(`You write ${number}, this number is negative`)
+if (number < 0) {
+  console.log(`You write ${number}, this number is negative`);
 } else {
-    console.log(`You write ${number}, this number is positive`)
+  console.log(`You write ${number}, this number is positive`);
 }
