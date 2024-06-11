@@ -10,6 +10,8 @@ if (weekDay == "Saturday" || weekDay == "Sunday") {
   console.log("Have a nice week");
 }
 
+// Number Type
+
 let number = null;
 
 number = prompt("Write a number");
