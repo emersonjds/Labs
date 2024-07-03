@@ -31,4 +31,10 @@ function verifyPoints() {
   }
 }
 
-export { verifyPoints };
+function showExtract() {
+  const extract = 1000;
+
+  return alert(`Your extract counts the value of R$ ${extract}`);
+}
+
+export { verifyPoints, showExtract };

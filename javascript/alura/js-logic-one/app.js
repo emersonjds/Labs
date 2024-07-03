@@ -1,4 +1,4 @@
-import { verifyPoints } from "./challenges/challenge-02.js";
+import { verifyPoints, showExtract } from "./challenges/challenge-02.js";
 
 alert("Welcome to secret number game");
 
@@ -12,4 +12,5 @@ if (otherNumber == secretNumber) {
   alert("You wrong the answer");
 }
 
-verifyPoints();
+// verifyPoints();
+showExtract();
