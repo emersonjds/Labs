@@ -1,3 +1,5 @@
+import { verifyPoints } from "./challenges/challenge-02.js";
+
 alert("Welcome to secret number game");
 
 let secretNumber = 40;
@@ -9,3 +11,5 @@ if (otherNumber == secretNumber) {
 } else {
   alert("You wrong the answer");
 }
+
+verifyPoints();

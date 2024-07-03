@@ -20,3 +20,15 @@ if (number < 0) {
 } else {
   console.log(`You write ${number}, this number is positive`);
 }
+
+function verifyPoints() {
+  const points = prompt("Write your points");
+
+  if (points >= 100) {
+    return console.log("Congrats you win");
+  } else {
+    return console.log("Try again to win");
+  }
+}
+
+export { verifyPoints };
