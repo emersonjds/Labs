@@ -37,4 +37,9 @@ function showExtract() {
   return alert(`Your extract counts the value of R$ ${extract}`);
 }
 
-export { verifyPoints, showExtract };
+function showYourName() {
+  const name = prompt("Whats your name ?!");
+  alert(`Welcome ${name}`);
+}
+
+export { verifyPoints, showExtract, showYourName };
