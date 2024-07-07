@@ -21,8 +21,6 @@ if (number < 0) {
   console.log(`You write ${number}, this number is positive`);
 }
 
-// verifyPoints
-
 function verifyPoints() {
   const points = prompt("Write your points");
 
