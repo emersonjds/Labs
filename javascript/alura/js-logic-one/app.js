@@ -12,6 +12,5 @@ if (otherNumber == secretNumber) {
   } else {
     alert("You wrong the answer, the number is higher");
   }
-  alert("You wrong the answer");
 }
 
