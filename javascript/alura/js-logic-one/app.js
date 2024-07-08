@@ -1,8 +1,8 @@
-import {
-  verifyPoints,
-  showExtract,
-  showYourName,
-} from "./challenges/challenge-02.js";
+// import {
+//   verifyPoints,
+//   showExtract,
+//   showYourName,
+// } from "./challenges/challenge-02.js";
 
 alert("Welcome to secret number game");
 
