@@ -1,9 +1,3 @@
-// import {
-//   verifyPoints,
-//   showExtract,
-//   showYourName,
-// } from "./challenges/challenge-02.js";
-
 alert("Welcome to secret number game");
 
 let secretNumber = 40;
@@ -21,6 +15,3 @@ if (otherNumber == secretNumber) {
   alert("You wrong the answer");
 }
 
-// verifyPoints();
-// showExtract();
-// showYourName();
