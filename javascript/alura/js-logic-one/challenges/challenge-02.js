@@ -11,7 +11,6 @@ if (weekDay == "Saturday" || weekDay == "Sunday") {
 }
 
 // Number Type
-
 let number = null;
 
 number = prompt("Write a number");
