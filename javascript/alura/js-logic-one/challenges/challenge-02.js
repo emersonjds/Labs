@@ -12,7 +12,6 @@ if (weekDay == "Saturday" || weekDay == "Sunday") {
 
 // Number Type
 let number = null;
-
 number = prompt("Write a number");
 if (number < 0) {
   console.log(`You write ${number}, this number is negative`);
