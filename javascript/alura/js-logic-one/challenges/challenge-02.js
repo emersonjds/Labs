@@ -1,5 +1,4 @@
 // Week Day
-
 let weekDay = "";
 
 weekDay = prompt("What day is today ?!");
