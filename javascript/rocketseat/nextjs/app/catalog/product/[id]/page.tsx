@@ -6,6 +6,7 @@ interface ProductProps {
 
 export default function Product({params}: ProductProps) {
 
+    // this property dont exist in the interface cause data it's loaded in the getServerSideProps
     console.log(params);
 
     return (
