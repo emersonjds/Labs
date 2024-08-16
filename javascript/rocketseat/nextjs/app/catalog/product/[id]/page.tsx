@@ -4,12 +4,13 @@ interface ProductProps {
     }
 }
 
-export default function Product(
-    props: ProductProps
-) {
+export default function Product({params}: ProductProps) {
+
+    console.log(params);
+
     return (
         <div>
-            <h1>Product {props.params.id}</h1>
+            <h1>Product {params.id}</h1>
         </div>
     )
 }
