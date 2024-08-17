@@ -6,8 +6,8 @@ export default async function Home() {
   const data = await response.json();
 
   return (
-    <h1>
-      {data.name} - {data.bio}
-    </h1>
+    <pre>
+      {JSON.stringify(data, null, 2)}
+    </pre>
   );
 }
