@@ -1,5 +1,3 @@
-export default async function CatalogLoading() {
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-
+export default function CatalogLoading() {
   return <h1>Loading data of catalog...</h1>;
 }
