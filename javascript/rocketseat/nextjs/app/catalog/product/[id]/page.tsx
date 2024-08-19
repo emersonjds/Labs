@@ -1,4 +1,5 @@
-'use client';
+import ButtonAddToCart from "../components/buttonAddToCart";
+
 interface ProductProps {
     params: {
         id: string;
@@ -14,14 +15,11 @@ export default async function Product({params}: ProductProps) {
     
     const {id} = params;
 
-    function addToCart() {
-        console.log('Add to cart');
-    }
 
     return (
         <div>
             <h1>Product {id}</h1>
-            <button onClick={addToCart}>Adicionar ao carrinho </button>
+            <ButtonAddToCart />
         </div>
     )
 }
