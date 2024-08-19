@@ -1,9 +1,15 @@
+import GithubProfile from "./components/githubProfile";
+import LowerComponent from "./components/lowerComponent";
+
 export default async function Home() {
-  // Simulate a delay
   await new Promise((resolve) => setTimeout(resolve, 1500));
+  return (
+    <div>
+      <h1>Welcome</h1>
 
-  const response = await fetch("https://api.github.com/users/emersonjds");
-  const data = await response.json();
+      <GithubProfile />
 
-  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+      <LowerComponent />
+    </div>
+  );
 }
