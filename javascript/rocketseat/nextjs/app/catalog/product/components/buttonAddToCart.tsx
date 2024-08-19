@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import TestComponent from "./testComponent";
+import { ReactNode, useState } from "react";
 
-export default function ButtonAddToCart() {
+export default function ButtonAddToCart({children} : {children: ReactNode}) {
   const [count, setCount] = useState(0);
 
   function addToCart() {
@@ -16,7 +15,9 @@ export default function ButtonAddToCart() {
     <div>
       <button onClick={addToCart}>Add to cart</button>
       <p>Count: {count}</p>
-      <TestComponent />
+      {
+        children
+      }
     </div>
   );
 }
