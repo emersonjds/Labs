@@ -6,7 +6,7 @@ export default async function Home() {
   await new Promise((resolve) => setTimeout(resolve, 1500));
   return (
     <div>
-      <h1>Welcome Home</h1>
+      <h1>Welcome</h1>
 
       <Suspense fallback={<div>Loading Github data...</div>}>
         <GithubProfile />
