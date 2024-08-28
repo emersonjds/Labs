@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>Init Ecommerce</h1>
+      <h1>Ecommerce</h1>
     </div>
-  )
+  );
 }
